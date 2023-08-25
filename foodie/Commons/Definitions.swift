@@ -1,0 +1,10 @@
+//
+//  Definitions.swift
+//  foodie
+//
+//  Created by Konrad Groschang on 15/04/2023.
+//
+
+import Foundation
+
+typealias VoidAction = () -> Void

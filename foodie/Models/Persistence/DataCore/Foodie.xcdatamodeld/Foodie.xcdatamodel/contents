@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoryEntity" representedClassName="CategoryEntity" syncable="YES">
+        <attribute name="desc" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="imageURL" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="mealCategories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MealCategoryEntity" inverseName="category" inverseEntity="MealCategoryEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="IngredientEntity" representedClassName="IngredientEntity" syncable="YES">
+        <attribute name="measure" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="mealDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MealDetailEntity" inverseName="ingredients" inverseEntity="MealDetailEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+                <constraint value="measure"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MealCategoryEntity" representedClassName="MealCategoryEntity" syncable="YES">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="imageUrl" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryEntity" inverseName="mealCategories" inverseEntity="CategoryEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MealDetailEntity" representedClassName="MealDetailEntity" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="recipe" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="youtubeURL" optional="YES" attributeType="String"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="IngredientEntity" inverseName="mealDetail" inverseEntity="IngredientEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

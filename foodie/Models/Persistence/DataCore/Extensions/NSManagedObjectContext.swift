@@ -1,0 +1,38 @@
+//
+//  NSManagedObjectContext.swift
+//  foodie
+//
+//  Created by Konrad Groschang on 28/07/2023.
+//
+
+import CoreData
+
+extension NSManagedObjectContext {
+
+    func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
+
+        await perform {
+            do {
+                return try request.execute()
+            } catch {
+                Logger.log("Core data fetch problem: \(error)", onLevel: .error)
+                return nil
+            }
+        }
+    }
+
+//    func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
+//        await fetch(request: request, in: viewContext)
+//    }
+
+//    func fetch<T>(request: NSFetchRequest<T>, in context: NSManagedObjectContext) async -> [T]? where T: NSManagedObject {
+//        await context.perform {
+//            do {
+//                return try request.execute()
+//            } catch {
+//                Logger.log("Core data fetch problem: \(error)", onLevel: .error)
+//                return nil
+//            }
+//        }
+//    }
+}

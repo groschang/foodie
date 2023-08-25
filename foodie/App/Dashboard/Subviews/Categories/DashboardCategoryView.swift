@@ -1,0 +1,76 @@
+//
+//  DashboardCategoryView.swift
+//  foodie
+//
+//  Created by Konrad Groschang on 11/07/2023.
+//
+
+import SwiftUI
+
+struct DashboardCategoryView: View {
+
+    let category: Category
+
+    var body: some View {
+        Text(category.name)
+            .foregroundColor(.white)
+            .bold()
+            .subtitle()
+            .padding(.horizontal, 8)
+            .padding(.vertical, 6)
+            .background(ColorStyle.gray)
+            .clipShape(Capsule())
+    }
+}
+
+struct DashboardCategoryVerticalView: View {
+
+    let category: Category
+
+    var body: some View {
+        VStack {
+            ListPhotoView(imageUrl: category.imageUrl)
+                .modifier(CategoryViewPhotoStyle(width: 62, height: 62, imageUrl: category.imageUrl))
+                .clipShape(Circle())
+
+            Text(category.name)
+                .subtitle()
+        }
+    }
+}
+
+struct DashboardCategoryHorizontalView: View {
+
+    let category: Category
+
+    var body: some View {
+        HStack {
+            ListPhotoView(imageUrl: category.imageUrl)
+                .modifier(ListPhotoStyle(width: 62,
+                                         height: 62))
+                .background(.white)
+                .clipShape(Circle())
+
+            Text(category.name)
+                .foregroundColor(.white)
+                .bold()
+                .subtitle()
+
+        }
+        .padding(8)
+        .background(ColorStyle.appColor)
+        .clipShape(Capsule())
+    }
+}
+
+// MARK: Preview
+
+struct DashboardCategoryView_Preview: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 32) {
+            DashboardCategoryView(category: .mock)
+            DashboardCategoryVerticalView(category: .mock)
+            DashboardCategoryHorizontalView(category: .mock)
+        }
+    }
+}
