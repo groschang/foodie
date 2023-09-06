@@ -13,44 +13,49 @@ protocol HTTPClient {
 
 class APIClient: HTTPClient { //TODO: rename? NetworkClient?
 
-    static private let Timeout = 50.0
-    
-    private let requestTimeout = TimeInterval(Timeout)
+    private let enviroment: APIEndpoint
 
-    private var enviroment: APIEndpoint
+    private let requestBuilder: RequestBuilder
 
-    private var requestBuilder: RequestBuilder
+    private let session: HTTPSession
     
-    private lazy var decoder = JSONDecoder()
-    
-    private lazy var session: URLSession = {
-        let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = TimeInterval(requestTimeout)
-        let session = URLSession(configuration: sessionConfig)
-        return session
-    }()
+    private let decoder: JSONDecoder
 
-    init(enviroment: APIEndpoint = .production) {
+    init(
+        enviroment: APIEndpoint = .production,
+        session: HTTPSession = URLSession.extended,
+        requestBuilder: RequestBuilder.Type = URLRequestBuilder.self,
+        decoder: JSONDecoder = .init()
+    ) {
         self.enviroment = enviroment
-        self.requestBuilder = URLRequestBuilder(enviroment: enviroment)
+        self.requestBuilder = requestBuilder.init(enviroment: enviroment)
+        self.session = session
+        self.decoder = decoder
     }
     
     func process<T: Decodable>(_ request: Request<T>) async throws -> T {
         do {
             let urlRequest = try requestBuilder.build(for: request)
             let (data, response) = try await session.data(for: urlRequest)
+            try validate(response: response)
+            let object: T = try decodeResponse(data: data)
             NetworkLogger.log(request: urlRequest)
             NetworkLogger.log(response: response)
             NetworkLogger.log(data: data)
-            try validate(response: response)
-            return try decodeResponse(data: data)
+            return object
+
         } catch let error as RequestError {
+
             Logger.log(error, onLevel: .error)
             throw ApiError.badURL(error.localizedDescription + request.description)
+
         } catch let error as DecodingError {
+
             Logger.log(error.verbose, onLevel: .error)
             throw ApiError.invalidJSON(error.verbose)
+
         } catch let error as NSError {
+
             guard
                 error.domain == NSURLErrorDomain,
                 error.code == NSURLErrorCancelled
@@ -60,7 +65,9 @@ class APIClient: HTTPClient { //TODO: rename? NetworkClient?
             }
             Logger.log(error, onLevel: .error)
             throw CancellationError()
+
         } catch {
+
             Logger.log(error, onLevel: .error)
             throw ApiError.unknown
         }
@@ -86,5 +93,4 @@ class APIClient: HTTPClient { //TODO: rename? NetworkClient?
         return decoded
     }
 }
-
 

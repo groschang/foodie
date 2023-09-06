@@ -13,7 +13,6 @@ final class APIClientTest: XCTestCase {
     var apiClient: HTTPClient!
 
     override func setUpWithError() throws {
-        super.setUp()
         apiClient = APIClient()
     }
 

@@ -12,6 +12,8 @@ enum RequestError: Error {
 }
 
 protocol RequestBuilder {
+    init(enviroment: APIEndpoint)
+
     func build<T>(for request: Request<T>) throws -> URLRequest
     //    func buildURLRequest()  -> URLRequest
 //    func buildURLRequest(for enviroment: APIEndpoint) throws -> URLRequest

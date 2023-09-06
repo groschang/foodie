@@ -48,7 +48,9 @@ extension String {
 }
 
 extension String {
-    static let empty = ""
+    public static let empty = ""
+    public static let newLine = "\n"
+    public static let tab = "\t"
 }
 
 extension String {
@@ -57,3 +59,12 @@ extension String {
     }
 }
 
+extension String {
+    @inlinable public func addTabPrefix() -> String {
+        String.tab + self
+    }
+
+    @inlinable public func addTabPostfix() -> String {
+        self + String.tab
+    }
+}

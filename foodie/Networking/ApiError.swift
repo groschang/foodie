@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ApiError: LocalizedError {
+enum ApiError: Error, LocalizedError {
     
     case badURL(_ url: String)
     case serverError(_ error: String)
@@ -31,12 +31,18 @@ enum ApiError: LocalizedError {
         case .invalidJSON(let error):
             description = "invalid json \(error)"
         case .requestFailed(let code, let response):
+            description = "request failed"
+
+            if let code {
+                description = " with code \(code)"
+            }
+
             if let response,
                let errorResponse = response.toObject(ErrorResponse.self),
                let errorCode = errorResponse.errorCode {
-                description = "request failed \(errorCode.localized)"
+                description += ": \(errorCode.localized)"
             }
-            description = "request failed \(String(describing: code))"
+            return description
         case .clientError(let code):
             description = "client error code: \(code)"
         case .unexpectedStatusCode(let code):
@@ -47,42 +53,4 @@ enum ApiError: LocalizedError {
 
         return description
     }
-}
-
-
-extension DecodingError {
-    
-    var verbose: String { //TODO: check
-        var description: String
-
-        switch self {
-        case .typeMismatch(let key, let value):
-            description = makeDescription(error: self, key: key, value: value)
-        case .valueNotFound(let key, let value):
-            description = makeDescription(error: self, key: key, value: value)
-        case .keyNotFound(let key, let value):
-            description = makeDescription(error: self, key: key, value: value)
-        case .dataCorrupted(let key):
-            description = makeDescription(error: self, key: key)
-        default:
-            description = makeDescription(error: self)
-        }
-
-        return description
-    }
-    
-    func makeDescription(error: DecodingError, key: Any? = nil, value: DecodingError.Context? = nil) -> String {
-
-        var description = "\(error.localizedDescription)"
-        if let key {
-            description += "\nType: \(key)"
-        }
-        if let value {
-            description += "\nContext: \(value.debugDescription)"
-            description += "\nValue: \(value)"
-        }
-
-        return description
-    }
-    
 }

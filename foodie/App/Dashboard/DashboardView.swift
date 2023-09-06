@@ -48,10 +48,9 @@ where DI: DependencyContainerType,
                 .task { await viewModel.load() }
         }
         .accentColor(ColorStyle.accent)
-
     }
 
-    @ObservedObject var manager = MotionManager()
+    private let manager = ParallaxManager()
 
     private var content: some View {
         VStack {
@@ -65,6 +64,7 @@ where DI: DependencyContainerType,
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
                 .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
                 .padding(.vertical, 12)
+                .modifier(SwipeModifier(manager: manager))
 
             DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
 
@@ -72,7 +72,7 @@ where DI: DependencyContainerType,
 
             Spacer()
         }
-
+        .background(.gray)
     }
 }
 

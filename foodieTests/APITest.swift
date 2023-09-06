@@ -11,18 +11,21 @@ import SnapshotTesting
 
 final class APITest: XCTestCase {
 
-    private let enviroment = APIEndpoint.production /// https://www.themealdb.com/api.php
+    /// https://www.themealdb.com/api.php
+    private let requestBuilder = URLRequestBuilder(enviroment: .production)
+    private var decoder: JSONDecoder!
+    private var session: URLSession!
 
-    private lazy var decoder = JSONDecoder()
-    private lazy var session = URLSession(configuration: .default)
-
-    private let client = APIClient()
+    override func setUp() {
+        decoder = JSONDecoder()
+        session = URLSession(configuration: .default)
+    }
 
     func testCategories() async throws {
         //Arrange
         let endpoint = Endpoint.categories
         let request = Request<Categories>(endpoint: endpoint)
-        let urlRequest = try request.buildURLRequest(for: enviroment)
+        let urlRequest = try requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)
@@ -38,7 +41,7 @@ final class APITest: XCTestCase {
         //Arrange
         let endpoint = Endpoint.meals(category: "Beef")
         let request = Request<Meals>(endpoint: endpoint)
-        let urlRequest = try request.buildURLRequest(for: enviroment)
+        let urlRequest = try requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)
@@ -54,7 +57,7 @@ final class APITest: XCTestCase {
         //Arrange
         let endpoint = Endpoint.meal(id: "53057") //52881
         let request = Request<Meal>(endpoint: endpoint)
-        let urlRequest = try request.buildURLRequest(for: enviroment)
+        let urlRequest = try requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)

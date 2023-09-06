@@ -222,68 +222,6 @@
             endingLineNumber = "71"
             landmarkName = "configureDefaults(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 8a030f24f7b32076"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.PersistentContainer.StoreType) -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "1972">
-               </Location>
-               <Location
-                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 8a030f24f7b320ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.PersistentContainer.StoreType) -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "1972">
-               </Location>
-               <Location
-                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 751881a1b3c56621"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.StoreType) -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "1604">
-               </Location>
-               <Location
-                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 751881a1b3c56621"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.StoreType) -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "1692">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -455,6 +393,51 @@
                   endingLineNumber = "47"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "3898E1A4-5292-4D13-A830-481A6E1C7C52 - fde31f56487658ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  uuid = "3898E1A4-5292-4D13-A830-481A6E1C7C52 - 771a38cb0ab2a17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "3898E1A4-5292-4D13-A830-481A6E1C7C52 - 937230903c9bf4ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "96">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -533,6 +516,51 @@
                   endingLineNumber = "50"
                   offsetFromSymbolStart = "156">
                </Location>
+               <Location
+                  uuid = "29219E22-6BA0-4D8F-A14C-56DE7655BE77 - 937230903c9bf71c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "29219E22-6BA0-4D8F-A14C-56DE7655BE77 - 8c5abc1a82377dce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "29219E22-6BA0-4D8F-A14C-56DE7655BE77 - 69d55d2113c936a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "156">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -581,6 +609,21 @@
                   endingLineNumber = "52"
                   offsetFromSymbolStart = "292">
                </Location>
+               <Location
+                  uuid = "B53B497B-8748-4D80-9E1F-8E50F8EEEE6C - 69d55d2113c932c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "292">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -627,6 +670,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
                   endingLineNumber = "63"
+                  offsetFromSymbolStart = "796">
+               </Location>
+               <Location
+                  uuid = "13DAF4FA-B9B8-40C1-A5B1-1AC61A1B314E - 69d55d2113c92b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testCategories() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
                   offsetFromSymbolStart = "796">
                </Location>
             </Locations>
@@ -3465,6 +3523,51 @@
                   endingLineNumber = "141"
                   offsetFromSymbolStart = "88">
                </Location>
+               <Location
+                  uuid = "D8C34D95-4E41-45D4-B802-4C75F80A197A - dc3d3b3243ddcdfe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "D8C34D95-4E41-45D4-B802-4C75F80A197A - adebc5e6afbd9a13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "D8C34D95-4E41-45D4-B802-4C75F80A197A - abd3a1b5c9dc87fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "88">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3543,6 +3646,51 @@
                   endingLineNumber = "144"
                   offsetFromSymbolStart = "132">
                </Location>
+               <Location
+                  uuid = "87B3CDD3-256B-488F-B8E9-EFDD76F89146 - abd3a1b5c9dc8791"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "87B3CDD3-256B-488F-B8E9-EFDD76F89146 - 5bbff7d44925487c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "87B3CDD3-256B-488F-B8E9-EFDD76F89146 - b980142f4fde316f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "132">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3589,6 +3737,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
+                  offsetFromSymbolStart = "732">
+               </Location>
+               <Location
+                  uuid = "8F170317-1686-4F7A-ABB6-F1B92C525427 - b980142f4fde31eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMeal() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
                   offsetFromSymbolStart = "732">
                </Location>
             </Locations>
@@ -3699,6 +3862,51 @@
                   endingLineNumber = "170"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "3A32DAC4-4CCD-4999-B6DE-50E8F0F8D12F - ed0ef345cf312cbd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "908">
+               </Location>
+               <Location
+                  uuid = "3A32DAC4-4CCD-4999-B6DE-50E8F0F8D12F - 18fed64192fc5ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "3A32DAC4-4CCD-4999-B6DE-50E8F0F8D12F - a1307931fa18f0bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "96">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3775,6 +3983,51 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "173"
                   endingLineNumber = "173"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "DE9FA021-881A-4E09-BCAC-2245659ADD74 - a1307931fa18f35c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "DE9FA021-881A-4E09-BCAC-2245659ADD74 - 8e4acce798ca804c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "DE9FA021-881A-4E09-BCAC-2245659ADD74 - 72fbeeade503b4a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
                   offsetFromSymbolStart = "124">
                </Location>
             </Locations>
@@ -3885,6 +4138,51 @@
                   endingLineNumber = "204"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "C72D6D2A-2CFE-4BE2-A441-AA2B466EC3A4 - a1586417476957b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "728">
+               </Location>
+               <Location
+                  uuid = "C72D6D2A-2CFE-4BE2-A441-AA2B466EC3A4 - 3d2e357b036176ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "C72D6D2A-2CFE-4BE2-A441-AA2B466EC3A4 - 2e174792c60b99b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "96">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3993,6 +4291,51 @@
                   endingLineNumber = "214"
                   offsetFromSymbolStart = "128">
                </Location>
+               <Location
+                  uuid = "0383D1ED-9115-407C-BA91-341CB67DDD7C - dcd2271c452cda0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "0383D1ED-9115-407C-BA91-341CB67DDD7C - a63e3b0f5b3afe45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "0383D1ED-9115-407C-BA91-341CB67DDD7C - 4da9069fc4c11c0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "128">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4069,6 +4412,51 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "207"
                   endingLineNumber = "207"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "D33420B3-05B7-404A-955F-46EE83C20C87 - 2e174792c60b991a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "D33420B3-05B7-404A-955F-46EE83C20C87 - e0a63e013f14bac2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "D33420B3-05B7-404A-955F-46EE83C20C87 - dcd2271c452cdb14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
                   offsetFromSymbolStart = "120">
                </Location>
             </Locations>
@@ -4149,6 +4537,51 @@
                   endingLineNumber = "216"
                   offsetFromSymbolStart = "120">
                </Location>
+               <Location
+                  uuid = "88B40AA7-039B-490B-B528-DCB35372B663 - 4da9069fc4c11c4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "88B40AA7-039B-490B-B528-DCB35372B663 - 6db6241577e04285"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) await resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "88B40AA7-039B-490B-B528-DCB35372B663 - fa64e61943e25e4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for foodieTests.CoreDataClientTest.testMealIngredients() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "120">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4195,6 +4628,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "189"
                   endingLineNumber = "189"
+                  offsetFromSymbolStart = "1020">
+               </Location>
+               <Location
+                  uuid = "62CFEB55-29FB-406F-9FD0-7F3C67A0AB50 - 72fbeeade5044ad2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMealAllParameters() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "197"
+                  endingLineNumber = "197"
                   offsetFromSymbolStart = "1020">
                </Location>
             </Locations>
@@ -4275,6 +4723,51 @@
                   endingLineNumber = "127"
                   offsetFromSymbolStart = "112">
                </Location>
+               <Location
+                  uuid = "32DAFD17-8870-4DB1-94F2-752044C75360 - b2705f8106e7a0ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "32DAFD17-8870-4DB1-94F2-752044C75360 - 3da80b2786dd5e8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "32DAFD17-8870-4DB1-94F2-752044C75360 - a9f6be72ec2164b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "112">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4321,6 +4814,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "129"
                   endingLineNumber = "129"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "9C1397CD-AB23-4476-81D1-C4857DFBBDE4 - a9f6be72ec216476"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
                   offsetFromSymbolStart = "204">
                </Location>
             </Locations>
@@ -4431,6 +4939,51 @@
                   endingLineNumber = "124"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "340AFD3B-1ACA-4D58-B368-780B02136F2D - 9cf3fd1020ace317"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "772">
+               </Location>
+               <Location
+                  uuid = "340AFD3B-1ACA-4D58-B368-780B02136F2D - 54426e65f08b9527"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "340AFD3B-1ACA-4D58-B368-780B02136F2D - b2705f8106e7af15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMealsForNonExistingCategory() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "96">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4509,6 +5062,51 @@
                   endingLineNumber = "90"
                   offsetFromSymbolStart = "156">
                </Location>
+               <Location
+                  uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - edca04eebfeadae5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - 3e6be643af86bf18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - c41a6feee6b782e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "156">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4555,6 +5153,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
                   endingLineNumber = "101"
+                  offsetFromSymbolStart = "724">
+               </Location>
+               <Location
+                  uuid = "C6A47B2D-C6DA-4EF3-A809-0E90CCAF3DD9 - c41a6feee6b7858c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
                   offsetFromSymbolStart = "724">
                </Location>
             </Locations>
@@ -4665,6 +5278,51 @@
                   endingLineNumber = "87"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - 35fabded78211246"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - f96c7159df53f3b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - edca04eebfeada40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodieTests.CoreDataClientTest.testMeals() async -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "96">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4712,6 +5370,21 @@
                   startingLineNumber = "28"
                   endingLineNumber = "28"
                   offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "B8F83211-F67C-4410-B5D8-62EE63D6BAA4 - a4dc4fb8a34c22d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodieTests.CoreDataClientTest.tearDownWithError() throws -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "172">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -4761,6 +5434,21 @@
                   endingLineNumber = "20"
                   offsetFromSymbolStart = "488">
                </Location>
+               <Location
+                  uuid = "D96BC051-2438-4A49-AB39-FDA4C4C00111 - 315504d38c6230ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodieTests.CoreDataClientTest.setUpWithError() throws -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "788">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4809,6 +5497,21 @@
                   endingLineNumber = "22"
                   offsetFromSymbolStart = "588">
                </Location>
+               <Location
+                  uuid = "D6C60065-B7C6-4F34-A1EC-E42401E16D2F - 315504d38c6233e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodieTests.CoreDataClientTest.setUpWithError() throws -&gt; ()"
+                  moduleName = "foodieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodieTests/Persistence/CoreDataClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1752">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4842,38 +5545,6 @@
             endingLineNumber = "51"
             landmarkName = "init(name:bundle:type:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "788">
-               </Location>
-               <Location
-                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "880">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -145,6 +145,19 @@
 		71AF839A2A3A2C37006FEEEB /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF83992A3A2C37006FEEEB /* APITest.swift */; };
 		71B99B9F2A26944100201364 /* MealsServiceStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B99B9E2A26944100201364 /* MealsServiceStream.swift */; };
 		71B99BA12A27B55000201364 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B99BA02A27B55000201364 /* APIEndpoint.swift */; };
+		71BFF0782AA61B680080B561 /* HTTPSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0772AA61B680080B561 /* HTTPSession.swift */; };
+		71BFF07A2AA61D130080B561 /* HTTPSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0792AA61D130080B561 /* HTTPSessionMock.swift */; };
+		71BFF07C2AA64E660080B561 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF07B2AA64E660080B561 /* URLSession.swift */; };
+		71BFF07E2AA787570080B561 /* AnimationCompletionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF07D2AA787570080B561 /* AnimationCompletionModifier.swift */; };
+		71BFF0802AA787A90080B561 /* ViewSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF07F2AA787A90080B561 /* ViewSizeModifier.swift */; };
+		71BFF0822AA787DD0080B561 /* SwipeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0812AA787DD0080B561 /* SwipeModifier.swift */; };
+		71BFF0842AA788B10080B561 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0832AA788B10080B561 /* ParallaxMotionModifier.swift */; };
+		71BFF0862AA789980080B561 /* ParallaxShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0852AA789980080B561 /* ParallaxShadowModifier.swift */; };
+		71BFF0882AA789BC0080B561 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0872AA789BC0080B561 /* Angle.swift */; };
+		71BFF08A2AA78AC40080B561 /* NumericLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF0892AA78AC40080B561 /* NumericLimit.swift */; };
+		71BFF08C2AA7BABF0080B561 /* ParallaxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF08B2AA7BABF0080B561 /* ParallaxManager.swift */; };
+		71BFF08E2AA7C17D0080B561 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF08D2AA7C17D0080B561 /* CGPoint.swift */; };
+		71BFF0902AA89F330080B561 /* Point3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFF08F2AA89F330080B561 /* Point3D.swift */; };
 		71C0C94F2A10F5C20034AA14 /* MocksPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C94E2A10F5C20034AA14 /* MocksPreview.swift */; };
 		71C0C9532A10FBAB0034AA14 /* CategoriesViewModel+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C9522A10FBAB0034AA14 /* CategoriesViewModel+Mocks.swift */; };
 		71C0C9582A10FE400034AA14 /* MealsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C9572A10FE400034AA14 /* MealsViewModel+Mock.swift */; };
@@ -205,11 +218,14 @@
 		71F1162D2A7275DD009A93B5 /* ContainsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F116252A7274E0009A93B5 /* ContainsItems.swift */; };
 		71F1162E2A7275DD009A93B5 /* ContainsElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F116232A7274C2009A93B5 /* ContainsElements.swift */; };
 		71F1162F2A7275DD009A93B5 /* ContainsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F116252A7274E0009A93B5 /* ContainsItems.swift */; };
+		71F380A12AA096F900C7D7EE /* DecodingError+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F380A02AA096F900C7D7EE /* DecodingError+Description.swift */; };
+		71F380A32AA0980600C7D7EE /* DecodingErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F380A22AA0980600C7D7EE /* DecodingErrorTest.swift */; };
+		71F380A52AA2786900C7D7EE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F380A42AA2786900C7D7EE /* Array.swift */; };
 		71F403CE2A0ABBA3005CF087 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F403CD2A0ABBA3005CF087 /* DependencyContainer.swift */; };
 		71F403D02A0ACB60005CF087 /* MockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F403CF2A0ACB60005CF087 /* MockType.swift */; };
 		71F403D42A0AD3EA005CF087 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F403D32A0AD3E9005CF087 /* Mock.swift */; };
 		71F514982A7C32B500E5ECB2 /* PersistentContainerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F514972A7C32B500E5ECB2 /* PersistentContainerMock.swift */; };
-		71F5149A2A81327900E5ECB2 /* MontionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F514992A81327900E5ECB2 /* MontionManager.swift */; };
+		71F5149A2A81327900E5ECB2 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F514992A81327900E5ECB2 /* MotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +412,19 @@
 		71AF83992A3A2C37006FEEEB /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		71B99B9E2A26944100201364 /* MealsServiceStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceStream.swift; sourceTree = "<group>"; };
 		71B99BA02A27B55000201364 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		71BFF0772AA61B680080B561 /* HTTPSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSession.swift; sourceTree = "<group>"; };
+		71BFF0792AA61D130080B561 /* HTTPSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSessionMock.swift; sourceTree = "<group>"; };
+		71BFF07B2AA64E660080B561 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		71BFF07D2AA787570080B561 /* AnimationCompletionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletionModifier.swift; sourceTree = "<group>"; };
+		71BFF07F2AA787A90080B561 /* ViewSizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeModifier.swift; sourceTree = "<group>"; };
+		71BFF0812AA787DD0080B561 /* SwipeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModifier.swift; sourceTree = "<group>"; };
+		71BFF0832AA788B10080B561 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
+		71BFF0852AA789980080B561 /* ParallaxShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxShadowModifier.swift; sourceTree = "<group>"; };
+		71BFF0872AA789BC0080B561 /* Angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
+		71BFF0892AA78AC40080B561 /* NumericLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericLimit.swift; sourceTree = "<group>"; };
+		71BFF08B2AA7BABF0080B561 /* ParallaxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxManager.swift; sourceTree = "<group>"; };
+		71BFF08D2AA7C17D0080B561 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		71BFF08F2AA89F330080B561 /* Point3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point3D.swift; sourceTree = "<group>"; };
 		71C0C94E2A10F5C20034AA14 /* MocksPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocksPreview.swift; sourceTree = "<group>"; };
 		71C0C9522A10FBAB0034AA14 /* CategoriesViewModel+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesViewModel+Mocks.swift"; sourceTree = "<group>"; };
 		71C0C9572A10FE400034AA14 /* MealsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MealsViewModel+Mock.swift"; sourceTree = "<group>"; };
@@ -450,11 +479,14 @@
 		71F116212A726AC0009A93B5 /* StaticIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticIndentifier.swift; sourceTree = "<group>"; };
 		71F116232A7274C2009A93B5 /* ContainsElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsElements.swift; sourceTree = "<group>"; };
 		71F116252A7274E0009A93B5 /* ContainsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsItems.swift; sourceTree = "<group>"; };
+		71F380A02AA096F900C7D7EE /* DecodingError+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodingError+Description.swift"; sourceTree = "<group>"; };
+		71F380A22AA0980600C7D7EE /* DecodingErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingErrorTest.swift; sourceTree = "<group>"; };
+		71F380A42AA2786900C7D7EE /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		71F403CD2A0ABBA3005CF087 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		71F403CF2A0ACB60005CF087 /* MockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockType.swift; sourceTree = "<group>"; };
 		71F403D32A0AD3E9005CF087 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		71F514972A7C32B500E5ECB2 /* PersistentContainerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerMock.swift; sourceTree = "<group>"; };
-		71F514992A81327900E5ECB2 /* MontionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontionManager.swift; sourceTree = "<group>"; };
+		71F514992A81327900E5ECB2 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,7 +654,9 @@
 				7136065E2A8141D900D40728 /* MealsService */,
 				71F1161E2A726A60009A93B5 /* Commons */,
 				71B99BA02A27B55000201364 /* APIEndpoint.swift */,
+				71BFF07B2AA64E660080B561 /* URLSession.swift */,
 				7111EC29297C531C00ABC48C /* Endpoint.swift */,
+				71BFF0772AA61B680080B561 /* HTTPSession.swift */,
 				7111EC22297C531C00ABC48C /* APIClient.swift */,
 				7111EC1F297C531C00ABC48C /* ApiError.swift */,
 				7111EC20297C531C00ABC48C /* APIEndpoints */,
@@ -718,6 +752,14 @@
 				7107F0D229E0763B00A1232A /* Color.swift */,
 				71215C5E2A1A516E006F3F8C /* MainActor.swift */,
 				710410712A73117600EAE3CD /* URL.swift */,
+				71F380A42AA2786900C7D7EE /* Array.swift */,
+				71BFF07D2AA787570080B561 /* AnimationCompletionModifier.swift */,
+				71BFF07F2AA787A90080B561 /* ViewSizeModifier.swift */,
+				71BFF0812AA787DD0080B561 /* SwipeModifier.swift */,
+				71BFF0872AA789BC0080B561 /* Angle.swift */,
+				71BFF0892AA78AC40080B561 /* NumericLimit.swift */,
+				71BFF08D2AA7C17D0080B561 /* CGPoint.swift */,
+				71BFF08F2AA89F330080B561 /* Point3D.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -912,7 +954,10 @@
 				71080F06298F0B1E009FCDDB /* Protocols */,
 				7191226E29EAC083007E198B /* Definitions.swift */,
 				71F403CD2A0ABBA3005CF087 /* DependencyContainer.swift */,
-				71F514992A81327900E5ECB2 /* MontionManager.swift */,
+				71F514992A81327900E5ECB2 /* MotionManager.swift */,
+				71BFF08B2AA7BABF0080B561 /* ParallaxManager.swift */,
+				71BFF0852AA789980080B561 /* ParallaxShadowModifier.swift */,
+				71BFF0832AA788B10080B561 /* ParallaxMotionModifier.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -1039,6 +1084,8 @@
 				71E2A5C02970A76A0012E5C6 /* MealsServiceTest.swift */,
 				71D7DC80297B428200A30FF8 /* APIClientTest.swift */,
 				71757C562A72D4C1008EFD92 /* APIClientMock.swift */,
+				71F380A22AA0980600C7D7EE /* DecodingErrorTest.swift */,
+				71BFF0792AA61D130080B561 /* HTTPSessionMock.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1097,6 +1144,7 @@
 			children = (
 				71F1161F2A726A86009A93B5 /* StringIdentifier.swift */,
 				71F116212A726AC0009A93B5 /* StaticIndentifier.swift */,
+				71F380A02AA096F900C7D7EE /* DecodingError+Description.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -1300,9 +1348,12 @@
 			files = (
 				71C0C95D2A10FF780034AA14 /* MealsView+Style.swift in Sources */,
 				713A160129844E2500FDFBF9 /* View.swift in Sources */,
+				71BFF0882AA789BC0080B561 /* Angle.swift in Sources */,
+				71BFF0782AA61B680080B561 /* HTTPSession.swift in Sources */,
 				7190221A2A64727700D0418E /* ExtendedTitleView.swift in Sources */,
 				7111EC46297C531C00ABC48C /* MealViewModel.swift in Sources */,
 				71B99BA12A27B55000201364 /* APIEndpoint.swift in Sources */,
+				71BFF0802AA787A90080B561 /* ViewSizeModifier.swift in Sources */,
 				7111EC43297C531C00ABC48C /* MealsView.swift in Sources */,
 				71EA2F852A63249000213D82 /* DashboardPromoViewModel.swift in Sources */,
 				71C0C9602A10FFF70034AA14 /* MealListView+Style.swift in Sources */,
@@ -1317,6 +1368,8 @@
 				71052D9A2992B3EB000008B6 /* MealViewModelMock.swift in Sources */,
 				7191227729EADE26007E198B /* BackButton.swift in Sources */,
 				7111EC86297C8AA800ABC48C /* LoadableObject.swift in Sources */,
+				71BFF0822AA787DD0080B561 /* SwipeModifier.swift in Sources */,
+				71BFF08A2AA78AC40080B561 /* NumericLimit.swift in Sources */,
 				71D036FE2A5DF3790023356C /* DashboardViewModel.swift in Sources */,
 				71D036F12A5D90840023356C /* DashboardCategoriesViewModel.swift in Sources */,
 				7111EC94298021C000ABC48C /* Animation.swift in Sources */,
@@ -1347,8 +1400,10 @@
 				7111EC52297C531C00ABC48C /* Request.swift in Sources */,
 				71C0C96E2A1145220034AA14 /* Items.swift in Sources */,
 				71080F05298F0A3A009FCDDB /* MealsViewModelMock.swift in Sources */,
+				71BFF0842AA788B10080B561 /* ParallaxMotionModifier.swift in Sources */,
 				7111EC45297C531C00ABC48C /* MealListView.swift in Sources */,
 				71C0C9532A10FBAB0034AA14 /* CategoriesViewModel+Mocks.swift in Sources */,
+				71BFF0902AA89F330080B561 /* Point3D.swift in Sources */,
 				71C0C9792A155A840034AA14 /* MealsDefaultView+Style.swift in Sources */,
 				71080F0C298F3062009FCDDB /* MealsSelectView.swift in Sources */,
 				71052DA2299417AD000008B6 /* CGRect.swift in Sources */,
@@ -1358,6 +1413,7 @@
 				7111EC68297C531C00ABC48C /* String.swift in Sources */,
 				71F403D02A0ACB60005CF087 /* MockType.swift in Sources */,
 				717FCCC129858D8B0034870D /* ImageBackgroundStyle.swift in Sources */,
+				71F380A52AA2786900C7D7EE /* Array.swift in Sources */,
 				713A15F92983E9B200FDFBF9 /* AsyncContentView.swift in Sources */,
 				71C0C94F2A10F5C20034AA14 /* MocksPreview.swift in Sources */,
 				7124802C29A18DD100064D29 /* Set.swift in Sources */,
@@ -1374,6 +1430,7 @@
 				713606622A81425D00D40728 /* MealsCombineViewModel.swift in Sources */,
 				7111EC49297C531C00ABC48C /* LoadingView.swift in Sources */,
 				71C0C9622A11002D0034AA14 /* CategoriesView+Style.swift in Sources */,
+				71BFF07C2AA64E660080B561 /* URLSession.swift in Sources */,
 				71F1161C2A6FE745009A93B5 /* MealsServiceVI.swift in Sources */,
 				7111EC5D297C531C00ABC48C /* Ingredient.swift in Sources */,
 				717FCCCB2985AF050034870D /* PersistentContainer.swift in Sources */,
@@ -1381,11 +1438,14 @@
 				7111EC8B297C926400ABC48C /* MealsViewFactory.swift in Sources */,
 				71C0C97D2A1635FE0034AA14 /* NoStyles.swift in Sources */,
 				71888D1729812213000C2544 /* Foodie.xcdatamodeld in Sources */,
+				71BFF0862AA789980080B561 /* ParallaxShadowModifier.swift in Sources */,
 				71D036FC2A5DEE1A0023356C /* MealRouter.swift in Sources */,
 				7111EC67297C531C00ABC48C /* Delayable.swift in Sources */,
 				7107F0D329E0763B00A1232A /* Color.swift in Sources */,
 				71080E9E298B0CAF009FCDDB /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				7111EC58297C531C00ABC48C /* MealCategory.swift in Sources */,
+				71F380A12AA096F900C7D7EE /* DecodingError+Description.swift in Sources */,
+				71BFF08E2AA7C17D0080B561 /* CGPoint.swift in Sources */,
 				71C0C95A2A10FE840034AA14 /* MealViewModel+Mock.swift in Sources */,
 				71888D1D29812427000C2544 /* CoreDataClient.swift in Sources */,
 				71080F02298EF363009FCDDB /* ViewPreview.swift in Sources */,
@@ -1397,10 +1457,11 @@
 				712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */,
 				7111EC54297C531C00ABC48C /* HttpStatusCode.swift in Sources */,
 				717FCCDC2985C7BC0034870D /* IngredientEntity+CoreDataClass.swift in Sources */,
+				71BFF07E2AA787570080B561 /* AnimationCompletionModifier.swift in Sources */,
 				71F116222A726AC0009A93B5 /* StaticIndentifier.swift in Sources */,
 				71D036FA2A5DED010023356C /* MealsRouter.swift in Sources */,
 				71C0C96A2A1101C70034AA14 /* PhotoPlaceholder+Style.swift in Sources */,
-				71F5149A2A81327900E5ECB2 /* MontionManager.swift in Sources */,
+				71F5149A2A81327900E5ECB2 /* MotionManager.swift in Sources */,
 				7156197C29802A5E001EC9A6 /* CoverPhotoView.swift in Sources */,
 				71575C4C29A36FEB003E8443 /* Thread.swift in Sources */,
 				71C0C9752A1550DD0034AA14 /* CategoryView+Style.swift in Sources */,
@@ -1415,6 +1476,7 @@
 				717FCCD52985C2F40034870D /* MealCategoryEntity.swift in Sources */,
 				7111EC84297C8A9800ABC48C /* LoadingState.swift in Sources */,
 				719022182A6471FB00D0418E /* TextView.swift in Sources */,
+				71BFF08C2AA7BABF0080B561 /* ParallaxManager.swift in Sources */,
 				7111EC50297C531C00ABC48C /* HTTPMethod.swift in Sources */,
 				71C0C97B2A16340D0034AA14 /* MultilineTextView.swift in Sources */,
 				71684AB02A506EB900392720 /* foodieWidget.intentdefinition in Sources */,
@@ -1469,10 +1531,12 @@
 				71757C5B2A72DE17008EFD92 /* CoreDataClientMock.swift in Sources */,
 				71E2A5C52971C5540012E5C6 /* CategoriesViewModelTest.swift in Sources */,
 				71F1162A2A7275DC009A93B5 /* ContainsElements.swift in Sources */,
+				71BFF07A2AA61D130080B561 /* HTTPSessionMock.swift in Sources */,
 				71AF839A2A3A2C37006FEEEB /* APITest.swift in Sources */,
 				71E2A5C12970A76A0012E5C6 /* MealsServiceTest.swift in Sources */,
 				71757C5E2A72FB36008EFD92 /* CoreDataClientTest.swift in Sources */,
 				71F1162B2A7275DC009A93B5 /* ContainsItems.swift in Sources */,
+				71F380A32AA0980600C7D7EE /* DecodingErrorTest.swift in Sources */,
 				71757C572A72D4C1008EFD92 /* APIClientMock.swift in Sources */,
 				71F514982A7C32B500E5ECB2 /* PersistentContainerMock.swift in Sources */,
 			);
