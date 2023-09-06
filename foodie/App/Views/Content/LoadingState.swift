@@ -108,7 +108,7 @@ extension LoadingState {
 
     /// Sets `failed` loading state with related `error`
     ///
-    /// > Warning: This is bussiness logic driven method. If data is loaded
+    /// > Important: This is bussiness logic driven method. If data is loaded
     /// > (or cached) do not set failure state.
     /// > Show the data that was previously loaded instead.
     ///

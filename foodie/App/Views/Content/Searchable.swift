@@ -31,12 +31,12 @@ private extension String {
 
     /// Return bool value whatever string containts `query`.
     ///
-    /// ```
+    /// ```swift
     /// "Hello".doesContain("hello") // true
     /// "Hello".doesContain("flower") // false
     /// ```
     ///
-    /// > Warning: This is bussiness logic related method. The searched
+    /// > Important: This is bussiness logic related method. The searched
     /// > text should be case insensitive. Use this method to validate
     /// > if search query containts a given text.
     ///

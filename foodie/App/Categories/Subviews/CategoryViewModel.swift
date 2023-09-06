@@ -31,11 +31,11 @@ struct CategoryViewModel {
 
     /// Returns description for meal `category`.
     ///
-    /// ```
+    /// ```swift
     /// Self.description(for: category) // "category name"
     /// ```
     ///
-    /// > Warning: This is bussiness logic related method. The description
+    /// > Important: This is bussiness logic related method. The description
     /// > text should be trunced to nearest end of sentence terminator
     /// >  or to limited 120 letters totally.
     ///
