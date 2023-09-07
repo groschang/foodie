@@ -38,10 +38,10 @@
 		7111EC4A297C531C00ABC48C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1A297C531C00ABC48C /* ErrorView.swift */; };
 		7111EC4B297C531C00ABC48C /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1C297C531C00ABC48C /* CategoriesViewModel.swift */; };
 		7111EC4C297C531C00ABC48C /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1D297C531C00ABC48C /* CategoriesView.swift */; };
-		7111EC4D297C531C00ABC48C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1F297C531C00ABC48C /* ApiError.swift */; };
+		7111EC4D297C531C00ABC48C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1F297C531C00ABC48C /* APIError.swift */; };
 		7111EC4F297C531C00ABC48C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC22297C531C00ABC48C /* APIClient.swift */; };
 		7111EC50297C531C00ABC48C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC24297C531C00ABC48C /* HTTPMethod.swift */; };
-		7111EC51297C531C00ABC48C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC25297C531C00ABC48C /* Response.swift */; };
+		7111EC51297C531C00ABC48C /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC25297C531C00ABC48C /* ErrorResponse.swift */; };
 		7111EC52297C531C00ABC48C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC26297C531C00ABC48C /* Request.swift */; };
 		7111EC53297C531C00ABC48C /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC27297C531C00ABC48C /* MealsService.swift */; };
 		7111EC54297C531C00ABC48C /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC28297C531C00ABC48C /* HttpStatusCode.swift */; };
@@ -190,6 +190,7 @@
 		71D036FA2A5DED010023356C /* MealsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036F92A5DED010023356C /* MealsRouter.swift */; };
 		71D036FC2A5DEE1A0023356C /* MealRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036FB2A5DEE1A0023356C /* MealRouter.swift */; };
 		71D036FE2A5DF3790023356C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036FD2A5DF3790023356C /* DashboardViewModel.swift */; };
+		71D6E59B2AAA1E9800FD7128 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */; };
 		71D7DC81297B428200A30FF8 /* APIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7DC80297B428200A30FF8 /* APIClientTest.swift */; };
 		71D7DC88297BFE7700A30FF8 /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7DC84297BFE5900A30FF8 /* RequestMock.swift */; };
 		71D7DC89297BFE7A00A30FF8 /* MealsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7DC60297AD4C800A30FF8 /* MealsServiceMock.swift */; };
@@ -309,10 +310,10 @@
 		7111EC1A297C531C00ABC48C /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		7111EC1C297C531C00ABC48C /* CategoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		7111EC1D297C531C00ABC48C /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		7111EC1F297C531C00ABC48C /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		7111EC1F297C531C00ABC48C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		7111EC22297C531C00ABC48C /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		7111EC24297C531C00ABC48C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		7111EC25297C531C00ABC48C /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		7111EC25297C531C00ABC48C /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		7111EC26297C531C00ABC48C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7111EC27297C531C00ABC48C /* MealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
 		7111EC28297C531C00ABC48C /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
@@ -457,6 +458,7 @@
 		71D036F92A5DED010023356C /* MealsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRouter.swift; sourceTree = "<group>"; };
 		71D036FB2A5DEE1A0023356C /* MealRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRouter.swift; sourceTree = "<group>"; };
 		71D036FD2A5DF3790023356C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		71D7DC60297AD4C800A30FF8 /* MealsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceMock.swift; sourceTree = "<group>"; };
 		71D7DC80297B428200A30FF8 /* APIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTest.swift; sourceTree = "<group>"; };
 		71D7DC84297BFE5900A30FF8 /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
@@ -651,15 +653,15 @@
 		7111EC1E297C531C00ABC48C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7136065E2A8141D900D40728 /* MealsService */,
-				71F1161E2A726A60009A93B5 /* Commons */,
+				7111EC20297C531C00ABC48C /* APIEndpoints */,
+				7111EC22297C531C00ABC48C /* APIClient.swift */,
 				71B99BA02A27B55000201364 /* APIEndpoint.swift */,
-				71BFF07B2AA64E660080B561 /* URLSession.swift */,
 				7111EC29297C531C00ABC48C /* Endpoint.swift */,
 				71BFF0772AA61B680080B561 /* HTTPSession.swift */,
-				7111EC22297C531C00ABC48C /* APIClient.swift */,
-				7111EC1F297C531C00ABC48C /* ApiError.swift */,
-				7111EC20297C531C00ABC48C /* APIEndpoints */,
+				7111EC1F297C531C00ABC48C /* APIError.swift */,
+				71BFF07B2AA64E660080B561 /* URLSession.swift */,
+				71F1161E2A726A60009A93B5 /* Commons */,
+				7136065E2A8141D900D40728 /* MealsService */,
 				7111EC23297C531C00ABC48C /* Models */,
 			);
 			path = Networking;
@@ -678,8 +680,9 @@
 			children = (
 				7111EC28297C531C00ABC48C /* HttpStatusCode.swift */,
 				7111EC24297C531C00ABC48C /* HTTPMethod.swift */,
-				7111EC25297C531C00ABC48C /* Response.swift */,
+				7111EC25297C531C00ABC48C /* ErrorResponse.swift */,
 				7111EC26297C531C00ABC48C /* Request.swift */,
+				71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1364,7 +1367,7 @@
 				71052D982991126D000008B6 /* IngredientEntity.swift in Sources */,
 				712E85F529E1DF470009AFB9 /* MealsViewAnim.swift in Sources */,
 				717FCCC3298590E50034870D /* EdgeInsets.swift in Sources */,
-				7111EC51297C531C00ABC48C /* Response.swift in Sources */,
+				7111EC51297C531C00ABC48C /* ErrorResponse.swift in Sources */,
 				71052D9A2992B3EB000008B6 /* MealViewModelMock.swift in Sources */,
 				7191227729EADE26007E198B /* BackButton.swift in Sources */,
 				7111EC86297C8AA800ABC48C /* LoadableObject.swift in Sources */,
@@ -1455,6 +1458,7 @@
 				71F403CE2A0ABBA3005CF087 /* DependencyContainer.swift in Sources */,
 				71C0C9772A1555230034AA14 /* CategoryViewModel.swift in Sources */,
 				712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */,
+				71D6E59B2AAA1E9800FD7128 /* URLRequestBuilder.swift in Sources */,
 				7111EC54297C531C00ABC48C /* HttpStatusCode.swift in Sources */,
 				717FCCDC2985C7BC0034870D /* IngredientEntity+CoreDataClass.swift in Sources */,
 				71BFF07E2AA787570080B561 /* AnimationCompletionModifier.swift in Sources */,
@@ -1492,7 +1496,7 @@
 				71B99B9F2A26944100201364 /* MealsServiceStream.swift in Sources */,
 				71C0C9722A15306B0034AA14 /* ListStyle.swift in Sources */,
 				716CD1192981C17000E4EA65 /* NavigationBarModifier.swift in Sources */,
-				7111EC4D297C531C00ABC48C /* ApiError.swift in Sources */,
+				7111EC4D297C531C00ABC48C /* APIError.swift in Sources */,
 				713A16032984538400FDFBF9 /* Gradient.swift in Sources */,
 				717FCCDD2985C7BC0034870D /* IngredientEntity+CoreDataProperties.swift in Sources */,
 				71215C5F2A1A516E006F3F8C /* MainActor.swift in Sources */,

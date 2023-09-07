@@ -11,7 +11,7 @@ protocol HTTPClient {
     func process<T: Decodable>(_ request: Request<T>) async throws -> T
 }
 
-class APIClient: HTTPClient { //TODO: rename? NetworkClient?
+class APIClient: HTTPClient {
 
     private let enviroment: APIEndpoint
 
@@ -37,8 +37,8 @@ class APIClient: HTTPClient { //TODO: rename? NetworkClient?
         do {
             let urlRequest = try requestBuilder.build(for: request)
             let (data, response) = try await session.data(for: urlRequest)
-            try validate(response: response)
-            let object: T = try decodeResponse(data: data)
+            try validate(response)
+            let object: T = try decode(data)
             NetworkLogger.log(request: urlRequest)
             NetworkLogger.log(response: response)
             NetworkLogger.log(data: data)
@@ -47,12 +47,12 @@ class APIClient: HTTPClient { //TODO: rename? NetworkClient?
         } catch let error as RequestError {
 
             Logger.log(error, onLevel: .error)
-            throw ApiError.badURL(error.localizedDescription + request.description)
+            throw APIError.badURL(error.localizedDescription + request.description)
 
         } catch let error as DecodingError {
 
             Logger.log(error.verbose, onLevel: .error)
-            throw ApiError.invalidJSON(error.verbose)
+            throw APIError.parsing(error.verbose)
 
         } catch let error as NSError {
 
@@ -60,8 +60,8 @@ class APIClient: HTTPClient { //TODO: rename? NetworkClient?
                 error.domain == NSURLErrorDomain,
                 error.code == NSURLErrorCancelled
             else {
-                Logger.log("Api \(error)", onLevel: .error)
-                throw ApiError.unknown
+                Logger.log("API \(error)", onLevel: .error)
+                throw APIError.unknown
             }
             Logger.log(error, onLevel: .error)
             throw CancellationError()
@@ -69,28 +69,27 @@ class APIClient: HTTPClient { //TODO: rename? NetworkClient?
         } catch {
 
             Logger.log(error, onLevel: .error)
-            throw ApiError.unknown
+            throw APIError.unknown
         }
     }
     
-    private func validate(response: URLResponse) throws {
+    private func validate(_ response: URLResponse) throws {
         guard let httpResponse = response as? HTTPURLResponse else {
-            throw ApiError.noResponse
+            throw APIError.noResponse
         }
         
         switch httpResponse.statusCode {
         case HttpStatusCode.successful:
             return
         case HttpStatusCode.clientError:
-            throw ApiError.clientError(httpResponse.statusCode)
+            throw APIError.client(httpResponse.statusCode)
         default:
-            throw ApiError.unexpectedStatusCode(httpResponse.statusCode)
+            throw APIError.unexpected(httpResponse.statusCode)
         }
     }
     
-    private func decodeResponse<T: Decodable>(data: Data) throws -> T {
-        let decoded = try decoder.decode(T.self, from: data)
-        return decoded
+    private func decode<T: Decodable>(_ data: Data) throws -> T {
+        try decoder.decode(T.self, from: data)
     }
 }
 

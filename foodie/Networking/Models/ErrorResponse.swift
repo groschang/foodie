@@ -1,5 +1,5 @@
 //
-//  Response.swift
+//  ErrorResponse.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 21/01/2023.

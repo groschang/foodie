@@ -94,6 +94,6 @@ final class MealViewModelErrorMock: MealViewModelMock {
     override var mockType: MockType { .error }
 
     override func load() async {
-        state = .failed(ApiError.badURL("this.is.sample.url"))
+        state = .failed(APIError.badURL("this.is.sample.url"))
     }
 }

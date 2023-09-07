@@ -1,5 +1,5 @@
 //
-//  ApiError.swift
+//  APIError.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 20/01/2023.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-enum ApiError: Error, LocalizedError {
+enum APIError: Error, LocalizedError {
     
     case badURL(_ url: String)
-    case serverError(_ error: String)
+    case server(_ error: String)
     case noResponse
-    case invalidJSON(_ error: String)
-    case requestFailed(statusCode: Int?, response: Data?)
-    case clientError(_ code: Int)
-    case unexpectedStatusCode(_ code: Int)
+    case parsing(_ error: String)
+    case requestFailed(code: Int?, response: Data?)
+    case client(_ code: Int)
+    case unexpected(_ code: Int)
     case unknown
     
     var errorDescription: String? {
@@ -24,14 +24,14 @@ enum ApiError: Error, LocalizedError {
         switch self {
         case .badURL(let url):
             description = "Bad url \(url)"
-        case .serverError(let error):
-            description = "server error \(error)"
+        case .server(let error):
+            description = "Server error \(error)"
         case .noResponse:
-            description = "no repsonse"
-        case .invalidJSON(let error):
-            description = "invalid json \(error)"
+            description = "No repsonse"
+        case .parsing(let error):
+            description = "Invalid json \(error)"
         case .requestFailed(let code, let response):
-            description = "request failed"
+            description = "Request failed"
 
             if let code {
                 description = " with code \(code)"
@@ -43,12 +43,12 @@ enum ApiError: Error, LocalizedError {
                 description += ": \(errorCode.localized)"
             }
             return description
-        case .clientError(let code):
-            description = "client error code: \(code)"
-        case .unexpectedStatusCode(let code):
-            description = "unexpdected status code: \(code)"
+        case .client(let code):
+            description = "Client error code: \(code)"
+        case .unexpected(let code):
+            description = "Unexpdected status code: \(code)"
         case .unknown:
-            description = "unknown"
+            description = "Unknown"
         }
 
         return description

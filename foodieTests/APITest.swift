@@ -75,16 +75,16 @@ private extension APITest {
 
     private func validate(response: URLResponse) throws {
         guard let httpResponse = response as? HTTPURLResponse else {
-            throw ApiError.noResponse
+            throw APIError.noResponse
         }
 
         switch httpResponse.statusCode {
         case HttpStatusCode.successful:
             return
         case HttpStatusCode.clientError:
-            throw ApiError.clientError(httpResponse.statusCode)
+            throw APIError.client(httpResponse.statusCode)
         default:
-            throw ApiError.unexpectedStatusCode(httpResponse.statusCode)
+            throw APIError.unexpected(httpResponse.statusCode)
         }
     }
 

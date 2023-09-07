@@ -44,7 +44,7 @@ struct ErrorView: View {
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(ApiError.noResponse, action: { })
+        ErrorView(APIError.noResponse, action: { })
     }
 }
 
