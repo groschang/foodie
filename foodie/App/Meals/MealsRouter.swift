@@ -11,11 +11,17 @@ enum MealsRouter: RouterProtocol {
 
     case meals(Category)
 
+    case empty
+
     @MainActor @ViewBuilder
     func makeView() -> some View {
         switch self {
+
         case .meals(let category):
             makeMealsView(category: category)
+
+        case .empty:
+            makeEmptyView()
         }
     }
 
@@ -24,7 +30,12 @@ enum MealsRouter: RouterProtocol {
         let service = MealsServiceMock()
         let serviceV = MealsServiceVMock()
         let viewModel = MealsAsyncViewModel(service: serviceV, category: category)
-        let viewFactory = MealsViewFactory(service: service)
-        return MealsView(viewModel: viewModel, viewFactory: viewFactory)
+        return MealsView(viewModel: viewModel)
+    }
+
+    @MainActor
+    private func makeEmptyView() -> some View {
+        InformationView(message: "Select category")
+            .ignoresSafeArea()
     }
 }

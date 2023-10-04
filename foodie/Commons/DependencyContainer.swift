@@ -10,7 +10,7 @@ import Foundation
 
 protocol DependencyContainerType {
     associatedtype CategoriesViewModelAssociatedType: CategoriesViewModelType
-    associatedtype CategoriesViewFactoryAssociatedType: CategoriesViewFactoryType
+    associatedtype CategoriesViewFactoryAssociatedType: ViewBuilderProtocol //TODO: check to change to any TheViewBuilder below
 
     var container: DIContainer { get }
 
@@ -71,7 +71,7 @@ struct DependencyContainer: DependencyContainerType {
         }
 
         container.register(type: CategoriesViewFactory.self) { _ in
-            CategoriesViewFactory(service: service) // MealsServiceTypeNew
+            CategoriesViewFactory(service: service, asyncService: serviceV) // MealsServiceTypeNew
         }
     }
 }
@@ -120,7 +120,7 @@ struct MockDependencyContainer: DependencyContainerType {
         }
 
         container.register(type: CategoriesViewFactory.self) { _ in
-            CategoriesViewFactory(service: service)
+            CategoriesViewFactory(service: service, asyncService: serviceV)
         }
     }
 }
@@ -169,7 +169,7 @@ struct DependencyInjectionContainer: DependencyContainerType {
         }
 
         container.register(type: CategoriesViewFactory.self) { _ in
-            CategoriesViewFactory(service: service)
+            CategoriesViewFactory(service: service, asyncService: serviceV)
         }
     }
 }

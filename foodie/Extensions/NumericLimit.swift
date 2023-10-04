@@ -10,7 +10,6 @@ import Foundation
 fileprivate func MIN<T: Comparable>(_ x: T, _ y: T) -> T { min(x, y) }
 fileprivate func MAX<T: Comparable>(_ x: T, _ y: T) -> T { max(x, y) }
 
-
 protocol NumericLimit {
     associatedtype V
     associatedtype L

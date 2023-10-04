@@ -54,3 +54,35 @@ enum APIError: Error, LocalizedError {
         return description
     }
 }
+
+extension APIError {
+
+    init?(_ response: URLResponse) {
+        if let response = response as? HTTPURLResponse {
+            switch response.statusCode {
+            case HttpStatusCode.successful:
+                return nil
+            case HttpStatusCode.clientError:
+                self.init(APIError.client(response.statusCode))
+            default:
+                self.init(APIError.unexpected(response.statusCode))
+            }
+        } else {
+            self.init(APIError.noResponse)
+        }
+    }
+
+    init(_ error: Error) {
+        if let error = error as? RequestError {
+            self = APIError.badURL(error.localizedDescription)
+        } else if let error = error as? DecodingError {
+            self = APIError.parsing(error.verbose)
+        } else if let error = error as? APIError {
+            self = error
+        } else {
+            self = APIError.unknown
+        }
+
+        Logger.log(error, onLevel: .error)
+    }
+}

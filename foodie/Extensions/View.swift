@@ -8,9 +8,24 @@
 import SwiftUI
 
 extension View {
-    func embeddedInNavigationStack() -> some View {
+    func embedInNavigationStack() -> some View {
         NavigationStack {
             self
+        }
+    }
+}
+
+extension View {
+    func embedInScrollView(alignment: Alignment = .center) -> some View {
+        GeometryReader { geometry in
+            ScrollView {
+                self.frame(
+                    minWidth: geometry.size.width,
+                    minHeight: geometry.size.height,
+                    maxHeight: .infinity,
+                    alignment: alignment
+                )
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
     @StateObject private var viewModel: ViewModel
 
+    @ScaledMetric(relativeTo: .title2) var spacing: CGFloat = 8
+
     private var action: () -> Void
 
     init(viewModel: ViewModel, action: @escaping () -> Void) {
@@ -44,7 +46,7 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
     private var textLayer: some View {
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: spacing) {
 
                 Text("Foodie of the day")
                     .foregroundColor(.white)

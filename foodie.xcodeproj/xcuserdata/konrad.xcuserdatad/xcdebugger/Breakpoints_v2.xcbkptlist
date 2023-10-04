@@ -222,6 +222,38 @@
             endingLineNumber = "71"
             landmarkName = "configureDefaults(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 751881a1b3c56621"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.StoreType) -&gt; ()"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1692">
+               </Location>
+               <Location
+                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 751881a1b3c56621"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.StoreType) -&gt; ()"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1604">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5545,6 +5577,38 @@
             endingLineNumber = "51"
             landmarkName = "init(name:bundle:type:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "880">
+               </Location>
+               <Location
+                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "788">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

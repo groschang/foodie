@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct CategoriesGridView<Model>: View where Model: CategoriesViewModelType {
+
+    @EnvironmentObject var router: Router
     
     @StateObject private var viewModel: Model //TODO: dont need stae obj
-    private var viewFactory: CategoriesViewFactory
+//    private var viewFactory: CategoriesViewFactory
     
     @State private var category: Category?
     
-    init(viewModel: Model, viewFactory: CategoriesViewFactory) {
-        self.viewFactory = viewFactory
+//    init(viewModel: Model, viewFactory: CategoriesViewFactory) {
+    init(viewModel: Model) {
+//        self.viewFactory = viewFactory
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -56,11 +59,11 @@ struct CategoriesGridView<Model>: View where Model: CategoriesViewModelType {
 
                     GridRow {
                         NavigationLink(value: category) {
-                            CategoryGridItemView(category: category as! Category)
+                            CategoryGridItemView(category: category)
                         }
 
                         NavigationLink(value: category) {
-                            CategoryGridItemView(category: category as! Category)
+                            CategoryGridItemView(category: category)
                         }
                     }
                     //                    .modifier(ListRowModifier())
@@ -84,11 +87,12 @@ struct CategoriesGridView<Model>: View where Model: CategoriesViewModelType {
     
     @ViewBuilder
     private var detail: some View {
-        if let category {
-            viewFactory.makeMealsView(category)
-        } else {
-            viewFactory.makeDefaultView()
-        }
+//        if let category {
+//            viewFactory.makeMealsView(category)
+//        } else {
+//            viewFactory.makeDefaultView()
+//        }
+        EmptyView()
     }
 }
 
@@ -113,9 +117,10 @@ struct CategoriesGridView<Model>: View where Model: CategoriesViewModelType {
 struct CategoriesGridView_Previews: PreviewProvider {
 
     static var previews: some View {
-        CategoriesGridView(viewModel: CategoriesViewModelMock(),
-                           viewFactory: .mock)
-            .previewAsScreen()
+//        CategoriesGridView(viewModel: CategoriesViewModelMock(),
+//                           viewFactory: .mock)
+        CategoriesGridView(viewModel: CategoriesViewModelMock())
+        .previewAsScreen()
         //        CategoriesGridView(viewModel: .emptyMock, viewFactory: .mock)
         //            .previewAsScreen()
         //        CategoriesGridView(viewModel: .errorMock, viewFactory: .mock)

@@ -10,8 +10,14 @@ import SwiftUI
 
 @main
 struct foodieWidgetBundle: WidgetBundle {
+
     var body: some Widget {
         FoodieWidget()
+
+#if canImport(ActivityKit)
         foodieWidgetLiveActivity()
+#endif
+
     }
+
 }

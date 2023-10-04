@@ -24,7 +24,7 @@ class MotionManager: ObservableObject {
                 let self,
                 error.isNil
             else {
-                print(error!)
+                Logger.log(error ?? "Unknown", onLevel: .error)
                 return
             }
 

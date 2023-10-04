@@ -5,6 +5,8 @@
 //  Created by Konrad Groschang on 01/07/2023.
 //
 
+#if canImport(ActivityKit)
+
 import ActivityKit
 import WidgetKit
 import SwiftUI
@@ -75,3 +77,5 @@ struct foodieWidgetLiveActivity_Previews: PreviewProvider {
             .previewDisplayName("Notification")
     }
 }
+
+#endif

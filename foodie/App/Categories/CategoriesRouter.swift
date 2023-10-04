@@ -9,6 +9,9 @@ import SwiftUI
 
 enum CategoriesRouter: RouterProtocol {
 
+    static let service = MealsServiceMock()
+    static let serviceV = MealsServiceVMock()
+
     case categories
 
     case empty
@@ -16,20 +19,21 @@ enum CategoriesRouter: RouterProtocol {
     @MainActor @ViewBuilder
     func makeView() -> some View {
         switch self {
+
         case .categories:
             makeCategoriesView()
+
         case .empty:
             makeEmptyView()
         }
     }
 
-    @MainActor
+    @MainActor @ViewBuilder
     private func makeCategoriesView() -> some View {
         let service = MealsServiceMock()
         let serviceV = MealsServiceVMock()
         let viewModel = CategoriesViewModel(service: serviceV)
-        let viewFactory = CategoriesViewFactory(service: service)
-        return CategoriesView(viewModel: viewModel, viewFactory: viewFactory)
+        CategoriesView(viewModel: viewModel)
     }
 
     @MainActor

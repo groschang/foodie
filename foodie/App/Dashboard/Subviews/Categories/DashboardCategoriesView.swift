@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: View {
 
+    @EnvironmentObject var router: Router
+
     @StateObject private var viewModel: ViewModel
 
     private var action: () -> Void
@@ -32,10 +34,14 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
 
             Spacer()
 
-            NavigationLink(value: CategoriesRouter.categories) {
-                Text("See all")
-                    .subtitle()
-            }
+            Button(
+                action: { router.navigate(to: .categories) },
+                label: {
+                    Text("See all")
+                        .subtitle()
+                        .foregroundColor(ColorStyle.white)
+                }
+            )
         }
         .padding(.horizontal)
     }
@@ -44,7 +50,7 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(viewModel.items) { category in
-                    NavigationLink(value: MealsRouter.meals(category)) {
+                    RouterLink(to: .meals(category)) {
                         DashboardCategoryVerticalView(category: category)
                     }
                 }

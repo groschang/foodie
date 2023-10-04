@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MealView<Model>: View where Model: MealViewModelType {
 
+    @EnvironmentObject var router: Router
+
     @ObservedObject private var viewModel: Model
     
     @State private var offset: CGPoint = .zero

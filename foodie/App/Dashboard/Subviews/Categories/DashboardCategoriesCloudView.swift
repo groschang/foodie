@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DashboardCategoriesCloudView<ViewModel: DashboardCategoriesViewModelType>: View {
 
+    @EnvironmentObject var router: Router
+
     @StateObject private var viewModel: ViewModel
 
     private var action: () -> Void
@@ -32,10 +34,13 @@ struct DashboardCategoriesCloudView<ViewModel: DashboardCategoriesViewModelType>
 
             Spacer()
 
-            NavigationLink(value: CategoriesRouter.categories) {
-                Text("See all")
-                    .subtitle()
-            }
+            Button(
+                action: { router.navigate(to: .categories) },
+                label: {
+                    Text("See all")
+                        .subtitle()
+                        .foregroundColor(ColorStyle.white)
+                })
         }
         .padding(.horizontal)
     }
@@ -45,7 +50,7 @@ struct DashboardCategoriesCloudView<ViewModel: DashboardCategoriesViewModelType>
                             GridItem(.flexible(minimum: 0, maximum: .infinity))]) {
 
             ForEach(viewModel.items) { category in
-                NavigationLink(value: MealsRouter.meals(category)) {
+                RouterLink(to: .meals(category)) {
                     DashboardCategoryView(category: category)
                 }
             }

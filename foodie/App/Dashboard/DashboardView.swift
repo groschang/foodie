@@ -7,50 +7,24 @@
 
 import SwiftUI
 
-protocol RouterProtocol: Hashable {
-    associatedtype V
-    func makeView() -> V
-}
+struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
-struct DashboardView<DI, ViewModel, ViewFactory>: View
+    @EnvironmentObject var router: Router
 
-where DI: DependencyContainerType,
-      ViewModel: DashboardViewModelType,
-      ViewFactory: DashboardViewFactoryType {
+    @StateObject private var viewModel: Model
 
-    private let container: DI
+    private let manager = ParallaxManager()
 
-    @StateObject private var viewModel: ViewModel
-
-    private var viewFactory: ViewFactory
-    //    @StateObject var router: Router //TODO: CHANGEEEEE
-
-    init(container: DI, viewModel: ViewModel, viewFactory: ViewFactory) {
-        self.container = container
-        self.viewFactory = viewFactory
+    init(viewModel: Model) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        //        _router = StateObject(wrappedValue: container.router)
     }
 
     var body: some View {
-        NavigationStack { //(path: $router.path) {
-            content
-                .navigationTitle("Foodie")
-                .navigationDestination(for: CategoriesRouter.self) { router in
-                    router.makeView()
-                }
-                .navigationDestination(for: MealsRouter.self) { router in
-                    router.makeView()
-                }
-                .navigationDestination(for: MealRouter.self) { router in
-                    router.makeView()
-                }
-                .task { await viewModel.load() }
-        }
-        .accentColor(ColorStyle.accent)
+        content
+            .navigationTitle("Welcome back")
+            .task { await viewModel.load() }
+            .accentColor(ColorStyle.accent)
     }
-
-    private let manager = ParallaxManager()
 
     private var content: some View {
         VStack {
@@ -59,7 +33,6 @@ where DI: DependencyContainerType,
 
             DashboardPromoView(viewModel: viewModel.promoViewModel) { }
                 .maxWidth()
-                .frame(height: 200)
                 .frame(maxHeight: 200)
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
                 .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
@@ -72,7 +45,8 @@ where DI: DependencyContainerType,
 
             Spacer()
         }
-        .background(.gray)
+        //        .embedInScrollView()
+        //        .background(.gray)
     }
 }
 
@@ -80,16 +54,7 @@ where DI: DependencyContainerType,
 // MARK: Preview
 
 struct Dashboard_Previews: PreviewProvider {
-
-    static let container: some DependencyContainerType = {
-        let container = MockDependencyContainer()
-        container.assemble()
-        return container
-    }()
-
     static var previews: some View {
-        DashboardView(container: container,
-                      viewModel: DashboardViewModel.mock,
-                      viewFactory: DashboardViewFactory.mock)
+        DashboardView(viewModel: DashboardViewModel.mock)
     }
 }

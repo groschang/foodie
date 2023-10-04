@@ -16,3 +16,11 @@ Todo list
 - [ ] dependency container  
 - [ ] localization
 - [ ] DTO approach?
+- [ ] Remove routers ? RouterProtocol
+- [ ] factories :remove doubled sericess 
+- [ ] rename MealsServiceVMock into  MealsServiceAsync ?
+- [ ] navigationBarHiddenx ?
+- [ ] rename TheViewBuilder
+- [ ] use EmbedInStackModifier
+- [ ] MotionManager 
+- [ ] DependencyContainerType

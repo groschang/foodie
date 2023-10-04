@@ -7,23 +7,31 @@
 
 import SwiftUI
 
-struct MealsViewFactory {
-    
-    private(set) var service: MealsServiceType
-    
-    init(service: MealsServiceType) {
+class MealsViewFactory: ViewBuilderProtocol {
+
+    private let service: MealsServiceType
+    private let asyncService: MealsServiceAsyncType
+
+    init(service: MealsServiceType,
+         asyncService: MealsServiceAsyncType) {
         self.service = service
+        self.asyncService = asyncService
     }
-    
+
+    @MainActor @ViewBuilder
+    func makeView(item category: Category) -> some View {
+        let viewModel = MealsAsyncViewModel(service: asyncService, category: category)
+        MealsView(viewModel: viewModel)
+    }
+
     @MainActor
-    func makeMealView(selection: MealCategory) -> some View {
-        Logger.log(selection.name, onLevel: .info)
-        let viewModel = MealViewModel(service: service, mealCaterory: selection)
-        return MealView(viewModel: viewModel)
+    func makeEmptyView() -> some View {
+        makeEmptyView(message: "Select category")
     }
 }
 
+// MARK: Mock
 
 extension MealsViewFactory {
-    static let mock = MealsViewFactory(service: MealsServiceMock())
+    static let mock = MealsViewFactory(service: MealsServiceMock(), asyncService: MealsServiceVMock())
 }

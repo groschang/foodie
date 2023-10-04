@@ -7,52 +7,23 @@
 
 import SwiftUI
 
-protocol DashboardViewFactoryType {
-    associatedtype V: View
-    associatedtype T: View
-    
-    func makeMealsView(_ category: Category) -> V
-    func makeDefaultView() -> T
-}
+class DashboardViewFactory {
 
-class DashboardViewFactory: DashboardViewFactoryType {
+    private let service: MealsServiceAsyncType
 
-    private var service: MealsServiceType
-    lazy private var mealsViewFactory = MealsViewFactory(service: service)
-
-    init(service: MealsServiceType) {
+    init(service: MealsServiceAsyncType) {
         self.service = service
     }
 
-    @MainActor
-    func makeMealsView(_ category: Category) -> some View {
-        //        Logger.log(category.name)
-        //        Log.warning(service)
-        //        Log.warning(mealsViewFactory)
-
-        //        let viewModel = MealsViewModel(service: service, category: category)
-
-//                let viewModel = MealsViewModel.mock
-        let viewModel = MealsAsyncViewModel(service: MealsServiceVMock(), category: category)
-//        let viewModel = MealsViewModelMock()
-        //        let viewModel = MealsViewModel(service: MealsServiceMock(), category: .mock)
-//        let viewFactory = MealsViewFactory.mock
-        let viewFactory = MealsViewFactory(service: service)
-
-        let view = MealsView(viewModel: viewModel, viewFactory: viewFactory)
-
-//        return view
-        return Color.red
-    }
-
-    @MainActor
-    func makeDefaultView() -> some View {
-        InformationView(message: "Select category")
-            .ignoresSafeArea()
+    @MainActor @ViewBuilder
+    func makeView() -> some View {
+        let viewModel = DashboardViewModel(service: service)
+        DashboardView(viewModel: viewModel)
     }
 }
 
+// MARK: Mock
 
 extension DashboardViewFactory {
-    static let mock = DashboardViewFactory(service: MealsServiceMock())
+    static let mock = DashboardViewFactory(service: MealsServiceAsync())
 }

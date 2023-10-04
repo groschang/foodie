@@ -75,7 +75,7 @@ extension LoadingState {
     var isLoading: Bool { self == .loading }
     var isLoaded: Bool { self == .loaded }
 
-    func state<T: Collection>(for items: T) -> LoadingState {
+    func state(for items: some Collection) -> LoadingState {
         var state: LoadingState
 
         if items.isEmpty { /// self != .loaded &&
@@ -87,7 +87,7 @@ extension LoadingState {
         return state
     }
 
-    mutating func change<T: Collection>(for items: T) {
+    mutating func change(for items: some Collection) {
         self = state(for: items)
     }
 }
@@ -102,7 +102,7 @@ extension LoadingState {
         self = .loaded
     }
 
-    mutating func setCollection<T: Collection>(_ items: T) {
+    mutating func setCollection(_ items: some Collection) {
         self = state(for: items)
     }
 
@@ -132,29 +132,3 @@ extension LoadingState: CaseIterable {
         [.idle, .loading, .failed(nil), .empty, .loaded]
     }
 }
-
-
-//extension LoadingState: RawRepresentable {
-//
-//    var rawValue: RawValue {
-//        switch self {
-//        case .idle: return "idle"
-//        case .loading: return "loading"
-//        case .failed(let error): return "error: \(error)"
-//        case .empty: return "empty"
-//        case .loaded: return "loaded"
-//        }
-//    }
-//}
-
-//extension LoadingState: Hashable {
-//
-//    func hash(into hasher: inout Hasher) {
-//        switch self {
-//        case .failed(let value):
-//            hasher.combine(value)
-//        default:
-//            hasher.combine(self.rawValue)
-//        }
-//    }
-//}

@@ -10,6 +10,8 @@ import SwiftUI
 struct MealsView<Model>: View where Model: MealsViewModelType {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @EnvironmentObject var router: Router
     
     @StateObject var viewModel: Model
 
@@ -18,10 +20,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 
     private var layout: AnyLayout { animate ? AnyLayout(HStackLayout()) : AnyLayout(VStackLayout()) }
 
-    private var viewFactory: MealsViewFactory
-    
-    init(viewModel: Model, viewFactory: MealsViewFactory) {
-        self.viewFactory = viewFactory
+    init(viewModel: Model) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -30,9 +29,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 //            .navigationBarHidden(true)
             .navigationBarHiddenx() //TODO: x?
 //            .navigationTitle(viewModel.categoryName)
-//            .navigationDestination(for: MealCategory.self) { meal in
-//                viewFactory.makeMealView(selection: meal)
-//            }
     }
     
     private var content: some View {
@@ -78,7 +74,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     
     private var listContent: some View {
         ForEach(viewModel.filteredItems) { meal in
-            NavigationLink(value: MealRouter.meal(meal)) {
+            RouterLink(to: .meal(meal)) {
                 MealListView(meal: meal)
             }
         }
@@ -92,7 +88,7 @@ struct MealsView_Previews: PreviewProvider {
 
     static var previews: some View {
         MocksPreview(mocks: MealsViewModel.mocks, viewModelType: MealsViewModelMock.self) {
-            MealsView(viewModel: $0, viewFactory: .mock)
+            MealsView(viewModel: $0)
         }
     }
 }

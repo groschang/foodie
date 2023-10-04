@@ -164,14 +164,9 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
     
     private var meals: some View {
         ForEach(viewModel.filteredItems) { meal in
-            ZStack {
-                NavigationLink(value: MealRouter.meal(meal)) {
-                    EmptyView()
-                }
-
+            RouterLink(to: .meal(meal)) {
                 MealListView(meal: meal)
             }
-
         }
         .modifier(ListRowModifier())
     }
@@ -182,7 +177,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
 struct MealsViewAnim_Previews: PreviewProvider {
     
     static var previews: some View {
-        MealsView(viewModel: MealsViewModelMock(), viewFactory: .mock)
+        MealsView(viewModel: MealsViewModelMock())
             .previewAsScreen()
     }
 }

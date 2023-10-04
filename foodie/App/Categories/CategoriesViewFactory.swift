@@ -7,39 +7,31 @@
 
 import SwiftUI
 
-protocol CategoriesViewFactoryType {
-    associatedtype V: View
-    associatedtype T: View
-    func makeMealsView(_ category: Category) -> V where V: View
-    func makeDefaultView() -> T
-}
+class CategoriesViewFactory: ViewBuilderProtocol {
 
-class CategoriesViewFactory: CategoriesViewFactoryType {
-    
-    private(set) var service: MealsServiceType
-    lazy private(set) var mealsViewFactory = MealsViewFactory(service: service)
-    
-    init(service: MealsServiceType) {
+    private let service: MealsServiceType
+    private let asyncService: MealsServiceAsyncType
+
+    init(service: MealsServiceType,
+         asyncService: MealsServiceAsyncType) {
         self.service = service
+        self.asyncService = asyncService
     }
-    
-    @MainActor
-    func makeMealsView(_ category: Category) -> some View {
-        Logger.log(category.name)
-        let viewModel = MealsViewModel(service: service, category: category)
-        return NavigationStack {
-            MealsView(viewModel: viewModel, viewFactory: mealsViewFactory)
 
-        }
+    @MainActor @ViewBuilder
+    func makeView() -> some View {
+        let viewModel = CategoriesViewModel(service: asyncService)
+        CategoriesView(viewModel: viewModel)
     }
-    
-    func makeDefaultView() -> some View {
-        InformationView(message: "Select category")
-            .ignoresSafeArea()
+
+    @MainActor
+    func makeEmptyView() -> some View {
+        makeEmptyView(message: "Select category")
     }
 }
 
+// MARK: Mock
 
 extension CategoriesViewFactory {
-    static let mock = CategoriesViewFactory(service: MealsServiceMock())
+    static let mock = CategoriesViewFactory(service: MealsServiceMock(), asyncService: MealsServiceVMock())
 }
