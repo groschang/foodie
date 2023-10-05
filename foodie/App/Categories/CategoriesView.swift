@@ -20,12 +20,6 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
     }
     
     var body: some View {
-//        NavigationSplitView(sidebar: { sidebar },
-//                            detail: { detail })
-        sidebar
-    }
-    
-    private var sidebar: some View {
         AsyncContentView(source: viewModel, content: content)
             .navigationTitle(viewModel.title)
             .searchable(text: $viewModel.searchQuery)
@@ -47,9 +41,9 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
 // MARK: Previews
 
 struct CategoriesListView_Previews: PreviewProvider {
-
     static var previews: some View {
-        MocksPreview(mocks: CategoriesViewModel.mocks, viewModelType: CategoriesViewModelMock.self) {
+        MocksPreview(mocks: CategoriesViewModel.mocks,
+                     type: CategoriesViewModelMock.self) {
             CategoriesView(viewModel: $0)
         }
     }

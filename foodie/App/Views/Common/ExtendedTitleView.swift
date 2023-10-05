@@ -39,7 +39,6 @@ struct ExtendedTitleView<TitleStyle, SubtitleStyle>: View where TitleStyle: View
 // MARK: Preview
 
 struct ExtendedTitleView_Previews: PreviewProvider {
-
     static var previews: some View {
         ExtendedTitleView("TitleView", titleStyle: TextStyle.title,
                           subtitle: "Subtitle", subtitleStyle: TextStyle.subtitle)

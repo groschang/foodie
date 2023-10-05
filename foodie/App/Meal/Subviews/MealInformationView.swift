@@ -24,7 +24,6 @@ struct MealInformationView<Model>: View where Model: MealInformations {
 // MARK: Preview
 
 struct MealInformationView_Previews: PreviewProvider {
-
     static var previews: some View {
         MealInformationView(viewModel: MealViewModelMock())
             .previewAsComponent()

@@ -35,7 +35,6 @@ struct CategoryView: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-
         VStack {
             CategoryView(viewModel: .mock)
             CategoryView(viewModel: .mock)

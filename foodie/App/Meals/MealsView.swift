@@ -26,9 +26,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
-//            .navigationBarHidden(true)
-            .navigationBarHiddenx() //TODO: x?
-//            .navigationTitle(viewModel.categoryName)
+            .navigationBarHidden()
     }
     
     private var content: some View {
@@ -85,9 +83,9 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 // MARK: Previews
 
 struct MealsView_Previews: PreviewProvider {
-
     static var previews: some View {
-        MocksPreview(mocks: MealsViewModel.mocks, viewModelType: MealsViewModelMock.self) {
+        MocksPreview(mocks: MealsViewModel.mocks,
+                     type: MealsViewModelMock.self) {
             MealsView(viewModel: $0)
         }
     }

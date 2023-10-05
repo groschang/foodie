@@ -83,9 +83,9 @@ struct MealView<Model>: View where Model: MealViewModelType {
 // MARK: Preview
 
 struct MealView_Previews: PreviewProvider {
-
     static var previews: some View {
-        MocksPreview(mocks: MealViewModel.mocks, viewModelType: MealViewModelMock.self) {
+        MocksPreview(mocks: MealViewModel.mocks,
+                     type: MealViewModelMock.self) {
             MealView(viewModel: $0)
         }
     }

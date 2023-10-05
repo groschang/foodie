@@ -59,6 +59,7 @@ struct foodieWidgetLiveActivity: Widget {
 }
 
 struct foodieWidgetLiveActivity_Previews: PreviewProvider {
+    
     static let attributes = foodieWidgetAttributes(name: "Me")
     static let contentState = foodieWidgetAttributes.ContentState(value: 3)
 

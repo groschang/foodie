@@ -25,3 +25,10 @@ extension Optional {
         }
     }
 }
+
+
+extension String.StringInterpolation {
+    mutating func appendInterpolation<T>(unwrap optional: T?) {
+        appendLiteral(optional.toString())
+    }
+}

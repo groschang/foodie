@@ -27,7 +27,6 @@ struct TextView<Style: ViewModifier>: View {
 // MARK: Preview
 
 struct TextView_Previews: PreviewProvider {
-
     static var previews: some View {
         TitleView("TitleView")
             .previewAsComponent()

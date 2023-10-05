@@ -52,7 +52,7 @@ extension View {
         navigationBarColor(Color(UIColor.systemBackground).mediumOpacity())
     }
 
-    func navigationBarHiddenx() -> some View {
+    func navigationBarHidden() -> some View {
         toolbar(.hidden, for: .navigationBar)
     }
 }

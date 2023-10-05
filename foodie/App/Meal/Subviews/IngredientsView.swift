@@ -33,7 +33,6 @@ struct IngredientsView: View {
 // MARK: Preview
 
 struct IngredientsView_Previews: PreviewProvider {
-    
     static var previews: some View {
         IngredientsView(MealDetail.mock.ingredients!)
             .previewAsComponent()

@@ -93,7 +93,6 @@ struct FoodieWidget: Widget {
 }
 
 struct FoodieWidget_Previews: PreviewProvider {
-
     static var previews: some View {
         FoodieWidgetEntryView(
             entry: SimpleEntry(

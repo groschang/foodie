@@ -175,7 +175,6 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
 // MARK: Previews
 
 struct MealsViewAnim_Previews: PreviewProvider {
-    
     static var previews: some View {
         MealsView(viewModel: MealsViewModelMock())
             .previewAsScreen()

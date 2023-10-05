@@ -18,12 +18,4 @@ extension View {
             }
         }
     }
-//    
-//    func usingAnimation(_ animation: Animation = .easeInOut(duration: 0.5), action: @escaping () -> Void) -> some View {
-//        onAppear {
-//            withAnimation(animation) {
-//                action()
-//            }
-//        }
-//    }
 }

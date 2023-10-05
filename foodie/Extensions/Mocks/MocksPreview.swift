@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct MocksPreview<MockView, VMType>: View where MockView: View {
+struct MocksPreview<MockView, ViewModelType>: View where MockView: View {
 
     let mocks: [any Mock]
 
-    let viewModelType: VMType.Type
+    let type: ViewModelType.Type
 
-    let mockView: (VMType) -> MockView
+    let mockView: (ViewModelType) -> MockView
 
     var body: some View {
         ForEach(mocks, id: \.mockType) { mock in
-            mockView(mock as! VMType)
+            mockView(mock as! ViewModelType)
                 .nameMock(mock)
         }
     }

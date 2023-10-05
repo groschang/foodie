@@ -95,7 +95,7 @@ struct ListHeader: View {
 // MARK: Preview
 
 struct ListHeader_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         Preview()
             .previewAsComponent()

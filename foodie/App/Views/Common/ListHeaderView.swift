@@ -39,7 +39,6 @@ struct ListHeaderView: View {
 // MARK: Previews
 
 struct ListHeaderView_Previews: PreviewProvider {
-
     static var previews: some View {
         ListHeaderView(title: "Title", action: { } )
             .previewAsComponent()

@@ -31,7 +31,6 @@ struct TitleView<Style: ViewModifier>: View {
 // MARK: Preview
 
 struct TitleView_Previews: PreviewProvider {
-
     static var previews: some View {
         TitleView("TitleView")
             .previewAsComponent()

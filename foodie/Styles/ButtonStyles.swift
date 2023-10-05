@@ -39,14 +39,11 @@ struct GrowingButton: ButtonStyle {
 struct ButtonStyles_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-
             Button("DashboardButton", action: { })
                 .buttonStyle(DashboardButton())
 
             Button("GrowingButton", action: { })
                 .buttonStyle(GrowingButton())
-
-
         }
     }
 }
