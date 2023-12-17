@@ -1,5 +1,5 @@
 //
-//  MealsServiceStream.swift
+//  MealsAsyncStreamService.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 30/05/2023.
@@ -7,13 +7,14 @@
 
 import Foundation
 
-protocol MealsServiceStreamType { //TODO: RENAMe & AsyncStream
+protocol MealsAsyncStreamServiceType {
+
     func getCategories() -> AsyncThrowingStream<Categories, Error>
     func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error>
     func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error>
 }
 
-class MealsServiceStream: MealsServiceStreamType {
+class MealsAsyncStreamService: MealsAsyncStreamServiceType {
 
     private let backendClient: HTTPClient
     private let persistanceClient: PersistenceClient

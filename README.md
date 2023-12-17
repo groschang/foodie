@@ -31,4 +31,5 @@ Todo list
 - [X] rename MealsServiceType
 - [X] rename MealsServiceAsync into MealsAsyncService
 - [X] rename MealsServiceVIType into MealsAsyncCombinedServiceType
+- [X] rename MealsServiceStream into MealsAsyncStreamService
 

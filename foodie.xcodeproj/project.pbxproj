@@ -142,7 +142,7 @@
 		71AF83942A3A05A4006FEEEB /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71AF83972A3A0B1F006FEEEB /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83962A3A0B1F006FEEEB /* SnapshotTesting */; };
 		71AF839A2A3A2C37006FEEEB /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF83992A3A2C37006FEEEB /* APITest.swift */; };
-		71B99B9F2A26944100201364 /* MealsServiceStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B99B9E2A26944100201364 /* MealsServiceStream.swift */; };
+		71B99B9F2A26944100201364 /* MealsAsyncStreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B99B9E2A26944100201364 /* MealsAsyncStreamService.swift */; };
 		71B99BA12A27B55000201364 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B99BA02A27B55000201364 /* APIEndpoint.swift */; };
 		71BFEDFF2ACD6FA000E91D92 /* MealViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFEDFE2ACD6FA000E91D92 /* MealViewFactory.swift */; };
 		71BFEE012ACD70C100E91D92 /* ViewBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFEE002ACD70C100E91D92 /* ViewBuilderProtocol.swift */; };
@@ -417,7 +417,7 @@
 		71966C002A94D81F0095DDB3 /* DashboardCategoriesCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCategoriesCloudView.swift; sourceTree = "<group>"; };
 		71AF838E2A39F8F7006FEEEB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logger; path = ../Logger; sourceTree = "<group>"; };
 		71AF83992A3A2C37006FEEEB /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
-		71B99B9E2A26944100201364 /* MealsServiceStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceStream.swift; sourceTree = "<group>"; };
+		71B99B9E2A26944100201364 /* MealsAsyncStreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncStreamService.swift; sourceTree = "<group>"; };
 		71B99BA02A27B55000201364 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		71BFEDFE2ACD6FA000E91D92 /* MealViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewFactory.swift; sourceTree = "<group>"; };
 		71BFEE002ACD70C100E91D92 /* ViewBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderProtocol.swift; sourceTree = "<group>"; };
@@ -857,7 +857,7 @@
 				7136065F2A8141E200D40728 /* MealsCombineService.swift */,
 				71215C5C2A1A4FFC006F3F8C /* MealsAsyncService.swift */,
 				71F1161B2A6FE745009A93B5 /* MealsAsyncCombinedService.swift */,
-				71B99B9E2A26944100201364 /* MealsServiceStream.swift */,
+				71B99B9E2A26944100201364 /* MealsAsyncStreamService.swift */,
 			);
 			path = MealsService;
 			sourceTree = "<group>";
@@ -1523,7 +1523,7 @@
 				716CD11529819AB100E4EA65 /* MealView.swift in Sources */,
 				71D941C429F9B9C900C84C24 /* Searchable.swift in Sources */,
 				7107F0D529E077D300A1232A /* Colors.swift in Sources */,
-				71B99B9F2A26944100201364 /* MealsServiceStream.swift in Sources */,
+				71B99B9F2A26944100201364 /* MealsAsyncStreamService.swift in Sources */,
 				71C0C9722A15306B0034AA14 /* ListStyle.swift in Sources */,
 				716CD1192981C17000E4EA65 /* NavigationBarModifier.swift in Sources */,
 				7111EC4D297C531C00ABC48C /* APIError.swift in Sources */,
