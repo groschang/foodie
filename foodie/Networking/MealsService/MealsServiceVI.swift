@@ -7,12 +7,10 @@
 
 import Foundation
 
-protocol MealsServiceVIType { //TODO: RENAMe
+protocol MealsServiceVIType { //TODO: RENAMe & AsyncStream
 
     func loadCategories() async throws -> Categories
-
     func loadMeals(_ category: Category) async throws -> Meals
-
     func loadMeal(_ meal: Meal) async throws -> Meal
 }
 

@@ -46,11 +46,11 @@ final class MealsViewModel: MealsViewModelType {
     @Published private(set) var backgroundUrl: URL?
 
     private var category: any Identifiable
-    private let service: MealsServiceType
+    private let service: MealsClosureServiceType
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(service: MealsServiceType, category: any Identifiable) {
+    init(service: MealsClosureServiceType, category: any Identifiable) {
         self.service = service
         self.category = category
 

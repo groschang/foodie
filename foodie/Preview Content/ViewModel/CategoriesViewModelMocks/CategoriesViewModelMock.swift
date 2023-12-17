@@ -22,9 +22,9 @@ class CategoriesViewModelMock: CategoriesViewModelMockType {
     @Published var filteredItems: [Category] = []
     @Published var searchQuery: String = ""
 
-    let service: MealsServiceType
+    let service: MealsClosureServiceType
 
-    init(service: MealsServiceType = MealsServiceMock()) {
+    init(service: MealsClosureServiceType = MealsServiceMock()) {
         self.service = service
     }
 

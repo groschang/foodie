@@ -45,9 +45,9 @@ final class MealViewModel: MealViewModelType {
     @Published private(set) var backgroundUrl: URL?
     
     private let mealCaterory: MealCategory
-    private let service: MealsServiceType
+    private let service: MealsClosureServiceType
     
-    init(service: MealsServiceType, mealCaterory: any IdentifiableObject) {
+    init(service: MealsClosureServiceType, mealCaterory: any IdentifiableObject) {
         self.service = service
         self.mealCaterory = mealCaterory as! MealCategory
 

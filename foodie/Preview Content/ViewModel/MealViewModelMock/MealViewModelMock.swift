@@ -30,9 +30,9 @@ class MealViewModelMock: MealViewModelMockType {
     @Published var backgroundUrl: URL?
 
     let mealCategory: MealCategory
-    let service: MealsServiceType
+    let service: MealsClosureServiceType
 
-    init(category: MealCategory = .mock, service: MealsServiceType = MealsServiceMock()) {
+    init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServiceMock()) {
         self.mealCategory = category
         self.service = service
 
@@ -66,7 +66,7 @@ final class MealViewModelDeleyedMock: MealViewModelMock {
 
     override var mockType: MockType { .delayed }
 
-    override init(category: MealCategory = .mock, service: MealsServiceType = MealsServiceMock(delay: true)) {
+    override init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServiceMock(delay: true)) {
         super.init(category: category, service: service)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MealsServiceStreamType {
+protocol MealsServiceStreamType { //TODO: RENAMe & AsyncStream
     func getCategories() -> AsyncThrowingStream<Categories, Error>
     func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error>
     func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error>
@@ -25,6 +25,8 @@ class MealsServiceStream: MealsServiceStreamType {
         self.persistanceClient = persistanceClient
         self.backendClient = backendClient
     }
+
+    // MARK: Categories
 
     func getCategories() -> AsyncThrowingStream<Categories, Error> {
         AsyncThrowingStream { continuation in
@@ -57,6 +59,8 @@ class MealsServiceStream: MealsServiceStreamType {
         return categories
     }
 
+    // MARK: Meals
+
     func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error> {
         AsyncThrowingStream { continuation in
             Task {
@@ -87,6 +91,8 @@ class MealsServiceStream: MealsServiceStreamType {
 
         return meals
     }
+
+    // MARK: Meal
 
     func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error> {
         AsyncThrowingStream { continuation in

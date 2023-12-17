@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MealsServiceMock: Mockable, Sleepable, MealsServiceType {
+class MealsServiceMock: Mockable, Sleepable, MealsClosureServiceType {
 
     enum Timing {
         static let delay = Duration.seconds(4)

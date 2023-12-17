@@ -1,5 +1,5 @@
 //
-//  MealsService.swift
+//  MealsClosureService.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 20/01/2023.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol MealsServiceType {
+protocol MealsClosureServiceType {
+
     typealias CategoriesHandler = (Categories) -> Void
     typealias MealsHandler = (Meals) -> Void
     typealias MealHandler = (Meal) -> Void
@@ -17,7 +18,7 @@ protocol MealsServiceType {
     func getMeal(for mealId: String, handler: MealHandler?) async throws -> Meal
 }
 
-actor MealsService: MealsServiceType { //TODO: ACTOR? RENAME
+actor MealsClosureService: MealsClosureServiceType { //TODO: ACTOR?
 
     let backendClient: HTTPClient
     let persistance: PersistenceClient
@@ -29,6 +30,8 @@ actor MealsService: MealsServiceType { //TODO: ACTOR? RENAME
         self.persistance = persistanceClient
         self.backendClient = backendClient
     }
+
+    // MARK: Categories
 
     func getCategories(handler: CategoriesHandler? = nil) async throws -> Categories {
 
@@ -43,6 +46,8 @@ actor MealsService: MealsServiceType { //TODO: ACTOR? RENAME
 
         return categories
     }
+    
+    // MARK: Meals
 
     func getMeals(for category: Category, handler: MealsHandler? = nil) async throws -> Meals {
 
@@ -57,6 +62,8 @@ actor MealsService: MealsServiceType { //TODO: ACTOR? RENAME
 
         return meals
     }
+
+    // MARK: Meal
 
     func getMeal(for mealId: String, handler: MealHandler? = nil) async throws -> Meal {
 

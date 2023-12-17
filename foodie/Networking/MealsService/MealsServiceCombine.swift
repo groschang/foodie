@@ -7,7 +7,7 @@
 
 import Combine
 
-protocol MealsServiceCombineType {
+protocol MealsServiceCombineType { //TODO: Rename MealsCombineService
     func getCategories() -> AnyPublisher<Categories?, Error>
     func getMeals(for category: Category) -> AnyPublisher<Meals?, Error>
     func getMeal(for mealId: String) -> AnyPublisher<Meal?, Error>

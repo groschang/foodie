@@ -18,9 +18,10 @@ Todo list
 - [ ] DTO approach?
 - [ ] Remove routers ? RouterProtocol
 - [ ] factories :remove doubled sericess 
-- [ ] rename MealsServiceTypeNew
-- [ ] rename MealsServiceType
+- [ ] rename MealsClosureServiceTypeNew
+- [ ] rename MealsClosureServiceType
 - [ ] rename MealsServiceVIType
+- [ ] service as Actor?
 - [ ] navigationBarHiddenx ?
 - [ ] use EmbedInStackModifier
 - [ ] MotionManager handling and optimization (utilize core)

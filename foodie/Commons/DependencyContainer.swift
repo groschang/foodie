@@ -17,9 +17,9 @@ protocol DependencyContainerType {
 
     var backendClient: HTTPClient { get }
     var persistenceClient: PersistenceClient { get }
-    var service: MealsServiceType { get }
+    var service: MealsClosureServiceType { get }
     var serviceV: MealsServiceAsyncType { get }
-    var serviceNew: MealsServiceTypeNew { get }
+    var serviceNew: MealsClosureServiceTypeNew { get }
 
     var router: Router { get }
 
@@ -35,9 +35,9 @@ struct DependencyContainer: DependencyContainerType {
 
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
-    var service: MealsServiceType { container.resolve(type: MealsServiceType.self)! }
+    var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
-    var serviceNew: MealsServiceTypeNew { container.resolve(type: MealsServiceTypeNew.self)! }
+    var serviceNew: MealsClosureServiceTypeNew { container.resolve(type: MealsClosureServiceTypeNew.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModel { container.resolve(type: CategoriesViewModel.self)! }
     var categoriesViewFactory: CategoriesViewFactory { container.resolve(type: CategoriesViewFactory.self)! }
@@ -51,15 +51,15 @@ struct DependencyContainer: DependencyContainerType {
             CoreDataClient()
         }
 
-        container.register(type: MealsServiceType.self) { _ in
-            MealsService(backendClient: backendClient, persistanceClient: persistenceClient)
+        container.register(type: MealsClosureServiceType.self) { _ in
+            MealsClosureService(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
         container.register(type: MealsServiceAsyncType.self) { _ in
             MealsServiceAsync(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
-        container.register(type: MealsServiceTypeNew.self) { _ in
+        container.register(type: MealsClosureServiceTypeNew.self) { _ in
             MealsServiceNew(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
@@ -72,7 +72,7 @@ struct DependencyContainer: DependencyContainerType {
         }
 
         container.register(type: CategoriesViewFactory.self) { _ in
-            CategoriesViewFactory(service: service, asyncService: serviceV) // MealsServiceTypeNew
+            CategoriesViewFactory(service: service, asyncService: serviceV) // MealsClosureServiceTypeNew
         }
     }
 }
@@ -84,9 +84,9 @@ struct MockDependencyContainer: DependencyContainerType {
 
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
-    var service: MealsServiceType { container.resolve(type: MealsServiceType.self)! }
+    var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
-    var serviceNew: MealsServiceTypeNew { container.resolve(type: MealsServiceTypeNew.self)! }
+    var serviceNew: MealsClosureServiceTypeNew { container.resolve(type: MealsClosureServiceTypeNew.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModelMock { container.resolve(type: CategoriesViewModelMock.self)! }
     var categoriesViewFactory: CategoriesViewFactory { container.resolve(type: CategoriesViewFactory.self)! }
@@ -100,7 +100,7 @@ struct MockDependencyContainer: DependencyContainerType {
             CoreDataClient()
         }
 
-        container.register(type: MealsServiceType.self) { _ in
+        container.register(type: MealsClosureServiceType.self) { _ in
             MealsServiceMock()
         }
 
@@ -108,7 +108,7 @@ struct MockDependencyContainer: DependencyContainerType {
             MealsServiceAsyncMock()
         }
 
-        container.register(type: MealsServiceTypeNew.self) { _ in
+        container.register(type: MealsClosureServiceTypeNew.self) { _ in
             MealsServiceNew(backendClient: backendClient, persistanceClient: persistenceClient) //TODO?
         }
 
@@ -133,9 +133,9 @@ struct DependencyInjectionContainer: DependencyContainerType {
 
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
-    var service: MealsServiceType { container.resolve(type: MealsServiceType.self)! }
+    var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
-    var serviceNew: MealsServiceTypeNew { container.resolve(type: MealsServiceTypeNew.self)! }
+    var serviceNew: MealsClosureServiceTypeNew { container.resolve(type: MealsClosureServiceTypeNew.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModel { container.resolve(type: CategoriesViewModel.self)! }
     var categoriesViewFactory: CategoriesViewFactory { container.resolve(type: CategoriesViewFactory.self)! }
@@ -149,7 +149,7 @@ struct DependencyInjectionContainer: DependencyContainerType {
             CoreDataClient()
         }
 
-        container.register(type: MealsServiceType.self) { _ in
+        container.register(type: MealsClosureServiceType.self) { _ in
             MealsServiceMock()
         }
 
@@ -157,7 +157,7 @@ struct DependencyInjectionContainer: DependencyContainerType {
             MealsServiceAsync(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
-        container.register(type: MealsServiceTypeNew.self) { _ in
+        container.register(type: MealsClosureServiceTypeNew.self) { _ in
             MealsServiceNew(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 

@@ -43,7 +43,7 @@
 		7111EC50297C531C00ABC48C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC24297C531C00ABC48C /* HTTPMethod.swift */; };
 		7111EC51297C531C00ABC48C /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC25297C531C00ABC48C /* ErrorResponse.swift */; };
 		7111EC52297C531C00ABC48C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC26297C531C00ABC48C /* Request.swift */; };
-		7111EC53297C531C00ABC48C /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC27297C531C00ABC48C /* MealsService.swift */; };
+		7111EC53297C531C00ABC48C /* MealsClosureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC27297C531C00ABC48C /* MealsClosureService.swift */; };
 		7111EC54297C531C00ABC48C /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC28297C531C00ABC48C /* HttpStatusCode.swift */; };
 		7111EC55297C531C00ABC48C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC29297C531C00ABC48C /* Endpoint.swift */; };
 		7111EC56297C531C00ABC48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC2A297C531C00ABC48C /* Assets.xcassets */; };
@@ -322,7 +322,7 @@
 		7111EC24297C531C00ABC48C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		7111EC25297C531C00ABC48C /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		7111EC26297C531C00ABC48C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		7111EC27297C531C00ABC48C /* MealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
+		7111EC27297C531C00ABC48C /* MealsClosureService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsClosureService.swift; sourceTree = "<group>"; };
 		7111EC28297C531C00ABC48C /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		7111EC29297C531C00ABC48C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7111EC2A297C531C00ABC48C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -852,7 +852,7 @@
 		7136065E2A8141D900D40728 /* MealsService */ = {
 			isa = PBXGroup;
 			children = (
-				7111EC27297C531C00ABC48C /* MealsService.swift */,
+				7111EC27297C531C00ABC48C /* MealsClosureService.swift */,
 				7191227829EAFC8E007E198B /* MealsServiceV2.swift */,
 				7136065F2A8141E200D40728 /* MealsServiceCombine.swift */,
 				71215C5C2A1A4FFC006F3F8C /* MealsServiceAsync.swift */,
@@ -1541,7 +1541,7 @@
 				71F116262A7274E0009A93B5 /* ContainsItems.swift in Sources */,
 				7111EC57297C531C00ABC48C /* foodieApp.swift in Sources */,
 				71EA2F832A63248A00213D82 /* DashboardPromoView.swift in Sources */,
-				7111EC53297C531C00ABC48C /* MealsService.swift in Sources */,
+				7111EC53297C531C00ABC48C /* MealsClosureService.swift in Sources */,
 				71C0C97F2A1675710034AA14 /* MealInformationView+Style.swift in Sources */,
 				717FCCDF2985C9EE0034870D /* MealDetailEntity.swift in Sources */,
 				717FCCCD2985AF5F0034870D /* CategoryEntity.swift in Sources */,

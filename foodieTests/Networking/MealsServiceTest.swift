@@ -12,12 +12,12 @@ final class MealsServiceTest: XCTestCase {
     
     var backendClient: APIClientMock!
     var persistanceClient: CoreDataClientMock!
-    var sut: MealsService!
+    var sut: MealsClosureService!
     
     override func setUp() {
         backendClient = APIClientMock()
         persistanceClient = CoreDataClientMock()
-        sut = MealsService(backendClient: backendClient!,
+        sut = MealsClosureService(backendClient: backendClient!,
                            persistanceClient: persistanceClient!)
     }
 

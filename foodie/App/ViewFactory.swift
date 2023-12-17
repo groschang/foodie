@@ -9,14 +9,14 @@ import SwiftUI
 
 class ViewFactory {
 
-    private let service: MealsServiceType
+    private let service: MealsClosureServiceType
     private let asyncService: MealsServiceAsyncType
 
     private lazy var categoriesFactory = CategoriesViewFactory(service: service, asyncService: asyncService)
     private lazy var melasFactory = MealsViewFactory(service: service, asyncService: asyncService)
     private lazy var melaFactory = MealViewFactory(service: service, asyncService: asyncService)
 
-    init(service: MealsServiceType,
+    init(service: MealsClosureServiceType,
          asyncService: MealsServiceAsyncType) {
         self.service = service
         self.asyncService = asyncService

@@ -7,7 +7,7 @@
 
 import Combine
 
-protocol MealsServiceTypeNew { //TODO: RENAM
+protocol MealsClosureServiceTypeNew { //TODO: RENAM MealsCombineService
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>
@@ -23,7 +23,7 @@ protocol MealsServiceTypeNew { //TODO: RENAM
     func fetchMeal(for mealId: String, subject: MealSubject) async
 }
 
-class MealsServiceNew: MealsServiceTypeNew {
+class MealsServiceNew: MealsClosureServiceTypeNew {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>
@@ -104,7 +104,7 @@ protocol ServiceType {
 //    static func fetch() async throws -> T?
 }
 
-protocol MealsServiceTypeNew2{
+protocol MealsClosureServiceTypeNew2{
 //    associatedtype T: ServiceType
 
 //    var categories: T.Type { get }
@@ -123,7 +123,7 @@ protocol MealsServiceTypeNew2{
 //    }
 //}
 
-class MealsServiceNew2: MealsServiceTypeNew2 {
+class MealsServiceNew2: MealsClosureServiceTypeNew2 {
 
     var categories: Categories.Type { Categories.self }
 }
