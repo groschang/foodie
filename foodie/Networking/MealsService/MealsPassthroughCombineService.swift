@@ -1,5 +1,5 @@
 //
-//  MealsServiceV2.swift
+//  MealsPassthroughCombineService.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 15/04/2023.
@@ -7,7 +7,7 @@
 
 import Combine
 
-protocol MealsClosureServiceTypeNew { //TODO: RENAM MealsCombineService
+protocol MealsPassthroughCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>
@@ -23,7 +23,7 @@ protocol MealsClosureServiceTypeNew { //TODO: RENAM MealsCombineService
     func fetchMeal(for mealId: String, subject: MealSubject) async
 }
 
-class MealsServiceNew: MealsClosureServiceTypeNew {
+class MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>
@@ -39,6 +39,8 @@ class MealsServiceNew: MealsClosureServiceTypeNew {
         self.persistanceClient = persistanceClient
         self.backendClient = backendClient
     }
+
+    // MARK: Categories
 
     func loadCategories(subject: CategoriesSubject) async {
         if let persisted = await persistanceClient.getCategories() {
@@ -57,6 +59,8 @@ class MealsServiceNew: MealsClosureServiceTypeNew {
             subject.send(completion: .failure(error))
         }
     }
+    
+    // MARK: Meals
 
     func loadMeals(for category: Category, subject: MealsSubject) async {
         if let persisted = await persistanceClient.getMeals(for: category) {
@@ -76,6 +80,8 @@ class MealsServiceNew: MealsClosureServiceTypeNew {
         }
     }
 
+    // MARK: Meal
+
     func loadMeal(for mealId: String, subject: MealSubject) async {
         if let meal = await persistanceClient.getMeal(for: mealId) {
             subject.send(meal)
@@ -94,45 +100,3 @@ class MealsServiceNew: MealsClosureServiceTypeNew {
         }
     }
 }
-
-
-
-protocol ServiceType {
-    associatedtype T
-
-//    static func load() async -> T?
-//    static func fetch() async throws -> T?
-}
-
-protocol MealsClosureServiceTypeNew2{
-//    associatedtype T: ServiceType
-
-//    var categories: T.Type { get }
-    //    var meals: T { get }
-    //    var meal: T { get }
-}
-
-//extension Categories: ServiceType {
-
-//    static func load() async -> Categories? {
-//        nil
-//    }
-//
-//    static func fetch() async throws -> Categories? {
-//        nil
-//    }
-//}
-
-class MealsServiceNew2: MealsClosureServiceTypeNew2 {
-
-    var categories: Categories.Type { Categories.self }
-}
-
-
-//Task {
-//    let service = MealsServiceNew2()
-//    try await service.categories.fetch()
-//}
-
-
-

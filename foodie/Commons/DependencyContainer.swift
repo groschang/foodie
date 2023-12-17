@@ -19,7 +19,7 @@ protocol DependencyContainerType {
     var persistenceClient: PersistenceClient { get }
     var service: MealsClosureServiceType { get }
     var serviceV: MealsServiceAsyncType { get }
-    var serviceNew: MealsClosureServiceTypeNew { get }
+    var servicePassthroughCombine: MealsPassthroughCombineServiceType { get }
 
     var router: Router { get }
 
@@ -37,7 +37,7 @@ struct DependencyContainer: DependencyContainerType {
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
     var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
-    var serviceNew: MealsClosureServiceTypeNew { container.resolve(type: MealsClosureServiceTypeNew.self)! }
+    var servicePassthroughCombine: MealsPassthroughCombineServiceType { container.resolve(type: MealsPassthroughCombineServiceType.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModel { container.resolve(type: CategoriesViewModel.self)! }
     var categoriesViewFactory: CategoriesViewFactory { container.resolve(type: CategoriesViewFactory.self)! }
@@ -59,8 +59,8 @@ struct DependencyContainer: DependencyContainerType {
             MealsServiceAsync(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
-        container.register(type: MealsClosureServiceTypeNew.self) { _ in
-            MealsServiceNew(backendClient: backendClient, persistanceClient: persistenceClient)
+        container.register(type: MealsPassthroughCombineServiceType.self) { _ in
+            MealsPassthroughCombineService(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
         container.register(type: Router.self) { _ in
@@ -72,7 +72,7 @@ struct DependencyContainer: DependencyContainerType {
         }
 
         container.register(type: CategoriesViewFactory.self) { _ in
-            CategoriesViewFactory(service: service, asyncService: serviceV) // MealsClosureServiceTypeNew
+            CategoriesViewFactory(service: service, asyncService: serviceV) // MealsPassthroughCombineServiceType
         }
     }
 }
@@ -86,7 +86,7 @@ struct MockDependencyContainer: DependencyContainerType {
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
     var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
-    var serviceNew: MealsClosureServiceTypeNew { container.resolve(type: MealsClosureServiceTypeNew.self)! }
+    var servicePassthroughCombine: MealsPassthroughCombineServiceType { container.resolve(type: MealsPassthroughCombineServiceType.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModelMock { container.resolve(type: CategoriesViewModelMock.self)! }
     var categoriesViewFactory: CategoriesViewFactory { container.resolve(type: CategoriesViewFactory.self)! }
@@ -108,8 +108,8 @@ struct MockDependencyContainer: DependencyContainerType {
             MealsServiceAsyncMock()
         }
 
-        container.register(type: MealsClosureServiceTypeNew.self) { _ in
-            MealsServiceNew(backendClient: backendClient, persistanceClient: persistenceClient) //TODO?
+        container.register(type: MealsPassthroughCombineServiceType.self) { _ in
+            MealsPassthroughCombineService(backendClient: backendClient, persistanceClient: persistenceClient) //TODO?
         }
 
         container.register(type: Router.self) { _ in
@@ -135,7 +135,7 @@ struct DependencyInjectionContainer: DependencyContainerType {
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
     var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
-    var serviceNew: MealsClosureServiceTypeNew { container.resolve(type: MealsClosureServiceTypeNew.self)! }
+    var servicePassthroughCombine: MealsPassthroughCombineServiceType { container.resolve(type: MealsPassthroughCombineServiceType.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModel { container.resolve(type: CategoriesViewModel.self)! }
     var categoriesViewFactory: CategoriesViewFactory { container.resolve(type: CategoriesViewFactory.self)! }
@@ -157,8 +157,8 @@ struct DependencyInjectionContainer: DependencyContainerType {
             MealsServiceAsync(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
-        container.register(type: MealsClosureServiceTypeNew.self) { _ in
-            MealsServiceNew(backendClient: backendClient, persistanceClient: persistenceClient)
+        container.register(type: MealsPassthroughCombineServiceType.self) { _ in
+            MealsPassthroughCombineService(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
         container.register(type: Router.self) { _ in

@@ -136,7 +136,7 @@
 		7191227129EAC17B007E198B /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227029EAC17B007E198B /* ListHeaderView.swift */; };
 		7191227329EAC5D1007E198B /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227229EAC5D1007E198B /* DIContainer.swift */; };
 		7191227729EADE26007E198B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227629EADE26007E198B /* BackButton.swift */; };
-		7191227929EAFC8E007E198B /* MealsServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227829EAFC8E007E198B /* MealsServiceV2.swift */; };
+		7191227929EAFC8E007E198B /* MealsPassthroughCombineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227829EAFC8E007E198B /* MealsPassthroughCombineService.swift */; };
 		71966C012A94D81F0095DDB3 /* DashboardCategoriesCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71966C002A94D81F0095DDB3 /* DashboardCategoriesCloudView.swift */; };
 		71AF83912A3A059D006FEEEB /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; };
 		71AF83942A3A05A4006FEEEB /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -413,7 +413,7 @@
 		7191227029EAC17B007E198B /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		7191227229EAC5D1007E198B /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		7191227629EADE26007E198B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		7191227829EAFC8E007E198B /* MealsServiceV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceV2.swift; sourceTree = "<group>"; };
+		7191227829EAFC8E007E198B /* MealsPassthroughCombineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsPassthroughCombineService.swift; sourceTree = "<group>"; };
 		71966C002A94D81F0095DDB3 /* DashboardCategoriesCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCategoriesCloudView.swift; sourceTree = "<group>"; };
 		71AF838E2A39F8F7006FEEEB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logger; path = ../Logger; sourceTree = "<group>"; };
 		71AF83992A3A2C37006FEEEB /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
@@ -853,7 +853,7 @@
 			isa = PBXGroup;
 			children = (
 				7111EC27297C531C00ABC48C /* MealsClosureService.swift */,
-				7191227829EAFC8E007E198B /* MealsServiceV2.swift */,
+				7191227829EAFC8E007E198B /* MealsPassthroughCombineService.swift */,
 				7136065F2A8141E200D40728 /* MealsServiceCombine.swift */,
 				71215C5C2A1A4FFC006F3F8C /* MealsServiceAsync.swift */,
 				71F1161B2A6FE745009A93B5 /* MealsServiceVI.swift */,
@@ -1407,7 +1407,7 @@
 				71D036EA2A5C5A2D0023356C /* MealsServiceVMock.swift in Sources */,
 				71052DA029941661000008B6 /* GeometryReader.swift in Sources */,
 				71D7DC89297BFE7A00A30FF8 /* MealsServiceMock.swift in Sources */,
-				7191227929EAFC8E007E198B /* MealsServiceV2.swift in Sources */,
+				7191227929EAFC8E007E198B /* MealsPassthroughCombineService.swift in Sources */,
 				71080E9D298B0CAF009FCDDB /* CategoryEntity+CoreDataClass.swift in Sources */,
 				71D036EF2A5D90740023356C /* DashboardCategoriesView.swift in Sources */,
 				7111EC5B297C531C00ABC48C /* Meal.swift in Sources */,

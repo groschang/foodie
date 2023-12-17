@@ -18,8 +18,6 @@ Todo list
 - [ ] DTO approach?
 - [ ] Remove routers ? RouterProtocol
 - [ ] factories :remove doubled sericess 
-- [ ] rename MealsClosureServiceTypeNew
-- [ ] rename MealsClosureServiceType
 - [ ] rename MealsServiceVIType
 - [ ] service as Actor?
 - [ ] navigationBarHiddenx ?
@@ -29,4 +27,6 @@ Todo list
 - [ ] All rights reserved phrase
 - [X] rename MealsServiceVMock into  MealsServiceAsync ?
 - [x] rename ViewBuilderProtocol into TheViewBuilder
+- [X] rename MealsClosureServiceTypeNew
+- [X] rename MealsServiceType
 
