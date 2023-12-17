@@ -1,5 +1,5 @@
 //
-//  MealsServiceVI.swift
+//  MealsAsyncCombinedService.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 25/07/2023.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol MealsServiceVIType { //TODO: RENAMe & AsyncStream
+protocol MealsAsyncCombinedServiceType {
 
     func loadCategories() async throws -> Categories
     func loadMeals(_ category: Category) async throws -> Meals
     func loadMeal(_ meal: Meal) async throws -> Meal
 }
 
-class MealsServiceVI: MealsServiceVIType {
+class MealsAsyncCombinedService: MealsAsyncCombinedServiceType {
 
     private let backendClient: HTTPClient
 
@@ -95,7 +95,7 @@ class MealsServiceVI: MealsServiceVIType {
     }
 }
 
-extension MealsServiceVI { //TODO: RENAMe
+extension MealsAsyncCombinedService {
 
     private func load<T>(
         itemID: String,

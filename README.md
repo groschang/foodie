@@ -19,7 +19,6 @@ Todo list
 - [ ] iterate over TODO's
 - [ ] Remove routers ? RouterProtocol
 - [ ] factories :remove doubled sericess 
-- [ ] rename MealsServiceVIType
 - [ ] service as Actor?
 - [ ] navigationBarHiddenx ?
 - [ ] use EmbedInStackModifier
@@ -31,4 +30,5 @@ Todo list
 - [X] rename MealsClosureServiceTypeNew
 - [X] rename MealsServiceType
 - [X] rename MealsServiceAsync into MealsAsyncService
+- [X] rename MealsServiceVIType into MealsAsyncCombinedServiceType
 
