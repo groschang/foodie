@@ -12,6 +12,7 @@
 		7102F16D2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F16C2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift */; };
 		7102F1702B2EB6C200F6D87F /* MealAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F16F2B2EB6C200F6D87F /* MealAsyncViewModel.swift */; };
 		7102F1722B2EB6CE00F6D87F /* MealAsyncStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F1712B2EB6CE00F6D87F /* MealAsyncStreamViewModel.swift */; };
+		7102F1782B2F421B00F6D87F /* MockedDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F1772B2F421B00F6D87F /* MockedDependencyContainer.swift */; };
 		710410722A73117600EAE3CD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710410712A73117600EAE3CD /* URL.swift */; };
 		710410742A73E80700EAE3CD /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710410732A73E80700EAE3CD /* NSManagedObjectContext.swift */; };
 		71052D96299051CA000008B6 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71052D95299051CA000008B6 /* CaseIterable.swift */; };
@@ -296,6 +297,7 @@
 		7102F16C2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAsyncStreamViewModel.swift; sourceTree = "<group>"; };
 		7102F16F2B2EB6C200F6D87F /* MealAsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAsyncViewModel.swift; sourceTree = "<group>"; };
 		7102F1712B2EB6CE00F6D87F /* MealAsyncStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAsyncStreamViewModel.swift; sourceTree = "<group>"; };
+		7102F1772B2F421B00F6D87F /* MockedDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDependencyContainer.swift; sourceTree = "<group>"; };
 		710410712A73117600EAE3CD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		710410732A73E80700EAE3CD /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		71052D95299051CA000008B6 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
@@ -574,6 +576,15 @@
 			path = MealViewModel;
 			sourceTree = "<group>";
 		};
+		7102F1742B2F417300F6D87F /* AppContainer */ = {
+			isa = PBXGroup;
+			children = (
+				71F403CD2A0ABBA3005CF087 /* DependencyContainer.swift */,
+				7102F1772B2F421B00F6D87F /* MockedDependencyContainer.swift */,
+			);
+			path = AppContainer;
+			sourceTree = "<group>";
+		};
 		71080E93298AD213009FCDDB /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +650,7 @@
 				71C580B32AC1E47600BD66C1 /* RouterProtocol.swift */,
 				71C580B72ACC65DE00BD66C1 /* ViewFactory.swift */,
 				71BFEE002ACD70C100E91D92 /* ViewBuilderProtocol.swift */,
+				7102F1742B2F417300F6D87F /* AppContainer */,
 				71575C4D29C8E2A0003E8443 /* Dashboard */,
 				7111EC1B297C531C00ABC48C /* Categories */,
 				7111EC10297C531C00ABC48C /* Meals */,
@@ -1011,7 +1023,6 @@
 			children = (
 				71080F06298F0B1E009FCDDB /* Protocols */,
 				7191226E29EAC083007E198B /* Definitions.swift */,
-				71F403CD2A0ABBA3005CF087 /* DependencyContainer.swift */,
 				71F514992A81327900E5ECB2 /* MotionManager.swift */,
 				71BFF08B2AA7BABF0080B561 /* ParallaxManager.swift */,
 				71BFF0852AA789980080B561 /* ParallaxShadowModifier.swift */,
@@ -1555,6 +1566,7 @@
 				71215C5D2A1A4FFC006F3F8C /* MealsAsyncService.swift in Sources */,
 				7111EC59297C531C00ABC48C /* Meals.swift in Sources */,
 				71E2358C2A7BF79400F06097 /* MealCategoryEntity+CoreDataClass.swift in Sources */,
+				7102F1782B2F421B00F6D87F /* MockedDependencyContainer.swift in Sources */,
 				716CD11529819AB100E4EA65 /* MealView.swift in Sources */,
 				71D941C429F9B9C900C84C24 /* Searchable.swift in Sources */,
 				7107F0D529E077D300A1232A /* Colors.swift in Sources */,

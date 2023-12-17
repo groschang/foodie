@@ -47,8 +47,6 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
             Spacer()
         }
-        //        .embedInScrollView()
-        //        .background(.gray)
     }
 }
 

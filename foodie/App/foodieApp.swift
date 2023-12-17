@@ -13,7 +13,7 @@ public typealias Log = Logger
 @main
 struct foodieApp: App {
     
-    private let container = DependencyContainer.shared // offline mocks: MockDependencyContainer.shared 
+    private let container = DependencyContainer.shared // MockDependencyContainer.shared
 
     private let dashboardViewModel: DashboardViewModel
     

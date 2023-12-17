@@ -7,6 +7,7 @@ Todo list
 - [ ] iPad
 - [ ] asyc view states
 - [ ] extract text styles
+- [ ] create new target for mocked container &else
 - [ ] create some packages 
 - [ ] fix searchable
 - [ ] extract mapppers
