@@ -33,7 +33,7 @@ class MealClosureViewFactory: ViewBuilderProtocol {
 
 class MealAsyncViewFactory: ViewBuilderProtocol {
 
-    private let service: MealsAsyncServiceType //TODO: 
+    private let service: MealsAsyncServiceType //TODO:
 
     init(service: MealsAsyncServiceType) {
         self.service = service

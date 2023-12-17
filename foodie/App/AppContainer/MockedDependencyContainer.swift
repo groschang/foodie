@@ -17,7 +17,7 @@ struct MockedDependencyContainer: DependencyContainerType {
 
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
-    
+
     var closureService: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
     var asyncService: MealsAsyncServiceType { container.resolve(type: MealsAsyncServiceType.self)! }
     var asyncStreamService: MealsAsyncStreamServiceType { container.resolve(type: MealsAsyncStreamServiceType.self)! }
