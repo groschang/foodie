@@ -23,7 +23,7 @@ Todo list
 - [ ] navigationBarHiddenx ?
 - [ ] use EmbedInStackModifier
 - [ ] MotionManager handling and optimization (utilize core)
-- [ ] DependencyContainerType
+- [ ] DependencyContainerType & DI cleanup
 - [ ] All rights reserved phrase
 - [X] rename MealsServiceVMock into  MealsServiceAsync ?
 - [x] rename ViewBuilderProtocol into TheViewBuilder

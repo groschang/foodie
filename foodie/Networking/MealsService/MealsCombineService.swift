@@ -1,5 +1,5 @@
 //
-//  MealsServiceCombine.swift
+//  MealsCombineService.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 07/08/2023.
@@ -7,13 +7,14 @@
 
 import Combine
 
-protocol MealsServiceCombineType { //TODO: Rename MealsCombineService
+protocol MealsCombineServiceType { 
+
     func getCategories() -> AnyPublisher<Categories?, Error>
     func getMeals(for category: Category) -> AnyPublisher<Meals?, Error>
     func getMeal(for mealId: String) -> AnyPublisher<Meal?, Error>
 }
 
-class MealsServiceCombine: MealsServiceCombineType {
+class MealsCombineService: MealsCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>

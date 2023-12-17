@@ -83,7 +83,7 @@
 		712E85F729E1E3D50009AFB9 /* CoordinateSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */; };
 		712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
 		7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */; };
-		713606602A8141E200D40728 /* MealsServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065F2A8141E200D40728 /* MealsServiceCombine.swift */; };
+		713606602A8141E200D40728 /* MealsCombineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065F2A8141E200D40728 /* MealsCombineService.swift */; };
 		713606622A81425D00D40728 /* MealsCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713606612A81425D00D40728 /* MealsCombineViewModel.swift */; };
 		713A15F92983E9B200FDFBF9 /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713A15F82983E9B200FDFBF9 /* AsyncContentView.swift */; };
 		713A15FD298433E800FDFBF9 /* MealDBEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713A15FC298433E800FDFBF9 /* MealDBEndpoint.swift */; };
@@ -361,7 +361,7 @@
 		712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpace.swift; sourceTree = "<group>"; };
 		712E85FA29E1EBE20009AFB9 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncViewModel.swift; sourceTree = "<group>"; };
-		7136065F2A8141E200D40728 /* MealsServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceCombine.swift; sourceTree = "<group>"; };
+		7136065F2A8141E200D40728 /* MealsCombineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCombineService.swift; sourceTree = "<group>"; };
 		713606612A81425D00D40728 /* MealsCombineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCombineViewModel.swift; sourceTree = "<group>"; };
 		713A15F82983E9B200FDFBF9 /* AsyncContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		713A15FC298433E800FDFBF9 /* MealDBEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDBEndpoint.swift; sourceTree = "<group>"; };
@@ -854,7 +854,7 @@
 			children = (
 				7111EC27297C531C00ABC48C /* MealsClosureService.swift */,
 				7191227829EAFC8E007E198B /* MealsPassthroughCombineService.swift */,
-				7136065F2A8141E200D40728 /* MealsServiceCombine.swift */,
+				7136065F2A8141E200D40728 /* MealsCombineService.swift */,
 				71215C5C2A1A4FFC006F3F8C /* MealsServiceAsync.swift */,
 				71F1161B2A6FE745009A93B5 /* MealsServiceVI.swift */,
 				71B99B9E2A26944100201364 /* MealsServiceStream.swift */,
@@ -1548,7 +1548,7 @@
 				7111EC7F297C6A9800ABC48C /* CategoriesViewFactory.swift in Sources */,
 				71080F10298F3407009FCDDB /* InformationView.swift in Sources */,
 				7111EC4B297C531C00ABC48C /* CategoriesViewModel.swift in Sources */,
-				713606602A8141E200D40728 /* MealsServiceCombine.swift in Sources */,
+				713606602A8141E200D40728 /* MealsCombineService.swift in Sources */,
 				7111EC66297C531C00ABC48C /* TimePrinter.swift in Sources */,
 				71BFEDFF2ACD6FA000E91D92 /* MealViewFactory.swift in Sources */,
 				71BFEE032ACD7DB800E91D92 /* RouterLink.swift in Sources */,
