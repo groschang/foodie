@@ -16,6 +16,7 @@ Todo list
 - [ ] dependency container  
 - [ ] localization
 - [ ] DTO approach?
+- [ ] iterate over TODO's
 - [ ] Remove routers ? RouterProtocol
 - [ ] factories :remove doubled sericess 
 - [ ] rename MealsServiceVIType
@@ -25,8 +26,9 @@ Todo list
 - [ ] MotionManager handling and optimization (utilize core)
 - [ ] DependencyContainerType & DI cleanup
 - [ ] All rights reserved phrase
-- [X] rename MealsServiceVMock into  MealsServiceAsync ?
+- [X] rename MealsServiceVMock into  MealsAsyncService ?
 - [x] rename ViewBuilderProtocol into TheViewBuilder
 - [X] rename MealsClosureServiceTypeNew
 - [X] rename MealsServiceType
+- [X] rename MealsServiceAsync into MealsAsyncService
 

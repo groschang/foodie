@@ -1,5 +1,5 @@
 //
-//  MealsServiceAsync.swift
+//  MealsAsyncService.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 21/05/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MealsServiceAsyncType {
+protocol MealsAsyncServiceType {
 
     func loadCategories() async -> Categories?
     func fetchCategories() async throws -> Categories
@@ -19,7 +19,7 @@ protocol MealsServiceAsyncType {
     func fetchMeal(for mealId: String) async throws -> Meal
 }
 
-class MealsServiceAsync: MealsServiceAsyncType {
+class MealsAsyncService: MealsAsyncServiceType {
 
     private let backendClient: HTTPClient
     private let persistanceClient: PersistenceClient
@@ -31,6 +31,8 @@ class MealsServiceAsync: MealsServiceAsyncType {
         self.persistanceClient = persistanceClient
         self.backendClient = backendClient
     }
+
+    //MARK: Categories
 
     func loadCategories() async -> Categories? {
         await persistanceClient.getCategories()
@@ -45,6 +47,7 @@ class MealsServiceAsync: MealsServiceAsyncType {
         return categories
     }
 
+    //MARK: Meals
 
     func getMeals(for category: Category) async -> Meals? {
         await persistanceClient.getMeals(for: category)
@@ -59,6 +62,7 @@ class MealsServiceAsync: MealsServiceAsyncType {
         return meals
     }
 
+    //MARK: Meal
 
     func loadMeal(for mealId: String) async -> Meal? {
         await persistanceClient.getMeal(for: mealId)

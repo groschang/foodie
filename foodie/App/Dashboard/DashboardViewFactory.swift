@@ -9,9 +9,9 @@ import SwiftUI
 
 class DashboardViewFactory {
 
-    private let service: MealsServiceAsyncType
+    private let service: MealsAsyncServiceType
 
-    init(service: MealsServiceAsyncType) {
+    init(service: MealsAsyncServiceType) {
         self.service = service
     }
 
@@ -25,5 +25,5 @@ class DashboardViewFactory {
 // MARK: Mock
 
 extension DashboardViewFactory {
-    static let mock = DashboardViewFactory(service: MealsServiceAsync())
+    static let mock = DashboardViewFactory(service: MealsAsyncService())
 }

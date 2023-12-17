@@ -16,12 +16,12 @@ protocol DashboardViewModelType: ObservableObject {
 
 final class DashboardViewModel: DashboardViewModelType {
 
-    private let service: MealsServiceAsyncType
+    private let service: MealsAsyncServiceType
 
     private(set) var categoriesViewModel: DashboardCategoriesViewModel
     private(set) var promoViewModel: DashboardPromoViewModel
 
-    init(service: MealsServiceAsyncType) {
+    init(service: MealsAsyncServiceType) {
         self.service = service
         self.categoriesViewModel = DashboardCategoriesViewModel(service: service)
         self.promoViewModel = DashboardPromoViewModel(service: service)

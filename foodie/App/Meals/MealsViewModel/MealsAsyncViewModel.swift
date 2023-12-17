@@ -26,11 +26,11 @@ final class MealsAsyncViewModel: MealsViewModelType {
     @Published private(set) var backgroundUrl: URL?
 
     private let category: any IdentifiableObject
-    private let service: MealsServiceAsyncType
+    private let service: MealsAsyncServiceType
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(service: MealsServiceAsyncType, category: any IdentifiableObject) {
+    init(service: MealsAsyncServiceType, category: any IdentifiableObject) {
         self.service = service
         self.category = category
         setupProperties()

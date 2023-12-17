@@ -26,11 +26,11 @@ final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Iden
     var isEmpty: Bool { items.isEmpty }
 
     @Published private(set) var items: [Category] = []
-    private let service: MealsServiceAsyncType
+    private let service: MealsAsyncServiceType
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(service: MealsServiceAsyncType) {
+    init(service: MealsAsyncServiceType) {
         self.service = service
     }
 

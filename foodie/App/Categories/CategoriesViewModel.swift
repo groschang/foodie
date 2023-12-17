@@ -31,11 +31,11 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
     @Published private(set) var filteredItems: [Category] = []
     @Published var searchQuery: String = ""
 
-    private let service: MealsServiceAsyncType
+    private let service: MealsAsyncServiceType
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(service: MealsServiceAsyncType) {
+    init(service: MealsAsyncServiceType) {
         self.service = service
 
         setupSubscriptions()

@@ -16,7 +16,7 @@ protocol DashboardPromoViewModelType: DashboardPromoPresentable, LoadableObject 
 
 final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
-    private let service: MealsServiceAsyncType
+    private let service: MealsAsyncServiceType
 
     @Published private(set) var name: String = ""
     @Published private(set) var imageUrl: URL?
@@ -24,7 +24,7 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { state != .loaded }
 
-    init(service: MealsServiceAsyncType) {
+    init(service: MealsAsyncServiceType) {
         self.service = service
     }
 

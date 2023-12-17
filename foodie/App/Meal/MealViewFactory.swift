@@ -10,10 +10,10 @@ import SwiftUI
 class MealViewFactory: ViewBuilderProtocol {
 
     private let service: MealsClosureServiceType
-    private let asyncService: MealsServiceAsyncType
+    private let asyncService: MealsAsyncServiceType
 
     init(service: MealsClosureServiceType,
-         asyncService: MealsServiceAsyncType) {
+         asyncService: MealsAsyncServiceType) {
         self.service = service
         self.asyncService = asyncService
     }

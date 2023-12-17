@@ -18,7 +18,7 @@ protocol DependencyContainerType {
     var backendClient: HTTPClient { get }
     var persistenceClient: PersistenceClient { get }
     var service: MealsClosureServiceType { get }
-    var serviceV: MealsServiceAsyncType { get }
+    var serviceV: MealsAsyncServiceType { get }
     var servicePassthroughCombine: MealsPassthroughCombineServiceType { get }
 
     var router: Router { get }
@@ -36,7 +36,7 @@ struct DependencyContainer: DependencyContainerType {
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
     var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
-    var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
+    var serviceV: MealsAsyncServiceType { container.resolve(type: MealsAsyncServiceType.self)! }
     var servicePassthroughCombine: MealsPassthroughCombineServiceType { container.resolve(type: MealsPassthroughCombineServiceType.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModel { container.resolve(type: CategoriesViewModel.self)! }
@@ -55,8 +55,8 @@ struct DependencyContainer: DependencyContainerType {
             MealsClosureService(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
-        container.register(type: MealsServiceAsyncType.self) { _ in
-            MealsServiceAsync(backendClient: backendClient, persistanceClient: persistenceClient)
+        container.register(type: MealsAsyncServiceType.self) { _ in
+            MealsAsyncService(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
         container.register(type: MealsPassthroughCombineServiceType.self) { _ in
@@ -85,7 +85,7 @@ struct MockDependencyContainer: DependencyContainerType {
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
     var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
-    var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
+    var serviceV: MealsAsyncServiceType { container.resolve(type: MealsAsyncServiceType.self)! }
     var servicePassthroughCombine: MealsPassthroughCombineServiceType { container.resolve(type: MealsPassthroughCombineServiceType.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModelMock { container.resolve(type: CategoriesViewModelMock.self)! }
@@ -104,7 +104,7 @@ struct MockDependencyContainer: DependencyContainerType {
             MealsServiceMock()
         }
 
-        container.register(type: MealsServiceAsyncType.self) { _ in
+        container.register(type: MealsAsyncServiceType.self) { _ in
             MealsServiceAsyncMock()
         }
 
@@ -134,7 +134,7 @@ struct DependencyInjectionContainer: DependencyContainerType {
     var backendClient: HTTPClient { container.resolve(type: HTTPClient.self)! }
     var persistenceClient: PersistenceClient { container.resolve(type: PersistenceClient.self)! }
     var service: MealsClosureServiceType { container.resolve(type: MealsClosureServiceType.self)! }
-    var serviceV: MealsServiceAsyncType { container.resolve(type: MealsServiceAsyncType.self)! }
+    var serviceV: MealsAsyncServiceType { container.resolve(type: MealsAsyncServiceType.self)! }
     var servicePassthroughCombine: MealsPassthroughCombineServiceType { container.resolve(type: MealsPassthroughCombineServiceType.self)! }
     var router: Router { container.resolve(type: Router.self)! }
     var categoriesViewModel: CategoriesViewModel { container.resolve(type: CategoriesViewModel.self)! }
@@ -153,8 +153,8 @@ struct DependencyInjectionContainer: DependencyContainerType {
             MealsServiceMock()
         }
 
-        container.register(type: MealsServiceAsyncType.self) { _ in
-            MealsServiceAsync(backendClient: backendClient, persistanceClient: persistenceClient)
+        container.register(type: MealsAsyncServiceType.self) { _ in
+            MealsAsyncService(backendClient: backendClient, persistanceClient: persistenceClient)
         }
 
         container.register(type: MealsPassthroughCombineServiceType.self) { _ in
