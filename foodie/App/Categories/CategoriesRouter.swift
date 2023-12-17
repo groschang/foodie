@@ -8,30 +8,30 @@
 import SwiftUI
 
 enum CategoriesRouter: RouterProtocol {
-
-    static let viewFactory = CategoriesAsyncViewFactory(service: MealsAsyncService()) //TODO: DI??
-
+    
+    static let viewFactory = DependencyContainer.shared.viewFactory
+    
     case categories
-
+    
     case empty
-
+    
     @MainActor @ViewBuilder
     func makeView() -> some View {
         switch self {
-
+            
         case .categories:
             makeCategoriesView()
-
+            
         case .empty:
             makeEmptyView()
         }
     }
-
+    
     @MainActor @ViewBuilder
     private func makeCategoriesView() -> some View {
-        Self.viewFactory.makeView()
+        Self.viewFactory.makeView(type: .categories)
     }
-
+    
     @MainActor
     private func makeEmptyView() -> some View {
         InformationView("Select category")

@@ -7,15 +7,22 @@
 
 import SwiftUI
 
-class ViewFactory: ClosureViewFactory { }
+protocol ViewFactoryType {
+    associatedtype V : View
+    func makeView(type: Route) -> V
+}
 
-class ClosureViewFactory {
 
-    private(set) var service: MealsClosureServiceType
+class ViewFactory: StreamViewFactory { }
 
-    private(set) lazy var categoriesFactory = CategoriesClosureViewFactory(service: service)
-    private(set) lazy var mealsFactory = MealsClosureViewFactory(service: service)
-    private(set) lazy var mealFactory = MealClosureViewFactory(service: service)
+
+class ClosureViewFactory: ViewFactoryType {
+
+    private let service: MealsClosureServiceType
+
+    private lazy var categoriesFactory = CategoriesClosureViewFactory(service: service)
+    private lazy var mealsFactory = MealsClosureViewFactory(service: service)
+    private lazy var mealFactory = MealClosureViewFactory(service: service)
 
     init(service: MealsClosureServiceType) {
         self.service = service
@@ -38,7 +45,7 @@ class ClosureViewFactory {
     }
 }
 
-class AsyncViewFactory {
+class AsyncViewFactory: ViewFactoryType {
 
     private let service: MealsAsyncServiceType
 
@@ -68,7 +75,7 @@ class AsyncViewFactory {
 }
 
 
-class StreamViewFactory {
+class StreamViewFactory: ViewFactoryType {
 
     private let service: MealsAsyncStreamServiceType
 
@@ -100,5 +107,5 @@ class StreamViewFactory {
 // MARK: Mock
 
 extension ViewFactory {
-    static let mock = ViewFactory(service: MealsServiceMock())
+    static let mock = ClosureViewFactory(service: MealsServiceMock()) //TODO:
 }
