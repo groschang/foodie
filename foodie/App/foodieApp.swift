@@ -17,7 +17,7 @@ struct foodieApp: App {
     
     private let dashboardViewModel: DashboardViewModel
     
-    private let viewFactory: ViewFactory
+    private let viewFactory: StreamViewFactory
     @ObservedObject private var router: Router
     
     init() {
@@ -25,11 +25,10 @@ struct foodieApp: App {
         
         DatabaseLogger.printPath()
         
-        dashboardViewModel = DashboardViewModel(service: container.serviceV)
+        dashboardViewModel = DashboardViewModel(service: container.asyncService)
         
         router = Router()
-        viewFactory = ViewFactory(service: container.service,
-                                  asyncService: container.serviceV)
+        viewFactory = StreamViewFactory(service: container.asyncStreamService)
     }
     
     var body: some Scene {

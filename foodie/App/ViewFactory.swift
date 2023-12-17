@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-class ViewFactory {
+class ViewFactory: ClosureViewFactory { }
 
-    private let service: MealsClosureServiceType
-    private let asyncService: MealsAsyncServiceType
+class ClosureViewFactory {
 
-    private lazy var categoriesFactory = CategoriesViewFactory(service: service, asyncService: asyncService)
-    private lazy var melasFactory = MealsViewFactory(service: service, asyncService: asyncService)
-    private lazy var melaFactory = MealViewFactory(service: service, asyncService: asyncService)
+    private(set) var service: MealsClosureServiceType
 
-    init(service: MealsClosureServiceType,
-         asyncService: MealsAsyncServiceType) {
+    private(set) lazy var categoriesFactory = CategoriesClosureViewFactory(service: service)
+    private(set) lazy var mealsFactory = MealsClosureViewFactory(service: service)
+    private(set) lazy var mealFactory = MealClosureViewFactory(service: service)
+
+    init(service: MealsClosureServiceType) {
         self.service = service
-        self.asyncService = asyncService
     }
 
     @MainActor @ViewBuilder
@@ -30,11 +29,70 @@ class ViewFactory {
         case .emptyCategories:
             categoriesFactory.makeEmptyView()
         case .meals(let category):
-            melasFactory.makeView(item: category)
+            mealsFactory.makeView(item: category)
         case .emptyMeals:
-            melasFactory.makeEmptyView()
+            mealsFactory.makeEmptyView()
         case .meal(let mealCategory):
-            melaFactory.makeView(item: mealCategory)
+            mealFactory.makeView(item: mealCategory)
+        }
+    }
+}
+
+class AsyncViewFactory {
+
+    private let service: MealsAsyncServiceType
+
+    private lazy var categoriesFactory = CategoriesAsyncViewFactory(service: service)
+    private lazy var mealsFactory = MealsAsyncViewFactory(service: service)
+    private lazy var mealFactory = MealAsyncViewFactory(service: service)
+
+    init(service: MealsAsyncServiceType) {
+        self.service = service
+    }
+
+    @MainActor @ViewBuilder
+    func makeView(type: Route) -> some View {
+        switch type {
+        case .categories:
+            categoriesFactory.makeView()
+        case .emptyCategories:
+            categoriesFactory.makeEmptyView()
+        case .meals(let category):
+            mealsFactory.makeView(item: category)
+        case .emptyMeals:
+            mealsFactory.makeEmptyView()
+        case .meal(let mealCategory):
+            mealFactory.makeView(item: mealCategory)
+        }
+    }
+}
+
+
+class StreamViewFactory {
+
+    private let service: MealsAsyncStreamServiceType
+
+    private lazy var categoriesFactory = CategoriesAsyncStreamViewFactory(service: service)
+    private lazy var mealsFactory = MealsAsyncStreamViewFactory(service: service)
+    private lazy var mealFactory = MealAsyncStreamViewFactory(service: service)
+
+    init(service: MealsAsyncStreamServiceType) {
+        self.service = service
+    }
+
+    @MainActor @ViewBuilder
+    func makeView(type: Route) -> some View {
+        switch type {
+        case .categories:
+            categoriesFactory.makeView()
+        case .emptyCategories:
+            categoriesFactory.makeEmptyView()
+        case .meals(let category):
+            mealsFactory.makeView(item: category)
+        case .emptyMeals:
+            mealsFactory.makeEmptyView()
+        case .meal(let mealCategory):
+            mealFactory.makeView(item: mealCategory)
         }
     }
 }
@@ -42,5 +100,5 @@ class ViewFactory {
 // MARK: Mock
 
 extension ViewFactory {
-    static let mock = ViewFactory(service: MealsServiceMock(), asyncService: MealsServiceAsyncMock())
+    static let mock = ViewFactory(service: MealsServiceMock())
 }

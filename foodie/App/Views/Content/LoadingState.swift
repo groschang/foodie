@@ -76,6 +76,10 @@ extension LoadingState {
         self = state(for: items)
     }
 
+    mutating func set(for items: some Collection) {
+        self = state(for: items)
+    }
+
     func state(for items: some Collection) -> LoadingState {
         var state: LoadingState
 
@@ -87,7 +91,25 @@ extension LoadingState {
 
         return state
     }
+}
 
+extension LoadingState {
+
+    mutating func set(for item: some ContainsElements) {
+        self = state(for: item)
+    }
+
+    func state(for items: some ContainsElements) -> LoadingState {
+        var state: LoadingState
+
+        if items.isEmpty { /// self != .loaded &&
+            state = .empty
+        } else {
+            state = .loaded
+        }
+
+        return state
+    }
 }
 
 extension LoadingState {

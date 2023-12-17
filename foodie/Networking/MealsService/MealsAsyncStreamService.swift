@@ -14,7 +14,7 @@ protocol MealsAsyncStreamServiceType {
     func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error>
 }
 
-class MealsAsyncStreamService: MealsAsyncStreamServiceType {
+class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with task id if the serive or action is not in progress / actor? -> screen
 
     private let backendClient: HTTPClient
     private let persistanceClient: PersistenceClient
@@ -71,6 +71,8 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType {
                     }
 
                     let fetched = try await fetchMeals(for: category)
+                    await saveMeals(meals: fetched, for: category)
+
                     continuation.yield(fetched)
                     continuation.finish()
                 } catch {
@@ -87,10 +89,11 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType {
     private func fetchMeals(for category: Category) async throws -> Meals {
         let request = MealDBEndpoint.MealsRequest(category: category.name)
         let meals = try await backendClient.process(request)
-
-        await persistanceClient.saveMeals(meals, for: category)
-
         return meals
+    }
+
+    private func saveMeals(meals: Meals, for category: Category) async {
+        await persistanceClient.saveMeals(meals, for: category)
     }
 
     // MARK: Meal

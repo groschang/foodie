@@ -7,20 +7,62 @@
 
 import SwiftUI
 
-class MealsViewFactory: ViewBuilderProtocol {
+class MealsViewFactory: MealsClosureViewFactory { }
+
+
+class MealsClosureViewFactory: ViewBuilderProtocol {
 
     private let service: MealsClosureServiceType
-    private let asyncService: MealsAsyncServiceType
 
-    init(service: MealsClosureServiceType,
-         asyncService: MealsAsyncServiceType) {
+    init(service: MealsClosureServiceType) {
         self.service = service
-        self.asyncService = asyncService
     }
 
     @MainActor @ViewBuilder
     func makeView(item category: any IdentifiableObject) -> some View {
-        let viewModel = MealsAsyncViewModel(service: asyncService, category: category)
+        let viewModel = MealsViewModel(service: service, category: category)
+        MealsView(viewModel: viewModel)
+    }
+
+    @MainActor
+    func makeEmptyView() -> some View {
+        makeEmptyView(message: "Select category")
+    }
+}
+
+
+class MealsAsyncViewFactory: ViewBuilderProtocol {
+
+    private let service: MealsAsyncServiceType
+
+    init(service: MealsAsyncServiceType) {
+        self.service = service
+    }
+
+    @MainActor @ViewBuilder
+    func makeView(item category: any IdentifiableObject) -> some View {
+        let viewModel = MealsAsyncViewModel(service: service, category: category)
+        MealsView(viewModel: viewModel)
+    }
+
+    @MainActor
+    func makeEmptyView() -> some View {
+        makeEmptyView(message: "Select category")
+    }
+}
+
+
+class MealsAsyncStreamViewFactory: ViewBuilderProtocol {
+
+    private let service: MealsAsyncStreamServiceType
+
+    init(service: MealsAsyncStreamServiceType) {
+        self.service = service
+    }
+
+    @MainActor @ViewBuilder
+    func makeView(item category: any IdentifiableObject) -> some View {
+        let viewModel = MealsAsyncStreamViewModel(service: service, category: category)
         MealsView(viewModel: viewModel)
     }
 
@@ -33,5 +75,5 @@ class MealsViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension MealsViewFactory {
-    static let mock = MealsViewFactory(service: MealsServiceMock(), asyncService: MealsServiceAsyncMock())
+    static let mock = MealsViewFactory(service: MealsServiceMock())
 }

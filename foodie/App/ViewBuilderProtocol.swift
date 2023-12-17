@@ -44,15 +44,3 @@ extension ViewBuilderProtocol {
             .ignoresSafeArea()
     }
 }
-
-
-class MMealsviewfactor: ViewBuilderProtocol {
-
-    func makeView(item: any IdentifiableObject) -> some View {
-        EmptyView()
-    }
-
-    func makeEmptyView() -> some View {
-        EmptyView()
-    }
-}

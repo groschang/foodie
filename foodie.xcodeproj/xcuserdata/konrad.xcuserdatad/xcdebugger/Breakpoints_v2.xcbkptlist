@@ -5596,84 +5596,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "45395BA0-351D-423E-9037-41D5751A3FBD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "init(name:bundle:type:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "880">
-               </Location>
-               <Location
-                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "788">
-               </Location>
-               <Location
-                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "740">
-               </Location>
-               <Location
-                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "832">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BD72CA8F-DC89-4480-ABC1-13F741E57C99"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -5700,6 +5622,382 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "startUpdating()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19F16821-D12C-4DDC-B7E6-D23032958788"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getMeal(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "115D573F-D975-4A55-BB11-37AC90AF6E56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getMeal(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5948D62C-906D-416C-B4DE-6A4E32D1C87C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "fetchMeal(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5948D62C-906D-416C-B4DE-6A4E32D1C87C - 98e617769f27bf93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "5948D62C-906D-416C-B4DE-6A4E32D1C87C - 7cf8a3af2ee4ef99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "5948D62C-906D-416C-B4DE-6A4E32D1C87C - cd3abd92f8c17b91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69200FCC-0DDE-438C-9F27-59AAC95C8DC9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "getMeal(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66B3E763-FBCC-42BE-9476-3525F7AA3AC8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "getMeal(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "66B3E763-FBCC-42BE-9476-3525F7AA3AC8 - 5b1cad5ba6fba06d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "66B3E763-FBCC-42BE-9476-3525F7AA3AC8 - 8b0a82c826428f4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "66B3E763-FBCC-42BE-9476-3525F7AA3AC8 - 683c273500056c6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "66B3E763-FBCC-42BE-9476-3525F7AA3AC8 - 91cc7a1e2ef1ca68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "918B5820-A8B3-43D5-9A56-A9DB38BE035C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "getMeal(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "918B5820-A8B3-43D5-9A56-A9DB38BE035C - 8afd2b884d50e4ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "918B5820-A8B3-43D5-9A56-A9DB38BE035C - bd8820390c9bc3c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "918B5820-A8B3-43D5-9A56-A9DB38BE035C - 5b1cad5ba6fba0e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "918B5820-A8B3-43D5-9A56-A9DB38BE035C - 5b1cad5ba6fba0e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;.Continuation) -&gt; () in foodie.MealsAsyncStreamService.getMeal(for: Swift.String) -&gt; Swift.AsyncThrowingStream&lt;foodie.Meal, Swift.Error&gt;"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "260">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB910CCB-7ED5-4553-A873-B864147C07E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "fetchMeal(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB910CCB-7ED5-4553-A873-B864147C07E9 - b7824949251cf257"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "AB910CCB-7ED5-4553-A873-B864147C07E9 - c8769c0cb4dd2259"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "AB910CCB-7ED5-4553-A873-B864147C07E9 - 98e617769f27be51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "AB910CCB-7ED5-4553-A873-B864147C07E9 - d8ed6eac07fda45c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "AB910CCB-7ED5-4553-A873-B864147C07E9 - d8ed6eac07fda45c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for foodie.MealsAsyncStreamService.fetchMeal(for: Swift.String) async throws -&gt; foodie.Meal"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71BA134C-509C-496C-A04D-A2795FD2F2F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Networking/MealsService/MealsAsyncStreamService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "fetchMeal(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

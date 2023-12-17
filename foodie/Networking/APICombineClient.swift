@@ -1,5 +1,5 @@
 //
-//  APIClient2.swift
+//  APICombineClient.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 18/09/2023.
@@ -7,11 +7,7 @@
 
 import Foundation
 
-//extension HTTPSession {
-//    func dataTaskPublisher(for url: URL) -> URLSession.DataTaskPublisher
-//}
-
-class APIClient2: HTTPClient {
+class APICombineClient: HTTPClient { //TODO: testme
 
     private let enviroment: APIEndpoint
 
@@ -34,13 +30,13 @@ class APIClient2: HTTPClient {
     func process<T: Decodable>(_ request: Request<T>) async throws -> T {
         do {
             let urlRequest = try requestBuilder.build(for: request)
-//            let (data, response) = try await download(urlRequest)
+            //            let (data, response) = try await download(urlRequest)
             let object: T = try await download(urlRequest)
-//            try validate(response)
-//            let object: T = try decode(data)
-//            NetworkLogger.log(request: urlRequest)
-//            NetworkLogger.log(response: response)
-//            NetworkLogger.log(data: data)
+            //            try validate(response)
+            //            let object: T = try decode(data)
+            //            NetworkLogger.log(request: urlRequest)
+            //            NetworkLogger.log(response: response)
+            //            NetworkLogger.log(data: data)
             return object
 
         } catch let error as RequestError {
@@ -75,8 +71,8 @@ class APIClient2: HTTPClient {
     private func download<T: Decodable>(_ request: URLRequest) async throws -> T {
         try await withCheckedThrowingContinuation { continuation in
 
-//            let publisher =
-         _ =
+            //            let publisher =
+            _ =
             session
                 .dataTaskPublisher(for: request)
                 .retry(3)
@@ -87,9 +83,9 @@ class APIClient2: HTTPClient {
                 }
                 .decode(type: T.self, decoder: decoder)
                 .mapError { APIError($0) }
-//                .eraseToAnyPublisher()
+            //                .eraseToAnyPublisher()
 
-//            publisher
+            //            publisher
                 .sink {
                     switch $0 {
                     case .finished:
@@ -100,33 +96,10 @@ class APIClient2: HTTPClient {
                 } receiveValue: {
                     continuation.resume(returning: $0)
                 }
-
-
-
         }
     }
 
     private class func validate(_ response: URLResponse) throws {
         if let error = APIError(response) { throw error }
     }
-//
-//    private class func validate(_ response: URLResponse) throws {
-//        guard let httpResponse = response as? HTTPURLResponse else {
-//            throw APIError.noResponse
-//        }
-//
-//        switch httpResponse.statusCode {
-//        case HttpStatusCode.successful:
-//            return
-//        case HttpStatusCode.clientError:
-//            throw APIError.client(httpResponse.statusCode)
-//        default:
-//            throw APIError.unexpected(httpResponse.statusCode)
-//        }
-//    }
-
-//    private func decode<T: Decodable>(_ data: Data) throws -> T {
-//        try decoder.decode(T.self, from: data)
-//    }
 }
-

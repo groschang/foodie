@@ -46,7 +46,7 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
     @MainActor private func getMeal() async throws {
         state = .loading
 
-        //        let meal = try await service.getMeal(for: mealCaterory.id) {
+        //        let meal = try await service.getMeal(for: mealCategory.id) {
         //            [unowned self] meal in
         //
         //            if meal.isEmpty == false {

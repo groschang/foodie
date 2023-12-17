@@ -1,14 +1,14 @@
 //
-//  MealsAsyncViewModel.swift
+//  MealsAsyncStreamViewModel.swift
 //  foodie
 //
-//  Created by Konrad Groschang on 07/08/2023.
+//  Created by Konrad Groschang on 17/12/2023.
 //
 
 import Foundation
 import Combine
 
-final class MealsAsyncViewModel: MealsViewModelType {
+final class MealsAsyncStreamViewModel: MealsViewModelType {
 
     var itemsHeader: String { "\(itemsCount) RECIPES".localized }
 
@@ -26,11 +26,11 @@ final class MealsAsyncViewModel: MealsViewModelType {
     @Published private(set) var backgroundUrl: URL?
 
     private let category: any IdentifiableObject
-    private let service: MealsAsyncServiceType
+    private let service: MealsAsyncStreamServiceType
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(service: MealsAsyncServiceType, category: any IdentifiableObject) {
+    init(service: MealsAsyncStreamServiceType, category: any IdentifiableObject) {
         self.service = service
         self.category = category
         setupProperties()
@@ -38,20 +38,28 @@ final class MealsAsyncViewModel: MealsViewModelType {
     }
 
     @MainActor func load() async {
+        guard let category = category as? Category else { return } //TODO: check
         guard state.isLoading == false else { return }
+
         state.setLoading()
 
-        guard let category = category as? Category else { return } //TODO: check
-        await loadMeals(category)
-        await fetchMeals(category)
+        do {
+            for try await meals in service.getMeals(for: category) {
+                items = meals.items
+                state.set(for: items)
+            }
+        } catch {
+            Logger.log("Fetch meals error: \(error)", onLevel: .error)
+            state.setError(error)
+        }
     }
 
     private func setupProperties() {
-        if let category = category as? Category {
-            categoryName = category.name
-            description = category.description
-            backgroundUrl = category.imageUrl
-        }
+        guard let category = category as? Category else { return }
+
+        categoryName = category.name
+        description = category.description
+        backgroundUrl = category.imageUrl
     }
 
     private func setupSubscriptions() {
@@ -73,29 +81,5 @@ final class MealsAsyncViewModel: MealsViewModelType {
     private func filterItems(with query: String? = nil) {
         filteredItems = filter(query: query) { $0.name }
         itemsCount = filteredItems.count // :)
-    }
-
-    @MainActor private func loadMeals(_ category: Category) async {
-        if let meals = await service.getMeals(for: category) {
-            items = meals.items
-            state.setLoaded()
-        }
-    }
-
-    @MainActor private func fetchMeals(_ category: Category) async {
-        do {
-            let meals = try await service.fetchMeals(for: category)
-
-            items = meals.items
-
-            if meals.isEmpty == false {
-                state.setLoaded()
-            } else {
-                state.setEmpty()
-            }
-        } catch {
-            Logger.log("Fetch meals error: \(error)", onLevel: .error)
-            state.setError(error)
-        }
     }
 }

@@ -31,11 +31,11 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
     @Published private(set) var filteredItems: [Category] = []
     @Published var searchQuery: String = ""
 
-    private let service: MealsAsyncServiceType
-    
+    private let service: MealsClosureServiceType
+
     private var cancellables = Set<AnyCancellable>()
     
-    init(service: MealsAsyncServiceType) {
+    init(service: MealsClosureServiceType) {
         self.service = service
 
         setupSubscriptions()
@@ -45,8 +45,7 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         guard state.isLoading == false else { return }
         state.setLoading()
         
-        await loadCategories()
-        await getCategories()
+        await fetchCategories()
     }
 
     private func setupSubscriptions() {
@@ -73,20 +72,19 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         filteredItems = filter(query: query) { $0.name }
     }
 
-    @MainActor private func loadCategories() async {
-        if let categories = await service.loadCategories() {
-            items = categories.items
-            state.setLoaded()
-        }
-    }
-    
-    @MainActor private func getCategories() async {
+    @MainActor private func fetchCategories() async {
         do {
-            let categories = try await service.fetchCategories()
+            let categories = try await service.getCategories() {  [weak self] storedCategories in
+                guard let self else { return }
+                guard storedCategories.items.isNotEmpty else { return }
 
-            items = categories.items
+                self.items = storedCategories.items
+                self.state.setLoaded()
+            }
 
-            state = items.isEmpty ? .empty : .loaded
+            self.items = categories.items
+            state.set(for: self.items)
+
         } catch {
             Logger.log("Fetch categories error: \(error)", onLevel: .error)
             state.setError(error)

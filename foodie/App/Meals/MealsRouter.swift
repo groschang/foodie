@@ -9,6 +9,8 @@ import SwiftUI
 
 enum MealsRouter: RouterProtocol {
 
+    static let viewFactory = MealsAsyncViewFactory(service: MealsAsyncService()) //TODO: DI??
+
     case meals(Category)
 
     case empty
@@ -27,10 +29,7 @@ enum MealsRouter: RouterProtocol {
 
     @MainActor
     private func makeMealsView(category: Category) -> some View {
-        let service = MealsServiceMock()
-        let serviceV = MealsServiceAsyncMock()
-        let viewModel = MealsAsyncViewModel(service: serviceV, category: category)
-        return MealsView(viewModel: viewModel)
+        Self.viewFactory.makeView()
     }
 
     @MainActor

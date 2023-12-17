@@ -71,6 +71,9 @@ extension APIError {
             self.init(APIError.noResponse)
         }
     }
+}
+
+extension APIError {
 
     init(_ error: Error) {
         if let error = error as? RequestError {

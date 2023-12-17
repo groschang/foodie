@@ -62,7 +62,27 @@ final class MealsViewModel: MealsViewModelType {
     }
 
     func load() async {
-        await fetchMeals()
+        guard state.isLoading == false else { return }
+        state = .loading
+
+        do {
+
+            if (category is Category) == false {
+                try await getCategories() //TODO: check if needed
+            }
+
+            if let category = category as? Category {
+                try await getMeals(category)
+            }
+
+//            state = items.isEmpty ? .empty : .loaded
+
+            state.set(for: items) // TODO: test me
+
+        } catch {
+            Logger.log("Fetch meals error: \(error)", onLevel: .error)
+            state.setError(error)
+        }
     }
 
     private func setupProperties() {
@@ -93,29 +113,6 @@ final class MealsViewModel: MealsViewModelType {
         itemsCount = filteredItems.count // :)
     }
 
-    private func fetchMeals() async {
-        guard state.isLoading == false else { return }
-
-        state = .loading
-
-        do {
-
-            if (category is Category) == false {
-                try await getCategories()
-            }
-
-            if let category = category as? Category {
-                try await getMeals(category)
-            }
-
-            state = items.isEmpty ? .empty : .loaded
-
-        } catch {
-            Logger.log("Fetch meals error: \(error)", onLevel: .error)
-            state.setError(error)
-        }
-    }
-
     @MainActor private func getCategories() async throws  {
 
         func assignCategory(_ categories: Categories) {
@@ -135,7 +132,7 @@ final class MealsViewModel: MealsViewModelType {
             assignCategory(categories)
 
         } catch {
-            Logger.log("Fetch categories error: \(error)", onLevel: .error)
+            Logger.log("Fetch meals error: \(error)", onLevel: .error)
             state.setError(error)
         }
     }
