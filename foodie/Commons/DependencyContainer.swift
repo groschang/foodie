@@ -9,6 +9,7 @@ import Foundation
 
 
 protocol DependencyContainerType {
+
     associatedtype CategoriesViewModelAssociatedType: CategoriesViewModelType
     associatedtype CategoriesViewFactoryAssociatedType: ViewBuilderProtocol //TODO: check to change to any TheViewBuilder below
 
@@ -104,7 +105,7 @@ struct MockDependencyContainer: DependencyContainerType {
         }
 
         container.register(type: MealsServiceAsyncType.self) { _ in
-            MealsServiceVMock()
+            MealsServiceAsyncMock()
         }
 
         container.register(type: MealsServiceTypeNew.self) { _ in

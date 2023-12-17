@@ -35,5 +35,5 @@ final class DashboardViewModel: DashboardViewModelType {
 
 
 extension DashboardViewModel {
-    static let mock = DashboardViewModel(service: MealsServiceVMock())
+    static let mock = DashboardViewModel(service: MealsServiceAsyncMock())
 }

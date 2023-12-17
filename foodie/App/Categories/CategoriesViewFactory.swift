@@ -33,5 +33,5 @@ class CategoriesViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension CategoriesViewFactory {
-    static let mock = CategoriesViewFactory(service: MealsServiceMock(), asyncService: MealsServiceVMock())
+    static let mock = CategoriesViewFactory(service: MealsServiceMock(), asyncService: MealsServiceAsyncMock())
 }

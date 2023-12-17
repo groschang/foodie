@@ -18,9 +18,14 @@ Todo list
 - [ ] DTO approach?
 - [ ] Remove routers ? RouterProtocol
 - [ ] factories :remove doubled sericess 
-- [ ] rename MealsServiceVMock into  MealsServiceAsync ?
+- [ ] rename MealsServiceTypeNew
+- [ ] rename MealsServiceType
+- [ ] rename MealsServiceVIType
 - [ ] navigationBarHiddenx ?
-- [ ] rename TheViewBuilder
 - [ ] use EmbedInStackModifier
-- [ ] MotionManager 
+- [ ] MotionManager handling and optimization (utilize core)
 - [ ] DependencyContainerType
+- [ ] All rights reserved phrase
+- [X] rename MealsServiceVMock into  MealsServiceAsync ?
+- [x] rename ViewBuilderProtocol into TheViewBuilder
+

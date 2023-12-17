@@ -68,5 +68,5 @@ final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Iden
 }
 
 extension DashboardCategoriesViewModel {
-    static let mock = DashboardCategoriesViewModel(service: MealsServiceVMock())
+    static let mock = DashboardCategoriesViewModel(service: MealsServiceAsyncMock())
 }

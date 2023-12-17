@@ -28,7 +28,7 @@ enum MealsRouter: RouterProtocol {
     @MainActor
     private func makeMealsView(category: Category) -> some View {
         let service = MealsServiceMock()
-        let serviceV = MealsServiceVMock()
+        let serviceV = MealsServiceAsyncMock()
         let viewModel = MealsAsyncViewModel(service: serviceV, category: category)
         return MealsView(viewModel: viewModel)
     }

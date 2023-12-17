@@ -10,7 +10,7 @@ import SwiftUI
 enum CategoriesRouter: RouterProtocol {
 
     static let service = MealsServiceMock()
-    static let serviceV = MealsServiceVMock()
+    static let serviceV = MealsServiceAsyncMock()
 
     case categories
 
@@ -30,8 +30,8 @@ enum CategoriesRouter: RouterProtocol {
 
     @MainActor @ViewBuilder
     private func makeCategoriesView() -> some View {
-        let service = MealsServiceMock()
-        let serviceV = MealsServiceVMock()
+        let service = MealsServiceMock() //TODO: 
+        let serviceV = MealsServiceAsyncMock()
         let viewModel = CategoriesViewModel(service: serviceV)
         CategoriesView(viewModel: viewModel)
     }

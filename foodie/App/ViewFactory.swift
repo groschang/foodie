@@ -42,5 +42,5 @@ class ViewFactory {
 // MARK: Mock
 
 extension ViewFactory {
-    static let mock = ViewFactory(service: MealsServiceMock(), asyncService: MealsServiceVMock())
+    static let mock = ViewFactory(service: MealsServiceMock(), asyncService: MealsServiceAsyncMock())
 }

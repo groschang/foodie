@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MealsServiceVIType { //TODO: RENAM
+protocol MealsServiceVIType { //TODO: RENAMe
 
     func loadCategories() async throws -> Categories
 
@@ -33,7 +33,7 @@ class MealsServiceVI: MealsServiceVIType {
         self.backendClient = backendClient
     }
 
-    // MARK: categories
+    // MARK: Categories
 
     func loadCategories() async throws -> Categories {
         try await load(itemID: Categories.Identifier,
@@ -97,7 +97,7 @@ class MealsServiceVI: MealsServiceVIType {
     }
 }
 
-extension MealsServiceVI {
+extension MealsServiceVI { //TODO: RENAMe
 
     private func load<T>(
         itemID: String,

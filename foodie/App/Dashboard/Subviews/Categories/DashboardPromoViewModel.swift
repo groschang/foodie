@@ -69,5 +69,5 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
 
 extension DashboardPromoViewModel {
-    static let mock = DashboardPromoViewModel(service: MealsServiceVMock())
+    static let mock = DashboardPromoViewModel(service: MealsServiceAsyncMock())
 }

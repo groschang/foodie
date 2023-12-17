@@ -1,5 +1,5 @@
 //
-//  MealsServiceVMock.swift
+//  MealsServiceAsyncMock.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 10/07/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MealsServiceVMock: Mockable, Sleepable, MealsServiceAsyncType {
+class MealsServiceAsyncMock: Mockable, Sleepable, MealsServiceAsyncType {
 
     enum Timing {
         static let delay = Duration.seconds(4)

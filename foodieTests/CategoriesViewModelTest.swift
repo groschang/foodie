@@ -17,7 +17,7 @@ final class CategoriesViewModelTest: XCTestCase {
     override func setUp() {
         super.setUp()
         service = MealsServiceMock(delay: true)
-//        sut = CategoriesViewModel(service: service as! MealsServiceVType)
+//        sut = CategoriesViewModel(service: service as! MealsServiceVType) //TODO: check
     }
     
     func testFetchCategories() async {
