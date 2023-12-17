@@ -7,7 +7,19 @@
 
 import Foundation
 
-struct Category: Identifiable, Codable, Hashable, Equatable {
+protocol IdentifiableObject: Identifiable, Codable, Hashable, Equatable {
+    var id: String { get }
+}
+
+struct ObjectId: IdentifiableObject {
+    let id: String
+
+    init(_ id: String) {
+        self.id = id
+    }
+}
+
+struct Category: IdentifiableObject {
 
     let id: String
     let name: String

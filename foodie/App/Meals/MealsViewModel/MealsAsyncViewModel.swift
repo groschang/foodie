@@ -25,12 +25,12 @@ final class MealsAsyncViewModel: MealsViewModelType {
     @Published private(set) var description: String = ""
     @Published private(set) var backgroundUrl: URL?
 
-    private let category: Category
+    private let category: any IdentifiableObject
     private let service: MealsServiceAsyncType
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(service: MealsServiceAsyncType, category: Category) {
+    init(service: MealsServiceAsyncType, category: any IdentifiableObject) {
         self.service = service
         self.category = category
         setupProperties()
@@ -41,14 +41,17 @@ final class MealsAsyncViewModel: MealsViewModelType {
         guard state.isLoading == false else { return }
         state.setLoading()
 
-        await loadMeals()
-        await fetchMeals()
+        guard let category = category as? Category else { return } //TODO: check
+        await loadMeals(category)
+        await fetchMeals(category)
     }
 
     private func setupProperties() {
-        categoryName = category.name
-        description = category.description
-        backgroundUrl = category.imageUrl
+        if let category = category as? Category {
+            categoryName = category.name
+            description = category.description
+            backgroundUrl = category.imageUrl
+        }
     }
 
     private func setupSubscriptions() {
@@ -72,14 +75,14 @@ final class MealsAsyncViewModel: MealsViewModelType {
         itemsCount = filteredItems.count // :)
     }
 
-    @MainActor private func loadMeals() async {
+    @MainActor private func loadMeals(_ category: Category) async {
         if let meals = await service.getMeals(for: category) {
             items = meals.items
             state.setLoaded()
         }
     }
 
-    @MainActor private func fetchMeals() async {
+    @MainActor private func fetchMeals(_ category: Category) async {
         do {
             let meals = try await service.fetchMeals(for: category)
 

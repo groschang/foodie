@@ -30,7 +30,6 @@ class ParallaxManager: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        observeMotion()
         setupObservables()
     }
 
@@ -49,7 +48,7 @@ class ParallaxManager: ObservableObject {
 
                 self.privatePosition = value
 
-                print("x: \(value.x)\ty: \(value.y)\tz: \(value.z)")
+                Log.log("x: \(value.x)\ty: \(value.y)\tz: \(value.z)", onLevel: .verbose)
 
                 if centerPosition.isNil {
                     self.centerPosition = privatePosition
@@ -76,12 +75,22 @@ class ParallaxManager: ObservableObject {
     }
 
     func start() {
+        startEmiting()
+        observeMotion()
+    }
+
+    func stop() {
+        stopEmiting()
+        stopObserveMotion()
+    }
+
+    func startEmiting() {
         DispatchQueue.main.async { [weak self] in
             self?.isEmiting = true
         }
     }
 
-    func stop() {
+    func stopEmiting() {
         DispatchQueue.main.async { [weak self] in
             self?.isEmiting = false
         }
@@ -93,7 +102,7 @@ class ParallaxManager: ObservableObject {
     }
 
     func updatePosition() {
-        self.position = self.privatePosition
+        position = privatePosition
     }
 
     private func observeMotion() {

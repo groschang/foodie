@@ -11,7 +11,7 @@ enum LoadingStateError: Error {
     case base(String)
 }
 
-enum LoadingState: Hashable, Identifiable, RawRepresentable {
+enum LoadingState: Hashable, Identifiable, RawRepresentable, Equatable {
 
     case idle
     case loading
@@ -72,8 +72,9 @@ enum LoadingState: Hashable, Identifiable, RawRepresentable {
 
 extension LoadingState {
 
-    var isLoading: Bool { self == .loading }
-    var isLoaded: Bool { self == .loaded }
+    mutating func setCollection(_ items: some Collection) {
+        self = state(for: items)
+    }
 
     func state(for items: some Collection) -> LoadingState {
         var state: LoadingState
@@ -87,24 +88,23 @@ extension LoadingState {
         return state
     }
 
-    mutating func change(for items: some Collection) {
-        self = state(for: items)
-    }
 }
 
 extension LoadingState {
+
+    var isLoading: Bool { self == .loading }
 
     mutating func setLoading() {
         self = .loading
     }
 
+    var isLoaded: Bool { self == .loaded }
+
     mutating func setLoaded() {
         self = .loaded
     }
 
-    mutating func setCollection(_ items: some Collection) {
-        self = state(for: items)
-    }
+    var isError: Bool { self == .failed(nil) }
 
     /// Sets `failed` loading state with related `error`
     ///
@@ -120,6 +120,8 @@ extension LoadingState {
             self = .failed(error)
         }
     }
+
+    var isEmpty: Bool { self == .empty }
 
     mutating func setEmpty() {
         self = .empty

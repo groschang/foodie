@@ -19,7 +19,7 @@ struct SwipeModifier: ViewModifier {
 
     init(manager: ParallaxManager) {
         self.manager = manager
-        manager.start()
+        manager.startEmiting()
     }
 
     func body(content: Content) -> some View {
@@ -30,7 +30,7 @@ struct SwipeModifier: ViewModifier {
                     .updating($isDragging) { (value, state, transaction) in
                         guard isDragging else {
                             state = true
-                            manager.stop()
+                            manager.stopEmiting()
                             return
                         }
 
@@ -54,7 +54,7 @@ struct SwipeModifier: ViewModifier {
             )
             .onAnimationCompleted(for: manager.position) {
                 withAnimation {
-                    manager.start()
+                    manager.startEmiting()
                 }
             }
     }

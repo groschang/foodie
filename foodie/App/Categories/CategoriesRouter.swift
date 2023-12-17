@@ -38,7 +38,7 @@ enum CategoriesRouter: RouterProtocol {
 
     @MainActor
     private func makeEmptyView() -> some View {
-        InformationView(message: "Select category")
+        InformationView("Select category")
             .ignoresSafeArea()
     }
 }

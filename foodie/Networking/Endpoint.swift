@@ -40,6 +40,12 @@ extension Endpoint {
             ]
         )
     }
+
+    static func ingredientImage(name: String, small: Bool = false) -> Endpoint {
+        Endpoint(
+            path: "/images/ingredients/\(name)\(small ? "-Small" : "" ).png"
+        )
+    }
 }
 
 extension Endpoint: CustomStringConvertible {

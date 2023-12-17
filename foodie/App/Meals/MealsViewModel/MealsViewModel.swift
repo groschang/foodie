@@ -45,15 +45,19 @@ final class MealsViewModel: MealsViewModelType {
     @Published private(set) var description: String = ""
     @Published private(set) var backgroundUrl: URL?
 
-    private let category: Category
+    private var category: any Identifiable
     private let service: MealsServiceType
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(service: MealsServiceType, category: Category) {
+    init(service: MealsServiceType, category: any Identifiable) {
         self.service = service
         self.category = category
-        setupProperties()
+
+        if category is Category {
+            setupProperties()
+        }
+
         setupSubscriptions()
     }
 
@@ -62,6 +66,7 @@ final class MealsViewModel: MealsViewModelType {
     }
 
     private func setupProperties() {
+        guard let category = category as? Category else { return }
         categoryName = category.name
         description = category.description
         backgroundUrl = category.imageUrl
@@ -91,16 +96,51 @@ final class MealsViewModel: MealsViewModelType {
     private func fetchMeals() async {
         guard state.isLoading == false else { return }
 
+        state = .loading
+
         do {
-            try await getMeals()
+
+            if (category is Category) == false {
+                try await getCategories()
+            }
+
+            if let category = category as? Category {
+                try await getMeals(category)
+            }
+
+            state = items.isEmpty ? .empty : .loaded
+
         } catch {
             Logger.log("Fetch meals error: \(error)", onLevel: .error)
             state.setError(error)
         }
     }
 
-    @MainActor private func getMeals() async throws {
-        state = .loading
+    @MainActor private func getCategories() async throws  {
+
+        func assignCategory(_ categories: Categories) {
+            guard let id = category.id as? String else { return }
+            let filteredArray = categories.items.filter { $0.id == id }
+            guard let category = filteredArray.first else { return }
+            self.category = category
+        }
+
+        do {
+            let categories = try await service.getCategories() {  [weak self] storedCategories in
+                guard let self else { return }
+
+                assignCategory(storedCategories)
+            }
+
+            assignCategory(categories)
+
+        } catch {
+            Logger.log("Fetch categories error: \(error)", onLevel: .error)
+            state.setError(error)
+        }
+    }
+
+    @MainActor private func getMeals(_ category: Category) async throws {
 
         let meals = try await service.getMeals(for: category) { [weak self] storedMeals in
             guard let self else { return }
@@ -112,6 +152,5 @@ final class MealsViewModel: MealsViewModelType {
         }
 
         items = meals.items
-        state = meals.isEmpty ? .empty : .loaded
     }
 }

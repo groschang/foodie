@@ -20,23 +20,29 @@ struct ListPhotoView: View {
     
     var body: some View {
         if let imageUrl {
-            KFImage.url(imageUrl)
-                .placeholder {
-                    PhotoPlaceholder()
-                }
-                .resizable()
-                .onSuccess { _ in
-                    imageLoaded = true
-                    animate()
-                }
-                .opacity(faded ? Self.minFade : 1.0)
-                .onAppear {
-                    animate()
-                }
-                .onDisappear {
-                    resetAnimation()
-                }
+            photo
+        } else {
+            PhotoPlaceholder()
         }
+    }
+
+    private var photo: some View {
+        KFImage.url(imageUrl)
+            .placeholder {
+                PhotoPlaceholder()
+            }
+            .resizable()
+            .onSuccess { _ in
+                imageLoaded = true
+                animate()
+            }
+            .opacity(faded ? Self.minFade : 1.0)
+            .onAppear {
+                animate()
+            }
+            .onDisappear {
+                resetAnimation()
+            }
     }
     
     private func animate() {

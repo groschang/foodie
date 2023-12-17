@@ -9,25 +9,15 @@ import SwiftUI
 
 struct LoadingView: View {
 
-    private struct Localizable {
-        static let loading = "Loading"
-    }
-
-    private struct Scale {
-        static let start = 1.0
-        static let end = 1.3
-    }
-    
-    @State private var textScale: CGFloat = Scale.start
+    @State private var textScale = 1.0
     
     var body: some View {
         VStack(spacing: 50) {
-            Text(Localizable.loading)
-                .title()
-                .foregroundColor(ColorStyle.black.lightOpacity())
+            Text("Loading")
+                .modifier(TextStyle.infoScreenTitle)
                 .scaleEffect(textScale)
                 .animateForever {
-                    textScale = Scale.end
+                    textScale = 1.3
                 }
         }
         .maxSize()

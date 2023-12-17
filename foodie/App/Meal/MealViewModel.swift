@@ -47,11 +47,11 @@ final class MealViewModel: MealViewModelType {
     private let mealCaterory: MealCategory
     private let service: MealsServiceType
     
-    init(service: MealsServiceType, mealCaterory: MealCategory) {
+    init(service: MealsServiceType, mealCaterory: any IdentifiableObject) {
         self.service = service
-        self.mealCaterory = mealCaterory
+        self.mealCaterory = mealCaterory as! MealCategory
 
-        setup(with: mealCaterory)
+        setup(with: mealCaterory as! MealCategory)
     }
     
     func load() async {

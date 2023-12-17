@@ -1,5 +1,5 @@
 //
-//  EmptyView.swift
+//  EmptyStateView.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 18/01/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmptyScreenView: View { //TODO: rename
+struct EmptyStateView: View { //TODO: rename
     
     private let message: String
     
@@ -17,8 +17,7 @@ struct EmptyScreenView: View { //TODO: rename
     
     var body: some View {
         Text(message)
-            .title()
-            .foregroundColor(ColorStyle.black.lightOpacity())
+            .modifier(TextStyle.infoScreenTitle)
             .maxSize()
             .staticGradient()
     }
@@ -28,6 +27,6 @@ struct EmptyScreenView: View { //TODO: rename
 
 struct EmptyScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyScreenView("Empty view")
+        EmptyStateView("Empty view")
     }
 }

@@ -9,14 +9,17 @@ import SwiftUI
 
 struct InformationView: View {
     
-    let message: String
+    private let message: String
+
+    init(_ message: String) {
+        self.message = message
+    }
     
     var body: some View {
         Text(message)
-            .title()
-            .foregroundColor(ColorStyle.black.lightOpacity())
+            .modifier(TextStyle.infoScreenTitle)
             .maxSize()
-            .background { AnimatedGradient() }
+            .animatedGradient()
     }
 }
 
@@ -24,6 +27,6 @@ struct InformationView: View {
 
 struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        InformationView(message: "Sample text")
+        InformationView("Sample text")
     }
 }

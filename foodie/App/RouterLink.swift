@@ -11,10 +11,10 @@ struct RouterLink<Label: View>: View {
 
     @EnvironmentObject var router: Router
 
-    let value: Router.Destination
+    let value: Route
     private var label: () -> Label
 
-    init(to value: Router.Destination,
+    init(to value: Route,
          @ViewBuilder label: @escaping () -> Label) {
         self.value = value
         self.label = label

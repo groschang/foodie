@@ -12,21 +12,21 @@ public typealias Log = Logger
 
 @main
 struct foodieApp: App {
-
-    private let container = MockDependencyContainer()
-
+    
+    private let container = DependencyContainer() // offline mocks: MockDependencyContainer
+    
     private let dashboardViewModel: DashboardViewModel
-
+    
     private let viewFactory: ViewFactory
     @ObservedObject private var router: Router
-
+    
     init() {
         container.assemble()
-
+        
         DatabaseLogger.printPath()
-
+        
         dashboardViewModel = DashboardViewModel(service: container.serviceV)
-
+        
         router = Router()
         viewFactory = ViewFactory(service: container.service,
                                   asyncService: container.serviceV)
@@ -34,13 +34,33 @@ struct foodieApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $router.navigationPath) {
-                DashboardView(viewModel: dashboardViewModel)
-                    .navigationDestination(for: Router.Destination.self) { destination in
-                        viewFactory.makeView(type: .init(destination))
-                    }
-            }
-            .environmentObject(router)
+            content
         }
+    }
+    
+    fileprivate var content: some View {
+        NavigationStack(path: $router.navigationPath) {
+            DashboardView(viewModel: dashboardViewModel)
+                .navigationDestination(for: Route.self) { route in
+                    viewFactory.makeView(type: route)
+                }
+                .onOpenURL { url in
+                    Log.log(url, onLevel: .verbose)
+                    if let route = Route(url: url) {
+                        router.navigate(to: route)
+                    }
+                }
+        }
+        .accentColor(ColorStyle.accent)
+        .environmentObject(router)
+    }
+}
+
+
+// MARK: Previews
+
+struct foodieApp_Previews: PreviewProvider {
+    static var previews: some View {
+        foodieApp().content
     }
 }

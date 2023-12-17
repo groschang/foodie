@@ -13,7 +13,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
     @StateObject private var viewModel: Model
 
-    private let manager = ParallaxManager()
+    @StateObject private var manager = ParallaxManager()
 
     init(viewModel: Model) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -23,6 +23,8 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
         content
             .navigationTitle("Welcome back")
             .task { await viewModel.load() }
+            .onAppear { manager.start() }
+            .onDisappear { manager.stop() }
             .accentColor(ColorStyle.accent)
     }
 
@@ -37,7 +39,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
                 .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
                 .padding(.vertical, 12)
-                .modifier(SwipeModifier(manager: manager))
+//                .modifier(SwipeModifier(manager: manager)) //TODO: optimize
 
             DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
 

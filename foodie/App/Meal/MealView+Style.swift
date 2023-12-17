@@ -74,7 +74,7 @@ struct MealViewIngredientTitleStyle: ViewModifier { //TODO: title style  #text
 
     func body(content: Content) -> some View {
         content
-            .modifier(TextStyle.title3)
+            .modifier(TextStyle.subtitle)
             .shadow(radius: Shadow.radius)
     }
 }

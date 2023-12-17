@@ -8,3 +8,4 @@
 import Foundation
 
 typealias VoidAction = () -> Void
+typealias AsyncVoidAction = () async -> Void

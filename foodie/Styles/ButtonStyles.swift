@@ -33,6 +33,32 @@ struct GrowingButton: ButtonStyle {
     }
 }
 
+// MARK: Information button
+
+struct InformationButtonStyle: ButtonStyle {
+
+    private struct Animations {
+        static let endScale = 1.2
+        static let duration = 0.2
+        static let startScale = 1.0
+    }
+
+    private struct Colors { 
+        static let background = ColorStyle.gray
+        static let foreground = ColorStyle.white
+    }
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .foregroundColor(Colors.foreground)
+            .background(Colors.background)
+            .clipShape(Capsule())
+            .scaleEffect(configuration.isPressed ? Animations.endScale : Animations.startScale)
+            .animation(.easeOut(duration: Animations.duration), value: configuration.isPressed)
+    }
+}
+
 
 // MARK: Previews
 

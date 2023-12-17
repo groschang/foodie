@@ -33,7 +33,7 @@
 		7111EC44297C531C00ABC48C /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC12297C531C00ABC48C /* MealsViewModel.swift */; };
 		7111EC45297C531C00ABC48C /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC13297C531C00ABC48C /* MealListView.swift */; };
 		7111EC46297C531C00ABC48C /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC15297C531C00ABC48C /* MealViewModel.swift */; };
-		7111EC48297C531C00ABC48C /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC18297C531C00ABC48C /* EmptyView.swift */; };
+		7111EC48297C531C00ABC48C /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC18297C531C00ABC48C /* EmptyStateView.swift */; };
 		7111EC49297C531C00ABC48C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC19297C531C00ABC48C /* LoadingView.swift */; };
 		7111EC4A297C531C00ABC48C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1A297C531C00ABC48C /* ErrorView.swift */; };
 		7111EC4B297C531C00ABC48C /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC1C297C531C00ABC48C /* CategoriesViewModel.swift */; };
@@ -312,7 +312,7 @@
 		7111EC12297C531C00ABC48C /* MealsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		7111EC13297C531C00ABC48C /* MealListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
 		7111EC15297C531C00ABC48C /* MealViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
-		7111EC18297C531C00ABC48C /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		7111EC18297C531C00ABC48C /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		7111EC19297C531C00ABC48C /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		7111EC1A297C531C00ABC48C /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		7111EC1C297C531C00ABC48C /* CategoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
@@ -651,9 +651,9 @@
 				7156197929802A1A001EC9A6 /* Common */,
 				7111EC8F2980209800ABC48C /* Placeholders */,
 				7111EC82297C8A8800ABC48C /* Content */,
-				7111EC18297C531C00ABC48C /* EmptyView.swift */,
 				7111EC19297C531C00ABC48C /* LoadingView.swift */,
 				7111EC1A297C531C00ABC48C /* ErrorView.swift */,
+				7111EC18297C531C00ABC48C /* EmptyStateView.swift */,
 				71080F0F298F3407009FCDDB /* InformationView.swift */,
 			);
 			path = Views;
@@ -1414,7 +1414,7 @@
 				71052D9C29940718000008B6 /* IngredientsView.swift in Sources */,
 				7124803029A2668500064D29 /* TextStyles.swift in Sources */,
 				71052DA829946A2D000008B6 /* CategoriesViewModelMock.swift in Sources */,
-				7111EC48297C531C00ABC48C /* EmptyView.swift in Sources */,
+				7111EC48297C531C00ABC48C /* EmptyStateView.swift in Sources */,
 				71D036F82A5DECE10023356C /* CategoriesRouter.swift in Sources */,
 				7111EC64297C531C00ABC48C /* Mockable.swift in Sources */,
 				7111EC4A297C531C00ABC48C /* ErrorView.swift in Sources */,
@@ -1803,6 +1803,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = foodie/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -1841,6 +1842,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = foodie/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -2001,9 +2003,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 7.9.0;
-				minimumVersion = 7.8.0;
+				kind = exactVersion;
+				version = 7.10.1;
 			};
 		};
 		71AF83952A3A0B1F006FEEEB /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
@@ -2011,7 +2012,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
 			requirement = {
 				kind = exactVersion;
-				version = 1.9.0;
+				version = 1.15.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

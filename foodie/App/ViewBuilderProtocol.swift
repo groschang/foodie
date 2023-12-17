@@ -8,29 +8,25 @@
 import SwiftUI
 
 protocol ViewBuilderProtocol {
-    associatedtype V: View
-    associatedtype Item: Codable
-    associatedtype NoDataView: View
-    func makeView() -> V
-    func makeView(item: Item) -> V
-    func makeEmptyView() -> NoDataView
+    associatedtype V1: View
+    associatedtype V2: View
+    associatedtype DataView: View
+    func makeView() -> V2
+    func makeView(item: any IdentifiableObject) -> V1
+    func makeEmptyView() -> DataView
 }
 
 extension ViewBuilderProtocol {
-    func makeView() -> V {
-        EmptyView() as! V
+    func makeView() -> some View {
+        EmptyView()
     }
-}
 
-extension ViewBuilderProtocol {
-    func makeView(item: String) -> V {
-        EmptyView() as! V
+    func makeView(item: any IdentifiableObject) -> some View {
+        EmptyView()
     }
-}
 
-extension ViewBuilderProtocol {
-    func makeEmptyView() -> NoDataView {
-        EmptyView() as! NoDataView
+    func makeEmptyView() -> some View {
+        EmptyView()
     }
 }
 
@@ -38,13 +34,25 @@ extension ViewBuilderProtocol {
 
     @MainActor
     func makeInformationView(message: String) -> some View {
-        InformationView(message: message)
+        InformationView(message)
             .ignoresSafeArea()
     }
 
     @MainActor
     func makeEmptyView(message: String) -> some View {
-        EmptyScreenView(message)
+        EmptyStateView(message)
             .ignoresSafeArea()
+    }
+}
+
+
+class MMealsviewfactor: ViewBuilderProtocol {
+
+    func makeView(item: any IdentifiableObject) -> some View {
+        EmptyView()
+    }
+
+    func makeEmptyView() -> some View {
+        EmptyView()
     }
 }

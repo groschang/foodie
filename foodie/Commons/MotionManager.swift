@@ -15,11 +15,11 @@ class MotionManager: ObservableObject {
     private var manager = CMMotionManager()
 
     init() {
-        self.manager.deviceMotionUpdateInterval = 1/60
+        manager.deviceMotionUpdateInterval = 1/60
     }
 
     func startUpdating() {
-        self.manager.startDeviceMotionUpdates(to: .main) { [weak self] (motionData, error) in
+        manager.startDeviceMotionUpdates(to: .main) { [weak self] (motionData, error) in
             guard
                 let self,
                 error.isNil
@@ -33,7 +33,7 @@ class MotionManager: ObservableObject {
     }
 
     func stopUpdating() {
-        self.manager.stopDeviceMotionUpdates()
+        manager.stopDeviceMotionUpdates()
     }
 }
 

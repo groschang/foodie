@@ -19,7 +19,7 @@ class MealViewFactory: ViewBuilderProtocol {
     }
 
     @MainActor @ViewBuilder
-    func makeView(item mealCategory: MealCategory) -> some View {
+    func makeView(item mealCategory: any IdentifiableObject) -> some View {
         let viewModel = MealViewModel(service: service, mealCaterory: mealCategory)
         MealView(viewModel: viewModel)
     }

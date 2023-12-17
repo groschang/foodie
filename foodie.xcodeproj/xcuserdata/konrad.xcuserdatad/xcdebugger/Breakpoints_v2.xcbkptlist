@@ -253,6 +253,36 @@
                   endingLineNumber = "71"
                   offsetFromSymbolStart = "1604">
                </Location>
+               <Location
+                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 751881a1b3c56621"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.StoreType) -&gt; ()"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1612">
+               </Location>
+               <Location
+                  uuid = "E2E23ACE-428E-468D-A799-FC98611F4BA9 - 751881a1b3c56621"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.configureDefaults(foodie.StoreType) -&gt; ()"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1700">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5608,7 +5638,69 @@
                   endingLineNumber = "51"
                   offsetFromSymbolStart = "788">
                </Location>
+               <Location
+                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "45395BA0-351D-423E-9037-41D5751A3FBD - 91e4bb1c6e2f05b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "foodie.PersistentContainer.__allocating_init(name: Swift.String, bundle: __C.NSBundle, type: foodie.StoreType) -&gt; foodie.PersistentContainer"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Models/Persistence/DataCore/PersistentContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "832">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD72CA8F-DC89-4480-ABC1-13F741E57C99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/App/Meals/Subviews/MealListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "foodie/Commons/MotionManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "startUpdating()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

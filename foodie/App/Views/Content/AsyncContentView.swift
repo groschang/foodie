@@ -47,12 +47,12 @@ struct AsyncContentView<Source: LoadableObject,
     where
         LoadingContent == LoadingView,
         ErrorContent == ErrorView,
-        EmptyContent == EmptyScreenView
+        EmptyContent == EmptyStateView
     {
         self.source = source
         self.loadingView = { LoadingView() }
-        self.errorView = { ErrorView($0, action: $1) }
-        self.emptyView = { EmptyScreenView($0) }
+        self.errorView = { ErrorView($0?.localizedDescription, action: $1) }
+        self.emptyView = { EmptyStateView($0) }
         self.contentView = content
     }
     

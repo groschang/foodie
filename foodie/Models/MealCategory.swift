@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MealCategory: Identifiable, Codable, Hashable, Equatable {
+struct MealCategory: IdentifiableObject {
     
     var id: String
     var name: String
@@ -21,7 +21,7 @@ struct MealCategory: Identifiable, Codable, Hashable, Equatable {
 }
 
 extension MealCategory {
-    var previewUrl: URL? {
+    var previewUrl: URL? { //TODO: move to Networking+API extension
         imageUrl?.appendingPathComponent("preview")
     }
 }

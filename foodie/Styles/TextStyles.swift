@@ -102,7 +102,7 @@ extension TextStyle {
             func body(content: Content) -> some View {
                 content
                     .modifier(BaseSubtitle())
-                    .font(.subheadline)
+                    .font(.headline)
             }
         }
 
@@ -123,6 +123,50 @@ extension TextStyle {
         }
     }
 }
+
+
+// MARK: App Styles
+
+extension TextStyle {
+    static let infoScreenTitle = TextStyle.InformationScreen.ScreenTitle()
+
+    static let infoScreenSubtitle = TextStyle.InformationScreen.ScreenSubtitle()
+}
+
+extension View {
+    func infoScreenTitle() -> some View { modifier(TextStyle.infoScreenTitle) }
+
+    func infoScreenSubtitle() -> some View { modifier(TextStyle.infoScreenSubtitle) }
+}
+
+extension TextStyle {
+
+    struct InformationScreen {
+
+        struct ScreenTitle: ViewModifier {
+            func body(content: Content) -> some View {
+                content
+                    .title()
+                    .lightOpacity()
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
+        }
+
+        struct ScreenSubtitle: ViewModifier {
+            func body(content: Content) -> some View {
+                content
+                    .subtitle3()
+                    .foregroundColor(ColorStyle.black.lightOpacity())
+                    .italic()
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
+        }
+    }
+}
+
+
 
 
 // MARK: Preview

@@ -16,14 +16,6 @@ class ViewFactory {
     private lazy var melasFactory = MealsViewFactory(service: service, asyncService: asyncService)
     private lazy var melaFactory = MealViewFactory(service: service, asyncService: asyncService)
 
-    public enum ViewType {
-        case categories
-        case emptyCategories
-        case meals(Category)
-        case emptyMeals
-        case meal(MealCategory)
-    }
-
     init(service: MealsServiceType,
          asyncService: MealsServiceAsyncType) {
         self.service = service
@@ -31,7 +23,7 @@ class ViewFactory {
     }
 
     @MainActor @ViewBuilder
-    func makeView(type: ViewType) -> some View {
+    func makeView(type: Route) -> some View {
         switch type {
         case .categories:
             categoriesFactory.makeView()
@@ -51,23 +43,4 @@ class ViewFactory {
 
 extension ViewFactory {
     static let mock = ViewFactory(service: MealsServiceMock(), asyncService: MealsServiceVMock())
-}
-
-
-extension ViewFactory.ViewType {
-
-    init(_ viewType: Router.Destination) {
-        switch viewType {
-        case .categories:
-            self = .categories
-        case .emptyCategories:
-            self = .emptyCategories
-        case .meals(let category):
-            self = .meals(category)
-        case .emptyMeals:
-            self = .emptyMeals
-        case .meal(let mealCategory):
-            self = .meal(mealCategory)
-        }
-    }
 }

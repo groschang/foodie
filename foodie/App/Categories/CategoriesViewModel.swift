@@ -46,7 +46,7 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         state.setLoading()
         
         await loadCategories()
-        await fetchCategories()
+        await getCategories()
     }
 
     private func setupSubscriptions() {
@@ -80,17 +80,13 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         }
     }
     
-    @MainActor private func fetchCategories() async {
+    @MainActor private func getCategories() async {
         do {
             let categories = try await service.fetchCategories()
 
             items = categories.items
 
-            if categories.isEmpty == false {
-                state.setLoaded()
-            } else {
-                state.setEmpty()
-            }
+            state = items.isEmpty ? .empty : .loaded
         } catch {
             Logger.log("Fetch categories error: \(error)", onLevel: .error)
             state.setError(error)
@@ -136,7 +132,7 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
 //@MainActor private func getCategories() async throws {
 //    state.setLoading()
 //
-//    let categories = try await service.fetchCategories()
+//    let categories = try await service.getCategories()
 //
 //    items = categories.items
 //    state = categories.isEmpty ? .empty : .loaded
