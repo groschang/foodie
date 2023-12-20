@@ -11,9 +11,15 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
     @EnvironmentObject var router: Router
 
+    @Environment(\.colorScheme) var systemColorScheme
+
     @StateObject private var viewModel: Model
 
     @StateObject private var manager = ParallaxManager()
+
+    @AppStorage(UserDefaultsKeys.appTheme) var appTheme: AppTheme = .system
+
+
 
     init(viewModel: Model) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -21,17 +27,20 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
     var body: some View {
         content
-//            .navigationTitle("Welcome back")
+        //            .navigationTitle("Welcome back")
+            .preferredColorScheme(appTheme.colorScheme(system: systemColorScheme))
+            .accentColor(ColorStyle.accent)
             .task { await viewModel.initialize() }
             .onAppear { manager.start() }
             .onDisappear { manager.stop() }
-            .accentColor(ColorStyle.accent)
     }
 
     private var content: some View {
         VStack {
-            DashboardHeaderView { Log.debug("click") }
-                .toolbarBackground(ColorStyle.light, for: .navigationBar)
+            DashboardHeaderView {
+                router.navigate(to: .menu)
+            }
+            .toolbarBackground(ColorStyle.light, for: .navigationBar)
 
             DashboardPromoView(viewModel: viewModel.promoViewModel) { }
                 .maxWidth()
@@ -39,7 +48,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
                 .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
                 .padding(.vertical, 12)
-//                .modifier(SwipeModifier(manager: manager)) //TODO: optimize
+            //                .modifier(SwipeModifier(manager: manager)) //TODO: optimize
 
             DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
 

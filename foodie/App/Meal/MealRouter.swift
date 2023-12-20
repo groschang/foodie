@@ -18,12 +18,7 @@ enum MealRouter: RouterProtocol {
         switch self {
             
         case .meal(let meal):
-            makeMealView(meal: meal)
+            Self.viewFactory.makeView(type: .meal(meal))
         }
-    }
-    
-    @MainActor
-    private func makeMealView(meal: MealCategory) -> some View {
-        Self.viewFactory.makeView(type: .meal(meal))
     }
 }

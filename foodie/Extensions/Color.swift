@@ -7,15 +7,71 @@
 
 import SwiftUI
 
-extension Color { //TODO: chagne?
+//#if os(iOS)
+//
+//extension Color {
+    
+
+//    if #available(iOS 17, *) {
+
+//        init(
+//            light lightColor: @escaping @autoclosure () -> Color,
+//            dark darkColor: @escaping @autoclosure () -> Color
+//        ) {
+//            self.init(
+//        }
+//
+//    } else {
+//      
+//        func resolve(in environment: EnvironmentValues) -> some ShapeStyle {
+//            if environment.colorScheme == .light {
+//                return lightColor
+//            } else {
+//                return darkColor
+//            }
+//        }
+//
+//    }
+
+
+
+//}
+
+//fileprivate struct CustomColorStyle: ShapeStyle {
+//
+//    let lightColor: Color
+//    let darkColor: Color
+//
+//    init(
+//        light lightColor: @escaping @autoclosure () -> Color,
+//        dark darkColor: @escaping @autoclosure () -> Color
+//    ) {
+//        self.lightColor = lightColor()
+//        self.darkColor = darkColor()
+//    }
+//
+//    func resolve(in environment: EnvironmentValues) -> some ShapeStyle {
+//        if environment.colorScheme == .light {
+//            return lightColor
+//        } else {
+//            return darkColor
+//        }
+//    }
+//}
+//
+//#else
+
+extension Color {
 
     init(
         light lightColor: @escaping @autoclosure () -> Color,
         dark darkColor: @escaping @autoclosure () -> Color
     ) {
         self.init(
-            UIColor(light: UIColor( lightColor() ),
-                    dark: UIColor( darkColor() ) )
+            UIColor(
+                light: UIColor( lightColor() ),
+                dark: UIColor( darkColor() )
+            )
         )
     }
 }
@@ -45,3 +101,4 @@ extension UIColor {
     }
 }
 
+//#endif

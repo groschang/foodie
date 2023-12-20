@@ -13,7 +13,6 @@ struct ColorStyle {
 
     static let blue = Color(light: Color.blue, dark: Color.blue)
 
-
     static let gray = Color.gray
     static let dark = Color.black
     static let black = Color(light: Color.black, dark: Color.white)
@@ -22,6 +21,7 @@ struct ColorStyle {
     static let light = Color.white
     static let lightWhite = Color.white.lightMediumOpacity()
 
+    static let orange = Color.orange
 }
 
 extension ColorStyle {

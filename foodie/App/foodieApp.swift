@@ -54,7 +54,6 @@ struct foodieApp: App {
                     }
                 }
         }
-        .accentColor(ColorStyle.accent)
         .environmentObject(router)
     }
 }

@@ -27,7 +27,7 @@ enum CategoriesRouter: RouterProtocol {
         }
     }
     
-    @MainActor @ViewBuilder
+    @MainActor
     private func makeCategoriesView() -> some View {
         Self.viewFactory.makeView(type: .categories)
     }

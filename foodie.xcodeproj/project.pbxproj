@@ -291,6 +291,10 @@
 		71215C5F2A1A516E006F3F8C /* MainActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71215C5E2A1A516E006F3F8C /* MainActor.swift */; };
 		7124802C29A18DD100064D29 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7124802B29A18DD100064D29 /* Set.swift */; };
 		7124803029A2668500064D29 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7124802F29A2668500064D29 /* TextStyles.swift */; };
+		712AAA5A2B3373AA008BF0B8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AAA592B3373AA008BF0B8 /* MenuView.swift */; };
+		712AAA5C2B3373B1008BF0B8 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AAA5B2B3373B1008BF0B8 /* MenuViewModel.swift */; };
+		712AAA5E2B3373D2008BF0B8 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AAA5D2B3373D2008BF0B8 /* MenuRouter.swift */; };
+		712AAA602B3374EA008BF0B8 /* MenuViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AAA5F2B3374EA008BF0B8 /* MenuViewFactory.swift */; };
 		712E85F529E1DF470009AFB9 /* MealsViewAnim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F429E1DF470009AFB9 /* MealsViewAnim.swift */; };
 		712E85F729E1E3D50009AFB9 /* CoordinateSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */; };
 		712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
@@ -610,6 +614,10 @@
 		71215C5E2A1A516E006F3F8C /* MainActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActor.swift; sourceTree = "<group>"; };
 		7124802B29A18DD100064D29 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		7124802F29A2668500064D29 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		712AAA592B3373AA008BF0B8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		712AAA5B2B3373B1008BF0B8 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		712AAA5D2B3373D2008BF0B8 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		712AAA5F2B3374EA008BF0B8 /* MenuViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewFactory.swift; sourceTree = "<group>"; };
 		712E85F429E1DF470009AFB9 /* MealsViewAnim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealsViewAnim.swift; path = foodie/App/Meals/var/MealsViewAnim.swift; sourceTree = SOURCE_ROOT; };
 		712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpace.swift; sourceTree = "<group>"; };
 		712E85FA29E1EBE20009AFB9 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
@@ -903,6 +911,7 @@
 				71BFEE002ACD70C100E91D92 /* ViewBuilderProtocol.swift */,
 				7102F1742B2F417300F6D87F /* AppContainer */,
 				71575C4D29C8E2A0003E8443 /* Dashboard */,
+				712AAA582B337377008BF0B8 /* Menu */,
 				7111EC1B297C531C00ABC48C /* Categories */,
 				7111EC10297C531C00ABC48C /* Meals */,
 				7111EC14297C531C00ABC48C /* Meal */,
@@ -928,10 +937,10 @@
 		7111EC14297C531C00ABC48C /* Meal */ = {
 			isa = PBXGroup;
 			children = (
-				71D036FB2A5DEE1A0023356C /* MealRouter.swift */,
 				716CD11429819AB100E4EA65 /* MealView.swift */,
 				71C0C9632A1100E80034AA14 /* MealView+Style.swift */,
 				71BFEDFE2ACD6FA000E91D92 /* MealViewFactory.swift */,
+				71D036FB2A5DEE1A0023356C /* MealRouter.swift */,
 				7102F16E2B2EB6A000F6D87F /* MealViewModel */,
 				7191227529EACC71007E198B /* Subviews */,
 			);
@@ -956,9 +965,9 @@
 			isa = PBXGroup;
 			children = (
 				7111EC1D297C531C00ABC48C /* CategoriesView.swift */,
-				71D036F72A5DECE10023356C /* CategoriesRouter.swift */,
 				71C0C9612A11002D0034AA14 /* CategoriesView+Style.swift */,
 				7111EC7E297C6A9800ABC48C /* CategoriesViewFactory.swift */,
+				71D036F72A5DECE10023356C /* CategoriesRouter.swift */,
 				7102F1692B2EACF100F6D87F /* CategoriesViewModel */,
 				7191227429EACC2D007E198B /* Subviews */,
 				71C0C9732A1550980034AA14 /* var */,
@@ -1121,6 +1130,17 @@
 				7124802F29A2668500064D29 /* TextStyles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		712AAA582B337377008BF0B8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				712AAA592B3373AA008BF0B8 /* MenuView.swift */,
+				712AAA5D2B3373D2008BF0B8 /* MenuRouter.swift */,
+				712AAA5F2B3374EA008BF0B8 /* MenuViewFactory.swift */,
+				712AAA5B2B3373B1008BF0B8 /* MenuViewModel.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		712E85F329E1DF1D0009AFB9 /* Subviews */ = {
@@ -1974,6 +1994,7 @@
 				7102F1722B2EB6CE00F6D87F /* MealAsyncStreamViewModel.swift in Sources */,
 				71C0C9792A155A840034AA14 /* MealsDefaultView+Style.swift in Sources */,
 				71080F0C298F3062009FCDDB /* MealsSelectView.swift in Sources */,
+				712AAA5E2B3373D2008BF0B8 /* MenuRouter.swift in Sources */,
 				71052DA2299417AD000008B6 /* CGRect.swift in Sources */,
 				7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */,
 				71575C5129C8E373003E8443 /* CategoriesGridView.swift in Sources */,
@@ -2006,6 +2027,7 @@
 				71F1161C2A6FE745009A93B5 /* MealsAsyncCombinedService.swift in Sources */,
 				7111EC5D297C531C00ABC48C /* Ingredient.swift in Sources */,
 				717FCCCB2985AF050034870D /* PersistentContainer.swift in Sources */,
+				712AAA5C2B3373B1008BF0B8 /* MenuViewModel.swift in Sources */,
 				717FCCBF29858B450034870D /* ListSpacer.swift in Sources */,
 				7111EC8B297C926400ABC48C /* MealsViewFactory.swift in Sources */,
 				71C0C97D2A1635FE0034AA14 /* NoStyles.swift in Sources */,
@@ -2064,6 +2086,8 @@
 				7102F1782B2F421B00F6D87F /* MockedDependencyContainer.swift in Sources */,
 				716CD11529819AB100E4EA65 /* MealView.swift in Sources */,
 				71D941C429F9B9C900C84C24 /* Searchable.swift in Sources */,
+				712AAA602B3374EA008BF0B8 /* MenuViewFactory.swift in Sources */,
+				712AAA5A2B3373AA008BF0B8 /* MenuView.swift in Sources */,
 				7107F0D529E077D300A1232A /* Colors.swift in Sources */,
 				71B99B9F2A26944100201364 /* MealsAsyncStreamService.swift in Sources */,
 				71C0C9722A15306B0034AA14 /* ListStyle.swift in Sources */,

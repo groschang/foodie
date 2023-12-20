@@ -24,6 +24,8 @@ class ClosureViewFactory: ViewFactoryType {
     private lazy var mealsFactory = MealsClosureViewFactory(service: service)
     private lazy var mealFactory = MealClosureViewFactory(service: service)
 
+    private lazy var menuFactory = MenuViewFactory()
+
     init(service: MealsClosureServiceType) {
         self.service = service
     }
@@ -31,16 +33,22 @@ class ClosureViewFactory: ViewFactoryType {
     @MainActor @ViewBuilder
     func makeView(type: Route) -> some View {
         switch type {
+
         case .categories:
             categoriesFactory.makeView()
         case .emptyCategories:
             categoriesFactory.makeEmptyView()
+
         case .meals(let category):
             mealsFactory.makeView(item: category)
         case .emptyMeals:
             mealsFactory.makeEmptyView()
+
         case .meal(let mealCategory):
             mealFactory.makeView(item: mealCategory)
+
+        case .menu:
+            menuFactory.makeView()
         }
     }
 }
@@ -53,6 +61,8 @@ class AsyncViewFactory: ViewFactoryType {
     private lazy var mealsFactory = MealsAsyncViewFactory(service: service)
     private lazy var mealFactory = MealAsyncViewFactory(service: service)
 
+    private lazy var menuFactory = MenuViewFactory()
+
     init(service: MealsAsyncServiceType) {
         self.service = service
     }
@@ -60,16 +70,22 @@ class AsyncViewFactory: ViewFactoryType {
     @MainActor @ViewBuilder
     func makeView(type: Route) -> some View {
         switch type {
+
         case .categories:
             categoriesFactory.makeView()
         case .emptyCategories:
             categoriesFactory.makeEmptyView()
+
         case .meals(let category):
             mealsFactory.makeView(item: category)
         case .emptyMeals:
             mealsFactory.makeEmptyView()
+
         case .meal(let mealCategory):
             mealFactory.makeView(item: mealCategory)
+
+        case .menu:
+            menuFactory.makeView()
         }
     }
 }
@@ -82,6 +98,8 @@ class StreamViewFactory: ViewFactoryType {
     private lazy var categoriesFactory = CategoriesAsyncStreamViewFactory(service: service)
     private lazy var mealsFactory = MealsAsyncStreamViewFactory(service: service)
     private lazy var mealFactory = MealAsyncStreamViewFactory(service: service)
+    
+    private lazy var menuFactory = MenuViewFactory()
 
     init(service: MealsAsyncStreamServiceType) {
         self.service = service
@@ -90,16 +108,22 @@ class StreamViewFactory: ViewFactoryType {
     @MainActor @ViewBuilder
     func makeView(type: Route) -> some View {
         switch type {
+            
         case .categories:
             categoriesFactory.makeView()
         case .emptyCategories:
             categoriesFactory.makeEmptyView()
+
         case .meals(let category):
             mealsFactory.makeView(item: category)
         case .emptyMeals:
             mealsFactory.makeEmptyView()
+
         case .meal(let meal):
             mealFactory.makeView(item: meal)
+
+        case .menu:
+            menuFactory.makeView()
         }
     }
 }

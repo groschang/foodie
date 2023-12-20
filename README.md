@@ -6,6 +6,7 @@ Todo list
 - [ ] model
 - [ ] iPad
 - [ ] asyc view states
+- [ ] vibtarions
 - [ ] extract text styles
 - [ ] create new target for mocked container &else
 - [ ] create some packages 

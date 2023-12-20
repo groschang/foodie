@@ -10,18 +10,26 @@ import SwiftUI
 enum Route: Codable, Hashable {
     case categories
     case emptyCategories
+
     case meals(any IdentifiableObject) //TODO: Check Category
     case emptyMeals
+
     case meal(any IdentifiableObject) //TODO: Check MealCategory
+
+    case menu
 }
 
 extension Route {
     enum Raw {
         static let categories = "categories"
         static let emptyCategories = "emptyCategories"
+
         static let meals = "meals"
         static let emptyMeals = "emptyMeals"
+        
         static let meal = "meal"
+
+        static let menu = "menu"
     }
 }
 
@@ -44,6 +52,9 @@ extension Route: RawRepresentable {
 
         case .meal(_):
             return Route.Raw.meal
+
+        case .menu:
+            return Route.Raw.menu
         }
     }
 
