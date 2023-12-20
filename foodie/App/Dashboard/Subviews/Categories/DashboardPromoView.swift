@@ -68,7 +68,7 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
                 AsyncButton("Show next", action: viewModel.load)
                     .buttonStyle(DashboardButton())
-                    .padding()
+                    .padding(.vertical)
             }
             .padding()
 

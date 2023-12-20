@@ -37,7 +37,7 @@ extension TextStyle {
             func body(content: Content) -> some View {
                 content
                     .fontWeight(.regular)
-                    .foregroundColor(ColorStyle.black)
+
             }
         }
 
@@ -46,6 +46,7 @@ extension TextStyle {
                 content
                     .modifier(BaseTitle())
                     .font(.largeTitle)
+
             }
         }
 

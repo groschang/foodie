@@ -26,8 +26,8 @@ struct ColorStyle {
 
 extension ColorStyle {
 
-    static let background = Color(light: ColorStyle.white,
-                                  dark: ColorStyle.dark)
+    static let background = Color(light: Color.clear,
+                                  dark: Color.red.veryHeavyOpacity())
 
     static let accent = Color(light: ColorStyle.black,
                               dark: ColorStyle.black)
@@ -54,6 +54,7 @@ struct Opacity {
     static let lightMedium: CGFloat = 0.65
     static let medium: CGFloat = 0.5
     static let heavy: CGFloat = 0.2
+    static let veryHeavy: CGFloat = 0.1
 }
 
 extension View {
@@ -65,6 +66,8 @@ extension View {
     func mediumOpacity() -> some View { opacity(Opacity.medium) }
 
     func heavyOpacity() -> some View { opacity(Opacity.heavy) }
+
+    func veryHeavyOpacity() -> some View { opacity(Opacity.veryHeavy) }
 }
 
 extension View where Self == Color {
@@ -76,4 +79,6 @@ extension View where Self == Color {
     func mediumOpacity() -> Self { opacity(Opacity.medium) }
 
     func heavyOpacity() -> Self { opacity(Opacity.heavy) }
+
+    func veryHeavyOpacity() -> Self { opacity(Opacity.veryHeavy) }
 }

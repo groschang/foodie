@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct DashboardHeaderView: View {
-    
+
     var action: () -> Void
     
     var body: some View {
         HStack {
             Text("Hello, World!")
-                .font(.title)
-            
+                .title()
+
             Spacer()
             
             Button(action: action) {
@@ -26,6 +26,7 @@ struct DashboardHeaderView: View {
         }
         .padding()
         .background(ColorStyle.appColor)
+        .foregroundStyle(ColorStyle.light)
     }
 }
 

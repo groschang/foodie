@@ -21,8 +21,8 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
     var body: some View {
         content
-            .navigationTitle("Welcome back")
-            .task { await viewModel.load() }
+//            .navigationTitle("Welcome back")
+            .task { await viewModel.initialize() }
             .onAppear { manager.start() }
             .onDisappear { manager.stop() }
             .accentColor(ColorStyle.accent)
@@ -31,7 +31,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
     private var content: some View {
         VStack {
             DashboardHeaderView { Log.debug("click") }
-                .toolbarBackground(ColorStyle.appColor, for: .navigationBar)
+                .toolbarBackground(ColorStyle.light, for: .navigationBar)
 
             DashboardPromoView(viewModel: viewModel.promoViewModel) { }
                 .maxWidth()
@@ -47,6 +47,11 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
             Spacer()
         }
+        .background {
+            ColorStyle.background
+                .ignoresSafeArea()
+        }
+
     }
 }
 
@@ -55,6 +60,8 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView(viewModel: DashboardViewModel.mock)
+        NavigationView {
+            DashboardView(viewModel: DashboardViewModel.mock)
+        }
     }
 }
