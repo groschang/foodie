@@ -1379,12 +1379,12 @@
 		71D036F22A5D90B60023356C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				71D036EE2A5D90740023356C /* DashboardCategoriesView.swift */,
-				71D036F02A5D90840023356C /* DashboardCategoriesViewModel.swift */,
-				71D036F32A5D90C50023356C /* DashboardCategoryView.swift */,
 				71D036F52A5DD9230023356C /* DashboardHeaderView.swift */,
 				71EA2F822A63248A00213D82 /* DashboardPromoView.swift */,
 				71EA2F842A63249000213D82 /* DashboardPromoViewModel.swift */,
+				71D036EE2A5D90740023356C /* DashboardCategoriesView.swift */,
+				71D036F02A5D90840023356C /* DashboardCategoriesViewModel.swift */,
+				71D036F32A5D90C50023356C /* DashboardCategoryView.swift */,
 				71966C002A94D81F0095DDB3 /* DashboardCategoriesCloudView.swift */,
 			);
 			path = Categories;
