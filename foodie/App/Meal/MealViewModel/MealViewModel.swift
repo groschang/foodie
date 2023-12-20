@@ -44,18 +44,18 @@ final class MealViewModel: MealViewModelType {
     @Published private(set) var source: URL?
     @Published private(set) var backgroundUrl: URL?
     
-    private let mealCategory: MealCategory
+    private let object: any IdentifiableObject
     private let service: MealsClosureServiceType
     
-    init(service: MealsClosureServiceType, mealCategory: any IdentifiableObject) {
+    init(service: MealsClosureServiceType, object: any IdentifiableObject) {
         self.service = service
-        self.mealCategory = mealCategory as! MealCategory
+        self.object = object
 
-        setup()
-    }
-
-    private func setup() {
-        name = mealCategory.name
+        if let meal = object as? Meal {
+            setup(with: meal)
+        } else if let mealCategory = object as? MealCategory {
+            setup(with: mealCategory)
+        }
     }
 
     @MainActor func load() async {
@@ -76,7 +76,7 @@ final class MealViewModel: MealViewModelType {
     @MainActor private func getMeal() async throws {
         state = .loading
         
-        let meal = try await service.getMeal(for: mealCategory.id) {
+        let meal = try await service.getMeal(for: object.id) {
             [unowned self] meal in
             
             if meal.isEmpty == false {
@@ -86,9 +86,13 @@ final class MealViewModel: MealViewModelType {
         }
         
         setup(with: meal)
-        state = meal.isEmpty ? .empty : .loaded
+        state.set(for: meal)
     }
-    
+
+    private func setup(with mealCategory: MealCategory) {
+        name = mealCategory.name
+    }
+
     private func setup(with meal: Meal) {
         name = meal.name
         category = meal.category ?? ""

@@ -6,54 +6,64 @@
 //
 
 import SwiftUI
-import Kingfisher
+import Kingfisher  //TODO: 
 
-struct ListPhotoView: View {
-    
-    static let duration = 0.2
-    static let minFade: CGFloat = 0.0
+struct ListPhotoView<LoadingViewContent: View>: View {
 
-    @State private var faded = true
-    @State private var imageLoaded = false
-    
-    var imageUrl: URL?
-    
+    private var imageUrl: URL?
+    private var loadingView: LoadingViewContent?
+
+    @State private var appeared = false
+
+    init(imageUrl: URL? = nil) where LoadingViewContent == PhotoLoadingView {
+        self.imageUrl = imageUrl
+    }
+
+    init(imageUrl: URL? = nil, @ViewBuilder loadingView: @escaping () -> LoadingViewContent) {
+        self.imageUrl = imageUrl
+        self.loadingView = loadingView()
+    }
+
     var body: some View {
-        if let imageUrl {
+        content
+            .opacity(appeared ? 1.0 : .zero)
+            .onAppear {
+                withAnimation(.easeIn) {
+                    appeared = true
+                }
+            }
+    }
+
+//    func loadingView(@ViewBuilder _ content: @escaping () -> LoadingViewContent) -> Self {
+//        self.loadingView = content()
+//        return self
+//    }
+
+
+    @ViewBuilder
+    private var content: some View {
+        if imageUrl.isNotNil {
             photo
         } else {
-            PhotoPlaceholder()
+            PhotoPlaceholderView()
         }
     }
 
     private var photo: some View {
         KFImage.url(imageUrl)
             .placeholder {
-                PhotoPlaceholder()
+                if let loadingView {
+                    loadingView
+                } else {
+                    PhotoLoadingView()
+                }
             }
             .resizable()
-            .onSuccess { _ in
-                imageLoaded = true
-                animate()
-            }
-            .opacity(faded ? Self.minFade : 1.0)
-            .onAppear {
-                animate()
-            }
-            .onDisappear {
-                resetAnimation()
-            }
-    }
-    
-    private func animate() {
-        guard imageLoaded else { return }
-        
-        withAnimation(.linear) {
-            faded = false
-        }
-    }
-    
-    private func resetAnimation() {
-        faded = true
+            .fade(duration: 0.25)
     }
 }
+
+
+
+
+

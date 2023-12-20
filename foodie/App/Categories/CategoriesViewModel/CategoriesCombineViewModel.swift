@@ -1,40 +1,32 @@
 //
-//  MealsCombineViewModel.swift
+//  CategoriesCombineViewModel.swift
 //  foodie
 //
-//  Created by Konrad Groschang on 07/08/2023.
+//  Created by Konrad Groschang on 18/12/2023.
 //
 
 import Foundation
 import Combine
 
-final class MealsCombineViewModel: MealsViewModelType {
+class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
 
-    var itemsHeader: String { "\(itemsCount) RECIPES".localized }
+    var title: String { "Meals".localized }
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { items.isEmpty }
 
-    @Published private(set) var items: [MealCategory] = []
-
-    @Published private(set) var filteredItems: [MealCategory] = []
+    @Published private(set) var items: [Category] = []
+    @Published private(set) var filteredItems: [Category] = []
     @Published var searchQuery: String = ""
-    @Published private(set) var itemsCount: Int = .zero
 
-    @Published private(set) var categoryName: String = ""
-    @Published private(set) var description: String = ""
-    @Published private(set) var backgroundUrl: URL?
-
-    private let category: Category
     private let service: MealsCombineServiceType
 
     private var cancellables = Set<AnyCancellable>()
     private var serviceSubscription: AnyCancellable?
 
-    init(service: MealsCombineServiceType, category: Category) {
+    init(service: MealsCombineServiceType) {
         self.service = service
-        self.category = category
-        setupProperties()
+
         setupSubscriptions()
     }
 
@@ -42,17 +34,13 @@ final class MealsCombineViewModel: MealsViewModelType {
         guard state.isLoading == false else { return }
         state.setLoading()
 
-        await fetchMeals()
-    }
-
-    private func setupProperties() {
-        categoryName = category.name
-        description = category.description
-        backgroundUrl = category.imageUrl
+        await fetchCategories()
     }
 
     private func setupSubscriptions() {
         $items
+            .dropFirst()
+            .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.filterItems()
@@ -60,6 +48,8 @@ final class MealsCombineViewModel: MealsViewModelType {
             .store(in: &cancellables)
 
         $searchQuery
+            .dropFirst()
+            .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] textQuery in
                 self?.filterItems(with: textQuery)
@@ -69,11 +59,10 @@ final class MealsCombineViewModel: MealsViewModelType {
 
     private func filterItems(with query: String? = nil) {
         filteredItems = filter(query: query) { $0.name }
-        itemsCount = filteredItems.count // :)
     }
 
-    @MainActor private func fetchMeals() async {
-        serviceSubscription = service.getMeals(for: category)
+    @MainActor private func fetchCategories() async {
+        serviceSubscription = service.getCategories()
             .receive(on: RunLoop.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
@@ -86,9 +75,9 @@ final class MealsCombineViewModel: MealsViewModelType {
                         self.state.setError(error)
                     }
                 },
-                receiveValue: { [weak self] meals in
-                    guard let self, let meals else { return }
-                    self.items = meals.items
+                receiveValue: { [weak self] categories in
+                    guard let self, let categories else { return }
+                    self.items = categories.items
                 })
     }
 }

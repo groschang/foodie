@@ -75,8 +75,6 @@ final class MealsViewModel: MealsViewModelType {
                 try await getMeals(category)
             }
 
-//            state = items.isEmpty ? .empty : .loaded
-
             state.set(for: items) // TODO: test me
 
         } catch {
@@ -124,7 +122,7 @@ final class MealsViewModel: MealsViewModelType {
 
         do {
             let categories = try await service.getCategories() {  [weak self] storedCategories in
-                guard let self else { return }
+                guard self.isNotNil else { return }
 
                 assignCategory(storedCategories)
             }

@@ -41,6 +41,8 @@ extension Endpoint {
         )
     }
 
+    static let randomMeal = Endpoint(path: "/random.php")
+
     static func ingredientImage(name: String, small: Bool = false) -> Endpoint {
         Endpoint(
             path: "/images/ingredients/\(name)\(small ? "-Small" : "" ).png"

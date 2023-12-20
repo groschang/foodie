@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
+    @EnvironmentObject var router: Router
+
     @StateObject private var viewModel: ViewModel
 
     @ScaledMetric(relativeTo: .title2) var spacing: CGFloat = 8
@@ -25,6 +27,11 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
             imageLayer
             textLayer
         }
+        .onTapGesture {
+            if let meal = viewModel.meal {
+                router.navigate(to: .meal(meal))
+            }
+        }
         .maxSize()
         .background(ColorStyle.appColor)
         .cornerRadius(32)
@@ -37,9 +44,12 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
             Spacer()
 
             VStack(spacing: 0) {
-                ListPhotoView(imageUrl: viewModel.imageUrl)
-                    .modifier(ListPhotoStyle(width: 200, height: 200))
-                    .mask(SideGradient(startPoint: .leading))
+                ListPhotoView(imageUrl: viewModel.imageUrl) {
+                    ProgressView()
+                        .tint(ColorStyle.white)
+                }
+                .modifier(ListPhotoStyle(width: 200, height: 200))
+                .mask(SideGradient(startPoint: .leading))
             }
         }
     }
@@ -58,6 +68,7 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
                 AsyncButton("Show next", action: viewModel.load)
                     .buttonStyle(DashboardButton())
+                    .padding()
             }
             .padding()
 

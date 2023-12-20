@@ -40,11 +40,11 @@ struct MockedDependencyContainer: DependencyContainerType {
         }
 
         container.register(type: MealsAsyncServiceType.self) { _ in
-            MealsServiceAsyncMock()
+            MealsAsyncServiceMock()
         }
 
         container.register(type: MealsAsyncStreamServiceType.self) { _ in
-            MealsAsyncStreamService(backendClient: backendClient, persistanceClient: persistenceClient) //TODO: make mock?
+            MealsAsyncStreamServiceMock()
         }
 
         container.register(type: MealsPassthroughCombineServiceType.self) { _ in

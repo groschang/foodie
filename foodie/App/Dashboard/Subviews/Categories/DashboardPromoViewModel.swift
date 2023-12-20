@@ -10,9 +10,13 @@ import Foundation
 protocol DashboardPromoPresentable: ObservableObject {
     var name: String { get }
     var imageUrl: URL? { get }
+    var meal: Meal? { get }
 }
 
-protocol DashboardPromoViewModelType: DashboardPromoPresentable, LoadableObject { }
+protocol DashboardPromoViewModelType: DashboardPromoPresentable,
+                                      LoadableObject,
+                                      Initializable { }
+
 
 final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
@@ -20,45 +24,38 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
     @Published private(set) var name: String = ""
     @Published private(set) var imageUrl: URL?
+    @Published private(set) var meal: Meal?
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { state != .loaded }
+
+    private var initialized = false
 
     init(service: MealsAsyncServiceType) {
         self.service = service
     }
 
-    func load() async {
-        await fetchMeal()
+    func initialize() async {
+        if initialized == false {
+            initialized = !initialized
+            await load()
+        }
     }
 
-    private func fetchMeal() async {
+    @MainActor func load() async {
         guard state.isLoading == false else { return }
+        state.setLoading()
 
         do {
-            try await getMeal()
+            let meal = try await service.fetchRandomMeal()
+            self.meal = meal
+
+            setup(with: meal)
+            state.set(for: meal)
         } catch {
             Logger.log("Fetch meal error: \(error)", onLevel: .error)
             state.setError(error)
         }
-    }
-
-    @MainActor private func getMeal() async throws {
-        state = .loading
-
-        //        let meal = try await service.getMeal(for: mealCategory.id) {
-        //            [unowned self] meal in
-        //
-        //            if meal.isEmpty == false {
-        //                self.state = .loaded
-        //                self.setup(with: meal)
-        //            }
-        //        }
-
-        let meal = [Meal.mock, Meal.mock2].randomElement()! //TODO:
-
-        setup(with: meal)
-        state = meal.isEmpty ? .empty : .loaded
     }
 
     private func setup(with meal: Meal) {
@@ -69,5 +66,5 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
 
 extension DashboardPromoViewModel {
-    static let mock = DashboardPromoViewModel(service: MealsServiceAsyncMock())
+    static let mock = DashboardPromoViewModel(service: MealsAsyncServiceMock())
 }

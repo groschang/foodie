@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ColorStyle {
 
-    static let white = Color(light: Color.white, dark: Color.black)
+    //TODO: dark & light should be relative, white, black constant
+
     static let blue = Color(light: Color.blue, dark: Color.blue)
 
 
@@ -17,7 +18,8 @@ struct ColorStyle {
     static let dark = Color.black
     static let black = Color(light: Color.black, dark: Color.white)
 
-
+    static let white = Color(light: Color.white, dark: Color.black)
+    static let light = Color.white
     static let lightWhite = Color.white.lightMediumOpacity()
 
 }

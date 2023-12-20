@@ -98,8 +98,8 @@ class StreamViewFactory: ViewFactoryType {
             mealsFactory.makeView(item: category)
         case .emptyMeals:
             mealsFactory.makeEmptyView()
-        case .meal(let mealCategory):
-            mealFactory.makeView(item: mealCategory)
+        case .meal(let meal):
+            mealFactory.makeView(item: meal)
         }
     }
 }

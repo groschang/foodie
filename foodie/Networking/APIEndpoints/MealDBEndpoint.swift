@@ -28,4 +28,10 @@ struct MealDBEndpoint {
             super.init(endpoint: .meal(id: id))
         }
     }
+
+    class MealRandomRequest: Request<Meal> {
+        init() {
+            super.init(endpoint: .randomMeal)
+        }
+    }
 }

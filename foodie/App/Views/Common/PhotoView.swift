@@ -15,7 +15,7 @@ struct PhotoView: View {
     var body: some View {
         KFImage.url(imageUrl)
             .placeholder {
-                PhotoPlaceholder()
+                PhotoLoadingView()
             }
             .resizable()
     }

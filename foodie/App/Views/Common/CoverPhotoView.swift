@@ -19,7 +19,7 @@ struct CoverPhotoView: View {
     var body: some View {
         KFImage.url(imageUrl)
             .placeholder {
-                PhotoPlaceholder()
+                PhotoLoadingView()
             }
             .resizable()
     }
@@ -44,7 +44,7 @@ struct AnimatedCoverPhotoView: View {
     var body: some View {
         KFImage.url(imageUrl)
             .placeholder {
-                PhotoPlaceholder()
+                PhotoLoadingView()
             }
             .resizable()
             .onSuccess { _ in

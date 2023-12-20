@@ -12,6 +12,7 @@ protocol MealsAsyncStreamServiceType {
     func getCategories() -> AsyncThrowingStream<Categories, Error>
     func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error>
     func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error>
+    func getRandomMeal() -> AsyncThrowingStream<Meal, Error>
 }
 
 class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with task id if the serive or action is not in progress / actor? -> screen
@@ -33,13 +34,18 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
         AsyncThrowingStream { continuation in
             Task {
                 do {
+                    
                     if let persisted = await loadCategories() {
                         continuation.yield(persisted)
                     }
 
                     let fetched = try await fetchCategories()
+
+                    await saveCategories(fetched)
+
                     continuation.yield(fetched)
                     continuation.finish()
+
                 } catch {
                     continuation.finish(throwing: error)
                 }
@@ -54,10 +60,11 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
     private func fetchCategories() async throws -> Categories {
         let request = MealDBEndpoint.CategoriesRequest()
         let categories = try await backendClient.process(request)
-
-        await persistanceClient.saveCategories(categories)
-
         return categories
+    }
+
+    private func saveCategories(_ categories: Categories) async {
+        await persistanceClient.saveCategories(categories)
     }
 
     // MARK: Meals
@@ -66,15 +73,18 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
         AsyncThrowingStream { continuation in
             Task {
                 do {
+
                     if let persisted = await loadMeals(for: category) {
                         continuation.yield(persisted)
                     }
 
                     let fetched = try await fetchMeals(for: category)
-                    await saveMeals(meals: fetched, for: category)
+
+                    await saveMeals(fetched, for: category)
 
                     continuation.yield(fetched)
                     continuation.finish()
+
                 } catch {
                     continuation.finish(throwing: error)
                 }
@@ -92,7 +102,7 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
         return meals
     }
 
-    private func saveMeals(meals: Meals, for category: Category) async {
+    private func saveMeals(_ meals: Meals, for category: Category) async {
         await persistanceClient.saveMeals(meals, for: category)
     }
 
@@ -102,13 +112,37 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
         AsyncThrowingStream { continuation in
             Task {
                 do {
+
                     if let persisted = await loadMeal(for: mealId) {
                         continuation.yield(persisted)
                     }
 
                     let fetched = try await fetchMeal(for: mealId)
+
+                    await saveMeal(fetched)
+
                     continuation.yield(fetched)
                     continuation.finish()
+
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+        }
+    }
+
+    func getRandomMeal() -> AsyncThrowingStream<Meal, Error> {
+        AsyncThrowingStream { continuation in
+            Task {
+                do {
+
+                    let fetched = try await fetchRandomMeal()
+
+                    await saveMeal(fetched)
+
+                    continuation.yield(fetched)
+                    continuation.finish()
+
                 } catch {
                     continuation.finish(throwing: error)
                 }
@@ -123,9 +157,18 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
     private func fetchMeal(for mealId: String) async throws -> Meal {
         let request = MealDBEndpoint.MealRequest(id: mealId)
         let meal = try await backendClient.process(request)
-
-        await persistanceClient.saveMeal(meal)
-
         return meal
     }
+
+    private func fetchRandomMeal() async throws -> Meal {
+        let request = MealDBEndpoint.MealRandomRequest()
+        let meal = try await backendClient.process(request)
+        return meal
+    }
+
+    private func saveMeal(_ meal: Meal) async {
+        await persistanceClient.saveMeal(meal)
+    }
+
+
 }

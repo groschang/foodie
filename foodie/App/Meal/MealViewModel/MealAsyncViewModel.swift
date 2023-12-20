@@ -25,18 +25,18 @@ final class MealAsyncViewModel: MealViewModelType {
     @Published private(set) var source: URL?
     @Published private(set) var backgroundUrl: URL?
 
-    private let mealCategory: MealCategory
+    private let object: any IdentifiableObject
     private let service: MealsAsyncServiceType
 
-    init(service: MealsAsyncServiceType, mealCategory: any IdentifiableObject) {
+    init(service: MealsAsyncServiceType, object: any IdentifiableObject) { //TODO: rename, item?
         self.service = service
-        self.mealCategory = mealCategory as! MealCategory //TODO: check
+        self.object = object
 
-        setup()
-    }
-    
-    private func setup() {
-        name = mealCategory.name
+        if let meal = object as? Meal {
+            setup(with: meal)
+        } else if let mealCategory = object as? MealCategory {
+            setup(with: mealCategory)
+        }
     }
 
     @MainActor func load() async {
@@ -57,13 +57,17 @@ final class MealAsyncViewModel: MealViewModelType {
 
     @MainActor private func fetchMeal() async {
         do {
-            let meal = try await service.fetchMeal(for: mealCategory.id)
+            let meal = try await service.fetchMeal(for: object.id)
             setup(with: meal)
             state.set(for: meal)
         } catch {
             Logger.log("Fetch meal error: \(error)", onLevel: .error)
             state.setError(error)
         }
+    }
+
+    private func setup(with mealCategory: MealCategory) {
+        name = mealCategory.name
     }
 
     private func setup(with meal: Meal) {

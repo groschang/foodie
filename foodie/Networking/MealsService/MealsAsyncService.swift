@@ -17,6 +17,7 @@ protocol MealsAsyncServiceType {
 
     func loadMeal(for mealId: String) async -> Meal?
     func fetchMeal(for mealId: String) async throws -> Meal
+    func fetchRandomMeal() async throws -> Meal
 }
 
 class MealsAsyncService: MealsAsyncServiceType {
@@ -70,6 +71,15 @@ class MealsAsyncService: MealsAsyncServiceType {
 
     func fetchMeal(for mealId: String) async throws -> Meal {
         let request = MealDBEndpoint.MealRequest(id: mealId)
+        let meal = try await backendClient.process(request)
+
+        await persistanceClient.saveMeal(meal)
+
+        return meal
+    }
+
+    func fetchRandomMeal() async throws -> Meal {
+        let request = MealDBEndpoint.MealRandomRequest()
         let meal = try await backendClient.process(request)
 
         await persistanceClient.saveMeal(meal)

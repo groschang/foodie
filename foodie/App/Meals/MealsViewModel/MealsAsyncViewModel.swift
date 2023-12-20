@@ -38,20 +38,19 @@ final class MealsAsyncViewModel: MealsViewModelType {
     }
 
     @MainActor func load() async {
+        guard let category = category as? Category else { return } //TODO: check
         guard state.isLoading == false else { return }
         state.setLoading()
 
-        guard let category = category as? Category else { return } //TODO: check
         await loadMeals(category)
         await fetchMeals(category)
     }
 
     private func setupProperties() {
-        if let category = category as? Category {
-            categoryName = category.name
-            description = category.description
-            backgroundUrl = category.imageUrl
-        }
+        guard let category = category as? Category else { return }
+        categoryName = category.name
+        description = category.description
+        backgroundUrl = category.imageUrl
     }
 
     private func setupSubscriptions() {

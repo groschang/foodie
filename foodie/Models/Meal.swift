@@ -75,6 +75,7 @@ extension Meal: ContainsElements {
 
 extension Meal: StringIdentifier { }
 
+extension Meal: IdentifiableObject { }
 
 extension Meal: Mockable {
     static let mock: Meal = loadMock(from: "meal") //TODO: change to enums
