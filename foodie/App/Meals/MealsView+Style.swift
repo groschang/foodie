@@ -10,13 +10,13 @@ import SwiftUI
 struct MealsViewRecipesStyle: ViewModifier {
 
     private struct Colors {
-        static let background = ColorStyle.background.mediumOpacity()
+        static let background = AppStyle.background.mediumOpacity()
     }
 
     func body(content: Content) -> some View {
         content
             .modifier(ListModifier())
-            .background(ColorStyle.background)
+            .background(AppStyle.background)
     }
 }
 

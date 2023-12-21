@@ -95,7 +95,7 @@ extension TextStyle {
             func body(content: Content) -> some View {
                 content
                     .fontWeight(.regular)
-                    .foregroundColor(ColorStyle.gray)
+                    .foregroundStyle(AppStyle.gray)
             }
         }
 
@@ -148,7 +148,7 @@ extension TextStyle {
             func body(content: Content) -> some View {
                 content
                     .title()
-                    .lightOpacity()
+                    .lighterOpacity()
                     .multilineTextAlignment(.center)
                     .padding()
             }
@@ -158,7 +158,7 @@ extension TextStyle {
             func body(content: Content) -> some View {
                 content
                     .subtitle3()
-                    .foregroundColor(ColorStyle.black.lightOpacity())
+                    .foregroundStyle(AppStyle.lightBlack)
                     .italic()
                     .multilineTextAlignment(.center)
                     .padding()

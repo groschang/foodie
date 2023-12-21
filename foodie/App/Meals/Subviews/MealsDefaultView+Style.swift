@@ -20,12 +20,12 @@ struct MealsSelectStyle: ViewModifier {
 struct MealsSelectTitleStyle: ViewModifier {
 
     private struct Colors {
-        static let foreground = ColorStyle.black.lightOpacity()
+        static let foreground = AppStyle.lightBlack
     }
 
     func body(content: Content) -> some View {
         content
             .font(.system(.largeTitle, design: .monospaced)) //TODO: #font
-            .foregroundColor(Colors.foreground)
+            .foregroundStyle(Colors.foreground)
     }
 }

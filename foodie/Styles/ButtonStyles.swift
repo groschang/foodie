@@ -15,7 +15,7 @@ struct DashboardButton: ButtonStyle {
             .padding()
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
             .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
-            .foregroundStyle(ColorStyle.appColor)
+            .foregroundStyle(AppStyle.main)
             .background(.white)
             .subtitle()
             .clipShape(Capsule())
@@ -44,14 +44,14 @@ struct InformationButtonStyle: ButtonStyle {
     }
 
     private struct Colors {
-        static let background = ColorStyle.gray
-        static let foreground = ColorStyle.white
+        static let background = AppStyle.gray
+        static let foreground = AppStyle.white
     }
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .foregroundColor(Colors.foreground)
+            .foregroundStyle(AppStyle.foreground)
             .background(Colors.background)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? Animations.endScale : Animations.startScale)
@@ -70,10 +70,10 @@ struct MenuButtonStyle: ButtonStyle {
     }
 
     private struct Colors {
-        static let background = ColorStyle.gray
-        static let backgroundPressed = ColorStyle.orange
-        static let foreground = ColorStyle.white
-        static let foregroundPressed = ColorStyle.light
+        static let background = AppStyle.gray
+        static let backgroundPressed = AppStyle.orange
+        static let foreground = AppStyle.white
+        static let foregroundPressed = AppStyle.light
     }
 
     var selected: Bool
@@ -86,7 +86,7 @@ struct MenuButtonStyle: ButtonStyle {
         configuration.label
             .padding(.horizontal)
             .padding(.vertical, 8)
-            .foregroundColor(
+            .foregroundStyle(
                 configuration.isPressed ? Colors.foreground : Colors.foregroundPressed
             )
             .background(

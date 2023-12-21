@@ -39,7 +39,7 @@ struct DashboardCategoriesCloudView<ViewModel: DashboardCategoriesViewModelType>
                 label: {
                     Text("See all")
                         .subtitle()
-                        .foregroundColor(ColorStyle.white)
+                        .foregroundStyle(AppStyle.white)
                 })
         }
         .padding(.horizontal)

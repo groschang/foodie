@@ -51,7 +51,7 @@ struct ListHeader: View {
             .scaledToFill()
             .clipShape(Rectangle())
             .blur(radius: 20)
-            .lightOpacity()
+            .lighterOpacity()
     }
 
     private var avatarView: some View {
@@ -70,7 +70,7 @@ struct ListHeader: View {
     private var titleView: some View {
         Text(title)
             .font(.title)
-            .foregroundColor(.white)
+            .foregroundStyle(AppStyle.white)
     }
 
     private var backButton: some View {

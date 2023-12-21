@@ -10,12 +10,12 @@ import SwiftUI
 struct MealListStyle: ViewModifier {
 
     private struct Colors {
-        static let background = ColorStyle.white
+        static let background = AppStyle.white
     }
 
     private struct Shadow {
         static let radius = 4.0
-        static let color = ColorStyle.shadow.heavyOpacity()
+        static let color = Color.shadow
     }
 
     private struct Layouts {
@@ -48,17 +48,17 @@ struct MealListPhotoStyle: ViewModifier {
 struct MealListNameStyle: ViewModifier {
 
     private struct Colors {
-        static let foreground = ColorStyle.black
+        static let foreground = AppStyle.black
     }
 
     private struct Shadow {
         static let radius = 1.0
-        static let color = ColorStyle.white.heavyOpacity()
+        static let color = Color.darkWhite
     }
 
     func body(content: Content) -> some View {
         content
-            .foregroundColor(Colors.foreground)
+            .foregroundStyle(AppStyle.foreground)
             .font(.title3) //TODO: #font
             .shadow(color: Shadow.color, radius: Shadow.radius)
     }

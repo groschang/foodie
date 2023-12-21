@@ -16,7 +16,9 @@ Todo list
 - [ ] rename protocols
 - [ ] mocks + previews
 - [ ] dependency container  
+- [ ] check styles
 - [ ] localization
+- [ ] clean fonts
 - [ ] DTO approach?
 - [ ] iterate over TODO's
 - [ ] Remove routers ? RouterProtocol

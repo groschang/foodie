@@ -30,7 +30,7 @@ extension View {
 struct FoodieGradient: View {
 
     private struct Colors {
-        static let gradient = [ColorStyle.white, ColorStyle.blue, ColorStyle.white]
+        static let gradient = [Color.white, Color.blue, Color.white]
     }
 
     private struct Angles {

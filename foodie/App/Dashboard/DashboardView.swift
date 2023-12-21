@@ -29,7 +29,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
         content
         //            .navigationTitle("Welcome back")
             .preferredColorScheme(appTheme.colorScheme(system: systemColorScheme))
-            .accentColor(ColorStyle.accent)
+            .accentColor(Color.accent)
             .task { await viewModel.initialize() }
             .onAppear { manager.start() }
             .onDisappear { manager.stop() }
@@ -40,7 +40,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
             DashboardHeaderView {
                 router.navigate(to: .menu)
             }
-            .toolbarBackground(ColorStyle.light, for: .navigationBar)
+            .toolbarBackground(AppStyle.light, for: .navigationBar)
 
             DashboardPromoView(viewModel: viewModel.promoViewModel) { }
                 .maxWidth()
@@ -57,7 +57,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
             Spacer()
         }
         .background {
-            ColorStyle.background
+            Color.background
                 .ignoresSafeArea()
         }
 

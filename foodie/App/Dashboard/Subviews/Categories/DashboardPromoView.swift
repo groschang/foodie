@@ -33,7 +33,7 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
             }
         }
         .maxSize()
-        .background(ColorStyle.appColor)
+        .background(AppStyle.main)
         .cornerRadius(32)
         .padding()
         .shadow(radius: 2)
@@ -46,7 +46,7 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
             VStack(spacing: 0) {
                 ListPhotoView(imageUrl: viewModel.imageUrl) {
                     ProgressView()
-                        .tint(ColorStyle.white)
+                        .tint(AppStyle.white)
                 }
                 .modifier(ListPhotoStyle(width: 200, height: 200))
                 .mask(SideGradient(startPoint: .leading))
@@ -59,11 +59,11 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
             VStack(alignment: .leading, spacing: spacing) {
 
                 Text("Foodie of the day")
-                    .foregroundColor(.white)
+                    .foregroundStyle(AppStyle.white)
                     .title()
 
                 Text(viewModel.name)
-                    .foregroundColor(.white)
+                    .foregroundStyle(AppStyle.white)
                     .title3()
 
                 AsyncButton("Show next", action: viewModel.load)

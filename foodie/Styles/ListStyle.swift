@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ListStyle: ViewModifier {
+struct ListStyle: ViewModifier { //TODO: CHECK
 
     private struct Colors {
-        static let accent = ColorStyle.accent.mediumOpacity()
-        static let background = ColorStyle.background.lightMediumOpacity()
+        static let accent = Color.accent.mediumOpacity()
+        static let background = Color.background.lightOpacity()
     }
 
     private struct Paddings {

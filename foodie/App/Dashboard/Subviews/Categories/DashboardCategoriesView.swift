@@ -39,7 +39,7 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
                 label: {
                     Text("See all")
                         .subtitle()
-                        .foregroundColor(ColorStyle.white)
+                        .foregroundStyle(AppStyle.white)
                 }
             )
         }

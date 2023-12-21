@@ -24,14 +24,14 @@ struct IngredientsView: View {
                         .frame(width: 40, height: 40)
 
                     Text(ingredient.name.capitalized)
-                        .foregroundColor(ColorStyle.black)
+                        .foregroundStyle(AppStyle.black)
                         .modifier(TextStyle.subtitle2)
 
                     Spacer()
 
                     Text("(\(ingredient.measure))")
                         .modifier(TextStyle.subtitle3)
-                        .foregroundColor(ColorStyle.gray)
+                        .foregroundStyle(AppStyle.gray)
 //                        .italic()
                 }
             }

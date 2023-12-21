@@ -16,7 +16,7 @@ struct BackButton: View {
             Image(systemName: "arrow.backward")
                 .imageScale(.large)
                 .background(.clear)
-                .foregroundColor(ColorStyle.accent)
+                .foregroundStyle(AppStyle.accent)
         }
     }
 }

@@ -87,7 +87,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
                 .scaledToFill()
                 .clipped()
                 .blur(radius: 20)
-                .lightOpacity()
+                .lighterOpacity()
                 .offset(.init(width: 0, height: 80))
 
             ZStack {
@@ -110,7 +110,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
                 Text("\(viewModel.categoryName) \(offset.y, specifier: "%.0f") \(offsetFactor, specifier: "%.0f") \(textSize.height, specifier: "%.0f") \(contentSize.height, specifier: "%.0f") sdf dsfdsfsf sdf  fs f")
                     .frame(width: textWidth)
                     .font(.title)
-                    .foregroundColor(.white)
+                    foregroundStyle(AppStyle.white)
                     .background(.red.opacity(0.4))
                     .offset(x: textXOffset, y: textYOffset)
                     .readingGeometry(from: CoordinateSpace.text.description, into: $textSize)
@@ -133,7 +133,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
         }
         .coordinateSpace(name: CoordinateSpace.main.description)
         .modifier(ListModifier())
-        .background(ColorStyle.background)
+        .background(AppStyle.background)
     }
     
     private var description: some View { //TODO: remove?

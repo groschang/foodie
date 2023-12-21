@@ -18,7 +18,7 @@ struct PhotoLoadingViewStyle: ViewModifier {
                     .cornerRadius(6)
                     .shadow(color: .black.heavyOpacity(), radius: 5)
                     .transition(.slide)
-                    .lightMediumOpacity()
+                    .lightOpacity()
             }
     }
 }

@@ -10,8 +10,8 @@ import SwiftUI
 struct CategoryViewStyle: ViewModifier {
 
     private struct Colors {
-        static let background = Color(light: ColorStyle.white,
-                                      dark: ColorStyle.gray)
+        static let background = Color(light: Color.white,
+                                      dark: Color.gray)
     }
 
     private struct Shadow {
@@ -38,17 +38,17 @@ struct CategoryViewStyle: ViewModifier {
 fileprivate struct CategoryViewTextStyle: ViewModifier {
 
     private struct Colors {
-        static let foreground = ColorStyle.black
+        static let foreground = AppStyle.black
     }
 
     private struct Shadow {
         static let radius = 1.0
-        static let color = ColorStyle.white.heavyOpacity()
+        static let color = Color.white.heavyOpacity()
     }
 
     func body(content: Content) -> some View {
         content
-            .foregroundColor(Colors.foreground)
+            .foregroundStyle(AppStyle.foreground)
             .shadow(color: Shadow.color, radius: Shadow.radius)
     }
 }

@@ -13,12 +13,12 @@ struct DashboardCategoryView: View {
 
     var body: some View {
         Text(category.name)
-            .foregroundColor(.white)
+            foregroundStyle(AppStyle.white)
             .bold()
             .subtitle()
             .padding(.horizontal, 8)
             .padding(.vertical, 6)
-            .background(ColorStyle.gray)
+            .background(AppStyle.gray)
             .clipShape(Capsule())
     }
 }
@@ -52,13 +52,13 @@ struct DashboardCategoryHorizontalView: View {
                 .clipShape(Circle())
 
             Text(category.name)
-                .foregroundColor(.white)
+                foregroundStyle(AppStyle.white)
                 .bold()
                 .subtitle()
 
         }
         .padding(8)
-        .background(ColorStyle.appColor)
+        .background(AppStyle.main)
         .clipShape(Capsule())
     }
 }

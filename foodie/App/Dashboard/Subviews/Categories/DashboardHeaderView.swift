@@ -25,8 +25,8 @@ struct DashboardHeaderView: View {
             
         }
         .padding()
-        .background(ColorStyle.appColor)
-        .foregroundStyle(ColorStyle.light)
+        .background(AppStyle.background)
+        .foregroundStyle(AppStyle.light)
     }
 }
 

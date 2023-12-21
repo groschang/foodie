@@ -54,7 +54,7 @@ struct CategoryGridTextStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.body)
-            .foregroundColor(.black)
+            .foregroundStyle(AppStyle.black)
             .shadow(color: .white ,radius: 1)
     }
 }
