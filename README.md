@@ -2,33 +2,47 @@
 
 API: [themealdb](https://www.themealdb.com/api.php)
 
-Todo list
-- [ ] model
-- [ ] iPad
-- [ ] asyc view states
+
+## TODO list
+
+### Features:
 - [ ] vibtarions
-- [ ] extract text styles
-- [ ] create new target for mocked container &else
-- [ ] create some packages 
-- [ ] fix searchable
-- [ ] extract mapppers
-- [ ] rc pattern
-- [ ] rename protocols
-- [ ] mocks + previews
-- [ ] dependency container  
-- [ ] check styles
+- [ ] iPad split screen
+
+### Improvements:
+- [ ] model
+- [ ] asyc view states
+- [ ] extract and clean text styles
+- [ ] use EmbedInStackModifier
 - [ ] localization
-- [ ] clean fonts
+- [ ] check styles
+- [ ] mocks + previews
+- [ ] services concurrency locks instead VMs
+- [ ] extract mapppers
+- [ ] rename protocols segragation naming
+- [ ] navigationBarHiddenx ?
+- [ ] dependency container
+- [ ] mocked container target improvements
+- [ ] DependencyContainerType & DI cleanup
+
+### Ideas
 - [ ] DTO approach?
+- [ ] service as Actor?
+- [ ] dependency container library
+- [ ] create some packages 
+
+### Fixes:
+- [ ] MotionManager handling and optimization (utilize core)
 - [ ] iterate over TODO's
 - [ ] Remove routers ? RouterProtocol
-- [ ] factories :remove doubled sericess 
-- [ ] service as Actor?
-- [ ] navigationBarHiddenx ?
-- [ ] use EmbedInStackModifier
-- [ ] MotionManager handling and optimization (utilize core)
-- [ ] DependencyContainerType & DI cleanup
-- [ ] All rights reserved phrase
+- [ ] factories: remove doubled services 
+- [ ] fix searchable
+
+### Before release
+- [ ] All rights reserved phrase 
+
+### Done:
+- [x] create new target for mocked container &else
 - [X] rename MealsServiceVMock into  MealsAsyncService ?
 - [x] rename ViewBuilderProtocol into TheViewBuilder
 - [X] rename MealsClosureServiceTypeNew
@@ -36,4 +50,4 @@ Todo list
 - [X] rename MealsServiceAsync into MealsAsyncService
 - [X] rename MealsServiceVIType into MealsAsyncCombinedServiceType
 - [X] rename MealsServiceStream into MealsAsyncStreamService
-
+- [x] iterate over TODO's
