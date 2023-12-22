@@ -10,7 +10,15 @@ import SwiftUI
 struct ColorDebugView: View {
     
     let color: Color
-    
+
+    init(_ color: Color) {
+        self.color = color
+    }
+
+    init(color: Color) {
+        self.color = color
+    }
+
     var body: some View {
         
         VStack(alignment: .center) {

@@ -64,8 +64,8 @@ struct MealView<Model>: View where Model: MealViewModelType {
         if let ingredients = viewModel.ingredients {
             VStack {
 //                TitleView(viewModel.ingredientsTitle, style: MealViewIngredientTitleStyle())
-                ExtendedTitleView(viewModel.ingredientsTitle, titleStyle: MealViewIngredientTitleStyle(),
-                                  subtitle: viewModel.ingredientsSubtitle, subtitleStyle: MealViewIngredientSubitleStyle() )
+                ExtendedTitleView(viewModel.ingredientsTitle, style: MealViewIngredientTitleStyle(),
+                                  subtitle: viewModel.ingredientsSubtitle, yle: MealViewIngredientSubitleStyle() )
                 IngredientsView(ingredients)
             }
         }

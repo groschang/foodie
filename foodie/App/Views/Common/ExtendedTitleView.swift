@@ -18,10 +18,10 @@ struct ExtendedTitleView<TitleStyle, SubtitleStyle>: View where TitleStyle: View
     let subtitleStyle: SubtitleStyle
 
 
-    init(_ title: String, titleStyle: TitleStyle = TextStyle.title,
+    init(_ title: String, style: TitleStyle = TextStyle.title,
          subtitle: String, subtitleStyle: SubtitleStyle = TextStyle.subtitle) {
         self.title = title
-        self.titleStyle = titleStyle
+        self.titleStyle = style
         self.subtitle = subtitle
         self.subtitleStyle = subtitleStyle
     }
@@ -40,7 +40,7 @@ struct ExtendedTitleView<TitleStyle, SubtitleStyle>: View where TitleStyle: View
 
 struct ExtendedTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        ExtendedTitleView("TitleView", titleStyle: TextStyle.title,
+        ExtendedTitleView("TitleView", style: TextStyle.title,
                           subtitle: "Subtitle", subtitleStyle: TextStyle.subtitle)
         .previewAsComponent()
     }

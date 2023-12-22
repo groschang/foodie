@@ -28,7 +28,9 @@ struct MenuView: View {
                     Spacer()
 
                     VStack(alignment: .trailing) {
-                        Button("Default") {
+//                    HStack(alignment: .center) {
+
+                        Button("System default") {
                             appTheme = .system
                         }
                         .buttonStyle(MenuButtonStyle(selected: appTheme == .system))
@@ -54,3 +56,6 @@ struct MenuView: View {
 #Preview {
     MenuView()
 }
+
+
+

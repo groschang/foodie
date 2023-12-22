@@ -29,7 +29,7 @@ struct DebugSection<Content: View>: View {
                     .listRowInsets(.zero)
                     .padding(.horizontal)
                     .padding(.vertical, 6)
-                    .background(Color.darkBlack)
+                    .background(Color(r: 169, g: 252, b: 210))
                     .leafShaped()
                     .padding(.bottom)
             }

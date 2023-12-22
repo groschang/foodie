@@ -10,13 +10,25 @@ import SwiftUI
 struct ColorDescriptionDebugView: View {
     
     let color: Color
-    
+
+    var description: String {
+        if color.description.count > 21 {
+            return color.hex
+        } else {
+            return color.description.uppercased()
+        }
+    }
+
     var body: some View {
-        Text(color.description.uppercased())
+        Text(description)
+            .bold()
             .scalableStyle()
             .padding(.vertical)
             .frame(height: 55)
             .maxWidth()
+            .foregroundStyle(
+                color.isBright ? Color.black : Color.white
+            )
             .background(color)
     }
 }

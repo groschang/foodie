@@ -10,7 +10,7 @@ import SwiftUI
 struct ListModifier: ViewModifier {
 
     private struct Colors {
-        static let background = AppStyle.blue.heavyOpacity()
+        static let background = Color.darkBlue
     }
 
     func body(content: Content) -> some View {
@@ -23,7 +23,7 @@ struct ListModifier: ViewModifier {
 struct ListRowModifier: ViewModifier {
 
     private struct Colors {
-        static let background = AppStyle.blue.heavyOpacity()
+        static let background = Color.darkBlue
     }
 
     private struct Paddings {

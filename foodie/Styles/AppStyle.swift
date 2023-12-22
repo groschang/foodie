@@ -53,6 +53,7 @@ extension AppStyle {
 }
 
 extension Color {
+    static let foreground = AppStyle.foreground.darkColor
     static let background = Color(light: AppStyle.background.lightColor,
                                   dark: AppStyle.background.darkColor) //TODO: find Color.background
     static let accent = Color(light: AppStyle.accent.lightColor,
@@ -72,4 +73,96 @@ extension AppStyle: View {
     }
 }
 
-//TODO: make some preview!
+
+// MARK: Previews
+
+extension AppStyle {
+
+    /// Return all color styles defined in the `AppStyle`
+    ///
+    /// This could be enum (structure `ColorStyle` as well as `AppStyle`) with case iterable but that would force accessing `rawValue` or desired property `value`
+    ///
+    /// Another idea is to use Mirror and reflection mechanism but class members are not supported
+    ///
+    /// Implementation below presents programmatically created extension that returns iterable colors styles array
+    static let all: [ColorStyle] = [
+        /// casted colors
+        AppStyle.white,
+        AppStyle.lightGray,
+        AppStyle.gray,
+        AppStyle.darkGray,
+        AppStyle.black,
+        AppStyle.blue,
+        AppStyle.orange,
+        /// relative
+        AppStyle.light,
+        AppStyle.lightWhite,
+        AppStyle.darkWhite,
+        AppStyle.lightBlack,
+        AppStyle.darkBlack,
+        AppStyle.darkBlue,
+        /// styles
+        AppStyle.foreground,
+        AppStyle.background,
+        AppStyle.accent,
+        AppStyle.shadow
+    ]
+}
+
+extension Color {
+
+    /// Return all colors defined in the `AppStyle`
+    ///
+    /// This could be enum (i.e. structure `Colors`) with case iterable but that would force accessing `rawValue` or desired property `value`
+    ///
+    /// Another idea is to use Mirror and reflection mechanism but class members are not supported
+    ///
+    /// Implementation below presents programmatically created extension that returns iterable colors array
+    static let all: [Color] = [
+        /// defined
+        .lightGray,
+        .darkGray,
+        /// relative
+        .light,
+        .lightWhite,
+        .darkWhite,
+        .lightBlack,
+        .darkBlack,
+        .darkBlue,
+        /// styles
+        .foreground,
+        .background,
+        .accent,
+        .shadow
+    ]
+
+}
+
+#Preview {
+    List {
+        
+        DebugSection("AppStyles") {
+            ForEach(AppStyle.all, id: \.self) {
+                ColorStyleDebugView($0)
+            }
+        }
+
+        DebugSection("Custom colors") {
+            ForEach(Color.all, id: \.self) {
+                ColorDebugView($0)
+            }
+        }
+
+        DebugSection("Colors test") {
+            ColorDebugView(color: Color.gray)
+            ColorStyleDebugView(style: AppStyle.gray)
+            ColorStyleDebugView(style: AppStyle.darkBlue)
+            ColorStyleDebugView(style: AppStyle.shadow)
+            ColorStyleDebugView(style: AppStyle.background)
+            ColorStyleDebugView(style: AppStyle.blue.opacity(0.5))
+            ColorStyleDebugView(style: AppStyle.darkBlue)
+            ColorStyleDebugView(style: AppStyle.blue.heaviestOpacity())
+        }
+    }
+    .listStyle(.insetGrouped)
+}

@@ -109,3 +109,17 @@ extension Color {
         self = .init(red: red, green: green, blue: blue)
     }
 }
+
+extension Color {
+
+    var brightness: Double {
+        let (red, green, blue, opacity) = components
+        let average = Double( red + green + blue ) / 3.0
+        let relative = average / 255.0
+        return max(relative, 1 - opacity)
+    }
+
+    var isBright: Bool {
+        brightness > 0.6
+    }
+}
