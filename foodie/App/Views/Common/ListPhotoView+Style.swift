@@ -24,10 +24,12 @@ struct BlurredBackground: ViewModifier {
 
     let imageUrl: URL?
     let blur: CGFloat
+    let opacity: CGFloat
 
-    init(imageUrl: URL?, blur: CGFloat = 20) {
+    init(imageUrl: URL?, blur: CGFloat = 20, opacity: CGFloat = 0.5) {
         self.imageUrl = imageUrl
         self.blur = blur
+        self.opacity = opacity
     }
 
     func body(content: Content) -> some View {
@@ -37,7 +39,7 @@ struct BlurredBackground: ViewModifier {
                     .scaledToFill()
                     .clipped()
                     .blur(radius: blur)
-                    .opacity(0.55)
+                    .opacity(opacity)
             }
     }
 }

@@ -10,23 +10,32 @@ import SwiftUI
 struct DashboardHeaderView: View {
 
     var action: () -> Void
-    
+
     var body: some View {
         HStack {
-            Text("Hello, World!")
-                .title()
+
+            Image(systemName: "person.fill")
+                .font(.system(size: 44))
+                .frame(width: 44, height: 44)
+
+            VStack(alignment: .leading) {
+
+                Text("Hello, John Appleseed!")
+                    .title3()
+
+                Text("Check new recipes!")
+                    .foregroundColor(Color.white)
+                    .subtitle3()
+            }
 
             Spacer()
-            
+
             Button(action: action) {
                 Image(systemName: "list.bullet.circle")
                     .font(.title)
             }
-            
+
         }
-        .padding()
-        .background(AppStyle.main)
-        .foregroundStyle(AppStyle.light)
     }
 }
 

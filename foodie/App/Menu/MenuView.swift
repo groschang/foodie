@@ -11,8 +11,6 @@ struct MenuView: View {
 
     @ObservedObject var viewModel = MenuViewModel()
 
-    @AppStorage(UserDefaultsKeys.appTheme) var appTheme: AppTheme = .system
-
     var body: some View {
         content
             .navigationTitle("Settings")
@@ -28,22 +26,21 @@ struct MenuView: View {
                     Spacer()
 
                     VStack(alignment: .trailing) {
-//                    HStack(alignment: .center) {
 
                         Button("System default") {
-                            appTheme = .system
+                            viewModel.setTheme(.system)
                         }
-                        .buttonStyle(MenuButtonStyle(selected: appTheme == .system))
+                        .buttonStyle(.menu(selected: viewModel.appTheme == .system))
 
                         Button("Light") {
-                            appTheme = .light
+                            viewModel.setTheme(.light)
                         }
-                        .buttonStyle(MenuButtonStyle(selected: appTheme == .light))
+                        .buttonStyle(.menu(selected: viewModel.appTheme == .light))
 
                         Button("Dark") {
-                            appTheme = .dark
+                            viewModel.setTheme(.dark)
                         }
-                        .buttonStyle(MenuButtonStyle(selected: appTheme == .dark))
+                        .buttonStyle(.menu(selected: viewModel.appTheme == .dark))
                     }
                 }
             }

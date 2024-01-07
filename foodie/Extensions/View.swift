@@ -77,3 +77,21 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         return viewControllers.count > 1
     }
 }
+
+
+extension View {
+
+    func placeAtTheTop() -> some View {
+        VStack(spacing: .zero) {
+            self
+            Spacer()
+        }
+    }
+
+    func placeAtTheBottom() -> some View {
+        VStack(spacing: .zero) {
+            Spacer()
+            self
+        }
+    }
+}

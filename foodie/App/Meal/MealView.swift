@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealView<Model>: View where Model: MealViewModelType {
 
-    @EnvironmentObject var router: Router
+//    @EnvironmentObject var router: Router
 
     @ObservedObject private var viewModel: Model
     
@@ -65,7 +65,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
             VStack {
 //                TitleView(viewModel.ingredientsTitle, style: MealViewIngredientTitleStyle())
                 ExtendedTitleView(viewModel.ingredientsTitle, style: MealViewIngredientTitleStyle(),
-                                  subtitle: viewModel.ingredientsSubtitle, yle: MealViewIngredientSubitleStyle() )
+                                  subtitle: viewModel.ingredientsSubtitle, subtitleStyle: MealViewIngredientSubitleStyle() )
                 IngredientsView(ingredients)
             }
         }
@@ -90,3 +90,5 @@ struct MealView_Previews: PreviewProvider {
         }
     }
 }
+
+

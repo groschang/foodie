@@ -13,6 +13,21 @@ protocol ViewFactoryType {
 }
 
 
+
+extension View {
+
+    func makeNavigation<ViewFactory>(
+        with viewFactory: ViewFactory
+    ) -> some View
+    where ViewFactory: ViewFactoryType {
+
+        navigationDestination(for: Route.self) { route in
+            viewFactory.makeView(type: route)
+        }
+    }
+}
+
+
 class ViewFactory: StreamViewFactory { }
 
 
@@ -98,7 +113,7 @@ class StreamViewFactory: ViewFactoryType {
     private lazy var categoriesFactory = CategoriesAsyncStreamViewFactory(service: service)
     private lazy var mealsFactory = MealsAsyncStreamViewFactory(service: service)
     private lazy var mealFactory = MealAsyncStreamViewFactory(service: service)
-    
+
     private lazy var menuFactory = MenuViewFactory()
 
     init(service: MealsAsyncStreamServiceType) {
@@ -108,7 +123,7 @@ class StreamViewFactory: ViewFactoryType {
     @MainActor @ViewBuilder
     func makeView(type: Route) -> some View {
         switch type {
-            
+
         case .categories:
             categoriesFactory.makeView()
         case .emptyCategories:

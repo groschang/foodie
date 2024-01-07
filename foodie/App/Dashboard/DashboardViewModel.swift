@@ -7,16 +7,17 @@
 
 import Foundation
 
-protocol DashboardViewModelPresentable: ObservableObject {
+protocol DashboardViewModelData: ObservableObject {
+
     var categoriesViewModel: DashboardCategoriesViewModel { get }
     var promoViewModel: DashboardPromoViewModel { get }
 
     func initialize() async
 }
 
-protocol DashboardViewModelType: DashboardViewModelPresentable,
-                                    LoadableObject,
-                                    Initializable { }
+protocol DashboardViewModelType: DashboardViewModelData,
+                                 LoadableObject,
+                                 Initializable { }
 
 
 final class DashboardViewModel: DashboardViewModelType {

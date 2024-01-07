@@ -101,7 +101,7 @@ struct CategoriesGridView<Model>: View where Model: CategoriesViewModelType {
 //struct ListModifier: ViewModifier {
 //    func body(content: Content) -> some View {
 //        content
-//            .tint(Color.blue.heavyOpacity())
+//            .tint(Color.blue.heavierOpacity())
 //    }
 //}
 //

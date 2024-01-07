@@ -23,7 +23,7 @@ struct foodieApp: App {
     
     private let viewFactory: StreamViewFactory
     @ObservedObject private var router: Router
-    
+
     init() {
         container.assemble()
         
@@ -44,9 +44,11 @@ struct foodieApp: App {
     fileprivate var content: some View {
         NavigationStack(path: $router.navigationPath) {
             DashboardView(viewModel: dashboardViewModel)
+//                .makeNavigation(with: viewFactory)
                 .navigationDestination(for: Route.self) { route in
                     viewFactory.makeView(type: route)
                 }
+                .environment(\.colorScheme, .dark)
                 .onOpenURL { url in
                     Log.log(url, onLevel: .verbose)
                     if let route = Route(url: url) {

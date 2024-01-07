@@ -27,10 +27,10 @@ extension AppStyle {
 extension Color {
     static let light = Color.white
     static let lightWhite = Color.white.lightOpacity()
-    static let darkWhite = Color.white.heavyOpacity()
+    static let darkWhite = Color.white.heavierOpacity()
     static let lightBlack = Color.black.lighterOpacity()
     static let darkBlack = Color.black.heaviestOpacity()
-    static let darkBlue = Color.blue.heavyOpacity() //TODO: inver dark with light?
+    static let darkBlue = Color.blue.heavierOpacity() //TODO: inver dark with light?
 }
 
 extension AppStyle {
@@ -39,37 +39,48 @@ extension AppStyle {
     static let darkWhite = ColorStyle(Color.darkWhite)
     static let lightBlack = ColorStyle(Color.lightBlack)
     static let darkBlack = ColorStyle(Color.darkBlack)
-    static let darkBlue = ColorStyle(Color.blue.heavyOpacity()) //TODO:
+    static let darkBlue = ColorStyle(Color.blue.heavierOpacity()) //TODO:
 }
 
 extension AppStyle {
-    static let foreground = Self.black
+    static let foreground = ColorStyle(light: Color.black,
+                                       dark: Color.white)
     static let background = ColorStyle(light: Color.clear,
                                        dark: Color.darkBlack)
     static let accent = ColorStyle(light: Color.black,
                                    dark: Color.black)
-    static let shadow = ColorStyle(light: Color.gray,
-                                   dark: Color.lightGray)
+    static let shadow = ColorStyle(light: Color.black,
+                                   dark: Color.black)
+    static let toolbar = ColorStyle(light: Color.gray,
+                                    dark: Color.gray)
 }
 
 extension Color {
-    static let foreground = AppStyle.foreground.darkColor
+    static let foreground = Color(light: AppStyle.foreground.lightColor,
+                                  dark: AppStyle.foreground.darkColor)
     static let background = Color(light: AppStyle.background.lightColor,
                                   dark: AppStyle.background.darkColor) //TODO: find Color.background
     static let accent = Color(light: AppStyle.accent.lightColor,
                               dark: AppStyle.accent.darkColor)
-    static let shadow =  Color(light: AppStyle.shadow.lightColor,
+    static let shadow = Color(light: AppStyle.shadow.lightColor,
                                dark: AppStyle.shadow.darkColor)
+    static let toolbar = Color(light: AppStyle.toolbar.lightColor,
+                                dark: AppStyle.toolbar.darkColor)
 }
 
 extension AppStyle {
     static let main = Color.gray //TODO: check fixed bg color
 }
 
-extension AppStyle: View {
-    var body: some View {
-        Rectangle()
-            .background(self)
+extension AppStyle {
+    static var cornerRadius: CGFloat { 20.0 }
+    static var shadowRadius: CGFloat { 8.0 }
+}
+
+extension AppStyle {
+
+    struct Animations {
+        static let transition: Animation = .spring(response: 0.6, dampingFraction: 0.8)
     }
 }
 

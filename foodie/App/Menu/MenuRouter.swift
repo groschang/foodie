@@ -15,7 +15,7 @@ enum MenuRouter: RouterProtocol {
 
     @MainActor @ViewBuilder
     func makeView() -> some View {
-
+        
         switch self {
 
         case .menu:

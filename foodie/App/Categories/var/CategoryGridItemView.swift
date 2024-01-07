@@ -70,7 +70,7 @@ struct CategoryGridPhotoStyle: ViewModifier {
             .background {
                 Color.white
                     .cornerRadius(6)
-                    .shadow(color: .black.heavyOpacity(), radius: 5)
+                    .shadow(color: .black.heavierOpacity(), radius: 5)
                     .transition(.slide)
                     .opacity(0.6)
             }

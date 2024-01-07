@@ -9,64 +9,21 @@ import SwiftUI
 
 struct SwiftUIDebugView: View {
 
-    // AppStyles
-    let appStyles = [
-        AppStyle.white,
-        AppStyle.lightGray,
-        AppStyle.gray,
-        AppStyle.darkGray,
-        AppStyle.black,
-        AppStyle.blue,
-        AppStyle.orange,
-
-        AppStyle.light,
-        AppStyle.lightWhite,
-        AppStyle.darkWhite,
-        AppStyle.lightBlack,
-        AppStyle.darkBlack,
-        AppStyle.darkBlue,
-
-        AppStyle.foreground,
-        AppStyle.background,
-        AppStyle.accent,
-        AppStyle.shadow
-    ]
-
-    // Colors
-    let colors: [Color] = [
-        .lightGray,
-        .darkGray,
-
-        .light,
-        .lightWhite,
-        .darkWhite,
-        .lightBlack,
-        .darkBlack,
-        .darkBlue,
-
-        .foreground,
-        .background,
-        .accent,
-        .shadow
-    ]
-
-
-
     var body: some View {
 
         List {
 
             // Debug app colors and styles
 
-            DebugSection("AppStyles") {
-                ForEach(appStyles, id: \.self) {
-                    ColorStyleDebugView($0)
+            DebugSection("Custom colors") {
+                ForEach(Color.all, id: \.self) {
+                    ColorDebugView($0)
                 }
             }
 
-            DebugSection("Custom colors") {
-                ForEach(colors, id: \.self) {
-                    ColorDebugView($0)
+            DebugSection("AppStyles") {
+                ForEach(AppStyle.all, id: \.self) {
+                    ColorStyleDebugView($0)
                 }
             }
 

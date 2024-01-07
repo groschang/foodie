@@ -10,11 +10,12 @@ import SwiftUI
 struct MealListStyle: ViewModifier {
 
     private struct Colors {
-        static let background = AppStyle.white
+        static let background = Color(light: Color.white,
+                                      dark: Color.gray)
     }
 
     private struct Shadow {
-        static let radius = 4.0
+        static let radius = 10.0
         static let color = Color.shadow
     }
 
@@ -59,7 +60,17 @@ struct MealListNameStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundStyle(AppStyle.foreground)
-            .font(.title3) //TODO: #font
+            .multilineTextAlignment(.leading)
+            .lineLimit(4)
+            .minimumScaleFactor(0.8)
+        //            .font(.title3) //TODO: #font
+            .font( //TODO: #font
+                .custom(
+                    "AmericanTypewriter",
+                    fixedSize: 25)
+                .weight(.semibold)
+
+            )
             .shadow(color: Shadow.color, radius: Shadow.radius)
     }
 }

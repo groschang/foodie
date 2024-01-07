@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-// MARK: WhiteButton
+// MARK: DashboardButtonStyle
 
-struct DashboardButton: ButtonStyle {
+struct DashboardButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
@@ -22,15 +22,23 @@ struct DashboardButton: ButtonStyle {
     }
 }
 
+extension ButtonStyle where Self == DashboardButtonStyle {
+    static var dashboard: Self { .init() }
+}
 
-// MARK: GrowingButton
 
-struct GrowingButton: ButtonStyle {
+// MARK: GrowingButtonStyle
+
+struct GrowingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+            .animation(.interpolatingSpring(duration: 0.25), value: configuration.isPressed)
     }
+}
+
+extension ButtonStyle where Self == GrowingButtonStyle {
+    static var growing: Self { .init() }
 }
 
 // MARK: Information button
@@ -57,6 +65,10 @@ struct InformationButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? Animations.endScale : Animations.startScale)
             .animation(.easeOut(duration: Animations.duration), value: configuration.isPressed)
     }
+}
+
+extension ButtonStyle where Self == InformationButtonStyle {
+    static var information: Self { .init() }
 }
 
 // MARK: Information button
@@ -100,6 +112,11 @@ struct MenuButtonStyle: ButtonStyle {
     }
 }
 
+extension ButtonStyle where Self == MenuButtonStyle {
+    static var menu: Self { .init() }
+    static func menu(selected: Bool) -> Self { .init(selected: selected) }
+}
+
 
 // MARK: Previews
 
@@ -107,16 +124,16 @@ struct ButtonStyles_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             Button("DashboardButton"){}
-                .buttonStyle(DashboardButton())
+                .buttonStyle(.dashboard)
 
             Button("GrowingButton"){}
-                .buttonStyle(GrowingButton())
+                .buttonStyle(.growing)
 
             Button("InformationButtonStyle"){}
-                .buttonStyle(InformationButtonStyle())
+                .buttonStyle(.information)
 
             Button("MenuButtonStyle"){}
-                .buttonStyle(MenuButtonStyle())
+                .buttonStyle(.menu)
         }
     }
 }

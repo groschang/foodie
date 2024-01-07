@@ -10,28 +10,39 @@ import SwiftUI
 struct ListHeaderView: View {
 
     let title: String
-    let action: VoidAction?
+    let filterAction: VoidAction
+    let modeAction: VoidAction
 
-    init(title: String, action: VoidAction?) {
+    @Binding var listType: ListType
+
+    init(
+        title: String,
+        filterAction: @escaping VoidAction,
+        modeAction: @escaping VoidAction,
+        listType: Binding<ListType>
+    ) {
         self.title = title
-        self.action = action
+        self.filterAction = filterAction
+        self.modeAction = modeAction
+        self._listType = listType
     }
 
     var body: some View {
         HStack {
             Text(title)
-                .font(.footnote)
+                .font(.footnote) // TODO: #font
 
             Spacer()
 
-            Button(
-                action: { action?() },
-                label: {
-                    Text("Filter")
-                        .font(.footnote)
-                        .tint(.white)
-                }
+            ListTypeButton(
+                type: listType,
+                action: modeAction
             )
+            .tint(Color.foreground)
+
+
+            ListFilterButton(action: filterAction)
+                .tint(Color.foreground)
         }
     }
 }
@@ -40,7 +51,11 @@ struct ListHeaderView: View {
 
 struct ListHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ListHeaderView(title: "Title", action: { } )
-            .previewAsComponent()
+        ListHeaderView(title: "Title",
+                       filterAction: { },
+                       modeAction: { },
+                       listType: .constant(.list))
+        .previewAsComponent()
     }
 }
+

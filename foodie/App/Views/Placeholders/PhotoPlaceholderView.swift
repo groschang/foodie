@@ -12,6 +12,8 @@ struct PhotoPlaceholderView: View {
     var body: some View {
         Image(systemName: "fork.knife.circle")
             .resizable()
+            .foregroundStyle(Color.shadow)
+            .imageScale(.large)
             .scaledToFit()
     }
 }

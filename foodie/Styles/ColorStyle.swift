@@ -50,3 +50,11 @@ extension ColorStyle {
         )
     }
 }
+
+
+extension ColorStyle {
+
+    var color: Color {
+        Color(light: lightColor, dark: darkColor)
+    }
+}

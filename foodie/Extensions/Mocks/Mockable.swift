@@ -10,7 +10,7 @@ import Foundation
 protocol Mockable {
     static var bundle: Bundle { get }
     static func loadJSON<T: Decodable>(filename: String, type: T.Type) -> T
-    static func loadMock<Self: Decodable>(from filename: String) -> Self
+//    static func loadMock<Self: Decodable>(from filename: String) -> Self
 }
 
 extension Mockable {

@@ -13,7 +13,7 @@ struct MealListView: View {
     
     var body: some View {
         HStack {
-
+            
             ListPhotoView(imageUrl: meal.imageUrl)
                 .modifier(MealListPhotoStyle())
             
@@ -30,7 +30,7 @@ struct MealListView: View {
 
 struct MealListView_Previews: PreviewProvider {
     static var previews: some View {
-
+        
         VStack(spacing: 16) {
             MealListView(meal: .mock)
             MealListView(meal: .mock)

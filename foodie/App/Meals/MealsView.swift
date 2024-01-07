@@ -12,24 +12,25 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @EnvironmentObject var router: Router
-    
+
     @StateObject var viewModel: Model
 
     @State private var animate = false
     @State private var offset: CGPoint = .zero
 
-    private var layout: AnyLayout { animate ? AnyLayout(HStackLayout()) : AnyLayout(VStackLayout()) }
+    @State private var listType: ListType = .grid
 
     init(viewModel: Model) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
             .navigationBarHidden()
     }
-    
+
     private var content: some View {
+
         VStack {
             header
             recipes
@@ -41,6 +42,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var header: some View {
+
         ListHeader(
             title: viewModel.categoryName,
             imageUrl: viewModel.backgroundUrl,
@@ -51,9 +53,10 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var recipes: some View {
-        ScrollView {
+
+        List {
             Section(
-                content: { listContent },
+                content: { scrollViewContent },
                 header: { listHeader }
             )
         }
@@ -62,21 +65,66 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var listHeader: some View {
+
         ListHeaderView(
             title: viewModel.itemsHeader,
-            action: { }
+            filterAction: { },
+            modeAction: {
+                withAnimation {
+                    listType = listType.next()
+                }
+            },
+            listType: $listType
         )
         .padding()
         .readScrollView(from: CoordinateSpace.main, into: $offset)
     }
-    
+
+    @ViewBuilder
+    private var scrollViewContent: some View {
+        if listType == .grid {
+            gridContent
+        } else {
+            listContent
+        }
+    }
+
     private var listContent: some View {
+
         ForEach(viewModel.filteredItems) { meal in
+
             RouterLink(to: .meal(meal)) {
-                MealListView(meal: meal)
+
+                if listType == .list {
+
+                    MealListView(meal: meal)
+
+                } else if listType == .post {
+
+                    MealPhotoListView(meal: meal)
+
+                }
             }
         }
         .modifier(ListRowModifier())
+    }
+
+    private var gridContent: some View {
+
+        LazyVGrid(
+            columns: [GridItem(.adaptive(minimum: 140))],
+            spacing: 20
+        ) {
+            ForEach(viewModel.filteredItems) { meal in
+
+                RouterLink(to: .meal(meal), style: .growing) {
+                    MealPhotoListView(
+                        meal: meal,
+                        fontType: .small
+                    )
+                }
+            }
+        }
     }
 }
 

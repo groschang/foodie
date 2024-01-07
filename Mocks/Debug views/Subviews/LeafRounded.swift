@@ -9,13 +9,12 @@ import SwiftUI
 
 extension View {
     
-    static var leafCornerRadius: CGFloat { 20.0 }
-    
-    static var leafCorners: UIRectCorner { [.bottomLeft, .topRight] }
-    
+    static var leafCornerRadius: CGFloat { AppStyle.cornerRadius }
+
     static var leafBoarderColor: Color { .gray }
-    
-    
+
+    static var leafCorners: UIRectCorner { [.topLeft, .bottomRight] }
+
     func leafShaped() -> some View {
         leafRounded()
             .leafRounderBorder()
@@ -54,12 +53,66 @@ extension View {
 
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension Shape where Self == UnevenRoundedRectangle {
-    
+
     static var leafShape: UnevenRoundedRectangle {
         .rect(
-            topLeadingRadius: 0,
+            topLeadingRadius: Self.leafCornerRadius,
+            bottomLeadingRadius: .zero,
+            bottomTrailingRadius: Self.leafCornerRadius,
+            topTrailingRadius: .zero
+        )
+    }
+}
+
+
+extension View {
+
+    static var reversedLeafCorners: UIRectCorner { [.bottomLeft, .topRight] }
+
+    func reversedLeafShaped() -> some View {
+        reversedLeafRounded()
+            .reversedLeafRounderBorder()
+    }
+
+    func reversedLeafRounded() -> some View {
+
+        if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *) {
+            return clipShape(UnevenRoundedRectangle.reversedLeafShape)
+        } else {
+            return cornerRadius(Self.leafCornerRadius, corners: Self.reversedLeafCorners)
+        }
+    }
+
+    func reversedLeafRounderBorder() -> some View {
+
+        if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *) {
+
+            return overlay {
+                UnevenRoundedRectangle.reversedLeafShape
+                    .stroke(Self.leafBoarderColor, lineWidth: 2)
+            }
+
+        } else {
+
+            return overlay {
+                RoundedCorner(
+                    radius: Self.leafCornerRadius,
+                    corners: Self.reversedLeafCorners
+                )
+                .stroke(Self.leafBoarderColor, lineWidth: 2)
+            }
+        }
+    }
+}
+
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension Shape where Self == UnevenRoundedRectangle {
+
+    static var reversedLeafShape: UnevenRoundedRectangle {
+        .rect(
+            topLeadingRadius: .zero,
             bottomLeadingRadius: Self.leafCornerRadius,
-            bottomTrailingRadius: 0,
+            bottomTrailingRadius: .zero,
             topTrailingRadius: Self.leafCornerRadius
         )
     }

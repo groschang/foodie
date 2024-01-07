@@ -15,8 +15,8 @@ struct CategoryViewStyle: ViewModifier {
     }
 
     private struct Shadow {
-        static let radius = 4.0
-        static let color = Color.gray.heavyOpacity()
+        static let radius = 10.0
+        static let color = Color.gray.heavierOpacity()
     }
 
     private struct Layouts {
@@ -43,7 +43,7 @@ fileprivate struct CategoryViewTextStyle: ViewModifier {
 
     private struct Shadow {
         static let radius = 1.0
-        static let color = Color.white.heavyOpacity()
+        static let color = Color.white.heavierOpacity()
     }
 
     func body(content: Content) -> some View {
@@ -56,7 +56,7 @@ fileprivate struct CategoryViewTextStyle: ViewModifier {
 struct CategoryViewNameStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.title) //TODO: #font
+            .title()
             .modifier(CategoryViewTextStyle())
     }
 }
@@ -64,7 +64,7 @@ struct CategoryViewNameStyle: ViewModifier {
 struct CategoryViewDescriptionStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.footnote) //TODO: #font
+            .subtitle3()
             .modifier(CategoryViewTextStyle())
     }
 }
@@ -72,13 +72,13 @@ struct CategoryViewDescriptionStyle: ViewModifier {
 
 struct CategoryViewPhotoStyle: ViewModifier {
 
-    var width: CGFloat = 124
-    var height: CGFloat = 124
+    var width: CGFloat = 160
+    var height: CGFloat = 160
     let imageUrl: URL?
 
     func body(content: Content) -> some View {
         content
             .modifier(ListPhotoStyle(width: width, height: height))
-            .modifier(BlurredBackground(imageUrl: imageUrl))
+//            .modifier(BlurredBackground(imageUrl: imageUrl))
     }
 }

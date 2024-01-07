@@ -9,16 +9,23 @@ import SwiftUI
 
 struct ListHeader: View {
 
+//    @Environment(\.horizontalSizeClass) var sizeClass
+
     let title: String
+
     let imageUrl: URL?
+
     @Binding var animate: Bool
+
     var backButtonAction: VoidAction?
 
-    private var layout: AnyLayout {
-        animate ? AnyLayout(HStackLayout()) : AnyLayout(VStackLayout())
-    }
-
     @State private var backButtonSize: CGRect = .zero
+
+    private var layout: AnyLayout {
+        animate // || sizeClass == .regular
+        ? AnyLayout(HStackLayout())
+        : AnyLayout(VStackLayout())
+    }
 
     private var imageRadius: CGFloat { animate ? 50 : 100 }
 

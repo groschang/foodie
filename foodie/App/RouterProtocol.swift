@@ -12,12 +12,14 @@ protocol RouterProtocol: Hashable {
     func makeView() -> V
 }
 
+
+
 extension View {
 
-    func navigationDestination<T>(for data: T.Type) -> some View where T: RouterProtocol {
-        navigationDestination(for: data) { router in
-            router.makeView()
-        }
-    }
+//    func navigationDestination<T>(for data: T.Type) -> some View where T: RouterProtocol {
+//        navigationDestination(for: data) { router in
+//            router.makeView()
+//        }
+//    }
 }
 

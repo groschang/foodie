@@ -10,23 +10,27 @@ import SwiftUI
 struct CategoryView: View {
 
     let viewModel: CategoryViewModel
-    
+
     var body: some View {
         HStack {
             ListPhotoView(imageUrl: viewModel.imageURL)
                 .modifier(CategoryViewPhotoStyle(imageUrl: viewModel.imageURL))
                 .clipped()
-            
+
             VStack(alignment: .leading) {
                 Text(viewModel.name)
                     .modifier(CategoryViewNameStyle())
-                
+
                 Text(viewModel.description)
                     .modifier(CategoryViewDescriptionStyle())
             }
-            
+
             Spacer()
         }
+        .modifier(BlurredBackground(
+            imageUrl: viewModel.imageURL,
+            opacity: 0.15)
+        )
         .modifier(CategoryViewStyle())
     }
 }

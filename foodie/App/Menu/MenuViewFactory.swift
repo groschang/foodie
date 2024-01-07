@@ -14,3 +14,4 @@ class MenuViewFactory: ViewBuilderProtocol {
         MenuView()
     }
 }
+
