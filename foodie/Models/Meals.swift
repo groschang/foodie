@@ -24,7 +24,6 @@ extension Meals: ContainsItems { }
 
 extension Meals: StringIdentifier { }
 
-
 extension Meals: Mockable {
     static let mock: Meals = loadMock(from: "meals")
 }

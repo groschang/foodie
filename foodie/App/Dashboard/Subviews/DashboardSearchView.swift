@@ -9,16 +9,15 @@ import SwiftUI
 
 struct DashboardSearchView: View {
 
-
     enum ElementID {
         static let textfield = "Textfield"
         static let background = "Background"
-        static let chin = "Chin"
     }
+
 
     var namespace: Namespace.ID
 
-    @Binding var show: Bool
+    @Binding var isPresenting: Bool
 
     @FocusState var isFocused: Bool
 
@@ -26,47 +25,20 @@ struct DashboardSearchView: View {
     var body: some View {
         VStack {
             ZStack {
-
                 content
-
                 header
                     .placeAtTheTop()
             }
         }
-        .onAppear {
-            isFocused = true
-        }
-        .onDisappear {
-            isFocused = false
-        }
+        .onAppear { isFocused = true }
+        .onDisappear { isFocused = false }
     }
 
     private var header: some View {
-        VStack {
-            DashboardTextfiledView(isFocused: $isFocused, type: .reversed)
-                .matchedGeometryEffect(id: ElementID.textfield,
-                                       in: namespace)
-        }
-        .padding()
-        .padding(.bottom, AppStyle.cornerRadius)
-        .background(
-            Color.red
-                .matchedGeometryEffect(id: ElementID.background,
-                                       in: namespace)
-                .ignoresSafeArea(edges: .top)
-                .padding(.bottom, AppStyle.cornerRadius)
-                .onTapGesture(perform: toggleVisibility)
+        DashboardSearchHeaderView(
+            namespace: namespace,
+            presentingSearch: $isPresenting
         )
-        .overlay {
-            Color.red
-                .matchedGeometryEffect(id: ElementID.chin,
-                                       in: namespace)
-                .frame(height: AppStyle.cornerRadius)
-                .defaultCornerRadius(corners: .bottom)
-                .defaultShadow()
-                .mask(Rectangle().padding(.bottom, -AppStyle.cornerRadius))
-                .placeAtTheBottom()
-        }
     }
 
     private var content: some View {
@@ -77,11 +49,10 @@ struct DashboardSearchView: View {
         }
         .offset(y: 100)
         .placeholder(generate: true)
-    }
-
-    private func toggleVisibility() {
-        withAnimation(AppStyle.Animations.transition) {
-            show.toggle()
+        .onTapGesture { //TODO: remove
+            withAnimation(AppStyle.Animations.transition) {
+                isPresenting.toggle()
+            }
         }
     }
 }
@@ -94,6 +65,6 @@ struct DashboardSearchView: View {
 
     return DashboardSearchView(
         namespace: namespace,
-        show: $show
+        isPresenting: $show
     )
 }

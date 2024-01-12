@@ -101,7 +101,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 
                 } else if listType == .post {
 
-                    MealPhotoListView(meal: meal)
+                    MealGridView(meal: meal)
 
                 }
             }
@@ -118,7 +118,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
             ForEach(viewModel.filteredItems) { meal in
 
                 RouterLink(to: .meal(meal), style: .growing) {
-                    MealPhotoListView(
+                    MealGridView(
                         meal: meal,
                         fontType: .small
                     )

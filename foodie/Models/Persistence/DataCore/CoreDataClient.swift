@@ -8,9 +8,7 @@
 import Foundation
 import CoreData
 
-
-
-class CoreDataClient {
+actor CoreDataClient {
 
     private(set) var container: PersistentContainer
 
@@ -62,6 +60,8 @@ class CoreDataClient {
 
 extension CoreDataClient: PersistenceClient {
 
+    // MARK: Categories
+
     func getCategories() async -> Categories? {
         let request = CategoryEntity.fetchRequest()
         let sortByName = NSSortDescriptor(keyPath: \CategoryEntity.name,
@@ -85,6 +85,8 @@ extension CoreDataClient: PersistenceClient {
             persistentContainer.saveContext(context) //TODO: throw api
         }
     }
+
+    // MARK: Meals
 
     func getMeals(for category: Category) async -> Meals? {
         guard let categoryEntity = await getCategory(category) else {
@@ -125,13 +127,15 @@ extension CoreDataClient: PersistenceClient {
         }
     }
 
+    // MARK: Meal
+
     func getMeal(for mealId: String) async -> Meal? {
         let request = MealDetailEntity.fetchRequest()
         request.predicate = NSPredicate(format: "id = %@", mealId)
 
         let objects = await fetch(request: request)
 
-        return objects?.toMeals()
+        return objects?.toMeal()
     }
 
     func saveMeal(_ meal: Meal) async {
@@ -144,6 +148,14 @@ extension CoreDataClient: PersistenceClient {
 
             persistentContainer.saveContext(context) //TODO: throw api
         }
+    }
+
+    func getRandomMeal() async -> Meal? {
+        let request = MealDetailEntity.fetchRequest()
+
+        let objects = await fetch(request: request)
+
+        return objects?.randomElement().map(Meal.init)
     }
 }
 

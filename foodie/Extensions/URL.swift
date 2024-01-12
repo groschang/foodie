@@ -14,4 +14,19 @@ extension URL {
         guard let url = URL(string: string) else { return nil }
         self = url
     }
+
+}
+
+extension URL {
+
+    init?(enviroment: APIEndpoint, endpoint: Endpoint) {
+        guard let url = URLComponents(enviroment: enviroment,
+                                      endpoint: endpoint).url
+        else {
+            return nil
+        }
+
+        self = url
+    }
+
 }

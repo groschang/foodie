@@ -14,7 +14,7 @@ protocol MealsCombineServiceType {
     func getMeal(for mealId: String) -> AnyPublisher<Meal?, Error>
 }
 
-class MealsCombineService: MealsCombineServiceType {
+final class MealsCombineService: MealsCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>

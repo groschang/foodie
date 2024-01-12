@@ -16,7 +16,7 @@ struct foodieApp: App {
     #if MOCK
     private let container = MockedDependencyContainer.shared
     #else
-    private let container = DependencyContainer.shared
+    private let container = SwinjectDependencyContainer.shared
     #endif
 
     private let dashboardViewModel: DashboardViewModel
@@ -26,12 +26,12 @@ struct foodieApp: App {
 
     init() {
         container.assemble()
-        
+
         DatabaseLogger.printPath()
         
         dashboardViewModel = DashboardViewModel(service: container.asyncService)
         
-        router = Router()
+        router = container.router
         viewFactory = StreamViewFactory(service: container.asyncStreamService)
     }
     
@@ -44,7 +44,6 @@ struct foodieApp: App {
     fileprivate var content: some View {
         NavigationStack(path: $router.navigationPath) {
             DashboardView(viewModel: dashboardViewModel)
-//                .makeNavigation(with: viewFactory)
                 .navigationDestination(for: Route.self) { route in
                     viewFactory.makeView(type: route)
                 }

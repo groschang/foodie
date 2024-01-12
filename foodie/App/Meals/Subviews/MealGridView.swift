@@ -1,5 +1,5 @@
 //
-//  MealPhotoListView.swift
+//  MealGridView.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 23/12/2023.
@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-enum MealPhotoListFont: CGFloat {
+enum MealGridFont: CGFloat {
     case small = 20
     case normal = 34
 }
 
-struct MealPhotoListView: View {
+struct MealGridView: View {
 
     let meal: MealCategory
 
-    let fontType: MealPhotoListFont
+    let fontType: MealGridFont
 
-    init(meal: MealCategory, fontType: MealPhotoListFont = .normal) {
+    init(meal: MealCategory, fontType: MealGridFont = .normal) {
         self.meal = meal
         self.fontType = fontType
     }
@@ -45,7 +45,6 @@ struct MealPhotoListView: View {
                     .foregroundStyle(Color.white)
                     .maxWidth()
                     .padding()
-//                    .padding(.bottom)
                     .background(Color.black.heavyOpacity())
             }
         }
@@ -55,13 +54,13 @@ struct MealPhotoListView: View {
 
 // MARK: Preview
 
-struct MealPhotoListView_Previews: PreviewProvider {
+struct MealGridView_Previews: PreviewProvider {
     static var previews: some View {
 
         VStack(spacing: 16) {
-            MealPhotoListView(meal: .mock)
-            MealPhotoListView(meal: .mock)
-            MealPhotoListView(meal: .mock)
+            MealGridView(meal: .mock)
+            MealGridView(meal: .mock)
+            MealGridView(meal: .mock)
         }
         .padding()
         .previewAsComponent()

@@ -12,3 +12,12 @@ extension Array {
         isEmpty == false
     }
 }
+
+
+extension Array where Self: Equatable {
+
+    var lastIndex: Int? {
+        guard let last = self.last else { return nil }
+        return self.lastIndex(of: last)
+    }
+}

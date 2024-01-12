@@ -16,9 +16,14 @@ protocol MealsClosureServiceType {
     func getCategories(handler: CategoriesHandler?) async throws -> Categories
     func getMeals(for category: Category, handler: MealsHandler?) async throws -> Meals
     func getMeal(for mealId: String, handler: MealHandler?) async throws -> Meal
+    func getRandomMeal(handler: MealHandler?) async throws -> Meal
 }
 
-actor MealsClosureService: MealsClosureServiceType { //TODO: ACTOR?
+actor MealsClosureService: MealsClosureServiceType {
+
+    enum MealsClosureService: Error {
+        case lackOfStoredObject
+    }
 
     let backendClient: HTTPClient
     let persistance: PersistenceClient
@@ -46,7 +51,7 @@ actor MealsClosureService: MealsClosureServiceType { //TODO: ACTOR?
 
         return categories
     }
-    
+
     // MARK: Meals
 
     func getMeals(for category: Category, handler: MealsHandler? = nil) async throws -> Meals {
@@ -78,5 +83,27 @@ actor MealsClosureService: MealsClosureServiceType { //TODO: ACTOR?
 
         return meal
     }
-}
 
+    func getRandomMeal(handler: MealHandler? = nil) async throws -> Meal {
+
+        do {
+            
+            let request = MealDBEndpoint.MealRandomRequest()
+            let meal = try await backendClient.process(request)
+
+            await persistance.saveMeal(meal)
+
+            return meal
+
+        } catch {
+
+            if let meal = await persistance.getRandomMeal() {
+                return meal
+            } else {
+                throw MealsClosureService.lackOfStoredObject
+            }
+
+        }
+    }
+
+}

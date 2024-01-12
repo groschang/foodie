@@ -19,9 +19,8 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
     @Namespace private var namespace
 
-    @State private var showSearch = false
+    @State private var presentingSearch = false
 
-    @FocusState var isFocused
 
     init(viewModel: Model) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -40,74 +39,39 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
     @ViewBuilder
     private var content: some View {
         ZStack {
-            if !showSearch {
-                mainContent
+            if presentingSearch {
+                searchView
             } else {
-                DashboardSearchView(namespace: namespace, show: $showSearch)
+                mainContent
             }
         }
         .background {
-            AppStyle.main
-                .ignoresSafeArea()
+            AppStyle.main.ignoresSafeArea()
         }
+    }
+
+    private var searchView: some View {
+        DashboardSearchView(namespace: namespace, isPresenting: $presentingSearch)
     }
 
     @ViewBuilder
     private var mainContent: some View {
-
         ZStack {
-            listContent
-
-            headerContent
+            container
+            header
                 .placeAtTheTop()
         }
     }
 
-
-    private var headerContent: some View {
-
-        VStack(spacing: 20) {
-
-            DashboardHeaderView {
-                router.navigate(to: .menu)
-            }
-
-            DashboardTextfiledView(isFocused: $isFocused)
-                .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                .matchedGeometryEffect(id: DashboardSearchView.ElementID.textfield,
-                                       in: namespace)
-                .disabled(true)
-                .onTapGesture {
-                    withAnimation(AppStyle.Animations.transition) {
-                        showSearch.toggle()
-                    }
-                }
-        }
-        .padding()
-        .padding(.bottom, AppStyle.cornerRadius)
-        .foregroundStyle(AppStyle.light)
-        .background {
-            AppStyle.main
-                .matchedGeometryEffect(id: DashboardSearchView.ElementID.background,
-                                       in: namespace)
-                .ignoresSafeArea(edges: .top)
-                .padding(.bottom, AppStyle.cornerRadius)
-                .onTapGesture(perform: hideKeyboard)
-        }
-        .overlay {
-            AppStyle.main
-                .matchedGeometryEffect(id: DashboardSearchView.ElementID.chin,
-                                       in: namespace)
-                .frame(height: AppStyle.cornerRadius)
-                .defaultCornerRadius(corners: .bottom)
-                .defaultShadow()
-                .mask(Rectangle().padding(.bottom, -AppStyle.cornerRadius))
-                .placeAtTheBottom()
-        }
-
+    private var header: some View {
+        DashboardHeaderView(
+            namespace: namespace,
+            presentingSearch: $presentingSearch,
+            onMenuPressed: { router.navigate(to: .menu) }
+        )
     }
 
-    private var listContent: some View {
+    private var container: some View {
 
         ScrollView {
 
@@ -128,14 +92,10 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
             Spacer()
         }
-        .background { StaticGradient() }
+        .background { StaticGradient().rotationEffect(Angle(degrees: 90)) }
         .background { Color.white.ignoresSafeArea(edges: .bottom) }
-//        .background {
-//            Color.blue /*background*/
-//                .ignoresSafeArea(edges: .bottom)
-//        }
-
     }
+
 }
 
 

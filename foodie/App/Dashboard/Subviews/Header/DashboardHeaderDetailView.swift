@@ -1,5 +1,5 @@
 //
-//  DashboardHeaderView.swift
+//  DashboardHeaderDetailView.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 11/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DashboardHeaderView: View {
+struct DashboardHeaderDetailView: View {
 
     var action: () -> Void
 
@@ -43,6 +43,6 @@ struct DashboardHeaderView: View {
 
 struct DashboardHeaderView_Preview: PreviewProvider {
     static var previews: some View {
-        DashboardHeaderView(action: {})
+        DashboardHeaderDetailView(action: {})
     }
 }

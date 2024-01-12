@@ -7,6 +7,7 @@
 
 import CoreData
 
+// MARK: Object Mappable
 
 extension IngredientEntity {
     
@@ -21,6 +22,8 @@ extension IngredientEntity {
     }
 }
 
+//MARK: Entity Mappable
+
 extension Ingredient {
     
     init(entity: IngredientEntity) {
@@ -34,6 +37,8 @@ extension Array where Element == Ingredient {
         map { IngredientEntity($0, context: context) }.toNSSet()
     }
 }
+
+//MARK: Array
 
 extension Array where Element == IngredientEntity {
     

@@ -31,7 +31,7 @@ extension Endpoint {
             ]
         )
     }
-    
+
     static func meal(id: String) -> Endpoint {
         Endpoint(
             path: "/lookup.php",
@@ -43,9 +43,15 @@ extension Endpoint {
 
     static let randomMeal = Endpoint(path: "/random.php")
 
-    static func ingredientImage(name: String, small: Bool = false) -> Endpoint {
+    static func ingredientImage(name: String) -> Endpoint {
         Endpoint(
-            path: "/images/ingredients/\(name)\(small ? "-Small" : "" ).png"
+            path: "/images/ingredients/\(name).png"
+        )
+    }
+
+    static func smallIngredientImage(name: String) -> Endpoint {
+        Endpoint(
+            path: String.smallImagePath("/images/ingredients/\(name).png")!
         )
     }
 }

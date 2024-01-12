@@ -45,7 +45,7 @@ struct DashboardCategoryHorizontalView: View {
 
     var body: some View {
         HStack {
-            ListPhotoView(imageUrl: category.imageUrl)
+            ListPhotoView(imageUrl: URL.SmallImage(category.imageUrl) )
                 .modifier(ListPhotoStyle(width: 62,
                                          height: 62))
                 .background(.white)

@@ -21,15 +21,16 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [ ] extract mapppers
 - [ ] rename protocols segragation naming
 - [ ] navigationBarHiddenx ?
-- [ ] dependency container
 - [ ] //TODO: #font
 - [ ] mocked container target improvements
 - [ ] DependencyContainerType & DI cleanup
+- [ ] CoreData stubs
 
 ### Ideas
 - [ ] DTO approach?
 - [ ] service as Actor?
 - [ ] dependency container library
+- [ ] identifiableObject
 - [ ] create some packages 
 
 ### Fixes:
@@ -51,4 +52,5 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [X] rename MealsServiceAsync into MealsAsyncService
 - [X] rename MealsServiceVIType into MealsAsyncCombinedServiceType
 - [X] rename MealsServiceStream into MealsAsyncStreamService
+- [x] dependency container
 - [x] iterate over TODO's

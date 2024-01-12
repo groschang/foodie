@@ -11,8 +11,6 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
     
     @StateObject private var viewModel: Model //TODO: dont need stae obj
 
-//    @EnvironmentObject var router: Router
-
     @State private var category: Category?
 
     init(viewModel: Model) {

@@ -15,7 +15,7 @@ protocol MealsAsyncStreamServiceType {
     func getRandomMeal() -> AsyncThrowingStream<Meal, Error>
 }
 
-class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with task id if the serive or action is not in progress / actor? -> screen
+final class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with task id if the serive or action is not in progress / actor? -> screen
 
     private let backendClient: HTTPClient
     private let persistanceClient: PersistenceClient
@@ -169,6 +169,5 @@ class MealsAsyncStreamService: MealsAsyncStreamServiceType { //TODO: array with 
     private func saveMeal(_ meal: Meal) async {
         await persistanceClient.saveMeal(meal)
     }
-
 
 }

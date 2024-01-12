@@ -7,6 +7,8 @@
 
 import CoreData
 
+// MARK: Object Mappable
+
 extension MealCategoryEntity: ObjectMappable {
     
     static func create(_ object: MealCategory, context: NSManagedObjectContext) -> MealCategoryEntity {
@@ -25,6 +27,8 @@ extension MealCategoryEntity: ObjectMappable {
     }
 }
 
+//MARK: Entity Mappable
+
 extension MealCategory: EntityMappable {
     
     init(entity: MealCategoryEntity) {
@@ -33,6 +37,8 @@ extension MealCategory: EntityMappable {
         self.imageUrl = URL(string: entity.imageUrl)
     }
 }
+
+//MARK: Array
 
 extension Array where Element == MealCategoryEntity {
     

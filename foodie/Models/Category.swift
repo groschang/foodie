@@ -7,18 +7,6 @@
 
 import Foundation
 
-protocol IdentifiableObject: Identifiable, Codable, Hashable, Equatable {
-    var id: String { get }
-}
-
-struct ObjectId: IdentifiableObject {
-    let id: String
-
-    init(_ id: String) {
-        self.id = id
-    }
-}
-
 struct Category: IdentifiableObject {
 
     let id: String
@@ -35,7 +23,6 @@ struct Category: IdentifiableObject {
 }
 
 extension Category: StringIdentifier { }
-
 
 extension Category: Mockable {
     static let mock: Category = loadMock(from: "category")

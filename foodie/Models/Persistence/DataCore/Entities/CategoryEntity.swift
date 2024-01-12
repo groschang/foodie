@@ -7,6 +7,8 @@
 
 import CoreData
 
+// MARK: Object Mappable
+
 extension CategoryEntity: ObjectMappable {
     
     static func create(_ object: Category, context: NSManagedObjectContext) -> CategoryEntity {
@@ -17,7 +19,7 @@ extension CategoryEntity: ObjectMappable {
         self.init(context: context)
         self.map(object: object)
     }
-
+    
     func map(object: Category) {
         self.id = object.id
         self.name = object.name
@@ -26,8 +28,10 @@ extension CategoryEntity: ObjectMappable {
     }
 }
 
+//MARK: Entity Mappable
+
 extension Category: EntityMappable {
-    
+
     init(entity: CategoryEntity) {
         self.id = entity.id
         self.name = entity.name
@@ -35,6 +39,8 @@ extension Category: EntityMappable {
         self.description = entity.desc
     }
 }
+
+//MARK: Array
 
 extension Array where Element == CategoryEntity {
     

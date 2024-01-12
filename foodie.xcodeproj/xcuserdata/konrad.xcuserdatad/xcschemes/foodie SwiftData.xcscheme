@@ -14,9 +14,37 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7102F17B2B2F6C7A00F6D87F"
-               BuildableName = "mockedFoodie.app"
-               BlueprintName = "mockedFoodie"
+               BlueprintIdentifier = "71A272DA2B4DA2E1000B4CA3"
+               BuildableName = "foodie DataSwift.app"
+               BlueprintName = "foodie DataSwift"
+               ReferencedContainer = "container:foodie.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71E2A5B62970A6F90012E5C6"
+               BuildableName = "foodieTests.xctest"
+               BlueprintName = "foodieTests"
+               ReferencedContainer = "container:foodie.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71E2A5CD2971D4E70012E5C6"
+               BuildableName = "foodieUITests.xctest"
+               BlueprintName = "foodieUITests"
                ReferencedContainer = "container:foodie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +57,17 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71E2A5B62970A6F90012E5C6"
+               BuildableName = "foodieTests.xctest"
+               BlueprintName = "foodieTests"
+               ReferencedContainer = "container:foodie.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -45,12 +84,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7102F17B2B2F6C7A00F6D87F"
-            BuildableName = "mockedFoodie.app"
-            BlueprintName = "mockedFoodie"
+            BlueprintIdentifier = "71A272DA2B4DA2E1000B4CA3"
+            BuildableName = "foodie DataSwift.app"
+            BlueprintName = "foodie DataSwift"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-com.apple.CoreData.SQLDebug 3"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
          <AdditionalOption
             key = "MallocScribble"
@@ -65,16 +110,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7102F17B2B2F6C7A00F6D87F"
-            BuildableName = "mockedFoodie.app"
-            BlueprintName = "mockedFoodie"
+            BlueprintIdentifier = "71A272DA2B4DA2E1000B4CA3"
+            BuildableName = "foodie DataSwift.app"
+            BlueprintName = "foodie DataSwift"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -7,6 +7,8 @@
 
 import CoreData
 
+// MARK: Object Mappable
+
 extension MealDetailEntity: ObjectMappable {
     
     static func create(_ object: Meal, context: NSManagedObjectContext) -> MealDetailEntity {
@@ -31,6 +33,8 @@ extension MealDetailEntity: ObjectMappable {
     }
 }
 
+//MARK: Entity Mappable
+
 extension Meal: EntityMappable {
     
     init(entity: MealDetailEntity) {
@@ -42,7 +46,7 @@ extension Meal: EntityMappable {
         self.imageURL = URL(string: entity.imageURL)
         self.youtubeURL = URL(string: entity.youtubeURL)
         self.source = entity.source
-        self.ingredients = ingredients(entity.ingredientsSet)
+        self.ingredients =  ingredients(entity.ingredientsSet)
     }
 
     private func ingredients(_ ingredients: Set<IngredientEntity>?) -> [Ingredient]? {
@@ -55,6 +59,9 @@ extension Meal: EntityMappable {
     }
 }
 
+
+//MARK: Set
+
 extension MealDetailEntity {
     
     var ingredientsSet: Set<IngredientEntity>? {
@@ -65,11 +72,17 @@ extension MealDetailEntity {
     }
 }
 
+//MARK: Array
+
 extension Array where Element == MealDetailEntity {
     
-    func toMeals() -> Meal? {
+    func toMeals() -> [Meal?] {
+        self.map(Meal.init)
+    }
+
+    func toMeal() -> Meal? {
         guard let item = self.first else { return nil }
         
-        return Meal(entity: item)
+        return Meal(entity: item) //TODO: check me
     }
 }

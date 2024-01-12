@@ -10,20 +10,19 @@ import Foundation
 typealias FactoryClosure = (DIContainer) -> AnyObject
 
 protocol DICProtocol {
-    func register<Service>(type: Service.Type, factoryClosure: @escaping FactoryClosure)
-    func resolve<Service>(type: Service.Type) -> Service?
+    func register<Service>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure)
+    func resolve<Service>(_ type: Service.Type) -> Service?
 }
 
+final class DIContainer: DICProtocol {
 
-class DIContainer: DICProtocol {
+    var services = Dictionary<String, AnyObject>()
 
-    var services = Dictionary<String, FactoryClosure>()
-
-    func register<Service>(type: Service.Type, factoryClosure: @escaping FactoryClosure) {
-        services["\(type)"] = factoryClosure
+    func register<Service>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure) {
+        services["\(type)"] = factoryClosure(self)
     }
 
-    func resolve<Service>(type: Service.Type) -> Service? {
-        return services["\(type)"]?(self) as? Service
+    func resolve<Service>(_ type: Service.Type) -> Service? {
+        services["\(type)"] as? Service
     }
 }

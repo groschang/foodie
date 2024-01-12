@@ -20,7 +20,7 @@ protocol MealsAsyncServiceType {
     func fetchRandomMeal() async throws -> Meal
 }
 
-class MealsAsyncService: MealsAsyncServiceType {
+actor MealsAsyncService: MealsAsyncServiceType {
 
     private let backendClient: HTTPClient
     private let persistanceClient: PersistenceClient
@@ -86,6 +86,5 @@ class MealsAsyncService: MealsAsyncServiceType {
 
         return meal
     }
+
 }
-
-

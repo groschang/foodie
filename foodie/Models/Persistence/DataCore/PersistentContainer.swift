@@ -23,7 +23,7 @@ extension StoreType: CustomStringConvertible {
     }
 }
 
-class PersistentContainer: NSPersistentContainer {
+final class PersistentContainer: NSPersistentContainer {
 
     static let DataModelName = "Foodie"
 

@@ -8,10 +8,10 @@
 import Foundation
 
 struct Ingredient: Codable, Hashable, Equatable {
-    
+
     var name: String
     var measure: String
-    
+
 }
 
 extension Ingredient: Comparable {
@@ -21,19 +21,25 @@ extension Ingredient: Comparable {
 }
 
 extension Ingredient {
+
     var imageUrl: URL? { //TODO: use URLRequestBuilder
-        getImageUrl(endpoint: .ingredientImage(name: name))
+        URL(
+            enviroment: .production,
+            endpoint: .ingredientImage(name: name)
+        )
     }
-
+    
     var smallImageUrl: URL? {
-        getImageUrl(endpoint: .ingredientImage(name: name, small: true))
+        URL(
+            enviroment: .production,
+            endpoint: .smallIngredientImage(name: name)
+        )
     }
 
-    private func getImageUrl(enviroment: APIEndpoint = .production, endpoint: Endpoint) -> URL? {
-        var components = URLComponents()
-        components.scheme = enviroment.scheme
-        components.host = enviroment.host
-        components.path = endpoint.path
+    private func imageUrl(enviroment: APIEndpoint = .production, endpoint: Endpoint) -> URL? {
+        let components = URLComponents(enviroment: enviroment,
+                                       endpoint: endpoint)
         return components.url
     }
+
 }

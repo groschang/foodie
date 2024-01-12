@@ -36,6 +36,10 @@ class MealsServiceMock: Mockable, Sleepable, MealsClosureServiceType {
 
     func getMeal(for mealId: String, handler: MealHandler? = nil) async throws -> Meal {
         try await sleep()
-        return Self.loadJSON(filename: "meal", type: Meal.self) //TODO: MealDetail.mock ?
+        return Self.loadJSON(filename: "meal", type: Meal.self)
+    }
+
+    func getRandomMeal(handler: MealHandler?) async throws -> Meal {
+        try await getMeal(for: "none", handler: handler)
     }
 }

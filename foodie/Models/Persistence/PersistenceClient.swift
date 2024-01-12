@@ -13,16 +13,14 @@ protocol CategoriesPersistenceClient {
 }
 
 protocol MealsPersistenceClient {
-    func getMeals(for category: Category) async -> Meals? //TODO: optopma;
+    func getMeals(for category: Category) async -> Meals?
     func saveMeals(_ meals: Meals, for category: Category) async
 }
 
 protocol MealPersistenceClient {
     func getMeal(for mealId: String) async -> Meal?
+    func getRandomMeal() async -> Meal?
     func saveMeal(_ meal: Meal) async
 }
 
 typealias PersistenceClient = CategoriesPersistenceClient & MealsPersistenceClient & MealPersistenceClient
-
-
-

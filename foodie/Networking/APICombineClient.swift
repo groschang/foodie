@@ -29,14 +29,10 @@ class APICombineClient: HTTPClient { //TODO: testme
 
     func process<T: Decodable>(_ request: Request<T>) async throws -> T {
         do {
+
             let urlRequest = try requestBuilder.build(for: request)
-            //            let (data, response) = try await download(urlRequest)
             let object: T = try await download(urlRequest)
-            //            try validate(response)
-            //            let object: T = try decode(data)
-            //            NetworkLogger.log(request: urlRequest)
-            //            NetworkLogger.log(response: response)
-            //            NetworkLogger.log(data: data)
+
             return object
 
         } catch let error as RequestError {
@@ -70,10 +66,7 @@ class APICombineClient: HTTPClient { //TODO: testme
 
     private func download<T: Decodable>(_ request: URLRequest) async throws -> T {
         try await withCheckedThrowingContinuation { continuation in
-
-            //            let publisher =
-            _ =
-            session
+            let _ = session //TODO: returns any publisher insead t ?
                 .dataTaskPublisher(for: request)
                 .retry(3)
                 .mapError { APIError($0) }
@@ -83,9 +76,6 @@ class APICombineClient: HTTPClient { //TODO: testme
                 }
                 .decode(type: T.self, decoder: decoder)
                 .mapError { APIError($0) }
-            //                .eraseToAnyPublisher()
-
-            //            publisher
                 .sink {
                     switch $0 {
                     case .finished:

@@ -26,7 +26,6 @@ extension Categories: StaticIdentifier { //TODO: better idea?
     static let Identifier: String = "categories"
 }
 
-
 extension Categories: Mockable {
     static let mock: Categories = loadMock(from: "categories")
 }

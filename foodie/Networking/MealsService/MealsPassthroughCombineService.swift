@@ -23,7 +23,7 @@ protocol MealsPassthroughCombineServiceType {
     func fetchMeal(for mealId: String, subject: MealSubject) async
 }
 
-class MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
+actor MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
     typealias MealsSubject = CurrentValueSubject<Meals?, Error>

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct MealDBEndpoint {
+enum MealDBEndpoint {
     
     class CategoriesRequest: Request<Categories> {
         init() {
