@@ -24,7 +24,6 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [ ] mocked container target improvements
 - [ ] DependencyContainerType & DI cleanup
 - [ ] CoreData stubs
-- [ ] categories grid view
  
 ### Ideas
 - [ ] DTO approach?
@@ -55,4 +54,5 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [x] dependency container
 - [x] iterate over TODO's
 
+- [X] categories grid view
 - [x] navigationBarHiddenx ?
