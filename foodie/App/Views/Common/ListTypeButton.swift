@@ -18,6 +18,7 @@ struct ListTypeButton: View {
             action: { action() },
             label: {
                 type.image
+                    .animation(.spring())
             }
         )
     }

@@ -31,15 +31,15 @@ extension View {
 }
 
 extension View {
-    
+
     func maxWidth() -> some View {
         frame(maxWidth: .infinity)
     }
-    
+
     func maxHeight() -> some View {
         frame(maxHeight: .infinity)
     }
-    
+
     func maxSize() -> some View {
         maxWidth().maxHeight()
     }
@@ -47,12 +47,22 @@ extension View {
 
 
 extension View {
-    
-    func navigationBarStyle() -> some View {
-        navigationBarColor(Color(UIColor.systemBackground).mediumOpacity())
+
+    func styleNavigationStack() -> some View {
+        tint(.accent)
     }
 
-    func navigationBarHidden() -> some View {
+    func styleNavigationBar() -> some View {
+        //TODO: make custom top toolbar
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
+
+        return navigationBarColor(backgroundColor: .toolbar,
+                                  titleColor: .white)
+        .tint(.accent)
+    }
+
+    func hideNavigationBar() -> some View {
         toolbar(.hidden, for: .navigationBar)
     }
 }

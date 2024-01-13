@@ -1,13 +1,13 @@
 //
-//  MealListView+Style.swift
+//  CategoryListViewModel+Style.swift
 //  foodie
 //
-//  Created by Konrad Groschang on 14/05/2023.
+//  Created by Konrad Groschang on 17/05/2023.
 //
 
 import SwiftUI
 
-struct MealListStyle: ViewModifier {
+struct CategoryListViewStyle: ViewModifier {
 
     private struct Colors {
         static let background = Color(light: Color.white,
@@ -21,13 +21,8 @@ struct MealListStyle: ViewModifier {
 
     private struct Layouts {
         static let width = Double.infinity
-        static let height = 50.0
+        static let height = 90.0
         static let radius = 8.0
-    }
-
-    private struct Paddings {
-        static let vertical = 8.0
-        static let horizontal = 16.0
     }
 
     func body(content: Content) -> some View {
@@ -39,14 +34,8 @@ struct MealListStyle: ViewModifier {
     }
 }
 
-struct MealListPhotoStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .modifier(ListPhotoStyle())
-    }
-}
 
-struct MealListNameStyle: ViewModifier {
+fileprivate struct CategoryListViewTextStyle: ViewModifier {
 
     private struct Colors {
         static let foreground = AppStyle.black
@@ -54,23 +43,42 @@ struct MealListNameStyle: ViewModifier {
 
     private struct Shadow {
         static let radius = 1.0
-        static let color = Color.darkWhite
+        static let color = Color.white.heavierOpacity()
     }
 
     func body(content: Content) -> some View {
         content
             .foregroundStyle(AppStyle.foreground)
-            .multilineTextAlignment(.leading)
-            .lineLimit(4)
-            .minimumScaleFactor(0.8)
-        //            .font(.title3) //TODO: #font
-            .font( //TODO: #font
-                .custom(
-                    "AmericanTypewriter",
-                    fixedSize: 25)
-                .weight(.semibold)
-
-            )
             .shadow(color: Shadow.color, radius: Shadow.radius)
+    }
+}
+
+struct CategoryViewNameStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .title()
+            .modifier(CategoryListViewTextStyle())
+    }
+}
+
+struct CategoryViewDescriptionStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .subtitle3()
+            .modifier(CategoryListViewTextStyle())
+    }
+}
+
+
+struct CategoryListViewPhotoStyle: ViewModifier {
+
+    var width: CGFloat = 160
+    var height: CGFloat = 160
+    let imageUrl: URL?
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(ListPhotoStyle(width: width, height: height))
+//            .modifier(BlurredBackground(imageUrl: imageUrl))
     }
 }

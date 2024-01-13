@@ -20,12 +20,12 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [ ] services concurrency locks instead VMs
 - [ ] extract mapppers
 - [ ] rename protocols segragation naming
-- [ ] navigationBarHiddenx ?
 - [ ] //TODO: #font
 - [ ] mocked container target improvements
 - [ ] DependencyContainerType & DI cleanup
 - [ ] CoreData stubs
-
+- [ ] categories grid view
+ 
 ### Ideas
 - [ ] DTO approach?
 - [ ] service as Actor?
@@ -54,3 +54,5 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [X] rename MealsServiceStream into MealsAsyncStreamService
 - [x] dependency container
 - [x] iterate over TODO's
+
+- [x] navigationBarHiddenx ?

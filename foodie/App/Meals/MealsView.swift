@@ -11,8 +11,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-    @EnvironmentObject var router: Router
-
     @StateObject var viewModel: Model
 
     @State private var animate = false
@@ -26,7 +24,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
-            .navigationBarHidden()
+            .hideNavigationBar()
     }
 
     private var content: some View {

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 extension URL {
 
     static func SmallImage(_ url: URL) -> URL? {

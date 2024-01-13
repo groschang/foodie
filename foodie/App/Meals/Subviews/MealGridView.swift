@@ -66,4 +66,3 @@ struct MealGridView_Previews: PreviewProvider {
         .previewAsComponent()
     }
 }
-

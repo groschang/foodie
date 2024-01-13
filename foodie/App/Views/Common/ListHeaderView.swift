@@ -38,7 +38,7 @@ struct ListHeaderView: View {
                 type: listType,
                 action: modeAction
             )
-            .tint(Color.foreground)
+            .tint(.accent)
 
 
             ListFilterButton(action: filterAction)

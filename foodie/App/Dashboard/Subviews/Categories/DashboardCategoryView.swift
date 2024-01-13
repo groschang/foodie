@@ -30,7 +30,7 @@ struct DashboardCategoryVerticalView: View {
     var body: some View {
         VStack {
             ListPhotoView(imageUrl: category.imageUrl)
-                .modifier(CategoryViewPhotoStyle(width: 62, height: 62, imageUrl: category.imageUrl))
+                .modifier(CategoryListViewPhotoStyle(width: 62, height: 62, imageUrl: category.imageUrl))
                 .clipShape(Circle())
 
             Text(category.name)

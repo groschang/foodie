@@ -55,6 +55,7 @@ struct foodieApp: App {
                     }
                 }
         }
+        .styleNavigationStack()
         .environmentObject(router)
     }
 }

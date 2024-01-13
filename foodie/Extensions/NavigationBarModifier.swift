@@ -59,11 +59,11 @@ struct NavigationBarModifier: ViewModifier {
 extension View {
     
     func navigationBarColor(_ backgroundColor: Color) -> some View {
-        self.modifier(NavigationBarModifier(backgroundColor))
+        modifier(NavigationBarModifier(backgroundColor))
     }
     
     func navigationBarColor(backgroundColor: Color, titleColor: Color) -> some View {
-        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, titleColor: titleColor))
+        modifier(NavigationBarModifier(backgroundColor: backgroundColor, titleColor: titleColor))
     }
     
 }
