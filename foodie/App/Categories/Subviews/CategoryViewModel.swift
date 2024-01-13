@@ -1,5 +1,5 @@
 //
-//  CategoryViewModel.swift
+//  CategoryListViewModel.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 17/05/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CategoryViewModel {
+struct CategoryListViewModel {
 
     let name: String
     let description: String
@@ -15,8 +15,33 @@ struct CategoryViewModel {
 
     init(category: Category) {
         self.name = category.name
-        self.description = Self.description(for: category)
+        self.description = CategoryDescription(category).description
         self.imageURL = category.imageUrl
+    }
+
+}
+
+
+extension CategoryListViewModel {
+    static let mock = CategoryListViewModel(category: .mock)
+}
+
+
+private struct CategoryDescription: CustomStringConvertible {
+
+    let text: String
+
+    init(_ text: String) {
+        self.text = text
+    }
+
+    init(_ category: Category) {
+        self.init(category.description)
+    }
+
+    /// Conforms CustomStringConvertible
+    var description: String {
+        Self.description(for: text)
     }
 
     /// Truncation constants
@@ -40,19 +65,13 @@ struct CategoryViewModel {
     /// >  or to limited 120 letters totally.
     ///
     /// - Parameters:
-    ///     - category: The category that description should be returned.
+    ///     - text: The string value which a description should be returned.
     ///
     /// - Returns: A description string  for `category`.
-    private static func description(for category: Category) -> String {
-        category.description
+    private static func description(for text: String) -> String {
+        text
             .removeWhitespaces()
             .trunc(to: Truncation.terminator, ifExists: true, appendingTruced: true)
             .trunc(Truncation.length)
     }
-}
-
-
-
-extension CategoryViewModel {
-    static let mock = CategoryViewModel(category: .mock)
 }
