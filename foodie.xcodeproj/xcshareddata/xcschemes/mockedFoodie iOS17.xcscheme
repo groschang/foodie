@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71A271CA2B4D97EE000B4CA3"
-               BuildableName = "mockedFoodie DataSwift.app"
-               BlueprintName = "mockedFoodie DataSwift"
+               BuildableName = "mockedFoodie iOS17.app"
+               BlueprintName = "mockedFoodie iOS17"
                ReferencedContainer = "container:foodie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71A271CA2B4D97EE000B4CA3"
-            BuildableName = "mockedFoodie DataSwift.app"
-            BlueprintName = "mockedFoodie DataSwift"
+            BuildableName = "mockedFoodie iOS17.app"
+            BlueprintName = "mockedFoodie iOS17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71A271CA2B4D97EE000B4CA3"
-            BuildableName = "mockedFoodie DataSwift.app"
-            BlueprintName = "mockedFoodie DataSwift"
+            BuildableName = "mockedFoodie iOS17.app"
+            BlueprintName = "mockedFoodie iOS17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

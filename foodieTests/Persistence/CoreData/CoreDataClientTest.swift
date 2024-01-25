@@ -214,8 +214,10 @@ final class CoreDataClientTest: XCTestCase {
         // When
         var storedMeal = await sut.getMeal(for: "1")
 
-        let ingredients2 = [Ingredient(name: "name3", measure: "measure3"),
+        let ingredients2 = [Ingredient(name: "name", measure: "measure"),
+                            Ingredient(name: "name3", measure: "measure3"),
                             Ingredient(name: "name4", measure: "measure4")]
+
 
         storedMeal?.ingredients = ingredients2
 

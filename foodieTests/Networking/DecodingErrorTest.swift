@@ -88,7 +88,7 @@ final class DecodingErrorTest: XCTestCase {
                 "[CodingKeys(stringValue: \"name\", intValue: nil)]"
 
                 "description:"
-                "Expected to decode String but found a number instead."
+                "Expected to decode String but found number instead."
             }
         }
     }

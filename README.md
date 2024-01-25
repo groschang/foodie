@@ -53,6 +53,6 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [X] rename MealsServiceStream into MealsAsyncStreamService
 - [x] dependency container
 - [x] iterate over TODO's
-
+- [X] Realm
 - [X] categories grid view
 - [x] navigationBarHiddenx ?

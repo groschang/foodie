@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71A272DA2B4DA2E1000B4CA3"
-               BuildableName = "foodie DataSwift.app"
-               BlueprintName = "foodie DataSwift"
+               BuildableName = "foodie iOS17.app"
+               BlueprintName = "foodie iOS17"
                ReferencedContainer = "container:foodie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71A272DA2B4DA2E1000B4CA3"
-            BuildableName = "foodie DataSwift.app"
-            BlueprintName = "foodie DataSwift"
+            BuildableName = "foodie iOS17.app"
+            BlueprintName = "foodie iOS17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -114,8 +114,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71A272DA2B4DA2E1000B4CA3"
-            BuildableName = "foodie DataSwift.app"
-            BlueprintName = "foodie DataSwift"
+            BuildableName = "foodie iOS17.app"
+            BlueprintName = "foodie iOS17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

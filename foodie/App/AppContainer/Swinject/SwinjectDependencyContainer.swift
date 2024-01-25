@@ -6,6 +6,7 @@
 //
 
 import Foundation
+#if canImport(Swinject)
 import Swinject
 
 final class SwinjectDependencyContainer: DependencyContainerType {
@@ -34,7 +35,7 @@ final class SwinjectDependencyContainer: DependencyContainerType {
 
 #if MOCKED || NORMAL
         container.register(PersistenceClient.self) { _ in
-            CoreDataClient() //TODO: make mock?
+            CoreDataClient()
         }
 #elseif SWIFTDATA
         container.register(PersistenceClient.self) { _ in
@@ -85,3 +86,5 @@ final class SwinjectDependencyContainer: DependencyContainerType {
         }
     }
 }
+
+#endif

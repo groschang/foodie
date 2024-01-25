@@ -7,10 +7,10 @@
 
 import Foundation
 
+
 protocol Mockable {
     static var bundle: Bundle { get }
     static func loadJSON<T: Decodable>(filename: String, type: T.Type) -> T
-//    static func loadMock<Self: Decodable>(from filename: String) -> Self
 }
 
 extension Mockable {
@@ -33,8 +33,11 @@ extension Mockable {
             fatalError("Failed to decode loaded JSON")
         }
     }
-    
-    static func loadMock<Self: Decodable>(from filename: String) -> Self {
+}
+
+extension Mockable where Self: Decodable {
+
+    static func loadMock(from filename: String) -> Self {
         loadJSON(filename: filename, type: Self.self)
     }
 }

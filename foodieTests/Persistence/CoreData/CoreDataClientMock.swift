@@ -10,6 +10,8 @@ import Foundation
 
 public final class CoreDataClientMock: PersistenceClient {
 
+    // MARK: Categories
+
     public var stubGetCategoriesResponse: Categories?
     public var didGetCategories: (() -> Void)?
     public var getCategoriesCallCount = 0
@@ -27,6 +29,28 @@ public final class CoreDataClientMock: PersistenceClient {
         defer { didSaveCategories?() }
         saveCategoriesCallCount += 1
     }
+
+    // MARK: Meals
+
+    public var stubGetMealsResponse: Meals?
+    public var didGetMeals: (() -> Void)?
+    public var getMealsCallCount = 0
+
+    public func getMeals(for category: foodie.Category) async -> Meals? {
+        defer { didGetMeals?() }
+        getMealsCallCount += 1
+        return stubGetMealsResponse
+    }
+
+    public var didSaveMeals: (() -> Void)?
+    public var saveMealsCallCount = 0
+
+    public func saveMeals(_ meals: Meals, for category: foodie.Category) async {
+        defer { didSaveMeals?() }
+        saveMealsCallCount += 1
+    }
+
+    // MARK: Meal
 
     public var stubGetMealResponse: Meal?
     public var didGetMeal: (() -> Void)?
@@ -46,21 +70,14 @@ public final class CoreDataClientMock: PersistenceClient {
         saveMealCallCount += 1
     }
 
-    public var stubGetMealsResponse: Meals?
-    public var didGetMeals: (() -> Void)?
-    public var getMealsCallCount = 0
+    public var stubGetRandomMealResponse: Meal?
+    public var didGetRandomMeal: (() -> Void)?
+    public var getRandomMealCallCount = 0
 
-    public func getMeals(for category: foodie.Category) async -> Meals? {
-        defer { didGetMeals?() }
-        getMealsCallCount += 1
-        return stubGetMealsResponse
+    public func getRandomMeal() async -> foodie.Meal? {
+        defer { didGetRandomMeal?() }
+        getRandomMealCallCount += 1
+        return stubGetRandomMealResponse
     }
 
-    public var didSaveMeals: (() -> Void)?
-    public var saveMealsCallCount = 0
-
-    public func saveMeals(_ meals: Meals, for category: foodie.Category) async {
-        defer { didSaveMeals?() }
-        saveMealsCallCount += 1
-    }
 }

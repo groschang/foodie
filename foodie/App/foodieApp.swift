@@ -16,7 +16,7 @@ struct foodieApp: App {
     #if MOCK
     private let container = MockedDependencyContainer.shared
     #else
-    private let container = SwinjectDependencyContainer.shared
+    private let container = DependencyContainer.shared
     #endif
 
     private let dashboardViewModel: DashboardViewModel
@@ -27,7 +27,7 @@ struct foodieApp: App {
     init() {
         container.assemble()
 
-        DatabaseLogger.printPath()
+        Log.printDBPath()
         
         dashboardViewModel = DashboardViewModel(service: container.asyncService)
         

@@ -21,3 +21,14 @@ extension Array where Self: Equatable {
         return self.lastIndex(of: last)
     }
 }
+
+
+extension Array {
+    
+    /// Used for backward compability with mulitiple databases (some of them returns empty arrays
+    /// which may cause impact on bussines logic of user interface)
+    func nullIfEmpty() -> [Self.Element]? {
+        guard self.isEmpty == false else { return nil }
+        return self
+    }
+}

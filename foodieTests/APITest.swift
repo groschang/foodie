@@ -9,6 +9,7 @@ import XCTest
 import SnapshotTesting
 @testable import foodie
 
+
 final class APITest: XCTestCase {
 
     /// https://www.themealdb.com/api.php
@@ -21,6 +22,7 @@ final class APITest: XCTestCase {
         session = URLSession(configuration: .default)
     }
 
+    @MainActor
     func testCategories() async throws {
         //Arrange
         let endpoint = Endpoint.categories
@@ -37,6 +39,7 @@ final class APITest: XCTestCase {
         assertSnapshot(matching: json, as: .json)
     }
 
+    @MainActor
     func testMeals() async throws {
         //Arrange
         let endpoint = Endpoint.meals(category: "Beef")
@@ -53,6 +56,7 @@ final class APITest: XCTestCase {
         assertSnapshot(matching: json, as: .json)
     }
 
+    @MainActor
     func testMeal() async throws {
         //Arrange
         let endpoint = Endpoint.meal(id: "53057") //52881

@@ -58,10 +58,6 @@ final class SwiftDataClient: PersistenceClient {
 
     func saveMeals(_ meals: Meals, for category: Category) async {
 
-//        var descriptor = FetchDescriptor<CategorySwiftData>()
-//        descriptor.predicate = #Predicate { $0.identifier == category.id }
-//        let fetchResult = try? context.fetch(descriptor)
-
         guard let category = CategorySwiftData.get(object: category, in: context) else {
             Log.debug("Couldn't find related category object: \(category)")
             return

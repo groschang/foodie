@@ -52,7 +52,6 @@ extension Category {
         self.name = entity.name
         self.imageUrl = URL(string: entity.imageURL)
         self.description = entity.desc
-        print("XXX: \(entity.id)")
     }
 }
 
@@ -65,5 +64,3 @@ extension Array where Element == CategorySwiftData {
         return Categories(items: items)
     }
 }
-
-

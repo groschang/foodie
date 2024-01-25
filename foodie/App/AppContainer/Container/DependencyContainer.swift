@@ -7,6 +7,10 @@
 
 import Foundation
 
+/// User can choose between Directives in the precompile process, it's also possible to swift realtime inferfaces,
+/// i.e. SWIFTDATA, DEBUG or  REALM precompiler options
+/// SWIFTDATA requires iOS version 17 therefore new target was created
+
 final class DependencyContainer: DependencyContainerType {
 
     static let shared = DependencyContainer()
@@ -31,7 +35,7 @@ final class DependencyContainer: DependencyContainerType {
             APIClient()
         }
 
-#if MOCKED || NORMAL
+#if NORMAL
         container.register(PersistenceClient.self) { _ in
             CoreDataClient() //TODO: make stubs?
         }
@@ -43,6 +47,10 @@ final class DependencyContainer: DependencyContainerType {
                 Log.error("Couldn't initialize Swift Data Client: \(error)")
                 return SwiftDataClientLogger()
             }
+        }
+#elseif REALM
+        container.register(PersistenceClient.self) { _ in
+            RealmClient()
         }
 #endif
 
