@@ -11,7 +11,7 @@ struct MealViewStyle: ViewModifier {
 
     private struct Blur {
         static let min = 25.0
-        static let multiplier = 0.6
+        static let multiplier = 0.7
     }
 
     private struct Opacity {
@@ -36,13 +36,15 @@ struct MealViewStyle: ViewModifier {
                             .modifier(MealViewImageStyle())
                             .blur(radius: blur)
                             .opacity(opacity)
-
+                        
                         Spacer()
                     }
                 }
             }
     }
 }
+
+
 
 struct MealViewImageStyle: ViewModifier {
 
@@ -65,40 +67,3 @@ struct MealViewImageStyle: ViewModifier {
             .edgesIgnoringSafeArea(.top)
     }
 }
-
-struct MealViewIngredientTitleStyle: ViewModifier { //TODO: title style  #text
-
-    private struct Shadow {
-        static let radius = 8.0
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .modifier(TextStyle.subtitle)
-            .shadow(radius: Shadow.radius)
-    }
-}
-
-struct MealViewIngredientSubitleStyle: ViewModifier { //TODO: title style  #text
-
-    private struct Shadow {
-        static let radius = 8.0
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .modifier(TextStyle.subtitle3)
-            .shadow(radius: Shadow.radius)
-    }
-}
-
-struct MealViewSourceStyle: ViewModifier { //TODO: title style  #text
-
-    func body(content: Content) -> some View {
-        content
-            .foregroundColor(.accentColor)
-            .frame(maxWidth: .infinity)
-    }
-}
-
-

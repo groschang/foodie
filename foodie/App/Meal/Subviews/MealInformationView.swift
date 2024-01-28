@@ -13,11 +13,10 @@ struct MealInformationView<Model>: View where Model: MealInformations {
     
     var body: some View {
         VStack {
-            TitleView(viewModel.name, style: MealInformationViewStyle())
+            TitleView(viewModel.name, style: MealInformationTitleStyle())
             TitleView(viewModel.area, style: MealInformationSubtitleStyle())
             TitleView(viewModel.category, style: MealInformationSubtitleStyle())
         }
-        .modifier(MealInformationViewStyle())
     }
 }
 

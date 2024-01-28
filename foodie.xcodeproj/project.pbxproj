@@ -331,6 +331,22 @@
 		716CD11529819AB100E4EA65 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD11429819AB100E4EA65 /* MealView.swift */; };
 		716CD1172981A34A00E4EA65 /* mealDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 716CD1162981A34A00E4EA65 /* mealDetail.json */; };
 		716CD1192981C17000E4EA65 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD1182981C17000E4EA65 /* NavigationBarModifier.swift */; };
+		717443002B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
+		717443012B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
+		717443022B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
+		717443032B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
+		717443052B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
+		717443062B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
+		717443072B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
+		717443082B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
+		7174430A2B6678D300AFA164 /* TitleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443092B6678D300AFA164 /* TitleBackButton.swift */; };
+		7174430B2B6678D300AFA164 /* TitleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443092B6678D300AFA164 /* TitleBackButton.swift */; };
+		7174430C2B6678D300AFA164 /* TitleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443092B6678D300AFA164 /* TitleBackButton.swift */; };
+		7174430D2B6678D300AFA164 /* TitleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443092B6678D300AFA164 /* TitleBackButton.swift */; };
+		7174430F2B667B3E00AFA164 /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
+		717443102B667B3E00AFA164 /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
+		717443112B667B3E00AFA164 /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
+		717443122B667B3E00AFA164 /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
 		71757C572A72D4C1008EFD92 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71757C562A72D4C1008EFD92 /* APIClientMock.swift */; };
 		71757C5B2A72DE17008EFD92 /* CoreDataClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71757C5A2A72DE17008EFD92 /* CoreDataClientMock.swift */; };
 		71757C5E2A72FB36008EFD92 /* CoreDataClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71757C5D2A72FB36008EFD92 /* CoreDataClientTest.swift */; };
@@ -1316,6 +1332,10 @@
 		716CD11429819AB100E4EA65 /* MealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		716CD1162981A34A00E4EA65 /* mealDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealDetail.json; sourceTree = "<group>"; };
 		716CD1182981C17000E4EA65 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientsView+Style.swift"; sourceTree = "<group>"; };
+		717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCoverPhotoView.swift; sourceTree = "<group>"; };
+		717443092B6678D300AFA164 /* TitleBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBackButton.swift; sourceTree = "<group>"; };
+		7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElipseBackButton.swift; sourceTree = "<group>"; };
 		71757C562A72D4C1008EFD92 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		71757C5A2A72DE17008EFD92 /* CoreDataClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClientMock.swift; sourceTree = "<group>"; };
 		71757C5D2A72FB36008EFD92 /* CoreDataClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClientTest.swift; sourceTree = "<group>"; };
@@ -1992,6 +2012,7 @@
 		7156197929802A1A001EC9A6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */,
 				713FF2732A633DEB00F06C13 /* AsyncButton.swift */,
 				7191227629EADE26007E198B /* BackButton.swift */,
 				7156197B29802A5E001EC9A6 /* CoverPhotoView.swift */,
@@ -2007,9 +2028,11 @@
 				71C0C97A2A16340D0034AA14 /* MultilineTextView.swift */,
 				71C0C96B2A11021C0034AA14 /* PhotoView.swift */,
 				71A917EC2B33DBEA004B35C9 /* RoundedCorner.swift */,
+				71280C622B4A06CF00F9945C /* Shadow.swift */,
 				719022172A6471FB00D0418E /* TextView.swift */,
 				71052D9D29940C55000008B6 /* TitleView.swift */,
-				71280C622B4A06CF00F9945C /* Shadow.swift */,
+				717443092B6678D300AFA164 /* TitleBackButton.swift */,
+				7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2161,6 +2184,7 @@
 			isa = PBXGroup;
 			children = (
 				71052D9B29940718000008B6 /* IngredientsView.swift */,
+				717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */,
 				71052DA529943C93000008B6 /* MealInformationView.swift */,
 				71C0C97E2A1675710034AA14 /* MealInformationView+Style.swift */,
 			);
@@ -2775,6 +2799,7 @@
 				7102F19E2B2F6C7A00F6D87F /* DashboardViewFactory.swift in Sources */,
 				7102F19F2B2F6C7A00F6D87F /* MealAsyncViewModel.swift in Sources */,
 				7102F1A02B2F6C7A00F6D87F /* ViewBuilderProtocol.swift in Sources */,
+				7174430C2B6678D300AFA164 /* TitleBackButton.swift in Sources */,
 				7102F1A12B2F6C7A00F6D87F /* MealsAsyncServiceMock.swift in Sources */,
 				7102F1A22B2F6C7A00F6D87F /* GeometryReader.swift in Sources */,
 				7102F1A32B2F6C7A00F6D87F /* MealsServiceMock.swift in Sources */,
@@ -2785,6 +2810,7 @@
 				7102F1A72B2F6C7A00F6D87F /* Meal.swift in Sources */,
 				7102F1A82B2F6C7A00F6D87F /* IngredientsView.swift in Sources */,
 				7102F1A92B2F6C7A00F6D87F /* TextStyles.swift in Sources */,
+				717443022B666E1200AFA164 /* IngredientsView+Style.swift in Sources */,
 				7102F1AA2B2F6C7A00F6D87F /* CategoriesViewModelMock.swift in Sources */,
 				7102F1AB2B2F6C7A00F6D87F /* EmptyStateView.swift in Sources */,
 				7102F1AC2B2F6C7A00F6D87F /* CategoriesRouter.swift in Sources */,
@@ -2867,6 +2893,7 @@
 				7102F1EA2B2F6C7A00F6D87F /* MealCategory.swift in Sources */,
 				7102F1EB2B2F6C7A00F6D87F /* DecodingError+Description.swift in Sources */,
 				7102F1EC2B2F6C7A00F6D87F /* CGPoint.swift in Sources */,
+				717443112B667B3E00AFA164 /* ElipseBackButton.swift in Sources */,
 				71BF52D92B4467DE00D95C30 /* LeafRounded.swift in Sources */,
 				7102F1ED2B2F6C7A00F6D87F /* MealViewModel+Mock.swift in Sources */,
 				7102F1EE2B2F6C7A00F6D87F /* CoreDataClient.swift in Sources */,
@@ -2913,6 +2940,7 @@
 				7102F2162B2F6C7A00F6D87F /* Meals.swift in Sources */,
 				7102F2172B2F6C7A00F6D87F /* MealCategoryEntity+CoreDataClass.swift in Sources */,
 				7102F2182B2F6C7A00F6D87F /* MockedDependencyContainer.swift in Sources */,
+				717443072B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */,
 				7102F2192B2F6C7A00F6D87F /* MealView.swift in Sources */,
 				7102F21A2B2F6C7A00F6D87F /* Searchable.swift in Sources */,
 				7102F21B2B2F6C7A00F6D87F /* AppStyle.swift in Sources */,
@@ -3000,6 +3028,7 @@
 				71A271DB2B4D97EE000B4CA3 /* DashboardPromoViewModel.swift in Sources */,
 				71A271DC2B4D97EE000B4CA3 /* MealListView+Style.swift in Sources */,
 				71A271DE2B4D97EE000B4CA3 /* URL.swift in Sources */,
+				717443082B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */,
 				71A271DF2B4D97EE000B4CA3 /* MealDBEndpoint.swift in Sources */,
 				71A271E02B4D97EE000B4CA3 /* MenuViewModel.swift in Sources */,
 				71A271E12B4D97EE000B4CA3 /* MealCategoryEntity+CoreDataProperties.swift in Sources */,
@@ -3020,6 +3049,7 @@
 				71A271F12B4D97EE000B4CA3 /* DashboardViewModel.swift in Sources */,
 				71A271F22B4D97EE000B4CA3 /* DashboardCategoriesViewModel.swift in Sources */,
 				71A271F32B4D97EE000B4CA3 /* Animation.swift in Sources */,
+				717443032B666E1200AFA164 /* IngredientsView+Style.swift in Sources */,
 				71A271F42B4D97EE000B4CA3 /* DashboardViewFactory.swift in Sources */,
 				71A271F52B4D97EE000B4CA3 /* MealAsyncViewModel.swift in Sources */,
 				71A271F62B4D97EE000B4CA3 /* ViewBuilderProtocol.swift in Sources */,
@@ -3136,6 +3166,7 @@
 				71A2725A2B4D97EE000B4CA3 /* DependencyContainer.swift in Sources */,
 				71A2725B2B4D97EE000B4CA3 /* CategoryListViewModel.swift in Sources */,
 				71A2725C2B4D97EE000B4CA3 /* URLRequestBuilder.swift in Sources */,
+				7174430D2B6678D300AFA164 /* TitleBackButton.swift in Sources */,
 				71A2725D2B4D97EE000B4CA3 /* HttpStatusCode.swift in Sources */,
 				71A2725E2B4D97EE000B4CA3 /* CategoriesAsyncViewModel.swift in Sources */,
 				71A2725F2B4D97EE000B4CA3 /* IngredientEntity+CoreDataClass.swift in Sources */,
@@ -3210,6 +3241,7 @@
 				71A272A42B4D97EE000B4CA3 /* CategoriesViewFactory.swift in Sources */,
 				71A272A52B4D97EE000B4CA3 /* InformationView.swift in Sources */,
 				71A272A62B4D97EE000B4CA3 /* CategoriesViewModel.swift in Sources */,
+				717443122B667B3E00AFA164 /* ElipseBackButton.swift in Sources */,
 				71A272A72B4D97EE000B4CA3 /* MealsCombineService.swift in Sources */,
 				71A272A82B4D97EE000B4CA3 /* DashboardHeaderView.swift in Sources */,
 				71A272A92B4D97EE000B4CA3 /* TimePrinter.swift in Sources */,
@@ -3307,6 +3339,7 @@
 				71A273272B4DA2E1000B4CA3 /* MealsSelectView+Style.swift in Sources */,
 				71A273282B4DA2E1000B4CA3 /* MealsSelectView.swift in Sources */,
 				71A273292B4DA2E1000B4CA3 /* ColorStyleDebugView.swift in Sources */,
+				717443062B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */,
 				71A2732A2B4DA2E1000B4CA3 /* MenuRouter.swift in Sources */,
 				71A2732B2B4DA2E1000B4CA3 /* Keyboard.swift in Sources */,
 				71A2732C2B4DA2E1000B4CA3 /* CGRect.swift in Sources */,
@@ -3323,6 +3356,7 @@
 				71A273372B4DA2E1000B4CA3 /* APICombineClient.swift in Sources */,
 				71A273382B4DA2E1000B4CA3 /* AsyncContentView.swift in Sources */,
 				71A273D52B4DA3C2000B4CA3 /* SwiftDataClient.swift in Sources */,
+				7174430B2B6678D300AFA164 /* TitleBackButton.swift in Sources */,
 				71A273392B4DA2E1000B4CA3 /* RoundedCorner.swift in Sources */,
 				71A2733A2B4DA2E1000B4CA3 /* MocksPreview.swift in Sources */,
 				71A2733B2B4DA2E1000B4CA3 /* Set.swift in Sources */,
@@ -3362,6 +3396,7 @@
 				71A2735B2B4DA2E1000B4CA3 /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				718B41662B50AE3600F597CD /* DependencyContainerType.swift in Sources */,
 				71A2735C2B4DA2E1000B4CA3 /* MealCategory.swift in Sources */,
+				717443012B666E1200AFA164 /* IngredientsView+Style.swift in Sources */,
 				71A2735D2B4DA2E1000B4CA3 /* DebugSection.swift in Sources */,
 				71A2735E2B4DA2E1000B4CA3 /* DecodingError+Description.swift in Sources */,
 				71A2735F2B4DA2E1000B4CA3 /* CGPoint.swift in Sources */,
@@ -3387,6 +3422,7 @@
 				71A273712B4DA2E1000B4CA3 /* StaticIndentifier.swift in Sources */,
 				711EC1352B5E8BCE00A0B769 /* BackgroundRealm.swift in Sources */,
 				71A273722B4DA2E1000B4CA3 /* Text.swift in Sources */,
+				717443102B667B3E00AFA164 /* ElipseBackButton.swift in Sources */,
 				71A273732B4DA2E1000B4CA3 /* MealsRouter.swift in Sources */,
 				71A273742B4DA2E1000B4CA3 /* PhotoLoadingView+Style.swift in Sources */,
 				71A273752B4DA2E1000B4CA3 /* MotionManager.swift in Sources */,
@@ -3490,6 +3526,7 @@
 				710410722A73117600EAE3CD /* URL.swift in Sources */,
 				713A15FD298433E800FDFBF9 /* MealDBEndpoint.swift in Sources */,
 				71E2358D2A7BF79400F06097 /* MealCategoryEntity+CoreDataProperties.swift in Sources */,
+				7174430A2B6678D300AFA164 /* TitleBackButton.swift in Sources */,
 				718B41652B50AE3600F597CD /* DependencyContainerType.swift in Sources */,
 				71052D982991126D000008B6 /* IngredientEntity.swift in Sources */,
 				71BA90C52B4AD9750053E21B /* DashboardSearchView.swift in Sources */,
@@ -3554,6 +3591,7 @@
 				71A917EB2B33DBC2004B35C9 /* ColorStyleDebugView.swift in Sources */,
 				71DD5DD82B5DB52E003079AC /* CategoryRealm.swift in Sources */,
 				712AAA5E2B3373D2008BF0B8 /* MenuRouter.swift in Sources */,
+				717443002B666E1200AFA164 /* IngredientsView+Style.swift in Sources */,
 				71BA90BF2B4A16A10053E21B /* Keyboard.swift in Sources */,
 				71052DA2299417AD000008B6 /* CGRect.swift in Sources */,
 				7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */,
@@ -3613,8 +3651,10 @@
 				71A917EF2B33DC59004B35C9 /* LeafRounded.swift in Sources */,
 				71080F02298EF363009FCDDB /* ViewPreview.swift in Sources */,
 				71F403D42A0AD3EA005CF087 /* Mock.swift in Sources */,
+				717443052B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */,
 				71080E98298ADE42009FCDDB /* Mappable.swift in Sources */,
 				7191227129EAC17B007E198B /* ListHeaderView.swift in Sources */,
+				7174430F2B667B3E00AFA164 /* ElipseBackButton.swift in Sources */,
 				71F403CE2A0ABBA3005CF087 /* DependencyContainer.swift in Sources */,
 				71C0C9772A1555230034AA14 /* CategoryListViewModel.swift in Sources */,
 				712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */,

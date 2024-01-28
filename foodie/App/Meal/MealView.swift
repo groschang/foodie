@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MealView<Model>: View where Model: MealViewModelType {
 
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     @ObservedObject private var viewModel: Model
     
     @State private var offset: CGPoint = .zero
@@ -21,8 +23,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
     
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
-            .navigationTitle(viewModel.name)
-            .styleNavigationBar()
+            .hideNavigationBar()
     }
     
     var content: some View {
@@ -36,12 +37,21 @@ struct MealView<Model>: View where Model: MealViewModelType {
                 source
             }
             .readScrollView(from: CoordinateSpace.main, into: $offset)
+            .padding(.horizontal)
         }
-        .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl, offset: offset.y, imageSize: $imageSize))
+        .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl, 
+                                offset: offset.y + contentSize.minY,
+                                imageSize: $imageSize))
         .coordinateSpace(name: CoordinateSpace.main)
         .readingGeometry(from: CoordinateSpace.main, into: $contentSize)
+        .overlay {
+            ElipseBackButton() { presentationMode.wrappedValue.dismiss() }
+                .placeAtTheTop()
+                .placeAtTheLeft()
+                .padding()
+        }
     }
-    
+
     private var spacer: some View {
         Spacer(minLength: imageSize.maxY - abs(contentSize.minY))
     }
@@ -61,9 +71,11 @@ struct MealView<Model>: View where Model: MealViewModelType {
     private var ingredients: some View {
         if let ingredients = viewModel.ingredients {
             VStack {
-//                TitleView(viewModel.ingredientsTitle, style: MealViewIngredientTitleStyle())
-                ExtendedTitleView(viewModel.ingredientsTitle, style: MealViewIngredientTitleStyle(),
-                                  subtitle: viewModel.ingredientsSubtitle, subtitleStyle: MealViewIngredientSubitleStyle() )
+                ExtendedTitleView(viewModel.ingredientsTitle,
+                                  style: MealViewIngredientTitleStyle(),
+                                  subtitle: viewModel.ingredientsSubtitle,
+                                  subtitleStyle: MealViewIngredientSubitleStyle())
+
                 IngredientsView(ingredients)
             }
         }
@@ -72,7 +84,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
     @ViewBuilder
     private var source: some View {
         if let source = viewModel.source {
-            Link("Link", destination: source)
+            Link("Link to the website", destination: source)
                 .modifier(MealViewSourceStyle())
         }
     }
@@ -90,5 +102,3 @@ struct MealView_Previews: PreviewProvider {
         }
     }
 }
-
-

@@ -104,4 +104,19 @@ extension View {
             self
         }
     }
+
+    func placeAtTheRight() -> some View {
+        HStack(spacing: .zero) {
+            Spacer()
+            self
+        }
+    }
+    
+    func placeAtTheLeft() -> some View {
+        HStack(spacing: .zero) {
+            self
+            Spacer()
+        }
+    }
+
 }

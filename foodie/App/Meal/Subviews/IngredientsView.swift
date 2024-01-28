@@ -20,6 +20,7 @@ struct IngredientsView: View {
             ForEach(ingredients, id: \.self) { ingredient in
                 
                 HStack {
+
                     ListPhotoView(imageUrl: ingredient.smallImageUrl)
                         .frame(width: 40, height: 40)
 
@@ -32,10 +33,9 @@ struct IngredientsView: View {
                     Text("(\(ingredient.measure))")
                         .modifier(TextStyle.subtitle3)
                         .foregroundStyle(AppStyle.gray)
-//                        .italic()
                 }
             }
-            .padding(.leading)
+            .padding(.leading, 7)
         }
     }
 }
