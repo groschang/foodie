@@ -15,7 +15,7 @@ struct CategoryListViewStyle: ViewModifier {
     }
 
     private struct Shadow {
-        static let radius = 4.0
+        static let radius = 8.0
         static let color = Color.shadow
     }
 
@@ -79,6 +79,5 @@ struct CategoryListViewPhotoStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .modifier(ListPhotoStyle(width: width, height: height))
-//            .modifier(BlurredBackground(imageUrl: imageUrl))
     }
 }

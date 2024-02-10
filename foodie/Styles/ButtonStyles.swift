@@ -14,7 +14,8 @@ struct DashboardButtonStyle: ButtonStyle {
         configuration.label
             .padding()
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
+            .animation(.easeOut(duration: 0.1), 
+                       value: configuration.isPressed)
             .foregroundStyle(AppStyle.main)
             .background(.white)
             .subtitle()
@@ -33,7 +34,8 @@ struct GrowingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.interpolatingSpring(duration: 0.25), value: configuration.isPressed)
+            .animation(.interpolatingSpring(duration: 0.25), 
+                       value: configuration.isPressed)
     }
 }
 
@@ -63,7 +65,8 @@ struct InformationButtonStyle: ButtonStyle {
             .background(Colors.background)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? Animations.endScale : Animations.startScale)
-            .animation(.easeOut(duration: Animations.duration), value: configuration.isPressed)
+            .animation(.easeOut(duration: Animations.duration), 
+                       value: configuration.isPressed)
     }
 }
 
@@ -108,7 +111,8 @@ struct MenuButtonStyle: ButtonStyle {
             .scaleEffect(
                 configuration.isPressed ? Animations.endScale : Animations.startScale
             )
-            .animation(.easeOut(duration: Animations.duration), value: configuration.isPressed)
+            .animation(.easeOut(duration: Animations.duration), 
+                       value: configuration.isPressed)
     }
 }
 

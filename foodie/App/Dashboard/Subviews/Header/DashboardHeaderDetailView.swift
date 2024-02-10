@@ -17,6 +17,7 @@ struct DashboardHeaderDetailView: View {
             Image(systemName: "person.fill")
                 .font(.system(size: 44))
                 .frame(width: 44, height: 44)
+                .shadow(color: .gray, radius: 10)
 
             VStack(alignment: .leading) {
 
@@ -33,6 +34,7 @@ struct DashboardHeaderDetailView: View {
             Button(action: action) {
                 Image(systemName: "list.bullet.circle")
                     .font(.title)
+                    .tint(.accent)
             }
 
         }

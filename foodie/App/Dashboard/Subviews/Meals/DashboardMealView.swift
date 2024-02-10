@@ -1,0 +1,49 @@
+//
+//  DashboardMealView.swift
+//  foodie
+//
+//  Created by Konrad Groschang on 10/02/2024.
+//
+
+import SwiftUI
+
+struct DashboardMealView: View {
+
+    static let size = CGSize(width: 80, height: 80)
+
+    let meal: Meal
+
+    var body: some View {
+        VStack(spacing: 8) {
+
+            ListPhotoView(imageUrl: meal.imageURL)
+                .modifier(
+                    CategoryListViewPhotoStyle(
+                        width: Self.size.width,
+                        height: Self.size.height,
+                        imageUrl: meal.imageURL
+                    )
+                )
+                .cornerRadius(10)
+                .shadow(radius: 5)
+
+            Text(meal.name)
+                .subtitle2()
+                .lineLimit(3)
+                .multilineTextAlignment(.center)
+        }
+        .frame(width: Self.size.width)
+
+    }
+}
+
+
+// MARK: Preview
+
+struct DashboardMealView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        DashboardMealView(meal: .mock)
+    }
+
+}

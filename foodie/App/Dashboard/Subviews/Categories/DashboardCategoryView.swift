@@ -23,21 +23,32 @@ struct DashboardCategoryView: View {
     }
 }
 
+
+
 struct DashboardCategoryVerticalView: View {
 
     let category: Category
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ListPhotoView(imageUrl: category.imageUrl)
-                .modifier(CategoryListViewPhotoStyle(width: 62, height: 62, imageUrl: category.imageUrl))
+                .modifier(
+                    CategoryListViewPhotoStyle(
+                        width: 62,
+                        height: 62,
+                        imageUrl: category.imageUrl
+                    )
+                )
                 .clipShape(Circle())
 
             Text(category.name)
-                .subtitle()
+                .subtitle2()
+                .minimumScaleFactor(0.7)
         }
     }
 }
+
+
 
 struct DashboardCategoryHorizontalView: View {
 
@@ -46,8 +57,12 @@ struct DashboardCategoryHorizontalView: View {
     var body: some View {
         HStack {
             ListPhotoView(imageUrl: URL.SmallImage(category.imageUrl) )
-                .modifier(ListPhotoStyle(width: 62,
-                                         height: 62))
+                .modifier(
+                    ListPhotoStyle(
+                        width: 62,
+                        height: 62
+                    )
+                )
                 .background(.white)
                 .clipShape(Circle())
 

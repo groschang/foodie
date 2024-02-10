@@ -111,7 +111,7 @@ extension TextStyle {
             func body(content: Content) -> some View {
                 content
                     .modifier(BaseSubtitle())
-                    .font(.callout)
+                    .font(.subheadline)
             }
         }
 

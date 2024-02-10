@@ -52,6 +52,7 @@ struct MealGridView: View {
     }
 }
 
+
 // MARK: Preview
 
 struct MealGridView_Previews: PreviewProvider {

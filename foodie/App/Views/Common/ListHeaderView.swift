@@ -29,8 +29,9 @@ struct ListHeaderView: View {
 
     var body: some View {
         HStack {
+
             Text(title)
-                .font(.footnote) // TODO: #font
+                .subtitle3()
 
             Spacer()
 
@@ -38,24 +39,26 @@ struct ListHeaderView: View {
                 type: listType,
                 action: modeAction
             )
-            .tint(.accent)
-
 
             ListFilterButton(action: filterAction)
-                .tint(Color.foreground)
         }
+        .tint(AppStyle.gray)
     }
 }
+
 
 // MARK: Previews
 
 struct ListHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ListHeaderView(title: "Title",
-                       filterAction: { },
-                       modeAction: { },
-                       listType: .constant(.list))
-        .previewAsComponent()
+
+        ListHeaderView(
+            title: "Title",
+            filterAction: { },
+            modeAction: { },
+            listType: .constant(.list)
+        )
+
     }
 }
 

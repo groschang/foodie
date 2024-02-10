@@ -49,8 +49,8 @@ extension AppStyle {
                                        dark: Color.darkBlack)
     static let accent = ColorStyle(light: Color.black,
                                    dark: Color.white)
-    static let shadow = ColorStyle(light: Color.black,
-                                   dark: Color.black)
+    static let shadow = ColorStyle(light: Color.gray,
+                                   dark: Color.gray)
     static let toolbar = ColorStyle(light: Color.gray,
                                     dark: Color.gray)
 }

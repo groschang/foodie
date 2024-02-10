@@ -26,9 +26,8 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
     }
-
+    
     private var content: some View {
-
         VStack {
             header
             recipes
@@ -40,7 +39,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var header: some View {
-
         ListHeader(
             title: viewModel.categoryName,
             imageUrl: viewModel.backgroundUrl,
@@ -51,7 +49,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var recipes: some View {
-
         List {
             Section(
                 content: { scrollViewContent },
@@ -63,7 +60,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var listHeader: some View {
-
         ListHeaderView(
             title: viewModel.itemsHeader,
             filterAction: { },
@@ -87,6 +83,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         }
     }
 
+
     private var listContent: some View {
 
         ForEach(viewModel.filteredItems) { meal in
@@ -107,8 +104,8 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         .modifier(ListRowModifier())
     }
 
-    private var gridContent: some View {
 
+    private var gridContent: some View {
         LazyVGrid(
             columns: [GridItem(.adaptive(minimum: 140))],
             spacing: 20

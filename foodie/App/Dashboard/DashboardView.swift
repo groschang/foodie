@@ -74,23 +74,29 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
     private var container: some View {
 
         ScrollView {
+            VStack {
 
-            Color.clear
-                .frame(height: 170)
+                Color.clear
+                    .frame(height: 180)
 
-            DashboardPromoView(viewModel: viewModel.promoViewModel) { }
-                .maxWidth()
-                .frame(maxHeight: 200)
-                .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
-                .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
-                .padding(.vertical, 12)
-            //  .modifier(SwipeModifier(manager: manager)) //TODO: optimize
+                DashboardPromoView(viewModel: viewModel.promoViewModel) { }
+                    .maxWidth()
+                    .frame(maxHeight: 240)
+                    .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
+                    .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
+                    .padding(.vertical, 12)
+                    .padding(.bottom, 12)
+                //  .modifier(SwipeModifier(manager: manager)) //TODO: optimize
 
-            DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
+                DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
+                    router.navigate(to: .categories) 
+                }
+                .padding(.bottom, 32)
 
+                DashboardMealsView(viewModel: viewModel.mealsViewModel)
+
+                Spacer()
             }
-
-            Spacer()
         }
         .background { StaticGradient().rotationEffect(Angle(degrees: 90)) }
         .background { Color.white.ignoresSafeArea(edges: .bottom) }

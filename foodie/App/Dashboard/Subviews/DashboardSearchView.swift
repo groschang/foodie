@@ -48,7 +48,7 @@ struct DashboardSearchView: View {
             }
         }
         .offset(y: 100)
-        .placeholder(generate: true)
+//        .placeholder(generate: true)
         .onTapGesture { //TODO: remove
             withAnimation(AppStyle.Animations.transition) {
                 isPresenting.toggle()

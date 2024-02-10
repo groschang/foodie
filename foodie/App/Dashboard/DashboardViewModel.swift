@@ -10,6 +10,7 @@ import Foundation
 protocol DashboardViewModelData: ObservableObject {
 
     var categoriesViewModel: DashboardCategoriesViewModel { get }
+    var mealsViewModel: DashboardMealsViewModel { get }
     var promoViewModel: DashboardPromoViewModel { get }
 
     func initialize() async
@@ -25,6 +26,7 @@ final class DashboardViewModel: DashboardViewModelType {
     private let service: MealsAsyncServiceType
 
     private(set) var categoriesViewModel: DashboardCategoriesViewModel
+    private(set) var mealsViewModel: DashboardMealsViewModel
     private(set) var promoViewModel: DashboardPromoViewModel
 
     @Published var state: LoadingState = .idle
@@ -35,6 +37,7 @@ final class DashboardViewModel: DashboardViewModelType {
     init(service: MealsAsyncServiceType) {
         self.service = service
         self.categoriesViewModel = DashboardCategoriesViewModel(service: service)
+        self.mealsViewModel = DashboardMealsViewModel(service: service)
         self.promoViewModel = DashboardPromoViewModel(service: service)
     }
 
@@ -47,6 +50,7 @@ final class DashboardViewModel: DashboardViewModelType {
 
     func load() async {
         await categoriesViewModel.load()
+        await mealsViewModel.load()
         await promoViewModel.load()
     }
 }

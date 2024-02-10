@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ListHeader: View {
 
-//    @Environment(\.horizontalSizeClass) var sizeClass
-
     let title: String
 
     let imageUrl: URL?
@@ -22,7 +20,7 @@ struct ListHeader: View {
     @State private var backButtonSize: CGRect = .zero
 
     private var layout: AnyLayout {
-        animate // || sizeClass == .regular
+        animate
         ? AnyLayout(HStackLayout())
         : AnyLayout(VStackLayout())
     }
@@ -34,7 +32,6 @@ struct ListHeader: View {
             coverPhotoView
 
             layout {
-
                 HStack {
                     backButton
                     verticalSpacerView

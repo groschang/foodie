@@ -15,7 +15,7 @@ struct MealListStyle: ViewModifier {
     }
 
     private struct Shadow {
-        static let radius = 4.0
+        static let radius = 8.0
         static let color = Color.shadow
     }
 

@@ -759,6 +759,21 @@
                   endingLineNumber = "27"
                   offsetFromSymbolStart = "464">
                </Location>
+               <Location
+                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - b99a818dfb0e978b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie.MotionManager.startUpdating() -&gt; ()"
+                  moduleName = "foodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "464">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

@@ -21,25 +21,26 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 2) {
             title
             scrollView
         }
     }
 
     private var title: some View {
-        HStack {
+        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+            
             Text("Category")
-                .title2()
+                .title2() //TODO: #font
+                .foregroundStyle(Color.gray)
 
-            Spacer()
+            Spacer(minLength: 3)
 
             Button(
-                action: { router.navigate(to: .categories) },
+                action: { action() },
                 label: {
                     Text("See all")
-                        .subtitle()
-                        .foregroundStyle(AppStyle.white)
+                        .subtitle2()
                 }
             )
         }
@@ -48,7 +49,7 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
 
     private var scrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
+            HStack(alignment: .top) {
                 ForEach(viewModel.items) { category in
                     RouterLink(to: .meals(category)) {
                         DashboardCategoryVerticalView(category: category)
