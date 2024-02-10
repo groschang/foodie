@@ -27,6 +27,8 @@ struct DashboardCategoryView: View {
 
 struct DashboardCategoryVerticalView: View {
 
+    static let size = CGSize(width: 80, height: 80)
+
     let category: Category
 
     var body: some View {
@@ -34,8 +36,8 @@ struct DashboardCategoryVerticalView: View {
             ListPhotoView(imageUrl: category.imageUrl)
                 .modifier(
                     CategoryListViewPhotoStyle(
-                        width: 62,
-                        height: 62,
+                        width: Self.size.width,
+                        height: Self.size.height,
                         imageUrl: category.imageUrl
                     )
                 )
@@ -52,6 +54,8 @@ struct DashboardCategoryVerticalView: View {
 
 struct DashboardCategoryHorizontalView: View {
 
+    static let size = CGSize(width: 80, height: 80)
+
     let category: Category
 
     var body: some View {
@@ -59,8 +63,8 @@ struct DashboardCategoryHorizontalView: View {
             ListPhotoView(imageUrl: URL.SmallImage(category.imageUrl) )
                 .modifier(
                     ListPhotoStyle(
-                        width: 62,
-                        height: 62
+                        width: Self.size.width,
+                        height: Self.size.height
                     )
                 )
                 .background(.white)

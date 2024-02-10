@@ -51,9 +51,11 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top) {
                 ForEach(viewModel.items) { category in
+
                     RouterLink(to: .meals(category)) {
                         DashboardCategoryVerticalView(category: category)
                     }
+
                 }
             }
             .fixedSize()

@@ -72,7 +72,6 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
     }
 
     private var container: some View {
-
         ScrollView {
             VStack {
 

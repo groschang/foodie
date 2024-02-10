@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DashboardMealView: View {
 
-    static let size = CGSize(width: 80, height: 80)
+    static let size = CGSize(width: 100, height: 100)
 
     let meal: Meal
 

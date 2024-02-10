@@ -14,7 +14,6 @@ struct DashboardSearchView: View {
         static let background = "Background"
     }
 
-
     var namespace: Namespace.ID
 
     @Binding var isPresenting: Bool
@@ -48,7 +47,7 @@ struct DashboardSearchView: View {
             }
         }
         .offset(y: 100)
-//        .placeholder(generate: true)
+        .redacted(reason: .placeholder)
         .onTapGesture { //TODO: remove
             withAnimation(AppStyle.Animations.transition) {
                 isPresenting.toggle()
@@ -67,4 +66,5 @@ struct DashboardSearchView: View {
         namespace: namespace,
         isPresenting: $show
     )
+
 }
