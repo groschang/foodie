@@ -44,7 +44,3 @@ extension View {
         modifier(GeometryReaderSizeModifier(coordinateSpace: coordinateSpace.description, rect: binding))
     }
 }
-
-
-
-

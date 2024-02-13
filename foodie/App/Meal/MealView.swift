@@ -16,7 +16,8 @@ struct MealView<Model>: View where Model: MealViewModelType {
     @State private var offset: CGPoint = .zero
     @State private var imageSize: CGRect = .zero
     @State private var contentSize: CGRect = .zero
-    
+    @State private var scrollViewSize: CGRect = .zero
+
     init(viewModel: Model) {
         self.viewModel = viewModel
     }
@@ -32,11 +33,13 @@ struct MealView<Model>: View where Model: MealViewModelType {
             VStack(spacing: 21) {
                 spacer
                 informations
-                recipe
                 ingredients
+                recipe
+                youtube
                 source
             }
             .readScrollView(from: CoordinateSpace.main, into: $offset)
+            .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
             .padding(.horizontal)
         }
         .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl, 
@@ -60,13 +63,6 @@ struct MealView<Model>: View where Model: MealViewModelType {
         MealInformationView(viewModel: viewModel)
     }
     
-    private var recipe: some View {
-        VStack(alignment: .leading) {
-            TitleView(viewModel.recipeTitle, style: MealViewIngredientTitleStyle())
-            MultilineTextView(viewModel.recipe)
-        }
-    }
-    
     @ViewBuilder
     private var ingredients: some View {
         if let ingredients = viewModel.ingredients {
@@ -80,11 +76,26 @@ struct MealView<Model>: View where Model: MealViewModelType {
             }
         }
     }
-    
+
+    private var recipe: some View {
+        VStack(alignment: .leading) {
+            TitleView(viewModel.recipeTitle, style: MealViewIngredientTitleStyle())
+            MultilineTextView(viewModel.recipe)
+        }
+    }
+
+    @ViewBuilder
+    private var youtube: some View {
+        if let link = viewModel.youtubeUrl {
+            YouTubeView(url: link)
+                .frameWithRatio16to9(scrollViewSize.width)
+        }
+    }
+
     @ViewBuilder
     private var source: some View {
-        if let source = viewModel.source {
-            Link("Link to the website", destination: source)
+        if let link = viewModel.source {
+            Link("Link to the website", destination: link)
                 .modifier(MealViewSourceStyle())
         }
     }

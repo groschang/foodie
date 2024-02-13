@@ -51,6 +51,7 @@ struct Meal: Identifiable, Codable, Hashable, Equatable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MealCodingKeys.self)
         let meals = try container.decode([MealDetail].self, forKey: .meals)
+        
         guard let meal = meals.first else {
             throw MealCodingError.empty
         }

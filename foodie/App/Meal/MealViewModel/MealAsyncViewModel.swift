@@ -24,6 +24,7 @@ final class MealAsyncViewModel: MealViewModelType {
     @Published private(set) var ingredients: [Ingredient]?
     @Published private(set) var source: URL?
     @Published private(set) var backgroundUrl: URL?
+    @Published private(set) var youtubeUrl: URL?
 
     private let object: any IdentifiableObject
     private let service: MealsAsyncServiceType
@@ -79,5 +80,6 @@ final class MealAsyncViewModel: MealViewModelType {
         ingredientsSubtitle = "\(ingredients?.count ?? 0) items"
         source = URL(string: meal.source ?? "") //TODO: make url in model
         backgroundUrl = meal.imageURL
+        youtubeUrl = meal.youtubeURL
     }
 }

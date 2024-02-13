@@ -33,13 +33,6 @@ final class PersistentContainer: NSPersistentContainer {
     }
 
     public convenience init(name: String = DataModelName, bundle: Bundle = .main, type: StoreType = .SQLite) {
-        //        if let modelURL = bundle.url(forResource: name, withExtension: "momd"),
-        //           let model = NSManagedObjectModel(contentsOf: modelURL) {
-        //            self.init(name: name, managedObjectModel: model, type: type)
-        //        } else {
-        //            super.init(name: name)
-        //        }
-
 
         guard let modelURL = bundle.url(forResource: name, withExtension: "momd") else {
             fatalError("Failed to find data model")
@@ -53,6 +46,7 @@ final class PersistentContainer: NSPersistentContainer {
 
 
     private func configureDefaults(_ type: StoreType) {
+
         let description = NSPersistentStoreDescription()
         description.type = type.description
 

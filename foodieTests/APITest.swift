@@ -9,7 +9,6 @@ import XCTest
 import SnapshotTesting
 @testable import foodie
 
-
 final class APITest: XCTestCase {
 
     /// https://www.themealdb.com/api.php
@@ -24,6 +23,7 @@ final class APITest: XCTestCase {
 
     @MainActor
     func testCategories() async throws {
+
         //Arrange
         let endpoint = Endpoint.categories
         let request = Request<Categories>(endpoint: endpoint)
@@ -32,7 +32,7 @@ final class APITest: XCTestCase {
         //Act
         let (data, response) = try await session.data(for: urlRequest)
         try validate(response: response)
-        let json = prettyPrint(data: data)
+        let json = data.prettyString
 
         // Asset
         assertSnapshot(matching: urlRequest, as: .raw)
@@ -41,6 +41,7 @@ final class APITest: XCTestCase {
 
     @MainActor
     func testMeals() async throws {
+
         //Arrange
         let endpoint = Endpoint.meals(category: "Beef")
         let request = Request<Meals>(endpoint: endpoint)
@@ -49,7 +50,7 @@ final class APITest: XCTestCase {
         //Act
         let (data, response) = try await session.data(for: urlRequest)
         try validate(response: response)
-        let json = prettyPrint(data: data)
+        let json = data.prettyString
 
         // Asset
         assertSnapshot(matching: urlRequest, as: .raw)
@@ -58,15 +59,16 @@ final class APITest: XCTestCase {
 
     @MainActor
     func testMeal() async throws {
+
         //Arrange
-        let endpoint = Endpoint.meal(id: "53057") //52881
+        let endpoint = Endpoint.meal(id: "52881")
         let request = Request<Meal>(endpoint: endpoint)
         let urlRequest = try requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)
         try validate(response: response)
-        let json = prettyPrint(data: data)
+        let json = data.prettyString
 
         // Asset
         assertSnapshot(matching: urlRequest, as: .raw)
@@ -78,6 +80,7 @@ final class APITest: XCTestCase {
 private extension APITest {
 
     private func validate(response: URLResponse) throws {
+
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.noResponse
         }
@@ -92,13 +95,4 @@ private extension APITest {
         }
     }
 
-    private func prettyPrint(data: Data) -> String? {
-        guard
-            let object = try? JSONSerialization.jsonObject(with: data, options: []),
-            let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
-            let prettyPrinted = String(data: data, encoding: .utf8)
-        else { return nil }
-
-        return prettyPrinted
-    }
 }

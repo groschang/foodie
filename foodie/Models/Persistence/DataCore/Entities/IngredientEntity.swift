@@ -15,10 +15,20 @@ extension IngredientEntity {
         self.init(context: context)
         self.map(ingredient: ingredient)
     }
-    
+
+    convenience init(_ ingredient: Ingredient, meal: MealDetailEntity, context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.map(ingredient: ingredient, meal: meal)
+    }
+
     func map(ingredient: Ingredient) {
         self.name = ingredient.name
         self.measure = ingredient.measure
+    }
+
+    func map(ingredient: Ingredient, meal: MealDetailEntity) {
+        map(ingredient: ingredient)
+        self.mealDetail = meal
     }
 }
 
@@ -33,8 +43,13 @@ extension Ingredient {
 }
 
 extension Array where Element == Ingredient {
+
     func toIngredientEntities(context: NSManagedObjectContext) -> NSSet? {
         map { IngredientEntity($0, context: context) }.toNSSet()
+    }
+    
+    func toIngredientEntities(meal: MealDetailEntity, context: NSManagedObjectContext) -> NSSet? {
+        map { IngredientEntity($0, meal: meal, context: context) }.toNSSet()
     }
 }
 

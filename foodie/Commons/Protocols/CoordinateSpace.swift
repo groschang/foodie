@@ -9,6 +9,8 @@ import Foundation
 
 enum CoordinateSpace: String {
     case main
+    case context
+    case image
 }
 
 extension CoordinateSpace: CustomStringConvertible {

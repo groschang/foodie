@@ -120,3 +120,21 @@ extension View {
     }
 
 }
+
+
+extension View {
+
+    func frameWithRatio43(_ width: CGFloat) -> some View {
+        frame(
+            width: width,
+            height: width / 4.0 * 3.0
+        )
+    }
+
+    func frameWithRatio16to9(_ width: CGFloat) -> some View {
+        frame(
+            width: width,
+            height: width / 16.0 * 9.0
+        )
+    }
+}

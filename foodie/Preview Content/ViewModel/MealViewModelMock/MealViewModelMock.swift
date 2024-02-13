@@ -28,6 +28,7 @@ class MealViewModelMock: MealViewModelMockType {
     @Published var ingredients: [Ingredient]?
     @Published var source: URL?
     @Published var backgroundUrl: URL?
+    @Published private(set) var youtubeUrl: URL?
 
     let mealCategory: MealCategory
     let service: MealsClosureServiceType
@@ -59,6 +60,7 @@ class MealViewModelMock: MealViewModelMockType {
         ingredientsSubtitle = "\(ingredients?.count ?? 0) items"
         source = URL(string: meal.source ?? "") //TODO:
         backgroundUrl = meal.imageURL
+        youtubeUrl = meal.youtubeURL
     }
 }
 

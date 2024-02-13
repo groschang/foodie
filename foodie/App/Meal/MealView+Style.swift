@@ -32,6 +32,7 @@ struct MealViewStyle: ViewModifier {
                 if let backgroundUrl {
                     VStack(spacing: .zero) {
                         CoverPhotoView(imageUrl: backgroundUrl)
+                            .coordinateSpace(name: CoordinateSpace.image)
                             .readingGeometry(from: CoordinateSpace.main, into: $imageSize)
                             .modifier(MealViewImageStyle())
                             .blur(radius: blur)
@@ -63,7 +64,7 @@ struct MealViewImageStyle: ViewModifier {
             .clipped()
             .scaledToFill()
             .frame(maxHeight: Layouts.height)
-            .shadow(radius: Shadow.radius, x: Shadow.x, y: Shadow.y)
+            .shadow(color: Color.shadow, radius: Shadow.radius, x: Shadow.x, y: Shadow.y)
             .edgesIgnoringSafeArea(.top)
     }
 }

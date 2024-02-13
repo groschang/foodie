@@ -21,8 +21,6 @@ actor CoreDataClient {
         return container
     }()
 
-//    private var persistentContainer: PersistentContainer? { container }
-
     private var viewContext: NSManagedObjectContext? {
         persistentContainer?.viewContext
     }
@@ -41,20 +39,14 @@ actor CoreDataClient {
 
     private func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
         guard let viewContext else { return nil }
-//        return await fetch(request: request, in: viewContext)
         return await viewContext.fetch(request: request)
     }
 
-    private func fetch<T>(request: NSFetchRequest<T>, in context: NSManagedObjectContext) async -> [T]? where T: NSManagedObject {
-                await context.fetch(request: request)
-//        await context.perform {
-//            do {
-//                return try request.execute()
-//            } catch {
-//                Logger.log("Core data fetch problem: \(error)", onLevel: .error)
-//                return nil
-//            }
-//        }
+    private func fetch<T>(
+        request: NSFetchRequest<T>,
+        in context: NSManagedObjectContext
+    ) async -> [T]? where T: NSManagedObject {
+        await context.fetch(request: request)
     }
 }
 
@@ -69,9 +61,9 @@ extension CoreDataClient: PersistenceClient {
 
         request.sortDescriptors = [sortByName]
 
-        let objects = await fetch(request: request)
+        let fetchResult = await fetch(request: request)
 
-        return objects?.toCategories()
+        return fetchResult?.toCategories()
     }
 
     func saveCategories(_ categories: Categories) async {
@@ -105,9 +97,9 @@ extension CoreDataClient: PersistenceClient {
             format: "category = %@", categoryEntity //TODO: category.name?
         )
 
-        let objects = await fetch(request: request)
+        let fetchResult = await fetch(request: request)
 
-        return objects?.toMeals()
+        return fetchResult?.toMeals()
     }
 
     func saveMeals(_ meals: Meals, for category: Category) async {
@@ -133,9 +125,41 @@ extension CoreDataClient: PersistenceClient {
         let request = MealDetailEntity.fetchRequest()
         request.predicate = NSPredicate(format: "id = %@", mealId)
 
-        let objects = await fetch(request: request)
+        let fetchResult = await fetch(request: request)
 
-        return objects?.toMeal()
+        return fetchResult?.toMeal()
+    }
+
+    private func getMealDetailEntity(for mealId: String, context: NSManagedObjectContext? = nil) async -> MealDetailEntity? {
+        let request = MealDetailEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "id = %@", mealId)
+
+        let fetchResult: [MealDetailEntity]?
+
+        if let context {
+            fetchResult = await fetch(request: request, in: context)
+        } else {
+            fetchResult = await fetch(request: request)
+        }
+
+        return fetchResult?.first
+    }
+
+    func updateMeal(_ meal: Meal) async {
+        guard 
+            let context = newTaskContext(),
+            let mealDetailEntity = await getMealDetailEntity(for: meal.id, context: context)
+        else { return }
+
+        await context.perform { [weak persistentContainer, weak context, weak mealDetailEntity] in
+            guard let context,
+                  let persistentContainer,
+                  let mealDetailEntity
+            else { return }
+
+            mealDetailEntity.map(meal: meal, context: context)
+            persistentContainer.saveContext(context) //TODO: throw api
+        }
     }
 
     func saveMeal(_ meal: Meal) async {
@@ -153,9 +177,9 @@ extension CoreDataClient: PersistenceClient {
     func getRandomMeal() async -> Meal? {
         let request = MealDetailEntity.fetchRequest()
 
-        let objects = await fetch(request: request)
+        let fetchResult = await fetch(request: request)
 
-        return objects?.randomElement().map(Meal.init)
+        return fetchResult?.randomElement().map(Meal.init)
     }
 }
 

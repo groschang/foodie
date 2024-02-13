@@ -16,6 +16,7 @@ struct MealViewIngredientTitleStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .bold()
+            .underline()
             .modifier(TextStyle.title3)
     }
 }
@@ -32,6 +33,7 @@ struct MealViewIngredientSubitleStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .bold()
+            .underline()
             .modifier(TextStyle.subtitle3)
     }
 }
@@ -43,9 +45,7 @@ struct MealViewSourceStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .foregroundColor(.accentColor)
-            .frame(maxWidth: .infinity)
+            .foregroundColor(.gray)
+            .subtitle3()
     }
 }
-
-

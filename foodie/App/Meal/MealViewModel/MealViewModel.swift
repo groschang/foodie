@@ -21,6 +21,7 @@ protocol MealInformations: ObservableObject {
     var recipe: String { get }
     var ingredients: [Ingredient]? { get }
     var source: URL? { get }
+    var youtubeUrl: URL? { get }
     var backgroundUrl: URL? { get }
 }
 
@@ -42,6 +43,7 @@ final class MealViewModel: MealViewModelType {
     @Published private(set) var recipe: String = ""
     @Published private(set) var ingredients: [Ingredient]?
     @Published private(set) var source: URL?
+    @Published private(set) var youtubeUrl: URL?
     @Published private(set) var backgroundUrl: URL?
     
     private let object: any IdentifiableObject
@@ -102,5 +104,6 @@ final class MealViewModel: MealViewModelType {
         ingredientsSubtitle = "\(ingredients?.count ?? 0) items"
         source = URL(string: meal.source ?? "") //TODO: make url in model
         backgroundUrl = meal.imageURL
+        youtubeUrl = meal.youtubeURL
     }
 }

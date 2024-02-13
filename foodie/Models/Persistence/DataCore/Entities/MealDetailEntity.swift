@@ -29,7 +29,7 @@ extension MealDetailEntity: ObjectMappable {
         self.imageURL = meal.imageURL.toString()
         self.youtubeURL =  meal.youtubeURL.toString()
         self.source = meal.source
-        self.ingredients = meal.ingredients?.toIngredientEntities(context: context)
+        self.ingredients = meal.ingredients?.toIngredientEntities(meal: self, context: context)
     }
 }
 
