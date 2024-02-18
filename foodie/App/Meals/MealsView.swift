@@ -35,7 +35,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         .background(AppStyle.background)
         .animation(.spring(), value: animate)
         .onChange(of: offset) { offset in
-            animate = offset.y > 50
+            animate = offset.y > -100
         }
     }
 
@@ -52,7 +52,10 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     private var recipes: some View {
         List {
             Section(
-                content: { scrollViewContent },
+                content: {
+                    scrollViewContent
+                        .readScrollView(from: CoordinateSpace.main, into: $offset)
+                },
                 header: { listHeader }
             )
         }
@@ -72,7 +75,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
             listType: $listType
         )
         .padding()
-        .readScrollView(from: CoordinateSpace.main, into: $offset)
     }
 
     @ViewBuilder
