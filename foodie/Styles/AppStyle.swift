@@ -46,7 +46,7 @@ extension AppStyle {
     static let foreground = ColorStyle(light: Color.black,
                                        dark: Color.white)
     static let background = ColorStyle(light: Color.clear,
-                                       dark: Color.darkBlack)
+                                       dark: Color.darkGray)
     static let accent = ColorStyle(light: Color.black,
                                    dark: Color.white)
     static let shadow = ColorStyle(light: Color.gray,

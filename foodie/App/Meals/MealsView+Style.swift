@@ -11,8 +11,8 @@ struct MealsViewRecipesStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .modifier(ListModifier())
-            .background(AppStyle.background)
+            .modifier(ListStyle())
+            .scrollContentBackground(.hidden)
     }
 }
 

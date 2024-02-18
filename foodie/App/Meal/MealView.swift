@@ -33,12 +33,6 @@ struct MealView<Model>: View where Model: MealViewModelType {
                     .placeAtTheLeft()
                     .padding()
             }
-//            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-////                    viewModel.jeb()
-//                    offset.y += 100
-//                }
-//            }
     }
     
     var content: some View {
@@ -110,13 +104,15 @@ struct MealView<Model>: View where Model: MealViewModelType {
 
 // MARK: Preview
 
-struct MealView_Previews: PreviewProvider {
-    static var previews: some View {
-        MocksPreview(mocks: MealViewModel.mocks,
-                     type: MealViewModelMock.self) { mock in
-            NavigationView {
-                MealView(viewModel: mock)
-            }
-        }
+//struct MealView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MocksPreview(mocks: MealViewModel.mocks,
+//                     type: MealViewModelMock.self) { mock in
+#Preview("Preview") {
+    NavigationView {
+        MealView(viewModel: MealViewModel.mock)
     }
 }
+
+//    }
+//}

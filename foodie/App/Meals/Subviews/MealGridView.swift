@@ -58,12 +58,13 @@ struct MealGridView: View {
 struct MealGridView_Previews: PreviewProvider {
     static var previews: some View {
 
-        VStack(spacing: 16) {
+        LazyVGrid(
+            columns: [GridItem(.adaptive(minimum: 140))],
+            spacing: 20
+        ) {
             MealGridView(meal: .mock)
             MealGridView(meal: .mock)
             MealGridView(meal: .mock)
         }
-        .padding()
-        .previewAsComponent()
     }
 }

@@ -32,6 +32,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
             header
             recipes
         }
+        .background(AppStyle.background)
         .animation(.spring(), value: animate)
         .onChange(of: offset) { offset in
             animate = offset.y > 50

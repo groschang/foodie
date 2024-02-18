@@ -25,7 +25,7 @@ struct IngredientsView: View {
                         .frame(width: 40, height: 40)
 
                     Text(ingredient.name.capitalized)
-                        .foregroundStyle(AppStyle.black)
+                        .foregroundStyle(AppStyle.foreground)
                         .modifier(TextStyle.subtitle2)
 
                     Spacer()

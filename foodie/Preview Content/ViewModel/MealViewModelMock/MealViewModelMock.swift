@@ -7,10 +7,12 @@
 
 import Foundation
 
-protocol MealViewModelMockType: MealViewModelType, Mock { }
+protocol MealViewModelMockType: MealViewModelType, Mock, CustomStringConvertible { }
 
 class MealViewModelMock: MealViewModelMockType {
-    
+
+    var description: String { "Mock" }
+
     var mockType: MockType { .normal }
 
     var recipeTitle: String { "Recipe".localized }
@@ -66,6 +68,8 @@ class MealViewModelMock: MealViewModelMockType {
 
 final class MealViewModelDeleyedMock: MealViewModelMock {
 
+    override var description: String { "Deleyed" }
+
     override var mockType: MockType { .delayed }
 
     override init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServicePreview(delay: true)) {
@@ -74,6 +78,8 @@ final class MealViewModelDeleyedMock: MealViewModelMock {
 }
 
 final class MealViewModelEmptyMock: MealViewModelMock {
+
+    override var description: String { "Empty" }
 
     override var mockType: MockType { .empty }
 
@@ -84,6 +90,8 @@ final class MealViewModelEmptyMock: MealViewModelMock {
 
 final class MealViewModelLoadingMock: MealViewModelMock {
 
+    override var description: String { "Loading" }
+
     override var mockType: MockType { .loading }
 
     override func load() async {
@@ -92,6 +100,8 @@ final class MealViewModelLoadingMock: MealViewModelMock {
 }
 
 final class MealViewModelErrorMock: MealViewModelMock {
+
+    override var description: String { "Error" }
 
     override var mockType: MockType { .error }
 

@@ -10,8 +10,7 @@ import SwiftUI
 struct MealListStyle: ViewModifier {
 
     private struct Colors {
-        static let background = Color(light: Color.white,
-                                      dark: Color.gray)
+        static let background = Color.background
     }
 
     private struct Shadow {
@@ -63,7 +62,6 @@ struct MealListNameStyle: ViewModifier {
             .multilineTextAlignment(.leading)
             .lineLimit(4)
             .minimumScaleFactor(0.8)
-        //            .font(.title3) //TODO: #font
             .font( //TODO: #font
                 .custom(
                     "AmericanTypewriter",
