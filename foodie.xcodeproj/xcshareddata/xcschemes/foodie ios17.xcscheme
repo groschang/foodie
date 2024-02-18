@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "714FB53F2B8247F00050052C"
-               BuildableName = "foodie ios17.app"
-               BlueprintName = "foodie ios17"
+               BuildableName = "foodieIOS17.app"
+               BlueprintName = "foodieIOS17"
                ReferencedContainer = "container:foodie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,8 +26,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:foodie ios17.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:foodie.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -44,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "714FB53F2B8247F00050052C"
-            BuildableName = "foodie ios17.app"
-            BlueprintName = "foodie ios17"
+            BuildableName = "foodieIOS17.app"
+            BlueprintName = "foodieIOS17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "714FB53F2B8247F00050052C"
-            BuildableName = "foodie ios17.app"
-            BlueprintName = "foodie ios17"
+            BuildableName = "foodieIOS17.app"
+            BlueprintName = "foodieIOS17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

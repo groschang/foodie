@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "43175B42-2A9C-4B08-8AF0-6A2717B7898A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:foodie.xcodeproj",
+      "identifier" : "71E2A5782970336A0012E5C6",
+      "name" : "foodie"
+    }
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "SwiftDataClientTest"
+      ],
+      "target" : {
+        "containerPath" : "container:foodie.xcodeproj",
+        "identifier" : "71E2A5B62970A6F90012E5C6",
+        "name" : "foodieTests"
+      }
+    }
+  ],
+  "version" : 1
+}

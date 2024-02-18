@@ -218,6 +218,8 @@ final class CoreDataClientTest: XCTestCase {
 
         await sut.saveMeal(meal)
 
+        cancellable = assignDidSaveExpectation(expectation)
+
         // When
         var storedMeal: Meal? = await sut.getMeal(for: "1")
 
@@ -227,8 +229,6 @@ final class CoreDataClientTest: XCTestCase {
 
 
         storedMeal?.ingredients = newIngredients
-
-        cancellable = assignDidSaveExpectation(expectation)
 
         await sut.updateMeal(storedMeal!)
 
