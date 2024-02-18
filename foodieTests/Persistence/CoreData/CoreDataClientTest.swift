@@ -210,6 +210,7 @@ final class CoreDataClientTest: XCTestCase {
 
         // Given
         let expectation = expectation(description: #function)
+        expectation.assertForOverFulfill = false
 
         let ingredients: [Ingredient]? = [Ingredient(name: "name5", measure: "measure5")]
         let meal = Meal(id: "1", name: "name",

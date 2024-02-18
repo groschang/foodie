@@ -557,10 +557,8 @@
 		714FB63D2B8247F00050052C /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC78297C5D4D00ABC48C /* category.json */; };
 		714FB63E2B8247F00050052C /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC38297C531C00ABC48C /* categories.json */; };
 		714FB63F2B8247F00050052C /* meal.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC39297C531C00ABC48C /* meal.json */; };
-		714FB6402B8247F00050052C /* foodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */; };
 		714FB6412B8247F00050052C /* meals.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC7A297C64F800ABC48C /* meals.json */; };
 		714FB6422B8247F00050052C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 717FCCB82985642D0034870D /* README.md */; };
-		714FB6432B8247F00050052C /* mockedFoodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */; };
 		714FB6442B8247F00050052C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC3B297C531C00ABC48C /* Preview Assets.xcassets */; };
 		714FB6452B8247F00050052C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC2A297C531C00ABC48C /* Assets.xcassets */; };
 		714FB6472B8247F00050052C /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 714FB5422B8247F00050052C /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -810,10 +808,8 @@
 		714FB74C2B82482C0050052C /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC78297C5D4D00ABC48C /* category.json */; };
 		714FB74D2B82482C0050052C /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC38297C531C00ABC48C /* categories.json */; };
 		714FB74E2B82482C0050052C /* meal.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC39297C531C00ABC48C /* meal.json */; };
-		714FB74F2B82482C0050052C /* foodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */; };
 		714FB7502B82482C0050052C /* meals.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC7A297C64F800ABC48C /* meals.json */; };
 		714FB7512B82482C0050052C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 717FCCB82985642D0034870D /* README.md */; };
-		714FB7522B82482C0050052C /* mockedFoodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */; };
 		714FB7532B82482C0050052C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC3B297C531C00ABC48C /* Preview Assets.xcassets */; };
 		714FB7542B82482C0050052C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC2A297C531C00ABC48C /* Assets.xcassets */; };
 		714FB7562B82482C0050052C /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 714FB6532B82482C0050052C /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -1007,14 +1003,6 @@
 		71D036FA2A5DED010023356C /* MealsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036F92A5DED010023356C /* MealsRouter.swift */; };
 		71D036FC2A5DEE1A0023356C /* MealRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036FB2A5DEE1A0023356C /* MealRouter.swift */; };
 		71D036FE2A5DF3790023356C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036FD2A5DF3790023356C /* DashboardViewModel.swift */; };
-		71D04D3E2B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */; };
-		71D04D402B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */; };
-		71D04D422B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */; };
-		71D04D432B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */; };
-		71D04D452B77B6950019BA70 /* foodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */; };
-		71D04D472B77B6950019BA70 /* foodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */; };
-		71D04D492B77B6950019BA70 /* foodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */; };
-		71D04D4A2B77B6950019BA70 /* foodie copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */; };
 		71D04D4D2B77B8C70019BA70 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D04D4C2B77B8C70019BA70 /* MealsView.swift */; };
 		71D04D4F2B77B8C70019BA70 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D04D4C2B77B8C70019BA70 /* MealsView.swift */; };
 		71D6E59B2AAA1E9800FD7128 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */; };
@@ -2630,7 +2618,7 @@
 					};
 					71E2A5B62970A6F90012E5C6 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 714FB53F2B8247F00050052C;
+						TestTargetID = 71E2A5782970336A0012E5C6;
 					};
 					71E2A5CD2971D4E70012E5C6 = {
 						CreatedOnToolsVersion = 14.2;
@@ -2678,10 +2666,8 @@
 				7102F2432B2F6C7A00F6D87F /* category.json in Resources */,
 				7102F2442B2F6C7A00F6D87F /* categories.json in Resources */,
 				7102F2452B2F6C7A00F6D87F /* meal.json in Resources */,
-				71D04D472B77B6950019BA70 /* foodie copy-Info.plist in Resources */,
 				7102F2462B2F6C7A00F6D87F /* meals.json in Resources */,
 				7102F2472B2F6C7A00F6D87F /* README.md in Resources */,
-				71D04D402B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */,
 				7102F2482B2F6C7A00F6D87F /* Preview Assets.xcassets in Resources */,
 				7102F2492B2F6C7A00F6D87F /* Assets.xcassets in Resources */,
 			);
@@ -2697,10 +2683,8 @@
 				714FB63D2B8247F00050052C /* category.json in Resources */,
 				714FB63E2B8247F00050052C /* categories.json in Resources */,
 				714FB63F2B8247F00050052C /* meal.json in Resources */,
-				714FB6402B8247F00050052C /* foodie copy-Info.plist in Resources */,
 				714FB6412B8247F00050052C /* meals.json in Resources */,
 				714FB6422B8247F00050052C /* README.md in Resources */,
-				714FB6432B8247F00050052C /* mockedFoodie copy-Info.plist in Resources */,
 				714FB6442B8247F00050052C /* Preview Assets.xcassets in Resources */,
 				714FB6452B8247F00050052C /* Assets.xcassets in Resources */,
 			);
@@ -2716,10 +2700,8 @@
 				714FB74C2B82482C0050052C /* category.json in Resources */,
 				714FB74D2B82482C0050052C /* categories.json in Resources */,
 				714FB74E2B82482C0050052C /* meal.json in Resources */,
-				714FB74F2B82482C0050052C /* foodie copy-Info.plist in Resources */,
 				714FB7502B82482C0050052C /* meals.json in Resources */,
 				714FB7512B82482C0050052C /* README.md in Resources */,
-				714FB7522B82482C0050052C /* mockedFoodie copy-Info.plist in Resources */,
 				714FB7532B82482C0050052C /* Preview Assets.xcassets in Resources */,
 				714FB7542B82482C0050052C /* Assets.xcassets in Resources */,
 			);
@@ -2735,10 +2717,8 @@
 				7111EC79297C5D4D00ABC48C /* category.json in Resources */,
 				7111EC70297C57DD00ABC48C /* categories.json in Resources */,
 				7111EC71297C57DD00ABC48C /* meal.json in Resources */,
-				71D04D452B77B6950019BA70 /* foodie copy-Info.plist in Resources */,
 				7111EC7B297C64F800ABC48C /* meals.json in Resources */,
 				717FCCB92985642D0034870D /* README.md in Resources */,
-				71D04D3E2B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */,
 				7111EC73297C57DD00ABC48C /* Preview Assets.xcassets in Resources */,
 				7111EC56297C531C00ABC48C /* Assets.xcassets in Resources */,
 			);
@@ -2748,9 +2728,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D04D492B77B6950019BA70 /* foodie copy-Info.plist in Resources */,
 				7111EC6E297C56FF00ABC48C /* Preview Assets.xcassets in Resources */,
-				71D04D422B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2758,8 +2736,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D04D4A2B77B6950019BA70 /* foodie copy-Info.plist in Resources */,
-				71D04D432B77B6950019BA70 /* mockedFoodie copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4280,8 +4256,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MNSB8S3L6D;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4292,7 +4269,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodie ios17.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/foodie ios17";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/foodie";
 			};
 			name = Debug;
 		};
@@ -4303,8 +4280,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MNSB8S3L6D;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4315,7 +4293,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodie ios17.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/foodie ios17";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foodie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/foodie";
 			};
 			name = Release;
 		};
