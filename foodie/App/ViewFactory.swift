@@ -146,5 +146,5 @@ class StreamViewFactory: ViewFactoryType {
 // MARK: Mock
 
 extension ViewFactory {
-    static let mock = ClosureViewFactory(service: MealsServiceMock()) //TODO:
+    static let mock = ClosureViewFactory(service: MealsServicePreview()) //TODO:
 }

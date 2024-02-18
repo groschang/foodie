@@ -10,7 +10,7 @@ import Foundation
 protocol MealViewModelMockType: MealViewModelType, Mock { }
 
 class MealViewModelMock: MealViewModelMockType {
-
+    
     var mockType: MockType { .normal }
 
     var recipeTitle: String { "Recipe".localized }
@@ -33,7 +33,7 @@ class MealViewModelMock: MealViewModelMockType {
     let mealCategory: MealCategory
     let service: MealsClosureServiceType
 
-    init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServiceMock()) {
+    init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServicePreview()) {
         self.mealCategory = category
         self.service = service
 
@@ -68,7 +68,7 @@ final class MealViewModelDeleyedMock: MealViewModelMock {
 
     override var mockType: MockType { .delayed }
 
-    override init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServiceMock(delay: true)) {
+    override init(category: MealCategory = .mock, service: MealsClosureServiceType = MealsServicePreview(delay: true)) {
         super.init(category: category, service: service)
     }
 }

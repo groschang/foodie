@@ -10,7 +10,9 @@ import Foundation
 
 protocol Mockable {
     static var bundle: Bundle { get }
-    static func loadJSON<T: Decodable>(filename: String, type: T.Type) -> T
+    static func loadJSON(filename: String) -> String?
+    static func loadJSON() -> String?
+//    static func loadJSON<T: Decodable>(filename: String, type: T.Type) -> T
 }
 
 extension Mockable {
@@ -19,25 +21,37 @@ extension Mockable {
         Bundle.main
     }
 
-    static func loadJSON<T: Decodable>(filename: String, type: T.Type) -> T {
+    static func loadJSON(filename: String) -> String? {
         guard let path = bundle.url(forResource: filename, withExtension: "json") else {
-            fatalError("Failed to load JSON")
+            fatalError("Failed to find JSON file")
         }
 
         do {
             let data = try Data(contentsOf: path)
-            let decodedObject = try JSONDecoder().decode(type, from: data)
-
-            return decodedObject
+            return data.prettyString
         } catch {
-            fatalError("Failed to decode loaded JSON")
+            fatalError("Failed to load JSON")
         }
+    }
+
+    static func loadJSON() -> String? {
+        loadJSON(filename: String(describing: self).lowercased())
     }
 }
 
 extension Mockable where Self: Decodable {
 
     static func loadMock(from filename: String) -> Self {
-        loadJSON(filename: filename, type: Self.self)
+        guard let path = bundle.url(forResource: filename, withExtension: "json") else {
+            fatalError("Failed to load JSON")
+        }
+
+        do {
+            let data = try Data(contentsOf: path)
+            let decodedObject = try JSONDecoder().decode(self, from: data)
+            return decodedObject
+        } catch {
+            fatalError("Failed to decode loaded JSON")
+        }
     }
 }

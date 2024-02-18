@@ -47,15 +47,15 @@ final class MockedDependencyContainer: DependencyContainerType {
 #endif
 
         container.register(MealsClosureServiceType.self) { _ in
-            MealsServiceMock()
+            MealsServicePreview()
         }
 
         container.register(MealsAsyncServiceType.self) { _ in
-            MealsAsyncServiceMock()
+            MealsAsyncServicePreview()
         }
 
         container.register(MealsAsyncStreamServiceType.self) { _ in
-            MealsAsyncStreamServiceMock()
+            MealsAsyncStreamServicePreview()
         }
 
         container.register(MealsPassthroughCombineServiceType.self) { [unowned self] _ in

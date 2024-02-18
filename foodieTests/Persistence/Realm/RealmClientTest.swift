@@ -236,7 +236,7 @@ final class RealmClientTest: XCTestCase {
         XCTAssertEqual(assertion.ingredients, result?.ingredients)
     }
 
-    func testMealChangeIngredients() async {
+    func testMealUpdateIngredients() async {
 
         // Given
         let ingredients = [Ingredient(name: "name", measure: "measure"),

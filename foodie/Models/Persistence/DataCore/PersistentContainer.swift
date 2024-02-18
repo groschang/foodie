@@ -54,13 +54,13 @@ final class PersistentContainer: NSPersistentContainer {
             description.url = URL(fileURLWithPath: "/dev/null/")
         }
 
-                if description.type == StoreType.SQLite.description || description.type == StoreType.binary.description  {
-                    description.url = FileManager.default
-                        .urls(for: .documentDirectory,
-                              in: .userDomainMask)
-                        .first?
-                        .appendingPathComponent("database")
-                }
+        if description.type == StoreType.SQLite.description || description.type == StoreType.binary.description  {
+            description.url = FileManager.default
+                .urls(for: .documentDirectory,
+                      in: .userDomainMask)
+                .first?
+                .appendingPathComponent("database")
+        }
 
         persistentStoreDescriptions = [description]
     }

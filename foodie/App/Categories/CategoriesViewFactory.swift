@@ -75,5 +75,5 @@ class CategoriesAsyncStreamViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension CategoriesViewFactory {
-    static let mock = CategoriesViewFactory(service: MealsServiceMock())
+    static let mock = CategoriesViewFactory(service: MealsServicePreview())
 }

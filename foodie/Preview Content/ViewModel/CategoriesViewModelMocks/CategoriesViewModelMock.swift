@@ -24,7 +24,7 @@ class CategoriesViewModelMock: CategoriesViewModelMockType {
 
     let service: MealsClosureServiceType
 
-    init(service: MealsClosureServiceType = MealsServiceMock()) {
+    init(service: MealsClosureServiceType = MealsServicePreview()) {
         self.service = service
     }
 
@@ -42,7 +42,7 @@ final class CategoriesViewModelDelayedMock: CategoriesViewModelMock {
     override var mockType: MockType { .delayed }
 
     init()  {
-        super.init(service: MealsServiceMock(delay: true))
+        super.init(service: MealsServicePreview(delay: true))
     }
 }
 

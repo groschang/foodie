@@ -774,6 +774,36 @@
                   endingLineNumber = "27"
                   offsetFromSymbolStart = "464">
                </Location>
+               <Location
+                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 8644e5dddc4e9cc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in mockedFoodie.MotionManager.startUpdating() -&gt; ()"
+                  moduleName = "mockedFoodie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 25f94fc70f0a7b40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie_ios17.MotionManager.startUpdating() -&gt; ()"
+                  moduleName = "foodie ios17"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "420">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

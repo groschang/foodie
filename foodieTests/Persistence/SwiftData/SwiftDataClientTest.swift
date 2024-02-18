@@ -1,30 +1,28 @@
 //
-//  CoreDataClientTest.swift
+//  SwiftDataClientTest.swift
 //  foodieTests
 //
-//  Created by Konrad Groschang on 27/07/2023.
+//  Created by Konrad Groschang on 18/02/2024.
 //
 
+//#if canImport(SwiftData)
 import XCTest
-import CoreData
+import Nimble
+import SwiftData
 import Combine
-@testable import foodie
+@testable import foodie_ios17
+//#endif
 
-final class CoreDataClientTest: XCTestCase {
+/// Swift Data requires iOS 17
+//@available(iOS 17, *)
+final class SwiftDataClientTest: XCTestCase {
 
-    var sut: CoreDataClient!
+    var sut: SwiftDataClient!
     var cancellable: AnyCancellable!
 
     override func setUpWithError() throws {
-        let bundle = Bundle.main
-        let modelURL = bundle.url(forResource: PersistentContainer.DataModelName,
-                                  withExtension: "momd")!
-        let model = NSManagedObjectModel(contentsOf: modelURL)!
-        let container = PersistentContainer(name: PersistentContainer.DataModelName,
-                                            managedObjectModel: model,
-                                            type: .inMemory)
-
-        sut = CoreDataClient(container: container)
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+        sut = try SwiftDataClient(configuration: configuration)
     }
 
     override func tearDownWithError() throws {
@@ -63,7 +61,8 @@ final class CoreDataClientTest: XCTestCase {
                      description: "description2")
         ])
 
-        XCTAssertEqual(result, assertion)
+//        XCTAssertEqual(result, assertion)
+        expect(result).to(equal(assertion))
     }
 
     func testMeals() async {
@@ -99,7 +98,8 @@ final class CoreDataClientTest: XCTestCase {
                          imageUrl: URL(string: "www.example.com"))
         ])
 
-        XCTAssertEqual(result, assertion)
+//        XCTAssertEqual(result, assertion)
+        expect(result).to(equal(assertion))
     }
 
     func testMealsForNonExistingCategory() async {
@@ -124,7 +124,8 @@ final class CoreDataClientTest: XCTestCase {
         // Then
         let result = await sut.getMeals(for: category)
 
-        XCTAssertNil(result)
+//        XCTAssertNil(result)
+        expect(result).to(beNil())
     }
 
     func testMeal() async {
@@ -178,7 +179,8 @@ final class CoreDataClientTest: XCTestCase {
                             source: "source",
                             ingredients: assertionIngredients)
 
-        XCTAssertEqual(result, assertion)
+        //        XCTAssertEqual(result, assertion)
+                expect(result).to(equal(assertion))
     }
 
     func testMealIngredients() async {
@@ -202,8 +204,11 @@ final class CoreDataClientTest: XCTestCase {
         let assertion = Meal(id: "1", name: "name",
                             ingredients: assertionIngredients)
 
-        XCTAssertEqual(assertion, result)
-        XCTAssertEqual(result?.ingredients, assertion.ingredients)
+
+        //        XCTAssertEqual(result, assertion)
+        expect(result).to(equal(assertion))
+        //        XCTAssertEqual(result?.ingredients, assertion.ingredients)
+        expect(result?.ingredients).to(equal(assertion.ingredients))
     }
 
     func testMealUpdateIngredients() async {
@@ -227,12 +232,13 @@ final class CoreDataClientTest: XCTestCase {
 
         storedMeal?.ingredients = newIngredients
 
-        cancellable = assignDidSaveExpectation(expectation)
+//        cancellable = assignDidSaveExpectation(expectation)
 
-        await sut.updateMeal(storedMeal!)
+//        await sut.updateMeal(storedMeal!)
+        await sut.saveMeal(storedMeal!)
 
         // Then
-        await fulfillment(of: [expectation], timeout: 5.0)
+//        await fulfillment(of: [expectation], timeout: 5.0)
 
         let result = await sut.getMeal(for: "1")
 
@@ -243,21 +249,25 @@ final class CoreDataClientTest: XCTestCase {
         let assertion = Meal(id: "1", name: "name",
                             ingredients: assertionIngredients)
 
-        XCTAssertEqual(assertion, result)
-        XCTAssertEqual(result?.ingredients, assertion.ingredients)
+        //        XCTAssertEqual(result, assertion)
+        expect(result).to(equal(assertion))
+        //        XCTAssertEqual(result?.ingredients, assertion.ingredients)
+        expect(result?.ingredients).to(equal(assertion.ingredients))
     }
 
 }
 
-extension CoreDataClientTest {
+//@available(iOS 17, *)
+//extension SwiftDataClientTest {
+//
+//    @inlinable func assignDidSaveExpectation (_ expectation: XCTestExpectation) -> AnyCancellable {
+//        NotificationCenter
+//            .default
+//            .publisher(for: .NSManagedObjectContextDidSave)
+//            .dropFirst()
+//            .sink { [weak expectation] _ in
+//                expectation?.fulfill()
+//            }
+//    }
+//}
 
-    @inlinable func assignDidSaveExpectation (_ expectation: XCTestExpectation) -> AnyCancellable {
-        NotificationCenter
-            .default
-            .publisher(for: .NSManagedObjectContextDidSave)
-            .dropFirst()
-            .sink { [weak expectation] _ in
-                expectation?.fulfill()
-            }
-    }
-}

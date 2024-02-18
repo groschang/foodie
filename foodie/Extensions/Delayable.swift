@@ -7,17 +7,37 @@
 
 import Foundation
 
-protocol Sleepable {
+protocol SleepableProtocol { //TODO: rename Delayable
     var delayDuration: Duration? { get }
     func sleep() async throws
 }
 
-extension Sleepable {
+extension SleepableProtocol {
     var delayDuration: Duration? { .seconds(2) }
     
-    func sleep() async throws {
+    func sleep() async {
         if let delayDuration {
-            try await Task.sleep(for: delayDuration)
+            try? await Task.sleep(for: delayDuration)
         }
     }
 }
+
+class Sleepable: SleepableProtocol {
+
+    enum Timing {
+        static let delay = Duration.seconds(4)
+    }
+
+    let delayDuration: Duration?
+
+    init(delayDuration: Duration? = nil) {
+        self.delayDuration = delayDuration
+    }
+
+    convenience init(delay: Bool) {
+        let duration = delay ? Timing.delay : .zero
+        self.init(delayDuration: duration)
+    }
+}
+
+

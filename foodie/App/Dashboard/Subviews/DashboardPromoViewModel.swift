@@ -29,7 +29,7 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { state != .loaded }
 
-    private var initialized = false
+    private(set) var initialized = false
 
     init(service: MealsAsyncServiceType) {
         self.service = service
@@ -66,5 +66,5 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
 
 extension DashboardPromoViewModel {
-    static let mock = DashboardPromoViewModel(service: MealsAsyncServiceMock())
+    static let mock = DashboardPromoViewModel(service: MealsAsyncServicePreview())
 }

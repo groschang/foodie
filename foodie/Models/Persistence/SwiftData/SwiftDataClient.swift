@@ -14,12 +14,13 @@ final class SwiftDataClient: PersistenceClient {
 
     //TODO: custom background queue
 
-    init() throws {
+    init(configuration: ModelConfiguration = ModelConfiguration()) throws {
         let container = try ModelContainer(for:
             CategorySwiftData.self,
             IngredientSwiftData.self,
             MealCategorySwiftData.self,
-            MealDetailSwiftData.self
+            MealDetailSwiftData.self,
+            configurations: configuration
         )
         context = ModelContext(container)
     }

@@ -59,7 +59,7 @@ final class MealViewModel: MealViewModelType {
             setup(with: mealCategory)
         }
     }
-
+    
     @MainActor func load() async {
         await fetchMeal()
     }

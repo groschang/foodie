@@ -28,9 +28,10 @@ struct foodieApp: App {
         container.assemble()
 
         Log.printDBPath()
-        
-        dashboardViewModel = DashboardViewModel(service: container.asyncService)
-        
+
+        let service = container.asyncService
+        dashboardViewModel = DashboardViewModel(service: service)
+
         router = container.router
         viewFactory = StreamViewFactory(service: container.asyncStreamService)
     }

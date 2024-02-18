@@ -25,11 +25,25 @@ struct MealView<Model>: View where Model: MealViewModelType {
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
+            .coordinateSpace(name: CoordinateSpace.main)
+            .readingGeometry(from: CoordinateSpace.main, into: $contentSize)
+            .overlay {
+                ElipseBackButton() { presentationMode.wrappedValue.dismiss() }
+                    .placeAtTheTop()
+                    .placeAtTheLeft()
+                    .padding()
+            }
+//            .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+////                    viewModel.jeb()
+//                    offset.y += 100
+//                }
+//            }
     }
     
     var content: some View {
         ScrollView(showsIndicators: false) {
-            
+
             VStack(spacing: 21) {
                 spacer
                 informations
@@ -42,17 +56,10 @@ struct MealView<Model>: View where Model: MealViewModelType {
             .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
             .padding(.horizontal)
         }
-        .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl, 
+        .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl,
                                 offset: offset.y + contentSize.minY,
                                 imageSize: $imageSize))
-        .coordinateSpace(name: CoordinateSpace.main)
-        .readingGeometry(from: CoordinateSpace.main, into: $contentSize)
-        .overlay {
-            ElipseBackButton() { presentationMode.wrappedValue.dismiss() }
-                .placeAtTheTop()
-                .placeAtTheLeft()
-                .padding()
-        }
+
     }
 
     private var spacer: some View {

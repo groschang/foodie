@@ -14,21 +14,21 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>GettingStarted (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>GettingStarted (Playground).xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Sample-iOS (Playground) 1.xcscheme</key>
 		<dict>
@@ -51,10 +51,10 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>foodie iOS17.xcscheme</key>
+		<key>foodie ios17.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>7</integer>
 		</dict>
 		<key>foodie.xcscheme_^#shared#^_</key>
 		<dict>
@@ -66,10 +66,10 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>mockedFoodie iOS17.xcscheme_^#shared#^_</key>
+		<key>mockedFoodie ios17.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>8</integer>
 		</dict>
 		<key>mockedFoodie.xcscheme_^#shared#^_</key>
 		<dict>
@@ -84,12 +84,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>714FB6502B82482C0050052C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>71A271CA2B4D97EE000B4CA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>71A272DA2B4DA2E1000B4CA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71E2A5B62970A6F90012E5C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71E2A5CD2971D4E70012E5C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

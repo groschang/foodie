@@ -8,11 +8,9 @@
 import Foundation
 import Logger
 
-#if MOCKED
-    typealias DatabaseLoggerImpl = CoreDataLogger
-#elseif SWIFTDATA
-    typealias DatabaseLoggerImpl = CoreDataLogger
-#elseif NORMAL
+#if REALM
+    typealias DatabaseLoggerImpl = RealmDatabaseLogger
+#else
     typealias DatabaseLoggerImpl = RealmDatabaseLogger
 #endif
 

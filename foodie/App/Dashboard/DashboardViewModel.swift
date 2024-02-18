@@ -32,7 +32,7 @@ final class DashboardViewModel: DashboardViewModelType {
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { state != .loaded }
 
-    private var initialized = false
+    internal var initialized = false
 
     init(service: MealsAsyncServiceType) {
         self.service = service
@@ -44,18 +44,18 @@ final class DashboardViewModel: DashboardViewModelType {
     func initialize() async {
         if initialized == false {
             initialized = !initialized
-            await load()
+            load()
         }
     }
 
-    func load() async {
-        await categoriesViewModel.load()
-        await mealsViewModel.load()
-        await promoViewModel.load()
+    func load() {
+        Task { await categoriesViewModel.load() }
+        Task { await mealsViewModel.load() }
+        Task { await promoViewModel.load() }
     }
 }
 
 
 extension DashboardViewModel {
-    static let mock = DashboardViewModel(service: MealsAsyncServiceMock())
+    static let mock = DashboardViewModel(service: MealsAsyncServicePreview())
 }

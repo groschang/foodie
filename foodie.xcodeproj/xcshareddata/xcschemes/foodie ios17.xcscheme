@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71A271CA2B4D97EE000B4CA3"
-               BuildableName = "mockedFoodie iOS17.app"
-               BlueprintName = "mockedFoodie iOS17"
+               BlueprintIdentifier = "714FB53F2B8247F00050052C"
+               BuildableName = "foodie ios17.app"
+               BlueprintName = "foodie ios17"
                ReferencedContainer = "container:foodie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,9 +43,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "71A271CA2B4D97EE000B4CA3"
-            BuildableName = "mockedFoodie iOS17.app"
-            BlueprintName = "mockedFoodie iOS17"
+            BlueprintIdentifier = "714FB53F2B8247F00050052C"
+            BuildableName = "foodie ios17.app"
+            BlueprintName = "foodie ios17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -60,9 +60,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "71A271CA2B4D97EE000B4CA3"
-            BuildableName = "mockedFoodie iOS17.app"
-            BlueprintName = "mockedFoodie iOS17"
+            BlueprintIdentifier = "714FB53F2B8247F00050052C"
+            BuildableName = "foodie ios17.app"
+            BlueprintName = "foodie ios17"
             ReferencedContainer = "container:foodie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

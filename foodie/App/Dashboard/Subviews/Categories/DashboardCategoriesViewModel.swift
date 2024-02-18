@@ -12,11 +12,12 @@ protocol DashboardCategoriesLocalizable {
     var title: String { get }
 }
 
-protocol DashboardCategoriesItems: ObservableObject {
+protocol DashboardCategoriesItems {
     var items: [Category] { get }
 }
 
 protocol DashboardCategoriesViewModelType: LoadableObject, DashboardCategoriesLocalizable, DashboardCategoriesItems { }
+
 
 final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Identifiable {
 
@@ -68,5 +69,5 @@ final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Iden
 }
 
 extension DashboardCategoriesViewModel {
-    static let mock = DashboardCategoriesViewModel(service: MealsAsyncServiceMock())
+    static let mock = DashboardCategoriesViewModel(service: MealsAsyncServicePreview())
 }

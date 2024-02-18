@@ -76,5 +76,5 @@ final class DashboardMealsViewModel: DashboardMealsViewModelType, Identifiable {
 }
 
 extension DashboardMealsViewModel {
-    static let mock = DashboardMealsViewModel(service: MealsAsyncServiceMock())
+    static let mock = DashboardMealsViewModel(service: MealsAsyncServicePreview() )
 }
