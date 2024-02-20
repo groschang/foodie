@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum APIError: Error, LocalizedError {
-    
+enum APIError: Error, LocalizedError, Equatable {
+
     case badURL(_ url: String)
     case server(_ error: String)
     case noResponse
@@ -64,6 +64,8 @@ extension APIError {
                 return nil
             case HttpStatusCode.clientError:
                 self.init(APIError.client(response.statusCode))
+            case HttpStatusCode.serverError:
+                self.init(APIError.server(response.description))
             default:
                 self.init(APIError.unexpected(response.statusCode))
             }

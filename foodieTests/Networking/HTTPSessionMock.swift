@@ -10,22 +10,14 @@ import Foundation
 
 class HTTPSessionMock: HTTPSession {
 
-    enum HTTPSessionError: Swift.Error {
-        case data
-        case response
-    }
-
-    var data: Data?
-    var response: URLResponse?
-    var error: Error?
+    public var stubDataResponse: Result<(Data, URLResponse), Error>?
+    public var didData: (() -> Void)?
+    public var dataCallCount = 0
 
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-
-        if let error { throw error }
-
-        guard let data else { throw HTTPSessionError.data }
-        guard let response else { throw HTTPSessionError.response }
-
-        return (data, response)
+        defer { didData?() }
+        dataCallCount += 1
+        return try stubDataResponse!.get()
     }
+
 }

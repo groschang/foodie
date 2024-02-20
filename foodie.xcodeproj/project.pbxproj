@@ -1065,7 +1065,6 @@
 		71E2358C2A7BF79400F06097 /* MealCategoryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2358A2A7BF79400F06097 /* MealCategoryEntity+CoreDataClass.swift */; };
 		71E2358D2A7BF79400F06097 /* MealCategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2358B2A7BF79400F06097 /* MealCategoryEntity+CoreDataProperties.swift */; };
 		71E2A5C12970A76A0012E5C6 /* MealsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5C02970A76A0012E5C6 /* MealsServiceTest.swift */; };
-		71E2A5C72971D01F0012E5C6 /* LoogerStringInterpolationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5C62971D01F0012E5C6 /* LoogerStringInterpolationTest.swift */; };
 		71E2A5D12971D4E80012E5C6 /* foodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5D02971D4E70012E5C6 /* foodieUITests.swift */; };
 		71E2A5D32971D4E80012E5C6 /* foodieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5D22971D4E80012E5C6 /* foodieUITestsLaunchTests.swift */; };
 		71E2A5D92971D4F20012E5C6 /* CategoriesViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5C82971D1990012E5C6 /* CategoriesViewTest.swift */; };
@@ -1104,6 +1103,9 @@
 		71FBF3272B84ECF80087E30D /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF3252B84ECF80087E30D /* OffsetObservingScrollView.swift */; };
 		71FBF3282B84ECF80087E30D /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF3252B84ECF80087E30D /* OffsetObservingScrollView.swift */; };
 		71FBF3292B84ECF80087E30D /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF3252B84ECF80087E30D /* OffsetObservingScrollView.swift */; };
+		71FBF32B2B8507800087E30D /* RequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF32A2B8507800087E30D /* RequestBuilderTest.swift */; };
+		71FBF32D2B8512250087E30D /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF32C2B8512250087E30D /* APIEndpoint.swift */; };
+		71FBF32F2B8516B70087E30D /* RequestBuilderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF32E2B8516B70087E30D /* RequestBuilderMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1506,7 +1508,6 @@
 		71E2A5792970336A0012E5C6 /* foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E2A5B72970A6F90012E5C6 /* foodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E2A5C02970A76A0012E5C6 /* MealsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceTest.swift; sourceTree = "<group>"; };
-		71E2A5C62971D01F0012E5C6 /* LoogerStringInterpolationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoogerStringInterpolationTest.swift; sourceTree = "<group>"; };
 		71E2A5C82971D1990012E5C6 /* CategoriesViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewTest.swift; sourceTree = "<group>"; };
 		71E2A5CE2971D4E70012E5C6 /* foodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E2A5D02971D4E70012E5C6 /* foodieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodieUITests.swift; sourceTree = "<group>"; };
@@ -1533,6 +1534,9 @@
 		71FBF31B2B84BC480087E30D /* AsyncViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewFactory.swift; sourceTree = "<group>"; };
 		71FBF3202B84BC5F0087E30D /* StreamViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewFactory.swift; sourceTree = "<group>"; };
 		71FBF3252B84ECF80087E30D /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
+		71FBF32A2B8507800087E30D /* RequestBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTest.swift; sourceTree = "<group>"; };
+		71FBF32C2B8512250087E30D /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		71FBF32E2B8516B70087E30D /* RequestBuilderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2322,11 +2326,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		71B058242B7BD34B00F7415A /* Utils */ = {
+		71B058242B7BD34B00F7415A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				71FBF32C2B8512250087E30D /* APIEndpoint.swift */,
 			);
-			path = Utils;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		71C0C9502A10F5E20034AA14 /* Mocks */ = {
@@ -2429,6 +2434,8 @@
 				71F380A22AA0980600C7D7EE /* DecodingErrorTest.swift */,
 				71BFF0792AA61D130080B561 /* HTTPSessionMock.swift */,
 				71D7DC84297BFE5900A30FF8 /* RequestMock.swift */,
+				71FBF32A2B8507800087E30D /* RequestBuilderTest.swift */,
+				71FBF32E2B8516B70087E30D /* RequestBuilderMock.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2514,11 +2521,10 @@
 			isa = PBXGroup;
 			children = (
 				71684AC02A51749800392720 /* LoadingStateTest.swift */,
-				71E2A5C62971D01F0012E5C6 /* LoogerStringInterpolationTest.swift */,
 				71D7DC83297BFC8200A30FF8 /* Networking */,
 				71757C592A72DDFB008EFD92 /* Persistence */,
 				719F6A632B7EB0010000770A /* Service */,
-				71B058242B7BD34B00F7415A /* Utils */,
+				71B058242B7BD34B00F7415A /* Extensions */,
 			);
 			path = foodieTests;
 			sourceTree = "<group>";
@@ -3882,13 +3888,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D7DC81297B428200A30FF8 /* APIClientTest.swift in Sources */,
-				71E2A5C72971D01F0012E5C6 /* LoogerStringInterpolationTest.swift in Sources */,
+				71FBF32B2B8507800087E30D /* RequestBuilderTest.swift in Sources */,
 				71F116292A7275D5009A93B5 /* CoordinateSpace.swift in Sources */,
 				71684AC12A51749800392720 /* LoadingStateTest.swift in Sources */,
 				71757C5B2A72DE17008EFD92 /* CoreDataClientMock.swift in Sources */,
 				7162412D2B780A5D0003D4CC /* YouTubeView.swift in Sources */,
 				71F1162A2A7275DC009A93B5 /* ContainsElements.swift in Sources */,
 				710CD4C62B7D6E6100FFC7B8 /* MealsAsyncStreamServiceMock.swift in Sources */,
+				71FBF32F2B8516B70087E30D /* RequestBuilderMock.swift in Sources */,
 				711EC13B2B5E97E200A0B769 /* RealmClientTest.swift in Sources */,
 				71BFF07A2AA61D130080B561 /* HTTPSessionMock.swift in Sources */,
 				710CD4C32B7D667900FFC7B8 /* MealsAsyncServiceMock.swift in Sources */,
@@ -3900,6 +3907,7 @@
 				71757C572A72D4C1008EFD92 /* APIClientMock.swift in Sources */,
 				710CD4C12B7D645300FFC7B8 /* MealsServiceMock.swift in Sources */,
 				718B416E2B50B18A00F597CD /* RequestMock.swift in Sources */,
+				71FBF32D2B8512250087E30D /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

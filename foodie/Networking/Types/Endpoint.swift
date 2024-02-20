@@ -12,6 +12,10 @@ struct Endpoint {
     var queryItems: [URLQueryItem]?
     
     init(path: String, queryItems: [URLQueryItem]? = nil) {
+        /// Every path must starts with directory slash "/" sign
+        assert(path.starts(with: "/"), "Path must starts with '/' sign")
+        /// Every path must not ends with directory slash "/" sign
+        assert(path.hasSuffix("/") == false, "Path must not ends with '/' sign")
         self.path = path
         self.queryItems = queryItems
     }

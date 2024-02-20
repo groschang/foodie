@@ -13,8 +13,6 @@ protocol HTTPClient {
 
 class APIClient: HTTPClient {
 
-    private let enviroment: APIEndpoint
-
     private let requestBuilder: RequestBuilder
 
     private let session: HTTPSession
@@ -22,19 +20,19 @@ class APIClient: HTTPClient {
     private let decoder: JSONDecoder
 
     init(
-        enviroment: APIEndpoint = .production,
         session: HTTPSession = URLSession.extended,
-        requestBuilder: RequestBuilder.Type = URLRequestBuilder.self,
+        requestBuilder: RequestBuilder = URLRequestBuilder(enviroment: .production),
         decoder: JSONDecoder = .init()
     ) {
-        self.enviroment = enviroment
-        self.requestBuilder = requestBuilder.init(enviroment: enviroment)
+        self.requestBuilder = requestBuilder
         self.session = session
         self.decoder = decoder
     }
     
     func process<T: Decodable>(_ request: Request<T>) async throws -> T {
+        
         do {
+
             let urlRequest = try requestBuilder.build(for: request)
             let (data, response) = try await session.data(for: urlRequest)
             try validate(response)
@@ -43,6 +41,11 @@ class APIClient: HTTPClient {
             NetworkLogger.log(response: response)
             NetworkLogger.log(data: data)
             return object
+
+        } catch let error as APIError {
+
+            Logger.log(error, onLevel: .error)
+            throw error
 
         } catch let error as RequestError {
 
@@ -83,6 +86,8 @@ class APIClient: HTTPClient {
             return
         case HttpStatusCode.clientError:
             throw APIError.client(httpResponse.statusCode)
+        case HttpStatusCode.serverError:
+            throw APIError.server(httpResponse.description)
         default:
             throw APIError.unexpected(httpResponse.statusCode)
         }
