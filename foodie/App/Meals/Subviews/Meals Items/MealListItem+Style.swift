@@ -1,5 +1,5 @@
 //
-//  MealListView+Style.swift
+//  MealListItem+Style.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 14/05/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MealListStyle: ViewModifier {
+struct MealListItemStyle: ViewModifier {
 
     private struct Colors {
         static let background = Color.background
@@ -38,14 +38,14 @@ struct MealListStyle: ViewModifier {
     }
 }
 
-struct MealListPhotoStyle: ViewModifier {
+struct MealListItemPhotoStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .modifier(ListPhotoStyle())
     }
 }
 
-struct MealListNameStyle: ViewModifier {
+struct MealListItemNameStyle: ViewModifier {
 
     private struct Colors {
         static let foreground = AppStyle.black

@@ -98,3 +98,10 @@ final class MealsAsyncViewModel: MealsViewModelType {
         }
     }
 }
+
+
+#if DEBUG
+extension MealsAsyncViewModel {
+    static let stub = MealsAsyncViewModel(service: MealsAsyncServicePreview(), category: Category.stub)
+}
+#endif

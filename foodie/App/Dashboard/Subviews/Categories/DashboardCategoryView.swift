@@ -87,9 +87,9 @@ struct DashboardCategoryHorizontalView: View {
 struct DashboardCategoryView_Preview: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 32) {
-            DashboardCategoryView(category: .mock)
-            DashboardCategoryVerticalView(category: .mock)
-            DashboardCategoryHorizontalView(category: .mock)
+            DashboardCategoryView(category: .stub)
+            DashboardCategoryVerticalView(category: .stub)
+            DashboardCategoryHorizontalView(category: .stub)
         }
     }
 }

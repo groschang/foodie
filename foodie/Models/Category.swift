@@ -24,6 +24,6 @@ struct Category: IdentifiableObject {
 
 extension Category: StringIdentifier { }
 
-extension Category: Mockable {
-    static let mock: Category = loadMock(from: "category")
+extension Category: Stubable {
+    static let stub: Category = loadStub(from: "category")
 }

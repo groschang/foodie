@@ -9,7 +9,7 @@ import XCTest
 import Nimble
 @testable import foodie
 
-final class MealsServiceTest: XCTestCase, Mockable {
+final class MealsServiceTest: XCTestCase, Stubable {
 
     var backendClient: APIClientMock!
     var persistanceClient: CoreDataClientMock!
@@ -32,7 +32,7 @@ final class MealsServiceTest: XCTestCase, Mockable {
 
     func testGetCategories() async throws {
         // Given
-        let categories = Categories.mock
+        let categories = Categories.stub
         backendClient.stubProcessResponse = .success(categories as Any)
         persistanceClient.stubGetCategoriesResponse = categories
 
@@ -48,8 +48,8 @@ final class MealsServiceTest: XCTestCase, Mockable {
     
     func testGetMeals() async throws {
         // Given
-        let meals = Meals.mock
-        let category = Category.mock
+        let meals = Meals.stub
+        let category = Category.stub
         backendClient.stubProcessResponse = .success(meals as Any)
         persistanceClient.stubGetMealsResponse = meals
 
@@ -65,7 +65,7 @@ final class MealsServiceTest: XCTestCase, Mockable {
 
     func testGetMeal() async throws {
         // Given
-        let meal = Meal.mock
+        let meal = Meal.stub
         backendClient.stubProcessResponse = .success(meal as Any)
         persistanceClient.stubGetMealResponse = meal
 
@@ -81,7 +81,7 @@ final class MealsServiceTest: XCTestCase, Mockable {
 
     func testGetRandomMeal() async throws {
         // Given
-        let meal = Meal.mock
+        let meal = Meal.stub
         backendClient.stubProcessResponse = .success(meal as Any)
         persistanceClient.stubGetMealResponse = meal
 

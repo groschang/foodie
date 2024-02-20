@@ -44,7 +44,7 @@ struct CategoryGridItemView: View {
 
 struct CategoryGridItemView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryGridItemView(category: .mock)
+        CategoryGridItemView(category: .stub)
     }
 }
 

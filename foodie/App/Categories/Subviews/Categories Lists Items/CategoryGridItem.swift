@@ -1,5 +1,5 @@
 //
-//  CategoriesGridView.swift
+//  CategoryGridItem.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 20/03/2023.
@@ -12,9 +12,9 @@ enum CategoriesGridFont: CGFloat {
     case normal = 34
 }
 
-struct CategoriesGridView: View {
+struct CategoryGridItem: View {
 
-    let viewModel: CategoryListViewModel
+    let viewModel: CategoryListItemModel
 
     let fontType: CategoriesGridFont
 
@@ -22,7 +22,7 @@ struct CategoriesGridView: View {
         fontType == .normal
     }
 
-    init(viewModel: CategoryListViewModel, fontType: CategoriesGridFont = .normal) {
+    init(viewModel: CategoryListItemModel, fontType: CategoriesGridFont = .normal) {
         self.viewModel = viewModel
         self.fontType = fontType
     }
@@ -56,7 +56,7 @@ struct CategoriesGridView: View {
 
             }
         }
-        .modifier(CategoryListViewStyle())
+        .modifier(CategoryListItemStyle())
     }
 }
 
@@ -75,13 +75,13 @@ fileprivate extension View {
 
 // MARK: Preview
 
-struct CategoriesPhotoView_Previews: PreviewProvider {
+struct CategoryGridItem_Previews: PreviewProvider {
     static var previews: some View {
 
         VStack(spacing: 16) {
-            CategoriesGridView(viewModel: .mock)
-            CategoriesGridView(viewModel: .mock)
-            CategoriesGridView(viewModel: .mock)
+            CategoryGridItem(viewModel: .mock)
+            CategoryGridItem(viewModel: .mock)
+            CategoryGridItem(viewModel: .mock)
         }
         .padding()
     }
@@ -94,11 +94,11 @@ struct CategoriesGridView_Previews: PreviewProvider {
             columns: [GridItem(.adaptive(minimum: 140))],
             spacing: 20
         ) {
-            CategoriesGridView(viewModel: .mock, fontType: .normal)
-            CategoriesGridView(viewModel: .mock, fontType: .small)
-            CategoriesGridView(viewModel: .mock, fontType: .normal)
-            CategoriesGridView(viewModel: .mock, fontType: .small)
-            CategoriesGridView(viewModel: .mock, fontType: .normal)
+            CategoryGridItem(viewModel: .mock, fontType: .normal)
+            CategoryGridItem(viewModel: .mock, fontType: .small)
+            CategoryGridItem(viewModel: .mock, fontType: .normal)
+            CategoryGridItem(viewModel: .mock, fontType: .small)
+            CategoryGridItem(viewModel: .mock, fontType: .normal)
         }
         .padding()
     }

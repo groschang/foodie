@@ -107,3 +107,10 @@ final class MealViewModel: MealViewModelType {
         youtubeUrl = meal.youtubeURL
     }
 }
+
+
+#if DEBUG
+extension MealViewModel {
+    static let stub = MealViewModel(service: MealsServicePreview(), object: Meal.stub)
+}
+#endif

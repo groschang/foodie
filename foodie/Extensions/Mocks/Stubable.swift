@@ -1,5 +1,5 @@
 //
-//  Mockable.swift
+//  Stubable.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 12/01/2023.
@@ -8,14 +8,13 @@
 import Foundation
 
 
-protocol Mockable {
+protocol Stubable {
     static var bundle: Bundle { get }
     static func loadJSON(filename: String) -> String?
     static func loadJSON() -> String?
-//    static func loadJSON<T: Decodable>(filename: String, type: T.Type) -> T
 }
 
-extension Mockable {
+extension Stubable {
     
     static var bundle: Bundle {
         Bundle.main
@@ -39,9 +38,9 @@ extension Mockable {
     }
 }
 
-extension Mockable where Self: Decodable {
+extension Stubable where Self: Decodable {
 
-    static func loadMock(from filename: String) -> Self {
+    static func loadStub(from filename: String) -> Self {
         guard let path = bundle.url(forResource: filename, withExtension: "json") else {
             fatalError("Failed to load JSON")
         }

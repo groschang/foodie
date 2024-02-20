@@ -5,17 +5,14 @@
 //  Created by Konrad Groschang on 08/04/2023.
 //
 
-import Foundation
+import SwiftUI
 
-enum CoordinateSpace: String {
-    case main
-    case context
-    case image
-}
+extension CoordinateSpace {
 
-extension CoordinateSpace: CustomStringConvertible {
+    static let main = "Main"
 
-    var description: String {
-        rawValue
-    }
+    static let context = "Context"
+
+    static let image = "Image"
+
 }

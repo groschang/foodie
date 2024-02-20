@@ -18,7 +18,10 @@ protocol CategoriesItems: ObservableObject {
 
 protocol CategoriesSearchable: SearchableItems where T == Category { }
 
-protocol CategoriesViewModelType: LoadableObject, CategoriesLocalizable, CategoriesItems, CategoriesSearchable { }
+protocol CategoriesViewModelType: LoadableObject,
+                                  CategoriesLocalizable,
+                                  CategoriesItems,
+                                  CategoriesSearchable { }
 
 class CategoriesViewModel: CategoriesViewModelType, Identifiable {
 
@@ -91,3 +94,10 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         }
     }
 }
+
+
+#if DEBUG
+extension CategoriesViewModel {
+    static let stub = CategoriesViewModel(service: MealsServicePreview())
+}
+#endif

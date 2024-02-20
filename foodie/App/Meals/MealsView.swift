@@ -26,7 +26,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
     }
-    
+
     private var content: some View {
         VStack {
             header
@@ -35,7 +35,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         .background(AppStyle.background)
         .animation(.spring(), value: animate)
         .onChange(of: offset) { offset in
-            animate = offset.y > -100
+            animate = offset.y > 100
         }
     }
 
@@ -50,20 +50,16 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var recipes: some View {
-        List {
+        OffsetObservingScrollView(offset: $offset) {
             Section(
-                content: {
-                    scrollViewContent
-                        .readScrollView(from: CoordinateSpace.main, into: $offset)
-                },
-                header: { listHeader }
+                content: { recipesContent },
+                header: { recipesHeader }
             )
         }
-        .coordinateSpace(name: CoordinateSpace.main)
         .modifier(MealsViewRecipesStyle())
     }
 
-    private var listHeader: some View {
+    private var recipesHeader: some View {
         ListHeaderView(
             title: viewModel.itemsHeader,
             filterAction: { },
@@ -78,61 +74,24 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     @ViewBuilder
-    private var scrollViewContent: some View {
-        if listType == .grid {
-            gridContent
-        } else {
-            listContent
-        }
-    }
+    private var recipesContent: some View {
 
+        let items = viewModel.filteredItems
 
-    private var listContent: some View {
-
-        ForEach(viewModel.filteredItems) { meal in
-
-            RouterLink(to: .meal(meal)) {
-
-                if listType == .list {
-
-                    MealListView(meal: meal)
-
-                } else if listType == .post {
-
-                    MealGridView(meal: meal)
-
-                }
-            }
-        }
-        .modifier(ListRowModifier())
-    }
-
-
-    private var gridContent: some View {
-        LazyVGrid(
-            columns: [GridItem(.adaptive(minimum: 140))],
-            spacing: 20
-        ) {
-            ForEach(viewModel.filteredItems) { meal in
-
-                RouterLink(to: .meal(meal), style: .growing) {
-                    MealGridView(
-                        meal: meal,
-                        fontType: .small
-                    )
-                }
-            }
+        switch listType {
+        case .list:
+            MealsList(items: items)
+        case .post:
+            MealsPosts(items: items)
+        case .grid:
+            MealsGrid(items: items)
         }
     }
 }
 
+
 // MARK: Previews
 
-struct MealsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MocksPreview(mocks: MealsViewModel.mocks,
-                     type: MealsViewModelMock.self) {
-            MealsView(viewModel: $0)
-        }
-    }
+#Preview {
+    MealsView(viewModel: MealsAsyncStreamViewModel.stub)
 }

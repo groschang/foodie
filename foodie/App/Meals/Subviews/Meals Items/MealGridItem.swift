@@ -12,7 +12,7 @@ enum MealGridFont: CGFloat {
     case normal = 34
 }
 
-struct MealGridView: View {
+struct MealGridItem: View {
 
     let meal: MealCategory
 
@@ -48,7 +48,7 @@ struct MealGridView: View {
                     .background(Color.black.heavyOpacity())
             }
         }
-        .modifier(MealListStyle())
+        .modifier(MealListItemStyle())
     }
 }
 
@@ -62,9 +62,9 @@ struct MealGridView_Previews: PreviewProvider {
             columns: [GridItem(.adaptive(minimum: 140))],
             spacing: 20
         ) {
-            MealGridView(meal: .mock)
-            MealGridView(meal: .mock)
-            MealGridView(meal: .mock)
+            MealGridItem(meal: .stub)
+            MealGridItem(meal: .stub)
+            MealGridItem(meal: .stub)
         }
     }
 }

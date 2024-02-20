@@ -8,10 +8,8 @@
 import Foundation
 
 struct Ingredient: Codable, Hashable, Equatable {
-
     var name: String
     var measure: String
-
 }
 
 extension Ingredient: Comparable {

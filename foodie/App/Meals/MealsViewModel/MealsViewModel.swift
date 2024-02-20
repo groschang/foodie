@@ -149,3 +149,10 @@ final class MealsViewModel: MealsViewModelType {
         items = meals.items
     }
 }
+
+
+#if DEBUG
+extension MealsViewModel {
+    static let stub = MealsViewModel(service: MealsServicePreview(), category: Category.stub)
+}
+#endif

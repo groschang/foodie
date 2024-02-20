@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
 
-    @StateObject private var viewModel: Model //TODO: dont need stae obj
+    @StateObject private var viewModel: Model
 
     @State private var category: Category?
 
@@ -42,68 +42,28 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
     @ViewBuilder
     private var content: some View {
         List(selection: $category) {
-            if listType == .grid {
-                gridContent
-            } else {
-                listContent
+
+            let items = viewModel.filteredItems
+
+            switch listType {
+            case .list:
+                CategoriesList(items: items)
+            case .post:
+                CategoriesPosts(items: items)
+            case .grid:
+                CategoriesGrid(items: items)
             }
+
         }
         .modifier(MealsViewRecipesStyle())
     }
 
-    private var listContent: some View {
-
-        ForEach(viewModel.filteredItems) { category in
-
-            RouterLink(to: .meals(category)) {
-
-                if listType == .list {
-
-                    CategoryListView(
-                        viewModel: CategoryListViewModel(category: category)
-                    )
-
-                } else if listType == .post {
-
-                    CategoriesGridView(
-                        viewModel: CategoryListViewModel(category: category)
-                    )
-
-                }
-            }
-            .modifier(ListRowModifier())
-        }
-        .modifier(ListRowModifier())
-    }
-
-    private var gridContent: some View {
-
-        LazyVGrid(
-            columns: [GridItem(.adaptive(minimum: 140))],
-            spacing: 20
-        ) {
-            ForEach(viewModel.filteredItems) { category in
-
-                RouterLink(to: .meals(category)) {
-                    CategoriesGridView(
-                        viewModel: CategoryListViewModel(category: category),
-                        fontType: .small
-                    )
-                }
-            }
-        }
-    }
 }
 
 // MARK: Previews
 
-struct CategoriesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MocksPreview(mocks: CategoriesViewModel.mocks,
-                     type: CategoriesViewModelMock.self) { item in
-            NavigationView {
-                CategoriesView(viewModel: item)
-            }
-        }
+#Preview {
+    NavigationView {
+        CategoriesView(viewModel: CategoriesViewModel.stub)
     }
 }

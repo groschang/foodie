@@ -11,7 +11,7 @@ import SwiftUI
 struct MealsSelectView: View {
 
     private struct Localizable {
-        static let title = "Select category"
+        static let title = "Select category".localized
     }
 
     private struct Layout {

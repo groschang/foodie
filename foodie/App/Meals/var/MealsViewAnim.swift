@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+/// Work in progress
+
 struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
 
     private enum CoordinateSpace: String, CustomStringConvertible {
@@ -20,7 +23,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
     }
 
     @Environment(\.colorScheme) var colorScheme
-    
+
     @ObservedObject var viewModel: Model
 
     @State private var offset: CGPoint = .zero
@@ -36,7 +39,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
     private var imagePosition: CGFloat { -contentSize.width / 2.0 + imageWidth / 2.0 + headerPadding }
 
     private var imageWidth: CGFloat { value(start: 100, stop: 50, factor: -offsetFactor) }
-//    private var imageScale: CGFloat { value(start: 1, stop: 0.5, factor: -offsetFactor) }
+    //    private var imageScale: CGFloat { value(start: 1, stop: 0.5, factor: -offsetFactor) }
     private var imageXOffset: CGFloat { value(start: 0, stop: imagePosition, factor: -offsetFactor) }
     private var imageYOffset: CGFloat { value(start: -20, stop: 0, factor: -offsetFactor) }
 
@@ -52,27 +55,22 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
                                              stop: 0, factor: -offsetFactor) }
 
     private var viewFactory: MealsViewFactory
-    
+
     init(viewModel: Model, viewFactory: MealsViewFactory) {
         self.viewModel = viewModel
         self.viewFactory = viewFactory
-        
+
         Task {  await viewModel.load() }
     }
-    
+
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
-        //            .navigationTitle(viewModel.categoryName)
-//            .navigationDestination(for: MealCategory.self) { meal in
-//                viewFactory.makeMealView(selection: meal)
-//            }
-        //            .searchable(text: $viewModel.searchQuery)
             .refreshable {
                 await viewModel.load()
             }
             .readingGeometry(from: CoordinateSpace.main.description, into: $contentSize)
     }
-    
+
     private var content: some View {
         VStack {
             headerView
@@ -100,7 +98,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
                         Circle()
                             .stroke(.white, lineWidth: 4)
                     )
-//                    .scaleEffect(imageScale)
+                //                    .scaleEffect(imageScale)
                     .offset(x: imageXOffset, y: imageYOffset)
                     .readingGeometry(from: CoordinateSpace.image.description, into: $imageSize)
                     .readingGeometry(from: CoordinateSpace.main.description, into: $contentSize)
@@ -110,7 +108,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
                 Text("\(viewModel.categoryName) \(offset.y, specifier: "%.0f") \(offsetFactor, specifier: "%.0f") \(textSize.height, specifier: "%.0f") \(contentSize.height, specifier: "%.0f") sdf dsfdsfsf sdf  fs f")
                     .frame(width: textWidth)
                     .font(.title)
-                    foregroundStyle(AppStyle.white)
+                foregroundStyle(AppStyle.white)
                     .background(.red.opacity(0.4))
                     .offset(x: textXOffset, y: textYOffset)
                     .readingGeometry(from: CoordinateSpace.text.description, into: $textSize)
@@ -135,7 +133,7 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
         .modifier(ListModifier())
         .background(AppStyle.background)
     }
-    
+
     private var description: some View { //TODO: remove?
         DisclosureGroup("Description") {
             Text(viewModel.description)
@@ -161,25 +159,25 @@ struct MealsViewAnim<Model>: View where Model: MealsViewModelType {
         .padding()
         .readScrollView(from: CoordinateSpace.main.rawValue, into: $offset)
     }
-    
+
     private var meals: some View {
         ForEach(viewModel.filteredItems) { meal in
             RouterLink(to: .meal(meal)) {
-                MealListView(meal: meal)
+                MealListItem(meal: meal)
             }
         }
         .modifier(ListRowModifier())
     }
 }
 
+
 // MARK: Previews
 
-struct MealsViewAnim_Previews: PreviewProvider {
-    static var previews: some View {
-        MealsView(viewModel: MealsViewModelMock())
-            .previewAsScreen()
-    }
+#Preview {
+    MealsView(viewModel: MealsViewModel.stub)
+        .previewAsScreen()
 }
+
 
 // MARK: Styles
 

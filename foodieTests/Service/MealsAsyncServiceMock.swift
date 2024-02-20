@@ -11,25 +11,25 @@ import Foundation
 class MealsAsyncServiceMock: MealsAsyncServiceType {
 
     init(
-        stubLoadCategories: Categories? = .mock,
+        stubLoadCategories: Categories? = .stub,
         didLoadCategories: ( () -> Void)? = nil,
         loadCategoriesCallCount: Int = 0,
-        stubFetchCategories: Result<Categories, Error>? = .success(.mock),
+        stubFetchCategories: Result<Categories, Error>? = .success(.stub),
         didFetchCategories: ( () -> Void)? = nil,
         fetchCategoriesCallCount: Int = 0,
-        stubGetMeals: Meals? = .mock,
+        stubGetMeals: Meals? = .stub,
         didGetMeals: ( () -> Void)? = nil,
         getMealsCallCount: Int = 0,
-        stubFetchMeals: Result<Meals, Error>? = .success(.mock),
+        stubFetchMeals: Result<Meals, Error>? = .success(.stub),
         didFetchMeals: ( () -> Void)? = nil,
         fetchMealsCallCount: Int = 0,
-        stubLoadMeal: Meal? = .mock,
+        stubLoadMeal: Meal? = .stub,
         didLoadMeal: ( () -> Void)? = nil,
         loadMealCallCount: Int = 0,
-        stubFetchMeal: Result<Meal, Error>? = .success(.mock),
+        stubFetchMeal: Result<Meal, Error>? = .success(.stub),
         didFetchMeal: ( () -> Void)? = nil,
         fetchMealCallCount: Int = 0,
-        stubFetchRandomMeal: Result<Meal, Error>? = .success(.mock),
+        stubFetchRandomMeal: Result<Meal, Error>? = .success(.stub),
         didFetchRandomMeal: ( () -> Void)? = nil,
         fetchRandomMealCallCount: Int = 0
     ) {

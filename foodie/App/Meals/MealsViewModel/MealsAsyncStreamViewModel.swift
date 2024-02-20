@@ -83,3 +83,9 @@ final class MealsAsyncStreamViewModel: MealsViewModelType {
         itemsCount = filteredItems.count // :)
     }
 }
+
+#if DEBUG
+extension MealsAsyncStreamViewModel {
+    static let stub = MealsAsyncStreamViewModel(service: MealsAsyncStreamServicePreview(), category: Category.stub)
+}
+#endif

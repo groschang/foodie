@@ -29,7 +29,10 @@ struct ScrollViewOffsetModifier: ViewModifier {
                 let y = proxy.frame(in: .named(coordinateSpace)).minY
                 Color.clear.preference(
                     key: PointPreferenceKey.self,
-                    value: CGPoint(x: -x, y: -y)
+                    value: CGPoint(
+                        x: -x,
+                        y: -y
+                    )
                 )
             }
         }
@@ -44,11 +47,9 @@ extension View {
     func readScrollView(from coordinateSpace: String, into binding: Binding<CGPoint>) -> some View {
         modifier(ScrollViewOffsetModifier(coordinateSpace: coordinateSpace, offset: binding))
     }
-}
-
-extension View {
 
     func readScrollView(from coordinateSpace: CustomStringConvertible, into binding: Binding<CGPoint>) -> some View {
         modifier(ScrollViewOffsetModifier(coordinateSpace: coordinateSpace.description, offset: binding))
     }
+    
 }

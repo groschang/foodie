@@ -1,5 +1,5 @@
 //
-//  CategoryListViewModel+Style.swift
+//  CategoryListItem+Style.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 17/05/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CategoryListViewStyle: ViewModifier {
+struct CategoryListItemStyle: ViewModifier {
 
     private struct Colors {
         static let background = Color(light: Color.white,
@@ -35,7 +35,7 @@ struct CategoryListViewStyle: ViewModifier {
 }
 
 
-fileprivate struct CategoryListViewTextStyle: ViewModifier {
+fileprivate struct CategoryListItemTextStyle: ViewModifier {
 
     private struct Colors {
         static let foreground = AppStyle.black
@@ -53,19 +53,19 @@ fileprivate struct CategoryListViewTextStyle: ViewModifier {
     }
 }
 
-struct CategoryViewNameStyle: ViewModifier {
+struct CategoryListItemNameStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .title()
-            .modifier(CategoryListViewTextStyle())
+            .modifier(CategoryListItemTextStyle())
     }
 }
 
-struct CategoryViewDescriptionStyle: ViewModifier {
+struct CategoryListItemDescriptionStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .subtitle3()
-            .modifier(CategoryListViewTextStyle())
+            .modifier(CategoryListItemTextStyle())
     }
 }
 

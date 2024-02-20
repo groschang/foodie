@@ -1,5 +1,5 @@
 //
-//  CategoryListView.swift
+//  CategoryListItem.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 21/01/2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CategoryListView: View {
+struct CategoryListItem: View {
 
-    let viewModel: CategoryListViewModel
+    let viewModel: CategoryListItemModel
 
     var body: some View {
         HStack {
@@ -20,10 +20,10 @@ struct CategoryListView: View {
 
             VStack(alignment: .leading) {
                 Text(viewModel.name)
-                    .modifier(CategoryViewNameStyle())
+                    .modifier(CategoryListItemNameStyle())
 
                 Text(viewModel.description)
-                    .modifier(CategoryViewDescriptionStyle())
+                    .modifier(CategoryListItemDescriptionStyle())
             }
 
             Spacer()
@@ -32,18 +32,19 @@ struct CategoryListView: View {
             imageUrl: viewModel.imageURL,
             opacity: 0.15)
         )
-        .modifier(CategoryListViewStyle())
+        .modifier(CategoryListItemStyle())
     }
 }
 
+
 // MARK: Preview
 
-struct CategoryView_Previews: PreviewProvider {
+struct CategoryListView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CategoryListView(viewModel: .mock)
-            CategoryListView(viewModel: .mock)
-            CategoryListView(viewModel: .mock)
+            CategoryListItem(viewModel: .mock)
+            CategoryListItem(viewModel: .mock)
+            CategoryListItem(viewModel: .mock)
         }
         .padding()
     }

@@ -8,7 +8,7 @@
 import Foundation
 @testable import foodie
 
-class MealsServiceMock: Sleepable, Mockable, MealsClosureServiceType {
+class MealsServiceMock: Sleepable, Stubable, MealsClosureServiceType {
 
     // MARK: Categories
 

@@ -81,3 +81,10 @@ final class CategoriesAsyncViewModel: CategoriesViewModelType, Identifiable {
         }
     }
 }
+
+
+#if DEBUG
+extension CategoriesAsyncViewModel {
+    static let stub = CategoriesAsyncViewModel(service: MealsAsyncServicePreview())
+}
+#endif

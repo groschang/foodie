@@ -68,3 +68,10 @@ final class CategoriesAsyncStreamViewModel: CategoriesViewModelType, Identifiabl
         filteredItems = filter(query: query) { $0.name }
     }
 }
+
+
+#if DEBUG
+extension CategoriesAsyncStreamViewModel {
+    static let stub = CategoriesAsyncStreamViewModel(service: MealsAsyncStreamServicePreview())
+}
+#endif

@@ -78,7 +78,8 @@ extension Meal: StringIdentifier { }
 
 extension Meal: IdentifiableObject { }
 
-extension Meal: Mockable {
-    static let mock: Meal = loadMock(from: "meal") //TODO: change to enums
-    static let mock2: Meal = loadMock(from: "meal2") //TODO: change to enums
+extension Meal: Stubable {
+    static let stub: Meal = loadStub(from: "meal")
+    static let stub2: Meal = loadStub(from: "meal2")
+    static let stubs = [stub, stub2]
 }

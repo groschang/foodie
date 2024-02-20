@@ -13,7 +13,7 @@ protocol SleepableProtocol { //TODO: rename Delayable
 }
 
 extension SleepableProtocol {
-    var delayDuration: Duration? { .seconds(2) }
+    var delayDuration: Duration? { .seconds(0.5) }
     
     func sleep() async {
         if let delayDuration {

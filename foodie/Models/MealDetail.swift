@@ -94,6 +94,6 @@ struct MealDetail: Identifiable, Codable, Hashable, Equatable {
     }
 }
 
-extension MealDetail: Mockable {
-    static let mock: MealDetail = loadMock(from: "meal")
+extension MealDetail: Stubable {
+    static let stub: MealDetail = loadStub(from: "meal")
 }

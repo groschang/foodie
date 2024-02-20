@@ -26,7 +26,7 @@ extension MealCategory {
     }
 }
 
-extension MealCategory: Mockable {
-    static let mock: MealCategory = loadMock(from: "mealCategory")
+extension MealCategory: Stubable {
+    static let stub: MealCategory = loadStub(from: "mealCategory")
 }
 

@@ -11,7 +11,7 @@ import XCTest
 final class CategoriesTest: XCTestCase {
     
     func testInitialization() {
-        let categories = Categories(items: [.mock])
-        XCTAssertEqual(categories.items.first, Category.mock)
+        let categories = Categories(items: [.stub])
+        XCTAssertEqual(categories.items.first, Category.stub)
     }
 }

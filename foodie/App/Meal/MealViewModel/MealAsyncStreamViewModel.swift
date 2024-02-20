@@ -71,3 +71,10 @@ final class MealAsyncStreamViewModel: MealViewModelType {
         youtubeUrl = meal.youtubeURL
     }
 }
+
+
+#if DEBUG
+extension MealAsyncStreamViewModel {
+    static let stub = MealAsyncStreamViewModel(service: MealsAsyncStreamServicePreview(), object: Meal.stub)
+}
+#endif

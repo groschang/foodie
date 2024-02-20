@@ -12,16 +12,22 @@ struct MealView<Model>: View where Model: MealViewModelType {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @ObservedObject private var viewModel: Model
-    
+
     @State private var offset: CGPoint = .zero
     @State private var imageSize: CGRect = .zero
     @State private var contentSize: CGRect = .zero
     @State private var scrollViewSize: CGRect = .zero
 
+    @State private var informationsOpacity: Double = .zero
+    @State private var ingredientsOpacity: Double = .zero
+    @State private var recipeOpacity: Double = .zero
+    @State private var youtubeOpacity: Double = .zero
+    @State private var sourceOpacity: Double = .zero
+
     init(viewModel: Model) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
@@ -34,17 +40,22 @@ struct MealView<Model>: View where Model: MealViewModelType {
                     .padding()
             }
     }
-    
+
     var content: some View {
         ScrollView(showsIndicators: false) {
 
             VStack(spacing: 21) {
                 spacer
                 informations
+                    .animateAppear($informationsOpacity, index: 1)
                 ingredients
+                    .animateAppear($ingredientsOpacity, index: 2)
                 recipe
+                    .animateAppear($recipeOpacity, index: 3)
                 youtube
+                    .animateAppear($youtubeOpacity, index: 4)
                 source
+                    .animateAppear($sourceOpacity, index: 5)
             }
             .readScrollView(from: CoordinateSpace.main, into: $offset)
             .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
@@ -59,11 +70,11 @@ struct MealView<Model>: View where Model: MealViewModelType {
     private var spacer: some View {
         Spacer(minLength: imageSize.maxY - abs(contentSize.minY))
     }
-    
+
     private var informations: some View {
         MealInformationView(viewModel: viewModel)
     }
-    
+
     @ViewBuilder
     private var ingredients: some View {
         if let ingredients = viewModel.ingredients {
@@ -102,17 +113,11 @@ struct MealView<Model>: View where Model: MealViewModelType {
     }
 }
 
+
 // MARK: Preview
 
-//struct MealView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MocksPreview(mocks: MealViewModel.mocks,
-//                     type: MealViewModelMock.self) { mock in
-#Preview("Preview") {
+#Preview {
     NavigationView {
-        MealView(viewModel: MealViewModel.mock)
+        MealView(viewModel: MealViewModel.stub)
     }
 }
-
-//    }
-//}

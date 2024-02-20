@@ -12,9 +12,8 @@ struct SwiftUIDebugView: View {
     var body: some View {
 
         List {
-
             // Debug app colors and styles
-
+            
             DebugSection("Custom colors") {
                 ForEach(Color.all, id: \.self) {
                     ColorDebugView($0)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MenuView: View {
 
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     @ObservedObject var viewModel = MenuViewModel()
 
     var body: some View {

@@ -19,7 +19,9 @@ struct MealViewStyle: ViewModifier {
     }
 
     let backgroundUrl: URL?
+
     let offset: CGFloat
+
     @Binding var imageSize: CGRect
 
     private var blur: CGFloat { min(offset * Blur.multiplier, Blur.min) }
@@ -37,7 +39,7 @@ struct MealViewStyle: ViewModifier {
                             .modifier(MealViewImageStyle())
                             .blur(radius: blur)
                             .opacity(opacity)
-                        
+
                         Spacer()
                     }
                 }
@@ -48,8 +50,9 @@ struct MealViewStyle: ViewModifier {
 
 
 struct MealViewImageStyle: ViewModifier {
-
+    
     private struct Shadow {
+        static let color = Color.shadow
         static let radius = 24.0
         static let x = 0.0
         static let y = 24.0
@@ -64,7 +67,10 @@ struct MealViewImageStyle: ViewModifier {
             .clipped()
             .scaledToFill()
             .frame(maxHeight: Layouts.height)
-            .shadow(color: Color.shadow, radius: Shadow.radius, x: Shadow.x, y: Shadow.y)
+            .shadow(color: Shadow.color,
+                    radius: Shadow.radius,
+                    x: Shadow.x,
+                    y: Shadow.y)
             .edgesIgnoringSafeArea(.top)
     }
 }

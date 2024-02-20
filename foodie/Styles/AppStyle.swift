@@ -60,7 +60,7 @@ extension Color {
                                   dark: AppStyle.foreground.darkColor)
     static let background = Color(light: AppStyle.background.lightColor,
                                   dark: AppStyle.background.darkColor) //TODO: find Color.background
-    static let accent = Color(light: AppStyle.white.lightColor,
+    static let accent = Color(light: AppStyle.gray.lightColor,
                               dark: AppStyle.white.darkColor)
     static let shadow = Color(light: AppStyle.shadow.lightColor.mediumOpacity(),
                                dark: AppStyle.shadow.darkColor.mediumOpacity())

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MealInformationView<Model>: View where Model: MealInformations {
-    
+
     @ObservedObject var viewModel: Model
-    
+
     var body: some View {
         VStack {
             TitleView(viewModel.name, style: MealInformationTitleStyle())
@@ -20,12 +20,10 @@ struct MealInformationView<Model>: View where Model: MealInformations {
     }
 }
 
+
 // MARK: Preview
 
-struct MealInformationView_Previews: PreviewProvider {
-    static var previews: some View {
-        MealInformationView(viewModel: MealViewModelMock())
-            .previewAsComponent()
-        
-    }
+#Preview {
+    MealInformationView(viewModel: MealViewModel.stub)
+        .previewAsComponent()
 }

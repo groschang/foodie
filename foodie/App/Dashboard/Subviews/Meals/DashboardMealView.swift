@@ -43,7 +43,7 @@ struct DashboardMealView: View {
 struct DashboardMealView_Previews: PreviewProvider {
 
     static var previews: some View {
-        DashboardMealView(meal: .mock)
+        DashboardMealView(meal: .stub)
     }
 
 }

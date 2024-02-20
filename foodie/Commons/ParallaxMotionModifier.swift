@@ -31,10 +31,14 @@ struct ParallaxMotionModifier: ViewModifier {
     }
 }
 
-struct Axis {
-    typealias Tuple = (x: CGFloat, y: CGFloat, z: CGFloat)
+extension ParallaxMotionModifier {
+    
+    struct Axis {
+        typealias Tuple = (x: CGFloat, y: CGFloat, z: CGFloat)
 
-    static let x: Tuple = (x: 1, y: 0, z: 0)
-    static let y: Tuple = (x: 0, y: 1, z: 0)
-    static let z: Tuple = (x: 0, y: 0, z: 1)
+        static let x: Tuple = (x: 1, y: 0, z: 0)
+        static let y: Tuple = (x: 0, y: 1, z: 0)
+        static let z: Tuple = (x: 0, y: 0, z: 1)
+    }
+
 }

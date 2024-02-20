@@ -109,8 +109,8 @@ struct ListHeader_Previews: PreviewProvider {
         @State var animate = false
 
         var body: some View {
-            ListHeader(title: Category.mock.name,
-                       imageUrl: Category.mock.imageUrl,
+            ListHeader(title: Category.stub.name,
+                       imageUrl: Category.stub.imageUrl,
                        animate: $animate)
             .onTapGesture {
                 animate.toggle()
