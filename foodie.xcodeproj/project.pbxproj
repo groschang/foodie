@@ -291,6 +291,7 @@
 		712E85F529E1DF470009AFB9 /* MealsViewAnim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F429E1DF470009AFB9 /* MealsViewAnim.swift */; };
 		712E85F729E1E3D50009AFB9 /* CoordinateSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */; };
 		712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
+		71303FDD2B8BC0C7005082FB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71303FDC2B8BC0C7005082FB /* SnapshotHelper.swift */; };
 		7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */; };
 		713606602A8141E200D40728 /* MealsCombineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065F2A8141E200D40728 /* MealsCombineService.swift */; };
 		713606622A81425D00D40728 /* MealsCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713606612A81425D00D40728 /* MealsCombineViewModel.swift */; };
@@ -1067,7 +1068,6 @@
 		71E2A5C12970A76A0012E5C6 /* MealsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5C02970A76A0012E5C6 /* MealsServiceTest.swift */; };
 		71E2A5D12971D4E80012E5C6 /* foodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5D02971D4E70012E5C6 /* foodieUITests.swift */; };
 		71E2A5D32971D4E80012E5C6 /* foodieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5D22971D4E80012E5C6 /* foodieUITestsLaunchTests.swift */; };
-		71E2A5D92971D4F20012E5C6 /* CategoriesViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A5C82971D1990012E5C6 /* CategoriesViewTest.swift */; };
 		71EA2F832A63248A00213D82 /* DashboardPromoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA2F822A63248A00213D82 /* DashboardPromoView.swift */; };
 		71EA2F852A63249000213D82 /* DashboardPromoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA2F842A63249000213D82 /* DashboardPromoViewModel.swift */; };
 		71F116202A726A86009A93B5 /* StringIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F1161F2A726A86009A93B5 /* StringIdentifier.swift */; };
@@ -1109,6 +1109,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		71303FDE2B8BC8DA005082FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71E2A5712970336A0012E5C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7102F17B2B2F6C7A00F6D87F;
+			remoteInfo = mockedFoodie;
+		};
 		714FB76D2B8249910050052C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71E2A5712970336A0012E5C6 /* Project object */;
@@ -1331,6 +1338,7 @@
 		712E85F429E1DF470009AFB9 /* MealsViewAnim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealsViewAnim.swift; path = foodie/App/Meals/var/MealsViewAnim.swift; sourceTree = SOURCE_ROOT; };
 		712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpace.swift; sourceTree = "<group>"; };
 		712E85FA29E1EBE20009AFB9 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
+		71303FDC2B8BC0C7005082FB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncViewModel.swift; sourceTree = "<group>"; };
 		7136065F2A8141E200D40728 /* MealsCombineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCombineService.swift; sourceTree = "<group>"; };
 		713606612A81425D00D40728 /* MealsCombineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCombineViewModel.swift; sourceTree = "<group>"; };
@@ -1508,7 +1516,6 @@
 		71E2A5792970336A0012E5C6 /* foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E2A5B72970A6F90012E5C6 /* foodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E2A5C02970A76A0012E5C6 /* MealsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceTest.swift; sourceTree = "<group>"; };
-		71E2A5C82971D1990012E5C6 /* CategoriesViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewTest.swift; sourceTree = "<group>"; };
 		71E2A5CE2971D4E70012E5C6 /* foodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E2A5D02971D4E70012E5C6 /* foodieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodieUITests.swift; sourceTree = "<group>"; };
 		71E2A5D22971D4E80012E5C6 /* foodieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodieUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -2534,7 +2541,7 @@
 			children = (
 				71E2A5D02971D4E70012E5C6 /* foodieUITests.swift */,
 				71E2A5D22971D4E80012E5C6 /* foodieUITestsLaunchTests.swift */,
-				71E2A5C82971D1990012E5C6 /* CategoriesViewTest.swift */,
+				71303FDC2B8BC0C7005082FB /* SnapshotHelper.swift */,
 			);
 			path = foodieUITests;
 			sourceTree = "<group>";
@@ -2703,6 +2710,7 @@
 			dependencies = (
 				71E2A5D52971D4E80012E5C6 /* PBXTargetDependency */,
 				714FB7702B8249A90050052C /* PBXTargetDependency */,
+				71303FDF2B8BC8DA005082FB /* PBXTargetDependency */,
 			);
 			name = foodieUITests;
 			packageProductDependencies = (
@@ -2735,7 +2743,7 @@
 					};
 					71E2A5CD2971D4E70012E5C6 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 714FB53F2B8247F00050052C;
+						TestTargetID = 7102F17B2B2F6C7A00F6D87F;
 					};
 				};
 			};
@@ -3917,17 +3925,22 @@
 			files = (
 				71F116272A7275D4009A93B5 /* CoordinateSpace.swift in Sources */,
 				71E2A5D12971D4E80012E5C6 /* foodieUITests.swift in Sources */,
-				71E2A5D92971D4F20012E5C6 /* CategoriesViewTest.swift in Sources */,
 				71E2A5D32971D4E80012E5C6 /* foodieUITestsLaunchTests.swift in Sources */,
 				7162412E2B780A5D0003D4CC /* YouTubeView.swift in Sources */,
 				71F1162C2A7275DD009A93B5 /* ContainsElements.swift in Sources */,
 				71F1162D2A7275DD009A93B5 /* ContainsItems.swift in Sources */,
+				71303FDD2B8BC0C7005082FB /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		71303FDF2B8BC8DA005082FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7102F17B2B2F6C7A00F6D87F /* mockedFoodie */;
+			targetProxy = 71303FDE2B8BC8DA005082FB /* PBXContainerItemProxy */;
+		};
 		714FB76E2B8249910050052C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 714FB53F2B8247F00050052C /* foodieIOS17 */;
@@ -3972,6 +3985,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"MOCK=1",
+					"MOCKED=1",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/mockedFoodie copy-Info.plist";
@@ -3995,7 +4009,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "MOCK DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "MOCK DEBUG MOCKED";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4490,7 +4504,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = "foodie ios17";
+				TEST_TARGET_NAME = mockedFoodie;
 			};
 			name = Debug;
 		};
@@ -4512,7 +4526,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = "foodie ios17";
+				TEST_TARGET_NAME = mockedFoodie;
 			};
 			name = Release;
 		};
