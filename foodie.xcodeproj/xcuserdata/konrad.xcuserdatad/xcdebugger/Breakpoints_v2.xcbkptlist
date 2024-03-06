@@ -29,184 +29,6 @@
             continueAfterRunningActions = "No"
             symbolName = "*0x1b17e3fb4">
             <Locations>
-               <Location
-                  uuid = "808A6317-A791-40E7-897B-AA472A5509F7 - f3c00e0713b713ab"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__pthread_kill"
-                  moduleName = "libsystem_kernel.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -237,8 +59,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "292">
+                  endingLineNumber = "91">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - edca04eebfeadb1d"
@@ -252,8 +73,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "148">
+                  endingLineNumber = "90">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - 3e6be643af86bee0"
@@ -267,8 +87,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "44">
+                  endingLineNumber = "90">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - c41a6feee6b7831f"
@@ -282,8 +101,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "156">
+                  endingLineNumber = "90">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - edca04eebfeadae5"
@@ -297,8 +115,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "148">
+                  endingLineNumber = "98">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - 3e6be643af86bf18"
@@ -312,8 +129,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "44">
+                  endingLineNumber = "98">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - c41a6feee6b782e7"
@@ -327,8 +143,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "156">
+                  endingLineNumber = "98">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - edca04eebfeadae5"
@@ -342,8 +157,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "244">
+                  endingLineNumber = "98">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - c41a6feee6b78242"
@@ -357,8 +171,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "156">
+                  endingLineNumber = "95">
                </Location>
                <Location
                   uuid = "4CCB0C26-609A-4129-98F3-BBEFE7260CA7 - c41a6feee6b782e7"
@@ -372,8 +185,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "172">
+                  endingLineNumber = "98">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -405,8 +217,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "936">
+                  endingLineNumber = "101">
                </Location>
                <Location
                   uuid = "C6A47B2D-C6DA-4EF3-A809-0E90CCAF3DD9 - c41a6feee6b78284"
@@ -420,8 +231,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "724">
+                  endingLineNumber = "101">
                </Location>
                <Location
                   uuid = "C6A47B2D-C6DA-4EF3-A809-0E90CCAF3DD9 - c41a6feee6b7858c"
@@ -435,8 +245,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "724">
+                  endingLineNumber = "109">
                </Location>
                <Location
                   uuid = "C6A47B2D-C6DA-4EF3-A809-0E90CCAF3DD9 - c41a6feee6b7858c"
@@ -450,8 +259,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "784">
+                  endingLineNumber = "109">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -483,8 +291,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "148">
+                  endingLineNumber = "89">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - 3e6be643af86bec7"
@@ -498,8 +305,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "44">
+                  endingLineNumber = "89">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - c41a6feee6b78338"
@@ -513,8 +319,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "156">
+                  endingLineNumber = "89">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - 35fabded7821137e"
@@ -528,8 +333,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "164">
+                  endingLineNumber = "87">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - f96c7159df53f28b"
@@ -543,8 +347,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "40">
+                  endingLineNumber = "87">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - edca04eebfeadb78"
@@ -558,8 +361,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "96">
+                  endingLineNumber = "87">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - 35fabded78211246"
@@ -573,8 +375,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "608">
+                  endingLineNumber = "95">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - f96c7159df53f3b3"
@@ -588,8 +389,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "40">
+                  endingLineNumber = "95">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - edca04eebfeada40"
@@ -603,8 +403,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "96">
+                  endingLineNumber = "95">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - 35fabded78211246"
@@ -618,8 +417,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "704">
+                  endingLineNumber = "95">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - edca04eebfeada40"
@@ -633,8 +431,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "112">
+                  endingLineNumber = "95">
                </Location>
                <Location
                   uuid = "236D4A3A-C7B7-419A-9CB7-74E47D3F54B0 - c41a6feee6b78242"
@@ -648,8 +445,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "156">
+                  endingLineNumber = "95">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -668,158 +464,6 @@
             endingLineNumber = "27"
             landmarkName = "startUpdating()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 2665f7703dccb8a6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 19bb93201a8cb3ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in mockedFoodie.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "mockedFoodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 3dafe471358e5024"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in mockedFoodie_SwiftData.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "mockedFoodie SwiftData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "420">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - f40d81ed44153567"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in mockedFoodie_DataSwift.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "mockedFoodie_DataSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "420">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 540ebeef4a9b5094"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie_DataSwift.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "foodie DataSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - ba0624c2934f342d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie_iOS17.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "foodie iOS17"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - b99a818dfb0e978b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 8644e5dddc4e9cc0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in mockedFoodie.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "mockedFoodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - 25f94fc70f0a7b40"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie_ios17.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "foodie ios17"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "420">
-               </Location>
-               <Location
-                  uuid = "9C92F77F-FA66-4169-BC03-1C51A0E4B548 - b99a818dfb0e978b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in foodie.MotionManager.startUpdating() -&gt; ()"
-                  moduleName = "foodie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/konrad/Dev/Swift/Code/foodie/foodie/Commons/MotionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "420">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -865,8 +509,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1"
-                  endingLineNumber = "1"
-                  offsetFromSymbolStart = "416">
+                  endingLineNumber = "1">
                </Location>
                <Location
                   uuid = "2E2E40F9-C610-4EAF-924E-8F5BE2EA6152 - 582babb0e93e0d4d"
@@ -880,8 +523,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "5"
-                  endingLineNumber = "5"
-                  offsetFromSymbolStart = "544">
+                  endingLineNumber = "5">
                </Location>
                <Location
                   uuid = "2E2E40F9-C610-4EAF-924E-8F5BE2EA6152 - 582babb0e93e0d2e"
@@ -895,8 +537,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "4"
-                  endingLineNumber = "4"
-                  offsetFromSymbolStart = "416">
+                  endingLineNumber = "4">
                </Location>
             </Locations>
          </BreakpointContent>

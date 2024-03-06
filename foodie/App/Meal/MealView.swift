@@ -15,7 +15,6 @@ struct MealView<Model>: View where Model: MealViewModelType {
 
     @State private var offset: CGPoint = .zero
     @State private var imageSize: CGRect = .zero
-    @State private var contentSize: CGRect = .zero
     @State private var scrollViewSize: CGRect = .zero
 
     @State private var informationsOpacity: Double = .zero
@@ -32,7 +31,6 @@ struct MealView<Model>: View where Model: MealViewModelType {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
             .coordinateSpace(name: CoordinateSpace.main)
-            .readingGeometry(from: CoordinateSpace.main, into: $contentSize)
             .overlay {
                 ElipseBackButton() { presentationMode.wrappedValue.dismiss() }
                     .placeAtTheTop()
@@ -42,9 +40,9 @@ struct MealView<Model>: View where Model: MealViewModelType {
     }
 
     var content: some View {
-        ScrollView(showsIndicators: false) {
-
+        OffsetObservingScrollView(offset: $offset) {
             VStack(spacing: 21) {
+
                 spacer
                 informations
                     .animateAppear($informationsOpacity, index: 1)
@@ -56,19 +54,19 @@ struct MealView<Model>: View where Model: MealViewModelType {
                     .animateAppear($youtubeOpacity, index: 4)
                 source
                     .animateAppear($sourceOpacity, index: 5)
+
             }
-            .readScrollView(from: CoordinateSpace.main, into: $offset)
             .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
             .padding(.horizontal)
         }
         .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl,
-                                offset: offset.y + contentSize.minY,
+                                offset: offset.y,
                                 imageSize: $imageSize))
 
     }
 
     private var spacer: some View {
-        Spacer(minLength: imageSize.maxY - abs(contentSize.minY))
+        Spacer(minLength: imageSize.maxY)
     }
 
     private var informations: some View {

@@ -29,12 +29,11 @@ struct MealViewStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal)
             .background {
                 if let backgroundUrl {
                     VStack(spacing: .zero) {
+
                         CoverPhotoView(imageUrl: backgroundUrl)
-                            .coordinateSpace(name: CoordinateSpace.image)
                             .readingGeometry(from: CoordinateSpace.main, into: $imageSize)
                             .modifier(MealViewImageStyle())
                             .blur(radius: blur)
@@ -42,6 +41,7 @@ struct MealViewStyle: ViewModifier {
 
                         Spacer()
                     }
+                    .coordinateSpace(name: CoordinateSpace.image)
                 }
             }
     }
@@ -59,14 +59,14 @@ struct MealViewImageStyle: ViewModifier {
     }
 
     private struct Layouts {
-        static let height = 600.0
+        static let height = 500.0
     }
 
     func body(content: Content) -> some View {
         content
             .clipped()
             .scaledToFill()
-            .frame(maxHeight: Layouts.height)
+            .frame(height: Layouts.height)
             .shadow(color: Shadow.color,
                     radius: Shadow.radius,
                     x: Shadow.x,
