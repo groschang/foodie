@@ -3,11 +3,16 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 12/01/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
 
 struct MealView<Model>: View where Model: MealViewModelType {
+
+    enum AccessibilityKeys: String, AccessibilityIdentifiable {
+        case RecipeTextView
+    }
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -91,6 +96,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
         VStack(alignment: .leading) {
             TitleView(viewModel.recipeTitle, style: MealViewIngredientTitleStyle())
             MultilineTextView(viewModel.recipe)
+                .accessibilityIdentifier(AccessibilityKeys.RecipeTextView)
         }
     }
 

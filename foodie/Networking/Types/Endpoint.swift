@@ -3,6 +3,7 @@
 //  Coctail
 //
 //  Created by Konrad Groschang on 07/12/2022.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import Foundation

@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 03/10/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI

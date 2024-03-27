@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 24/01/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
@@ -17,7 +18,7 @@ extension View {
         }
     }
 
-    func animateForever(using animation: Animation = .easeInOut(duration: 0.2), autoreverses: Bool = true, _ action: @escaping () -> Void) -> some View {
+    func animateForever(using animation: Animation = .easeInOut(duration: 2), autoreverses: Bool = true, _ action: @escaping () -> Void) -> some View {
         let repeated = animation.repeatForever(autoreverses: autoreverses)
 
         return onAppear {
@@ -45,13 +46,11 @@ extension View {
 extension Animation {
     static func ripple(index: Int) -> Animation {
         Animation.spring(dampingFraction: 0.5)
-//            .speed(2)
             .delay(0.1 * Double(index))
     }
 
     static func appear(index: Int) -> Animation {
-        Animation.easeInOut //.spring(dampingFraction: 0.5)
-//            .speed(2)
+        Animation.easeInOut
             .delay(0.1 * Double(index))
     }
 }

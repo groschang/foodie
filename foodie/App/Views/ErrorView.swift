@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 18/01/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
@@ -13,7 +14,7 @@ struct ErrorView: View {
     private let action: AsyncVoidAction
 
     init(_ description: String? = nil, action: @escaping AsyncVoidAction) {
-        self.description = description ?? "Unknown situation"
+        self.description = description
         self.action = action
     }
 
@@ -34,7 +35,7 @@ struct ErrorView: View {
             Button("Try again") {
                 Task { await action() }
             }
-            .buttonStyle(InformationButtonStyle())
+            .buttonStyle(.information)
         }
         .maxSize()
         .background { StaticGradient() }

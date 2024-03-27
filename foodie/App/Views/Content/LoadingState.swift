@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 21/01/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import Foundation
@@ -137,7 +138,7 @@ extension LoadingState {
     /// - Parameters:
     ///     - error: An error that is cause of failure
     ///
-    mutating func setError(_ error: Error) {
+    mutating func setError(_ error: Error? = nil) {
         if self.isLoaded == false {
             self = .failed(error)
         }

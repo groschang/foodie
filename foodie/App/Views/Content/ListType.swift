@@ -3,14 +3,17 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 23/12/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
 
 enum ListType: CaseIterable {
+
     case list
     case post
     case grid
+    
 }
 
 extension ListType {

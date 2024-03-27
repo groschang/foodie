@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 21/01/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
@@ -15,7 +16,7 @@ struct AsyncContentView<Source: LoadableObject,
                         MainContent: View>: View {
     
     typealias LoadingType = () -> LoadingContent
-    typealias ErrorType = (Error?, @escaping (() async -> Void)) -> ErrorContent //TODO: he?
+    typealias ErrorType = (Error?, @escaping (() async -> Void)) -> ErrorContent
     typealias EmptyType = (String) -> EmptyContent
     typealias ContentType = () -> MainContent
     
@@ -61,7 +62,7 @@ struct AsyncContentView<Source: LoadableObject,
             makeLoadedView()
                 .hidden(source.state != .loaded)
 
-            statesView
+            stateView
         }
         .refreshable {
             await source.load() //TODO: Sendable?
@@ -71,7 +72,7 @@ struct AsyncContentView<Source: LoadableObject,
         }
     }
     
-    private var statesView: some View {
+    private var stateView: some View {
         VStack {
             if source.state != .loaded && source.isEmpty {
                 switch source.state {
@@ -113,26 +114,12 @@ struct AsyncContentView<Source: LoadableObject,
 }
 
 
+// MARK: Preview
+
 struct AsyncContentView_Previews: PreviewProvider {
 
-    class ViewModel: LoadableObject {
-
-        @Published var state: LoadingState = .idle
-        @Published var showingAlert = false
-        private var firstRun = false
-        var isEmpty: Bool = true
-        let title = "Title"
-
-        @MainActor func load() async {
-            guard firstRun else {
-                firstRun = true
-                return
-            }
-            Task {
-                try? await Task.sleep(for: .seconds(2))
-                showingAlert = true
-            }
-        }
+    static var previews: some View {
+        ContentView()
     }
 
     struct ContentView: View {
@@ -153,6 +140,7 @@ struct AsyncContentView_Previews: PreviewProvider {
 
                 AsyncContentView(source: vm, content: content)
                     .navigationTitle(vm.title)
+
             }
             .alert("Load method fired", isPresented: $vm.showingAlert) {
                 Button("OK", role: .cancel) { }
@@ -164,9 +152,28 @@ struct AsyncContentView_Previews: PreviewProvider {
                 .maxSize()
                 .background(.gray)
         }
+
     }
     
-    static var previews: some View {
-        ContentView()
+    private class ViewModel: LoadableObject {
+
+        @Published var state: LoadingState = .idle
+        @Published var showingAlert = false
+        private var firstRun = false
+        var isEmpty: Bool = true
+        let title = "Title"
+
+        @MainActor func load() async {
+            guard firstRun else {
+                firstRun = true
+                return
+            }
+            Task {
+                try? await Task.sleep(for: .seconds(2))
+                showingAlert = true
+            }
+        }
+
     }
+
 }

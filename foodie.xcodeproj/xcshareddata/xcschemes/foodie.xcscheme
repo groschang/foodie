@@ -57,9 +57,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71E2A5B62970A6F90012E5C6"
@@ -67,11 +65,16 @@
                BlueprintName = "foodieTests"
                ReferencedContainer = "container:foodie.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "SwiftDataClientTest">
-               </Test>
-            </SkippedTests>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71E2A5CD2971D4E70012E5C6"
+               BuildableName = "foodieUITests.xctest"
+               BlueprintName = "foodieUITests"
+               ReferencedContainer = "container:foodie.xcodeproj">
+            </BuildableReference>
          </TestableReference>
       </Testables>
    </TestAction>

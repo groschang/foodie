@@ -3,6 +3,7 @@
 //  mockedFoodie
 //
 //  Created by Konrad Groschang on 09/01/2024.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import Foundation

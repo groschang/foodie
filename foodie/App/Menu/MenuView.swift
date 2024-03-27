@@ -3,15 +3,16 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 20/12/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
 
 struct MenuView: View {
 
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode
 
-    @ObservedObject var viewModel = MenuViewModel()
+    @ObservedObject private var viewModel = MenuViewModel()
 
     var body: some View {
         content
@@ -43,6 +44,33 @@ struct MenuView: View {
                             viewModel.setTheme(.dark)
                         }
                         .buttonStyle(.menu(selected: viewModel.appTheme == .dark))
+                    }
+                }
+            }
+
+            Section("Notifications") {
+
+                HStack(spacing: 6) {
+
+                    Spacer()
+
+                    VStack(alignment: .trailing) {
+
+                        Text("Status: *\(viewModel.notificationsStatus)*")
+
+                        if viewModel.showEnableNotifications {
+                            Button("Enable notifications") {
+                                viewModel.enableNotificationsInSettings()
+                            }
+                            .buttonStyle(.menu(selected: true))
+                        }
+
+                        if viewModel.showAuthorizeNotifications {
+                            Button("Authorize notifications") {
+                                viewModel.requestNotificationsPermission()
+                            }
+                            .buttonStyle(.menu(selected: true))
+                        }
                     }
                 }
             }

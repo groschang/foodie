@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 15/07/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import SwiftUI
@@ -61,7 +62,7 @@ struct InformationButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .foregroundStyle(AppStyle.foreground)
+            .foregroundStyle(Colors.foreground)
             .background(Colors.background)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? Animations.endScale : Animations.startScale)

@@ -3,6 +3,7 @@
 //  foodie
 //
 //  Created by Konrad Groschang on 11/07/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import Foundation
@@ -28,8 +29,7 @@ final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Iden
 
     @Published private(set) var items: [Category] = []
     private let service: MealsAsyncServiceType
-
-    private var cancellables = Set<AnyCancellable>()
+    
 
     init(service: MealsAsyncServiceType) {
         self.service = service

@@ -3,6 +3,7 @@
 //  foodieTests
 //
 //  Created by Konrad Groschang on 31/08/2023.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
 import XCTest

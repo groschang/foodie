@@ -3,6 +3,7 @@
 //  foodieTests
 //
 //  Created by Konrad Groschang on 18/02/2024.
+//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 
 
 #if canImport(SwiftData)
