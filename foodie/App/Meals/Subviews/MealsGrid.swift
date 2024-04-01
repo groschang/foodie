@@ -29,3 +29,8 @@ struct MealsGrid: View {
         .padding(.horizontal)
     }
 }
+
+
+#Preview {
+    MealsGrid(items: Meals.stub.items)
+}

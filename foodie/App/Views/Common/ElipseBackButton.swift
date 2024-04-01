@@ -31,3 +31,16 @@ struct ElipseBackButton: View {
         .foregroundStyle(AppStyle.white)
     }
 }
+
+
+extension View {
+
+    func eclipseBackButton(action: @escaping VoidAction) -> some View {
+        overlay {
+            ElipseBackButton() { action() }
+                .placeAtTheTop()
+                .placeAtTheLeft()
+                .padding()
+        }
+    }
+}

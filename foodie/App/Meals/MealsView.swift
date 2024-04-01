@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MealsView<Model>: View where Model: MealsViewModelType {
 
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
 
     @StateObject var viewModel: Model
 
@@ -41,11 +41,11 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 
     private var header: some View {
-        ListHeader(
+        AnimatedListHeader(
             title: viewModel.categoryName,
             imageUrl: viewModel.backgroundUrl,
             animate: $animate,
-            backButtonAction: { presentationMode.wrappedValue.dismiss() }
+            dismissAction: { dismiss() }
         )
         .modifier(MealsViewHeaderStyle())
     }

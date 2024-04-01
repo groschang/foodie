@@ -32,13 +32,19 @@ class NotificationManager: NofificationManagerProtocol {
         authorizationHandler.status
     }
 
-    private let notificationHandler = NotificationHandler()
-    private let authorizationHandler = NotificationStatus()
+    private let notificationCenter: UNUserNotificationCenter
 
-    private let notificationCenter = UNUserNotificationCenter.current()
+    private let notificationHandler: NotificationHandler
+    private let authorizationHandler: NotificationStatus
 
+    private init(notificationCenter: UNUserNotificationCenter = .current()) {
+        
+        self.notificationCenter = notificationCenter
+        self.notificationHandler = NotificationHandler(notificationCenter: notificationCenter)
+        self.authorizationHandler = NotificationStatus(notificationCenter: notificationCenter)
 
-    private init() {
+        self.notificationCenter.delegate = self.notificationHandler
+
         Task {
             await authorizationHandler.refreshStatus()
         }

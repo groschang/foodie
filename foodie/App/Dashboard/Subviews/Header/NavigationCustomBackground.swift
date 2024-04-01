@@ -28,6 +28,7 @@ struct NavigationCustomBackground: View {
     }
 }
 
+
 #Preview {
     NavigationCustomBackground(color: .white)
 }

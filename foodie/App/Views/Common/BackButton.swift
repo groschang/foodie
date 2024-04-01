@@ -12,12 +12,27 @@ struct BackButton: View {
 
     let action: VoidAction?
 
+    @State var tint: ColorStyle = AppStyle.accent
+
     var body: some View {
         Button(action: { action?() }) {
             Image(systemName: "arrow.backward")
                 .imageScale(.large)
                 .background(.clear)
-                .foregroundStyle(AppStyle.accent)
+                .foregroundStyle(tint)
         }
     }
+}
+
+
+extension BackButton {
+
+    func tint(_ color: ColorStyle) -> some View {
+        BackButton(action: self.action, tint: color)
+    }
+
+    func tint(_ color: Color) -> some View {
+        BackButton(action: self.action, tint: ColorStyle(color))
+    }
+    
 }

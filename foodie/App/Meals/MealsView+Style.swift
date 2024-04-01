@@ -45,5 +45,3 @@ struct MealsViewHeaderStyle: ViewModifier {
             .edgesIgnoringSafeArea(.top)
     }
 }
-
-

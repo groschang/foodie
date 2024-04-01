@@ -14,7 +14,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
         case RecipeTextView
     }
 
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
 
     @ObservedObject private var viewModel: Model
 
@@ -36,12 +36,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
             .coordinateSpace(name: CoordinateSpace.main)
-            .overlay {
-                ElipseBackButton() { presentationMode.wrappedValue.dismiss() }
-                    .placeAtTheTop()
-                    .placeAtTheLeft()
-                    .padding()
-            }
+            .eclipseBackButton { dismiss() }
     }
 
     var content: some View {

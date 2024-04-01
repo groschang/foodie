@@ -41,3 +41,13 @@ struct ListRowModifier: ViewModifier {
             .padding(.horizontal, Paddings.horizontal)
     }
 }
+
+
+struct CategoriesViewListStyle: ViewModifier {
+
+    func body(content: Content) -> some View {
+        content
+            .listStyle(.plain)
+    }
+}
+

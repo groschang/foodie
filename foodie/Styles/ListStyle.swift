@@ -43,3 +43,9 @@ extension ListStyle {
 
     static let textInserts = EdgeInsets(vertical: 10, horizontal: 30)
 }
+
+extension View {
+    func zeroListRowInsert() -> some View {
+        listRowInsets(EdgeInsets())
+    }
+}

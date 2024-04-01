@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7102D5032BBA1D0900E5BBDF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5022BBA1D0900E5BBDF /* Popup.swift */; };
+		7102D5042BBA219F00E5BBDF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5022BBA1D0900E5BBDF /* Popup.swift */; };
+		7102D5052BBA21A000E5BBDF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5022BBA1D0900E5BBDF /* Popup.swift */; };
+		7102D5062BBA21A000E5BBDF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5022BBA1D0900E5BBDF /* Popup.swift */; };
+		7102D5082BBA6BC100E5BBDF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5072BBA6BC100E5BBDF /* NotificationService.swift */; };
+		7102D5092BBA6BD300E5BBDF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5072BBA6BC100E5BBDF /* NotificationService.swift */; };
+		7102D50A2BBA6BD400E5BBDF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5072BBA6BC100E5BBDF /* NotificationService.swift */; };
+		7102D50B2BBA6BD400E5BBDF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102D5072BBA6BC100E5BBDF /* NotificationService.swift */; };
 		7102F1682B2E9D3900F6D87F /* MealsAsyncStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F1672B2E9D3900F6D87F /* MealsAsyncStreamViewModel.swift */; };
 		7102F16B2B2EAD6F00F6D87F /* CategoriesAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F16A2B2EAD6F00F6D87F /* CategoriesAsyncViewModel.swift */; };
 		7102F16D2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F16C2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift */; };
@@ -281,7 +289,7 @@
 		712AAA602B3374EA008BF0B8 /* MenuViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AAA5F2B3374EA008BF0B8 /* MenuViewFactory.swift */; };
 		712E85F529E1DF470009AFB9 /* MealsViewAnim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F429E1DF470009AFB9 /* MealsViewAnim.swift */; };
 		712E85F729E1E3D50009AFB9 /* CoordinateSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */; };
-		712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
+		712E85FB29E1EBE20009AFB9 /* AnimatedListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* AnimatedListHeader.swift */; };
 		71303FDD2B8BC0C7005082FB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71303FDC2B8BC0C7005082FB /* SnapshotHelper.swift */; };
 		7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */; };
 		713606602A8141E200D40728 /* MealsCombineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065F2A8141E200D40728 /* MealsCombineService.swift */; };
@@ -445,7 +453,7 @@
 		714FB5D92B8247F00050052C /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
 		714FB5DA2B8247F00050052C /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F403CD2A0ABBA3005CF087 /* DependencyContainer.swift */; };
 		714FB5DB2B8247F00050052C /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C9762A1555230034AA14 /* CategoryListViewModel.swift */; };
-		714FB5DC2B8247F00050052C /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
+		714FB5DC2B8247F00050052C /* AnimatedListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* AnimatedListHeader.swift */; };
 		714FB5DD2B8247F00050052C /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */; };
 		714FB5DE2B8247F00050052C /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111EC28297C531C00ABC48C /* HttpStatusCode.swift */; };
 		714FB5DF2B8247F00050052C /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
@@ -568,7 +576,7 @@
 		714FB6692B82482C0050052C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AAA5B2B3373B1008BF0B8 /* MenuViewModel.swift */; };
 		714FB66A2B82482C0050052C /* MealCategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2358B2A7BF79400F06097 /* MealCategoryEntity+CoreDataProperties.swift */; };
 		714FB66B2B82482C0050052C /* MealDetailRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD5DE32B5DB55A003079AC /* MealDetailRealm.swift */; };
-		714FB66C2B82482C0050052C /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
+		714FB66C2B82482C0050052C /* AnimatedListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* AnimatedListHeader.swift */; };
 		714FB66D2B82482C0050052C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227629EADE26007E198B /* BackButton.swift */; };
 		714FB66E2B82482C0050052C /* IngredientEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71052D972991126D000008B6 /* IngredientEntity.swift */; };
 		714FB66F2B82482C0050052C /* ListPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156197D29802B7A001EC9A6 /* ListPhotoView.swift */; };
@@ -821,6 +829,10 @@
 		7162412B2B780A5D0003D4CC /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716241282B780A5D0003D4CC /* YouTubeView.swift */; };
 		7162412D2B780A5D0003D4CC /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716241282B780A5D0003D4CC /* YouTubeView.swift */; };
 		7162412E2B780A5D0003D4CC /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716241282B780A5D0003D4CC /* YouTubeView.swift */; };
+		7163943D2BB7566C00CB8568 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163943C2BB7566C00CB8568 /* ListHeader.swift */; };
+		7163943E2BB7566C00CB8568 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163943C2BB7566C00CB8568 /* ListHeader.swift */; };
+		7163943F2BB7566C00CB8568 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163943C2BB7566C00CB8568 /* ListHeader.swift */; };
+		716394402BB7566C00CB8568 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163943C2BB7566C00CB8568 /* ListHeader.swift */; };
 		71684AC12A51749800392720 /* LoadingStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71684AC02A51749800392720 /* LoadingStateTest.swift */; };
 		716CD11529819AB100E4EA65 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD11429819AB100E4EA65 /* MealView.swift */; };
 		716CD1172981A34A00E4EA65 /* mealDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 716CD1162981A34A00E4EA65 /* mealDetail.json */; };
@@ -907,6 +919,14 @@
 		71A917F72B33DD58004B35C9 /* ColorDescriptionDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A917F62B33DD58004B35C9 /* ColorDescriptionDebugView.swift */; };
 		71A917F92B33DD8D004B35C9 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A917F82B33DD8C004B35C9 /* Layout.swift */; };
 		71A917FB2B33EA33004B35C9 /* DebugSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A917FA2B33EA33004B35C9 /* DebugSection.swift */; };
+		71AF3C2C2BB4AC20009FC1DA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */; };
+		71AF3C2D2BB4AC20009FC1DA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */; };
+		71AF3C2E2BB4AC20009FC1DA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */; };
+		71AF3C2F2BB4AC20009FC1DA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */; };
+		71AF3C322BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
+		71AF3C332BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
+		71AF3C342BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
+		71AF3C352BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
 		71AF83912A3A059D006FEEEB /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; };
 		71AF83942A3A05A4006FEEEB /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71AF83972A3A0B1F006FEEEB /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83962A3A0B1F006FEEEB /* SnapshotTesting */; };
@@ -936,7 +956,7 @@
 		71BF52DC2B4467FA00D95C30 /* ListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F5AA22B369E0100943D42 /* ListType.swift */; };
 		71BF52DF2B44680C00D95C30 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C96B2A11021C0034AA14 /* PhotoView.swift */; };
 		71BF52E02B44680C00D95C30 /* ListFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F5AA62B369ECA00943D42 /* ListFilterButton.swift */; };
-		71BF52E12B44680C00D95C30 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* ListHeader.swift */; };
+		71BF52E12B44680C00D95C30 /* AnimatedListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E85FA29E1EBE20009AFB9 /* AnimatedListHeader.swift */; };
 		71BF52E22B44680C00D95C30 /* ListTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F5AA42B369E1C00943D42 /* ListTypeButton.swift */; };
 		71BF52E32B44680C00D95C30 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191227029EAC17B007E198B /* ListHeaderView.swift */; };
 		71BF52E42B44680C00D95C30 /* ExtendedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719022192A64727700D0418E /* ExtendedTitleView.swift */; };
@@ -1241,6 +1261,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7102D5022BBA1D0900E5BBDF /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		7102D5072BBA6BC100E5BBDF /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7102F1672B2E9D3900F6D87F /* MealsAsyncStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncStreamViewModel.swift; sourceTree = "<group>"; };
 		7102F16A2B2EAD6F00F6D87F /* CategoriesAsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAsyncViewModel.swift; sourceTree = "<group>"; };
 		7102F16C2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAsyncStreamViewModel.swift; sourceTree = "<group>"; };
@@ -1334,7 +1356,7 @@
 		712AAA5F2B3374EA008BF0B8 /* MenuViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewFactory.swift; sourceTree = "<group>"; };
 		712E85F429E1DF470009AFB9 /* MealsViewAnim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealsViewAnim.swift; path = foodie/App/Meals/var/MealsViewAnim.swift; sourceTree = SOURCE_ROOT; };
 		712E85F629E1E3D50009AFB9 /* CoordinateSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpace.swift; sourceTree = "<group>"; };
-		712E85FA29E1EBE20009AFB9 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
+		712E85FA29E1EBE20009AFB9 /* AnimatedListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedListHeader.swift; sourceTree = "<group>"; };
 		71303FDC2B8BC0C7005082FB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncViewModel.swift; sourceTree = "<group>"; };
 		7136065F2A8141E200D40728 /* MealsCombineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCombineService.swift; sourceTree = "<group>"; };
@@ -1367,6 +1389,7 @@
 		715C27FB2B76DADE00E4A39A /* DashboardMealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMealsViewModel.swift; sourceTree = "<group>"; };
 		715C28002B777EFB00E4A39A /* DashboardMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMealView.swift; sourceTree = "<group>"; };
 		716241282B780A5D0003D4CC /* YouTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeView.swift; sourceTree = "<group>"; };
+		7163943C2BB7566C00CB8568 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		71684AA02A506EB700392720 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		71684AA22A506EB700392720 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		71684AC02A51749800392720 /* LoadingStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateTest.swift; sourceTree = "<group>"; };
@@ -1427,6 +1450,8 @@
 		71A917F62B33DD58004B35C9 /* ColorDescriptionDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescriptionDebugView.swift; sourceTree = "<group>"; };
 		71A917F82B33DD8C004B35C9 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		71A917FA2B33EA33004B35C9 /* DebugSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSection.swift; sourceTree = "<group>"; };
+		71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		71AF3C312BB4CC45009FC1DA /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		71AF838E2A39F8F7006FEEEB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logger; path = ../Logger; sourceTree = "<group>"; };
 		71AF83992A3A2C37006FEEEB /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		71B99B9E2A26944100201364 /* MealsAsyncStreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncStreamService.swift; sourceTree = "<group>"; };
@@ -2102,7 +2127,7 @@
 				71C0C9672A11018B0034AA14 /* CoverPhotoView+Style.swift */,
 				719022192A64727700D0418E /* ExtendedTitleView.swift */,
 				718F5AA62B369ECA00943D42 /* ListFilterButton.swift */,
-				712E85FA29E1EBE20009AFB9 /* ListHeader.swift */,
+				712E85FA29E1EBE20009AFB9 /* AnimatedListHeader.swift */,
 				7191227029EAC17B007E198B /* ListHeaderView.swift */,
 				7156197D29802B7A001EC9A6 /* ListPhotoView.swift */,
 				71C0C9652A1101680034AA14 /* ListPhotoView+Style.swift */,
@@ -2117,6 +2142,9 @@
 				717443092B6678D300AFA164 /* TitleBackButton.swift */,
 				7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */,
 				716241282B780A5D0003D4CC /* YouTubeView.swift */,
+				71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */,
+				7163943C2BB7566C00CB8568 /* ListHeader.swift */,
+				7102D5022BBA1D0900E5BBDF /* Popup.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2230,15 +2258,13 @@
 		7191226D29EAC04B007E198B /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				71AF3C302BB4CC1B009FC1DA /* Push notification */,
 				71080F06298F0B1E009FCDDB /* Protocols */,
 				7191226E29EAC083007E198B /* Definitions.swift */,
 				71F514992A81327900E5ECB2 /* MotionManager.swift */,
 				71BFF08B2AA7BABF0080B561 /* ParallaxManager.swift */,
 				71BFF0852AA789980080B561 /* ParallaxShadowModifier.swift */,
 				71BFF0832AA788B10080B561 /* ParallaxMotionModifier.swift */,
-				71E7241F2BB0E68C00C5F10E /* NotificationManager.swift */,
-				71E7241A2BB0A6D500C5F10E /* NotificationHandler.swift */,
-				71E724242BB0E6B400C5F10E /* NotificationStatus.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -2315,6 +2341,18 @@
 				71A917F32B33DCCA004B35C9 /* Text.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		71AF3C302BB4CC1B009FC1DA /* Push notification */ = {
+			isa = PBXGroup;
+			children = (
+				7102D5072BBA6BC100E5BBDF /* NotificationService.swift */,
+				71E7241F2BB0E68C00C5F10E /* NotificationManager.swift */,
+				71E7241A2BB0A6D500C5F10E /* NotificationHandler.swift */,
+				71E724242BB0E6B400C5F10E /* NotificationStatus.swift */,
+				71AF3C312BB4CC45009FC1DA /* PushNotification.swift */,
+			);
+			name = "Push notification";
 			sourceTree = "<group>";
 		};
 		71AF83892A39EAD4006FEEEB /* Packages */ = {
@@ -2871,7 +2909,7 @@
 				71BF52D12B44672700D95C30 /* MenuViewModel.swift in Sources */,
 				7102F1912B2F6C7A00F6D87F /* MealCategoryEntity+CoreDataProperties.swift in Sources */,
 				71DD5DE62B5DB55A003079AC /* MealDetailRealm.swift in Sources */,
-				71BF52E12B44680C00D95C30 /* ListHeader.swift in Sources */,
+				71BF52E12B44680C00D95C30 /* AnimatedListHeader.swift in Sources */,
 				71BF52EC2B44680C00D95C30 /* BackButton.swift in Sources */,
 				71FBF3192B84BC330087E30D /* ClosureViewFactory.swift in Sources */,
 				7102F1922B2F6C7A00F6D87F /* IngredientEntity.swift in Sources */,
@@ -2898,6 +2936,7 @@
 				7102F1A22B2F6C7A00F6D87F /* GeometryReader.swift in Sources */,
 				7102F1A42B2F6C7A00F6D87F /* MealsPassthroughCombineService.swift in Sources */,
 				7102F1A52B2F6C7A00F6D87F /* CategoryEntity+CoreDataClass.swift in Sources */,
+				7163943F2BB7566C00CB8568 /* ListHeader.swift in Sources */,
 				71BF52E92B44680C00D95C30 /* TitleView.swift in Sources */,
 				7102F1A62B2F6C7A00F6D87F /* DashboardCategoriesView.swift in Sources */,
 				7102F1A72B2F6C7A00F6D87F /* Meal.swift in Sources */,
@@ -2970,6 +3009,7 @@
 				7102F1DA2B2F6C7A00F6D87F /* LoadingView.swift in Sources */,
 				7102F1DB2B2F6C7A00F6D87F /* CategoriesView+Style.swift in Sources */,
 				7102F1DC2B2F6C7A00F6D87F /* URLSession.swift in Sources */,
+				71AF3C342BB4CC45009FC1DA /* PushNotification.swift in Sources */,
 				71BF52D22B44673700D95C30 /* ColorStyle.swift in Sources */,
 				7102F1DD2B2F6C7A00F6D87F /* Router.swift in Sources */,
 				7102F1DF2B2F6C7A00F6D87F /* Ingredient.swift in Sources */,
@@ -3016,6 +3056,7 @@
 				7102F2002B2F6C7A00F6D87F /* Thread.swift in Sources */,
 				7138426E2B4C9B9200AB126F /* NavigationCustomBackground.swift in Sources */,
 				7102F2012B2F6C7A00F6D87F /* CategoryListItem+Style.swift in Sources */,
+				7102D50A2BBA6BD400E5BBDF /* NotificationService.swift in Sources */,
 				7102F2022B2F6C7A00F6D87F /* DashboardHeaderDetailView.swift in Sources */,
 				7102F2032B2F6C7A00F6D87F /* Categories.swift in Sources */,
 				7102F2042B2F6C7A00F6D87F /* Definitions.swift in Sources */,
@@ -3035,6 +3076,7 @@
 				7102F2142B2F6C7A00F6D87F /* DashboardCategoriesCloudView.swift in Sources */,
 				71BA90BD2B4A15EF0053E21B /* SafeArea.swift in Sources */,
 				71BF52F02B4468DF00D95C30 /* MealGridItem.swift in Sources */,
+				71AF3C2E2BB4AC20009FC1DA /* NotificationView.swift in Sources */,
 				7102F2152B2F6C7A00F6D87F /* MealsAsyncService.swift in Sources */,
 				7102F2162B2F6C7A00F6D87F /* Meals.swift in Sources */,
 				7102F2172B2F6C7A00F6D87F /* MealCategoryEntity+CoreDataClass.swift in Sources */,
@@ -3090,6 +3132,7 @@
 				7102F2372B2F6C7A00F6D87F /* TimePrinter.swift in Sources */,
 				7102F2382B2F6C7A00F6D87F /* MealViewFactory.swift in Sources */,
 				71BF52E52B44680C00D95C30 /* AsyncButton.swift in Sources */,
+				7102D5062BBA21A000E5BBDF /* Popup.swift in Sources */,
 				71BA90C02B4A16DD0053E21B /* Keyboard.swift in Sources */,
 				71BF52E32B44680C00D95C30 /* ListHeaderView.swift in Sources */,
 				71BF52DB2B4467EF00D95C30 /* ColorStyleDebugView.swift in Sources */,
@@ -3142,6 +3185,7 @@
 				714FB56B2B8247F00050052C /* Animation.swift in Sources */,
 				714FB56C2B8247F00050052C /* DashboardViewFactory.swift in Sources */,
 				714FB56D2B8247F00050052C /* MealAsyncViewModel.swift in Sources */,
+				7102D50B2BBA6BD400E5BBDF /* NotificationService.swift in Sources */,
 				714FB56E2B8247F00050052C /* ListFilterButton.swift in Sources */,
 				714FB56F2B8247F00050052C /* ViewBuilderProtocol.swift in Sources */,
 				714FB5702B8247F00050052C /* GeometryReader.swift in Sources */,
@@ -3179,8 +3223,10 @@
 				714FB5902B8247F00050052C /* MealListItem.swift in Sources */,
 				714FB5912B8247F00050052C /* MealDetailRealm.swift in Sources */,
 				714FB5932B8247F00050052C /* Point3D.swift in Sources */,
+				71AF3C2D2BB4AC20009FC1DA /* NotificationView.swift in Sources */,
 				714FB5942B8247F00050052C /* MealAsyncStreamViewModel.swift in Sources */,
 				714FB5952B8247F00050052C /* MealsSelectView+Style.swift in Sources */,
+				7163943E2BB7566C00CB8568 /* ListHeader.swift in Sources */,
 				714FB5962B8247F00050052C /* MealsSelectView.swift in Sources */,
 				714FB5972B8247F00050052C /* ColorStyleDebugView.swift in Sources */,
 				719D38112B84264C0012ED25 /* MealsGrid.swift in Sources */,
@@ -3258,7 +3304,7 @@
 				714FB5DA2B8247F00050052C /* DependencyContainer.swift in Sources */,
 				714FB7622B8248480050052C /* IngredientSwiftData.swift in Sources */,
 				714FB5DB2B8247F00050052C /* CategoryListViewModel.swift in Sources */,
-				714FB5DC2B8247F00050052C /* ListHeader.swift in Sources */,
+				714FB5DC2B8247F00050052C /* AnimatedListHeader.swift in Sources */,
 				714FB5DD2B8247F00050052C /* URLRequestBuilder.swift in Sources */,
 				714FB5DE2B8247F00050052C /* HttpStatusCode.swift in Sources */,
 				714FB5DF2B8247F00050052C /* DashboardHeaderView.swift in Sources */,
@@ -3268,6 +3314,7 @@
 				719D38182B8426560012ED25 /* MealsList.swift in Sources */,
 				714FB5E32B8247F00050052C /* AnimationCompletionModifier.swift in Sources */,
 				714FB5E42B8247F00050052C /* StaticIndentifier.swift in Sources */,
+				7102D5052BBA21A000E5BBDF /* Popup.swift in Sources */,
 				714FB5E52B8247F00050052C /* SwinjectDependencyContainer.swift in Sources */,
 				714FB5E62B8247F00050052C /* Text.swift in Sources */,
 				714FB5E72B8247F00050052C /* MealsRouter.swift in Sources */,
@@ -3353,6 +3400,7 @@
 				714FB62E2B8247F00050052C /* MealViewFactory.swift in Sources */,
 				714FB62F2B8247F00050052C /* NavigationCustomBackground.swift in Sources */,
 				714FB6302B8247F00050052C /* RouterLink.swift in Sources */,
+				71AF3C332BB4CC45009FC1DA /* PushNotification.swift in Sources */,
 				714FB6322B8247F00050052C /* CategoriesAsyncStreamViewModel.swift in Sources */,
 				714FB6332B8247F00050052C /* YouTubeView.swift in Sources */,
 			);
@@ -3368,6 +3416,7 @@
 				714FB65B2B82482C0050052C /* Angle.swift in Sources */,
 				714FB65C2B82482C0050052C /* DashboardMealView.swift in Sources */,
 				714FB65D2B82482C0050052C /* HTTPSession.swift in Sources */,
+				716394402BB7566C00CB8568 /* ListHeader.swift in Sources */,
 				71FBF3292B84ECF80087E30D /* OffsetObservingScrollView.swift in Sources */,
 				714FB65E2B82482C0050052C /* MealsAsyncStreamServicePreview.swift in Sources */,
 				714FB65F2B82482C0050052C /* MealViewModel.swift in Sources */,
@@ -3385,7 +3434,7 @@
 				714FB66A2B82482C0050052C /* MealCategoryEntity+CoreDataProperties.swift in Sources */,
 				714FB66B2B82482C0050052C /* MealDetailRealm.swift in Sources */,
 				71E724282BB0E6B400C5F10E /* NotificationStatus.swift in Sources */,
-				714FB66C2B82482C0050052C /* ListHeader.swift in Sources */,
+				714FB66C2B82482C0050052C /* AnimatedListHeader.swift in Sources */,
 				71DBD6FD2B8421FA00715B72 /* CategoriesPosts.swift in Sources */,
 				714FB66D2B82482C0050052C /* BackButton.swift in Sources */,
 				714FB66E2B82482C0050052C /* IngredientEntity.swift in Sources */,
@@ -3403,7 +3452,9 @@
 				714FB67A2B82482C0050052C /* NumericLimit.swift in Sources */,
 				714FB67B2B82482C0050052C /* DashboardViewModel.swift in Sources */,
 				714FB67C2B82482C0050052C /* DashboardCategoriesViewModel.swift in Sources */,
+				7102D5042BBA219F00E5BBDF /* Popup.swift in Sources */,
 				714FB67D2B82482C0050052C /* Animation.swift in Sources */,
+				7102D5092BBA6BD300E5BBDF /* NotificationService.swift in Sources */,
 				714FB67E2B82482C0050052C /* DashboardViewFactory.swift in Sources */,
 				714FB67F2B82482C0050052C /* MealAsyncViewModel.swift in Sources */,
 				714FB6802B82482C0050052C /* ViewBuilderProtocol.swift in Sources */,
@@ -3487,6 +3538,7 @@
 				714FB6CA2B82482C0050052C /* CategoriesView+Style.swift in Sources */,
 				71E724232BB0E68C00C5F10E /* NotificationManager.swift in Sources */,
 				714FB6CB2B82482C0050052C /* URLSession.swift in Sources */,
+				71AF3C2F2BB4AC20009FC1DA /* NotificationView.swift in Sources */,
 				714FB6CC2B82482C0050052C /* ColorStyle.swift in Sources */,
 				714FB6CD2B82482C0050052C /* Router.swift in Sources */,
 				714FB6CE2B82482C0050052C /* Ingredient.swift in Sources */,
@@ -3603,6 +3655,7 @@
 				714FB7352B82482C0050052C /* CategoriesViewModel.swift in Sources */,
 				714FB7362B82482C0050052C /* MealsView.swift in Sources */,
 				714FB7372B82482C0050052C /* MealsCombineService.swift in Sources */,
+				71AF3C352BB4CC45009FC1DA /* PushNotification.swift in Sources */,
 				714FB7382B82482C0050052C /* DashboardHeaderView.swift in Sources */,
 				714FB7392B82482C0050052C /* RealmClient.swift in Sources */,
 				714FB73A2B82482C0050052C /* TimePrinter.swift in Sources */,
@@ -3645,6 +3698,7 @@
 				71052D982991126D000008B6 /* IngredientEntity.swift in Sources */,
 				71BA90C52B4AD9750053E21B /* DashboardSearchView.swift in Sources */,
 				71D7023C2B339BA4008900E0 /* Opacity.swift in Sources */,
+				71AF3C2C2BB4AC20009FC1DA /* NotificationView.swift in Sources */,
 				712E85F529E1DF470009AFB9 /* MealsViewAnim.swift in Sources */,
 				717FCCC3298590E50034870D /* EdgeInsets.swift in Sources */,
 				7111EC51297C531C00ABC48C /* ErrorResponse.swift in Sources */,
@@ -3660,6 +3714,7 @@
 				71D036F12A5D90840023356C /* DashboardCategoriesViewModel.swift in Sources */,
 				7111EC94298021C000ABC48C /* Animation.swift in Sources */,
 				71D036EC2A5C97DE0023356C /* DashboardViewFactory.swift in Sources */,
+				7102D5032BBA1D0900E5BBDF /* Popup.swift in Sources */,
 				7102F1702B2EB6C200F6D87F /* MealAsyncViewModel.swift in Sources */,
 				718F5AA72B369ECA00943D42 /* ListFilterButton.swift in Sources */,
 				71FBF3262B84ECF80087E30D /* OffsetObservingScrollView.swift in Sources */,
@@ -3776,7 +3831,7 @@
 				71F403CE2A0ABBA3005CF087 /* DependencyContainer.swift in Sources */,
 				719D380C2B84262F0012ED25 /* MealsList.swift in Sources */,
 				71C0C9772A1555230034AA14 /* CategoryListViewModel.swift in Sources */,
-				712E85FB29E1EBE20009AFB9 /* ListHeader.swift in Sources */,
+				712E85FB29E1EBE20009AFB9 /* AnimatedListHeader.swift in Sources */,
 				71D6E59B2AAA1E9800FD7128 /* URLRequestBuilder.swift in Sources */,
 				7111EC54297C531C00ABC48C /* HttpStatusCode.swift in Sources */,
 				713842642B4C998300AB126F /* DashboardHeaderView.swift in Sources */,
@@ -3799,8 +3854,10 @@
 				71D036F62A5DD9230023356C /* DashboardHeaderDetailView.swift in Sources */,
 				71DBD6F92B8421F400715B72 /* CategoriesGrid.swift in Sources */,
 				710CD4D82B7D728B00FFC7B8 /* MealsAsyncStreamServicePreview.swift in Sources */,
+				71AF3C322BB4CC45009FC1DA /* PushNotification.swift in Sources */,
 				71E7241B2BB0A6D500C5F10E /* NotificationHandler.swift in Sources */,
 				71D702402B33A049008900E0 /* SwiftUIDebugView.swift in Sources */,
+				7102D5082BBA6BC100E5BBDF /* NotificationService.swift in Sources */,
 				7111EC5A297C531C00ABC48C /* Categories.swift in Sources */,
 				7191226F29EAC083007E198B /* Definitions.swift in Sources */,
 				710410742A73E80700EAE3CD /* NSManagedObjectContext.swift in Sources */,
@@ -3866,6 +3923,7 @@
 				7138426D2B4C9B9200AB126F /* NavigationCustomBackground.swift in Sources */,
 				71BFEE032ACD7DB800E91D92 /* RouterLink.swift in Sources */,
 				7102F16D2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift in Sources */,
+				7163943D2BB7566C00CB8568 /* ListHeader.swift in Sources */,
 				716241292B780A5D0003D4CC /* YouTubeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

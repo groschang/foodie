@@ -16,4 +16,7 @@ extension CoordinateSpace {
 
     static let image = "Image"
 
+    
+    static let alert = "Alert"
+
 }

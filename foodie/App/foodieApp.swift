@@ -27,18 +27,14 @@ struct foodieApp: App {
     private let viewFactory: StreamViewFactory
     @ObservedObject private var router: Router
 
-    private let notificationPublisher = NotificationCenter.default.publisher(for: Notification.Name.foodie)
-    @State private var showAlert : Bool = false
-    @State private var notification: UNNotificationContent = .init()
+    @ObservedObject private var notificationService: NotificationService
 
     init() {
         container.assemble()
 
         Log.printDBPath()
 
-        Task {
-           try? await NotificationManager.shared.requestPermission()
-        }
+        notificationService = NotificationService()
 
         let service = container.asyncService
         dashboardViewModel = DashboardViewModel(service: service)
@@ -55,6 +51,7 @@ struct foodieApp: App {
 
     fileprivate var content: some View {
         NavigationStack(path: $router.navigationPath) {
+
             DashboardView(viewModel: dashboardViewModel)
                 .navigationDestination(for: Route.self) { route in
                     viewFactory.makeView(type: route)
@@ -65,6 +62,9 @@ struct foodieApp: App {
                         router.navigate(to: route)
                     }
                 }
+        }
+        .onAppear {
+            notificationService.run()
         }
         .onChange(of: scenePhase) { newPhase in
 
@@ -82,16 +82,11 @@ struct foodieApp: App {
                 break
             }
         }
-        .onReceive(notificationPublisher) { data in
-            if let content = (data.object as? UNNotificationContent) {
-                self.notification = content
-                showAlert = true
+        .popup(isPresented: $notificationService.showNotification,
+               notification: notificationService.notification) { notification in
+            NotificationView(notification: notification) {
+                notificationService.hideNotification()
             }
-        }
-        .alert(isPresented : $showAlert){
-            Alert(title: Text(notification.title),
-                  message: Text(notification.body),
-                  dismissButton: .default(Text("OK")))
         }
         .styleNavigationStack()
         .environmentObject(router)

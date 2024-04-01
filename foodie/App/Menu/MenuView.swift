@@ -74,6 +74,7 @@ struct MenuView: View {
                     }
                 }
             }
+
         }
         .padding()
         .listStyle(SidebarListStyle())

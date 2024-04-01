@@ -69,3 +69,11 @@ extension String {
         self + String.tab
     }
 }
+
+extension String {
+    @inlinable func nilIfEmpty() -> String? {
+        guard self.isNotEmpty else { return nil }
+        
+        return self
+    }
+}

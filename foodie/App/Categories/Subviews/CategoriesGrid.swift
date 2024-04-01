@@ -26,6 +26,10 @@ struct CategoriesGrid: View {
                 }
             }
         }
-        .padding(.horizontal)
     }
+}
+
+
+#Preview {
+    CategoriesGrid(items: Categories.stub.items)
 }

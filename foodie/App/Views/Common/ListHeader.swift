@@ -1,8 +1,8 @@
 //
-//  SwiftUIView.swift
+//  ListHeader.swift
 //  foodie
 //
-//  Created by Konrad Groschang on 08/04/2023.
+//  Created by Konrad Groschang on 29/03/2024.
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
@@ -12,90 +12,40 @@ struct ListHeader: View {
 
     let title: String
 
-    let imageUrl: URL?
+    @Binding var listType: ListType
 
-    @Binding var animate: Bool
-
-    var backButtonAction: VoidAction?
-
-    @State private var backButtonSize: CGRect = .zero
-
-    private var layout: AnyLayout {
-        animate
-        ? AnyLayout(HStackLayout())
-        : AnyLayout(VStackLayout())
-    }
-
-    private var imageRadius: CGFloat { animate ? 50 : 100 }
+    var dismissAction: VoidAction
 
     var body: some View {
-        ZStack {
-            coverPhotoView
+        HStack(spacing: .zero) {
 
-            layout {
-                HStack {
-                    backButton
-                    verticalSpacerView
-                    avatarView
-                        .offset(x: animate ? 0 : -10)
-                    verticalSpacerView
+            BackButton { dismissAction() }
+                .tint(.white)
+
+            Spacer()
+            Text(title)
+                .font(.title)
+                .foregroundStyle(AppStyle.white)
+            Spacer()
+
+            ListTypeButton(
+                type: listType,
+                action: {
+                    withAnimation {
+                        listType = listType.next()
+                    }
                 }
-                titleView
-                horizontalSpacerView
-            }
-            .padding(20)
-            .animation(.spring(), value: animate)
-        }
-        .animation(.spring(), value: animate)
-        .frame(maxWidth: .infinity)
-        .frame(height: animate ? 80 : 160)
-    }
-
-    private var coverPhotoView: some View {
-        PhotoView(imageUrl: imageUrl)
-            .scaledToFill()
-            .clipShape(Rectangle())
-            .blur(radius: 20)
-            .lighterOpacity()
-    }
-
-    private var avatarView: some View {
-        PhotoView(imageUrl: imageUrl)
-            .scaledToFill()
-            .frame(width: imageRadius, height: imageRadius)
-            .background(.gray)
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(.white, lineWidth: animate ? 2 : 4)
             )
-            .animation(.spring(), value: animate)
-    }
-
-    private var titleView: some View {
-        Text(title)
-            .font(.title)
-            .foregroundStyle(AppStyle.white)
-    }
-
-    private var backButton: some View {
-        BackButton(action: { backButtonAction?() })
-    }
-
-    @ViewBuilder
-    private var horizontalSpacerView: some View {
-        if animate {
-            Spacer()
+            .tint(.white)
         }
+        .padding(20)
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
+        .background(Color.accent)
     }
 
-    @ViewBuilder
-    private var verticalSpacerView: some View {
-        if !animate {
-            Spacer()
-        }
-    }
 }
+
 
 // MARK: Preview
 
@@ -107,15 +57,12 @@ struct ListHeader_Previews: PreviewProvider {
     }
 
     struct Preview: View {
-        @State var animate = false
+        @State private var listType: ListType = .grid
 
         var body: some View {
             ListHeader(title: Category.stub.name,
-                       imageUrl: Category.stub.imageUrl,
-                       animate: $animate)
-            .onTapGesture {
-                animate.toggle()
-            }
+                       listType: $listType,
+                       dismissAction: { })
         }
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
 
+    @Environment(\.dismiss) var dismiss
+
     @StateObject private var viewModel: Model
 
     @State private var category: Category?
@@ -22,26 +24,25 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
 
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
-            .styleNavigationBar()
-            .navigationTitle(viewModel.title)
-            .searchable(text: $viewModel.searchQuery)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    ListTypeButton(
-                        type: listType,
-                        action: {
-                            withAnimation {
-                                listType = listType.next()
-                            }
-                        }
-                    )
-                    .tint(.accent)
-                }
-            }
+            .hideNavigationBar()
+    }
+
+    private var content: some View {
+        VStack(spacing: .zero) {
+            header
+            categories
+        }
+        .background(AppStyle.background)
+    }
+
+    private var header: some View {
+        ListHeader(title: viewModel.title,
+                   listType: $listType,
+                   dismissAction: { dismiss() })
     }
 
     @ViewBuilder
-    private var content: some View {
+    private var categories: some View {
         List(selection: $category) {
 
             let items = viewModel.filteredItems
@@ -56,10 +57,11 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
             }
 
         }
-        .modifier(MealsViewRecipesStyle())
+        .modifier(CategoriesViewListStyle())
     }
 
 }
+
 
 // MARK: Previews
 
