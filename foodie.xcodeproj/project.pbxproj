@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -181,7 +181,6 @@
 		7102F2382B2F6C7A00F6D87F /* MealViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFEDFE2ACD6FA000E91D92 /* MealViewFactory.swift */; };
 		7102F2392B2F6C7A00F6D87F /* RouterLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BFEE022ACD7DB800E91D92 /* RouterLink.swift */; };
 		7102F23B2B2F6C7A00F6D87F /* CategoriesAsyncStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F16C2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift */; };
-		7102F23D2B2F6C7A00F6D87F /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 7102F1802B2F6C7A00F6D87F /* Logger */; };
 		7102F23E2B2F6C7A00F6D87F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7102F17E2B2F6C7A00F6D87F /* Kingfisher */; };
 		7102F2402B2F6C7A00F6D87F /* mealCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC7C297C653400ABC48C /* mealCategory.json */; };
 		7102F2412B2F6C7A00F6D87F /* meal2.json in Resources */ = {isa = PBXBuildFile; fileRef = 713FF2712A633BCF00F06C13 /* meal2.json */; };
@@ -193,7 +192,6 @@
 		7102F2472B2F6C7A00F6D87F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 717FCCB82985642D0034870D /* README.md */; };
 		7102F2482B2F6C7A00F6D87F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC3B297C531C00ABC48C /* Preview Assets.xcassets */; };
 		7102F2492B2F6C7A00F6D87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC2A297C531C00ABC48C /* Assets.xcassets */; };
-		7102F24B2B2F6C7A00F6D87F /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7102F1802B2F6C7A00F6D87F /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7103919F2B4D730100475574 /* IdentifiableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7103919E2B4D730100475574 /* IdentifiableObject.swift */; };
 		710391A02B4D730100475574 /* IdentifiableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7103919E2B4D730100475574 /* IdentifiableObject.swift */; };
 		710410722A73117600EAE3CD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710410712A73117600EAE3CD /* URL.swift */; };
@@ -542,7 +540,6 @@
 		714FB6332B8247F00050052C /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716241282B780A5D0003D4CC /* YouTubeView.swift */; };
 		714FB6352B8247F00050052C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB5452B8247F00050052C /* RealmSwift */; };
 		714FB6362B8247F00050052C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB5432B8247F00050052C /* Realm */; };
-		714FB6372B8247F00050052C /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB5422B8247F00050052C /* Logger */; };
 		714FB6382B8247F00050052C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB5402B8247F00050052C /* Kingfisher */; };
 		714FB63A2B8247F00050052C /* mealCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC7C297C653400ABC48C /* mealCategory.json */; };
 		714FB63B2B8247F00050052C /* meal2.json in Resources */ = {isa = PBXBuildFile; fileRef = 713FF2712A633BCF00F06C13 /* meal2.json */; };
@@ -554,7 +551,6 @@
 		714FB6422B8247F00050052C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 717FCCB82985642D0034870D /* README.md */; };
 		714FB6442B8247F00050052C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC3B297C531C00ABC48C /* Preview Assets.xcassets */; };
 		714FB6452B8247F00050052C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC2A297C531C00ABC48C /* Assets.xcassets */; };
-		714FB6472B8247F00050052C /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 714FB5422B8247F00050052C /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		714FB64F2B8248240050052C /* SwiftDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7138427E2B4CC21000AB126F /* SwiftDataClient.swift */; };
 		714FB6582B82482C0050052C /* MealsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C95C2A10FF780034AA14 /* MealsView+Style.swift */; };
 		714FB6592B82482C0050052C /* ListPhotoView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C0C9652A1101680034AA14 /* ListPhotoView+Style.swift */; };
@@ -787,7 +783,6 @@
 		714FB7422B82482C0050052C /* CategoriesAsyncStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102F16C2B2EADB400F6D87F /* CategoriesAsyncStreamViewModel.swift */; };
 		714FB7442B82482C0050052C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB6562B82482C0050052C /* RealmSwift */; };
 		714FB7452B82482C0050052C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB6542B82482C0050052C /* Realm */; };
-		714FB7462B82482C0050052C /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB6532B82482C0050052C /* Logger */; };
 		714FB7472B82482C0050052C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 714FB6512B82482C0050052C /* Kingfisher */; };
 		714FB7492B82482C0050052C /* mealCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC7C297C653400ABC48C /* mealCategory.json */; };
 		714FB74A2B82482C0050052C /* meal2.json in Resources */ = {isa = PBXBuildFile; fileRef = 713FF2712A633BCF00F06C13 /* meal2.json */; };
@@ -799,7 +794,6 @@
 		714FB7512B82482C0050052C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 717FCCB82985642D0034870D /* README.md */; };
 		714FB7532B82482C0050052C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC3B297C531C00ABC48C /* Preview Assets.xcassets */; };
 		714FB7542B82482C0050052C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111EC2A297C531C00ABC48C /* Assets.xcassets */; };
-		714FB7562B82482C0050052C /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 714FB6532B82482C0050052C /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		714FB75C2B8248430050052C /* SwiftDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7138427E2B4CC21000AB126F /* SwiftDataClient.swift */; };
 		714FB75D2B8248480050052C /* MealCategorySwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842702B4CA5BA00AB126F /* MealCategorySwiftData.swift */; };
 		714FB75E2B8248480050052C /* IngredientSwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842762B4CA5CE00AB126F /* IngredientSwiftData.swift */; };
@@ -837,6 +831,12 @@
 		716CD11529819AB100E4EA65 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD11429819AB100E4EA65 /* MealView.swift */; };
 		716CD1172981A34A00E4EA65 /* mealDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 716CD1162981A34A00E4EA65 /* mealDetail.json */; };
 		716CD1192981C17000E4EA65 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD1182981C17000E4EA65 /* NavigationBarModifier.swift */; };
+		716E3DAA2BBC501C00CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DA92BBC501C00CD6960 /* Logger */; };
+		716E3DAC2BBC503B00CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DAB2BBC503B00CD6960 /* Logger */; };
+		716E3DAF2BBC505800CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DAE2BBC505800CD6960 /* Logger */; };
+		716E3DB02BBC505800CD6960 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DAE2BBC505800CD6960 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		716E3DB22BBC505C00CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DB12BBC505C00CD6960 /* Logger */; };
+		716E3DB32BBC505C00CD6960 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DB12BBC505C00CD6960 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		717443002B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
 		717443022B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
 		717443052B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
@@ -927,8 +927,6 @@
 		71AF3C332BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
 		71AF3C342BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
 		71AF3C352BB4CC45009FC1DA /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF3C312BB4CC45009FC1DA /* PushNotification.swift */; };
-		71AF83912A3A059D006FEEEB /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; };
-		71AF83942A3A05A4006FEEEB /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83902A3A059D006FEEEB /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71AF83972A3A0B1F006FEEEB /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 71AF83962A3A0B1F006FEEEB /* SnapshotTesting */; };
 		71AF839A2A3A2C37006FEEEB /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF83992A3A2C37006FEEEB /* APITest.swift */; };
 		71B99B9F2A26944100201364 /* MealsAsyncStreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B99B9E2A26944100201364 /* MealsAsyncStreamService.swift */; };
@@ -1180,7 +1178,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7102F24B2B2F6C7A00F6D87F /* Logger in Embed Frameworks */,
+				716E3DB02BBC505800CD6960 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1201,7 +1199,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				714FB6472B8247F00050052C /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1222,7 +1219,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				714FB7562B82482C0050052C /* Logger in Embed Frameworks */,
+				716E3DB32BBC505C00CD6960 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1253,7 +1250,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				71AF83942A3A05A4006FEEEB /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1396,6 +1392,7 @@
 		716CD11429819AB100E4EA65 /* MealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		716CD1162981A34A00E4EA65 /* mealDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealDetail.json; sourceTree = "<group>"; };
 		716CD1182981C17000E4EA65 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		716E3DB42BBC506E00CD6960 /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logger; path = Packages/Logger; sourceTree = "<group>"; };
 		717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientsView+Style.swift"; sourceTree = "<group>"; };
 		717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCoverPhotoView.swift; sourceTree = "<group>"; };
 		717443092B6678D300AFA164 /* TitleBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBackButton.swift; sourceTree = "<group>"; };
@@ -1452,7 +1449,6 @@
 		71A917FA2B33EA33004B35C9 /* DebugSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSection.swift; sourceTree = "<group>"; };
 		71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		71AF3C312BB4CC45009FC1DA /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
-		71AF838E2A39F8F7006FEEEB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logger; path = ../Logger; sourceTree = "<group>"; };
 		71AF83992A3A2C37006FEEEB /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		71B99B9E2A26944100201364 /* MealsAsyncStreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAsyncStreamService.swift; sourceTree = "<group>"; };
 		71B99BA02A27B55000201364 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -1579,7 +1575,7 @@
 			files = (
 				71DD5DCE2B5DB470003079AC /* RealmSwift in Frameworks */,
 				71DD5DCC2B5DB470003079AC /* Realm in Frameworks */,
-				7102F23D2B2F6C7A00F6D87F /* Logger in Frameworks */,
+				716E3DAF2BBC505800CD6960 /* Logger in Frameworks */,
 				7102F23E2B2F6C7A00F6D87F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1590,7 +1586,7 @@
 			files = (
 				714FB6352B8247F00050052C /* RealmSwift in Frameworks */,
 				714FB6362B8247F00050052C /* Realm in Frameworks */,
-				714FB6372B8247F00050052C /* Logger in Frameworks */,
+				716E3DAC2BBC503B00CD6960 /* Logger in Frameworks */,
 				714FB6382B8247F00050052C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1601,7 +1597,7 @@
 			files = (
 				714FB7442B82482C0050052C /* RealmSwift in Frameworks */,
 				714FB7452B82482C0050052C /* Realm in Frameworks */,
-				714FB7462B82482C0050052C /* Logger in Frameworks */,
+				716E3DB22BBC505C00CD6960 /* Logger in Frameworks */,
 				714FB7472B82482C0050052C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1612,7 +1608,7 @@
 			files = (
 				71DD5DC52B5DB431003079AC /* RealmSwift in Frameworks */,
 				71DD5DC32B5DB431003079AC /* Realm in Frameworks */,
-				71AF83912A3A059D006FEEEB /* Logger in Frameworks */,
+				716E3DAA2BBC501C00CD6960 /* Logger in Frameworks */,
 				7111EC8E297C94B000ABC48C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2358,7 +2354,7 @@
 		71AF83892A39EAD4006FEEEB /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				71AF838E2A39F8F7006FEEEB /* Logger */,
+				716E3DB42BBC506E00CD6960 /* Logger */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -2605,9 +2601,9 @@
 			name = mockedFoodie;
 			packageProductDependencies = (
 				7102F17E2B2F6C7A00F6D87F /* Kingfisher */,
-				7102F1802B2F6C7A00F6D87F /* Logger */,
 				71DD5DCB2B5DB470003079AC /* Realm */,
 				71DD5DCD2B5DB470003079AC /* RealmSwift */,
+				716E3DAE2BBC505800CD6960 /* Logger */,
 			);
 			productName = drink;
 			productReference = 7102F2512B2F6C7A00F6D87F /* mockedFoodie.app */;
@@ -2630,9 +2626,9 @@
 			name = foodieIOS17;
 			packageProductDependencies = (
 				714FB5402B8247F00050052C /* Kingfisher */,
-				714FB5422B8247F00050052C /* Logger */,
 				714FB5432B8247F00050052C /* Realm */,
 				714FB5452B8247F00050052C /* RealmSwift */,
+				716E3DAB2BBC503B00CD6960 /* Logger */,
 			);
 			productName = drink;
 			productReference = 714FB64C2B8247F00050052C /* foodieIOS17.app */;
@@ -2655,9 +2651,9 @@
 			name = mockedFoodieIOS17;
 			packageProductDependencies = (
 				714FB6512B82482C0050052C /* Kingfisher */,
-				714FB6532B82482C0050052C /* Logger */,
 				714FB6542B82482C0050052C /* Realm */,
 				714FB6562B82482C0050052C /* RealmSwift */,
+				716E3DB12BBC505C00CD6960 /* Logger */,
 			);
 			productName = drink;
 			productReference = 714FB75B2B82482C0050052C /* mockedFoodieIOS17.app */;
@@ -2680,9 +2676,9 @@
 			name = foodie;
 			packageProductDependencies = (
 				7111EC8D297C94B000ABC48C /* Kingfisher */,
-				71AF83902A3A059D006FEEEB /* Logger */,
 				71DD5DC22B5DB431003079AC /* Realm */,
 				71DD5DC42B5DB431003079AC /* RealmSwift */,
+				716E3DA92BBC501C00CD6960 /* Logger */,
 			);
 			productName = drink;
 			productReference = 71E2A5792970336A0012E5C6 /* foodie.app */;
@@ -2782,6 +2778,7 @@
 				71DD5DC12B5DB431003079AC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				719F6A602B7EAFD60000770A /* XCRemoteSwiftPackageReference "Nimble" */,
 				719D19DE2BA4CB39006AAA48 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */,
 			);
 			productRefGroup = 71E2A57A2970336A0012E5C6 /* Products */;
 			projectDirPath = "";
@@ -4637,6 +4634,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Logger;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		7102F17F2B2F6C7A00F6D87F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -4726,10 +4730,6 @@
 			package = 7102F17F2B2F6C7A00F6D87F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		7102F1802B2F6C7A00F6D87F /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logger;
-		};
 		7111EC8D297C94B000ABC48C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7111EC8C297C94B000ABC48C /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -4739,10 +4739,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 714FB5412B8247F00050052C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		714FB5422B8247F00050052C /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logger;
 		};
 		714FB5432B8247F00050052C /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -4758,10 +4754,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 714FB6522B82482C0050052C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		714FB6532B82482C0050052C /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logger;
 		};
 		714FB6542B82482C0050052C /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -4788,6 +4780,25 @@
 			package = 71AF83952A3A0B1F006FEEEB /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
+		716E3DA92BBC501C00CD6960 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		716E3DAB2BBC503B00CD6960 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */;
+			productName = Logger;
+		};
+		716E3DAE2BBC505800CD6960 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */;
+			productName = Logger;
+		};
+		716E3DB12BBC505C00CD6960 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */;
+			productName = Logger;
+		};
 		719D19E82BA4D18D006AAA48 /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 719D19DE2BA4CB39006AAA48 /* XCRemoteSwiftPackageReference "ViewInspector" */;
@@ -4802,10 +4813,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 719F6A602B7EAFD60000770A /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
-		};
-		71AF83902A3A059D006FEEEB /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logger;
 		};
 		71AF83962A3A0B1F006FEEEB /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
