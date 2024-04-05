@@ -1,17 +1,31 @@
-# foodie
+<h1 align="center">
+Foodie
+</h1>
 
-API: [themealdb](https://www.themealdb.com/api.php)
+<p align="center">Foods Catalogue</p>
+
+<p align="center">
+<img style="width: 250px" src="Assets/screen5.png">
+<img style="width: 250px" src="Assets/screen.png"> 
+</p>
+<p align="center">
+<img style="width: 250px" src="Assets/screen1.png"> 
+<img style="width: 250px" src="Assets/screen4.png">
+<img style="width: 250px" src="Assets/screen2.png">
+</p>
 
 
-## TODO list
+
+## TODO checklist
 
 ### Features:
 - [ ] vibtarions
 - [ ] iPad split screen
+- [ ] Search bar
 
 ### Improvements:
 - [ ] model
-- [ ] asyc view states
+- [ ] async view states
 - [ ] extract and clean text styles
 - [ ] use EmbedInStackModifier
 - [ ] localization
@@ -35,12 +49,12 @@ API: [themealdb](https://www.themealdb.com/api.php)
 ### Fixes:
 - [ ] MotionManager handling and optimization (utilize core)
 - [ ] iterate over TODO's
-- [ ] Remove routers ? RouterProtocol
+- [ ] remove routers ? RouterProtocol
 - [ ] factories: remove doubled services 
 - [ ] fix searchable
 
 ### Before release
-- [ ] All rights reserved phrase 
+
 
 ### Done:
 - [x] create new target for mocked container &else
@@ -56,3 +70,7 @@ API: [themealdb](https://www.themealdb.com/api.php)
 - [X] Realm
 - [X] categories grid view
 - [x] navigationBarHiddenx ?
+
+### API
+
+Used API: [themealdb](https://www.themealdb.com/api.php)

@@ -27,7 +27,5 @@ playground.xcworkspace
 Dependencies/
 iOSInjectionProject/
 
+
 .swiftlint.yml
-.swiftplantuml.yml
-diagram_uml.txt
-.swiftplantuml2.yml
