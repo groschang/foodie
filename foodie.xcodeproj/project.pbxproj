@@ -292,16 +292,18 @@
 		7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */; };
 		713606602A8141E200D40728 /* MealsCombineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065F2A8141E200D40728 /* MealsCombineService.swift */; };
 		713606622A81425D00D40728 /* MealsCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713606612A81425D00D40728 /* MealsCombineViewModel.swift */; };
-		7138337F2E16E9C000DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 7138337E2E16E9C000DCBDD7 /* Logger */; };
 		713833812E16EAB700DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; };
 		713833842E16EABF00DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833832E16EABF00DCBDD7 /* Logger */; };
 		713833872E16EAC600DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833862E16EAC600DCBDD7 /* Logger */; };
 		7138338A2E16EAD200DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; };
-		7138338B2E16EAD200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7138338B2E16EAD200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; };
 		7138338E2E16EAD800DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; };
-		7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		713833922E16F0FE00DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138337E2E16E9C000DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; };
+		713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; };
+		713833952E16FF6E00DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; };
+		713833962E16FF7200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; };
+		713833972E16FF7A00DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833832E16EABF00DCBDD7 /* Logger */; };
+		713833982E16FF7F00DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833862E16EAC600DCBDD7 /* Logger */; };
 		713842642B4C998300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842652B4C99E300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842672B4C9B3F00AB126F /* DashboardSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842662B4C9B3F00AB126F /* DashboardSearchHeaderView.swift */; };
@@ -895,7 +897,6 @@
 		719D19F12BA4E73A006AAA48 /* AccessibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D19EF2BA4E73A006AAA48 /* AccessibilityView.swift */; };
 		719D19F22BA4E73A006AAA48 /* AccessibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D19EF2BA4E73A006AAA48 /* AccessibilityView.swift */; };
 		719D19F32BA4E73A006AAA48 /* AccessibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D19EF2BA4E73A006AAA48 /* AccessibilityView.swift */; };
-		719D19FE2BA50830006AAA48 /* MealViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D19FD2BA50830006AAA48 /* MealViewTest.swift */; };
 		719D380C2B84262F0012ED25 /* MealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D380B2B84262F0012ED25 /* MealsList.swift */; };
 		719D380E2B84263C0012ED25 /* MealsPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D380D2B84263C0012ED25 /* MealsPosts.swift */; };
 		719D38102B84264C0012ED25 /* MealsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D380F2B84264C0012ED25 /* MealsGrid.swift */; };
@@ -1145,13 +1146,6 @@
 			remoteGlobalIDString = 714FB53F2B8247F00050052C;
 			remoteInfo = "foodie ios17";
 		};
-		714FB76F2B8249A90050052C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71E2A5712970336A0012E5C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 714FB53F2B8247F00050052C;
-			remoteInfo = "foodie ios17";
-		};
 		71E2A5BB2970A6F90012E5C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71E2A5712970336A0012E5C6 /* Project object */;
@@ -1225,6 +1219,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				713833972E16FF7A00DCBDD7 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1245,6 +1240,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				713833982E16FF7F00DCBDD7 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1275,7 +1271,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				713833922E16F0FE00DCBDD7 /* Logger in Embed Frameworks */,
+				713833962E16FF7200DCBDD7 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1459,7 +1455,6 @@
 		71966C002A94D81F0095DDB3 /* DashboardCategoriesCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCategoriesCloudView.swift; sourceTree = "<group>"; };
 		719D19DA2BA4CA40006AAA48 /* MealViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewTest.swift; sourceTree = "<group>"; };
 		719D19EF2BA4E73A006AAA48 /* AccessibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityView.swift; sourceTree = "<group>"; };
-		719D19FD2BA50830006AAA48 /* MealViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewTest.swift; sourceTree = "<group>"; };
 		719D380B2B84262F0012ED25 /* MealsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsList.swift; sourceTree = "<group>"; };
 		719D380D2B84263C0012ED25 /* MealsPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsPosts.swift; sourceTree = "<group>"; };
 		719D380F2B84264C0012ED25 /* MealsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsGrid.swift; sourceTree = "<group>"; };
@@ -1634,7 +1629,7 @@
 			files = (
 				71DD5DC52B5DB431003079AC /* RealmSwift in Frameworks */,
 				71DD5DC32B5DB431003079AC /* Realm in Frameworks */,
-				7138337F2E16E9C000DCBDD7 /* Logger in Frameworks */,
+				713833952E16FF6E00DCBDD7 /* Logger in Frameworks */,
 				7111EC8E297C94B000ABC48C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2567,7 +2562,6 @@
 		71E2A5B82970A6F90012E5C6 /* foodieTests */ = {
 			isa = PBXGroup;
 			children = (
-				719D19FD2BA50830006AAA48 /* MealViewTest.swift */,
 				71684AC02A51749800392720 /* LoadingStateTest.swift */,
 				71D7DC83297BFC8200A30FF8 /* Networking */,
 				71757C592A72DDFB008EFD92 /* Persistence */,
@@ -2706,7 +2700,7 @@
 				7111EC8D297C94B000ABC48C /* Kingfisher */,
 				71DD5DC22B5DB431003079AC /* Realm */,
 				71DD5DC42B5DB431003079AC /* RealmSwift */,
-				7138337E2E16E9C000DCBDD7 /* Logger */,
+				713833942E16FF6E00DCBDD7 /* Logger */,
 			);
 			productName = drink;
 			productReference = 71E2A5792970336A0012E5C6 /* foodie.app */;
@@ -2755,7 +2749,6 @@
 			);
 			dependencies = (
 				71E2A5D52971D4E80012E5C6 /* PBXTargetDependency */,
-				714FB7702B8249A90050052C /* PBXTargetDependency */,
 				71303FDF2B8BC8DA005082FB /* PBXTargetDependency */,
 			);
 			name = foodieUITests;
@@ -2810,7 +2803,7 @@
 				71DD5DC12B5DB431003079AC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				719F6A602B7EAFD60000770A /* XCRemoteSwiftPackageReference "Nimble" */,
 				719D19DE2BA4CB39006AAA48 /* XCRemoteSwiftPackageReference "ViewInspector" */,
-				7138337D2E16E9C000DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */,
+				713833932E16FF6E00DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */,
 			);
 			productRefGroup = 71E2A57A2970336A0012E5C6 /* Products */;
 			projectDirPath = "";
@@ -3977,7 +3970,6 @@
 				71E2A5C12970A76A0012E5C6 /* MealsServiceTest.swift in Sources */,
 				71757C5E2A72FB36008EFD92 /* CoreDataClientTest.swift in Sources */,
 				71F1162B2A7275DC009A93B5 /* ContainsItems.swift in Sources */,
-				719D19FE2BA50830006AAA48 /* MealViewTest.swift in Sources */,
 				71F380A32AA0980600C7D7EE /* DecodingErrorTest.swift in Sources */,
 				71757C572A72D4C1008EFD92 /* APIClientMock.swift in Sources */,
 				710CD4C12B7D645300FFC7B8 /* MealsServiceMock.swift in Sources */,
@@ -4013,11 +4005,6 @@
 			isa = PBXTargetDependency;
 			target = 714FB53F2B8247F00050052C /* foodieIOS17 */;
 			targetProxy = 714FB76D2B8249910050052C /* PBXContainerItemProxy */;
-		};
-		714FB7702B8249A90050052C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 714FB53F2B8247F00050052C /* foodieIOS17 */;
-			targetProxy = 714FB76F2B8249A90050052C /* PBXContainerItemProxy */;
 		};
 		71E2A5BC2970A6F90012E5C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4061,7 +4048,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4102,7 +4089,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4146,7 +4133,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4187,7 +4174,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4231,7 +4218,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4239,7 +4226,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crestbe.foodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -4272,7 +4259,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4280,7 +4267,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crestbe.foodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -4436,7 +4423,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4477,7 +4464,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4504,10 +4491,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNSB8S3L6D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieTests;
@@ -4529,10 +4516,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNSB8S3L6D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieTests;
@@ -4553,9 +4540,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNSB8S3L6D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4575,9 +4562,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNSB8S3L6D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4661,7 +4648,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		7138337D2E16E9C000DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */ = {
+		713833932E16FF6E00DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logger;
 		};
@@ -4761,10 +4748,6 @@
 			package = 7111EC8C297C94B000ABC48C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		7138337E2E16E9C000DCBDD7 /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logger;
-		};
 		713833802E16EAB700DCBDD7 /* Logger */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Logger;
@@ -4782,6 +4765,10 @@
 			productName = Logger;
 		};
 		7138338D2E16EAD800DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		713833942E16FF6E00DCBDD7 /* Logger */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Logger;
 		};

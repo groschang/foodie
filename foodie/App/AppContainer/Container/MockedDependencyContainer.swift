@@ -32,7 +32,7 @@ final class MockedDependencyContainer: DependencyContainerType {
             APIClient()
         }
 
-#if MOCKED || NORMAL
+#if NORMAL || MOCK
         container.register(PersistenceClient.self) { _ in
             CoreDataClient() //TODO: make stubs?
         }
