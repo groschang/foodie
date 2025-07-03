@@ -42,7 +42,7 @@ struct DashboardSearchHeaderView: View {
 
 
 #Preview {
-    @Namespace var namespace
+    @Previewable @Namespace var namespace
 
     return DashboardSearchHeaderView(namespace: namespace,
                                      presentingSearch: .constant(false))

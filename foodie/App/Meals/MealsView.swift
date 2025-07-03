@@ -35,7 +35,7 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
         }
         .background(AppStyle.background)
         .animation(.spring(), value: animate)
-        .onChange(of: offset) { offset in
+        .onChange(of: offset) { _, offset in
             animate = offset.y > 100
         }
     }

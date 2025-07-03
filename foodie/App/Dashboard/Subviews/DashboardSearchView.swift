@@ -60,8 +60,8 @@ struct DashboardSearchView: View {
 
 #Preview {
 
-    @Namespace var namespace
-    @State var show: Bool = true
+    @Previewable @Namespace var namespace
+    @Previewable @State var show: Bool = true
 
     return DashboardSearchView(
         namespace: namespace,

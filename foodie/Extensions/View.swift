@@ -77,7 +77,7 @@ extension View {
 
 
 // QUICK SOLUTION: Enable back getsture in views that has navigation bar hidden
-extension UINavigationController: UIGestureRecognizerDelegate {
+extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
 
     override open func viewDidLoad() {
         super.viewDidLoad()

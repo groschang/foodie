@@ -35,7 +35,8 @@ extension CGPoint {
     }
 }
 
-extension CGPoint: VectorArithmetic {
+extension CGPoint: @retroactive AdditiveArithmetic {}
+extension CGPoint: @retroactive VectorArithmetic {
 
     public mutating func scale(by rhs: Double) {
         self.x *= rhs

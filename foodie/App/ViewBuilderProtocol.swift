@@ -12,9 +12,9 @@ protocol ViewBuilderProtocol {
     associatedtype V1: View
     associatedtype V2: View
     associatedtype DataView: View
-    func makeView() -> V2
-    func makeView(item: any IdentifiableObject) -> V1
-    func makeEmptyView() -> DataView
+    @MainActor func makeView() -> V2
+    @MainActor func makeView(item: any IdentifiableObject) -> V1
+    @MainActor func makeEmptyView() -> DataView
 }
 
 extension ViewBuilderProtocol {

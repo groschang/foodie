@@ -16,7 +16,7 @@ import Logger
 #endif
 
 
-extension Logger: DatabaseLogger {
+extension Logger: @retroactive DatabaseLogger {
 
     public static func printDBPath() {
         DatabaseLoggerImpl.printDBPath()

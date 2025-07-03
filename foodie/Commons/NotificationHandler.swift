@@ -68,7 +68,7 @@ extension Notification.Name {
     static let foodie = Notification.Name("com.conrad.foodie.notification")
 }
 
-extension UNAuthorizationStatus: CustomStringConvertible {
+extension UNAuthorizationStatus: @retroactive CustomStringConvertible {
 
     public var description: String {
         switch self {

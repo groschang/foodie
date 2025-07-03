@@ -292,6 +292,16 @@
 		7136065C2A813E3000D40728 /* MealsAsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065B2A813E3000D40728 /* MealsAsyncViewModel.swift */; };
 		713606602A8141E200D40728 /* MealsCombineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136065F2A8141E200D40728 /* MealsCombineService.swift */; };
 		713606622A81425D00D40728 /* MealsCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713606612A81425D00D40728 /* MealsCombineViewModel.swift */; };
+		7138337F2E16E9C000DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 7138337E2E16E9C000DCBDD7 /* Logger */; };
+		713833812E16EAB700DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; };
+		713833842E16EABF00DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833832E16EABF00DCBDD7 /* Logger */; };
+		713833872E16EAC600DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833862E16EAC600DCBDD7 /* Logger */; };
+		7138338A2E16EAD200DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; };
+		7138338B2E16EAD200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7138338E2E16EAD800DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; };
+		7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		713833922E16F0FE00DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138337E2E16E9C000DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		713842642B4C998300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842652B4C99E300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842672B4C9B3F00AB126F /* DashboardSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842662B4C9B3F00AB126F /* DashboardSearchHeaderView.swift */; };
@@ -831,12 +841,6 @@
 		716CD11529819AB100E4EA65 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD11429819AB100E4EA65 /* MealView.swift */; };
 		716CD1172981A34A00E4EA65 /* mealDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 716CD1162981A34A00E4EA65 /* mealDetail.json */; };
 		716CD1192981C17000E4EA65 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CD1182981C17000E4EA65 /* NavigationBarModifier.swift */; };
-		716E3DAA2BBC501C00CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DA92BBC501C00CD6960 /* Logger */; };
-		716E3DAC2BBC503B00CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DAB2BBC503B00CD6960 /* Logger */; };
-		716E3DAF2BBC505800CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DAE2BBC505800CD6960 /* Logger */; };
-		716E3DB02BBC505800CD6960 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DAE2BBC505800CD6960 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		716E3DB22BBC505C00CD6960 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DB12BBC505C00CD6960 /* Logger */; };
-		716E3DB32BBC505C00CD6960 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716E3DB12BBC505C00CD6960 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		717443002B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
 		717443022B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
 		717443052B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
@@ -1178,7 +1182,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				716E3DB02BBC505800CD6960 /* Logger in Embed Frameworks */,
+				713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1191,6 +1195,28 @@
 			files = (
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7138338C2E16EAD200DCBDD7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7138338B2E16EAD200DCBDD7 /* Logger in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		713833902E16EAD800DCBDD7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		714FB6462B8247F00050052C /* Embed Frameworks */ = {
@@ -1219,7 +1245,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				716E3DB32BBC505C00CD6960 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1250,6 +1275,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				713833922E16F0FE00DCBDD7 /* Logger in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1575,7 +1601,7 @@
 			files = (
 				71DD5DCE2B5DB470003079AC /* RealmSwift in Frameworks */,
 				71DD5DCC2B5DB470003079AC /* Realm in Frameworks */,
-				716E3DAF2BBC505800CD6960 /* Logger in Frameworks */,
+				713833812E16EAB700DCBDD7 /* Logger in Frameworks */,
 				7102F23E2B2F6C7A00F6D87F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1586,7 +1612,7 @@
 			files = (
 				714FB6352B8247F00050052C /* RealmSwift in Frameworks */,
 				714FB6362B8247F00050052C /* Realm in Frameworks */,
-				716E3DAC2BBC503B00CD6960 /* Logger in Frameworks */,
+				713833842E16EABF00DCBDD7 /* Logger in Frameworks */,
 				714FB6382B8247F00050052C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1597,7 +1623,7 @@
 			files = (
 				714FB7442B82482C0050052C /* RealmSwift in Frameworks */,
 				714FB7452B82482C0050052C /* Realm in Frameworks */,
-				716E3DB22BBC505C00CD6960 /* Logger in Frameworks */,
+				713833872E16EAC600DCBDD7 /* Logger in Frameworks */,
 				714FB7472B82482C0050052C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1608,7 +1634,7 @@
 			files = (
 				71DD5DC52B5DB431003079AC /* RealmSwift in Frameworks */,
 				71DD5DC32B5DB431003079AC /* Realm in Frameworks */,
-				716E3DAA2BBC501C00CD6960 /* Logger in Frameworks */,
+				7138337F2E16E9C000DCBDD7 /* Logger in Frameworks */,
 				7111EC8E297C94B000ABC48C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1617,6 +1643,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7138338A2E16EAD200DCBDD7 /* Logger in Frameworks */,
 				719F6A652B7EB2DE0000770A /* Nimble in Frameworks */,
 				71DD5DF22B5DC063003079AC /* RealmSwift in Frameworks */,
 				71DD5DF02B5DC063003079AC /* Realm in Frameworks */,
@@ -1630,6 +1657,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7138338E2E16EAD800DCBDD7 /* Logger in Frameworks */,
 				714FB76C2B82496C0050052C /* SnapshotTesting in Frameworks */,
 				714FB7682B8249620050052C /* Kingfisher in Frameworks */,
 				714FB76A2B8249620050052C /* Nimble in Frameworks */,
@@ -2603,7 +2631,7 @@
 				7102F17E2B2F6C7A00F6D87F /* Kingfisher */,
 				71DD5DCB2B5DB470003079AC /* Realm */,
 				71DD5DCD2B5DB470003079AC /* RealmSwift */,
-				716E3DAE2BBC505800CD6960 /* Logger */,
+				713833802E16EAB700DCBDD7 /* Logger */,
 			);
 			productName = drink;
 			productReference = 7102F2512B2F6C7A00F6D87F /* mockedFoodie.app */;
@@ -2628,7 +2656,7 @@
 				714FB5402B8247F00050052C /* Kingfisher */,
 				714FB5432B8247F00050052C /* Realm */,
 				714FB5452B8247F00050052C /* RealmSwift */,
-				716E3DAB2BBC503B00CD6960 /* Logger */,
+				713833832E16EABF00DCBDD7 /* Logger */,
 			);
 			productName = drink;
 			productReference = 714FB64C2B8247F00050052C /* foodieIOS17.app */;
@@ -2653,7 +2681,7 @@
 				714FB6512B82482C0050052C /* Kingfisher */,
 				714FB6542B82482C0050052C /* Realm */,
 				714FB6562B82482C0050052C /* RealmSwift */,
-				716E3DB12BBC505C00CD6960 /* Logger */,
+				713833862E16EAC600DCBDD7 /* Logger */,
 			);
 			productName = drink;
 			productReference = 714FB75B2B82482C0050052C /* mockedFoodieIOS17.app */;
@@ -2678,7 +2706,7 @@
 				7111EC8D297C94B000ABC48C /* Kingfisher */,
 				71DD5DC22B5DB431003079AC /* Realm */,
 				71DD5DC42B5DB431003079AC /* RealmSwift */,
-				716E3DA92BBC501C00CD6960 /* Logger */,
+				7138337E2E16E9C000DCBDD7 /* Logger */,
 			);
 			productName = drink;
 			productReference = 71E2A5792970336A0012E5C6 /* foodie.app */;
@@ -2691,6 +2719,7 @@
 				71E2A5B32970A6F90012E5C6 /* Sources */,
 				71E2A5B42970A6F90012E5C6 /* Frameworks */,
 				71E2A5B52970A6F90012E5C6 /* Resources */,
+				7138338C2E16EAD200DCBDD7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2707,6 +2736,7 @@
 				71DD5DF12B5DC063003079AC /* RealmSwift */,
 				719F6A642B7EB2DE0000770A /* Nimble */,
 				719D19E82BA4D18D006AAA48 /* ViewInspector */,
+				713833892E16EAD200DCBDD7 /* Logger */,
 			);
 			productName = drinkTests;
 			productReference = 71E2A5B72970A6F90012E5C6 /* foodieTests.xctest */;
@@ -2719,6 +2749,7 @@
 				71E2A5CA2971D4E70012E5C6 /* Sources */,
 				71E2A5CB2971D4E70012E5C6 /* Frameworks */,
 				71E2A5CC2971D4E70012E5C6 /* Resources */,
+				713833902E16EAD800DCBDD7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2735,6 +2766,7 @@
 				714FB7692B8249620050052C /* Nimble */,
 				714FB76B2B82496C0050052C /* SnapshotTesting */,
 				719D19EA2BA4D196006AAA48 /* ViewInspector */,
+				7138338D2E16EAD800DCBDD7 /* Logger */,
 			);
 			productName = drinkUITests;
 			productReference = 71E2A5CE2971D4E70012E5C6 /* foodieUITests.xctest */;
@@ -2778,7 +2810,7 @@
 				71DD5DC12B5DB431003079AC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				719F6A602B7EAFD60000770A /* XCRemoteSwiftPackageReference "Nimble" */,
 				719D19DE2BA4CB39006AAA48 /* XCRemoteSwiftPackageReference "ViewInspector" */,
-				716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */,
+				7138337D2E16E9C000DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */,
 			);
 			productRefGroup = 71E2A57A2970336A0012E5C6 /* Products */;
 			projectDirPath = "";
@@ -4032,7 +4064,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4074,7 +4106,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4411,7 +4443,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4453,7 +4485,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4635,7 +4667,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */ = {
+		7138337D2E16E9C000DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logger;
 		};
@@ -4735,6 +4767,30 @@
 			package = 7111EC8C297C94B000ABC48C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
+		7138337E2E16E9C000DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		713833802E16EAB700DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		713833832E16EABF00DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		713833862E16EAC600DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		713833892E16EAD200DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		7138338D2E16EAD800DCBDD7 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
 		714FB5402B8247F00050052C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 714FB5412B8247F00050052C /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -4779,25 +4835,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 71AF83952A3A0B1F006FEEEB /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
-		};
-		716E3DA92BBC501C00CD6960 /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logger;
-		};
-		716E3DAB2BBC503B00CD6960 /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */;
-			productName = Logger;
-		};
-		716E3DAE2BBC505800CD6960 /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */;
-			productName = Logger;
-		};
-		716E3DB12BBC505C00CD6960 /* Logger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 716E3DA82BBC501C00CD6960 /* XCLocalSwiftPackageReference "Packages/Logger" */;
-			productName = Logger;
 		};
 		719D19E82BA4D18D006AAA48 /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;

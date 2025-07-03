@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol ViewFactoryType {
     associatedtype V : View
-    func makeView(type: Route) -> V
+    @MainActor func makeView(type: Route) -> V
 }
 
 extension View {

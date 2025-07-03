@@ -24,7 +24,7 @@ extension StoreType: CustomStringConvertible {
     }
 }
 
-final class PersistentContainer: NSPersistentContainer {
+final class PersistentContainer: NSPersistentContainer, @unchecked Sendable {
 
     static let DataModelName = "Foodie"
 

@@ -66,7 +66,7 @@ struct foodieApp: App {
         .onAppear {
             notificationService.run()
         }
-        .onChange(of: scenePhase) { newPhase in
+        .onChange(of: scenePhase) { _, newPhase in
 
             Log.debug("Scene phase: \(newPhase)")
 

@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol RouterProtocol: Hashable {
     associatedtype V: View
-    func makeView() -> V
+    @MainActor func makeView() -> V
 }
 
 
