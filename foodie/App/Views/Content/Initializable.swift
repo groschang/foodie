@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 protocol Initializable {
     var initialized: Bool { get }
     func initialize() async

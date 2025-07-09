@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import Spatial
 
+@MainActor
 class ParallaxManager: ObservableObject {
 
     @Published var position: Point3D = .zero

@@ -16,7 +16,7 @@ class DashboardViewFactory {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor 
     func makeView() -> some View {
         let viewModel = DashboardViewModel(service: service)
         DashboardView(viewModel: viewModel)
@@ -26,5 +26,5 @@ class DashboardViewFactory {
 // MARK: Mock
 
 extension DashboardViewFactory {
-    static let mock = DashboardViewFactory(service: MealsAsyncService())
+    @MainActor static let mock = DashboardViewFactory(service: MealsAsyncService())
 }

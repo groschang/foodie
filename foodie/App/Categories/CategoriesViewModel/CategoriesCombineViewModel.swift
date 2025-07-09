@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 
+@MainActor
 class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
 
     var title: String { "Meals".localized }
@@ -31,7 +32,7 @@ class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -62,7 +63,7 @@ class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
         filteredItems = filter(query: query) { $0.name }
     }
 
-    @MainActor private func fetchCategories() async {
+    private func fetchCategories() async {
         serviceSubscription = service.getCategories()
             .receive(on: RunLoop.main)
             .sink(

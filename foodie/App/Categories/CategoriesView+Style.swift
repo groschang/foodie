@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ListModifier: ViewModifier {
 
+    @MainActor
     private struct Colors {
         static let background = Color.background
     }
@@ -23,6 +24,7 @@ struct ListModifier: ViewModifier {
 
 struct ListRowModifier: ViewModifier {
 
+    @MainActor
     private struct Colors {
         static let background = Color.background
     }

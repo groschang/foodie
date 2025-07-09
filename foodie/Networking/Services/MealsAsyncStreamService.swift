@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MealsAsyncStreamServiceType {
+protocol MealsAsyncStreamServiceType: Sendable {
 
     func getCategories() -> AsyncThrowingStream<Categories, Error>
     func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error>

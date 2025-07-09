@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MealsAsyncServicePreview: Sleepable, MealsAsyncServiceType {
-    
+actor MealsAsyncServicePreview: MealsAsyncServiceType, SleepableProtocol {
+
     func loadCategories() async -> Categories? {
         await sleep()
         return .stub

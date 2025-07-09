@@ -20,6 +20,7 @@ struct MealsSelectStyle: ViewModifier {
 
 struct MealsSelectTitleStyle: ViewModifier {
 
+    @MainActor
     private struct Colors {
         static let foreground = AppStyle.lightBlack
     }

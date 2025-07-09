@@ -85,6 +85,7 @@ struct MenuButtonStyle: ButtonStyle {
         static let startScale = 1.0
     }
 
+    @MainActor
     private struct Colors {
         static let background = AppStyle.gray
         static let backgroundPressed = AppStyle.orange

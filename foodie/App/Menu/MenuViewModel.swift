@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 
+@MainActor
 final class MenuViewModel: ObservableObject {
 
     @AppStorage(UserDefaultsKeys.appTheme) var appTheme: AppTheme = .system

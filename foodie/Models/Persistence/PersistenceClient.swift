@@ -24,4 +24,4 @@ protocol MealPersistenceClient {
     func saveMeal(_ meal: Meal) async
 }
 
-typealias PersistenceClient = CategoriesPersistenceClient & MealsPersistenceClient & MealPersistenceClient
+typealias PersistenceClient = CategoriesPersistenceClient & MealsPersistenceClient & MealPersistenceClient & Sendable

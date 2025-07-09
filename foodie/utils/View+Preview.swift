@@ -97,6 +97,7 @@ extension ColorScheme {
     }
 }
 
+@MainActor
 extension ContentSizeCategory {
     static let smallestAndLargest = [allCases.first!, allCases.last!]
 

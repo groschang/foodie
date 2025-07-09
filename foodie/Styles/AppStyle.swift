@@ -25,6 +25,7 @@ extension AppStyle {
     static let orange = ColorStyle(Color.orange)
 }
 
+@MainActor
 extension Color {
     static let light = Color.white
     static let lightWhite = Color.white.lightOpacity()
@@ -34,6 +35,7 @@ extension Color {
     static let darkBlue = Color.blue.heavierOpacity() //TODO: inver dark with light?
 }
 
+@MainActor
 extension AppStyle {
     static let light = ColorStyle(Color.light)
     static let lightWhite = ColorStyle(Color.lightWhite)
@@ -56,6 +58,7 @@ extension AppStyle {
                                     dark: Color.gray)
 }
 
+@MainActor
 extension Color {
     static let foreground = Color(light: AppStyle.foreground.lightColor,
                                   dark: AppStyle.foreground.darkColor)
@@ -88,6 +91,7 @@ extension AppStyle {
 
 // MARK: Previews
 
+@MainActor
 extension AppStyle {
 
     /// Return all color styles defined in the `AppStyle`
@@ -121,6 +125,7 @@ extension AppStyle {
     ]
 }
 
+@MainActor
 extension Color {
 
     /// Return all colors defined in the `AppStyle`

@@ -14,16 +14,15 @@ protocol DependencyContainerType {
 
     static var shared: Self { get }
 
-    var backendClient: HTTPClient { get }
-    var persistenceClient: PersistenceClient { get }
+    var backendClient: HTTPClient { get async }
+    var persistenceClient: PersistenceClient { get async }
 
-    var closureService: MealsClosureServiceType { get }
-    var asyncService: MealsAsyncServiceType { get }
-    var asyncStreamService: MealsAsyncStreamServiceType { get }
-    var passthroughCombineService: MealsPassthroughCombineServiceType { get }
+    var closureService: MealsClosureServiceType { get async }
+    var asyncService: MealsAsyncServiceType { get async }
+    var asyncStreamService: MealsAsyncStreamServiceType { get async }
 
-    var router: Router { get }
-    var viewFactory: ViewFactoryAssociatedType { get }
+    var router: Router { get async }
+    var viewFactory: ViewFactoryAssociatedType { get async }
 
-    func assemble()
+    func assemble() async
 }

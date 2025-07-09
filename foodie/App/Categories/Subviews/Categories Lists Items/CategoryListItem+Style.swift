@@ -15,6 +15,7 @@ struct CategoryListItemStyle: ViewModifier {
                                       dark: Color.gray)
     }
 
+    @MainActor
     private struct Shadow {
         static let radius = 8.0
         static let color = Color.shadow
@@ -42,6 +43,7 @@ fileprivate struct CategoryListItemTextStyle: ViewModifier {
         static let foreground = AppStyle.black
     }
 
+    @MainActor
     private struct Shadow {
         static let radius = 1.0
         static let color = Color.white.heavierOpacity()

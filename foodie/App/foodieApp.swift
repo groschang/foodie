@@ -12,46 +12,38 @@ import SwiftUI
 public typealias Log = Logger
 
 @main
+@MainActor
 struct foodieApp: App {
 
     @Environment(\.scenePhase) var scenePhase
-
-#if MOCK
-    private let container = MockedDependencyContainer.shared
-#else
-    private let container = DependencyContainer.shared
-#endif
-
-    private let dashboardViewModel: DashboardViewModel
-
-    private let viewFactory: StreamViewFactory
-    @ObservedObject private var router: Router
-
-    @ObservedObject private var notificationService: NotificationService
-
-    init() {
-        container.assemble()
-
-        Log.printDBPath()
-
-        notificationService = NotificationService()
-
-        let service = container.asyncService
-        dashboardViewModel = DashboardViewModel(service: service)
-
-        router = container.router
-        viewFactory = StreamViewFactory(service: container.asyncStreamService)
-    }
+    @StateObject private var appStartup = AppStartupViewModel()
 
     var body: some Scene {
         WindowGroup {
-            content
+            if let dashboardViewModel = appStartup.dashboardViewModel,
+               let viewFactory = appStartup.viewFactory,
+               let router = appStartup.router,
+               let notificationService = appStartup.notificationService {
+                content(
+                    dashboardViewModel: dashboardViewModel,
+                    viewFactory: viewFactory,
+                    router: router,
+                    notificationService: notificationService
+                )
+            } else {
+                ProgressView("Loading...")
+            }
         }
     }
 
-    fileprivate var content: some View {
+    @ViewBuilder
+    private func content(
+        dashboardViewModel: DashboardViewModel,
+        viewFactory: StreamViewFactory,
+        @ObservedObject router: Router,
+        @ObservedObject notificationService: NotificationService
+    ) -> some View {
         NavigationStack(path: $router.navigationPath) {
-
             DashboardView(viewModel: dashboardViewModel)
                 .navigationDestination(for: Route.self) { route in
                     viewFactory.makeView(type: route)
@@ -67,19 +59,9 @@ struct foodieApp: App {
             notificationService.run()
         }
         .onChange(of: scenePhase) { _, newPhase in
-
             Log.debug("Scene phase: \(newPhase)")
-
-            switch newPhase {
-
-            case .background:
-                break
-            case .inactive:
-                break
-            case .active:
+            if newPhase == .active {
                 applicationIsActive()
-            @unknown default:
-                break
             }
         }
         .popup(isPresented: $notificationService.showNotification,
@@ -96,15 +78,5 @@ struct foodieApp: App {
         Task {
             await NotificationManager.shared.refreshStatus()
         }
-    }
-}
-
-
-
-// MARK: Previews
-
-struct foodieApp_Previews: PreviewProvider {
-    static var previews: some View {
-        foodieApp().content
     }
 }

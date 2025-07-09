@@ -6,10 +6,9 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-//import SwiftData
 import CoreData
 
-protocol ObjectMappable {
+protocol ObjectMappable: Sendable {
     associatedtype Object = EntityMappable
     associatedtype SelfType = Self
     associatedtype DatastoreContext
@@ -17,19 +16,8 @@ protocol ObjectMappable {
     static func create(_ object: Object, context: DatastoreContext) -> SelfType
 }
 
-//protocol CoreDataMappable: ObjectMappable where DatastoreContext == NSManagedObjectContext { }
-//
-//protocol SwiftDataMappable: ObjectMappable where DatastoreContext == ModelContext { }
-
-
-
 protocol EntityMappable {
     associatedtype Entity
 
     init(entity: Entity)
 }
-
-//protocol CoreDataEntityMappable: EntityMappable where Entity == NSManagedObject { }
-//
-//protocol SwiftDataEntityMappable: EntityMappable where Entity == AnyObject { }
-

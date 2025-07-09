@@ -12,7 +12,7 @@ enum RequestError: Error {
     case invalidURL(String)
 }
 
-protocol RequestBuilder {
+protocol RequestBuilder: Sendable {
     init(enviroment: APIEndpoint)
 
     func build<T>(for request: Request<T>) throws -> URLRequest

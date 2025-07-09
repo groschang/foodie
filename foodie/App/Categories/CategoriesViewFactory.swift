@@ -19,7 +19,7 @@ class CategoriesClosureViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor
     func makeView() -> some View {
         let viewModel = CategoriesViewModel(service: service)
         CategoriesView(viewModel: viewModel)
@@ -40,7 +40,7 @@ class CategoriesAsyncViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor
     func makeView() -> some View {
         let viewModel = CategoriesAsyncViewModel(service: service)
         CategoriesView(viewModel: viewModel)
@@ -61,7 +61,7 @@ class CategoriesAsyncStreamViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor 
     func makeView() -> some View {
         let viewModel = CategoriesAsyncStreamViewModel(service: service)
         CategoriesView(viewModel: viewModel)
@@ -76,5 +76,5 @@ class CategoriesAsyncStreamViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension CategoriesViewFactory {
-    static let mock = CategoriesViewFactory(service: MealsServicePreview())
+    @MainActor static let mock = CategoriesViewFactory(service: MealsServicePreview())
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol MealsClosureServiceType {
+protocol MealsClosureServiceType: Sendable {
 
-    typealias CategoriesHandler = (Categories) -> Void
-    typealias MealsHandler = (Meals) -> Void
-    typealias MealHandler = (Meal) -> Void
+    typealias CategoriesHandler = @Sendable (Categories) -> Void
+    typealias MealsHandler = @Sendable (Meals) -> Void
+    typealias MealHandler = @Sendable (Meal) -> Void
 
     func getCategories(handler: CategoriesHandler?) async throws -> Categories
     func getMeals(for category: Category, handler: MealsHandler?) async throws -> Meals

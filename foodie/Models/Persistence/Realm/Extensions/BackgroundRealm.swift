@@ -6,7 +6,7 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import RealmSwift
+@preconcurrency import RealmSwift
 import Foundation
 
 extension Realm {
@@ -47,11 +47,9 @@ extension Realm {
 extension Realm {
 
     init(copyFileURLFrom realm: Realm) async throws {
-
         var configuration = Realm.Configuration()
         configuration.fileURL = realm.configuration.fileURL
 
         self = try await Realm(configuration: configuration)
     }
-
 }

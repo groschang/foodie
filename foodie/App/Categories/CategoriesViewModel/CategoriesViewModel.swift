@@ -9,21 +9,27 @@
 import Foundation
 import Combine
 
+@MainActor
 protocol CategoriesLocalizable {
     var title: String { get }
 }
 
+@MainActor
 protocol CategoriesItems: ObservableObject {
     var items: [Category] { get }
 }
 
+@MainActor
 protocol CategoriesSearchable: SearchableItems where T == Category { }
 
+@MainActor
 protocol CategoriesViewModelType: LoadableObject,
                                   CategoriesLocalizable,
                                   CategoriesItems,
                                   CategoriesSearchable { }
 
+
+@MainActor
 class CategoriesViewModel: CategoriesViewModelType, Identifiable {
 
     var title: String { "Meals".localized }
@@ -45,7 +51,7 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
         
@@ -76,14 +82,16 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
         filteredItems = filter(query: query) { $0.name }
     }
 
-    @MainActor private func fetchCategories() async {
+    private func fetchCategories() async {
         do {
             let categories = try await service.getCategories() {  [weak self] storedCategories in
                 guard let self else { return }
                 guard storedCategories.items.isNotEmpty else { return }
 
-                self.items = storedCategories.items
-                self.state.setLoaded()
+                Task { @MainActor in
+                    self.items = storedCategories.items
+                    self.state.setLoaded()
+                }
             }
 
             self.items = categories.items

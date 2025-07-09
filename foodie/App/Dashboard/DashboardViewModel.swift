@@ -8,8 +8,8 @@
 
 import Foundation
 
+@MainActor
 protocol DashboardViewModelData: ObservableObject {
-
     var categoriesViewModel: DashboardCategoriesViewModel { get }
     var mealsViewModel: DashboardMealsViewModel { get }
     var promoViewModel: DashboardPromoViewModel { get }

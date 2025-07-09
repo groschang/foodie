@@ -8,22 +8,25 @@
 
 import Foundation
 
-typealias FactoryClosure = (DIContainer) -> AnyObject
+typealias FactoryClosure = @Sendable (DIContainer) async -> Sendable
 
-protocol DICProtocol {
-    func register<Service>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure)
-    func resolve<Service>(_ type: Service.Type) -> Service?
+protocol DICProtocol: AnyObject {
+    func register<Service: Sendable>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure) async
+    func resolve<Service: Sendable>(_ type: Service.Type) async -> Service?
 }
 
-final class DIContainer: DICProtocol {
+actor DIContainer: DICProtocol {
 
-    var services = Dictionary<String, AnyObject>()
+    private var services: [String: @Sendable () async -> any Sendable] = [:]
 
-    func register<Service>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure) {
-        services["\(type)"] = factoryClosure(self)
+    func register<Service: Sendable>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure) {
+        let key = String(describing: type)
+        services[key] = { await factoryClosure(self) }
     }
 
-    func resolve<Service>(_ type: Service.Type) -> Service? {
-        services["\(type)"] as? Service
+    func resolve<Service: Sendable>(_ type: Service.Type) async -> Service? {
+        let key = String(describing: type)
+        guard let factory = services[key] else { return nil }
+        return await factory() as? Service
     }
 }

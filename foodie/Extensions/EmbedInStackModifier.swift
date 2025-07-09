@@ -25,6 +25,7 @@ struct EmbedInStackModifier: ViewModifier {
 
 extension Group where Content: View {
 
+    @MainActor
     func embedInStack() -> some View {
         modifier(EmbedInStackModifier())
     }

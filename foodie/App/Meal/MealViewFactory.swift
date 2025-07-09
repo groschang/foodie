@@ -19,7 +19,7 @@ class MealClosureViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor
     func makeView(item mealCategory: any IdentifiableObject) -> some View {
         let viewModel = MealViewModel(service: service, object: mealCategory)
         MealView(viewModel: viewModel)
@@ -40,7 +40,7 @@ class MealAsyncViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor
     func makeView(item mealCategory: any IdentifiableObject) -> some View {
         let viewModel = MealAsyncViewModel(service: service, object: mealCategory)
         MealView(viewModel: viewModel)
@@ -61,7 +61,7 @@ class MealAsyncStreamViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder @MainActor
     func makeView(item object: any IdentifiableObject) -> some View {
         let viewModel = MealAsyncStreamViewModel(service: service, object: object)
         MealView(viewModel: viewModel)
@@ -76,5 +76,5 @@ class MealAsyncStreamViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension MealViewFactory {
-    static let mock = MealViewFactory(service: MealsServicePreview())
+   @MainActor static let mock = MealViewFactory(service: MealsServicePreview())
 }

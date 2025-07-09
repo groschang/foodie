@@ -11,7 +11,7 @@ import CoreData
 // MARK: Object Mappable
 
 extension MealCategoryEntity: ObjectMappable {
-    
+
     static func create(_ object: MealCategory, context: NSManagedObjectContext) -> MealCategoryEntity {
         MealCategoryEntity(object, context: context)
     }

@@ -8,32 +8,35 @@
 
 import SwiftUI
 
+@MainActor
 enum MealsRouter: RouterProtocol {
 
-    static let viewFactory = DependencyContainer.shared.viewFactory
+    static var viewFactory: StreamViewFactory {
+        get async {
+            await DependencyContainer.shared.viewFactory
+        }
+    }
 
     case meals(Category)
-
     case empty
 
-    @MainActor @ViewBuilder
-    func makeView() -> some View {
+    @ViewBuilder
+    func makeView() async -> some View {
         switch self {
 
         case .meals(let category):
-            makeMealsView(category: category)
+            await makeMealsView(category: category)
 
         case .empty:
             makeEmptyView()
         }
     }
 
-    @MainActor
-    private func makeMealsView(category: Category) -> some View {
-        Self.viewFactory.makeView(type: .meals(category))
+    private func makeMealsView(category: Category) async -> some View {
+        let factory = await Self.viewFactory
+        return factory.makeView(type: .meals(category))
     }
 
-    @MainActor
     private func makeEmptyView() -> some View {
         InformationView("Select category")
             .ignoresSafeArea()

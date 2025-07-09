@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PushNotification {
+struct PushNotification: Sendable {
 
     let title: String?
     let subtitle: String?
@@ -22,30 +22,30 @@ struct PushNotification {
 
     init(_ content: UNNotificationContent) {
         self.title = content.title.nilIfEmpty()
-        self.subtitle = content.subtitle
+        self.subtitle = content.subtitle.nilIfEmpty()
         self.body = content.body.nilIfEmpty()
     }
 }
+
 
 extension PushNotification: Identifiable {
     var id: String { UUID().uuidString }
 }
 
-extension PushNotification: Equatable { }
+
+extension PushNotification: Equatable {}
+
 
 extension PushNotification {
     static let stub = PushNotification(title: "Title", subtitle: "Subtitle", body: "Body")
-}
+    static let empty = PushNotification()
 
-extension PushNotification {
     static func random() -> PushNotification {
         let number = Int.random(in: 1...100)
-        return PushNotification(title: "Title \(number)",
-                                subtitle: "Subtitle \(number)",
-                                body: "Body \(number)")
+        return PushNotification(
+            title: "Title \(number)",
+            subtitle: "Subtitle \(number)",
+            body: "Body \(number)"
+        )
     }
-}
-
-extension PushNotification {
-    static let empty = PushNotification()
 }

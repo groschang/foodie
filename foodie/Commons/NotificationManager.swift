@@ -9,10 +9,8 @@
 import UIKit
 import Combine
 
-protocol NofificationManagerProtocol {
-
+protocol NotificationManagerProtocol: Sendable {
     static var shared: NotificationManager { get }
-
     var notificationPublisher: AnyPublisher<UNNotificationContent, Never> { get }
     var statusPublisher: AnyPublisher<UNAuthorizationStatus, Never> { get }
 
@@ -20,7 +18,8 @@ protocol NofificationManagerProtocol {
     func refreshStatus() async
 }
 
-class NotificationManager: NofificationManagerProtocol {
+
+final class NotificationManager: NotificationManagerProtocol, @unchecked Sendable {
 
     static let shared = NotificationManager()
 
@@ -31,14 +30,12 @@ class NotificationManager: NofificationManagerProtocol {
     var statusPublisher: AnyPublisher<UNAuthorizationStatus, Never> {
         authorizationHandler.status
     }
-
+    
     private let notificationCenter: UNUserNotificationCenter
-
     private let notificationHandler: NotificationHandler
     private let authorizationHandler: NotificationStatus
 
     private init(notificationCenter: UNUserNotificationCenter = .current()) {
-        
         self.notificationCenter = notificationCenter
         self.notificationHandler = NotificationHandler(notificationCenter: notificationCenter)
         self.authorizationHandler = NotificationStatus(notificationCenter: notificationCenter)
@@ -59,7 +56,6 @@ class NotificationManager: NofificationManagerProtocol {
 
         if status != .authorized {
             _ = try await notificationCenter.requestAuthorization(options: [.alert, .sound, .badge])
-
             await authorizationHandler.refreshStatus()
         }
     }

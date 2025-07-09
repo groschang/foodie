@@ -10,7 +10,7 @@ import Foundation
 
 extension MainActor {
 
-    static func runTask(_ handler: @escaping () -> Void) {
+    static func runTask(_ handler: @escaping @Sendable () -> Void) {
         Task {
             await MainActor.run {
                 handler()

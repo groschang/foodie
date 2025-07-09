@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CoreData
+@preconcurrency import CoreData
 
 actor CoreDataClient {
 
@@ -33,17 +33,17 @@ actor CoreDataClient {
     private func newTaskContext() -> NSManagedObjectContext? {
         guard let container = persistentContainer else { return nil }
         let context = container.newBackgroundContext()
-        context.mergePolicy = NSOverwriteMergePolicy // TODO: Check me
+        context.mergePolicy = NSMergePolicy(merge: .overwriteMergePolicyType)
         context.automaticallyMergesChangesFromParent = true
         return context
     }
 
-    private func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
+    private func fetch<T: Sendable>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
         guard let viewContext else { return nil }
         return await viewContext.fetch(request: request)
     }
 
-    private func fetch<T>(
+    private func fetch<T: Sendable>(
         request: NSFetchRequest<T>,
         in context: NSManagedObjectContext
     ) async -> [T]? where T: NSManagedObject {

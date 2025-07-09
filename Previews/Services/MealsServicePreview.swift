@@ -10,7 +10,7 @@ import Foundation
 
 // Stub
 
-class MealsServicePreview: Sleepable, MealsClosureServiceType {
+final class MealsServicePreview: MealsClosureServiceType, SleepableProtocol {
 
     func getCategories(handler: CategoriesHandler? = nil) async throws -> Categories {
         await sleep()

@@ -79,7 +79,7 @@ extension Route: RawRepresentable {
             guard let id = Route.id(from: rawValue) else { return nil }
             let mealCategory = ObjectId(id)
             self = .meal(mealCategory)
-
+            
         default:
             return nil
         }
@@ -99,6 +99,8 @@ extension Route {
     }
 }
 
+
+@MainActor
 final class Router: ObservableObject {
 
     @Published var navigationPath = NavigationPath()

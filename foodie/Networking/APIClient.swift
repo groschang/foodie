@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol HTTPClient {
+protocol HTTPClient: Sendable {
     func process<T: Decodable>(_ request: Request<T>) async throws -> T
 }
 
-class APIClient: HTTPClient {
+final class APIClient: HTTPClient {
 
     private let requestBuilder: RequestBuilder
 

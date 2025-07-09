@@ -1,0 +1,14 @@
+{
+  "aps": {
+    "alert": {
+      "title": "New Meal Suggestion!",
+      "subtitle": "Based on your tastes",
+      "body": "You have to try the new 'Spicy Thai Green Curry'. We think you'll love it!"
+    },
+    "sound": "default",
+    "badge": 1,
+    "category": "MEAL_SUGGESTION"
+  },
+  "mealId": "52977",
+  "recommendationSource": "chef_special"
+}

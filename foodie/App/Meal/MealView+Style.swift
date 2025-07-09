@@ -52,6 +52,7 @@ struct MealViewStyle: ViewModifier {
 
 struct MealViewImageStyle: ViewModifier {
     
+    @MainActor
     private struct Shadow {
         static let color = Color.shadow
         static let radius = 24.0

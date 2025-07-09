@@ -11,5 +11,5 @@ import Foundation
 protocol Items {
     associatedtype T: Hashable, Identifiable
 
-    var items: [T] { get }
+    @MainActor var items: [T] { get }
 }

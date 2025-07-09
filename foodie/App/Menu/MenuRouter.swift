@@ -10,17 +10,21 @@ import SwiftUI
 
 enum MenuRouter: RouterProtocol {
 
-    static let viewFactory = DependencyContainer.shared.viewFactory
-
+    static var viewFactory: StreamViewFactory {
+        get async {
+            await DependencyContainer.shared.viewFactory
+        }
+    }
     case menu
 
     @MainActor @ViewBuilder
-    func makeView() -> some View {
-        
+    func makeView() async -> some View {
+
         switch self {
 
         case .menu:
-            Self.viewFactory.makeView(type: .categories)
+            let factory = await Self.viewFactory
+            factory.makeView(type: .categories)
         }
     }
 }

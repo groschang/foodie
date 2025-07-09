@@ -10,17 +10,5 @@ import SwiftUI
 
 protocol RouterProtocol: Hashable {
     associatedtype V: View
-    @MainActor func makeView() -> V
+    @MainActor func makeView() async -> V
 }
-
-
-
-extension View {
-
-//    func navigationDestination<T>(for data: T.Type) -> some View where T: RouterProtocol {
-//        navigationDestination(for: data) { router in
-//            router.makeView()
-//        }
-//    }
-}
-

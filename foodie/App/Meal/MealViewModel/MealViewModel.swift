@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 protocol MealLocalizable {
     var recipeTitle: String { get }
     var ingredientsTitle: String { get }
@@ -15,6 +16,7 @@ protocol MealLocalizable {
     var linkTitle: String? { get }
 }
 
+@MainActor
 protocol MealInformations: ObservableObject {
     var name: String { get }
     var category: String { get }
@@ -28,16 +30,18 @@ protocol MealInformations: ObservableObject {
 
 protocol MealViewModelType: MealLocalizable, MealInformations, LoadableObject { }
 
+
+@MainActor
 final class MealViewModel: MealViewModelType {
 
     var recipeTitle: String { "Recipe".localized }
     var ingredientsTitle: String { "Ingredients".localized }
     @Published private(set) var ingredientsSubtitle: String = "0 items"
     var linkTitle: String? { "Link".localized }
-    
+
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { state != .loaded }
-    
+
     @Published private(set) var name: String = ""
     @Published private(set) var category: String = ""
     @Published private(set) var area: String = ""
@@ -46,10 +50,10 @@ final class MealViewModel: MealViewModelType {
     @Published private(set) var source: URL?
     @Published private(set) var youtubeUrl: URL?
     @Published private(set) var backgroundUrl: URL?
-    
+
     private let object: any IdentifiableObject
     private let service: MealsClosureServiceType
-    
+
     init(service: MealsClosureServiceType, object: any IdentifiableObject) {
         self.service = service
         self.object = object
@@ -60,14 +64,14 @@ final class MealViewModel: MealViewModelType {
             setup(with: mealCategory)
         }
     }
-    
-    @MainActor func load() async {
+
+    func load() async {
         await fetchMeal()
     }
-    
-    @MainActor private func fetchMeal() async {
+
+    private func fetchMeal() async {
         guard state.isLoading == false else { return }
-        
+
         do {
             try await getMeal()
         } catch {
@@ -75,19 +79,18 @@ final class MealViewModel: MealViewModelType {
             state.setError(error)
         }
     }
-    
-    @MainActor private func getMeal() async throws {
+    private func getMeal() async throws {
         state = .loading
-        
-        let meal = try await service.getMeal(for: object.id) {
-            [unowned self] meal in
-            
-            if meal.isEmpty == false {
-                self.state = .loaded
-                self.setup(with: meal)
+
+        let meal = try await service.getMeal(for: object.id) { [unowned self] meal in
+            Task { @MainActor in
+                if !meal.isEmpty {
+                    self.state = .loaded
+                    self.setup(with: meal)
+                }
             }
         }
-        
+
         setup(with: meal)
         state.set(for: meal)
     }
@@ -103,7 +106,7 @@ final class MealViewModel: MealViewModelType {
         recipe = meal.recipe ?? ""
         ingredients = meal.ingredients
         ingredientsSubtitle = "\(ingredients?.count ?? 0) items"
-        source = URL(string: meal.source ?? "") //TODO: make url in model
+        source = URL(string: meal.source ?? "") 
         backgroundUrl = meal.imageURL
         youtubeUrl = meal.youtubeURL
     }
@@ -112,6 +115,6 @@ final class MealViewModel: MealViewModelType {
 
 #if DEBUG
 extension MealViewModel {
-    static let stub = MealViewModel(service: MealsServicePreview(), object: Meal.stub)
+    @MainActor static let stub = MealViewModel(service: MealsServicePreview(), object: Meal.stub)
 }
 #endif

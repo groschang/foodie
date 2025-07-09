@@ -10,10 +10,12 @@ import SwiftUI
 
 struct MealListItemStyle: ViewModifier {
 
+    @MainActor
     private struct Colors {
         static let background = Color.background
     }
 
+    @MainActor
     private struct Shadow {
         static let radius = 8.0
         static let color = Color.shadow
@@ -52,7 +54,8 @@ struct MealListItemNameStyle: ViewModifier {
         static let foreground = AppStyle.black
     }
 
-    private struct Shadow {
+    @MainActor
+    private struct Shadow: Sendable {
         static let radius = 1.0
         static let color = Color.darkWhite
     }

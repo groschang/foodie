@@ -9,34 +9,34 @@
 import UIKit
 import Combine
 
-class NotificationStatus {
-
+final class NotificationStatus: @unchecked Sendable {
+    
     var status: AnyPublisher<UNAuthorizationStatus, Never> {
         statusSubject.eraseToAnyPublisher()
     }
-
+    
     private let statusSubject = CurrentValueSubject<UNAuthorizationStatus, Never>(.notDetermined)
-
     private let notificationCenter: UNUserNotificationCenter
-
+    
     init(notificationCenter: UNUserNotificationCenter = .current()) {
         self.notificationCenter = notificationCenter
-
+        
         Task {
             await authorizationStatus()
         }
     }
-
+    
     @discardableResult
-    func authorizationStatus() async -> UNAuthorizationStatus  {
+    func authorizationStatus() async -> UNAuthorizationStatus {
         await withCheckedContinuation { continuation in
             notificationCenter.getNotificationSettings { [weak self] settings in
-                self?.statusSubject.send(settings.authorizationStatus)
-                continuation.resume(returning: settings.authorizationStatus)
+                let status = settings.authorizationStatus
+                self?.statusSubject.send(status)
+                continuation.resume(returning: status)
             }
         }
     }
-
+    
     func refreshStatus() async {
         await authorizationStatus()
     }

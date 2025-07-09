@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 protocol LoadableObject: ObservableObject {
     var state: LoadingState { get }
     var isEmpty: Bool { get }

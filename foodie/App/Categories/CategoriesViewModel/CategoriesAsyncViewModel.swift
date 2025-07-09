@@ -30,7 +30,7 @@ final class CategoriesAsyncViewModel: CategoriesViewModelType, Identifiable {
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -62,14 +62,14 @@ final class CategoriesAsyncViewModel: CategoriesViewModelType, Identifiable {
         filteredItems = filter(query: query) { $0.name }
     }
 
-    @MainActor private func loadCategories() async {
+    private func loadCategories() async {
         if let categories = await service.loadCategories() {
             items = categories.items
             state.setLoaded()
         }
     }
 
-    @MainActor private func getCategories() async {
+    private func getCategories() async {
         do {
             let categories = try await service.fetchCategories()
 
@@ -86,6 +86,6 @@ final class CategoriesAsyncViewModel: CategoriesViewModelType, Identifiable {
 
 #if DEBUG
 extension CategoriesAsyncViewModel {
-    static let stub = CategoriesAsyncViewModel(service: MealsAsyncServicePreview())
+    @MainActor static let stub = CategoriesAsyncViewModel(service: MealsAsyncServicePreview())
 }
 #endif

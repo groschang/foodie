@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 protocol Searchable: ObservableObject {
     associatedtype T: Hashable, Identifiable
 
@@ -19,7 +20,7 @@ protocol Searchable: ObservableObject {
 
 extension Searchable {
 
-    func filter(items: [T], query: String? = nil, mapping: (T) -> String) -> [T] {
+    @MainActor func filter(items: [T], query: String? = nil, mapping: (T) -> String) -> [T] {
         let searchText = query ?? searchQuery
 
         return searchText.isEmpty

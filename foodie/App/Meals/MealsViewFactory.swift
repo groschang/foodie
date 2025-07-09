@@ -31,7 +31,6 @@ class MealsClosureViewFactory: ViewBuilderProtocol {
     }
 }
 
-
 class MealsAsyncViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncServiceType
@@ -76,5 +75,5 @@ class MealsAsyncStreamViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension MealsViewFactory {
-    static let mock = MealsViewFactory(service: MealsServicePreview())
+    @MainActor static let mock = MealsViewFactory(service: MealsServicePreview())
 }

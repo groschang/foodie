@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import RealmSwift
+@preconcurrency import RealmSwift
 
-final class RealmClient: PersistenceClient {
+actor RealmClient: PersistenceClient {
 
     private let realm: Realm
 
@@ -24,14 +24,16 @@ final class RealmClient: PersistenceClient {
 
     // MARK: Categories
 
-    @MainActor func getCategories() async -> Categories? {
-        realm
+    @MainActor
+    func getCategories() async -> Categories? {
+        await realm
             .objects(CategoryRealm.self)
             .toCategories()
     }
 
-    @MainActor func getCategory(id: ObjectID) async -> Category? {
-        realm
+    @MainActor
+    func getCategory(id: ObjectID) async -> Category? {
+        await       realm
             .objects(CategoryRealm.self)
             .where { $0.identifier == id }
             .first
@@ -46,8 +48,9 @@ final class RealmClient: PersistenceClient {
 
     // MARK: Meals
 
-    @MainActor func getMeals(for category: Category) async -> Meals? {
-        realm
+    @MainActor
+    func getMeals(for category: Category) async -> Meals? {
+        await realm
             .objects(MealCategoryRealm.self)
             .where { $0.category.identifier == category.identifier }
             .toMeals()
@@ -69,8 +72,9 @@ final class RealmClient: PersistenceClient {
 
     // MARK: Meal
 
-    @MainActor func getMeal(for mealId: ObjectID) async -> Meal? {
-        realm
+    @MainActor
+    func getMeal(for mealId: ObjectID) async -> Meal? {
+        await realm
             .objects(MealDetailRealm.self)
             .where { $0.identifier == mealId }
             .first
@@ -82,8 +86,9 @@ final class RealmClient: PersistenceClient {
         await realm.saveAsync(meal)
     }
 
-    @MainActor func getRandomMeal() async -> Meal? {
-        realm
+    @MainActor
+    func getRandomMeal() async -> Meal? {
+        await realm
             .objects(MealDetailRealm.self)
             .randomElement()
             .map(Meal.init)

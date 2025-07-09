@@ -10,16 +10,21 @@ import SwiftUI
 
 enum MealRouter: RouterProtocol {
     
-    static let viewFactory = DependencyContainer.shared.viewFactory
-    
+    static var viewFactory: StreamViewFactory {
+        get async {
+            await DependencyContainer.shared.viewFactory
+        }
+    }
+
     case meal(MealCategory)
     
-    @MainActor @ViewBuilder
-    func makeView() -> some View {
+    @ViewBuilder @MainActor
+    func makeView() async -> some View {
         switch self {
             
         case .meal(let meal):
-            Self.viewFactory.makeView(type: .meal(meal))
+            let factory = await Self.viewFactory
+            factory.makeView(type: .meal(meal))
         }
     }
 }

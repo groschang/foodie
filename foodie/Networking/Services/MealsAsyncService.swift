@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MealsAsyncServiceType {
+protocol MealsAsyncServiceType: Sendable {
 
     func loadCategories() async -> Categories?
     func fetchCategories() async throws -> Categories

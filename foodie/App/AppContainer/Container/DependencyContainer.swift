@@ -12,7 +12,7 @@ import Foundation
 /// i.e. SWIFTDATA, DEBUG or  REALM precompiler options
 /// SWIFTDATA requires iOS version 17 therefore new target was created
 
-final class DependencyContainer: DependencyContainerType {
+actor DependencyContainer: DependencyContainerType {    
 
     static let shared = DependencyContainer()
 
@@ -20,28 +20,60 @@ final class DependencyContainer: DependencyContainerType {
 
     private let container = DIContainer()
 
-    var backendClient: HTTPClient { container.resolve(HTTPClient.self)! }
-    var persistenceClient: PersistenceClient { container.resolve(PersistenceClient.self)! }
+    var backendClient: HTTPClient {
+        get async {
+            await container.resolve(HTTPClient.self)!
+        }
+    }
+    var persistenceClient: PersistenceClient {
+        get async {
+            await container.resolve(PersistenceClient.self)!
+        }
+    }
 
-    var closureService: MealsClosureServiceType { container.resolve(MealsClosureServiceType.self)! }
-    var asyncService: MealsAsyncServiceType { container.resolve(MealsAsyncServiceType.self)! }
-    var asyncStreamService: MealsAsyncStreamServiceType { container.resolve(MealsAsyncStreamServiceType.self)! }
-    var passthroughCombineService: MealsPassthroughCombineServiceType { container.resolve(MealsPassthroughCombineServiceType.self)! }
+    var closureService: MealsClosureServiceType {
+        get async {
+            await container.resolve(MealsClosureServiceType.self)!
+        }
+    }
+    var asyncService: MealsAsyncServiceType {
+        get async {
+            await container.resolve(MealsAsyncServiceType.self)!
+        }
+    }
+    var asyncStreamService: MealsAsyncStreamServiceType {
+        get async {
+            await container.resolve(MealsAsyncStreamServiceType.self)!
+        }
+    }
+    var viewFactory: StreamViewFactory {
+        get async {
+            await container.resolve(StreamViewFactory.self)!
+        }
+    }
+    var router: Router {
+        get async {
+            await container.resolve(Router.self)!
+        }
+    }
+    var notificationService: NotificationService {
+        get async {
+            await container.resolve(NotificationService.self)!
+        }
+    }
 
-    var router: Router { container.resolve(Router.self)! }
-    var viewFactory: StreamViewFactory { container.resolve(StreamViewFactory.self)! }
-
-    func assemble() {
-        container.register(HTTPClient.self) { _ in
+    
+    func assemble() async {
+        await container.register(HTTPClient.self) { _ in
             APIClient()
         }
 
-#if NORMAL || MOCK
-        container.register(PersistenceClient.self) { _ in
-            CoreDataClient() //TODO: make stubs?
+#if COREDATA
+        await container.register(PersistenceClient.self) { _ in
+            CoreDataClient()
         }
 #elseif SWIFTDATA
-        container.register(PersistenceClient.self) { _ in
+        await container.register(PersistenceClient.self) { _ in
             do {
                 return try SwiftDataClient()
             } catch {
@@ -50,46 +82,43 @@ final class DependencyContainer: DependencyContainerType {
             }
         }
 #elseif REALM
-        container.register(PersistenceClient.self) { _ in
+        await container.register(PersistenceClient.self) { _ in
             RealmClient()
         }
 #endif
 
-        container.register(MealsClosureServiceType.self) { r in
+        await container.register(MealsClosureServiceType.self) { r in
             MealsClosureService(
-                backendClient: r.resolve(HTTPClient.self)!,
-                persistanceClient: r.resolve(PersistenceClient.self)!
+                backendClient: await r.resolve(HTTPClient.self)!,
+                persistanceClient: await r.resolve(PersistenceClient.self)!
             )
         }
 
-        container.register(MealsAsyncServiceType.self) { r in
+        await container.register(MealsAsyncServiceType.self) { r in
             MealsAsyncService(
-                backendClient: r.resolve(HTTPClient.self)!,
-                persistanceClient: r.resolve(PersistenceClient.self)!
+                backendClient: await r.resolve(HTTPClient.self)!,
+                persistanceClient: await r.resolve(PersistenceClient.self)!
             )
         }
 
-        container.register(MealsAsyncStreamServiceType.self) { r in
+        await container.register(MealsAsyncStreamServiceType.self) { r in
             MealsAsyncStreamService(
-                backendClient: r.resolve(HTTPClient.self)!,
-                persistanceClient: r.resolve(PersistenceClient.self)!
+                backendClient: await r.resolve(HTTPClient.self)!,
+                persistanceClient: await r.resolve(PersistenceClient.self)!
             )
         }
 
-        container.register(MealsPassthroughCombineServiceType.self) { r in
-            MealsPassthroughCombineService(
-                backendClient: r.resolve(HTTPClient.self)!,
-                persistanceClient: r.resolve(PersistenceClient.self)!
-            )
-        }
-
-        container.register(StreamViewFactory.self) { r in
-            StreamViewFactory(service: r.resolve(MealsAsyncStreamServiceType.self)!)
+        await container.register(StreamViewFactory.self) { r in
+            await StreamViewFactory(service: await r.resolve(MealsAsyncStreamServiceType.self)!)
         }
 
 
-        container.register(Router.self) { _ in
-            Router()
+        await container.register(Router.self) { _ in
+            await Router()
+        }
+
+        await container.register(NotificationService.self) { _ in
+            await NotificationService()
         }
     }
 }

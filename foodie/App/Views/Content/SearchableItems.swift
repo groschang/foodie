@@ -12,6 +12,7 @@ protocol SearchableItems: Items, Searchable { }
 
 extension SearchableItems {
 
+    @MainActor
     func filter(query: String? = nil, mapping: (T) -> String) -> [T] {
         filter(items: items, query: query, mapping: mapping)
     }

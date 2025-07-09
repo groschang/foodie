@@ -9,16 +9,21 @@
 import Foundation
 import Combine
 
+@MainActor
 protocol DashboardMealsLocalizable {
     var title: String { get }
 }
 
+@MainActor
 protocol DashboardMealsItems: ObservableObject {
     var items: [Meal] { get }
 }
 
+@MainActor
 protocol DashboardMealsViewModelType: LoadableObject, DashboardMealsLocalizable, DashboardMealsItems { }
 
+
+@MainActor
 final class DashboardMealsViewModel: DashboardMealsViewModelType, Identifiable {
 
     var title: String { "Meals".localized }

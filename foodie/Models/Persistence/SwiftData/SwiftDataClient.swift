@@ -9,7 +9,7 @@
 import Foundation
 import SwiftData
 
-final class SwiftDataClient: PersistenceClient {
+actor SwiftDataClient: PersistenceClient {
 
     private var context: ModelContext
 

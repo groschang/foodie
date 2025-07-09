@@ -9,17 +9,21 @@
 import Foundation
 import Combine
 
+@MainActor
 protocol DashboardCategoriesLocalizable {
     var title: String { get }
 }
 
+@MainActor
 protocol DashboardCategoriesItems {
     var items: [Category] { get }
 }
 
+@MainActor
 protocol DashboardCategoriesViewModelType: LoadableObject, DashboardCategoriesLocalizable, DashboardCategoriesItems { }
 
 
+@MainActor
 final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Identifiable {
 
     var title: String { "Categories".localized }
@@ -69,5 +73,5 @@ final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Iden
 }
 
 extension DashboardCategoriesViewModel {
-    static let mock = DashboardCategoriesViewModel(service: MealsAsyncServicePreview())
+    @MainActor static let mock = DashboardCategoriesViewModel(service: MealsAsyncServicePreview())
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class APICombineClient: HTTPClient { //TODO: testme
+final class APICombineClient: HTTPClient {
 
     private let enviroment: APIEndpoint
 
@@ -16,19 +16,15 @@ class APICombineClient: HTTPClient { //TODO: testme
 
     private let session = URLSession.extended
 
-    private let decoder: JSONDecoder
-
     init(
         enviroment: APIEndpoint = .production,
-        requestBuilder: RequestBuilder.Type = URLRequestBuilder.self,
-        decoder: JSONDecoder = .init()
+        requestBuilder: RequestBuilder.Type = URLRequestBuilder.self
     ) {
         self.enviroment = enviroment
         self.requestBuilder = requestBuilder.init(enviroment: enviroment)
-        self.decoder = decoder
     }
 
-    func process<T: Decodable>(_ request: Request<T>) async throws -> T {
+    func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
         do {
 
             let urlRequest = try requestBuilder.build(for: request)
@@ -65,8 +61,8 @@ class APICombineClient: HTTPClient { //TODO: testme
         }
     }
 
-    private func download<T: Decodable>(_ request: URLRequest) async throws -> T {
-        try await withCheckedThrowingContinuation { continuation in
+    private func download<T: Decodable & Sendable>(_ request: URLRequest) async throws -> T {
+        return try await withCheckedThrowingContinuation { continuation in
             let _ = session //TODO: returns any publisher insead t ?
                 .dataTaskPublisher(for: request)
                 .retry(3)
@@ -75,7 +71,7 @@ class APICombineClient: HTTPClient { //TODO: testme
                     try Self.validate($0.response)
                     return $0.data
                 }
-                .decode(type: T.self, decoder: decoder)
+                .decode(type: T.self, decoder: JSONDecoder())
                 .mapError { APIError($0) }
                 .sink {
                     switch $0 {

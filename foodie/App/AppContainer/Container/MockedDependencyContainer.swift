@@ -8,69 +8,100 @@
 
 import Foundation
 
-final class MockedDependencyContainer: DependencyContainerType {
+actor MockedDependencyContainer: DependencyContainerType {
 
     static let shared = MockedDependencyContainer()
 
     private init() { }
-    
+
     private let container = DIContainer()
 
-    var backendClient: HTTPClient { container.resolve(HTTPClient.self)! }
-    var persistenceClient: PersistenceClient { container.resolve(PersistenceClient.self)! }
+    var backendClient: HTTPClient {
+        get async {
+            await container.resolve(HTTPClient.self)!
+        }
+    }
+    var persistenceClient: PersistenceClient {
+        get async {
+            await container.resolve(PersistenceClient.self)!
+        }
+    }
 
-    var closureService: MealsClosureServiceType { container.resolve(MealsClosureServiceType.self)! }
-    var asyncService: MealsAsyncServiceType { container.resolve(MealsAsyncServiceType.self)! }
-    var asyncStreamService: MealsAsyncStreamServiceType { container.resolve(MealsAsyncStreamServiceType.self)! }
-    var passthroughCombineService: MealsPassthroughCombineServiceType { container.resolve(MealsPassthroughCombineServiceType.self)! }
+    var closureService: MealsClosureServiceType {
+        get async {
+            await container.resolve(MealsClosureServiceType.self)!
+        }
+    }
+    var asyncService: MealsAsyncServiceType {
+        get async {
+            await container.resolve(MealsAsyncServiceType.self)!
+        }
+    }
+    var asyncStreamService: MealsAsyncStreamServiceType {
+        get async {
+            await container.resolve(MealsAsyncStreamServiceType.self)!
+        }
+    }
+    var viewFactory: StreamViewFactory {
+        get async {
+            await container.resolve(StreamViewFactory.self)!
+        }
+    }
+    var router: Router {
+        get async {
+            await container.resolve(Router.self)!
+        }
+    }
+    var notificationService: NotificationService {
+        get async {
+            await container.resolve(NotificationService.self)!
+        }
+    }
 
-    var router: Router { container.resolve(Router.self)! }
-    var viewFactory: StreamViewFactory { container.resolve(StreamViewFactory.self)! }
 
-    func assemble() {
-        container.register(HTTPClient.self) { _ in
+    func assemble() async {
+        await container.register(HTTPClient.self) { _ in
             APIClient()
         }
 
-#if NORMAL || MOCK
-        container.register(PersistenceClient.self) { _ in
-            CoreDataClient() //TODO: make stubs?
-        }
-#elseif SWIFTDATA
-        container.register(SwiftDataClient.self) { _ in
+#if COREDATA
+        await container.register(SwiftDataClient.self) { _ in
             do {
-                return try SwiftDataClient() //TODO: make stubs?
+                return try SwiftDataClient()
             } catch {
                 Log.error("Couldn't initialize Swift Data Client: \(error)")
                 return SwiftDataClientLogger()
             }
         }
+#else
+        await container.register(PersistenceClient.self) { _ in
+            CoreDataClient()
+        }
 #endif
 
-        container.register(MealsClosureServiceType.self) { _ in
+        await container.register(MealsClosureServiceType.self) { _ in
             MealsServicePreview()
         }
 
-        container.register(MealsAsyncServiceType.self) { _ in
+        await container.register(MealsAsyncServiceType.self) { _ in
             MealsAsyncServicePreview()
         }
 
-        container.register(MealsAsyncStreamServiceType.self) { _ in
+        await container.register(MealsAsyncStreamServiceType.self) { _ in
             MealsAsyncStreamServicePreview()
         }
 
-        container.register(MealsPassthroughCombineServiceType.self) { [unowned self] _ in
-            MealsPassthroughCombineService(backendClient: backendClient, 
-                                           persistanceClient: persistenceClient) //TODO: make stubs?
-        }
-
-        container.register(StreamViewFactory.self) { [unowned self] _ in
-            StreamViewFactory(service: asyncStreamService) //TODO: make stubs?
+        await container.register(StreamViewFactory.self) { r in
+            await StreamViewFactory(service: await r.resolve(MealsAsyncStreamServiceType.self)!)
         }
 
 
-        container.register(Router.self) { _ in
-            Router() //TODO: make stubs?
+        await container.register(Router.self) { _ in
+            await Router()
+        }
+
+        await container.register(NotificationService.self) { _ in
+            await NotificationService()
         }
     }
 }

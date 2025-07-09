@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ListStyle: ViewModifier { //TODO: CHECK
 
+    @MainActor
     private struct Colors {
         static let accent = Color.accent.mediumOpacity()
         static let background = Color.background.lightOpacity()

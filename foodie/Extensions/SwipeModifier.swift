@@ -53,11 +53,11 @@ struct SwipeModifier: ViewModifier {
                         }
                     }
             )
-            .onAnimationCompleted(for: manager.position) {
-                withAnimation {
-                    manager.startEmiting()
-                }
-            }
+//            .onAnimationCompleted(for: manager.position) {
+//                withAnimation {
+//                    manager.startEmiting()
+//                }
+//            }
     }
 }
 

@@ -8,17 +8,20 @@
 
 import Foundation
 
+@MainActor
 protocol DashboardPromoPresentable: ObservableObject {
     var name: String { get }
     var imageUrl: URL? { get }
     var meal: Meal? { get }
 }
 
+@MainActor
 protocol DashboardPromoViewModelType: DashboardPromoPresentable,
                                       LoadableObject,
                                       Initializable { }
 
 
+@MainActor
 final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
     private let service: MealsAsyncServiceType
@@ -67,5 +70,5 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
 
 
 extension DashboardPromoViewModel {
-    static let mock = DashboardPromoViewModel(service: MealsAsyncServicePreview())
+    @MainActor static let mock = DashboardPromoViewModel(service: MealsAsyncServicePreview())
 }
