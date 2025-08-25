@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 @objc(IngredientEntity)
-public class IngredientEntity: NSManagedObject, @unchecked Sendable {
+public class IngredientEntity: NSManagedObject {
 
 }

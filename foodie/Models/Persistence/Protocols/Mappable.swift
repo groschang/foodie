@@ -8,7 +8,7 @@
 
 import CoreData
 
-protocol ObjectMappable: Sendable {
+protocol ObjectMappable {
     associatedtype Object = EntityMappable
     associatedtype SelfType = Self
     associatedtype DatastoreContext

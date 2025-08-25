@@ -38,12 +38,12 @@ actor CoreDataClient {
         return context
     }
 
-    private func fetch<T: Sendable>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
+    private func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
         guard let viewContext else { return nil }
         return await viewContext.fetch(request: request)
     }
 
-    private func fetch<T: Sendable>(
+    private func fetch<T>(
         request: NSFetchRequest<T>,
         in context: NSManagedObjectContext
     ) async -> [T]? where T: NSManagedObject {
