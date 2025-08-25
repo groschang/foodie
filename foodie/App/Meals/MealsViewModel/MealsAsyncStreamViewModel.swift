@@ -45,7 +45,7 @@ final class MealsAsyncStreamViewModel: MealsViewModelType {
         state.setLoading()
 
         do {
-            for try await meals in service.getMeals(for: category) {
+            for try await meals in await service.getMeals(for: category) {
                 items = meals.items
                 state.set(for: items)
             }

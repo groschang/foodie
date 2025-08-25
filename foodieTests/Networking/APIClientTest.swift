@@ -42,7 +42,7 @@ final class APIClientTest: XCTestCase {
         let url = URL(string: "https://example.com/api/v1/categories")!
         let urlRequest = URLRequest(url: url)
 
-        requestBuilder.stubBuildResponse = .success(urlRequest)
+        await requestBuilder.setStubBuildResponse(.success(urlRequest))
 
         let data = APIEndpoint.testObjectJSON.data(using: .utf8)!
         let response = HTTPURLResponse(url: url,
@@ -50,7 +50,7 @@ final class APIClientTest: XCTestCase {
                                        httpVersion: nil,
                                        headerFields: nil)!
 
-        httpSession.stubDataResponse = .success((data, response))
+        await httpSession.setStubDataResponse(.success((data, response)))
 
         // When
         let result = try await sut.process(request)
@@ -58,8 +58,10 @@ final class APIClientTest: XCTestCase {
         // Then
         let assertion = TestObject.stub
 
-        expect(self.requestBuilder.buildCallCount) == 1
-        expect(self.httpSession.dataCallCount) == 1
+        let buildCallCount = await self.requestBuilder.buildCallCount
+        expect(buildCallCount) == 1
+        let dataCallCount = await self.httpSession.dataCallCount
+        expect(dataCallCount) == 1
         expect(result).to(equal(assertion))
     }
 
@@ -72,7 +74,7 @@ final class APIClientTest: XCTestCase {
         let url = URL(string: "https://example.com/api/v1/categories")!
         let urlRequest = URLRequest(url: url)
 
-        requestBuilder.stubBuildResponse = .success(urlRequest)
+        await requestBuilder.setStubBuildResponse(.success(urlRequest))
 
         let data = APIEndpoint.testObjectJSON.data(using: .utf8)!
         let response = HTTPURLResponse(url: url,
@@ -80,7 +82,7 @@ final class APIClientTest: XCTestCase {
                                        httpVersion: nil,
                                        headerFields: nil)!
 
-        httpSession.stubDataResponse = .success((data, response))
+        await httpSession.setStubDataResponse(.success((data, response)))
 
         // When -> Then
 
@@ -90,8 +92,10 @@ final class APIClientTest: XCTestCase {
                 expect(error.localizedDescription).to(contain("Status Code: 500"))
             })
 
-        expect(self.requestBuilder.buildCallCount) == 1
-        expect(self.httpSession.dataCallCount) == 1
+        let buildCallCount = await self.requestBuilder.buildCallCount
+        expect(buildCallCount) == 1
+        let dataCallCount = await self.httpSession.dataCallCount
+        expect(dataCallCount) == 1
 
     }
 
@@ -104,16 +108,18 @@ final class APIClientTest: XCTestCase {
         let url = URL(string: "https://example.com/api/v1/categories")!
         let urlRequest = URLRequest(url: url)
 
-        requestBuilder.stubBuildResponse = .success(urlRequest)
+        await requestBuilder.setStubBuildResponse(.success(urlRequest))
 
-        httpSession.stubDataResponse = .failure(NSError(domain: NSURLErrorDomain, code: NSURLErrorBadURL))
+        await httpSession.setStubDataResponse(.failure(NSError(domain: NSURLErrorDomain, code: NSURLErrorBadURL)))
 
         // When -> Then
 
         await expect { try await self.sut.process(request) }.to(throwError(APIError.unknown))
 
-        expect(self.requestBuilder.buildCallCount) == 1
-        expect(self.httpSession.dataCallCount) == 1
+        let buildCallCount = await self.requestBuilder.buildCallCount
+        expect(buildCallCount) == 1
+        let dataCallCount = await self.httpSession.dataCallCount
+        expect(dataCallCount) == 1
 
     }
 
@@ -126,7 +132,7 @@ final class APIClientTest: XCTestCase {
         let url = URL(string: "https://example.com/api/v1/categories")!
         let urlRequest = URLRequest(url: url)
 
-        requestBuilder.stubBuildResponse = .success(urlRequest)
+        await requestBuilder.setStubBuildResponse(.success(urlRequest))
 
         /// Incorrect json file
         let data = APIEndpoint.testObjectJSON.appending("json").data(using: .utf8)!
@@ -135,7 +141,7 @@ final class APIClientTest: XCTestCase {
                                        httpVersion: nil,
                                        headerFields: nil)!
 
-        httpSession.stubDataResponse = .success((data, response))
+        await httpSession.setStubDataResponse(.success((data, response)))
 
         // When -> Then
 
@@ -144,8 +150,10 @@ final class APIClientTest: XCTestCase {
             expect(error.localizedDescription).to(contain("The given data was not valid JSON."))
         })
 
-        expect(self.requestBuilder.buildCallCount) == 1
-        expect(self.httpSession.dataCallCount) == 1
+        let buildCallCount = await self.requestBuilder.buildCallCount
+        expect(buildCallCount) == 1
+        let dataCallCount = await self.httpSession.dataCallCount
+        expect(dataCallCount) == 1
 
     }
 

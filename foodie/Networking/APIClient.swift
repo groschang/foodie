@@ -34,7 +34,7 @@ final class APIClient: HTTPClient {
         
         do {
 
-            let urlRequest = try requestBuilder.build(for: request)
+            let urlRequest = try await requestBuilder.build(for: request)
             let (data, response) = try await session.data(for: urlRequest)
             try validate(response)
             let object: T = try decode(data)

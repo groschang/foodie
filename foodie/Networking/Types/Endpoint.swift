@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Endpoint {
+struct Endpoint: Sendable {
     let path: String
     var queryItems: [URLQueryItem]?
     

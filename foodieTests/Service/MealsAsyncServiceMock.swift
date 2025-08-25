@@ -9,7 +9,7 @@
 import Foundation
 @testable import foodie
 
-class MealsAsyncServiceMock: MealsAsyncServiceType {
+final actor MealsAsyncServiceMock: MealsAsyncServiceType {
 
     init(
         stubLoadCategories: Categories? = .stub,

@@ -46,7 +46,7 @@ final class MealAsyncStreamViewModel: MealViewModelType {
         state.setLoading()
 
         do {
-            for try await meal in service.getMeal(for: object.id) {
+            for try await meal in await service.getMeal(for: object.id) {
                 setup(with: meal)
                 state.set(for: meal)
             }

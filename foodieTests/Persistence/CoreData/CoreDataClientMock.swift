@@ -9,7 +9,7 @@
 import Foundation
 @testable import foodie
 
-public final class CoreDataClientMock: PersistenceClient {
+public final actor CoreDataClientMock: PersistenceClient {
 
     // MARK: Categories
 
@@ -81,4 +81,19 @@ public final class CoreDataClientMock: PersistenceClient {
         return stubGetRandomMealResponse
     }
 
+    public func setStubGetCategoriesResponse(_ response: Categories?) {
+        stubGetCategoriesResponse = response
+    }
+
+    public func setStubGetMealsResponse(_ response: Meals?) {
+        stubGetMealsResponse = response
+    }
+
+    public func setStubGetMealResponse(_ response: Meal?) {
+        stubGetMealResponse = response
+    }
+
+    public func setStubGetRandomMealResponse(_ response: Meal?) {
+        stubGetRandomMealResponse = response
+    }
 }

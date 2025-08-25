@@ -9,13 +9,13 @@
 import Foundation
 @testable import foodie
 
-class MealsAsyncStreamServiceMock: Sleepable, MealsAsyncStreamServiceType {
+final actor MealsAsyncStreamServiceMock: MealsAsyncStreamServiceType, SleepableProtocol {
 
     public var stubGetCategories: Result<Categories, Error>?
     public var didGetCategories: (() -> Void)?
     public var getCategoriesCallCount = 0
 
-    func getCategories() -> AsyncThrowingStream<Categories, Error> {
+    func getCategories() async -> AsyncThrowingStream<Categories, Error> {
         defer { didGetCategories?() }
         getCategoriesCallCount += 1
         return AsyncThrowingStream { continuation in
@@ -35,7 +35,7 @@ class MealsAsyncStreamServiceMock: Sleepable, MealsAsyncStreamServiceType {
     public var didGetMeals: (() -> Void)?
     public var getMealsCallCount = 0
 
-    func getMeals(for category: foodie.Category) -> AsyncThrowingStream<Meals, Error> {
+    func getMeals(for category: foodie.Category) async -> AsyncThrowingStream<Meals, Error> {
         defer { didGetMeals?() }
         getMealsCallCount += 1
         return AsyncThrowingStream { continuation in
@@ -55,7 +55,7 @@ class MealsAsyncStreamServiceMock: Sleepable, MealsAsyncStreamServiceType {
     public var didGetMeal: (() -> Void)?
     public var getMealCallCount = 0
 
-    func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error> {
+    func getMeal(for mealId: String) async -> AsyncThrowingStream<Meal, Error> {
         defer { didGetMeal?() }
         getMealCallCount += 1
         return AsyncThrowingStream { continuation in
@@ -75,7 +75,7 @@ class MealsAsyncStreamServiceMock: Sleepable, MealsAsyncStreamServiceType {
     public var didRandomMeal: (() -> Void)?
     public var getRandomCallCount = 0
 
-    func getRandomMeal() -> AsyncThrowingStream<Meal, Error> {
+    func getRandomMeal() async -> AsyncThrowingStream<Meal, Error> {
         defer { didRandomMeal?() }
         getRandomCallCount += 1
         return AsyncThrowingStream { continuation in

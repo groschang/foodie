@@ -24,11 +24,12 @@ final class APITest: XCTestCase {
 
     @MainActor
     func testCategories() async throws {
+        try guardForSimulator(message: "Snapshot tests are only run on simulators")
 
         //Arrange
         let endpoint = Endpoint.categories
         let request = Request<Categories>(endpoint: endpoint)
-        let urlRequest = try requestBuilder.build(for: request)
+        let urlRequest = try await requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)
@@ -42,11 +43,12 @@ final class APITest: XCTestCase {
 
     @MainActor
     func testMeals() async throws {
+        try guardForSimulator(message: "Snapshot tests are only run on simulators")
 
         //Arrange
         let endpoint = Endpoint.meals(category: "Beef")
         let request = Request<Meals>(endpoint: endpoint)
-        let urlRequest = try requestBuilder.build(for: request)
+        let urlRequest = try await requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)
@@ -60,11 +62,12 @@ final class APITest: XCTestCase {
 
     @MainActor
     func testMeal() async throws {
+        try guardForSimulator(message: "Snapshot tests are only run on simulators")
 
         //Arrange
         let endpoint = Endpoint.meal(id: "52881")
         let request = Request<Meal>(endpoint: endpoint)
-        let urlRequest = try requestBuilder.build(for: request)
+        let urlRequest = try await requestBuilder.build(for: request)
 
         //Act
         let (data, response) = try await session.data(for: urlRequest)
@@ -96,4 +99,12 @@ private extension APITest {
         }
     }
 
+}
+
+extension XCTestCase {
+    func guardForSimulator(message: String) throws {
+        #if !targetEnvironment(simulator)
+        throw XCTSkip(message)
+        #endif
+    }
 }

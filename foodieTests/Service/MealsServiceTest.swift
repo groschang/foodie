@@ -34,8 +34,8 @@ final class MealsServiceTest: XCTestCase, Stubable {
     func testGetCategories() async throws {
         // Given
         let categories = Categories.stub
-        backendClient.stubProcessResponse = .success(categories as Any)
-        persistanceClient.stubGetCategoriesResponse = categories
+        await backendClient.setStubProcessResponse(.success(categories as Any))
+        await persistanceClient.setStubGetCategoriesResponse(categories)
 
         // When
         let result = try await sut.getCategories(handler: { _ in })
@@ -43,7 +43,8 @@ final class MealsServiceTest: XCTestCase, Stubable {
         // Then
         let assertion = categories
 
-        expect(self.backendClient.processCallCount).to(equal(1))
+        let processCallCount = await self.backendClient.processCallCount
+        expect(processCallCount).to(equal(1))
         expect(result).to(equal(assertion))
     }
     
@@ -51,8 +52,8 @@ final class MealsServiceTest: XCTestCase, Stubable {
         // Given
         let meals = Meals.stub
         let category = Category.stub
-        backendClient.stubProcessResponse = .success(meals as Any)
-        persistanceClient.stubGetMealsResponse = meals
+        await backendClient.setStubProcessResponse(.success(meals as Any))
+        await persistanceClient.setStubGetMealsResponse(meals)
 
         // When
         let result = try await sut.getMeals(for: category, handler: { _ in })
@@ -60,15 +61,16 @@ final class MealsServiceTest: XCTestCase, Stubable {
         // Then
         let assertion = meals
 
-        expect(self.backendClient.processCallCount).to(equal(1))
+        let processCallCount = await self.backendClient.processCallCount
+        expect(processCallCount).to(equal(1))
         expect(result).to(equal(assertion))
     }
 
     func testGetMeal() async throws {
         // Given
         let meal = Meal.stub
-        backendClient.stubProcessResponse = .success(meal as Any)
-        persistanceClient.stubGetMealResponse = meal
+        await backendClient.setStubProcessResponse(.success(meal as Any))
+        await persistanceClient.setStubGetMealResponse(meal)
 
         // When
         let result = try await sut.getMeal(for: "1", handler: { _ in })
@@ -76,15 +78,16 @@ final class MealsServiceTest: XCTestCase, Stubable {
         // Then
         let assertion = meal
 
-        expect(self.backendClient.processCallCount).to(equal(1))
+        let processCallCount = await self.backendClient.processCallCount
+        expect(processCallCount).to(equal(1))
         expect(result).to(equal(assertion))
     }
 
     func testGetRandomMeal() async throws {
         // Given
         let meal = Meal.stub
-        backendClient.stubProcessResponse = .success(meal as Any)
-        persistanceClient.stubGetMealResponse = meal
+        await backendClient.setStubProcessResponse(.success(meal as Any))
+        await persistanceClient.setStubGetMealResponse(meal)
 
         // When
         let result = try await sut.getRandomMeal(handler: { _ in })
@@ -92,7 +95,8 @@ final class MealsServiceTest: XCTestCase, Stubable {
         // Then
         let assertion = meal
 
-        expect(self.backendClient.processCallCount).to(equal(1))
+        let processCallCount = await self.backendClient.processCallCount
+        expect(processCallCount).to(equal(1))
         expect(result).to(equal(assertion))
     }
 }

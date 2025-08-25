@@ -9,7 +9,7 @@
 import Foundation
 @testable import foodie
 
-class HTTPSessionMock: HTTPSession {
+final actor HTTPSessionMock: HTTPSession {
 
     public var stubDataResponse: Result<(Data, URLResponse), Error>?
     public var didData: (() -> Void)?
@@ -19,6 +19,10 @@ class HTTPSessionMock: HTTPSession {
         defer { didData?() }
         dataCallCount += 1
         return try stubDataResponse!.get()
+    }
+
+    public func setStubDataResponse(_ response: Result<(Data, URLResponse), Error>?) {
+        stubDataResponse = response
     }
 
 }

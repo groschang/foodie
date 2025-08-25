@@ -9,7 +9,7 @@
 import Foundation
 @testable import foodie
 
-class MealsServiceMock: Sleepable, Stubable, MealsClosureServiceType {
+final actor MealsServiceMock: Stubable, MealsClosureServiceType, SleepableProtocol {
 
     // MARK: Categories
 

@@ -27,7 +27,7 @@ final class APICombineClient: HTTPClient {
     func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
         do {
 
-            let urlRequest = try requestBuilder.build(for: request)
+            let urlRequest = try await requestBuilder.build(for: request)
             let object: T = try await download(urlRequest)
 
             return object

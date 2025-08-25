@@ -22,14 +22,14 @@ final class RequestBuilderTest: XCTestCase {
         sut = nil
     }
 
-    func testRequest() throws {
+    func testRequest() async throws {
 
         // Arrange
         let endpoint = Endpoint(path: "/categories")
         let request = Request<String>(endpoint: endpoint)
 
         // Act
-        let result = try sut.build(for: request)
+        let result = try await sut.build(for: request)
 
         // Assert
         let assertion = "https://example.com/api/v1/categories"
@@ -37,7 +37,7 @@ final class RequestBuilderTest: XCTestCase {
         expect(result.url?.absoluteString).to(equal(assertion))
     }
 
-    func testRequestWithQueryItem() throws {
+    func testRequestWithQueryItem() async throws {
 
         // Arrange
         let endpoint = Endpoint(
@@ -49,7 +49,7 @@ final class RequestBuilderTest: XCTestCase {
         let request = Request<String>(endpoint: endpoint)
 
         // Act
-        let result = try sut.build(for: request)
+        let result = try await sut.build(for: request)
 
         // Assert
         let assertion = "https://example.com/api/v1/categories?c=123"
@@ -57,7 +57,7 @@ final class RequestBuilderTest: XCTestCase {
         expect(result.url?.absoluteString).to(equal(assertion))
     }
 
-    func testRequestWithQueryItems() throws {
+    func testRequestWithQueryItems() async throws {
 
         // Arrange
         let endpoint = Endpoint(
@@ -70,7 +70,7 @@ final class RequestBuilderTest: XCTestCase {
         let request = Request<String>(endpoint: endpoint)
 
         // Act
-        let result = try sut.build(for: request)
+        let result = try await sut.build(for: request)
 
         // Assert
         let assertion = "https://example.com/api/v1/categories?q1=123&q2=345"
@@ -78,7 +78,7 @@ final class RequestBuilderTest: XCTestCase {
         expect(result.url?.absoluteString).to(equal(assertion))
     }
 
-    func testRequestWithHeaders() throws {
+    func testRequestWithHeaders() async throws {
 
         // Arrange
         let endpoint = Endpoint(
@@ -91,7 +91,7 @@ final class RequestBuilderTest: XCTestCase {
         let request = Request<String>(endpoint: endpoint, headers: headers)
 
         // Act
-        let result = try sut.build(for: request)
+        let result = try await sut.build(for: request)
 
         // Assert
         let assertion = ["h1":"v1"]

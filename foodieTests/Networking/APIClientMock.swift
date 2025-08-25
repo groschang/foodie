@@ -9,15 +9,19 @@
 import Foundation
 @testable import foodie
 
-public final class APIClientMock: HTTPClient {
+public final actor APIClientMock: HTTPClient {
 
     public var stubProcessResponse: Result<Any, Error>?
     public var didProcess: (() -> Void)?
     public var processCallCount = 0
 
-    public func process<T: Decodable>(_ request: Request<T>) async throws -> T {
+    public func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
         defer { didProcess?() }
         processCallCount += 1
         return try stubProcessResponse?.get() as! T
+    }
+
+    public func setStubProcessResponse(_ response: Result<Any, Error>?) {
+        stubProcessResponse = response
     }
 }

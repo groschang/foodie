@@ -10,10 +10,10 @@ import Foundation
 
 protocol MealsAsyncStreamServiceType: Sendable {
 
-    func getCategories() -> AsyncThrowingStream<Categories, Error>
-    func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error>
-    func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error>
-    func getRandomMeal() -> AsyncThrowingStream<Meal, Error>
+    func getCategories() async -> AsyncThrowingStream<Categories, Error>
+    func getMeals(for category: Category) async -> AsyncThrowingStream<Meals, Error>
+    func getMeal(for mealId: String) async -> AsyncThrowingStream<Meal, Error>
+    func getRandomMeal() async -> AsyncThrowingStream<Meal, Error>
 }
 
 final class MealsAsyncStreamService: MealsAsyncStreamServiceType { 
@@ -32,7 +32,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
 
     // MARK: Categories
 
-    func getCategories() -> AsyncThrowingStream<Categories, Error> {
+    func getCategories() async -> AsyncThrowingStream<Categories, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 do {
@@ -71,7 +71,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
 
     // MARK: Meals
 
-    func getMeals(for category: Category) -> AsyncThrowingStream<Meals, Error> {
+    func getMeals(for category: Category) async -> AsyncThrowingStream<Meals, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 do {
@@ -110,7 +110,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
 
     // MARK: Meal
 
-    func getMeal(for mealId: String) -> AsyncThrowingStream<Meal, Error> {
+    func getMeal(for mealId: String) async -> AsyncThrowingStream<Meal, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 do {
@@ -133,7 +133,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
         }
     }
 
-    func getRandomMeal() -> AsyncThrowingStream<Meal, Error> {
+    func getRandomMeal() async -> AsyncThrowingStream<Meal, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 do {

@@ -6,7 +6,7 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-class Request<T:Codable> {
+class Request<T:Codable>: @unchecked Sendable {
 
      let endpoint: Endpoint
      let headers: [String: String]?

@@ -35,7 +35,7 @@ final class CategoriesAsyncStreamViewModel: CategoriesViewModelType, Identifiabl
         state.setLoading()
 
         do {
-            for try await categories in service.getCategories() {
+            for try await categories in await service.getCategories() {
                 items = categories.items
                 state.set(for: items) //TODO: test me
             }
