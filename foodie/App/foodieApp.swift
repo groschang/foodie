@@ -31,7 +31,7 @@ struct foodieApp: App {
                     notificationService: notificationService
                 )
             } else {
-                ProgressView("Loading...")
+                LoadingView()
             }
         }
     }
