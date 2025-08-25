@@ -37,8 +37,8 @@ final class APITest: XCTestCase {
         let json = data.prettyString
 
         // Asset
-        assertSnapshot(matching: urlRequest, as: .raw)
-        assertSnapshot(matching: json, as: .json)
+        assertSnapshot(of: urlRequest, as: .raw)
+        assertSnapshot(of: json, as: .json)
     }
 
     @MainActor
@@ -56,8 +56,8 @@ final class APITest: XCTestCase {
         let json = data.prettyString
 
         // Asset
-        assertSnapshot(matching: urlRequest, as: .raw)
-        assertSnapshot(matching: json, as: .json)
+        assertSnapshot(of: urlRequest, as: .raw)
+        assertSnapshot(of: json, as: .json)
     }
 
     @MainActor
@@ -75,8 +75,8 @@ final class APITest: XCTestCase {
         let json = data.prettyString
 
         // Asset
-        assertSnapshot(matching: urlRequest, as: .raw)
-        assertSnapshot(matching: json, as: .json)
+        assertSnapshot(of: urlRequest, as: .raw)
+        assertSnapshot(of: json, as: .json)
     }
 }
 
