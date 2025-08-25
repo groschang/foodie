@@ -295,7 +295,7 @@
 		7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; };
 		713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; };
 		713833952E16FF6E00DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; };
-		713833962E16FF7200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; };
+		713833962E16FF7200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		713842642B4C998300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842652B4C99E300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842672B4C9B3F00AB126F /* DashboardSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842662B4C9B3F00AB126F /* DashboardSearchHeaderView.swift */; };
@@ -2139,7 +2139,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					71E2A5782970336A0012E5C6 = {
 						CreatedOnToolsVersion = 14.2;
@@ -2847,6 +2847,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2893,6 +2894,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/mockedFoodie copy-Info.plist";
@@ -2980,6 +2982,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -enable-actor-data-race-checks";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -3036,6 +3039,7 @@
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -3053,6 +3057,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3098,6 +3104,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/foodie copy-Info.plist";

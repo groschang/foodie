@@ -6,7 +6,7 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import CoreData
+@preconcurrency import CoreData
 
 extension NSManagedObjectContext {
 

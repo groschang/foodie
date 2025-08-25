@@ -107,16 +107,20 @@ extension CoreDataClient: PersistenceClient {
         guard let context = newTaskContext() else { return }
 
         guard let categoryEntity = await getCategory(category, context: context) else { return }
+        let categoryObjectID = categoryEntity.objectID
 
         await context.perform { [weak persistentContainer, weak context] in
             guard let context, let persistentContainer else { return }
 
+            guard let categoryFromObject = context.object(with: categoryObjectID) as? CategoryEntity else {
+                return
+            }
             let mealCategories = meals.items.map {
                 MealCategoryEntity.init($0, context: context)
             }
-            categoryEntity.addToMealCategories(NSSet(array: mealCategories))
+            categoryFromObject.addToMealCategories(NSSet(array: mealCategories))
 
-            persistentContainer.saveContext(context) //TODO: throw api
+            persistentContainer.saveContext(context)
         }
     }
 
@@ -147,19 +151,22 @@ extension CoreDataClient: PersistenceClient {
     }
 
     func updateMeal(_ meal: Meal) async {
-        guard 
+        guard
             let context = newTaskContext(),
             let mealDetailEntity = await getMealDetailEntity(for: meal.id, context: context)
         else { return }
+        let mealDetailEntityID = mealDetailEntity.objectID
 
-        await context.perform { [weak persistentContainer, weak context, weak mealDetailEntity] in
+        await context.perform { [weak persistentContainer, weak context] in
             guard let context,
-                  let persistentContainer,
-                  let mealDetailEntity
+                  let persistentContainer
             else { return }
 
-            mealDetailEntity.map(meal: meal, context: context)
-            persistentContainer.saveContext(context) //TODO: throw api
+            if let mealDetailEntity = context.object(with: mealDetailEntityID) as? MealDetailEntity {
+                mealDetailEntity.map(meal: meal, context: context)
+            }
+
+            persistentContainer.saveContext(context)
         }
     }
 

@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 @objc(MealCategoryEntity)
-public class MealCategoryEntity: NSManagedObject, @unchecked Sendable {
+public class MealCategoryEntity: NSManagedObject {
 
 }
