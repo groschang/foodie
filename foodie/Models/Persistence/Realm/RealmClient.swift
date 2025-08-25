@@ -11,50 +11,77 @@ import Foundation
 
 actor RealmClient: PersistenceClient {
 
-    private let realm: Realm
+    private var realm: Realm?
+    private let configuration: Realm.Configuration
 
-    init(realm: Realm? = nil) {
-        self.realm = realm ?? (try! Realm())
+    init(realmConfiguration: Realm.Configuration = Realm.Configuration()) {
+        self.configuration = realmConfiguration
     }
 
-    init(realmConfiguration configuration: Realm.Configuration) {
-        self.realm = try! Realm(configuration: configuration)
+    private func getRealm() async throws -> Realm {
+        if let realm = self.realm {
+            return realm
+        }
+        let realm = try await Realm(configuration: self.configuration, actor: self)
+        self.realm = realm
+        return realm
     }
 
 
     // MARK: Categories
 
-    @MainActor
     func getCategories() async -> Categories? {
-        await realm
-            .objects(CategoryRealm.self)
-            .toCategories()
+        do {
+            let realm = try await getRealm()
+            return realm
+                .objects(CategoryRealm.self)
+                .toCategories()
+        } catch {
+            Log.error("Unable to get categories: \(error)")
+            return nil
+        }
     }
 
-    @MainActor
     func getCategory(id: ObjectID) async -> Category? {
-        await       realm
-            .objects(CategoryRealm.self)
-            .where { $0.identifier == id }
-            .first
-            .map(Category.init)
+        do {
+            let realm = try await getRealm()
+            return realm
+                .objects(CategoryRealm.self)
+                .where { $0.identifier == id }
+                .first
+                .map(Category.init)
+        } catch {
+            Log.error("Unable to get category: \(error)")
+            return nil
+        }
     }
 
     func saveCategories(_ categories: Categories) async {
         let objects: [CategoryRealm] = categories.items.map(CategoryRealm.init)
-        await realm.saveAsync(objects)
+        do {
+            let realm = try await getRealm()
+            try await realm.asyncWrite {
+                realm.add(objects, update: .modified)
+            }
+        } catch {
+            Log.error("Unable to store data: \(error)")
+        }
     }
 
 
     // MARK: Meals
 
-    @MainActor
     func getMeals(for category: Category) async -> Meals? {
-        await realm
-            .objects(MealCategoryRealm.self)
-            .where { $0.category.identifier == category.identifier }
-            .toMeals()
-
+        do {
+            let realm = try await getRealm()
+            return realm
+                .objects(MealCategoryRealm.self)
+                .where { $0.category.identifier == category.identifier }
+                .toMeals()
+        } catch {
+            Log.error("Unable to get meals: \(error)")
+            return nil
+        }
     }
 
     func saveMeals(_ meals: Meals, for category: Category) async {
@@ -66,32 +93,56 @@ actor RealmClient: PersistenceClient {
             MealCategoryRealm($0, category: realmCategory)
         }
 
-        await realm.saveAsync(objects)
+        do {
+            let realm = try await getRealm()
+            try await realm.asyncWrite {
+                realm.add(objects, update: .modified)
+            }
+        } catch {
+            Log.error("Unable to store data: \(error)")
+        }
     }
 
 
     // MARK: Meal
 
-    @MainActor
     func getMeal(for mealId: ObjectID) async -> Meal? {
-        await realm
-            .objects(MealDetailRealm.self)
-            .where { $0.identifier == mealId }
-            .first
-            .map(Meal.init)
+        do {
+            let realm = try await getRealm()
+            return realm
+                .objects(MealDetailRealm.self)
+                .where { $0.identifier == mealId }
+                .first
+                .map(Meal.init)
+        } catch {
+            Log.error("Unable to get meal: \(error)")
+            return nil
+        }
     }
 
     func saveMeal(_ meal: Meal) async {
         let meal = MealDetailRealm(meal)
-        await realm.saveAsync(meal)
+        do {
+            let realm = try await getRealm()
+            try await realm.asyncWrite {
+                realm.add(meal, update: .modified)
+            }
+        } catch {
+            Log.error("Unable to store data: \(error)")
+        }
     }
 
-    @MainActor
     func getRandomMeal() async -> Meal? {
-        await realm
-            .objects(MealDetailRealm.self)
-            .randomElement()
-            .map(Meal.init)
+        do {
+            let realm = try await getRealm()
+            return realm
+                .objects(MealDetailRealm.self)
+                .randomElement()
+                .map(Meal.init)
+        } catch {
+            Log.error("Unable to get random meal: \(error)")
+            return nil
+        }
     }
 
 }

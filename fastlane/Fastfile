@@ -17,7 +17,7 @@ default_platform(:ios)
 
 lane :tests do
   run_tests(project: "foodie.xcodeproj",
-            devices: ["iPhone 15 Pro Max"],
+            devices: ["iPhone 16 Pro Max"],
             scheme: "foodie")
 end
 

@@ -3,8 +3,8 @@ scheme("mockedFoodie")
 
 # A list of devices you want to take the screenshots from
 devices([
-    "iPhone 15",
-    "iPhone 15 Pro Max"
+    "iPhone 16",
+    "iPhone 16 Pro Max"
 #   "iPhone 8",
 #   "iPhone 8 Plus",
 #   "iPhone SE",
