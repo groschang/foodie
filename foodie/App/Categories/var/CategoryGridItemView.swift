@@ -10,34 +10,24 @@ import SwiftUI
 import Kingfisher
 
 struct CategoryGridItemView: View {
-
+    
     let category: Category
-
+    
     var description: String {
         category.description
             .removeWhitespaces()
             .trunc(to: ".", ifExists: true, appendingTruced: true)
             .trunc(120)
     }
-
+    
     var body: some View {
         VStack {
-
             ListPhotoView(imageUrl: category.imageUrl)
                 .modifier(CategoryGridPhotoStyle())
-
-//            VStack(alignment: .leading) {
-                Text(category.name)
-                    .modifier(CategoryGridTextStyle())
-
-//                Text(description)
-//                    .font(.footnote)
-//                    .modifier(CategoryListTextStyle())
-//            }
-//
-//            Spacer()
+            
+            Text(category.name)
+                .modifier(CategoryGridTextStyle())
         }
-//        .modifier(CategoryListStyle(category.imageUrl)) //TODO: check
     }
 }
 
@@ -65,7 +55,7 @@ struct CategoryGridPhotoStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .aspectRatio(contentMode: .fit)
-//            .frame(width: 87, height: 87)
+        //            .frame(width: 87, height: 87)
             .frame(height: 90)
             .frame(maxWidth: .infinity)
             .background {

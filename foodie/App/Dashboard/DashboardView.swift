@@ -86,7 +86,6 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
                     .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
                     .padding(.vertical, 12)
                     .padding(.bottom, 12)
-                //  .modifier(SwipeModifier(manager: manager)) //TODO: optimize
 
                 DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
                     router.navigate(to: .categories) 

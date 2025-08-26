@@ -42,9 +42,9 @@ struct DashboardTextfiledView: View {
             .accentColor(Color.blue)
             .focused(isFocused)
             .disableAutocorrection(true)
-            //                .onSubmit {
-            //                        validate(name: username)
-            //                    }
+            // .onSubmit {
+            //   validate(name: username)
+            // }
 
         }
         .padding()

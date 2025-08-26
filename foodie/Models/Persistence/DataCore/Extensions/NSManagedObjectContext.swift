@@ -11,7 +11,6 @@
 extension NSManagedObjectContext {
 
     func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
-
         await perform {
             do {
                 return try request.execute()
@@ -21,19 +20,4 @@ extension NSManagedObjectContext {
             }
         }
     }
-
-//    func fetch<T>(request: NSFetchRequest<T>) async -> [T]? where T: NSManagedObject {
-//        await fetch(request: request, in: viewContext)
-//    }
-
-//    func fetch<T>(request: NSFetchRequest<T>, in context: NSManagedObjectContext) async -> [T]? where T: NSManagedObject {
-//        await context.perform {
-//            do {
-//                return try request.execute()
-//            } catch {
-//                Logger.log("Core data fetch problem: \(error)", onLevel: .error)
-//                return nil
-//            }
-//        }
-//    }
 }

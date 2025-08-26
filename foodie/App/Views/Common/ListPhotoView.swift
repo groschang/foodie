@@ -34,12 +34,6 @@ struct ListPhotoView<LoadingViewContent: View>: View {
                 }
             }
     }
-//TODO: 
-//    func loadingView(@ViewBuilder _ content: @escaping () -> LoadingViewContent) -> Self {
-//        self.loadingView = content()
-//        return self
-//    }
-
 
     @ViewBuilder
     private var content: some View {

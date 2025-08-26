@@ -8,19 +8,6 @@
 
 import Foundation
 
-//extension String.StringInterpolation {
-//    mutating func appendInterpopation(_ value: Date) {
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .medium
-//        
-//        let str = formatter.string(from: value)
-//        
-//        appendLiteral(str)
-//    }
-//}
-
-//TODO: make package?
-
 public extension DateFormatter {
 
     static let medium  = {

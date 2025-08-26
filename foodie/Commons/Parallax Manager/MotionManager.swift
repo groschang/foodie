@@ -37,20 +37,3 @@ class MotionManager: ObservableObject {
         manager.stopDeviceMotionUpdates()
     }
 }
-
-//extension MotionManager {
-//
-//    var offset: CGPoint {
-//        .init(x: roll, y: pitch)
-//    }
-//
-//    func set(offset: CGPoint) {
-//        roll = offset.x
-//        pitch = offset.y
-//    }
-//
-//    func add(offset: CGPoint) {
-//        roll += offset.x
-//        pitch += offset.y
-//    }
-//}

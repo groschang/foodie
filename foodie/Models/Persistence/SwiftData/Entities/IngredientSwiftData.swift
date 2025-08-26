@@ -12,7 +12,6 @@ import SwiftData
 @Model
 final class IngredientSwiftData {
 
-//    @Attribute(.unique) 
     var name: String
     var measure: String
     var mealDetail: MealDetailSwiftData?
