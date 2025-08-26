@@ -944,8 +944,8 @@
 		71D036F92A5DED010023356C /* MealsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRouter.swift; sourceTree = "<group>"; };
 		71D036FB2A5DEE1A0023356C /* MealRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRouter.swift; sourceTree = "<group>"; };
 		71D036FD2A5DF3790023356C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mockedFoodie copy-Info.plist"; sourceTree = "<group>"; };
-		71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "foodie copy-Info.plist"; sourceTree = "<group>"; };
+		71D04D3C2B77B6950019BA70 /* mockedFoodie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mockedFoodie-Info.plist"; sourceTree = "<group>"; };
+		71D04D3D2B77B6950019BA70 /* foodie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "foodie-Info.plist"; sourceTree = "<group>"; };
 		71D04D4C2B77B8C70019BA70 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		71D7023B2B339BA4008900E0 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
@@ -1855,8 +1855,8 @@
 				719ECCB92E5CF33000D95CA5 /* Configuration.xcconfig */,
 				71F607F82B8291C700807DD7 /* foodie.xctestplan */,
 				7111EC42297C531C00ABC48C /* Info.plist */,
-				71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */,
-				71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */,
+				71D04D3D2B77B6950019BA70 /* foodie-Info.plist */,
+				71D04D3C2B77B6950019BA70 /* mockedFoodie-Info.plist */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -2816,7 +2816,7 @@
 					"MOCKED=1",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/mockedFoodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/mockedFoodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2859,7 +2859,7 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/mockedFoodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/mockedFoodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3032,7 +3032,7 @@
 					"NORMAL=1",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/foodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3076,7 +3076,7 @@
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/foodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3113,7 +3113,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "${DEVELOPMENT_TEAM}";
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/foodie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
@@ -3141,7 +3141,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "${DEVELOPMENT_TEAM}";
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/foodie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
