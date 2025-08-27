@@ -20,6 +20,7 @@ struct BackButton: View {
                 .imageScale(.large)
                 .background(.clear)
                 .foregroundStyle(tint)
+
         }
     }
 }

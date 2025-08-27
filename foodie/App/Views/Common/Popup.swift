@@ -17,27 +17,19 @@ public struct Popup<PopupContent>: ViewModifier where PopupContent: View {
     @State private var presenterFrame: CGRect = .zero
     @State private var sheetFrame: CGRect = .zero
 
-    private var currentOffset: CGFloat {
-        isPresented ? displayedOffset : hiddenOffset
+    private func currentOffset(with screenHeight: CGFloat) -> CGFloat {
+        isPresented ? displayedOffset(with: screenHeight) : hiddenOffset(with: screenHeight)
     }
 
-    private var displayedOffset: CGFloat {
+    private func displayedOffset(with screenHeight: CGFloat) -> CGFloat {
         -presenterFrame.midY + screenHeight/2
     }
 
-    private var hiddenOffset: CGFloat {
+    private func hiddenOffset(with screenHeight: CGFloat) -> CGFloat {
         if presenterFrame.isEmpty {
-            return UIScreen.main.bounds.size.height*2
+            return screenHeight*2
         }
         return screenHeight - presenterFrame.midY + sheetFrame.height/2
-    }
-
-    private var screenWidth: CGFloat {
-        UIScreen.main.bounds.size.width
-    }
-
-    private var screenHeight: CGFloat {
-        UIScreen.main.bounds.size.height
     }
 
     init(isPresented: Binding<Bool>,
@@ -47,32 +39,39 @@ public struct Popup<PopupContent>: ViewModifier where PopupContent: View {
     }
 
     public func body(content: Content) -> some View {
-        ZStack {
-            content
-                .readingGeometry(from: CoordinateSpace.alert, into: $presenterFrame)
-        }
-        .overlay(dimmedBackground)
-        .overlay(sheet)
+        content
+            .readingGeometry(from: CoordinateSpace.alert, into: $presenterFrame)
+            .overlay(
+                GeometryReader { geometry in
+                    let screenSize = geometry.size
+                    ZStack {
+                        dimmedBackground(with: screenSize)
+                        sheet(with: screenSize)
+                    }
+                }
+            )
     }
 
-    private var sheet: some View {
-        ZStack {
+    private func sheet(with screenSize: CGSize) -> some View {
+        let offset = currentOffset(with: screenSize.height)
+        return ZStack {
             self.contentView()
                 .onTapGesture(perform: dismiss)
                 .readingGeometry(from: CoordinateSpace.alert, into: $sheetFrame)
-                .frame(width: screenWidth)
-                .offset(x: .zero, y: currentOffset)
-                .animation(.easeOut(duration: 0.3), value: currentOffset)
+                .frame(width: screenSize.width)
+                .offset(x: .zero, y: offset)
+                .animation(.easeOut(duration: 0.3), value: offset)
         }
     }
 
-    private var dimmedBackground: some View {
-        Rectangle()
+    private func dimmedBackground(with screenSize: CGSize) -> some View {
+        let offset = currentOffset(with: screenSize.height)
+        return Rectangle()
             .foregroundStyle(Color.gray.lightOpacity())
-            .frame(width: screenWidth, height: screenHeight)
+            .frame(width: screenSize.width, height: screenSize.height)
             .ignoresSafeArea()
             .opacity(isPresented ? 1.0 : 0.0)
-            .animation(.easeOut(duration: 0.3), value: currentOffset)
+            .animation(.easeOut(duration: 0.3), value: offset)
             .onTapGesture(perform: dismiss)
     }
 

@@ -41,23 +41,32 @@ struct MealView<Model>: View where Model: MealViewModelType {
 
     var content: some View {
         OffsetObservingScrollView(offset: $offset) {
-            VStack(spacing: 21) {
+            VStack(spacing: 0) {
 
                 spacer
-                informations
-                    .animateAppear($informationsOpacity, index: 1)
-                ingredients
-                    .animateAppear($ingredientsOpacity, index: 2)
-                recipe
-                    .animateAppear($recipeOpacity, index: 3)
-                youtube
-                    .animateAppear($youtubeOpacity, index: 4)
-                source
-                    .animateAppear($sourceOpacity, index: 5)
 
+                ZStack {
+                    VStack(spacing: 21) {
+                        informations
+                            .animateAppear($informationsOpacity, index: 1)
+                            .padding(.horizontal)
+                            .padding(.top, 21)
+                        ingredients
+                            .animateAppear($ingredientsOpacity, index: 2)
+                            .padding(.horizontal)
+                        recipe
+                            .animateAppear($recipeOpacity, index: 3)
+                            .padding(.horizontal)
+                        youtube
+                            .animateAppear($youtubeOpacity, index: 4)
+                        source
+                            .animateAppear($sourceOpacity, index: 5)
+                            .padding()
+                    }
+                }
+                .glassEffect(in: .rect(cornerRadius: MealViewImageStyle.Layouts.radius))
             }
             .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
-            .padding(.horizontal)
         }
         .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl,
                                 offset: offset.y,
@@ -66,7 +75,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
     }
 
     private var spacer: some View {
-        Spacer(minLength: imageSize.maxY)
+        Spacer(minLength: imageSize.maxY - MealViewImageStyle.Layouts.radius)
     }
 
     private var informations: some View {

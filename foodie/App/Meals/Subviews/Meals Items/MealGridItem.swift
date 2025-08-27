@@ -43,10 +43,16 @@ struct MealGridItem: View {
                         .weight(.semibold)
 
                     )
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(Color.white)
                     .maxWidth()
                     .padding()
-                    .background(Color.black.heavyOpacity())
+//                    .background(Color.black.heavyOpacity())
+                    .glassEffect(
+                        .regular.tint(.black.heavyOpacity()),
+                        in: .rect(cornerRadius: MealListItemStyle.Layouts.radius, )
+                    )
+
             }
         }
         .modifier(MealListItemStyle())
@@ -67,5 +73,6 @@ struct MealGridView_Previews: PreviewProvider {
             MealGridItem(meal: .stub)
             MealGridItem(meal: .stub)
         }
+        .padding()
     }
 }

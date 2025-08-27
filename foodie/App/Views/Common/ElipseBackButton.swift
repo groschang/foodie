@@ -26,9 +26,10 @@ struct ElipseBackButton: View {
                     .foregroundColor(.black)
                     .opacity(0.2)
             }
+            .glassEffect()
         }
-        .buttonStyle(.growing)
         .foregroundStyle(AppStyle.white)
+        .buttonStyle(.growing)
     }
 }
 

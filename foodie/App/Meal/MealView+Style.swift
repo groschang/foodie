@@ -38,7 +38,6 @@ struct MealViewStyle: ViewModifier {
                             .readingGeometry(from: CoordinateSpace.main, into: $imageSize)
                             .modifier(MealViewImageStyle())
                             .blur(radius: blur)
-                            .opacity(opacity)
 
                         Spacer()
                     }
@@ -60,8 +59,9 @@ struct MealViewImageStyle: ViewModifier {
         static let y = 24.0
     }
 
-    private struct Layouts {
+    struct Layouts {
         static let height = 500.0
+        static let radius = 24.0
     }
 
     func body(content: Content) -> some View {

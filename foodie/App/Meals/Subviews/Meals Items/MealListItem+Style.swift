@@ -21,10 +21,10 @@ struct MealListItemStyle: ViewModifier {
         static let color = Color.shadow
     }
 
-    private struct Layouts {
+    struct Layouts {
         static let width = Double.infinity
         static let height = 50.0
-        static let radius = 8.0
+        static let radius = 16.0
     }
 
     private struct Paddings {
