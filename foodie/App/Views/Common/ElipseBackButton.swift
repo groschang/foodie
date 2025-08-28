@@ -13,23 +13,16 @@ struct ElipseBackButton: View {
     let action: VoidAction?
 
     var body: some View {
-
-        Button(action: { action?() }) {
-            HStack {
-                Image(systemName: "arrow.backward")
-                    .imageScale(.large)
-                    .background(.clear)
-            }
-            .padding()
-            .background {
-                Capsule()
-                    .foregroundColor(.black)
-                    .opacity(0.2)
-            }
-            .glassEffect()
+        Button {
+            action?()
+        } label: {
+            Label("Back arrow", systemImage: "chevron.backward")
+                .labelStyle(.iconOnly)
+                .imageScale(.large)
+                .frame(width: 36, height: 36)
+                .foregroundColor(AppStyle.black.color)
         }
-        .foregroundStyle(AppStyle.white)
-        .buttonStyle(.growing)
+        .buttonStyle(.glass)
     }
 }
 

@@ -365,8 +365,6 @@
 		717443022B666E1200AFA164 /* IngredientsView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */; };
 		717443052B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
 		717443072B666F5800AFA164 /* AnimatedCoverPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */; };
-		7174430A2B6678D300AFA164 /* TitleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443092B6678D300AFA164 /* TitleBackButton.swift */; };
-		7174430C2B6678D300AFA164 /* TitleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717443092B6678D300AFA164 /* TitleBackButton.swift */; };
 		7174430F2B667B3E00AFA164 /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
 		717443112B667B3E00AFA164 /* ElipseBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */; };
 		71757C572A72D4C1008EFD92 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71757C562A72D4C1008EFD92 /* APIClientMock.swift */; };
@@ -831,7 +829,6 @@
 		716E3DB42BBC506E00CD6960 /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logger; path = Packages/Logger; sourceTree = "<group>"; };
 		717442FF2B666E1200AFA164 /* IngredientsView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientsView+Style.swift"; sourceTree = "<group>"; };
 		717443042B666F5800AFA164 /* AnimatedCoverPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCoverPhotoView.swift; sourceTree = "<group>"; };
-		717443092B6678D300AFA164 /* TitleBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBackButton.swift; sourceTree = "<group>"; };
 		7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElipseBackButton.swift; sourceTree = "<group>"; };
 		71757C562A72D4C1008EFD92 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		71757C5A2A72DE17008EFD92 /* CoreDataClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClientMock.swift; sourceTree = "<group>"; };
@@ -1561,7 +1558,6 @@
 				71280C622B4A06CF00F9945C /* Shadow.swift */,
 				719022172A6471FB00D0418E /* TextView.swift */,
 				71052D9D29940C55000008B6 /* TitleView.swift */,
-				717443092B6678D300AFA164 /* TitleBackButton.swift */,
 				7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */,
 				716241282B780A5D0003D4CC /* YouTubeView.swift */,
 				71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */,
@@ -2254,7 +2250,6 @@
 				71DBD6FB2B8421F400715B72 /* CategoriesGrid.swift in Sources */,
 				7102F19F2B2F6C7A00F6D87F /* MealAsyncViewModel.swift in Sources */,
 				7102F1A02B2F6C7A00F6D87F /* ViewBuilderProtocol.swift in Sources */,
-				7174430C2B6678D300AFA164 /* TitleBackButton.swift in Sources */,
 				7102F1A22B2F6C7A00F6D87F /* GeometryReader.swift in Sources */,
 				7102F1A42B2F6C7A00F6D87F /* MealsPassthroughCombineService.swift in Sources */,
 				7102F1A52B2F6C7A00F6D87F /* CategoryEntity+CoreDataClass.swift in Sources */,
@@ -2495,7 +2490,6 @@
 				713A15FD298433E800FDFBF9 /* MealDBEndpoint.swift in Sources */,
 				71E2358D2A7BF79400F06097 /* MealCategoryEntity+CoreDataProperties.swift in Sources */,
 				71DBD6F52B8421BD00715B72 /* CategoriesList.swift in Sources */,
-				7174430A2B6678D300AFA164 /* TitleBackButton.swift in Sources */,
 				718B41652B50AE3600F597CD /* DependencyContainerType.swift in Sources */,
 				71EF579A2B94964E005056B1 /* Publisher.swift in Sources */,
 				71052D982991126D000008B6 /* IngredientEntity.swift in Sources */,

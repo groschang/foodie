@@ -16,7 +16,7 @@ struct BackButton: View {
 
     var body: some View {
         Button(action: { action?() }) {
-            Image(systemName: "arrow.backward")
+            Image(systemName: "chevron.backward")
                 .imageScale(.large)
                 .background(.clear)
                 .foregroundStyle(tint)
