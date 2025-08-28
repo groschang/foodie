@@ -34,7 +34,7 @@ struct CategoryGridItem: View {
             ListPhotoView(imageUrl: viewModel.imageURL)
                 .aspectRatio(contentMode: .fit)
 
-            VStack {
+            VStack { 
                 if halfOverlay {
                     Spacer()
                 }

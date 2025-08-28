@@ -21,6 +21,10 @@ struct CategoriesPosts: View {
             }
         }
         .modifier(ListRowModifier())
-
     }
+}
+
+
+#Preview {
+    CategoriesPosts(items: Categories.stub.items)
 }

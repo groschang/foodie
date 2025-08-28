@@ -24,7 +24,7 @@ struct CategoryListItemStyle: ViewModifier {
     private struct Layouts {
         static let width = Double.infinity
         static let height = 90.0
-        static let radius = 8.0
+        static let radius = 16.0
     }
 
     func body(content: Content) -> some View {
