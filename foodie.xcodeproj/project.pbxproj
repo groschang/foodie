@@ -587,6 +587,10 @@
 		71F1162B2A7275DC009A93B5 /* ContainsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F116252A7274E0009A93B5 /* ContainsItems.swift */; };
 		71F1162C2A7275DD009A93B5 /* ContainsElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F116232A7274C2009A93B5 /* ContainsElements.swift */; };
 		71F1162D2A7275DD009A93B5 /* ContainsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F116252A7274E0009A93B5 /* ContainsItems.swift */; };
+		71F229392E6744370087E963 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 71F229382E6744370087E963 /* Configuration.xcconfig */; };
+		71F2293A2E6744370087E963 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 71F229382E6744370087E963 /* Configuration.xcconfig */; };
+		71F2293B2E6744370087E963 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 71F229382E6744370087E963 /* Configuration.xcconfig */; };
+		71F2293C2E6744370087E963 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 71F229382E6744370087E963 /* Configuration.xcconfig */; };
 		71F380A12AA096F900C7D7EE /* DecodingError+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F380A02AA096F900C7D7EE /* DecodingError+Description.swift */; };
 		71F380A32AA0980600C7D7EE /* DecodingErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F380A22AA0980600C7D7EE /* DecodingErrorTest.swift */; };
 		71F380A52AA2786900C7D7EE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F380A42AA2786900C7D7EE /* Array.swift */; };
@@ -950,8 +954,8 @@
 		71D036F92A5DED010023356C /* MealsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRouter.swift; sourceTree = "<group>"; };
 		71D036FB2A5DEE1A0023356C /* MealRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRouter.swift; sourceTree = "<group>"; };
 		71D036FD2A5DF3790023356C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mockedFoodie copy-Info.plist"; sourceTree = "<group>"; };
-		71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "foodie copy-Info.plist"; sourceTree = "<group>"; };
+		71D04D3C2B77B6950019BA70 /* mockedFoodie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mockedFoodie-Info.plist"; sourceTree = "<group>"; };
+		71D04D3D2B77B6950019BA70 /* foodie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "foodie-Info.plist"; sourceTree = "<group>"; };
 		71D04D4C2B77B8C70019BA70 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		71D7023B2B339BA4008900E0 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
@@ -990,6 +994,7 @@
 		71F116212A726AC0009A93B5 /* StaticIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticIndentifier.swift; sourceTree = "<group>"; };
 		71F116232A7274C2009A93B5 /* ContainsElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsElements.swift; sourceTree = "<group>"; };
 		71F116252A7274E0009A93B5 /* ContainsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsItems.swift; sourceTree = "<group>"; };
+		71F229382E6744370087E963 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
 		71F380A02AA096F900C7D7EE /* DecodingError+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodingError+Description.swift"; sourceTree = "<group>"; };
 		71F380A22AA0980600C7D7EE /* DecodingErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingErrorTest.swift; sourceTree = "<group>"; };
 		71F380A42AA2786900C7D7EE /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -1870,10 +1875,11 @@
 		71D04D2B2B77B6420019BA70 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				71F229382E6744370087E963 /* Configuration.xcconfig */,
 				71F607F82B8291C700807DD7 /* foodie.xctestplan */,
 				7111EC42297C531C00ABC48C /* Info.plist */,
-				71D04D3D2B77B6950019BA70 /* foodie copy-Info.plist */,
-				71D04D3C2B77B6950019BA70 /* mockedFoodie copy-Info.plist */,
+				71D04D3D2B77B6950019BA70 /* foodie-Info.plist */,
+				71D04D3C2B77B6950019BA70 /* mockedFoodie-Info.plist */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -2195,6 +2201,7 @@
 				7102F2432B2F6C7A00F6D87F /* category.json in Resources */,
 				7102F2442B2F6C7A00F6D87F /* categories.json in Resources */,
 				7102F2452B2F6C7A00F6D87F /* meal.json in Resources */,
+				71F2293A2E6744370087E963 /* Configuration.xcconfig in Resources */,
 				713851B32E1E9211009F4AEE /* payload.json in Resources */,
 				7102F2462B2F6C7A00F6D87F /* meals.json in Resources */,
 				7102F2472B2F6C7A00F6D87F /* README.md in Resources */,
@@ -2214,6 +2221,7 @@
 				7111EC79297C5D4D00ABC48C /* category.json in Resources */,
 				7111EC70297C57DD00ABC48C /* categories.json in Resources */,
 				7111EC71297C57DD00ABC48C /* meal.json in Resources */,
+				71F2293C2E6744370087E963 /* Configuration.xcconfig in Resources */,
 				713851B02E1E9211009F4AEE /* payload.json in Resources */,
 				7111EC7B297C64F800ABC48C /* meals.json in Resources */,
 				717FCCB92985642D0034870D /* README.md in Resources */,
@@ -2227,6 +2235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7111EC6E297C56FF00ABC48C /* Preview Assets.xcassets in Resources */,
+				71F229392E6744370087E963 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2234,6 +2243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F2293B2E6744370087E963 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2838,6 +2848,7 @@
 /* Begin XCBuildConfiguration section */
 		7102F24F2B2F6C7A00F6D87F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2846,7 +2857,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2854,7 +2865,7 @@
 					"MOCKED=1",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/mockedFoodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/mockedFoodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2884,6 +2895,7 @@
 		};
 		7102F2502B2F6C7A00F6D87F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2892,10 +2904,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/mockedFoodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/mockedFoodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2924,6 +2936,7 @@
 		};
 		71E2A5852970336C0012E5C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2957,6 +2970,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MNSB8S3L6D;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -2987,6 +3001,7 @@
 		};
 		71E2A5862970336C0012E5C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -3020,6 +3035,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MNSB8S3L6D;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -3044,6 +3060,7 @@
 		};
 		71E2A5882970336C0012E5C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3052,14 +3069,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"NORMAL=1",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/foodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3089,6 +3106,7 @@
 		};
 		71E2A5892970336C0012E5C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3097,10 +3115,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "foodie/Preview\\ Content Previews";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MNSB8S3L6D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
+				INFOPLIST_FILE = "Config/foodie-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3129,11 +3147,12 @@
 		};
 		71E2A5BE2970A6F90012E5C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -3154,11 +3173,12 @@
 		};
 		71E2A5BF2970A6F90012E5C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/foodie copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -3179,10 +3199,11 @@
 		};
 		71E2A5D72971D4E80012E5C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
@@ -3201,10 +3222,11 @@
 		};
 		71E2A5D82971D4E80012E5C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F229382E6744370087E963 /* Configuration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
