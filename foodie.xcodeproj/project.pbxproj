@@ -290,12 +290,12 @@
 		713606622A81425D00D40728 /* MealsCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713606612A81425D00D40728 /* MealsCombineViewModel.swift */; };
 		713833812E16EAB700DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; };
 		7138338A2E16EAD200DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; };
-		7138338B2E16EAD200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; };
+		7138338B2E16EAD200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833892E16EAD200DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7138338E2E16EAD800DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; };
-		7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; };
-		713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; };
+		7138338F2E16EAD800DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7138338D2E16EAD800DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		713833912E16F0F600DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833802E16EAB700DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		713833952E16FF6E00DCBDD7 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; };
-		713833962E16FF7200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; };
+		713833962E16FF7200DCBDD7 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 713833942E16FF6E00DCBDD7 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		713842642B4C998300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842652B4C99E300AB126F /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842632B4C998300AB126F /* DashboardHeaderView.swift */; };
 		713842672B4C9B3F00AB126F /* DashboardSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713842662B4C9B3F00AB126F /* DashboardSearchHeaderView.swift */; };
