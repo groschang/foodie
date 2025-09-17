@@ -64,7 +64,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
                             .padding()
                     }
                 }
-                .glassEffect(in: .rect(cornerRadius: MealViewImageStyle.Layouts.radius))
+                .modifier(MealViewGlassyBackground())
             }
             .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
         }
@@ -120,7 +120,6 @@ struct MealView<Model>: View where Model: MealViewModelType {
         }
     }
 }
-
 
 // MARK: Preview
 

@@ -48,7 +48,6 @@ struct MealViewStyle: ViewModifier {
 }
 
 
-
 struct MealViewImageStyle: ViewModifier {
     
     @MainActor
@@ -74,5 +73,18 @@ struct MealViewImageStyle: ViewModifier {
                     x: Shadow.x,
                     y: Shadow.y)
             .edgesIgnoringSafeArea(.top)
+    }
+}
+
+
+struct MealViewGlassyBackground: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 26.0, *) {
+            content.glassEffect(
+                in: .rect(cornerRadius: MealViewImageStyle.Layouts.radius)
+            )
+        } else {
+            content
+        }
     }
 }

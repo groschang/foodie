@@ -47,12 +47,7 @@ struct MealGridItem: View {
                     .foregroundStyle(Color.white)
                     .maxWidth()
                     .padding()
-//                    .background(Color.black.heavyOpacity())
-                    .glassEffect(
-                        .regular.tint(.black.heavyOpacity()),
-                        in: .rect(cornerRadius: MealListItemStyle.Layouts.radius, )
-                    )
-
+                    .modifier(MealGridItemGlassyBackground())
             }
         }
         .modifier(MealListItemStyle())

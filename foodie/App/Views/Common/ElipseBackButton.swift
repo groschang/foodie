@@ -22,7 +22,7 @@ struct ElipseBackButton: View {
                 .frame(width: 36, height: 36)
                 .foregroundColor(AppStyle.black.color)
         }
-        .buttonStyle(.glass)
+        .modifier(ElipseBackButtonGlassyStyle())
     }
 }
 

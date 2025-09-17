@@ -533,6 +533,10 @@
 		71D036FE2A5DF3790023356C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036FD2A5DF3790023356C /* DashboardViewModel.swift */; };
 		71D04D4D2B77B8C70019BA70 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D04D4C2B77B8C70019BA70 /* MealsView.swift */; };
 		71D04D4F2B77B8C70019BA70 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D04D4C2B77B8C70019BA70 /* MealsView.swift */; };
+		71D0AC202E7B1EC700616BFD /* ElipseBackButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0AC1F2E7B1EC000616BFD /* ElipseBackButton+Style.swift */; };
+		71D0AC212E7B1EC700616BFD /* ElipseBackButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0AC1F2E7B1EC000616BFD /* ElipseBackButton+Style.swift */; };
+		71D0AC232E7B1F7D00616BFD /* MealGridItem+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0AC222E7B1F7600616BFD /* MealGridItem+Style.swift */; };
+		71D0AC242E7B1F7D00616BFD /* MealGridItem+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0AC222E7B1F7600616BFD /* MealGridItem+Style.swift */; };
 		71D6E59B2AAA1E9800FD7128 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */; };
 		71D7023C2B339BA4008900E0 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7023B2B339BA4008900E0 /* Opacity.swift */; };
 		71D7023E2B339BD7008900E0 /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7023D2B339BD7008900E0 /* ColorStyle.swift */; };
@@ -943,6 +947,8 @@
 		71D04D3C2B77B6950019BA70 /* mockedFoodie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mockedFoodie-Info.plist"; sourceTree = "<group>"; };
 		71D04D3D2B77B6950019BA70 /* foodie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "foodie-Info.plist"; sourceTree = "<group>"; };
 		71D04D4C2B77B8C70019BA70 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
+		71D0AC1F2E7B1EC000616BFD /* ElipseBackButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ElipseBackButton+Style.swift"; sourceTree = "<group>"; };
+		71D0AC222E7B1F7600616BFD /* MealGridItem+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MealGridItem+Style.swift"; sourceTree = "<group>"; };
 		71D6E59A2AAA1E9800FD7128 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		71D7023B2B339BA4008900E0 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
 		71D7023D2B339BD7008900E0 /* ColorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStyle.swift; sourceTree = "<group>"; };
@@ -1559,6 +1565,7 @@
 				719022172A6471FB00D0418E /* TextView.swift */,
 				71052D9D29940C55000008B6 /* TitleView.swift */,
 				7174430E2B667B3E00AFA164 /* ElipseBackButton.swift */,
+				71D0AC1F2E7B1EC000616BFD /* ElipseBackButton+Style.swift */,
 				716241282B780A5D0003D4CC /* YouTubeView.swift */,
 				71AF3C2B2BB4AC20009FC1DA /* NotificationView.swift */,
 				7163943C2BB7566C00CB8568 /* ListHeader.swift */,
@@ -1712,6 +1719,7 @@
 				7111EC13297C531C00ABC48C /* MealListItem.swift */,
 				71C0C95F2A10FFF70034AA14 /* MealListItem+Style.swift */,
 				718DAB662B366B9B00ABC97D /* MealGridItem.swift */,
+				71D0AC222E7B1F7600616BFD /* MealGridItem+Style.swift */,
 			);
 			path = "Meals Items";
 			sourceTree = "<group>";
@@ -2229,6 +2237,7 @@
 				71BF52E12B44680C00D95C30 /* AnimatedListHeader.swift in Sources */,
 				71BF52EC2B44680C00D95C30 /* BackButton.swift in Sources */,
 				71FBF3192B84BC330087E30D /* ClosureViewFactory.swift in Sources */,
+				71D0AC212E7B1EC700616BFD /* ElipseBackButton+Style.swift in Sources */,
 				7102F1922B2F6C7A00F6D87F /* IngredientEntity.swift in Sources */,
 				71BF52EA2B44680C00D95C30 /* ListPhotoView.swift in Sources */,
 				710CD4C82B7D700E00FFC7B8 /* MealsAsyncServicePreview.swift in Sources */,
@@ -2308,6 +2317,7 @@
 				7102F1CC2B2F6C7A00F6D87F /* AsyncContentView.swift in Sources */,
 				71DD5DFB2B5E7C79003079AC /* RealmLogger.swift in Sources */,
 				7102F1CD2B2F6C7A00F6D87F /* MocksPreview.swift in Sources */,
+				71D0AC232E7B1F7D00616BFD /* MealGridItem+Style.swift in Sources */,
 				7102F1CE2B2F6C7A00F6D87F /* Set.swift in Sources */,
 				71BF52ED2B44680C00D95C30 /* MultilineTextView.swift in Sources */,
 				715C27F92B76DAD100E4A39A /* DashboardMealsView.swift in Sources */,
@@ -2518,6 +2528,7 @@
 				71FBF3262B84ECF80087E30D /* OffsetObservingScrollView.swift in Sources */,
 				71BFEE012ACD70C100E91D92 /* ViewBuilderProtocol.swift in Sources */,
 				71052DA029941661000008B6 /* GeometryReader.swift in Sources */,
+				71D0AC242E7B1F7D00616BFD /* MealGridItem+Style.swift in Sources */,
 				7191227929EAFC8E007E198B /* MealsPassthroughCombineService.swift in Sources */,
 				71080E9D298B0CAF009FCDDB /* CategoryEntity+CoreDataClass.swift in Sources */,
 				71DD5DF92B5E7C79003079AC /* RealmLogger.swift in Sources */,
@@ -2656,6 +2667,7 @@
 				710CD4D82B7D728B00FFC7B8 /* MealsAsyncStreamServicePreview.swift in Sources */,
 				71AF3C322BB4CC45009FC1DA /* PushNotification.swift in Sources */,
 				71E7241B2BB0A6D500C5F10E /* NotificationHandler.swift in Sources */,
+				71D0AC202E7B1EC700616BFD /* ElipseBackButton+Style.swift in Sources */,
 				71D702402B33A049008900E0 /* SwiftUIDebugView.swift in Sources */,
 				7102D5082BBA6BC100E5BBDF /* NotificationService.swift in Sources */,
 				7111EC5A297C531C00ABC48C /* Categories.swift in Sources */,
@@ -2814,7 +2826,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2857,7 +2869,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3030,7 +3042,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3074,7 +3086,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3104,7 +3116,7 @@
 				DEVELOPMENT_TEAM = "${DEVELOPMENT_TEAM}";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/foodie-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieTests;
@@ -3132,7 +3144,7 @@
 				DEVELOPMENT_TEAM = "${DEVELOPMENT_TEAM}";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Config/foodie-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieTests;
@@ -3158,7 +3170,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "${DEVELOPMENT_TEAM}";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3183,7 +3195,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "${DEVELOPMENT_TEAM}";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
