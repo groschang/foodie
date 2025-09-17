@@ -41,41 +41,64 @@ struct MealView<Model>: View where Model: MealViewModelType {
 
     var content: some View {
         OffsetObservingScrollView(offset: $offset) {
-            VStack(spacing: 0) {
 
-                spacer
+            if #available(iOS 26.0, *) {
 
-                ZStack {
-                    VStack(spacing: 21) {
-                        informations
-                            .animateAppear($informationsOpacity, index: 1)
-                            .padding(.horizontal)
-                            .padding(.top, 21)
-                        ingredients
-                            .animateAppear($ingredientsOpacity, index: 2)
-                            .padding(.horizontal)
-                        recipe
-                            .animateAppear($recipeOpacity, index: 3)
-                            .padding(.horizontal)
-                        youtube
-                            .animateAppear($youtubeOpacity, index: 4)
-                        source
-                            .animateAppear($sourceOpacity, index: 5)
-                            .padding()
+                VStack(spacing: 0) {
+                    spacer
+                    ZStack {
+                        VStack(spacing: 21) {
+                            informations
+                                .animateAppear($informationsOpacity, index: 1)
+                                .padding(.horizontal)
+                                .padding(.top, 21)
+                            ingredients
+                                .animateAppear($ingredientsOpacity, index: 2)
+                                .padding(.horizontal)
+                            recipe
+                                .animateAppear($recipeOpacity, index: 3)
+                                .padding(.horizontal)
+                            youtube
+                                .animateAppear($youtubeOpacity, index: 4)
+                            source
+                                .animateAppear($sourceOpacity, index: 5)
+                                .padding()
+                        }
                     }
+                    .modifier(MealViewGlassyBackground())
                 }
-                .modifier(MealViewGlassyBackground())
+                .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
+
+            } else {
+
+                VStack(spacing: 21) {
+                    spacer
+                    informations
+                        .animateAppear($informationsOpacity, index: 1)
+                    ingredients
+                        .animateAppear($ingredientsOpacity, index: 2)
+                    recipe
+                        .animateAppear($recipeOpacity, index: 3)
+                    youtube
+                        .animateAppear($youtubeOpacity, index: 4)
+                    source
+                        .animateAppear($sourceOpacity, index: 5)
+                }
+                .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
+                .padding(.horizontal)
             }
-            .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
         }
         .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl,
                                 offset: offset.y,
                                 imageSize: $imageSize))
-
     }
 
     private var spacer: some View {
-        Spacer(minLength: imageSize.maxY - MealViewImageStyle.Layouts.radius)
+        if #available(iOS 26.0, *) {
+            Spacer(minLength: imageSize.maxY - MealViewImageStyle.Layouts.radius)
+        } else {
+            Spacer(minLength: imageSize.maxY)
+        }
     }
 
     private var informations: some View {
