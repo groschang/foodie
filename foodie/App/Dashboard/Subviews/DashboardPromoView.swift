@@ -46,8 +46,9 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
             VStack(spacing: 0) {
                 ListPhotoView(imageUrl: viewModel.imageUrl) {
-                    ProgressView()
+                    ModernCircularLoader()
                         .tint(AppStyle.white)
+                        .scaleEffect(0.5)
                 }
                 .modifier(ListPhotoStyle(width: 200, height: 200))
                 .mask(SideGradient(startPoint: .leading))

@@ -12,14 +12,6 @@ struct PhotoLoadingViewStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 87, height: 87)
-            .background {
-                Color.white
-                    .cornerRadius(6)
-                    .shadow(color: .black.heavierOpacity(), radius: 5)
-                    .transition(.slide)
-                    .lightOpacity()
-            }
+            .tint(AppStyle.darkGray)
     }
 }

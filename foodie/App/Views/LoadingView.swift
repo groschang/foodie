@@ -30,11 +30,11 @@ struct ModernCircularLoader: View {
         Circle()
             .trim(from: 0.0,to: trimEnd)
             .stroke(
-                .black,
+                .tint,
                 style: StrokeStyle(
                     lineWidth: 7,
                     lineCap: .round,
-                    lineJoin:.round
+                    lineJoin: .round
                 )
             )
             .animation(
@@ -42,7 +42,7 @@ struct ModernCircularLoader: View {
                     .repeatForever(autoreverses: true),
                 value: trimEnd
             )
-            .frame(width: 70,height: 70)
+            .frame(width: 70, height: 70)
             .rotationEffect(Angle(degrees: animate ? 270 + 360 : 270))
             .animation(
                 Animation.linear(duration: 1)

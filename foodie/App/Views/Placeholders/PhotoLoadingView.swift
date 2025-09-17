@@ -11,7 +11,7 @@ import SwiftUI
 struct PhotoLoadingView: View {
     
     var body: some View {
-        ProgressView()
+        ModernCircularLoader()
             .modifier(PhotoLoadingViewStyle())
     }
 }
