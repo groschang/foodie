@@ -11,7 +11,7 @@ import SwiftUI
 @MainActor
 enum MealsRouter: RouterProtocol {
 
-    static var viewFactory: StreamViewFactory {
+    static var viewFactory: AsyncViewFactory {
         get async {
             await DependencyContainer.shared.viewFactory
         }

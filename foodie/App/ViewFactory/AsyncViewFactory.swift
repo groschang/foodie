@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@MainActor
 class AsyncViewFactory: ViewFactoryType {
 
     private let service: MealsAsyncServiceType

@@ -55,7 +55,7 @@ struct MealListItemNameStyle: ViewModifier {
     }
 
     @MainActor
-    private struct Shadow: Sendable {
+    private struct Shadow {
         static let radius = 1.0
         static let color = Color.darkWhite
     }

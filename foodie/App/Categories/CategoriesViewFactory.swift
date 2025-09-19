@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class CategoriesViewFactory: CategoriesClosureViewFactory { }
+class CategoriesViewFactory: CategoriesAsyncViewFactory { }
 
 
 class CategoriesClosureViewFactory: ViewBuilderProtocol {
@@ -76,5 +76,5 @@ class CategoriesAsyncStreamViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension CategoriesViewFactory {
-    @MainActor static let mock = CategoriesViewFactory(service: MealsServicePreview())
+    @MainActor static let mock = CategoriesViewFactory(service: MealsAsyncServicePreview())
 }

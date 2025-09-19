@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class MealViewFactory: MealClosureViewFactory { }
+class MealViewFactory: MealAsyncViewFactory { }
 
 
 class MealClosureViewFactory: ViewBuilderProtocol {
@@ -76,5 +76,5 @@ class MealAsyncStreamViewFactory: ViewBuilderProtocol {
 // MARK: Mock
 
 extension MealViewFactory {
-   @MainActor static let mock = MealViewFactory(service: MealsServicePreview())
+   @MainActor static let mock = MealViewFactory(service: MealsAsyncServicePreview())
 }

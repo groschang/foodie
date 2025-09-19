@@ -57,6 +57,7 @@ Foodie
 
 
 ### Done:
+- [x] #Preview macro migration
 - [x] create new target for mocked container &else
 - [X] rename MealsServiceVMock into  MealsAsyncService ?
 - [x] rename ViewBuilderProtocol into TheViewBuilder

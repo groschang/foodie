@@ -10,7 +10,7 @@ import SwiftUI
 
 enum MealRouter: RouterProtocol {
     
-    static var viewFactory: StreamViewFactory {
+    static var viewFactory: AsyncViewFactory {
         get async {
             await DependencyContainer.shared.viewFactory
         }

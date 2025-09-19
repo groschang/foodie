@@ -13,7 +13,7 @@ import Combine
 final class AppStartupViewModel: ObservableObject {
 
     @Published var dashboardViewModel: DashboardViewModel?
-    @Published var viewFactory: StreamViewFactory?
+    @Published var viewFactory: AsyncViewFactory?
     @Published var router: Router? {
         didSet {
             observe(router, storeIn: &cancellables)
@@ -46,11 +46,9 @@ final class AppStartupViewModel: ObservableObject {
 
         router = await container.router
 
-        let service = await container.asyncService
+        let service = await container.mealsService
         dashboardViewModel = DashboardViewModel(service: service)
-
-        let streamService = await container.asyncStreamService
-        viewFactory = StreamViewFactory(service: streamService)
+        viewFactory = AsyncViewFactory(service: service)
 
         notificationService = await container.notificationService
     }

@@ -27,21 +27,21 @@ actor MockedDependencyContainer: DependencyContainerType {
         }
     }
 
-    var closureService: MealsClosureServiceType {
-        get async {
-            await container.resolve(MealsClosureServiceType.self)!
-        }
-    }
-    var asyncService: MealsAsyncServiceType {
+//    var closureService: MealsClosureServiceType {
+//        get async {
+//            await container.resolve(MealsClosureServiceType.self)!
+//        }
+//    }
+    var mealsService: MealsAsyncServiceType {
         get async {
             await container.resolve(MealsAsyncServiceType.self)!
         }
     }
-    var asyncStreamService: MealsAsyncStreamServiceType {
-        get async {
-            await container.resolve(MealsAsyncStreamServiceType.self)!
-        }
-    }
+//    var asyncStreamService: MealsAsyncStreamServiceType {
+//        get async {
+//            await container.resolve(MealsAsyncStreamServiceType.self)!
+//        }
+//    }
     var viewFactory: StreamViewFactory {
         get async {
             await container.resolve(StreamViewFactory.self)!
@@ -79,22 +79,25 @@ actor MockedDependencyContainer: DependencyContainerType {
         }
 #endif
 
-        await container.register(MealsClosureServiceType.self) { _ in
-            MealsServicePreview()
-        }
+//        await container.register(MealsClosureServiceType.self) { _ in
+//            MealsServicePreview()
+//        }
 
         await container.register(MealsAsyncServiceType.self) { _ in
             MealsAsyncServicePreview()
         }
 
-        await container.register(MealsAsyncStreamServiceType.self) { _ in
-            MealsAsyncStreamServicePreview()
-        }
+//        await container.register(MealsAsyncStreamServiceType.self) { _ in
+//            MealsAsyncStreamServicePreview()
+//        }
 
-        await container.register(StreamViewFactory.self) { r in
-            await StreamViewFactory(service: await r.resolve(MealsAsyncStreamServiceType.self)!)
-        }
+//        await container.register(StreamViewFactory.self) { r in
+//            await StreamViewFactory(service: await r.resolve(MealsAsyncStreamServiceType.self)!)
+//        }
 
+        await container.register(AsyncViewFactory.self) { r in
+            await AsyncViewFactory(service: await r.resolve(MealsAsyncServiceType.self)!)
+        }
 
         await container.register(Router.self) { _ in
             await Router()

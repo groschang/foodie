@@ -39,7 +39,7 @@ struct foodieApp: App {
     @ViewBuilder
     private func content(
         dashboardViewModel: DashboardViewModel,
-        viewFactory: StreamViewFactory,
+        viewFactory: AsyncViewFactory,
         @ObservedObject router: Router,
         @ObservedObject notificationService: NotificationService
     ) -> some View {

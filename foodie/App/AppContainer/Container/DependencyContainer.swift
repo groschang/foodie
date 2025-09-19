@@ -31,24 +31,24 @@ actor DependencyContainer: DependencyContainerType {
         }
     }
 
-    var closureService: MealsClosureServiceType {
-        get async {
-            await container.resolve(MealsClosureServiceType.self)!
-        }
-    }
-    var asyncService: MealsAsyncServiceType {
+//    var closureService: MealsClosureServiceType {
+//        get async {
+//            await container.resolve(MealsClosureServiceType.self)!
+//        }
+//    }
+    var mealsService: MealsAsyncServiceType {
         get async {
             await container.resolve(MealsAsyncServiceType.self)!
         }
     }
-    var asyncStreamService: MealsAsyncStreamServiceType {
+//    var asyncStreamService: MealsAsyncStreamServiceType {
+//        get async {
+//            await container.resolve(MealsAsyncStreamServiceType.self)!
+//        }
+//    }
+    var viewFactory: AsyncViewFactory {
         get async {
-            await container.resolve(MealsAsyncStreamServiceType.self)!
-        }
-    }
-    var viewFactory: StreamViewFactory {
-        get async {
-            await container.resolve(StreamViewFactory.self)!
+            await container.resolve(AsyncViewFactory.self)!
         }
     }
     var router: Router {
@@ -87,12 +87,12 @@ actor DependencyContainer: DependencyContainerType {
         }
 #endif
 
-        await container.register(MealsClosureServiceType.self) { r in
-            MealsClosureService(
-                backendClient: await r.resolve(HTTPClient.self)!,
-                persistanceClient: await r.resolve(PersistenceClient.self)!
-            )
-        }
+//        await container.register(MealsClosureServiceType.self) { r in
+//            MealsClosureService(
+//                backendClient: await r.resolve(HTTPClient.self)!,
+//                persistanceClient: await r.resolve(PersistenceClient.self)!
+//            )
+//        }
 
         await container.register(MealsAsyncServiceType.self) { r in
             MealsAsyncService(
@@ -101,15 +101,15 @@ actor DependencyContainer: DependencyContainerType {
             )
         }
 
-        await container.register(MealsAsyncStreamServiceType.self) { r in
-            MealsAsyncStreamService(
-                backendClient: await r.resolve(HTTPClient.self)!,
-                persistanceClient: await r.resolve(PersistenceClient.self)!
-            )
-        }
+//        await container.register(MealsAsyncStreamServiceType.self) { r in
+//            MealsAsyncStreamService(
+//                backendClient: await r.resolve(HTTPClient.self)!,
+//                persistanceClient: await r.resolve(PersistenceClient.self)!
+//            )
+//        }
 
-        await container.register(StreamViewFactory.self) { r in
-            await StreamViewFactory(service: await r.resolve(MealsAsyncStreamServiceType.self)!)
+        await container.register(AsyncViewFactory.self) { r in
+            await AsyncViewFactory(service: await r.resolve(MealsAsyncServiceType.self)!)
         }
 
 

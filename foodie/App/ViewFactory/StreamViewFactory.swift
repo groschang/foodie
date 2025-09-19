@@ -9,7 +9,7 @@
 import SwiftUI
 
 @MainActor
-class StreamViewFactory: ViewFactoryType, Sendable {
+class StreamViewFactory: ViewFactoryType {
 
     private let service: MealsAsyncStreamServiceType
 
