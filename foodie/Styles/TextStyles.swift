@@ -173,18 +173,15 @@ extension TextStyle {
 
 // MARK: Preview
 
-struct TextStyles_Previews: PreviewProvider {
+#Preview {
+    VStack {
+        Text("TitleTextStyle").modifier(TextStyle.title)
+        Text("Title2TextStyle").modifier(TextStyle.title2)
+        Text("Title3TextStyle").modifier(TextStyle.title3)
 
-    static var previews: some View {
-        VStack {
-            Text("TitleTextStyle").modifier(TextStyle.title)
-            Text("Title2TextStyle").modifier(TextStyle.title2)
-            Text("Title3TextStyle").modifier(TextStyle.title3)
-
-            Text("SubtitleTextStyle").modifier(TextStyle.subtitle)
-            Text("Subtitle2TextStyle").modifier(TextStyle.subtitle2)
-            Text("Subtitle3TextStyle").modifier(TextStyle.subtitle3)
-        }
+        Text("SubtitleTextStyle").modifier(TextStyle.subtitle)
+        Text("Subtitle2TextStyle").modifier(TextStyle.subtitle2)
+        Text("Subtitle3TextStyle").modifier(TextStyle.subtitle3)
     }
 }
 

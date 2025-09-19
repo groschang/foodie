@@ -57,17 +57,14 @@ struct MealGridItem: View {
 
 // MARK: Preview
 
-struct MealGridView_Previews: PreviewProvider {
-    static var previews: some View {
-
-        LazyVGrid(
-            columns: [GridItem(.adaptive(minimum: 140))],
-            spacing: 20
-        ) {
-            MealGridItem(meal: .stub)
-            MealGridItem(meal: .stub)
-            MealGridItem(meal: .stub)
-        }
-        .padding()
+#Preview {
+    LazyVGrid(
+        columns: [GridItem(.adaptive(minimum: 140))],
+        spacing: 20
+    ) {
+        MealGridItem(meal: .stub)
+        MealGridItem(meal: .stub)
+        MealGridItem(meal: .stub)
     }
+    .padding()
 }

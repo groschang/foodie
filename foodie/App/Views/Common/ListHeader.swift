@@ -49,12 +49,7 @@ struct ListHeader: View {
 
 // MARK: Preview
 
-struct ListHeader_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Preview()
-            .previewAsComponent()
-    }
+#Preview {
 
     struct Preview: View {
         @State private var listType: ListType = .grid
@@ -65,4 +60,7 @@ struct ListHeader_Previews: PreviewProvider {
                        dismissAction: { })
         }
     }
+
+    return Preview()
+        .previewAsComponent()
 }

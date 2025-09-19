@@ -40,12 +40,10 @@ extension View {
 
 }
 
-struct GroundReflectionViewModifier_Previews: PreviewProvider {
-    static var previews: some View {
-        Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
-            .resizable()
-            .scaledToFit()
-            .frame(width: 200, height: 200)
-            .reflection()
-    }
+#Preview {
+    Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+        .resizable()
+        .scaledToFit()
+        .frame(width: 200, height: 200)
+        .reflection()
 }

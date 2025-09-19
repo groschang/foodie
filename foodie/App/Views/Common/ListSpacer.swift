@@ -25,9 +25,7 @@ struct ListSpacer: View {
     }
 }
 
-struct ListSpacer_Previews: PreviewProvider {
-    static var previews: some View {
-        ListSpacer(127, color: .red)
-            .previewAsComponent()
-    }
+#Preview {
+    ListSpacer(127, color: .red)
+        .previewAsComponent()
 }

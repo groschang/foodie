@@ -31,10 +31,6 @@ struct MealsSelectView: View {
 
 // MARK: Preview
 
-struct MealsDefaultView_Previews: PreviewProvider {
-    static var previews: some View {
-
-        MealsSelectView()
-
-    }
+#Preview {
+    MealsSelectView()
 }

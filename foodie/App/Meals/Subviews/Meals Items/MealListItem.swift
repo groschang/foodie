@@ -29,15 +29,12 @@ struct MealListItem: View {
 
 // MARK: Preview
 
-struct MealListItem_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        VStack(spacing: 16) {
-            MealListItem(meal: .stub)
-            MealListItem(meal: .stub)
-            MealListItem(meal: .stub)
-        }
-        .padding()
-        .previewAsComponent()
+#Preview {
+    VStack(spacing: 16) {
+        MealListItem(meal: .stub)
+        MealListItem(meal: .stub)
+        MealListItem(meal: .stub)
     }
+    .padding()
+    .previewAsComponent()
 }

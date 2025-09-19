@@ -32,9 +32,7 @@ struct MultilineTextView<Style: ViewModifier>: View {
 
 // MARK: Preview
 
-struct MultilineTextView_Previews: PreviewProvider {
-    static var previews: some View {
-        MultilineTextView("TitleView")
-            .previewAsComponent()
-    }
+#Preview {
+    MultilineTextView("TitleView")
+        .previewAsComponent()
 }

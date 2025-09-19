@@ -33,10 +33,8 @@ struct CategoryGridItemView: View {
 
 // MARK: Preview
 
-struct CategoryGridItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryGridItemView(category: .stub)
-    }
+#Preview {
+    CategoryGridItemView(category: .stub)
 }
 
 // MARK: Styles
@@ -55,7 +53,6 @@ struct CategoryGridPhotoStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .aspectRatio(contentMode: .fit)
-        //            .frame(width: 87, height: 87)
             .frame(height: 90)
             .frame(maxWidth: .infinity)
             .background {

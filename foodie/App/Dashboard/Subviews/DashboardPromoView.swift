@@ -81,14 +81,10 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
 // MARK: Preview
 
-struct DashboardPromoView_Previews: PreviewProvider {
-
-    static let viewModel = DashboardPromoViewModel.mock
-
-    static var previews: some View {
-        DashboardPromoView(viewModel: viewModel) { }
-            .task { await viewModel.load() }
-            .maxWidth()
-            .frame(maxHeight: 200)
-    }
+#Preview {
+    let viewModel = DashboardPromoViewModel.mock
+    DashboardPromoView(viewModel: viewModel) { }
+        .task { await viewModel.load() }
+        .maxWidth()
+        .frame(maxHeight: 200)
 }

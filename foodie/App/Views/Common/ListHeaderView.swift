@@ -50,16 +50,12 @@ struct ListHeaderView: View {
 
 // MARK: Previews
 
-struct ListHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-
-        ListHeaderView(
-            title: "Title",
-            filterAction: { },
-            modeAction: { },
-            listType: .constant(.list)
-        )
-
-    }
+#Preview {
+    ListHeaderView(
+        title: "Title",
+        filterAction: { },
+        modeAction: { },
+        listType: .constant(.list)
+    )
 }
 

@@ -85,11 +85,9 @@ extension AsyncButton where Label == Image {
 
 // MARK: Preview
 
-struct AsyncButton_Previews: PreviewProvider {
-    static var previews: some View {
-        AsyncButton(
-            systemImageName: "hand.thumbsup.fill",
-            action: { try? await Task.sleep(for: .seconds(2)) }
-        )
-    }
+#Preview {
+    AsyncButton(
+        systemImageName: "hand.thumbsup.fill",
+        action: { try? await Task.sleep(for: .seconds(2)) }
+    )
 }

@@ -131,19 +131,20 @@ extension View {
 
 // MARK: Previews
 
-struct FoodieGradient_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            FoodieGradient()
-                .previewDisplayName("Base")
-            StaticGradient()
-                .previewDisplayName("Static")
-            AnimatedGradient()
-                .previewDisplayName("Animated")
-            SideGradient(startPoint: .leading)
-                .previewDisplayName("Side")
-        }
-    }
+#Preview("Base") {
+    FoodieGradient()
+}
+
+#Preview("Static") {
+    StaticGradient()
+}
+
+#Preview("Animated") {
+    AnimatedGradient()
+}
+
+#Preview("Side") {
+    SideGradient(startPoint: .leading)
 }
 
 

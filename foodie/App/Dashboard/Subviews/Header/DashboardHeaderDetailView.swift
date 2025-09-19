@@ -44,8 +44,6 @@ struct DashboardHeaderDetailView: View {
 
 // MARK: Preview
 
-struct DashboardHeaderView_Preview: PreviewProvider {
-    static var previews: some View {
-        DashboardHeaderDetailView(action: {})
-    }
+#Preview {
+    DashboardHeaderDetailView(action: {})
 }

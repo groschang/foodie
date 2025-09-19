@@ -65,12 +65,8 @@ struct DashboardMealsView<ViewModel: DashboardMealsViewModelType>: View {
 
 // MARK: Preview
 
-struct DashboardMealsView_Previews: PreviewProvider {
-
-    static let viewModel = DashboardMealsViewModel.mock
-
-    static var previews: some View {
-        DashboardMealsView(viewModel: viewModel)
-            .task { await viewModel.load() }
-    }
+#Preview {
+    let viewModel = DashboardMealsViewModel.mock
+    return DashboardMealsView(viewModel: viewModel)
+        .task { await viewModel.load() }
 }

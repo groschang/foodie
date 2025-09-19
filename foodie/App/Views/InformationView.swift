@@ -26,8 +26,6 @@ struct InformationView: View {
 
 // MARK: Previews
 
-struct InformationView_Previews: PreviewProvider {
-    static var previews: some View {
-        InformationView("Sample text")
-    }
+#Preview {
+    InformationView("Sample text")
 }

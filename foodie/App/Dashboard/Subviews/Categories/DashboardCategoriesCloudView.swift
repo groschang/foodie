@@ -61,12 +61,8 @@ struct DashboardCategoriesCloudView<ViewModel: DashboardCategoriesViewModelType>
 
 // MARK: Preview
 
-struct DashboardCategoriesCloudView_Previews: PreviewProvider {
-
-    static let viewModel = DashboardCategoriesViewModel.mock
-
-    static var previews: some View {
-        DashboardCategoriesCloudView(viewModel: viewModel) { }
-            .task { await viewModel.load() }
-    }
+#Preview {
+    let viewModel = DashboardCategoriesViewModel.mock
+    return DashboardCategoriesCloudView(viewModel: viewModel) { }
+        .task { await viewModel.load() }
 }

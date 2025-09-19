@@ -18,8 +18,6 @@ struct PhotoLoadingView: View {
 
 // MARK: Preview
 
-struct PhotoPlaceholder_Peviews: PreviewProvider {
-    static var previews: some View {
-        PhotoLoadingView()
-    }
+#Preview {
+    PhotoLoadingView()
 }

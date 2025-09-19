@@ -100,12 +100,7 @@ struct AnimatedListHeader: View {
 
 // MARK: Preview
 
-struct AnimatedListHeader_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Preview()
-            .previewAsComponent()
-    }
+#Preview {
 
     struct Preview: View {
         @State var animate = false
@@ -119,4 +114,7 @@ struct AnimatedListHeader_Previews: PreviewProvider {
             }
         }
     }
+
+    return Preview()
+        .previewAsComponent()
 }

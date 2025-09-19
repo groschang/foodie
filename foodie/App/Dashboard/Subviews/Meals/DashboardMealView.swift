@@ -41,10 +41,6 @@ struct DashboardMealView: View {
 
 // MARK: Preview
 
-struct DashboardMealView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        DashboardMealView(meal: .stub)
-    }
-
+#Preview {
+    DashboardMealView(meal: .stub)
 }

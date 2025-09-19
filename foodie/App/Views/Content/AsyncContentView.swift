@@ -116,14 +116,9 @@ struct AsyncContentView<Source: LoadableObject,
 
 // MARK: Preview
 
-struct AsyncContentView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
 
     struct ContentView: View {
-
         @ObservedObject private var vm = ViewModel()
 
         var body: some View {
@@ -152,11 +147,9 @@ struct AsyncContentView_Previews: PreviewProvider {
                 .maxSize()
                 .background(.gray)
         }
-
     }
-    
-    private class ViewModel: LoadableObject {
 
+    class ViewModel: LoadableObject {
         @Published var state: LoadingState = .idle
         @Published var showingAlert = false
         private var firstRun = false
@@ -173,7 +166,7 @@ struct AsyncContentView_Previews: PreviewProvider {
                 showingAlert = true
             }
         }
-
     }
 
+    return ContentView()
 }

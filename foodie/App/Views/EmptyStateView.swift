@@ -26,8 +26,6 @@ struct EmptyStateView: View { //TODO: rename
 
 // MARK: Previews
 
-struct EmptyScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmptyStateView("Empty view")
-    }
+#Preview {
+    EmptyStateView("Empty view")
 }

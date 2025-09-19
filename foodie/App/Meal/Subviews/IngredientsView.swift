@@ -43,15 +43,11 @@ struct IngredientsView: View {
 
 // MARK: Preview
 
-struct IngredientsView_Previews: PreviewProvider {
-
-    static let ingredients: [Ingredient] = [
+#Preview {
+    let ingredients: [Ingredient] = [
         Ingredient(name: "Orange", measure: "22 kg"),
         Ingredient(name: "garlic sauce", measure: "4 cups"),
     ]
-
-    static var previews: some View {
-        IngredientsView(ingredients)
-                .previewAsComponent()
-    }
+    return IngredientsView(ingredients)
+        .previewAsComponent()
 }

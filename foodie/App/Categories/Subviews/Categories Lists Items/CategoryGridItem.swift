@@ -76,31 +76,25 @@ fileprivate extension View {
 
 // MARK: Preview
 
-struct CategoryGridItem_Previews: PreviewProvider {
-    static var previews: some View {
-
-        VStack(spacing: 16) {
-            CategoryGridItem(viewModel: .mock)
-            CategoryGridItem(viewModel: .mock)
-            CategoryGridItem(viewModel: .mock)
-        }
-        .padding()
+#Preview {
+    VStack(spacing: 16) {
+        CategoryGridItem(viewModel: .mock)
+        CategoryGridItem(viewModel: .mock)
+        CategoryGridItem(viewModel: .mock)
     }
+    .padding()
 }
 
-struct CategoriesGridView_Previews: PreviewProvider {
-    static var previews: some View {
-
-        LazyVGrid(
-            columns: [GridItem(.adaptive(minimum: 140))],
-            spacing: 20
-        ) {
-            CategoryGridItem(viewModel: .mock, fontType: .normal)
-            CategoryGridItem(viewModel: .mock, fontType: .small)
-            CategoryGridItem(viewModel: .mock, fontType: .normal)
-            CategoryGridItem(viewModel: .mock, fontType: .small)
-            CategoryGridItem(viewModel: .mock, fontType: .normal)
-        }
-        .padding()
+#Preview {
+    LazyVGrid(
+        columns: [GridItem(.adaptive(minimum: 140))],
+        spacing: 20
+    ) {
+        CategoryGridItem(viewModel: .mock, fontType: .normal)
+        CategoryGridItem(viewModel: .mock, fontType: .small)
+        CategoryGridItem(viewModel: .mock, fontType: .normal)
+        CategoryGridItem(viewModel: .mock, fontType: .small)
+        CategoryGridItem(viewModel: .mock, fontType: .normal)
     }
+    .padding()
 }

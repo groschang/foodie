@@ -126,20 +126,18 @@ extension ButtonStyle where Self == MenuButtonStyle {
 
 // MARK: Previews
 
-struct ButtonStyles_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            Button("DashboardButton"){}
-                .buttonStyle(.dashboard)
+#Preview {
+    VStack {
+        Button("DashboardButton"){}
+            .buttonStyle(.dashboard)
 
-            Button("GrowingButton"){}
-                .buttonStyle(.growing)
+        Button("GrowingButton"){}
+            .buttonStyle(.growing)
 
-            Button("InformationButtonStyle"){}
-                .buttonStyle(.information)
+        Button("InformationButtonStyle"){}
+            .buttonStyle(.information)
 
-            Button("MenuButtonStyle"){}
-                .buttonStyle(.menu)
-        }
+        Button("MenuButtonStyle"){}
+            .buttonStyle(.menu)
     }
 }

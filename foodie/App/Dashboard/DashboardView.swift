@@ -106,11 +106,9 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
 // MARK: Preview
 
-struct Dashboard_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            DashboardView(viewModel: DashboardViewModel.mock)
-        }
+#Preview {
+    NavigationView {
+        DashboardView(viewModel: DashboardViewModel.mock)
     }
 }
 

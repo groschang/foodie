@@ -40,14 +40,12 @@ struct CategoryListItem: View {
 
 // MARK: Preview
 
-struct CategoryListView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            CategoryListItem(viewModel: .mock)
-            CategoryListItem(viewModel: .mock)
-            CategoryListItem(viewModel: .mock)
-        }
-        .padding()
+#Preview {
+    VStack {
+        CategoryListItem(viewModel: .mock)
+        CategoryListItem(viewModel: .mock)
+        CategoryListItem(viewModel: .mock)
     }
+    .padding()
 }
 

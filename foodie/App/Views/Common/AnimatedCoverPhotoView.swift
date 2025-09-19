@@ -63,11 +63,9 @@ struct AnimatedCoverPhotoView: View {
 
 // MARK: Preview
 
-struct CoverPhotoView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            CoverPhotoView(imageUrl: Meal.stub.imageURL!)
-                .modifier(CoverPhotoStyle())
-        }
+#Preview {
+    NavigationStack {
+        CoverPhotoView(imageUrl: Meal.stub.imageURL!)
+            .modifier(CoverPhotoStyle())
     }
 }

@@ -44,8 +44,8 @@ struct ErrorView: View {
 
 // MARK: Previews
 
-struct ErrorView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
+    VStack {
         ErrorView(APIError.noResponse.localizedDescription, action: { })
         ErrorView(error: nil, action: { })
     }
