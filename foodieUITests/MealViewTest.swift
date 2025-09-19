@@ -7,42 +7,36 @@
 //
 
 import XCTest
-import Nimble
-@testable import foodie
+import Testing
 
-final class MealViewTest: XCTestCase {
+@MainActor @Test private func foodieOfTheDayExistence() throws {
+    let app = XCUIApplication()
+    app.launchArguments = ["testing"]
+    app.launch()
 
-    var app: XCUIApplication!
+    // Given
+    /// Select mocked meal (all are equal)
+    let label = app.staticTexts["Foodie of the day"]
 
-    override func setUp() {
-        continueAfterFailure = false
-        app = XCUIApplication()
-        app.launchArguments = ["testing"]
-        app.launch()
+    // When
+    guard label.waitForExistence(timeout: 5) else {
+        #expect(Bool(false), "Label should exist")
+        return
     }
+    label.tap()
 
-    func testElementsExistence() {
-        // Given
-        /// Select mocked meal (all are equal)
-        let label = app.staticTexts["Foodie of the day"]
-
-        // When
-        expect(label.waitForExistence(timeout: 5)).to(beTrue())
-        label.tap()
-
-        // Then
-        let titleLabel = app.staticTexts["Coddled pork with cider"]
-        expect(titleLabel.waitForExistence(timeout: 5)).to(beTrue())
-        expect(self.app.staticTexts["Irish"].exists).to(beTrue())
-        expect(self.app.staticTexts["Pork"].exists).to(beTrue())
-        expect(self.app.staticTexts["Ingredients"].exists).to(beTrue())
-        expect(self.app.staticTexts["10 items"].exists).to(beTrue())
-        expect(self.app.staticTexts["Bacon"].exists).to(beTrue())
-        expect(self.app.staticTexts["Recipe"].exists).to(beTrue())
-        let recipeTextView = app.staticTexts["RecipeTextView"]
-        expect(recipeTextView.exists).to(beTrue())
-        expect(recipeTextView.label.contains("STEP 2")).to(beTrue())
-        expect(self.app.buttons["Link to the website"].exists).to(beTrue())
+    // Then
+    let titleLabel = app.staticTexts["Coddled pork with cider"]
+    guard titleLabel.waitForExistence(timeout: 5) else {
+        #expect(Bool(false), "Label should exist")
+        return
     }
-
+    #expect(app.staticTexts["Irish"].exists)
+    #expect(app.staticTexts["Pork"].exists)
+    #expect(app.staticTexts["Ingredients"].exists)
+    #expect(app.staticTexts["10 items"].exists)
+    #expect(app.staticTexts["Bacon"].exists)
+    #expect(app.staticTexts["Recipe"].exists)
+    #expect(app.staticTexts["STEP 2"].exists)
+    #expect(app.buttons["Link to the website"].exists)
 }
