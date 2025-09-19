@@ -72,7 +72,11 @@ actor DependencyContainer: DependencyContainerType {
         await container.register(PersistenceClient.self) { _ in
             CoreDataClient()
         }
-#elseif SWIFTDATA
+#elseif REALM
+        await container.register(PersistenceClient.self) { _ in
+            RealmClient()
+        }
+#else 
         await container.register(PersistenceClient.self) { _ in
             do {
                 return try SwiftDataClient()
@@ -80,10 +84,6 @@ actor DependencyContainer: DependencyContainerType {
                 Log.error("Couldn't initialize Swift Data Client: \(error)")
                 return SwiftDataClientLogger()
             }
-        }
-#elseif REALM
-        await container.register(PersistenceClient.self) { _ in
-            RealmClient()
         }
 #endif
 

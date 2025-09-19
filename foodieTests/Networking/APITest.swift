@@ -38,7 +38,7 @@ final class APITest: XCTestCase {
 
         // Asset
         assertSnapshot(of: urlRequest, as: .raw)
-        assertSnapshot(of: json, as: .json)
+        assertSnapshot(of: json, as: .json, named: "testCategories")
     }
 
     @MainActor
@@ -57,7 +57,7 @@ final class APITest: XCTestCase {
 
         // Asset
         assertSnapshot(of: urlRequest, as: .raw)
-        assertSnapshot(of: json, as: .json)
+        assertSnapshot(of: json, as: .json, named: "testMeals")
     }
 
     @MainActor
@@ -76,7 +76,7 @@ final class APITest: XCTestCase {
 
         // Asset
         assertSnapshot(of: urlRequest, as: .raw)
-        assertSnapshot(of: json, as: .json)
+        assertSnapshot(of: json, as: .json, named: "testMeal")
     }
 }
 

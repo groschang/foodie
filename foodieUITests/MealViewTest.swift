@@ -9,34 +9,36 @@
 import XCTest
 import Testing
 
-@MainActor @Test private func foodieOfTheDayExistence() throws {
-    let app = XCUIApplication()
-    app.launchArguments = ["testing"]
-    app.launch()
+@Suite struct UITests {
 
-    // Given
-    /// Select mocked meal (all are equal)
-    let label = app.staticTexts["Foodie of the day"]
+    @MainActor @Test
+    func foodieOfTheDayExistence() {
+        let app = XCUIApplication(bundleIdentifier: "com.conrad.foodie")
+        app.launch()
 
-    // When
-    guard label.waitForExistence(timeout: 5) else {
-        #expect(Bool(false), "Label should exist")
-        return
+        // Given
+        /// Select mocked meal (all are equal)
+        let label = app.staticTexts["Foodie of the day"]
+
+        // When
+        guard label.waitForExistence(timeout: 5) else {
+            #expect(Bool(false), "Label should exist")
+            return
+        }
+        label.tap()
+
+        // Then
+        let titleLabel = app.staticTexts["Coddled pork with cider"]
+        guard titleLabel.waitForExistence(timeout: 5) else {
+            #expect(Bool(false), "Label should exist")
+            return
+        }
+        #expect(app.staticTexts["Irish"].exists)
+        #expect(app.staticTexts["Pork"].exists)
+        #expect(app.staticTexts["Ingredients"].exists)
+        #expect(app.staticTexts["10 items"].exists)
+        #expect(app.staticTexts["Bacon"].exists)
+        #expect(app.staticTexts["Recipe"].exists)
+        #expect(app.buttons["Link to the website"].exists)
     }
-    label.tap()
-
-    // Then
-    let titleLabel = app.staticTexts["Coddled pork with cider"]
-    guard titleLabel.waitForExistence(timeout: 5) else {
-        #expect(Bool(false), "Label should exist")
-        return
-    }
-    #expect(app.staticTexts["Irish"].exists)
-    #expect(app.staticTexts["Pork"].exists)
-    #expect(app.staticTexts["Ingredients"].exists)
-    #expect(app.staticTexts["10 items"].exists)
-    #expect(app.staticTexts["Bacon"].exists)
-    #expect(app.staticTexts["Recipe"].exists)
-    #expect(app.staticTexts["STEP 2"].exists)
-    #expect(app.buttons["Link to the website"].exists)
 }

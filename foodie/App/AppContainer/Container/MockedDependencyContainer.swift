@@ -42,9 +42,9 @@ actor MockedDependencyContainer: DependencyContainerType {
 //            await container.resolve(MealsAsyncStreamServiceType.self)!
 //        }
 //    }
-    var viewFactory: StreamViewFactory {
+    var viewFactory: AsyncViewFactory {
         get async {
-            await container.resolve(StreamViewFactory.self)!
+            await container.resolve(AsyncViewFactory.self)!
         }
     }
     var router: Router {
@@ -65,6 +65,10 @@ actor MockedDependencyContainer: DependencyContainerType {
         }
 
 #if COREDATA
+        await container.register(PersistenceClient.self) { _ in
+            CoreDataClient()
+        }
+#else
         await container.register(SwiftDataClient.self) { _ in
             do {
                 return try SwiftDataClient()
@@ -72,10 +76,6 @@ actor MockedDependencyContainer: DependencyContainerType {
                 Log.error("Couldn't initialize Swift Data Client: \(error)")
                 return SwiftDataClientLogger()
             }
-        }
-#else
-        await container.register(PersistenceClient.self) { _ in
-            CoreDataClient()
         }
 #endif
 
