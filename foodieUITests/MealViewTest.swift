@@ -13,7 +13,7 @@ import Testing
 
     @MainActor @Test
     func foodieOfTheDayExistence() {
-        let app = XCUIApplication(bundleIdentifier: "com.conrad.foodie")
+        let app = XCUIApplication(bundleIdentifier: "com.conrad.foodie.mocked")
         app.launch()
 
         // Given

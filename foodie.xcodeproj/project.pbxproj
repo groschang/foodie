@@ -2121,7 +2121,7 @@
 					};
 					71E2A5CD2971D4E70012E5C6 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 71E2A5782970336A0012E5C6;
+						TestTargetID = 7102F17B2B2F6C7A00F6D87F;
 					};
 				};
 			};
@@ -2831,7 +2831,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodie.mocked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2874,7 +2874,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.conrad.foodie.mocked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3190,7 +3190,7 @@
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = foodie;
+				TEST_TARGET_NAME = mockedFoodie;
 			};
 			name = Debug;
 		};
@@ -3217,7 +3217,7 @@
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = foodie;
+				TEST_TARGET_NAME = mockedFoodie;
 			};
 			name = Release;
 		};

@@ -167,17 +167,17 @@ final class CoreDataClientTest: XCTestCase {
 
         // Then
         let assertionIngredients = [Ingredient(name: "name", measure: "measure"),
-                                   Ingredient(name: "name2", measure: "measure2")]
+                                    Ingredient(name: "name2", measure: "measure2")]
 
         let assertion = Meal(id: "1",
-                            name: "name",
-                            category: "category",
-                            area: "area",
-                            recipe: "recipe",
-                            imageURL: URL(string: "www.example.com"),
-                            youtubeURL: URL(string: "www.example.com"),
-                            source: "source",
-                            ingredients: assertionIngredients)
+                             name: "name",
+                             category: "category",
+                             area: "area",
+                             recipe: "recipe",
+                             imageURL: URL(string: "www.example.com"),
+                             youtubeURL: URL(string: "www.example.com"),
+                             source: "source",
+                             ingredients: assertionIngredients)
 
         XCTAssertEqual(result, assertion)
     }
@@ -188,7 +188,8 @@ final class CoreDataClientTest: XCTestCase {
         let ingredients = [Ingredient(name: "name", measure: "measure1"),
                            Ingredient(name: "name2", measure: "measure2")]
 
-        let meal = Meal(id: "1", name: "name",
+        let meal = Meal(id: "1",
+                        name: "name",
                         ingredients: ingredients)
 
         await sut.saveMeal(meal)
@@ -201,7 +202,7 @@ final class CoreDataClientTest: XCTestCase {
                                     Ingredient(name: "name2", measure: "measure2")]
 
         let assertion = Meal(id: "1", name: "name",
-                            ingredients: assertionIngredients)
+                             ingredients: assertionIngredients)
 
         XCTAssertEqual(assertion, result)
         XCTAssertEqual(result?.ingredients, assertion.ingredients)
@@ -214,22 +215,23 @@ final class CoreDataClientTest: XCTestCase {
         expectation.assertForOverFulfill = false
 
         let ingredients: [Ingredient]? = [Ingredient(name: "name5", measure: "measure5")]
-        let meal = Meal(id: "1", name: "name",
+        let meal = Meal(id: "1",
+                        name: "name",
                         ingredients: ingredients)
 
         await sut.saveMeal(meal)
-
-        cancellable = assignDidSaveExpectation(expectation)
 
         // When
         var storedMeal: Meal? = await sut.getMeal(for: "1")
 
         let newIngredients = [Ingredient(name: "name", measure: "measure"),
-                            Ingredient(name: "name3", measure: "measure3"),
-                            Ingredient(name: "name4", measure: "measure4")]
+                              Ingredient(name: "name3", measure: "measure3"),
+                              Ingredient(name: "name4", measure: "measure4")]
 
 
         storedMeal?.ingredients = newIngredients
+
+        cancellable = assignDidSaveExpectation(expectation)
 
         await sut.updateMeal(storedMeal!)
 
@@ -242,8 +244,9 @@ final class CoreDataClientTest: XCTestCase {
                                     Ingredient(name: "name3", measure: "measure3"),
                                     Ingredient(name: "name4", measure: "measure4")]
 
-        let assertion = Meal(id: "1", name: "name",
-                            ingredients: assertionIngredients)
+        let assertion = Meal(id: "1",
+                             name: "name",
+                             ingredients: assertionIngredients)
 
         XCTAssertEqual(assertion, result)
         XCTAssertEqual(result?.ingredients, assertion.ingredients)
