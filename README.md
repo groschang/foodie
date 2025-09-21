@@ -14,7 +14,7 @@
 
 ## About The Project
 
-Foodie is an iOS app that allows users to browse a catalogue of meals. It's built with modern SwiftUI principles and showcases a clean, scalable architecture.
+Foodie is an iOS app that allows users to browse a catalogue of meals. It's built with modern SwiftUI principles and showcases a clean, scalable architecture. The project has been successfully migrated to Swift 6, including the adoption of the new `#Preview` macro and the migration of tests to the new Testing API. This ensures the project is up-to-date with the latest Swift language features and best practices. This migration also brings improved concurrency safety, making the app more robust and reliable.
 
 ### Features
 
@@ -99,7 +99,7 @@ foodie/
 
 ### Architecture Overview
 
-The project follows Clean Architecture principles with a MVVM-like presentation layer:
+The project follows Clean Architecture principles with a MVVM-like presentation layer. The architecture is designed to align with SOLID principles, promoting a modular, maintainable, and testable codebase:
 
 1. **View Layer**: SwiftUI views that observe ViewModels
 2. **ViewModel Layer**: Business logic and state management
