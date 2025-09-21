@@ -6,11 +6,12 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
+import Testing
 @testable import foodie
 
-final class LoadingStateTest: XCTestCase {
+@Suite struct LoadingStateTest {
 
+    @Test("Test LoadingState RawRepresentable conformance")
     func testRawRepresentable() {
         // Arrange
         let value = "idle"
@@ -19,7 +20,7 @@ final class LoadingStateTest: XCTestCase {
         let state = LoadingState(rawValue: value)
 
         // Assert
-        XCTAssertEqual(state, .idle)
+        #expect(state == .idle, "Expected state to be .idle")
     }
 
 }

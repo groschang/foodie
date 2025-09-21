@@ -6,31 +6,25 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
-import Nimble
+import Testing
 @testable import foodie
 
-final class MealsServiceTest: XCTestCase, Stubable {
+@Suite struct MealsServiceTest {
 
     var backendClient: APIClientMock!
     var persistanceClient: CoreDataClientMock!
     var sut: MealsClosureService!
 
-    override func setUp() {
+    init() async {
         backendClient = APIClientMock()
         persistanceClient = CoreDataClientMock()
         sut = MealsClosureService(
-            backendClient: backendClient!,
-            persistanceClient: persistanceClient!
+            backendClient: backendClient,
+            persistanceClient: persistanceClient
         )
     }
 
-    override func tearDown() {
-        sut = nil
-        backendClient = nil
-        persistanceClient = nil
-    }
-
+    @Test("Test getting categories")
     func testGetCategories() async throws {
         // Given
         let categories = Categories.stub
@@ -44,10 +38,11 @@ final class MealsServiceTest: XCTestCase, Stubable {
         let assertion = categories
 
         let processCallCount = await self.backendClient.processCallCount
-        expect(processCallCount).to(equal(1))
-        expect(result).to(equal(assertion))
+        #expect(processCallCount == 1)
+        #expect(result == assertion)
     }
     
+    @Test("Test getting meals for category")
     func testGetMeals() async throws {
         // Given
         let meals = Meals.stub
@@ -62,10 +57,11 @@ final class MealsServiceTest: XCTestCase, Stubable {
         let assertion = meals
 
         let processCallCount = await self.backendClient.processCallCount
-        expect(processCallCount).to(equal(1))
-        expect(result).to(equal(assertion))
+        #expect(processCallCount == 1)
+        #expect(result == assertion)
     }
 
+    @Test("Test getting meal by ID")
     func testGetMeal() async throws {
         // Given
         let meal = Meal.stub
@@ -79,10 +75,11 @@ final class MealsServiceTest: XCTestCase, Stubable {
         let assertion = meal
 
         let processCallCount = await self.backendClient.processCallCount
-        expect(processCallCount).to(equal(1))
-        expect(result).to(equal(assertion))
+        #expect(processCallCount == 1)
+        #expect(result == assertion)
     }
 
+    @Test("Test getting random meal")
     func testGetRandomMeal() async throws {
         // Given
         let meal = Meal.stub
@@ -96,7 +93,7 @@ final class MealsServiceTest: XCTestCase, Stubable {
         let assertion = meal
 
         let processCallCount = await self.backendClient.processCallCount
-        expect(processCallCount).to(equal(1))
-        expect(result).to(equal(assertion))
+        #expect(processCallCount == 1)
+        #expect(result == assertion)
     }
 }

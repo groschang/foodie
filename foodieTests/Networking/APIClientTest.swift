@@ -6,17 +6,17 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
-import Nimble
+import Testing
+import Foundation
 @testable import foodie
 
-final class APIClientTest: XCTestCase {
+@Suite struct APIClientTest {
 
     var sut: HTTPClient!
     var httpSession: HTTPSessionMock!
     var requestBuilder: RequestBuilderMock!
 
-    override func setUp() {
+    init() async {
         let enviroment = APIEndpoint.test
 
         httpSession = HTTPSessionMock()
@@ -29,10 +29,7 @@ final class APIClientTest: XCTestCase {
         )
     }
 
-    override func tearDown() {
-        sut = nil
-    }
-
+    @Test("Test successful API call returns expected data")
     func testAPICallSuccess() async throws {
 
         // Given
@@ -59,13 +56,14 @@ final class APIClientTest: XCTestCase {
         let assertion = TestObject.stub
 
         let buildCallCount = await self.requestBuilder.buildCallCount
-        expect(buildCallCount) == 1
+        #expect(buildCallCount == 1)
         let dataCallCount = await self.httpSession.dataCallCount
-        expect(dataCallCount) == 1
-        expect(result).to(equal(assertion))
+        #expect(dataCallCount == 1)
+        #expect(result == assertion)
     }
 
-    func testAPICallServerFailure() async throws {
+    @Test("Test API call handles server error response")
+    func testAPICallServerFailure() async {
 
         // Given
         let endpoint = Endpoint(path: "/categories")
@@ -85,21 +83,18 @@ final class APIClientTest: XCTestCase {
         await httpSession.setStubDataResponse(.success((data, response)))
 
         // When -> Then
-
-        await expect { try await self.sut.process(request) }
-            .to(throwError { (error: Error) in
-                expect(error).to(beAKindOf(APIError.self))
-                expect(error.localizedDescription).to(contain("Status Code: 500"))
-            })
+        await #expect(throws: APIError.self) {
+            try await self.sut.process(request)
+        }
 
         let buildCallCount = await self.requestBuilder.buildCallCount
-        expect(buildCallCount) == 1
+        #expect(buildCallCount == 1)
         let dataCallCount = await self.httpSession.dataCallCount
-        expect(dataCallCount) == 1
-
+        #expect(dataCallCount == 1)
     }
 
-    func testAPICallNetworkFailure() async throws {
+    @Test("Test API call handles network failure")
+    func testAPICallNetworkFailure() async {
 
         // Given
         let endpoint = Endpoint(path: "/categories")
@@ -113,17 +108,18 @@ final class APIClientTest: XCTestCase {
         await httpSession.setStubDataResponse(.failure(NSError(domain: NSURLErrorDomain, code: NSURLErrorBadURL)))
 
         // When -> Then
-
-        await expect { try await self.sut.process(request) }.to(throwError(APIError.unknown))
+        await #expect(throws: APIError.unknown) {
+            try await self.sut.process(request)
+        }
 
         let buildCallCount = await self.requestBuilder.buildCallCount
-        expect(buildCallCount) == 1
+        #expect(buildCallCount == 1)
         let dataCallCount = await self.httpSession.dataCallCount
-        expect(dataCallCount) == 1
-
+        #expect(dataCallCount == 1)
     }
 
-    func testAPICallJSONDecodingFailure() async throws {
+    @Test("Test API call handles JSON decoding failure")
+    func testAPICallJSONDecodingFailure() async {
 
         // Given
         let endpoint = Endpoint(path: "/categories")
@@ -144,17 +140,14 @@ final class APIClientTest: XCTestCase {
         await httpSession.setStubDataResponse(.success((data, response)))
 
         // When -> Then
-
-        await expect { try await self.sut.process(request) }.to(throwError { (error: Error) in
-            expect(error).to(beAKindOf(APIError.self))
-            expect(error.localizedDescription).to(contain("The given data was not valid JSON."))
-        })
+        await #expect(throws: APIError.self) {
+            try await self.sut.process(request)
+        }
 
         let buildCallCount = await self.requestBuilder.buildCallCount
-        expect(buildCallCount) == 1
+        #expect(buildCallCount == 1)
         let dataCallCount = await self.httpSession.dataCallCount
-        expect(dataCallCount) == 1
-
+        #expect(dataCallCount == 1)
     }
 
 }

@@ -6,29 +6,27 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
+import Testing
 @testable import foodie
 import Realm
 import Realm.Dynamic
 import RealmSwift
 
-final class RealmClientTest: XCTestCase {
+@Suite class RealmClientTest {
 
     var sut: RealmClient!
-
     var testDir: String!
 
-    override func setUpWithError() throws {
+    init() async {
         createRealmTestFolder()
         sut = RealmClient(realmConfiguration: realmConfigurationWithTestPath())
     }
 
-    override func tearDownWithError() throws {
+    deinit {
         deleteRealmTestDatabase()
     }
 
-    func testCategories() async {
-
+    @Test func testCategories() async {
         // Given
         let categories = Categories(items: [
             Category(id: "1",
@@ -58,12 +56,10 @@ final class RealmClientTest: XCTestCase {
                      description: "description2")
         ])
 
-        XCTAssertEqual(assertion, result)
-
+        #expect(assertion == result)
     }
 
-    func testCategoriesForFailureNotAll() async {
-
+    @Test func testCategoriesForFailureNotAll() async {
         // Given
         let categories = Categories(items: [
             Category(id: "1",
@@ -89,12 +85,10 @@ final class RealmClientTest: XCTestCase {
                      description: "description2")
         ])
 
-        XCTAssertNotEqual(assertion, result)
-
+        #expect(assertion != result)
     }
 
-    func testMeals() async {
-
+    @Test func testMeals() async {
         // Given
         let category = Category(id: "1",
                                 name: "name",
@@ -126,11 +120,10 @@ final class RealmClientTest: XCTestCase {
                          imageUrl: URL(string: "www.example.com"))
         ])
 
-        XCTAssertEqual(assertion, result)
+        #expect(assertion == result)
     }
 
-    func testMealsForFailureNonExistingCategory() async {
-
+    @Test func testMealsForFailureNonExistingCategory() async {
         // Given
         let meals = Meals(items: [
             MealCategory(id: "1",
@@ -151,11 +144,10 @@ final class RealmClientTest: XCTestCase {
         // Then
         let result = await sut.getMeals(for: category)
 
-        XCTAssertNil(result)
+        #expect(result == nil)
     }
 
-    func testMeal() async {
-
+    @Test func testMeal() async {
         // Given
         let meal = Meal(id: "1", name: "name")
 
@@ -167,12 +159,10 @@ final class RealmClientTest: XCTestCase {
 
         let assertion = Meal(id: "1", name: "name")
 
-        XCTAssertEqual(assertion, result)
-
+        #expect(assertion == result)
     }
 
-    func testMealAllParameters() async {
-
+    @Test func testMealAllParameters() async {
         // Given
         let meal = Meal(id: "1",
                         name: "name",
@@ -203,12 +193,10 @@ final class RealmClientTest: XCTestCase {
                              ingredients: [Ingredient(name: "name", measure: "measure"),
                                            Ingredient(name: "name2", measure: "measure2")])
 
-        XCTAssertEqual(assertion, result)
-
+        #expect(assertion == result)
     }
 
-    func testMealIngredients() async {
-
+    @Test func testMealIngredients() async {
         // Given
         let meal = Meal(
             id: "1",
@@ -221,7 +209,6 @@ final class RealmClientTest: XCTestCase {
         await sut.saveMeal(meal)
 
         // When
-
         let result = await sut.getMeal(for: "1")
 
         // Then
@@ -233,12 +220,11 @@ final class RealmClientTest: XCTestCase {
                  Ingredient(name: "name2", measure: "measure2")]
         )
 
-        XCTAssertEqual(assertion, result)
-        XCTAssertEqual(assertion.ingredients, result?.ingredients)
+        #expect(assertion == result)
+        #expect(assertion.ingredients == result?.ingredients)
     }
 
-    func testMealUpdateIngredients() async {
-
+    @Test func testMealUpdateIngredients() async {
         // Given
         let ingredients = [Ingredient(name: "name", measure: "measure"),
                            Ingredient(name: "name2", measure: "measure2")]
@@ -256,9 +242,9 @@ final class RealmClientTest: XCTestCase {
                             Ingredient(name: "name3", measure: "measure3"),
                             Ingredient(name: "name4", measure: "measure4")]
 
-        storedMeal?.ingredients = ingredients2
+        #expect(storedMeal != nil, "Couldn't load stored meal")
 
-        XCTAssertNotNil(storedMeal, "Couldn't load stored meal")
+        storedMeal?.ingredients = ingredients2
 
         await sut.saveMeal(storedMeal!)
 
@@ -272,13 +258,10 @@ final class RealmClientTest: XCTestCase {
                                  Ingredient(name: "name3", measure: "measure3"),
                                  Ingredient(name: "name4", measure: "measure4")])
 
-        XCTAssertEqual(assertion, result)
-        XCTAssertEqual(assertion.ingredients, result?.ingredients)
+        #expect(assertion == result)
+        #expect(assertion.ingredients == result?.ingredients)
     }
-
 }
-
-
 
 fileprivate extension RealmClientTest {
 
@@ -302,11 +285,10 @@ fileprivate extension RealmClientTest {
     }
 
     func deleteRealmTestDatabase() {
-
         do {
             try FileManager.default.removeItem(atPath: testDir)
         } catch {
-            XCTFail("Unable to delete realm files")
+            #expect(Bool(false), "Unable to delete realm files")
         }
 
         // Verify that there are no remaining realm test files after the test
@@ -315,8 +297,7 @@ fileprivate extension RealmClientTest {
 
         for url in itemURLs {
             let url = url as! NSString
-            XCTAssertNotEqual(url.pathExtension, "realm", "Lingering realm file at \(testDirPath)/\(url)")
-            assert(url.pathExtension != "realm")
+            #expect(url.pathExtension != "realm", "Lingering realm file at \(testDirPath)/\(url)")
         }
     }
 
@@ -334,9 +315,8 @@ fileprivate extension RealmClientTest {
     }
 
     private func realmFilePrefix() -> String {
-        var name: String = self.name
-        name = name.trimmingCharacters(in: CharacterSet(charactersIn: "-[]"))
-        return name.replacingOccurrences(of: " ", with: "_")
+        // Generate a unique prefix for each test run
+        return "RealmClientTest_\(UUID().uuidString)"
     }
 
     func testRealmURL() -> URL {

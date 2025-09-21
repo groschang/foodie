@@ -6,24 +6,23 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
-import Nimble
+import Testing
+import Foundation
 @testable import foodie
 
-final class RequestBuilderTest: XCTestCase {
+@Suite class RequestBuilderTest {
 
     var sut: RequestBuilder!
 
-    override func setUpWithError() throws {
+    init() async {
         sut = URLRequestBuilder(enviroment: .test)
     }
 
-    override func tearDownWithError() throws {
+    deinit {
         sut = nil
     }
 
-    func testRequest() async throws {
-
+    @Test func testRequest() async throws {
         // Arrange
         let endpoint = Endpoint(path: "/categories")
         let request = Request<String>(endpoint: endpoint)
@@ -34,11 +33,10 @@ final class RequestBuilderTest: XCTestCase {
         // Assert
         let assertion = "https://example.com/api/v1/categories"
 
-        expect(result.url?.absoluteString).to(equal(assertion))
+        #expect(result.url?.absoluteString == assertion)
     }
 
-    func testRequestWithQueryItem() async throws {
-
+    @Test func testRequestWithQueryItem() async throws {
         // Arrange
         let endpoint = Endpoint(
             path: "/categories",
@@ -54,11 +52,10 @@ final class RequestBuilderTest: XCTestCase {
         // Assert
         let assertion = "https://example.com/api/v1/categories?c=123"
 
-        expect(result.url?.absoluteString).to(equal(assertion))
+        #expect(result.url?.absoluteString == assertion)
     }
 
-    func testRequestWithQueryItems() async throws {
-
+    @Test func testRequestWithQueryItems() async throws {
         // Arrange
         let endpoint = Endpoint(
             path: "/categories",
@@ -75,11 +72,10 @@ final class RequestBuilderTest: XCTestCase {
         // Assert
         let assertion = "https://example.com/api/v1/categories?q1=123&q2=345"
 
-        expect(result.url?.absoluteString).to(equal(assertion))
+        #expect(result.url?.absoluteString == assertion)
     }
 
-    func testRequestWithHeaders() async throws {
-
+    @Test func testRequestWithHeaders() async throws {
         // Arrange
         let endpoint = Endpoint(
             path: "/categories",
@@ -96,8 +92,6 @@ final class RequestBuilderTest: XCTestCase {
         // Assert
         let assertion = ["h1":"v1"]
 
-        expect(result.allHTTPHeaderFields).to(equal(assertion))
+        #expect(result.allHTTPHeaderFields == assertion)
     }
-
 }
-

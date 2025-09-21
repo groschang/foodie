@@ -6,17 +6,19 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import foodie
 
-final class DecodingErrorTest: XCTestCase {
+@Suite struct DecodingErrorTest {
 
     private var decoder: JSONDecoder!
 
-    override func setUp() {
+    init() {
         decoder = JSONDecoder()
     }
 
+    @Test("Test decoding with correct JSON format")
     func testCorrectFormat() throws {
         // Given
         let jsonData = """
@@ -30,12 +32,14 @@ final class DecodingErrorTest: XCTestCase {
         do {
             let meal = try decoder.decode(Person.self, from: jsonData)
             // Then
-            XCTAssertNotNil(meal, "Expected to parse json file")
+            #expect(meal.id == 123, "Expected person ID to be 123")
+            #expect(meal.name == "String", "Expected person name to be 'String'")
         } catch {
-            XCTFail("Test case shouldn't throw DecodingError but catch: \(error)")
+            Issue.record("Test case shouldn't throw DecodingError but catch: \(error)")
         }
     }
 
+    @Test("Test decoding with incorrect JSON structure")
     func testIncorrectFormatJSONStructure() throws {
         // Given
         let jsonData = """
@@ -46,12 +50,16 @@ final class DecodingErrorTest: XCTestCase {
         """.data(using: .utf8)!
 
         // When
-        XCTAssertThrowsError(
-            try decoder.decode(Person.self, from: jsonData),
-            "Test should throw DecodingError: incorrect format"
-        ) { error in
+        #expect(throws: DecodingError.self) {
+            try decoder.decode(Person.self, from: jsonData)
+        }
+        
+        do {
+            let _ = try decoder.decode(Person.self, from: jsonData)
+            Issue.record("Test should throw DecodingError: incorrect format")
+        } catch let error as DecodingError {
             // Then
-            DescriptionValidator.validate(error as? DecodingError) {
+            DescriptionValidator.validate(error) {
                 "Description:"
                 "The data couldn’t be read because it isn’t in the correct format."
 
@@ -62,9 +70,12 @@ final class DecodingErrorTest: XCTestCase {
                 "underlyingError:"
                 "The data couldn’t be read because it isn’t in the correct format."
             }
+        } catch {
+            Issue.record("Unexpected error type: \(error)")
         }
     }
 
+    @Test("Test decoding with type mismatch")
     func testIncorrectFormatMistype() throws {
         // Given
         let jsonData = """
@@ -75,12 +86,16 @@ final class DecodingErrorTest: XCTestCase {
         """.data(using: .utf8)!
 
         // When
-        XCTAssertThrowsError(
-            try decoder.decode(Person.self, from: jsonData),
-            "Test should throw DecodingError: incorrect format"
-        ) { error in
+        #expect(throws: DecodingError.self) {
+            try decoder.decode(Person.self, from: jsonData)
+        }
+        
+        do {
+            let _ = try decoder.decode(Person.self, from: jsonData)
+            Issue.record("Test should throw DecodingError: incorrect format")
+        } catch let error as DecodingError {
             // Then
-            DescriptionValidator.validate(error as? DecodingError) {
+            DescriptionValidator.validate(error) {
                 "Description:"
                 "The data couldn’t be read because it isn’t in the correct format."
 
@@ -91,9 +106,12 @@ final class DecodingErrorTest: XCTestCase {
                 "description:"
                 "Expected to decode String but found number instead."
             }
+        } catch {
+            Issue.record("Unexpected error type: \(error)")
         }
     }
 
+    @Test("Test decoding with missing data")
     func testMissingData() throws {
         // Given
         let jsonData = """
@@ -103,12 +121,16 @@ final class DecodingErrorTest: XCTestCase {
         """.data(using: .utf8)!
 
         // When
-        XCTAssertThrowsError(
-            try decoder.decode(MealDetail.self, from: jsonData),
-            "Test should throw DecodingError: missing data"
-        ) { error in
+        #expect(throws: DecodingError.self) {
+            try decoder.decode(MealDetail.self, from: jsonData)
+        }
+        
+        do {
+            let _ = try decoder.decode(MealDetail.self, from: jsonData)
+            Issue.record("Test should throw DecodingError: missing data")
+        } catch let error as DecodingError {
             // Then
-            DescriptionValidator.validate(error as? DecodingError) {
+            DescriptionValidator.validate(error) {
                 "Description:"
                 "The data couldn’t be read because it is missing."
 
@@ -119,6 +141,8 @@ final class DecodingErrorTest: XCTestCase {
                 "description:"
                 "No value associated with key CustomCodingKeys(stringValue: \"idMeal\", intValue: nil) (\"idMeal\")."
             }
+        } catch {
+            Issue.record("Unexpected error type: \(error)")
         }
     }
 }
@@ -137,22 +161,17 @@ fileprivate struct DescriptionValidator {
 
     static func validate(_ description: String, @DescriptionValidator block: () -> [String]) {
         block().forEach { item in
-            XCTAssertTrue(description.contains(item),
-                          """
-                          Description:
-                          \(description)
-                          should contains:
-                          \(item)
-                          """)
+            #expect(description.contains(item),
+                      """
+                      Description:
+                      \(description)
+                      should contains:
+                      \(item)
+                      """)
         }
     }
 
-    static func validate(_ error: DecodingError?, @DescriptionValidator block: () -> [String]) {
-        do {
-            let error = try XCTUnwrap(error)
-            validate(error.verbose, block: block)
-        } catch {
-            XCTFail("Error is nil")
-        }
+    static func validate(_ error: DecodingError, @DescriptionValidator block: () -> [String]) {
+        validate(error.verbose, block: block)
     }
 }

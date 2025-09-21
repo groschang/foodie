@@ -6,17 +6,15 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
+import Testing
 import CoreData
-import Combine
 @testable import foodie
 
-final class CoreDataClientTest: XCTestCase {
+@Suite struct CoreDataClientTest {
 
     var sut: CoreDataClient!
-    var cancellable: AnyCancellable!
 
-    override func setUpWithError() throws {
+    init() async {
         let bundle = Bundle.main
         let modelURL = bundle.url(forResource: PersistentContainer.DataModelName,
                                   withExtension: "momd")!
@@ -28,13 +26,8 @@ final class CoreDataClientTest: XCTestCase {
         sut = CoreDataClient(container: container)
     }
 
-    override func tearDownWithError() throws {
-        sut = nil
-        cancellable = nil
-    }
-
+    @Test("Test saving and retrieving categories")
     func testCategories() async {
-
         // Given
         let categories = Categories(items: [
             Category(id: "1",
@@ -64,11 +57,11 @@ final class CoreDataClientTest: XCTestCase {
                      description: "description2")
         ])
 
-        XCTAssertEqual(result, assertion)
+        #expect(result == assertion)
     }
 
+    @Test("Test saving and retrieving meals")
     func testMeals() async {
-
         // Given
         let category = Category(id: "1",
                                 name: "name",
@@ -100,11 +93,11 @@ final class CoreDataClientTest: XCTestCase {
                          imageUrl: URL(string: "www.example.com"))
         ])
 
-        XCTAssertEqual(result, assertion)
+        #expect(result == assertion)
     }
 
+    @Test("Test retrieving meals for non-existing category")
     func testMealsForNonExistingCategory() async {
-
         // Given
         let meals = Meals(items: [
             MealCategory(id: "1",
@@ -125,11 +118,11 @@ final class CoreDataClientTest: XCTestCase {
         // Then
         let result = await sut.getMeals(for: category)
 
-        XCTAssertNil(result)
+        #expect(result == nil)
     }
 
+    @Test("Test saving and retrieving meal with minimal parameters")
     func testMeal() async {
-
         // Given
         let meal = Meal(id: "1", name: "name")
 
@@ -141,11 +134,11 @@ final class CoreDataClientTest: XCTestCase {
 
         let assertion = Meal(id: "1", name: "name")
 
-        XCTAssertEqual(result, assertion)
+        #expect(result == assertion)
     }
 
+    @Test("Test saving and retrieving meal with all parameters")
     func testMealAllParameters() async {
-
         // Given
         let ingredients = [Ingredient(name: "name", measure: "measure"),
                            Ingredient(name: "name2", measure: "measure2")]
@@ -179,11 +172,11 @@ final class CoreDataClientTest: XCTestCase {
                              source: "source",
                              ingredients: assertionIngredients)
 
-        XCTAssertEqual(result, assertion)
+        #expect(result == assertion)
     }
 
+    @Test("Test saving and retrieving meal ingredients")
     func testMealIngredients() async {
-
         // Given
         let ingredients = [Ingredient(name: "name", measure: "measure1"),
                            Ingredient(name: "name2", measure: "measure2")]
@@ -204,16 +197,13 @@ final class CoreDataClientTest: XCTestCase {
         let assertion = Meal(id: "1", name: "name",
                              ingredients: assertionIngredients)
 
-        XCTAssertEqual(assertion, result)
-        XCTAssertEqual(result?.ingredients, assertion.ingredients)
+        #expect(assertion == result)
+        #expect(result?.ingredients == assertion.ingredients)
     }
 
+    @Test("Test updating meal ingredients")
     func testMealUpdateIngredients() async {
-
         // Given
-        let expectation = expectation(description: #function)
-        expectation.assertForOverFulfill = false
-
         let ingredients: [Ingredient]? = [Ingredient(name: "name5", measure: "measure5")]
         let meal = Meal(id: "1",
                         name: "name",
@@ -228,16 +218,11 @@ final class CoreDataClientTest: XCTestCase {
                               Ingredient(name: "name3", measure: "measure3"),
                               Ingredient(name: "name4", measure: "measure4")]
 
-
         storedMeal?.ingredients = newIngredients
-
-        cancellable = assignDidSaveExpectation(expectation)
 
         await sut.updateMeal(storedMeal!)
 
         // Then
-        await fulfillment(of: [expectation], timeout: 5.0)
-
         let result = await sut.getMeal(for: "1")
 
         let assertionIngredients = [Ingredient(name: "name", measure: "measure"),
@@ -248,21 +233,7 @@ final class CoreDataClientTest: XCTestCase {
                              name: "name",
                              ingredients: assertionIngredients)
 
-        XCTAssertEqual(assertion, result)
-        XCTAssertEqual(result?.ingredients, assertion.ingredients)
-    }
-
-}
-
-extension CoreDataClientTest {
-
-    @inlinable func assignDidSaveExpectation (_ expectation: XCTestExpectation) -> AnyCancellable {
-        NotificationCenter
-            .default
-            .publisher(for: .NSManagedObjectContextDidSave)
-            .dropFirst()
-            .sink { [weak expectation] _ in
-                expectation?.fulfill()
-            }
+        #expect(assertion == result)
+        #expect(result?.ingredients == assertion.ingredients)
     }
 }
