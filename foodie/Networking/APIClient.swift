@@ -12,7 +12,7 @@ protocol HTTPClient: Sendable {
     func process<T: Decodable>(_ request: Request<T>) async throws -> T
 }
 
-final class APIClient: HTTPClient {
+actor APIClient: HTTPClient {
 
     private let requestBuilder: RequestBuilder
 
@@ -30,7 +30,7 @@ final class APIClient: HTTPClient {
         self.decoder = decoder
     }
     
-    func process<T: Decodable>(_ request: Request<T>) async throws -> T {
+    func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
         
         do {
 
