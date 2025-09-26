@@ -23,8 +23,6 @@ struct MealViewIngredientTitleStyle: ViewModifier {
 }
 
 
-
-
 struct MealViewIngredientSubitleStyle: ViewModifier {
 
     private struct Shadow {
@@ -38,8 +36,6 @@ struct MealViewIngredientSubitleStyle: ViewModifier {
             .modifier(TextStyle.subtitle3)
     }
 }
-
-
 
 
 struct MealViewSourceStyle: ViewModifier {

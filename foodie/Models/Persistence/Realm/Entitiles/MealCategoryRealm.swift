@@ -30,11 +30,11 @@ class MealCategoryRealm: Object {
     }
 }
 
-//MARK: Identifier
+//MARK: - Identifier
 
 extension MealCategoryRealm: Identifier { }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension MealCategoryRealm {
 
@@ -52,7 +52,7 @@ extension MealCategoryRealm {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension MealCategory {
 
@@ -63,7 +63,7 @@ extension MealCategory {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == MealCategoryRealm {
 
@@ -78,7 +78,7 @@ extension Array where Element == MealCategoryRealm {
     }
 }
 
-//MARK: Results
+//MARK: - Results
 
 extension Results where Element == MealCategoryRealm {
 

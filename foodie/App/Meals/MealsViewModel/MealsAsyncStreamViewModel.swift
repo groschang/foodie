@@ -38,8 +38,8 @@ final class MealsAsyncStreamViewModel: MealsViewModelType {
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
-        guard let category = category as? Category else { return } //TODO: check
+    func load() async {
+        guard let category = category as? Category else { return }
         guard state.isLoading == false else { return }
 
         state.setLoading()
@@ -81,12 +81,17 @@ final class MealsAsyncStreamViewModel: MealsViewModelType {
 
     private func filterItems(with query: String? = nil) {
         filteredItems = filter(query: query) { $0.name }
-        itemsCount = filteredItems.count // :)
+        itemsCount = filteredItems.count
     }
 }
 
+//MARK: - Mock
+
 #if DEBUG
 extension MealsAsyncStreamViewModel {
-    static let stub = MealsAsyncStreamViewModel(service: MealsAsyncStreamServicePreview(), category: Category.stub)
+    static let stub = MealsAsyncStreamViewModel(
+        service: MealsAsyncStreamServicePreview(),
+        category: Category.stub
+    )
 }
 #endif

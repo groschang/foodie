@@ -23,7 +23,10 @@ struct Category: IdentifiableObject {
     }
 }
 
+
 extension Category: StringIdentifier { }
+
+// MARK: - Sutbs
 
 extension Category: Stubable {
     static let stub: Category = loadStub(from: "category")

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct MealInformationTitleStyle: ViewModifier {
-
     func body(content: Content) -> some View {
         content
             .bold()
@@ -18,10 +17,7 @@ struct MealInformationTitleStyle: ViewModifier {
 }
 
 
-
-
 struct MealInformationSubtitleStyle: ViewModifier {
-
     func body(content: Content) -> some View {
         content
             .italic()

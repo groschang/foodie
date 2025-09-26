@@ -17,6 +17,7 @@ struct Opacity {
     static let heaviest: CGFloat = 0.12
 }
 
+
 extension View where Self == Color {
 
     func lighterOpacity() -> Self { opacity(Opacity.light) }
@@ -27,6 +28,7 @@ extension View where Self == Color {
     func heaviestOpacity() -> Self { opacity(Opacity.heaviest) }
 }
 
+
 extension ColorStyle {
 
     func lighterOpacity() -> Self { opacity(Opacity.light) }
@@ -36,6 +38,7 @@ extension ColorStyle {
     func heavierOpacity() -> Self { opacity(Opacity.heavier) }
     func heaviestOpacity() -> Self { opacity(Opacity.heaviest) }
 }
+
 
 extension View {
 

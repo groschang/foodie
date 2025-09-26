@@ -56,7 +56,7 @@ final class NotificationManager: NotificationManagerProtocol, @unchecked Sendabl
 
         if status != .authorized {
             _ = try await notificationCenter.requestAuthorization(options: [.alert, .sound, .badge])
-            await authorizationHandler.refreshStatus()
+            await refreshStatus()
         }
     }
 

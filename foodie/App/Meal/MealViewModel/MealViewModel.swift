@@ -16,6 +16,7 @@ protocol MealLocalizable {
     var linkTitle: String? { get }
 }
 
+
 @MainActor
 protocol MealInformations: ObservableObject {
     var name: String { get }
@@ -28,10 +29,13 @@ protocol MealInformations: ObservableObject {
     var backgroundUrl: URL? { get }
 }
 
-protocol MealViewModelType: MealLocalizable, MealInformations, LoadableObject { }
-
 
 @MainActor
+protocol MealViewModelType: MealLocalizable,
+                            MealInformations,
+                            LoadableObject { }
+
+
 final class MealViewModel: MealViewModelType {
 
     var recipeTitle: String { "Recipe".localized }
@@ -112,6 +116,7 @@ final class MealViewModel: MealViewModelType {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension MealViewModel {

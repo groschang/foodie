@@ -57,7 +57,7 @@ struct ModernCircularLoader: View {
     }
 }
 
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     LoadingView()

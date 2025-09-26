@@ -9,8 +9,7 @@
 import Foundation
 import Combine
 
-@MainActor
-class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
+final class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
 
     var title: String { "Meals".localized }
 

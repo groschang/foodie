@@ -11,6 +11,7 @@ import SwiftUI
 class MealViewFactory: MealAsyncViewFactory { }
 
 
+@MainActor
 class MealClosureViewFactory: ViewBuilderProtocol {
 
     private let service: MealsClosureServiceType
@@ -19,19 +20,19 @@ class MealClosureViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @ViewBuilder @MainActor
+    @ViewBuilder
     func makeView(item mealCategory: any IdentifiableObject) -> some View {
         let viewModel = MealViewModel(service: service, object: mealCategory)
         MealView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeInformationView(message: "No meal")
     }
 }
 
 
+@MainActor
 class MealAsyncViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncServiceType
@@ -40,19 +41,19 @@ class MealAsyncViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @ViewBuilder @MainActor
+    @ViewBuilder
     func makeView(item mealCategory: any IdentifiableObject) -> some View {
         let viewModel = MealAsyncViewModel(service: service, object: mealCategory)
         MealView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeInformationView(message: "No meal")
     }
 }
 
 
+@MainActor
 class MealAsyncStreamViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncStreamServiceType
@@ -61,19 +62,18 @@ class MealAsyncStreamViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @ViewBuilder @MainActor
+    @ViewBuilder
     func makeView(item object: any IdentifiableObject) -> some View {
         let viewModel = MealAsyncStreamViewModel(service: service, object: object)
         MealView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeInformationView(message: "No meal")
     }
 }
 
-// MARK: Mock
+// MARK: - Mock
 
 extension MealViewFactory {
    @MainActor static let mock = MealViewFactory(service: MealsAsyncServicePreview())

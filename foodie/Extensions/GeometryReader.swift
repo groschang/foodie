@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct RectPreferenceKey: PreferenceKey {
+
     typealias Value = CGRect
     
     static let defaultValue = CGRect()
+
     static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
         value = nextValue()
     }
 }
+
 
 struct GeometryReaderSizeModifier: ViewModifier {
     
@@ -38,6 +41,7 @@ struct GeometryReaderSizeModifier: ViewModifier {
         }
     }
 }
+
 
 extension View {
 

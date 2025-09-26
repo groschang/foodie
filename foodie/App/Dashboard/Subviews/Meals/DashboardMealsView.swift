@@ -14,7 +14,6 @@ struct DashboardMealsView<ViewModel: DashboardMealsViewModelType>: View {
 
     @StateObject private var viewModel: ViewModel
 
-
     init(viewModel: ViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -28,16 +27,14 @@ struct DashboardMealsView<ViewModel: DashboardMealsViewModelType>: View {
 
     private var title: some View {
         HStack {
-
             Text("Selected meals")
-                .title2() //TODO: #font
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(Color.accent)
+                .title2()
 
             Spacer()
         }
         .padding(.horizontal)
     }
-
 
     private var scrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -62,11 +59,11 @@ struct DashboardMealsView<ViewModel: DashboardMealsViewModelType>: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     let viewModel = DashboardMealsViewModel.mock
+    
     return DashboardMealsView(viewModel: viewModel)
         .task { await viewModel.load() }
 }

@@ -13,10 +13,12 @@ protocol CategoriesPersistenceClient {
     func saveCategories(_ categories: Categories) async
 }
 
+
 protocol MealsPersistenceClient {
     func getMeals(for category: Category) async -> Meals?
     func saveMeals(_ meals: Meals, for category: Category) async
 }
+
 
 protocol MealPersistenceClient {
     func getMeal(for mealId: String) async -> Meal?

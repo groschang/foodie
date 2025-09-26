@@ -10,10 +10,14 @@ import Foundation
 
 
 protocol Stubable {
+
     static var bundle: Bundle { get }
+
     static func loadJSON(filename: String) -> String?
+
     static func loadJSON() -> String?
 }
+
 
 extension Stubable {
     
@@ -38,6 +42,7 @@ extension Stubable {
         loadJSON(filename: String(describing: self).lowercased())
     }
 }
+
 
 extension Stubable where Self: Decodable {
 

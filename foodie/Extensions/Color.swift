@@ -28,6 +28,7 @@ extension Color {
     }
 }
 
+
 extension UIColor {
 
     convenience init(
@@ -52,6 +53,7 @@ extension UIColor {
         }
     }
 }
+
 
 extension Color {
 
@@ -91,6 +93,7 @@ extension Color {
     }
 }
 
+
 extension Color {
 
     init(r: Int, g: Int, b: Int) {
@@ -110,6 +113,7 @@ extension Color {
         self = .init(red: red, green: green, blue: blue)
     }
 }
+
 
 extension Color {
 

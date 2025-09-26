@@ -95,6 +95,8 @@ struct MealDetail: Identifiable, Codable, Hashable, Equatable {
     }
 }
 
+// MARK: - Sutbs
+
 extension MealDetail: Stubable {
     static let stub: MealDetail = loadStub(from: "meal")
 }

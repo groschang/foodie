@@ -27,7 +27,7 @@ struct MealListItem: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     VStack(spacing: 16) {

@@ -23,6 +23,7 @@ struct EmbedInStackModifier: ViewModifier {
     }
 }
 
+
 extension Group where Content: View {
 
     @MainActor

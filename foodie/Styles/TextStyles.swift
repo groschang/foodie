@@ -12,7 +12,7 @@ import SwiftUI
 struct TextStyle { }
 
 
-// MARK: Title
+// MARK: - Title
 
 extension TextStyle {
     static let title = TextStyle.Title.Title()
@@ -22,6 +22,7 @@ extension TextStyle {
     static let title3 = TextStyle.Title.Title3()
 }
 
+
 extension View {
     func title() -> some View { modifier(TextStyle.title) }
 
@@ -29,6 +30,7 @@ extension View {
 
     func title3() -> some View { modifier(TextStyle.title3) }
 }
+
 
 extension TextStyle {
 
@@ -70,7 +72,7 @@ extension TextStyle {
 }
 
 
-// MARK: Subtitle
+// MARK: - Subtitle
 
 extension TextStyle {
     static let subtitle = TextStyle.Subtitle.Subtitle()
@@ -80,6 +82,7 @@ extension TextStyle {
     static let subtitle3 = TextStyle.Subtitle.Subtitle3()
 }
 
+
 extension View {
     func subtitle() -> some View { modifier(TextStyle.subtitle) }
 
@@ -87,6 +90,7 @@ extension View {
 
     func subtitle3() -> some View { modifier(TextStyle.subtitle3) }
 }
+
 
 extension TextStyle {
 
@@ -127,7 +131,7 @@ extension TextStyle {
 }
 
 
-// MARK: App Styles
+// MARK: - App Styles
 
 extension TextStyle {
     static let infoScreenTitle = TextStyle.InformationScreen.ScreenTitle()
@@ -135,11 +139,13 @@ extension TextStyle {
     static let infoScreenSubtitle = TextStyle.InformationScreen.ScreenSubtitle()
 }
 
+
 extension View {
     func infoScreenTitle() -> some View { modifier(TextStyle.infoScreenTitle) }
 
     func infoScreenSubtitle() -> some View { modifier(TextStyle.infoScreenSubtitle) }
 }
+
 
 extension TextStyle {
 
@@ -169,9 +175,7 @@ extension TextStyle {
 }
 
 
-
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     VStack {
@@ -184,42 +188,3 @@ extension TextStyle {
         Text("Subtitle3TextStyle").modifier(TextStyle.subtitle3)
     }
 }
-
-//public enum TextStyle : CaseIterable {
-//
-//    /// The font style for large titles.
-//    case largeTitle
-//
-//    /// The font used for first level hierarchical headings.
-//    case title
-//
-//    /// The font used for second level hierarchical headings.
-//    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-//    case title2
-//
-//    /// The font used for third level hierarchical headings.
-//    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-//    case title3
-//
-//    /// The font used for headings.
-//    case headline
-//
-//    /// The font used for subheadings.
-//    case subheadline
-//
-//    /// The font used for body text.
-//    case body
-//
-//    /// The font used for callouts.
-//    case callout
-//
-//    /// The font used in footnotes.
-//    case footnote
-//
-//    /// The font used for standard captions.
-//    case caption
-//
-//    /// The font used for alternate captions.
-//    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-//    case caption2
-//

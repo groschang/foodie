@@ -27,7 +27,7 @@ final class IngredientRealm: Object {
     }
 }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension IngredientRealm {
 
@@ -39,7 +39,7 @@ extension IngredientRealm {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Ingredient {
 
@@ -49,7 +49,7 @@ extension Ingredient {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == Ingredient {
     func toIngredientEntities() -> List<IngredientRealm>? {
@@ -71,7 +71,7 @@ extension Array where Element == IngredientRealm {
     }
 }
 
-//MARK: List
+//MARK: - List
 
 extension List where Element == IngredientRealm {
 

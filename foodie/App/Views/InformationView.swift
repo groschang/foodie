@@ -24,7 +24,7 @@ struct InformationView: View {
     }
 }
 
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     InformationView("Sample text")

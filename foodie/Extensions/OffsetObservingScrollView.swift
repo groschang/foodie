@@ -30,7 +30,9 @@ struct PositionObservingView<Content: View>: View {
     }
 }
 
+
 private extension PositionObservingView {
+    
     struct PreferenceKey: SwiftUI.PreferenceKey {
 
         static var defaultValue: CGPoint { .zero }
@@ -38,6 +40,7 @@ private extension PositionObservingView {
         static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) { }
     }
 }
+
 
 struct OffsetObservingScrollView<Content: View>: View {
 

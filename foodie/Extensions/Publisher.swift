@@ -42,7 +42,6 @@ extension Publisher {
 }
 
 
-
 private struct SendablePromise<T>: @unchecked Sendable {
 
     private let promise: (Result<T, Error>) -> Void

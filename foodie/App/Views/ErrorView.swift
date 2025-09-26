@@ -42,7 +42,7 @@ struct ErrorView: View {
     }
 }
 
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     VStack {

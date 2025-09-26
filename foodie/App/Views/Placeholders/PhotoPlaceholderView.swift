@@ -19,6 +19,8 @@ struct PhotoPlaceholderView: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     PhotoPlaceholderView()
 }

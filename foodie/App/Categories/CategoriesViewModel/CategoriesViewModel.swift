@@ -104,9 +104,10 @@ class CategoriesViewModel: CategoriesViewModelType, Identifiable {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension CategoriesViewModel {
-    static let stub = CategoriesViewModel(service: MealsServicePreview())
+    @MainActor static let mock = CategoriesViewModel(service: MealsServicePreview())
 }
 #endif

@@ -32,6 +32,7 @@ struct ParallaxMotionModifier: ViewModifier {
     }
 }
 
+
 extension ParallaxMotionModifier {
     
     struct Axis {

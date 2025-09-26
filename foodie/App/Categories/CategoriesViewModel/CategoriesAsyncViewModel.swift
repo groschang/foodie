@@ -83,9 +83,10 @@ final class CategoriesAsyncViewModel: CategoriesViewModelType, Identifiable {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension CategoriesAsyncViewModel {
-    @MainActor static let stub = CategoriesAsyncViewModel(service: MealsAsyncServicePreview())
+    @MainActor static let mock = CategoriesAsyncViewModel(service: MealsAsyncServicePreview())
 }
 #endif

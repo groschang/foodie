@@ -14,15 +14,18 @@ protocol MealsLocalizable {
     var itemsHeader: String { get }
 }
 
+
 @MainActor
 protocol MealsItems: ObservableObject {
     var items: [MealCategory] { get }
 }
 
+
 @MainActor
 protocol MealsSearchable: SearchableItems where T == MealCategory {
     var itemsCount: Int { get }
 }
+
 
 @MainActor
 protocol MealsPresentable: ObservableObject {
@@ -31,10 +34,15 @@ protocol MealsPresentable: ObservableObject {
     var backgroundUrl: URL? { get }
 }
 
-protocol MealsViewModelType: LoadableObject, MealsLocalizable, MealsItems, MealsPresentable, MealsSearchable { }
-
 
 @MainActor
+protocol MealsViewModelType: LoadableObject,
+                             MealsLocalizable,
+                             MealsItems,
+                             MealsPresentable,
+                             MealsSearchable { }
+
+
 final class MealsViewModel: MealsViewModelType {
 
     var itemsHeader: String { "\(itemsCount) RECIPES".localized }
@@ -118,7 +126,6 @@ final class MealsViewModel: MealsViewModelType {
         itemsCount = filteredItems.count // :)
     }
 
-    @MainActor
     private func getCategories() async throws  {
 
         @Sendable func assignCategory(_ categories: Categories) {
@@ -145,7 +152,6 @@ final class MealsViewModel: MealsViewModelType {
         }
     }
 
-    @MainActor
     private func getMeals(_ category: Category) async throws {
         let meals = try await service.getMeals(for: category) { [weak self] storedMeals in
             guard let self else { return }
@@ -162,6 +168,7 @@ final class MealsViewModel: MealsViewModelType {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension MealsViewModel {

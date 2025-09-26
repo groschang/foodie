@@ -15,6 +15,7 @@ protocol MealsCombineServiceType {
     func getMeal(for mealId: String) -> AnyPublisher<Meal?, Error>
 }
 
+
 actor MealsCombineService: @preconcurrency MealsCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
@@ -32,12 +33,12 @@ actor MealsCombineService: @preconcurrency MealsCombineServiceType {
         self.backendClient = backendClient
     }
 
-    //MARK: Categories
+    //MARK: - Categories
 
     func getCategories() -> AnyPublisher<Categories?, Error> {
         let subject = CategoriesSubject(nil)
 
-        Task { //TODO: Put some logic here
+        Task {
             await loadCategories(subject: subject)
             await fetchCategories(subject: subject)
         }
@@ -63,7 +64,7 @@ actor MealsCombineService: @preconcurrency MealsCombineServiceType {
         }
     }
 
-    //MARK: Meals
+    //MARK: - Meals
 
     func getMeals(for category: Category) -> AnyPublisher<Meals?, Error> {
         let subject = MealsSubject(nil)
@@ -94,7 +95,7 @@ actor MealsCombineService: @preconcurrency MealsCombineServiceType {
         }
     }
 
-    //MARK: Meal
+    //MARK: - Meal
 
     func getMeal(for mealId: String) -> AnyPublisher<Meal?, Error> {
         let subject = MealSubject(nil)

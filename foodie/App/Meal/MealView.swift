@@ -39,54 +39,64 @@ struct MealView<Model>: View where Model: MealViewModelType {
             .eclipseBackButton { dismiss() }
     }
 
-    var content: some View {
+    @ViewBuilder
+    private var content: some View {
+        if #available(iOS 26.0, *) {
+            contentIOS26
+        } else {
+            contentMain
+        }
+    }
+
+    private var contentMain: some View {
         OffsetObservingScrollView(offset: $offset) {
-
-            if #available(iOS 26.0, *) {
-
-                VStack(spacing: 0) {
-                    spacer
-                    ZStack {
-                        VStack(spacing: 21) {
-                            informations
-                                .animateAppear($informationsOpacity, index: 1)
-                                .padding(.horizontal)
-                                .padding(.top, 21)
-                            ingredients
-                                .animateAppear($ingredientsOpacity, index: 2)
-                                .padding(.horizontal)
-                            recipe
-                                .animateAppear($recipeOpacity, index: 3)
-                                .padding(.horizontal)
-                            youtube
-                                .animateAppear($youtubeOpacity, index: 4)
-                            source
-                                .animateAppear($sourceOpacity, index: 5)
-                                .padding()
-                        }
-                    }
-                    .modifier(MealViewGlassyBackground())
-                }
-                .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
-
-            } else {
-
-                VStack(spacing: 21) {
-                    spacer
-                    informations
-                        .animateAppear($informationsOpacity, index: 1)
-                    ingredients
-                        .animateAppear($ingredientsOpacity, index: 2)
-                    recipe
-                        .animateAppear($recipeOpacity, index: 3)
-                    youtube
-                        .animateAppear($youtubeOpacity, index: 4)
-                    source
-                        .animateAppear($sourceOpacity, index: 5)
-                }
-                .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
-                .padding(.horizontal)
+            VStack(spacing: 21) {
+                spacer
+                informations
+                    .animateAppear($informationsOpacity, index: 1)
+                ingredients
+                    .animateAppear($ingredientsOpacity, index: 2)
+                recipe
+                    .animateAppear($recipeOpacity, index: 3)
+                youtube
+                    .animateAppear($youtubeOpacity, index: 4)
+                source
+                    .animateAppear($sourceOpacity, index: 5)
             }
+            .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
+            .padding(.horizontal)
+        }
+        .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl,
+                                offset: offset.y,
+                                imageSize: $imageSize))
+    }
+
+    private var contentIOS26: some View {
+        OffsetObservingScrollView(offset: $offset) {
+            VStack(spacing: 0) {
+                spacer
+                ZStack {
+                    VStack(spacing: 21) {
+                        informations
+                            .animateAppear($informationsOpacity, index: 1)
+                            .padding(.horizontal)
+                            .padding(.top, 21)
+                        ingredients
+                            .animateAppear($ingredientsOpacity, index: 2)
+                            .padding(.horizontal)
+                        recipe
+                            .animateAppear($recipeOpacity, index: 3)
+                            .padding(.horizontal)
+                        youtube
+                            .animateAppear($youtubeOpacity, index: 4)
+                        source
+                            .animateAppear($sourceOpacity, index: 5)
+                            .padding()
+                    }
+                }
+                .modifier(MealViewGlassyBackground())
+            }
+            .readingGeometry(from: CoordinateSpace.main, into: $scrollViewSize)
         }
         .modifier(MealViewStyle(backgroundUrl: viewModel.backgroundUrl,
                                 offset: offset.y,
@@ -144,7 +154,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     NavigationView {

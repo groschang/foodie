@@ -9,12 +9,11 @@
 import SwiftUI
 
 enum ListType: CaseIterable {
-
     case list
     case post
     case grid
-    
 }
+
 
 extension ListType {
 

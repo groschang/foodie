@@ -45,6 +45,7 @@ struct DashboardHeaderView: View {
     }
 }
 
+//MARK: - Preview
 
 #Preview {
     @Previewable @Namespace var namespace

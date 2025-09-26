@@ -57,6 +57,7 @@ struct NavigationBarModifier: ViewModifier {
     }
 }
 
+
 extension View {
     
     func navigationBarColor(_ backgroundColor: Color) -> some View {

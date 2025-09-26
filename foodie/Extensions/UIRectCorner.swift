@@ -9,6 +9,8 @@
 import SwiftUI
 
 extension UIRectCorner {
+
     static let top: UIRectCorner = [.topLeft, .topRight]
+
     static let bottom: UIRectCorner = [.bottomLeft, .bottomRight]
 }

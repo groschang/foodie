@@ -16,9 +16,9 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
 
     @ScaledMetric(relativeTo: .title2) var spacing: CGFloat = 8
 
-    private var action: () -> Void
+    private var action: (Meal) -> Void
 
-    init(viewModel: ViewModel, action: @escaping () -> Void) {
+    init(viewModel: ViewModel, action: @escaping (Meal) -> Void) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.action = action
     }
@@ -30,7 +30,7 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
         }
         .onTapGesture {
             if let meal = viewModel.meal {
-                router.navigate(to: .meal(meal))
+                action(meal)
             }
         }
         .maxSize()
@@ -79,11 +79,12 @@ struct DashboardPromoView<ViewModel: DashboardPromoViewModelType>: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     let viewModel = DashboardPromoViewModel.mock
-    DashboardPromoView(viewModel: viewModel) { }
+    
+    DashboardPromoView(viewModel: viewModel) { _ in }
         .task { await viewModel.load() }
         .maxWidth()
         .frame(maxHeight: 200)

@@ -15,6 +15,7 @@ protocol DashboardPromoPresentable: ObservableObject {
     var meal: Meal? { get }
 }
 
+
 @MainActor
 protocol DashboardPromoViewModelType: DashboardPromoPresentable,
                                       LoadableObject,
@@ -46,7 +47,7 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
         }
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -68,6 +69,7 @@ final class DashboardPromoViewModel: DashboardPromoViewModelType {
     }
 }
 
+//MARK: - Mock
 
 extension DashboardPromoViewModel {
     @MainActor static let mock = DashboardPromoViewModel(service: MealsAsyncServicePreview())

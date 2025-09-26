@@ -9,6 +9,7 @@
 import Foundation
 
 struct Endpoint: Sendable {
+
     let path: String
     var queryItems: [URLQueryItem]?
     
@@ -21,6 +22,7 @@ struct Endpoint: Sendable {
         self.queryItems = queryItems
     }
 }
+
 
 extension Endpoint {
     
@@ -61,7 +63,9 @@ extension Endpoint {
     }
 }
 
+
 extension Endpoint: CustomStringConvertible {
+
     var description: String {
         var output = path
 

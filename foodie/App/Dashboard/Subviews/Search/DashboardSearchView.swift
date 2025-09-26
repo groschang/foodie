@@ -21,7 +21,6 @@ struct DashboardSearchView: View {
 
     @FocusState var isFocused: Bool
 
-
     var body: some View {
         VStack {
             ZStack {
@@ -57,6 +56,7 @@ struct DashboardSearchView: View {
     }
 }
 
+//MARK: - Preview
 
 #Preview {
 

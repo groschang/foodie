@@ -30,7 +30,7 @@ final class MealAsyncViewModel: MealViewModelType {
     private let object: any IdentifiableObject
     private let service: MealsAsyncServiceType
 
-    init(service: MealsAsyncServiceType, object: any IdentifiableObject) { //TODO: rename, item?
+    init(service: MealsAsyncServiceType, object: any IdentifiableObject) {
         self.service = service
         self.object = object
 
@@ -41,7 +41,7 @@ final class MealAsyncViewModel: MealViewModelType {
         }
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -50,14 +50,14 @@ final class MealAsyncViewModel: MealViewModelType {
         await fetchMeal()
     }
 
-    @MainActor private func loadMeal() async {
+    private func loadMeal() async {
         if let meal = await service.loadMeal(for: category) {
             self.setup(with: meal)
             state.setLoaded()
         }
     }
 
-    @MainActor private func fetchMeal() async {
+    private func fetchMeal() async {
         do {
             let meal = try await service.fetchMeal(for: object.id)
             setup(with: meal)
@@ -85,6 +85,7 @@ final class MealAsyncViewModel: MealViewModelType {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension MealAsyncViewModel {

@@ -16,8 +16,8 @@ protocol MealsAsyncStreamServiceType: Sendable {
     func getRandomMeal() async -> AsyncThrowingStream<Meal, Error>
 }
 
-final class MealsAsyncStreamService: MealsAsyncStreamServiceType { 
-    //TODO: array with task id if the serive or action is not in progress / actor? -> screen
+
+final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
 
     private let backendClient: HTTPClient
     private let persistanceClient: PersistenceClient
@@ -30,7 +30,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
         self.backendClient = backendClient
     }
 
-    // MARK: Categories
+    // MARK: - Categories
 
     func getCategories() async -> AsyncThrowingStream<Categories, Error> {
         AsyncThrowingStream { continuation in
@@ -69,7 +69,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
         await persistanceClient.saveCategories(categories)
     }
 
-    // MARK: Meals
+    // MARK: - Meals
 
     func getMeals(for category: Category) async -> AsyncThrowingStream<Meals, Error> {
         AsyncThrowingStream { continuation in
@@ -108,7 +108,7 @@ final class MealsAsyncStreamService: MealsAsyncStreamServiceType {
         await persistanceClient.saveMeals(meals, for: category)
     }
 
-    // MARK: Meal
+    // MARK: - Meal
 
     func getMeal(for mealId: String) async -> AsyncThrowingStream<Meal, Error> {
         AsyncThrowingStream { continuation in

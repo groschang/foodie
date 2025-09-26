@@ -30,6 +30,7 @@ struct MealsGrid: View {
     }
 }
 
+// MARK: - Preview
 
 #Preview {
     MealsGrid(items: Meals.stub.items)

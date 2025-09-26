@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct PointPreferenceKey: PreferenceKey {
+
     typealias Value = CGPoint
     
     static let defaultValue: CGPoint = .zero
+    
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
         value = nextValue()
     }
@@ -52,5 +54,4 @@ extension View {
     func readScrollView(from coordinateSpace: CustomStringConvertible, into binding: Binding<CGPoint>) -> some View {
         modifier(ScrollViewOffsetModifier(coordinateSpace: coordinateSpace.description, offset: binding))
     }
-    
 }

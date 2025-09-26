@@ -39,7 +39,7 @@ final class MealsCombineViewModel: MealsViewModelType {
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -73,7 +73,7 @@ final class MealsCombineViewModel: MealsViewModelType {
         itemsCount = filteredItems.count // :)
     }
 
-    @MainActor private func fetchMeals() async {
+    private func fetchMeals() async {
         serviceSubscription = service.getMeals(for: category)
             .receive(on: RunLoop.main)
             .sink(

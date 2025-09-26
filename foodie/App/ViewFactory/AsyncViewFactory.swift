@@ -23,7 +23,7 @@ class AsyncViewFactory: ViewFactoryType {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder
     func makeView(type: Route) -> some View {
         switch type {
 

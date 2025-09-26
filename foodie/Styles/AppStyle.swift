@@ -15,6 +15,7 @@ extension Color {
     static let darkGray = Color(r: 33, g: 33, b: 33)
 }
 
+
 extension AppStyle {
     static let white = ColorStyle(Color.white)
     static let lightGray = ColorStyle(Color.lightGray)
@@ -24,6 +25,7 @@ extension AppStyle {
     static let blue = ColorStyle(Color.blue)
     static let orange = ColorStyle(Color.orange)
 }
+
 
 @MainActor
 extension Color {
@@ -35,6 +37,7 @@ extension Color {
     static let darkBlue = Color.blue.heavierOpacity() //TODO: inver dark with light?
 }
 
+
 @MainActor
 extension AppStyle {
     static let light = ColorStyle(Color.light)
@@ -42,21 +45,23 @@ extension AppStyle {
     static let darkWhite = ColorStyle(Color.darkWhite)
     static let lightBlack = ColorStyle(Color.lightBlack)
     static let darkBlack = ColorStyle(Color.darkBlack)
-    static let darkBlue = ColorStyle(Color.blue.heavierOpacity()) //TODO:
+    static let darkBlue = ColorStyle(Color.blue.heavierOpacity())
 }
+
 
 extension AppStyle {
     static let foreground = ColorStyle(light: Color.black,
                                        dark: Color.white)
-    static let background = ColorStyle(light: Color.clear,
+    static let background = ColorStyle(light: Color.white,
                                        dark: Color.darkGray)
     static let accent = ColorStyle(light: Color.black,
                                    dark: Color.white)
     static let shadow = ColorStyle(light: Color.gray,
-                                   dark: Color.gray)
+                                   dark: Color.darkGray)
     static let toolbar = ColorStyle(light: Color.gray,
                                     dark: Color.gray)
 }
+
 
 @MainActor
 extension Color {
@@ -67,19 +72,24 @@ extension Color {
     static let accent = Color(light: AppStyle.gray.lightColor,
                               dark: AppStyle.white.darkColor)
     static let shadow = Color(light: AppStyle.shadow.lightColor.mediumOpacity(),
-                               dark: AppStyle.shadow.darkColor.mediumOpacity())
+                               dark: AppStyle.shadow.darkColor.heavierOpacity())
     static let toolbar = Color(light: AppStyle.toolbar.lightColor,
                                 dark: AppStyle.toolbar.darkColor)
 }
 
+
+@MainActor
 extension AppStyle {
-    static let main = Color.gray //TODO: check fixed bg color
+    static let main = Color(light: Color.gray,
+                            dark: Color.darkGray)
 }
+
 
 extension AppStyle {
     static var cornerRadius: CGFloat { 20.0 }
     static var shadowRadius: CGFloat { 8.0 }
 }
+
 
 extension AppStyle {
 
@@ -88,8 +98,7 @@ extension AppStyle {
     }
 }
 
-
-// MARK: Previews
+// MARK: - Previews
 
 @MainActor
 extension AppStyle {
@@ -125,6 +134,7 @@ extension AppStyle {
     ]
 }
 
+
 @MainActor
 extension Color {
 
@@ -154,6 +164,8 @@ extension Color {
     ]
 
 }
+
+// MARK: - Preview
 
 #Preview {
     List {

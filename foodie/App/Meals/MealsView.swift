@@ -76,7 +76,6 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
 
     @ViewBuilder
     private var recipesContent: some View {
-
         let items = viewModel.filteredItems
 
         switch listType {
@@ -90,9 +89,8 @@ struct MealsView<Model>: View where Model: MealsViewModelType {
     }
 }
 
-
-// MARK: Previews
+// MARK: - Preview
 
 #Preview {
-    MealsView(viewModel: MealsAsyncStreamViewModel.stub)
+    MealsView(viewModel: MealsAsyncViewModel.stub)
 }

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EmptyStateView: View { //TODO: rename
+struct EmptyStateView: View {
     
     private let message: String
     
@@ -24,7 +24,7 @@ struct EmptyStateView: View { //TODO: rename
     }
 }
 
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     EmptyStateView("Empty view")

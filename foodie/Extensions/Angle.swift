@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-
 extension Angle {
+    
     static func degrees(_ degrees: Double, limit: Double) -> Angle {
         .degrees(.init(degrees, limit: limit))
     }
 }
-

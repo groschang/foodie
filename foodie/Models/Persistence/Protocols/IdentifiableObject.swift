@@ -10,17 +10,21 @@ import Foundation
 
 typealias ObjectID = String
 
+
 protocol Identifier: Identifiable {
     var identifier: ObjectID { get }
 }
+
 
 extension Identifier {
     var identifier: ObjectID { "\(id)" }
 }
 
+
 protocol IdentifiableObject: Identifier, Hashable, Codable, Equatable {
     var id: ObjectID { get }
 }
+
 
 struct ObjectId: IdentifiableObject {
     let id: ObjectID

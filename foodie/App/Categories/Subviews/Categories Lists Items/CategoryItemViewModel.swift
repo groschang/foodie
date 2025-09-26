@@ -1,5 +1,5 @@
 //
-//  CategoryListItemModel.swift
+//  CategoryItemViewModel.swift
 //  foodie
 //
 //  Created by Konrad Groschang on 17/05/2023.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CategoryListItemModel {
+struct CategoryItemViewModel {
 
     let name: String
     let description: String
@@ -22,11 +22,13 @@ struct CategoryListItemModel {
 
 }
 
+// MARK: - Mock
 
-extension CategoryListItemModel {
-    static let mock = CategoryListItemModel(category: .stub)
+extension CategoryItemViewModel {
+    static let mock = CategoryItemViewModel(category: .stub)
 }
 
+// MARK: - CustomStringConvertible
 
 private struct CategoryDescription: CustomStringConvertible {
 

@@ -22,6 +22,7 @@ struct ListModifier: ViewModifier {
     }
 }
 
+
 struct ListRowModifier: ViewModifier {
 
     @MainActor
@@ -46,10 +47,8 @@ struct ListRowModifier: ViewModifier {
 
 
 struct CategoriesViewListStyle: ViewModifier {
-
     func body(content: Content) -> some View {
         content
             .listStyle(.plain)
     }
 }
-

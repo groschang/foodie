@@ -11,9 +11,12 @@ import Foundation
 typealias FactoryClosure = @Sendable (DIContainer) async -> Sendable
 
 protocol DICProtocol: AnyObject {
+
     func register<Service: Sendable>(_ type: Service.Type, factoryClosure: @escaping FactoryClosure) async
+
     func resolve<Service: Sendable>(_ type: Service.Type) async -> Service?
 }
+
 
 actor DIContainer: DICProtocol {
 

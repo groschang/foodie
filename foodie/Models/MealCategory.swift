@@ -21,11 +21,14 @@ struct MealCategory: IdentifiableObject {
     }
 }
 
+
 extension MealCategory {
     var previewUrl: URL? { //TODO: move to Networking+API extension
         imageUrl?.appendingPathComponent("preview")
     }
 }
+
+// MARK: - Sutbs
 
 extension MealCategory: Stubable {
     static let stub: MealCategory = loadStub(from: "mealCategory")

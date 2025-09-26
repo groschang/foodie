@@ -30,14 +30,14 @@ extension Meals: ContainsItems { }
 extension Meals: StringIdentifier { }
 
 
-// MARK: Sutbs
+// MARK: - Sutbs
 
 extension Meals: Stubable {
     static let stub: Meals = loadStub(from: "meals")
 }
 
 
-// MARK: Iterator
+// MARK: - Iterator
 
 struct MealsIterator: IteratorProtocol {
 

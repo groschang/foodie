@@ -30,7 +30,7 @@ final class MealAsyncStreamViewModel: MealViewModelType {
     private let object: any IdentifiableObject
     private let service: MealsAsyncStreamServiceType
 
-    init(service: MealsAsyncStreamServiceType, object: any IdentifiableObject) { //TODO: rename, item?
+    init(service: MealsAsyncStreamServiceType, object: any IdentifiableObject) { 
         self.service = service
         self.object = object
 
@@ -41,7 +41,7 @@ final class MealAsyncStreamViewModel: MealViewModelType {
         }
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -73,6 +73,7 @@ final class MealAsyncStreamViewModel: MealViewModelType {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension MealAsyncStreamViewModel {

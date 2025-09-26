@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class DashboardViewFactory {
+class DashboardViewFactory: @unchecked Sendable {
 
     private let service: MealsAsyncServiceType
 
@@ -23,8 +23,8 @@ class DashboardViewFactory {
     }
 }
 
-// MARK: Mock
+// MARK: - Mock
 
 extension DashboardViewFactory {
-    @MainActor static let mock = DashboardViewFactory(service: MealsAsyncService())
+    static let mock = DashboardViewFactory(service: MealsAsyncServicePreview())
 }

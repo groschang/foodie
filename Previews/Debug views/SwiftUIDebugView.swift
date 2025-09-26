@@ -43,6 +43,8 @@ struct SwiftUIDebugView: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     NavigationView {
         SwiftUIDebugView()

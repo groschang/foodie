@@ -33,7 +33,6 @@ struct MealViewStyle: ViewModifier {
             .background {
                 if let backgroundUrl {
                     VStack(spacing: .zero) {
-
                         CoverPhotoView(imageUrl: backgroundUrl)
                             .readingGeometry(from: CoordinateSpace.main, into: $imageSize)
                             .modifier(MealViewImageStyle())

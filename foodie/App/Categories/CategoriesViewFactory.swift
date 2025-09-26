@@ -11,6 +11,7 @@ import SwiftUI
 class CategoriesViewFactory: CategoriesAsyncViewFactory { }
 
 
+@MainActor
 class CategoriesClosureViewFactory: ViewBuilderProtocol {
 
     private let service: MealsClosureServiceType
@@ -19,19 +20,19 @@ class CategoriesClosureViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @ViewBuilder @MainActor
+    @ViewBuilder
     func makeView() -> some View {
         let viewModel = CategoriesViewModel(service: service)
         CategoriesView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeEmptyView(message: "Select category")
     }
 }
 
 
+@MainActor
 class CategoriesAsyncViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncServiceType
@@ -40,19 +41,19 @@ class CategoriesAsyncViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @ViewBuilder @MainActor
+    @ViewBuilder
     func makeView() -> some View {
         let viewModel = CategoriesAsyncViewModel(service: service)
         CategoriesView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeEmptyView(message: "Select category")
     }
 }
 
 
+@MainActor
 class CategoriesAsyncStreamViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncStreamServiceType
@@ -61,20 +62,21 @@ class CategoriesAsyncStreamViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @ViewBuilder @MainActor 
+    @ViewBuilder
     func makeView() -> some View {
         let viewModel = CategoriesAsyncStreamViewModel(service: service)
         CategoriesView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeEmptyView(message: "Select category")
     }
 }
 
-// MARK: Mock
+// MARK: - Mock
 
+#if DEBUG
 extension CategoriesViewFactory {
     @MainActor static let mock = CategoriesViewFactory(service: MealsAsyncServicePreview())
 }
+#endif

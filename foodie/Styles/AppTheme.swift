@@ -19,11 +19,13 @@ enum UserDefaultsKeys {
     static let appTheme = UserDefaults.CustomKeys.AppTheme.rawValue
 }
 
+
 enum AppTheme : String, Codable, CaseIterable {
     case system
     case light
     case dark
 }
+
 
 extension AppTheme {
 

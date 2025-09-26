@@ -25,6 +25,8 @@ struct ListSpacer: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     ListSpacer(127, color: .red)
         .previewAsComponent()

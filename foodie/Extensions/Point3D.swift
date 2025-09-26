@@ -29,7 +29,10 @@ extension Point3D {
     }
 }
 
+
 extension Point3D: @retroactive AdditiveArithmetic {}
+
+
 extension Point3D: @retroactive VectorArithmetic {
 
     public mutating func scale(by rhs: Double) {

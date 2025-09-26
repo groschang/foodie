@@ -65,7 +65,7 @@ struct AsyncContentView<Source: LoadableObject,
             stateView
         }
         .refreshable {
-            await source.load() //TODO: Sendable?
+            await source.load()
         }
         .task {
             await source.load()
@@ -113,8 +113,7 @@ struct AsyncContentView<Source: LoadableObject,
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
 

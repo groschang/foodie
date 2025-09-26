@@ -28,11 +28,11 @@ final class CategorySwiftData {
     }
 }
 
-// MARK: Identifier
+// MARK: - Identifier
 
 extension CategorySwiftData: Identifier { }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension CategorySwiftData {
 
@@ -44,7 +44,7 @@ extension CategorySwiftData {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Category {
 
@@ -56,7 +56,7 @@ extension Category {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == CategorySwiftData {
 

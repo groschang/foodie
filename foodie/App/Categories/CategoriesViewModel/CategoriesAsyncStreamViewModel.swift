@@ -30,7 +30,7 @@ final class CategoriesAsyncStreamViewModel: CategoriesViewModelType, Identifiabl
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -70,9 +70,10 @@ final class CategoriesAsyncStreamViewModel: CategoriesViewModelType, Identifiabl
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension CategoriesAsyncStreamViewModel {
-    static let stub = CategoriesAsyncStreamViewModel(service: MealsAsyncStreamServicePreview())
+    @MainActor static let mock = CategoriesAsyncStreamViewModel(service: MealsAsyncStreamServicePreview())
 }
 #endif

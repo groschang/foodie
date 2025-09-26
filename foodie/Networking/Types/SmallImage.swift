@@ -24,12 +24,14 @@ extension URL {
 
         return SmallImage(url)
     }
-
 }
+
 
 extension String {
+    
     static let smallImageFileExtension = "-Small"
 }
+
 
 extension String {
 
@@ -41,6 +43,7 @@ extension String {
         return pathComponent.joined(separator: "/")
     }
 }
+
 
 fileprivate extension String {
 

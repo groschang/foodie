@@ -56,6 +56,7 @@ enum APIError: Error, LocalizedError, Equatable {
     }
 }
 
+
 extension APIError {
 
     init?(_ response: URLResponse) {
@@ -75,6 +76,7 @@ extension APIError {
         }
     }
 }
+
 
 extension APIError {
 

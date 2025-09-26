@@ -13,6 +13,7 @@ protocol ViewFactoryType {
     @MainActor func makeView(type: Route) -> V
 }
 
+
 extension View {
 
     func makeNavigation<ViewFactory>(
@@ -26,14 +27,12 @@ extension View {
     }
 }
 
+// MARK: - Default View Factory
 
-// MARK: Default View Factory
+class ViewFactory: AsyncViewFactory { }
 
-class ViewFactory: StreamViewFactory { }
-
-
-// MARK: Mock
+// MARK: - Mock
 
 extension ViewFactory {
-    static let mock = ClosureViewFactory(service: MealsServicePreview())
+    static let mock = AsyncViewFactory(service: MealsAsyncServicePreview())
 }

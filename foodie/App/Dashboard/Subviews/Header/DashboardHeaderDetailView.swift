@@ -42,7 +42,7 @@ struct DashboardHeaderDetailView: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     DashboardHeaderDetailView(action: {})

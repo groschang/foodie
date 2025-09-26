@@ -22,5 +22,4 @@ extension View {
 
         return window.safeAreaInsets.top
     }
-
 }

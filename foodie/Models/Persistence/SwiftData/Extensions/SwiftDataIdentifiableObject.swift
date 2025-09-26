@@ -44,7 +44,6 @@ extension PersistentModel where Self: Identifier {
         }
 
         return getElements(descriptor: descriptor, in: modelContext)
-
     }
 }
 
@@ -67,7 +66,6 @@ extension PersistentModel {
     }
 
     static func getElements(descriptor: FetchDescriptor<Self>, in modelContext: ModelContext) -> Self? {
-
         do {
 
             let fetchResult: [Self]? = try modelContext.fetch(descriptor)
@@ -82,7 +80,5 @@ extension PersistentModel {
             Log.error("Database fetching error: \(error)")
             return nil
         }
-
     }
-
 }

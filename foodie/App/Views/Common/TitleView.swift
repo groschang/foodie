@@ -29,7 +29,7 @@ struct TitleView<Style: ViewModifier>: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     TitleView("TitleView")

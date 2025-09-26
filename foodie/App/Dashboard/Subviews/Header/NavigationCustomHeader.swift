@@ -23,6 +23,8 @@ struct NavigationCustomHeader<Content: View>: View {
 
 }
 
+//MARK: - Preview
+
 #Preview {
     NavigationCustomHeader { Text("Sample Text") }
 }

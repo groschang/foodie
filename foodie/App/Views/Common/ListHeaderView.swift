@@ -47,8 +47,7 @@ struct ListHeaderView: View {
     }
 }
 
-
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     ListHeaderView(

@@ -21,6 +21,7 @@ protocol MealsAsyncServiceType: Sendable {
     func fetchRandomMeal() async throws -> Meal
 }
 
+
 actor MealsAsyncService: MealsAsyncServiceType {
 
     private let backendClient: HTTPClient
@@ -34,7 +35,7 @@ actor MealsAsyncService: MealsAsyncServiceType {
         self.backendClient = backendClient
     }
 
-    //MARK: Categories
+    //MARK: - Categories
 
     func loadCategories() async -> Categories? {
         await persistanceClient.getCategories()
@@ -49,7 +50,7 @@ actor MealsAsyncService: MealsAsyncServiceType {
         return categories
     }
 
-    //MARK: Meals
+    //MARK: - Meals
 
     func getMeals(for category: Category) async -> Meals? {
         await persistanceClient.getMeals(for: category)
@@ -64,7 +65,7 @@ actor MealsAsyncService: MealsAsyncServiceType {
         return meals
     }
 
-    //MARK: Meal
+    //MARK: - Meal
 
     func loadMeal(for mealId: String) async -> Meal? {
         await persistanceClient.getMeal(for: mealId)

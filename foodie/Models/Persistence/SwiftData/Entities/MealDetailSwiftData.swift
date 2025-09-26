@@ -36,11 +36,11 @@ class MealDetailSwiftData {
     }
 }
 
-//MARK: Identifier
+//MARK: - Identifier
 
 extension MealDetailSwiftData: Identifier { }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension MealDetailSwiftData {
 
@@ -57,7 +57,7 @@ extension MealDetailSwiftData {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Meal {
     
@@ -74,7 +74,7 @@ extension Meal {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == MealDetailSwiftData {
 

@@ -12,6 +12,7 @@ protocol HTTPClient: Sendable {
     func process<T: Decodable>(_ request: Request<T>) async throws -> T
 }
 
+
 actor APIClient: HTTPClient {
 
     private let requestBuilder: RequestBuilder
@@ -31,7 +32,6 @@ actor APIClient: HTTPClient {
     }
     
     func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
-        
         do {
 
             let urlRequest = try await requestBuilder.build(for: request)
@@ -77,7 +77,7 @@ actor APIClient: HTTPClient {
         }
     }
     
-    private func validate(_ response: URLResponse) throws {
+    private func validate(_ response: URLResponse) throws(APIError) {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.noResponse
         }

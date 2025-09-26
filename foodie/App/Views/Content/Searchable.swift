@@ -18,6 +18,7 @@ protocol Searchable: ObservableObject {
     func filter(items: [T], query: String?, mapping: (T) -> String) -> [T]
 }
 
+
 extension Searchable {
 
     @MainActor func filter(items: [T], query: String? = nil, mapping: (T) -> String) -> [T] {
@@ -28,6 +29,7 @@ extension Searchable {
         : items.filter { mapping($0).doesContain(searchText) }
     }
 }
+
 
 private extension String {
 

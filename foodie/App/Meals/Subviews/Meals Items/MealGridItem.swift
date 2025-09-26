@@ -54,8 +54,7 @@ struct MealGridItem: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     LazyVGrid(

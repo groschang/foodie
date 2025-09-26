@@ -15,13 +15,14 @@ enum MenuRouter: RouterProtocol {
             await DependencyContainer.shared.viewFactory
         }
     }
+
     case menu
 
     @MainActor @ViewBuilder
     func makeView() async -> some View {
 
         switch self {
-
+            
         case .menu:
             let factory = await Self.viewFactory
             factory.makeView(type: .categories)

@@ -15,8 +15,8 @@ extension URL {
         guard let url = URL(string: string) else { return nil }
         self = url
     }
-
 }
+
 
 extension URL {
 
@@ -29,5 +29,4 @@ extension URL {
 
         self = url
     }
-
 }

@@ -24,6 +24,7 @@ protocol MealsPassthroughCombineServiceType {
     func fetchMeal(for mealId: String, subject: MealSubject) async
 }
 
+
 actor MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
 
     typealias CategoriesSubject = CurrentValueSubject<Categories?, Error>
@@ -41,7 +42,7 @@ actor MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
         self.backendClient = backendClient
     }
 
-    // MARK: Categories
+    // MARK: - Categories
 
     func loadCategories(subject: CategoriesSubject) async {
         if let persisted = await persistanceClient.getCategories() {
@@ -61,7 +62,7 @@ actor MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
         }
     }
     
-    // MARK: Meals
+    // MARK: - Meals
 
     func loadMeals(for category: Category, subject: MealsSubject) async {
         if let persisted = await persistanceClient.getMeals(for: category) {
@@ -81,7 +82,7 @@ actor MealsPassthroughCombineService: MealsPassthroughCombineServiceType {
         }
     }
 
-    // MARK: Meal
+    // MARK: - Meal
 
     func loadMeal(for mealId: String, subject: MealSubject) async {
         if let meal = await persistanceClient.getMeal(for: mealId) {

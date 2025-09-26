@@ -97,8 +97,7 @@ struct AnimatedListHeader: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
 

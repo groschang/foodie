@@ -19,6 +19,11 @@ struct MealsPosts: View {
             }
         }
         .modifier(ListRowModifier())
-
     }
+}
+
+// MARK: - Preview
+
+#Preview {
+    MealsPosts(items: Meals.stub.items)
 }

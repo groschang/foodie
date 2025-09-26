@@ -32,6 +32,7 @@ private struct GroundReflectionViewModifier: ViewModifier {
     }
 }
 
+
 extension View {
 
     func reflection(offsetY: CGFloat = 1) -> some View {
@@ -39,6 +40,8 @@ extension View {
     }
 
 }
+
+// MARK: - Preview
 
 #Preview {
     Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())

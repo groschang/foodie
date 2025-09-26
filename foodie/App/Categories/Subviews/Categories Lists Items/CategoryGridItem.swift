@@ -13,9 +13,10 @@ enum CategoriesGridFont: CGFloat {
     case normal = 34
 }
 
+
 struct CategoryGridItem: View {
 
-    let viewModel: CategoryListItemModel
+    let viewModel: CategoryItemViewModel
 
     let fontType: CategoriesGridFont
 
@@ -23,7 +24,7 @@ struct CategoryGridItem: View {
         fontType == .normal
     }
 
-    init(viewModel: CategoryListItemModel, fontType: CategoriesGridFont = .normal) {
+    init(viewModel: CategoryItemViewModel, fontType: CategoriesGridFont = .normal) {
         self.viewModel = viewModel
         self.fontType = fontType
     }
@@ -61,6 +62,7 @@ struct CategoryGridItem: View {
     }
 }
 
+
 fileprivate extension View {
 
     @ViewBuilder
@@ -74,7 +76,7 @@ fileprivate extension View {
 
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     VStack(spacing: 16) {
@@ -84,6 +86,8 @@ fileprivate extension View {
     }
     .padding()
 }
+
+// MARK: - Preview
 
 #Preview {
     LazyVGrid(

@@ -35,9 +35,6 @@ struct RouterLink<Label: View, Style: RouterLinkStyle>: View {
     }
 }
 
-
-
-
 struct PlainRouterLinkStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

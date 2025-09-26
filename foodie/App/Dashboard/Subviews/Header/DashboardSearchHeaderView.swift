@@ -16,7 +16,6 @@ struct DashboardSearchHeaderView: View {
 
     @FocusState private var isFocused
 
-
     var body: some View {
 
         NavigationCustomHeader {
@@ -40,6 +39,7 @@ struct DashboardSearchHeaderView: View {
     }
 }
 
+//MARK: - Preview
 
 #Preview {
     @Previewable @Namespace var namespace

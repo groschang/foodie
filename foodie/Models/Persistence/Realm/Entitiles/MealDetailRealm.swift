@@ -16,8 +16,8 @@ final class MealDetailRealm: Object {
     @Persisted var category: String?
     @Persisted var area: String?
     @Persisted var recipe: String?
-    @Persisted var imageURL: String? //TODO: type
-    @Persisted var youtubeURL: String? //TODO: type
+    @Persisted var imageURL: String?
+    @Persisted var youtubeURL: String? 
     @Persisted var source: String?
     @Persisted var ingredients: List<IngredientRealm>
 
@@ -45,11 +45,11 @@ final class MealDetailRealm: Object {
     }
 }
 
-//MARK: Identifier
+//MARK: - Identifier
 
 extension MealDetailRealm: Identifier { }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension MealDetailRealm {
 
@@ -68,7 +68,7 @@ extension MealDetailRealm {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Meal {
 
@@ -86,7 +86,7 @@ extension Meal {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == MealDetailRealm {
 

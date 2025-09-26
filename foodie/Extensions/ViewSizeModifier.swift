@@ -25,7 +25,9 @@ struct ViewSizeModifier: ViewModifier {
     }
 }
 
+
 extension View {
+    
     func size(in size: Binding<CGSize>) -> ModifiedContent<Self, ViewSizeModifier> {
         modifier(ViewSizeModifier(size: size))
     }

@@ -36,18 +36,17 @@ struct ListHeader: View {
                     }
                 }
             )
-            .tint(.white)
+            .tint(AppStyle.white)
         }
         .padding(20)
         .frame(maxWidth: .infinity)
         .frame(height: 80)
-        .background(Color.accent)
+        .background(AppStyle.main)
     }
 
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
 

@@ -62,11 +62,10 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
 
 }
 
-
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     NavigationView {
-        CategoriesView(viewModel: CategoriesViewModel.stub)
+        CategoriesView(viewModel: CategoriesAsyncViewModel.mock)
     }
 }

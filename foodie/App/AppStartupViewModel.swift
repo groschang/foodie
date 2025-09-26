@@ -14,16 +14,8 @@ final class AppStartupViewModel: ObservableObject {
 
     @Published var dashboardViewModel: DashboardViewModel?
     @Published var viewFactory: AsyncViewFactory?
-    @Published var router: Router? {
-        didSet {
-            observe(router, storeIn: &cancellables)
-        }
-    }
-    @Published var notificationService: NotificationService? {
-        didSet {
-            observe(notificationService, storeIn: &cancellables)
-        }
-    }
+    @Published var router: Router?
+    @Published var notificationService: NotificationService?
 
 #if MOCK
     private let container = MockedDependencyContainer.shared
@@ -45,12 +37,13 @@ final class AppStartupViewModel: ObservableObject {
         Log.printDBPath()
 
         router = await container.router
+        observe(router, storeIn: &cancellables)
 
         let service = await container.mealsService
         dashboardViewModel = DashboardViewModel(service: service)
         viewFactory = AsyncViewFactory(service: service)
 
         notificationService = await container.notificationService
+        observe(notificationService, storeIn: &cancellables)
     }
 }
-

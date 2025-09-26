@@ -40,5 +40,4 @@ extension Ingredient {
                                        endpoint: endpoint)
         return components.url
     }
-
 }

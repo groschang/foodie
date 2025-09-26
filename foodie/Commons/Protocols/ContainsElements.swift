@@ -10,11 +10,14 @@ protocol HasElements {
     var isEmpty: Bool { get }
 }
 
+
 protocol HasNotElements {
     var isNotEmpty: Bool { get }
 }
 
+
 protocol ContainsElements: HasElements, HasNotElements { }
+
 
 extension ContainsElements {
     var isNotEmpty: Bool { isEmpty == false }

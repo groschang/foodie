@@ -29,6 +29,7 @@ extension View {
     }
 }
 
+
 extension View {
 
     func animateAppear(_ value: Binding<Double>, index: Int = .zero) -> some View {
@@ -43,7 +44,9 @@ extension View {
     }
 }
 
+
 extension Animation {
+    
     static func ripple(index: Int) -> Animation {
         Animation.spring(dampingFraction: 0.5)
             .delay(0.1 * Double(index))

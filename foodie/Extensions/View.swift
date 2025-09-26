@@ -9,6 +9,7 @@
 import SwiftUI
 
 extension View {
+    
     func embedInNavigationStack() -> some View {
         NavigationStack {
             self
@@ -17,6 +18,7 @@ extension View {
 }
 
 extension View {
+
     func embedInScrollView(alignment: Alignment = .center) -> some View {
         GeometryReader { geometry in
             ScrollView {

@@ -23,6 +23,7 @@ public extension DateFormatter {
     }()
 }
 
+
 public extension Date {
     
     var title: String {
@@ -35,6 +36,7 @@ public extension Date {
         return formatter.string(from: self)
     }
 }
+
 
 public extension Double {
 

@@ -14,10 +14,12 @@ protocol DashboardCategoriesLocalizable {
     var title: String { get }
 }
 
+
 @MainActor
 protocol DashboardCategoriesItems {
     var items: [Category] { get }
 }
+
 
 @MainActor
 protocol DashboardCategoriesViewModelType: LoadableObject, DashboardCategoriesLocalizable, DashboardCategoriesItems { }
@@ -71,6 +73,8 @@ final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Iden
         }
     }
 }
+
+// MARK: - Mock
 
 extension DashboardCategoriesViewModel {
     @MainActor static let mock = DashboardCategoriesViewModel(service: MealsAsyncServicePreview())

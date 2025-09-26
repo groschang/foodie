@@ -34,7 +34,7 @@ extension MealDetailEntity: ObjectMappable {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Meal: EntityMappable {
     
@@ -61,7 +61,7 @@ extension Meal: EntityMappable {
 }
 
 
-//MARK: Set
+//MARK: - Set
 
 extension MealDetailEntity {
     
@@ -73,7 +73,7 @@ extension MealDetailEntity {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == MealDetailEntity {
     

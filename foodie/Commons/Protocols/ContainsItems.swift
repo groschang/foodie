@@ -8,8 +8,10 @@
 
 protocol ContainsItems: ContainsElements {
     associatedtype T
+    
     var items: [T] { get }
 }
+
 
 extension ContainsItems {
     var isEmpty: Bool { items.isEmpty }

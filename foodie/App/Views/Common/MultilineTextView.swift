@@ -30,7 +30,7 @@ struct MultilineTextView<Style: ViewModifier>: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     MultilineTextView("TitleView")

@@ -24,6 +24,7 @@ struct DashboardButtonStyle: ButtonStyle {
     }
 }
 
+
 extension ButtonStyle where Self == DashboardButtonStyle {
     static var dashboard: Self { .init() }
 }
@@ -40,11 +41,12 @@ struct GrowingButtonStyle: ButtonStyle {
     }
 }
 
+
 extension ButtonStyle where Self == GrowingButtonStyle {
     static var growing: Self { .init() }
 }
 
-// MARK: Information button
+// MARK: - Information button
 
 struct InformationButtonStyle: ButtonStyle {
 
@@ -71,11 +73,12 @@ struct InformationButtonStyle: ButtonStyle {
     }
 }
 
+
 extension ButtonStyle where Self == InformationButtonStyle {
     static var information: Self { .init() }
 }
 
-// MARK: Information button
+// MARK: - Information button
 
 struct MenuButtonStyle: ButtonStyle {
 
@@ -118,13 +121,13 @@ struct MenuButtonStyle: ButtonStyle {
     }
 }
 
+
 extension ButtonStyle where Self == MenuButtonStyle {
     static var menu: Self { .init() }
     static func menu(selected: Bool) -> Self { .init(selected: selected) }
 }
 
-
-// MARK: Previews
+// MARK: - Previews
 
 #Preview {
     VStack {

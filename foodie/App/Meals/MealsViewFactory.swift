@@ -11,6 +11,7 @@ import SwiftUI
 class MealsViewFactory: MealsAsyncViewFactory { }
 
 
+@MainActor
 class MealsClosureViewFactory: ViewBuilderProtocol {
 
     private let service: MealsClosureServiceType
@@ -19,18 +20,19 @@ class MealsClosureViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder
     func makeView(item category: any IdentifiableObject) -> some View {
         let viewModel = MealsViewModel(service: service, category: category)
         MealsView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeEmptyView(message: "Select category")
     }
 }
 
+
+@MainActor
 class MealsAsyncViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncServiceType
@@ -39,19 +41,19 @@ class MealsAsyncViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder
     func makeView(item category: any IdentifiableObject) -> some View {
         let viewModel = MealsAsyncViewModel(service: service, category: category)
         MealsView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeEmptyView(message: "Select category")
     }
 }
 
 
+@MainActor
 class MealsAsyncStreamViewFactory: ViewBuilderProtocol {
 
     private let service: MealsAsyncStreamServiceType
@@ -60,20 +62,21 @@ class MealsAsyncStreamViewFactory: ViewBuilderProtocol {
         self.service = service
     }
 
-    @MainActor @ViewBuilder
+    @ViewBuilder
     func makeView(item category: any IdentifiableObject) -> some View {
         let viewModel = MealsAsyncStreamViewModel(service: service, category: category)
         MealsView(viewModel: viewModel)
     }
 
-    @MainActor
     func makeEmptyView() -> some View {
         makeEmptyView(message: "Select category")
     }
 }
 
-// MARK: Mock
+// MARK: - Mock
 
+#if DEBUG
 extension MealsViewFactory {
     @MainActor static let mock = MealsViewFactory(service: MealsAsyncServicePreview())
 }
+#endif

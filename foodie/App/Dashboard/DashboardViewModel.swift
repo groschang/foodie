@@ -17,6 +17,7 @@ protocol DashboardViewModelData: ObservableObject {
     func initialize() async
 }
 
+
 protocol DashboardViewModelType: DashboardViewModelData,
                                  LoadableObject,
                                  Initializable { }
@@ -56,6 +57,7 @@ final class DashboardViewModel: DashboardViewModelType {
     }
 }
 
+//MARK: - Mock
 
 extension DashboardViewModel {
     static let mock = DashboardViewModel(service: MealsAsyncServicePreview())

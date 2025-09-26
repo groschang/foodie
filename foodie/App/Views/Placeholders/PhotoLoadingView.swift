@@ -16,7 +16,7 @@ struct PhotoLoadingView: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     PhotoLoadingView()

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct MealsSelectStyle: ViewModifier {
-
     func body(content: Content) -> some View {
         content
             .maxSize()

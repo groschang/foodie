@@ -33,11 +33,11 @@ final class CategoryRealm: Object {
     }
 }
 
-// MARK: Identifier
+// MARK: - Identifier
 
 extension CategoryRealm: Identifier { }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension CategoryRealm {
 
@@ -51,7 +51,7 @@ extension CategoryRealm {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Category {
 
@@ -63,7 +63,7 @@ extension Category {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == CategoryRealm {
 
@@ -78,7 +78,7 @@ extension Array where Element == CategoryRealm {
     }
 }
 
-//MARK: Results
+//MARK: - Results
 
 extension Results where Element == CategoryRealm {
 

@@ -37,7 +37,7 @@ struct ExtendedTitleView<TitleStyle, SubtitleStyle>: View where TitleStyle: View
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     ExtendedTitleView("TitleView", style: TextStyle.title,

@@ -20,7 +20,7 @@ struct CategoriesGrid: View {
             ForEach(items) { category in
                 RouterLink(to: .meals(category)) {
                     CategoryGridItem(
-                        viewModel: CategoryListItemModel(category: category),
+                        viewModel: CategoryItemViewModel(category: category),
                         fontType: .small
                     )
                 }
@@ -29,6 +29,7 @@ struct CategoriesGrid: View {
     }
 }
 
+// MARK: - Preview
 
 #Preview {
     CategoriesGrid(items: Categories.stub.items)

@@ -20,6 +20,7 @@ extension CaseIterable {
     }
 }
 
+
 extension CaseIterable where Self: Equatable {
     
     func next() -> Self {

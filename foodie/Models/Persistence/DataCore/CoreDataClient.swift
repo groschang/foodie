@@ -53,7 +53,7 @@ actor CoreDataClient {
 
 extension CoreDataClient: PersistenceClient {
 
-    // MARK: Categories
+    // MARK: - Categories
 
     func getCategories() async -> Categories? {
         let request = CategoryEntity.fetchRequest()
@@ -79,7 +79,7 @@ extension CoreDataClient: PersistenceClient {
         }
     }
 
-    // MARK: Meals
+    // MARK: - Meals
 
     func getMeals(for category: Category) async -> Meals? {
         guard let categoryEntity = await getCategory(category) else {
@@ -124,7 +124,7 @@ extension CoreDataClient: PersistenceClient {
         }
     }
 
-    // MARK: Meal
+    // MARK: - Meal
 
     func getMeal(for mealId: String) async -> Meal? {
         let request = MealDetailEntity.fetchRequest()
@@ -164,9 +164,8 @@ extension CoreDataClient: PersistenceClient {
 
             if let mealDetailEntity = context.object(with: mealDetailEntityID) as? MealDetailEntity {
                 mealDetailEntity.map(meal: meal, context: context)
+                persistentContainer.saveContext(context)
             }
-
-            persistentContainer.saveContext(context)
         }
     }
 

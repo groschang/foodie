@@ -12,11 +12,13 @@ enum RequestError: Error {
     case invalidURL(String)
 }
 
+
 protocol RequestBuilder: Sendable {
     init(enviroment: APIEndpoint)
 
     func build<T>(for request: Request<T>) async throws -> URLRequest
 }
+
 
 struct URLRequestBuilder: RequestBuilder {
 
@@ -26,7 +28,7 @@ struct URLRequestBuilder: RequestBuilder {
         self.enviroment = enviroment
     }
 
-    func build<T>(for request: Request<T>) async throws -> URLRequest {
+    func build<T>(for request: Request<T>) async throws(RequestError) -> URLRequest {
         guard let url = buildURL(for: request.endpoint, enviroment: enviroment) else {
             throw RequestError.invalidURL("\(request.endpoint)")
         }

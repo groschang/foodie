@@ -48,19 +48,27 @@ extension String {
     }
 }
 
+
 extension String {
+
     public static let empty = ""
+
     public static let newLine = "\n"
+    
     public static let tab = "\t"
 }
 
+
 extension String {
+
     @inlinable public var isNotEmpty: Bool {
         isEmpty == false
     }
 }
 
+
 extension String {
+
     @inlinable public func addTabPrefix() -> String {
         String.tab + self
     }
@@ -71,6 +79,7 @@ extension String {
 }
 
 extension String {
+
     @inlinable func nilIfEmpty() -> String? {
         guard self.isNotEmpty else { return nil }
         

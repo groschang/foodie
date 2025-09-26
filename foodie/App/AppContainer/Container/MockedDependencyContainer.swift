@@ -26,22 +26,11 @@ actor MockedDependencyContainer: DependencyContainerType {
             await container.resolve(PersistenceClient.self)!
         }
     }
-
-//    var closureService: MealsClosureServiceType {
-//        get async {
-//            await container.resolve(MealsClosureServiceType.self)!
-//        }
-//    }
     var mealsService: MealsAsyncServiceType {
         get async {
             await container.resolve(MealsAsyncServiceType.self)!
         }
     }
-//    var asyncStreamService: MealsAsyncStreamServiceType {
-//        get async {
-//            await container.resolve(MealsAsyncStreamServiceType.self)!
-//        }
-//    }
     var viewFactory: AsyncViewFactory {
         get async {
             await container.resolve(AsyncViewFactory.self)!
@@ -58,7 +47,7 @@ actor MockedDependencyContainer: DependencyContainerType {
         }
     }
 
-
+    
     func assemble() async {
         await container.register(HTTPClient.self) { _ in
             APIClient()
@@ -79,21 +68,9 @@ actor MockedDependencyContainer: DependencyContainerType {
         }
 #endif
 
-//        await container.register(MealsClosureServiceType.self) { _ in
-//            MealsServicePreview()
-//        }
-
         await container.register(MealsAsyncServiceType.self) { _ in
             MealsAsyncServicePreview()
         }
-
-//        await container.register(MealsAsyncStreamServiceType.self) { _ in
-//            MealsAsyncStreamServicePreview()
-//        }
-
-//        await container.register(StreamViewFactory.self) { r in
-//            await StreamViewFactory(service: await r.resolve(MealsAsyncStreamServiceType.self)!)
-//        }
 
         await container.register(AsyncViewFactory.self) { r in
             await AsyncViewFactory(service: await r.resolve(MealsAsyncServiceType.self)!)

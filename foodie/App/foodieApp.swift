@@ -38,7 +38,7 @@ struct foodieApp: App {
 
     @ViewBuilder
     private func content(
-        dashboardViewModel: DashboardViewModel,
+        @ObservedObject dashboardViewModel: DashboardViewModel,
         viewFactory: AsyncViewFactory,
         @ObservedObject router: Router,
         @ObservedObject notificationService: NotificationService
@@ -64,8 +64,10 @@ struct foodieApp: App {
                 applicationIsActive()
             }
         }
-        .popup(isPresented: $notificationService.showNotification,
-               notification: notificationService.notification) { notification in
+        .popup(
+            isPresented: $notificationService.showNotification,
+            notification: notificationService.notification
+        ) { notification in
             NotificationView(notification: notification) {
                 notificationService.hideNotification()
             }

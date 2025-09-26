@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CategoryListItem: View {
 
-    let viewModel: CategoryListItemModel
+    let viewModel: CategoryItemViewModel
 
     var body: some View {
         HStack {
@@ -18,14 +18,10 @@ struct CategoryListItem: View {
             ListPhotoView(imageUrl: viewModel.imageURL)
                 .modifier(CategoryListViewPhotoStyle(imageUrl: viewModel.imageURL))
                 .clipped()
+                .padding(.leading, 6)
 
-            VStack(alignment: .leading) {
-                Text(viewModel.name)
-                    .modifier(CategoryListItemNameStyle())
-
-                Text(viewModel.description)
-                    .modifier(CategoryListItemDescriptionStyle())
-            }
+            Text(viewModel.name)
+                .modifier(CategoryListItemNameStyle())
 
             Spacer()
         }
@@ -37,8 +33,7 @@ struct CategoryListItem: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     VStack {

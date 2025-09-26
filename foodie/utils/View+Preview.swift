@@ -29,12 +29,14 @@ struct ComponentPreview<Component: View>: View { //TODO: not needed in newer Xco
     }
 }
 
+
 extension View {
 
     func previewAsComponent(name: String? = nil) -> some View {
         ComponentPreview(component: self, name: name ?? viewDescribingName)
     }
 }
+
 
 struct ScreenPreview<Screen: View>: View {
     
@@ -67,6 +69,7 @@ struct ScreenPreview<Screen: View>: View {
     }
 }
 
+
 extension View {
     
     func previewAsScreen(name: String? = nil) -> some View {
@@ -79,26 +82,33 @@ extension View {
     }
 }
 
+
 extension String {
+
     func trimUpTo(_ character: Character) -> String {
         self.prefix(while: { $0 != character }).toString()
     }
 }
 
 extension Substring {
+
     func toString() -> String {
         String(self)
     }
 }
 
+
 extension ColorScheme {
+    
     var previewName: String {
         String(describing: self).capitalized
     }
 }
 
+
 @MainActor
 extension ContentSizeCategory {
+
     static let smallestAndLargest = [allCases.first!, allCases.last!]
 
     var previewName: String {

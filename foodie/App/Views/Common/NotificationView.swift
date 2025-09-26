@@ -51,10 +51,11 @@ struct NotificationView: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
 
     struct Preview: View {
-
         @State var notification = PushNotification.stub
         @State var showPopup = false {
             didSet {
@@ -83,7 +84,5 @@ struct NotificationView: View {
         }
     }
 
-
     return Preview()
-
 }

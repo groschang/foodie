@@ -61,7 +61,9 @@ struct SwipeModifier: ViewModifier {
     }
 }
 
+
 extension DragGesture.Value {
+    
     var shift: CGPoint {
         location - startLocation
     }

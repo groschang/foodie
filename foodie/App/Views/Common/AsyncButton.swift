@@ -82,8 +82,7 @@ extension AsyncButton where Label == Image {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     AsyncButton(

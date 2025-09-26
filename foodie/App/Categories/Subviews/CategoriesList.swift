@@ -16,7 +16,7 @@ struct CategoriesList: View {
         ForEach(items) { category in
             RouterLink(to: .meals(category)) {
                 CategoryListItem(
-                    viewModel: CategoryListItemModel(category: category)
+                    viewModel: CategoryItemViewModel(category: category)
                 )
             }
         }
@@ -24,6 +24,7 @@ struct CategoriesList: View {
     }
 }
 
+// MARK: - Preview
 
 #Preview {
     CategoriesList(items: Categories.stub.items)

@@ -13,9 +13,7 @@ struct NavigationCustomBackground: View {
     var color: Color
 
     var body: some View {
-
         VStack(spacing: .zero) {
-
             color
                 .ignoresSafeArea(edges: .top)
 
@@ -28,6 +26,7 @@ struct NavigationCustomBackground: View {
     }
 }
 
+//MARK: - Preview
 
 #Preview {
     NavigationCustomBackground(color: .white)

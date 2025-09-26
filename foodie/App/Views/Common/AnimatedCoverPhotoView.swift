@@ -60,8 +60,7 @@ struct AnimatedCoverPhotoView: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     NavigationStack {

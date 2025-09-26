@@ -23,5 +23,4 @@ extension Data {
 
         return prettyPrinted
     }
-
 }

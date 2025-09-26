@@ -39,6 +39,7 @@ struct AnimationCompletionModifier<Value>: @MainActor AnimatableModifier where V
     }
 }
 
+
 extension View {
 
     /// Calls the completion handler whenever an animation on the given value completes.

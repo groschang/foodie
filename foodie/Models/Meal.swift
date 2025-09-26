@@ -69,15 +69,20 @@ struct Meal: Identifiable, Codable, Hashable, Equatable {
     }
 }
 
+
 extension Meal: ContainsElements {
     var isEmpty: Bool {
         id.isEmpty && name.isEmpty
     }
 }
 
+
 extension Meal: StringIdentifier { }
 
+
 extension Meal: IdentifiableObject { }
+
+// MARK: - Sutbs
 
 extension Meal: Stubable {
     static let stub: Meal = loadStub(from: "meal")

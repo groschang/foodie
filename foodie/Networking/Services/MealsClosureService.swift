@@ -20,6 +20,7 @@ protocol MealsClosureServiceType: Sendable {
     func getRandomMeal(handler: MealHandler?) async throws -> Meal
 }
 
+
 actor MealsClosureService: MealsClosureServiceType {
 
     enum MealsClosureService: Error {
@@ -37,7 +38,7 @@ actor MealsClosureService: MealsClosureServiceType {
         self.backendClient = backendClient
     }
 
-    // MARK: Categories
+    // MARK: - Categories
 
     func getCategories(handler: CategoriesHandler? = nil) async throws -> Categories {
 
@@ -53,7 +54,7 @@ actor MealsClosureService: MealsClosureServiceType {
         return categories
     }
 
-    // MARK: Meals
+    // MARK: - Meals
 
     func getMeals(for category: Category, handler: MealsHandler? = nil) async throws -> Meals {
 
@@ -69,7 +70,7 @@ actor MealsClosureService: MealsClosureServiceType {
         return meals
     }
 
-    // MARK: Meal
+    // MARK: - Meal
 
     func getMeal(for mealId: String, handler: MealHandler? = nil) async throws -> Meal {
 

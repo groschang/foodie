@@ -41,7 +41,7 @@ struct IngredientsView: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     let ingredients: [Ingredient] = [

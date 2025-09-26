@@ -13,8 +13,6 @@ actor SwiftDataClient: PersistenceClient {
 
     private var context: ModelContext
 
-    //TODO: custom background queue
-
     init(configuration: ModelConfiguration = ModelConfiguration()) throws {
         let container = try ModelContainer(for:
             CategorySwiftData.self,
@@ -26,7 +24,7 @@ actor SwiftDataClient: PersistenceClient {
         context = ModelContext(container)
     }
 
-    // MARK: Categories
+    // MARK: - Categories
 
     func getCategories() async -> Categories? {
         let descriptor = FetchDescriptor<CategorySwiftData>(sortBy: [SortDescriptor(\.name)])
@@ -49,7 +47,7 @@ actor SwiftDataClient: PersistenceClient {
         }
     }
 
-    // MARK: Meals
+    // MARK: - Meals
 
     func getMeals(for category: Category) async -> Meals? {
         let descriptor = FetchDescriptor<MealCategorySwiftData>(sortBy: [SortDescriptor(\.name)])
@@ -77,8 +75,7 @@ actor SwiftDataClient: PersistenceClient {
         }
     }
 
-
-    // MARK: Meal
+    // MARK: - Meal
 
     func getMeal(for mealId: String) async -> Meal? {
         let meal = MealDetailSwiftData.get(id: mealId, in: context)

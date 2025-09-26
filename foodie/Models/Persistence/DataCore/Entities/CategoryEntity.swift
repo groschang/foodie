@@ -8,7 +8,7 @@
 
 import CoreData
 
-// MARK: Object Mappable
+// MARK: - Object Mappable
 
 extension CategoryEntity: ObjectMappable {
     
@@ -29,7 +29,7 @@ extension CategoryEntity: ObjectMappable {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Category: EntityMappable {
 
@@ -41,7 +41,7 @@ extension Category: EntityMappable {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == CategoryEntity {
     

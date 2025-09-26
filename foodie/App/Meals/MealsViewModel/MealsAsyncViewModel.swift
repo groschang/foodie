@@ -38,8 +38,8 @@ final class MealsAsyncViewModel: MealsViewModelType {
         setupSubscriptions()
     }
 
-    @MainActor func load() async {
-        guard let category = category as? Category else { return } //TODO: check
+    func load() async {
+        guard let category = category as? Category else { return }
         guard state.isLoading == false else { return }
         state.setLoading()
 
@@ -75,14 +75,14 @@ final class MealsAsyncViewModel: MealsViewModelType {
         itemsCount = filteredItems.count // :)
     }
 
-    @MainActor private func loadMeals(_ category: Category) async {
+    private func loadMeals(_ category: Category) async {
         if let meals = await service.getMeals(for: category) {
             items = meals.items
             state.setLoaded()
         }
     }
 
-    @MainActor private func fetchMeals(_ category: Category) async {
+    private func fetchMeals(_ category: Category) async {
         do {
             let meals = try await service.fetchMeals(for: category)
 
@@ -100,6 +100,7 @@ final class MealsAsyncViewModel: MealsViewModelType {
     }
 }
 
+//MARK: - Mock
 
 #if DEBUG
 extension MealsAsyncViewModel {

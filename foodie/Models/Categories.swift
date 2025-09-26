@@ -15,11 +15,11 @@ struct Categories: Codable, Hashable, Equatable {
     enum CodingKeys: String, CodingKey {
         case items = "categories"
     }
-
 }
 
 
 extension Categories: Identifiable {
+
     var id: Int { hashValue }
 }
 
@@ -27,19 +27,17 @@ extension Categories: Identifiable {
 extension Categories: ContainsItems { }
 
 
-extension Categories: StaticIdentifier { //TODO: better idea?
+extension Categories: StaticIdentifier {
     static let Identifier: String = "categories"
 }
 
-
-// MARK: Sutbs
+// MARK: - Sutbs
 
 extension Categories: Stubable {
     static let stub: Categories = loadStub(from: "categories")
 }
 
-
-//MARK: Iterator
+//MARK: - Iterator
 
 struct CategoriesIterator: IteratorProtocol {
 

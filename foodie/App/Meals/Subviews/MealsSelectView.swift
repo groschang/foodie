@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct MealsSelectView: View {
 
     private struct Localizable {
@@ -28,8 +27,7 @@ struct MealsSelectView: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     MealsSelectView()

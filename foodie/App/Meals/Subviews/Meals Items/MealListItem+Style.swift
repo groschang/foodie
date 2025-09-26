@@ -41,12 +41,14 @@ struct MealListItemStyle: ViewModifier {
     }
 }
 
+
 struct MealListItemPhotoStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .modifier(ListPhotoStyle())
     }
 }
+
 
 struct MealListItemNameStyle: ViewModifier {
 

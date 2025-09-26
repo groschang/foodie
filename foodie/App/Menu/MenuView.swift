@@ -10,9 +10,7 @@ import SwiftUI
 
 struct MenuView: View {
 
-    @Environment(\.presentationMode) var presentationMode
-
-    @ObservedObject private var viewModel = MenuViewModel()
+    @StateObject private var viewModel = MenuViewModel()
 
     var body: some View {
         content
@@ -81,9 +79,8 @@ struct MenuView: View {
     }
 }
 
+//MARK: - Preview
+
 #Preview {
     MenuView()
 }
-
-
-

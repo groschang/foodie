@@ -23,7 +23,7 @@ final class IngredientSwiftData {
     }
 }
 
-//MARK: Object Mappable
+//MARK: - Object Mappable
 
 extension IngredientSwiftData {
 
@@ -33,7 +33,7 @@ extension IngredientSwiftData {
     }
 }
 
-//MARK: Entity Mappable
+//MARK: - Entity Mappable
 
 extension Ingredient {
     
@@ -43,7 +43,7 @@ extension Ingredient {
     }
 }
 
-//MARK: Array
+//MARK: - Array
 
 extension Array where Element == Ingredient {
     func toIngredientEntities() -> [IngredientSwiftData]? {

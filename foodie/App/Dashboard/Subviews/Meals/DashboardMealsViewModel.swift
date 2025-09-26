@@ -14,13 +14,16 @@ protocol DashboardMealsLocalizable {
     var title: String { get }
 }
 
+
 @MainActor
 protocol DashboardMealsItems: ObservableObject {
     var items: [Meal] { get }
 }
 
+
 @MainActor
 protocol DashboardMealsViewModelType: LoadableObject, DashboardMealsLocalizable, DashboardMealsItems { }
+
 
 
 @MainActor
@@ -38,15 +41,14 @@ final class DashboardMealsViewModel: DashboardMealsViewModelType, Identifiable {
         self.service = service
     }
 
-    @MainActor func load() async {
+    func load() async {
         guard state.isLoading == false else { return }
         state.setLoading()
         await fetchMeals()
     }
 
-    @MainActor private func fetchMeals() async {
+    private func fetchMeals() async {
         do {
-
             // Lookup a selection of 10 random meals (only available to Paypal supporters)
             let maxTries = 20
             let itemsToShow = 10
@@ -78,6 +80,8 @@ final class DashboardMealsViewModel: DashboardMealsViewModelType, Identifiable {
         }
     }
 }
+
+//MARK: - Preview
 
 extension DashboardMealsViewModel {
     static let mock = DashboardMealsViewModel(service: MealsAsyncServicePreview() )

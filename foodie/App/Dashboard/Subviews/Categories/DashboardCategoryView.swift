@@ -25,7 +25,6 @@ struct DashboardCategoryView: View {
 }
 
 
-
 struct DashboardCategoryVerticalView: View {
 
     static let size = CGSize(width: 80, height: 80)
@@ -45,12 +44,12 @@ struct DashboardCategoryVerticalView: View {
                 .clipShape(Circle())
 
             Text(category.name)
+                .foregroundStyle(Color.accent)
                 .subtitle2()
                 .minimumScaleFactor(0.7)
         }
     }
 }
-
 
 
 struct DashboardCategoryHorizontalView: View {
@@ -83,7 +82,7 @@ struct DashboardCategoryHorizontalView: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     VStack(spacing: 32) {

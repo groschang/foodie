@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ListStyle: ViewModifier { //TODO: CHECK
+struct ListStyle: ViewModifier { 
 
     @MainActor
     private struct Colors {
@@ -40,12 +40,15 @@ struct ListStyle: ViewModifier { //TODO: CHECK
     }
 }
 
+
 extension ListStyle {
 
     static let textInserts = EdgeInsets(vertical: 10, horizontal: 30)
 }
 
+
 extension View {
+
     func zeroListRowInsert() -> some View {
         listRowInsets(EdgeInsets())
     }

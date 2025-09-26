@@ -9,9 +9,14 @@
 import Foundation
 
 enum MockType: String {
+
     case normal = "Mock"
+
     case delayed = "Deleyed"
+
     case loading = "Loading"
+
     case empty = "Empty"
+    
     case error = "Error"
 }

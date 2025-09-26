@@ -21,8 +21,7 @@ struct MealInformationView<Model>: View where Model: MealInformations {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     MealInformationView(viewModel: MealViewModel.stub)

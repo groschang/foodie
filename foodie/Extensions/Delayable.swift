@@ -9,11 +9,14 @@
 import Foundation
 
 protocol SleepableProtocol { //TODO: rename Delayable
+
     var delayDuration: Duration? { get }
     func sleep() async throws
 }
 
+
 extension SleepableProtocol {
+    
     var delayDuration: Duration? { .seconds(0.5) }
     
     func sleep() async {
@@ -22,6 +25,7 @@ extension SleepableProtocol {
         }
     }
 }
+
 
 class Sleepable: SleepableProtocol {
 
@@ -40,5 +44,3 @@ class Sleepable: SleepableProtocol {
         self.init(delayDuration: duration)
     }
 }
-
-

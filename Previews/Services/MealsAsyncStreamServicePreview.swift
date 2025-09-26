@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class MealsAsyncStreamServicePreview: MealsAsyncStreamServiceType, SleepableProtocol {
+actor MealsAsyncStreamServicePreview: MealsAsyncStreamServiceType, SleepableProtocol {
 
     func getCategories() -> AsyncThrowingStream<Categories, Error> {
         AsyncThrowingStream { continuation in

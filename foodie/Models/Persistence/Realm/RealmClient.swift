@@ -28,7 +28,7 @@ actor RealmClient: PersistenceClient {
     }
 
 
-    // MARK: Categories
+    // MARK: - Categories
 
     func getCategories() async -> Categories? {
         do {
@@ -69,7 +69,7 @@ actor RealmClient: PersistenceClient {
     }
 
 
-    // MARK: Meals
+    // MARK: - Meals
 
     func getMeals(for category: Category) async -> Meals? {
         do {
@@ -104,7 +104,7 @@ actor RealmClient: PersistenceClient {
     }
 
 
-    // MARK: Meal
+    // MARK: - Meal
 
     func getMeal(for mealId: ObjectID) async -> Meal? {
         do {

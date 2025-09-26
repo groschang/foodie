@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-
 extension CGPoint {
 
     public static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
@@ -35,7 +34,10 @@ extension CGPoint {
     }
 }
 
+
 extension CGPoint: @retroactive AdditiveArithmetic {}
+
+
 extension CGPoint: @retroactive VectorArithmetic {
 
     public mutating func scale(by rhs: Double) {

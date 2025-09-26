@@ -29,6 +29,7 @@ struct DashboardMealView: View {
                 .shadow(radius: 5)
 
             Text(meal.name)
+                .foregroundStyle(Color.accent)
                 .subtitle2()
                 .lineLimit(3)
                 .multilineTextAlignment(.center)
@@ -38,8 +39,7 @@ struct DashboardMealView: View {
     }
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     DashboardMealView(meal: .stub)

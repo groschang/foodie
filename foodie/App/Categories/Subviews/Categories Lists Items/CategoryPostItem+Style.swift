@@ -1,14 +1,13 @@
 //
-//  CategoryListItem+Style.swift
+//  CategoryPostItem+Style.swift
 //  foodie
 //
-//  Created by Konrad Groschang on 17/05/2023.
-//  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
+//  Created by Konrad Groschang on 9/24/25.
 //
 
 import SwiftUI
 
-struct CategoryListItemStyle: ViewModifier {
+struct CategoryPostItemStyle: ViewModifier {
 
     private struct Colors {
         static let background = Color(light: Color.white,
@@ -23,8 +22,8 @@ struct CategoryListItemStyle: ViewModifier {
 
     private struct Layouts {
         static let width = Double.infinity
-        static let height = 50.0
-        static let radius = 8.0
+        static let height = 90.0
+        static let radius = 16.0
     }
 
     func body(content: Content) -> some View {
@@ -37,7 +36,7 @@ struct CategoryListItemStyle: ViewModifier {
 }
 
 
-fileprivate struct CategoryListItemTextStyle: ViewModifier {
+struct CategoryPostItemNameStyle: ViewModifier {
 
     private struct Colors {
         static let foreground = AppStyle.foreground
@@ -49,37 +48,40 @@ fileprivate struct CategoryListItemTextStyle: ViewModifier {
         static let color = AppStyle.background.heavierOpacity().color
     }
 
-
     func body(content: Content) -> some View {
         content
-            .foregroundStyle(AppStyle.foreground)
+            .foregroundStyle(Colors.foreground)
             .shadow(color: Shadow.color, radius: Shadow.radius)
-    }
-}
-
-
-struct CategoryListItemNameStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .modifier(CategoryListItemTextStyle())
             .title3()
     }
 }
 
 
-struct CategoryListItemDescriptionStyle: ViewModifier {
+struct CategoryPostItemDescriptionStyle: ViewModifier {
+
+    private struct Colors {
+        static let foreground = AppStyle.foreground
+    }
+
+    @MainActor
+    private struct Shadow {
+        static let radius = 1.0
+        static let color = AppStyle.background.heavierOpacity().color
+    }
+
     func body(content: Content) -> some View {
         content
-            .modifier(CategoryListItemTextStyle())
+            .foregroundStyle(Colors.foreground)
+            .shadow(color: Shadow.color, radius: Shadow.radius)
             .subtitle3()
     }
 }
 
 
-struct CategoryListViewPhotoStyle: ViewModifier {
+struct CategoryPostViewPhotoStyle: ViewModifier {
 
-    var width: CGFloat = 44
-    var height: CGFloat = 44
+    var width: CGFloat = 160
+    var height: CGFloat = 160
     let imageUrl: URL?
 
     func body(content: Content) -> some View {

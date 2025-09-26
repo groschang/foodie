@@ -14,6 +14,7 @@ enum StoreType {
     case inMemory
 }
 
+
 extension StoreType: CustomStringConvertible {
     var description: String {
         switch self {
@@ -23,6 +24,7 @@ extension StoreType: CustomStringConvertible {
         }
     }
 }
+
 
 final class PersistentContainer: NSPersistentContainer, @unchecked Sendable {
 
@@ -45,7 +47,6 @@ final class PersistentContainer: NSPersistentContainer, @unchecked Sendable {
         self.init(name: name, managedObjectModel: model, type: type)
     }
 
-
     private func configureDefaults(_ type: StoreType) {
 
         let description = NSPersistentStoreDescription()
@@ -65,7 +66,6 @@ final class PersistentContainer: NSPersistentContainer, @unchecked Sendable {
 
         persistentStoreDescriptions = [description]
     }
-
 
     func saveContext(_ context: NSManagedObjectContext) {
         guard context.hasChanges else { return }

@@ -10,6 +10,7 @@ protocol StringIdentifier: Identifiable {
     var stringIdentifier: String { get }
 }
 
+
 extension StringIdentifier {
     var stringIdentifier: String { "\(id)" }
 }

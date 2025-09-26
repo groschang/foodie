@@ -9,14 +9,19 @@
 import SwiftUI
 
 protocol Mock {
+    
     var mockType: MockType { get }
 }
 
+
 extension Mock {
-    var mockType: String { mockType.rawValue } 
+
+    var mockType: String { mockType.rawValue }
 }
 
+
 extension View {
+
     func nameMock(_ type: Mock) -> some View {
         previewDisplayName(type.mockType)
     }

@@ -32,8 +32,8 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
         HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
             
             Text("Category")
-                .title2() //TODO: #font
-                .foregroundStyle(Color.gray)
+                .title2() 
+                .foregroundStyle(Color.accent)
 
             Spacer(minLength: 3)
 
@@ -41,6 +41,7 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
                 action: { action() },
                 label: {
                     Text("See all")
+                        .foregroundStyle(Color.accent)
                         .subtitle2()
                 }
             )
@@ -65,10 +66,11 @@ struct DashboardCategoriesView<ViewModel: DashboardCategoriesViewModelType>: Vie
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     let viewModel = DashboardCategoriesViewModel.mock
+    
     return DashboardCategoriesView(viewModel: viewModel) { }
         .task { await viewModel.load() }
 }

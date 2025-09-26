@@ -25,7 +25,7 @@ struct TextView<Style: ViewModifier>: View {
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     TitleView("TitleView")

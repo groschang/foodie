@@ -75,17 +75,18 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
     private var container: some View {
         ScrollView {
             VStack {
-
                 Color.clear
                     .frame(height: 180)
-
-                DashboardPromoView(viewModel: viewModel.promoViewModel) { }
-                    .maxWidth()
-                    .frame(maxHeight: 240)
-                    .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
-                    .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
-                    .padding(.vertical, 12)
-                    .padding(.bottom, 12)
+                
+                DashboardPromoView(viewModel: viewModel.promoViewModel) { meal in
+                    router.navigate(to: .meal(meal))
+                }
+                .maxWidth()
+                .frame(maxHeight: 240)
+                .modifier(ParallaxMotionModifier(manager: manager, magnitude: 10))
+                .modifier(ParallaxShadowModifier(manager: manager, magnitude: 10))
+                .padding(.vertical, 12)
+                .padding(.bottom, 12)
 
                 DashboardCategoriesView(viewModel: viewModel.categoriesViewModel) {
                     router.navigate(to: .categories) 
@@ -98,13 +99,11 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
             }
         }
         .background { StaticGradient().rotationEffect(Angle(degrees: 90)) }
-        .background { Color.white.ignoresSafeArea(edges: .bottom) }
+        .background { AppStyle.background.color.ignoresSafeArea(edges: .bottom) }
     }
-
 }
 
-
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     NavigationView {

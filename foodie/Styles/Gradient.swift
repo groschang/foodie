@@ -20,13 +20,14 @@ struct StaticGradient: View {
     }
 }
 
+
 extension View {
     func staticGradient() -> some View  {
         background { StaticGradient()}
     }
 }
 
-// MARK: FoodieGradient
+// MARK: - FoodieGradient
 
 struct FoodieGradient: View {
 
@@ -56,6 +57,7 @@ struct FoodieGradient: View {
     }
 }
 
+
 extension View {
     func foodieGradient() -> some View  {
         background { FoodieGradient()}
@@ -63,7 +65,7 @@ extension View {
 }
 
 
-// MARK: AnimatedGradient
+// MARK: - AnimatedGradient
 
 struct AnimatedGradient: View {
 
@@ -83,6 +85,7 @@ struct AnimatedGradient: View {
     }
 }
 
+
 extension View {
     func animatedGradient() -> some View  {
         background { AnimatedGradient()}
@@ -90,7 +93,7 @@ extension View {
 }
 
 
-// MARK: Side Gradient
+// MARK: - Side Gradient
 
 struct SideGradient: View {
 
@@ -123,13 +126,14 @@ struct SideGradient: View {
     }
 }
 
+
 extension View {
     func sideGradient(startPoint: UnitPoint, location: CGFloat = .zero) -> some View {
         background { SideGradient(startPoint: startPoint, location: location) }
     }
 }
 
-// MARK: Previews
+// MARK: - Previews
 
 #Preview("Base") {
     FoodieGradient()

@@ -8,9 +8,7 @@
 
 import Foundation
 
-// Stub
-
-final class MealsServicePreview: MealsClosureServiceType, SleepableProtocol {
+actor MealsServicePreview: MealsClosureServiceType, SleepableProtocol {
 
     func getCategories(handler: CategoriesHandler? = nil) async throws -> Categories {
         await sleep()

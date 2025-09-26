@@ -59,7 +59,7 @@ struct DashboardCategoriesCloudView<ViewModel: DashboardCategoriesViewModelType>
     }
 }
 
-// MARK: Preview
+// MARK: - Preview
 
 #Preview {
     let viewModel = DashboardCategoriesViewModel.mock
