@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import EnvironmentOverrides
 
 struct DashboardView<Model>: View where Model: DashboardViewModelType {
 
@@ -35,6 +36,7 @@ struct DashboardView<Model>: View where Model: DashboardViewModelType {
             .task { await viewModel.initialize() }
             .onAppear { manager.start() }
             .onDisappear { manager.stop() }
+            .attachEnvironmentOverrides()
     }
 
     @ViewBuilder

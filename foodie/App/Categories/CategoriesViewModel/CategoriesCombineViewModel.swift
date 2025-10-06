@@ -11,7 +11,7 @@ import Combine
 
 final class CategoriesCombineViewModel: CategoriesViewModelType, Identifiable {
 
-    var title: String { "Meals".localized }
+    var title: String { String(localized: "Meals") }
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { items.isEmpty }

@@ -41,7 +41,7 @@ enum APIError: Error, LocalizedError, Equatable {
             if let response,
                let errorResponse = response.toObject(ErrorResponse.self),
                let errorCode = errorResponse.errorCode {
-                description += ": \(errorCode.localized)"
+                description += ": \(errorCode))"
             }
             return description
         case .client(let code):

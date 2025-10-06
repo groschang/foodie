@@ -29,7 +29,7 @@ protocol DashboardMealsViewModelType: LoadableObject, DashboardMealsLocalizable,
 @MainActor
 final class DashboardMealsViewModel: DashboardMealsViewModelType, Identifiable {
 
-    var title: String { "Meals".localized }
+    var title: String { String(localized: "Meals") }
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { items.isEmpty }

@@ -25,6 +25,7 @@ struct CategoriesView<Model>: View where Model: CategoriesViewModelType {
     var body: some View {
         AsyncContentView(source: viewModel, content: content)
             .hideNavigationBar()
+            .attachEnvironmentOverrides()
     }
 
     private var content: some View {

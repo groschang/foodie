@@ -37,6 +37,7 @@ struct MealView<Model>: View where Model: MealViewModelType {
             .hideNavigationBar()
             .coordinateSpace(name: CoordinateSpace.main)
             .eclipseBackButton { dismiss() }
+            .attachEnvironmentOverrides()
     }
 
     @ViewBuilder

@@ -28,7 +28,7 @@ protocol DashboardCategoriesViewModelType: LoadableObject, DashboardCategoriesLo
 @MainActor
 final class DashboardCategoriesViewModel: DashboardCategoriesViewModelType, Identifiable {
 
-    var title: String { "Categories".localized }
+    var title: String { String(localized: "Categories") }
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { items.isEmpty }

@@ -10,10 +10,10 @@ import Foundation
 
 final class MealAsyncStreamViewModel: MealViewModelType {
 
-    var recipeTitle: String { "Recipe".localized }
-    var ingredientsTitle: String { "Ingredients".localized }
+    var recipeTitle: String { String(localized: "Recipe") }
+    var ingredientsTitle: String { String(localized: "Ingredients") }
     @Published private(set) var ingredientsSubtitle: String = "0 items"
-    var linkTitle: String? { "Link".localized }
+    var linkTitle: String? { String(localized: "Link") }
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { state != .loaded }

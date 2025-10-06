@@ -11,7 +11,7 @@ import Combine
 
 final class MealsCombineViewModel: MealsViewModelType {
 
-    var itemsHeader: String { "\(itemsCount) RECIPES".localized }
+    var itemsHeader: String { String(localized: "\(itemsCount) RECIPES") }
 
     @Published var state: LoadingState = .idle
     var isEmpty: Bool { items.isEmpty }

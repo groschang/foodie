@@ -14,31 +14,29 @@ struct MenuView: View {
 
     var body: some View {
         content
-            .navigationTitle("Settings")
+            .navigationTitle(String(localized: "Settings"))
     }
 
     var content: some View {
         List {
 
-            Section("Color theme") {
-
+            Section(String(localized: "Color theme")) {
                 HStack(spacing: 6) {
-
                     Spacer()
 
                     VStack(alignment: .trailing) {
 
-                        Button("System default") {
+                        Button(String(localized: "System default")) {
                             viewModel.setTheme(.system)
                         }
                         .buttonStyle(.menu(selected: viewModel.appTheme == .system))
 
-                        Button("Light") {
+                        Button(String(localized: "Light")) {
                             viewModel.setTheme(.light)
                         }
                         .buttonStyle(.menu(selected: viewModel.appTheme == .light))
 
-                        Button("Dark") {
+                        Button(String(localized: "Dark")) {
                             viewModel.setTheme(.dark)
                         }
                         .buttonStyle(.menu(selected: viewModel.appTheme == .dark))
@@ -46,10 +44,8 @@ struct MenuView: View {
                 }
             }
 
-            Section("Notifications") {
-
+            Section(String(localized: "Notifications")) {
                 HStack(spacing: 6) {
-
                     Spacer()
 
                     VStack(alignment: .trailing) {
@@ -57,14 +53,14 @@ struct MenuView: View {
                         Text("Status: *\(viewModel.notificationsStatus)*")
 
                         if viewModel.showEnableNotifications {
-                            Button("Enable notifications") {
+                            Button(String(localized: "Enable notifications")) {
                                 viewModel.enableNotificationsInSettings()
                             }
                             .buttonStyle(.menu(selected: true))
                         }
 
                         if viewModel.showAuthorizeNotifications {
-                            Button("Authorize notifications") {
+                            Button(String(localized: "Authorize notifications")) {
                                 viewModel.requestNotificationsPermission()
                             }
                             .buttonStyle(.menu(selected: true))
@@ -72,7 +68,6 @@ struct MenuView: View {
                     }
                 }
             }
-
         }
         .padding()
         .listStyle(SidebarListStyle())

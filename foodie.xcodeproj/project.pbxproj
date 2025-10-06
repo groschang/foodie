@@ -189,6 +189,12 @@
 		710391A02B4D730100475574 /* IdentifiableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7103919E2B4D730100475574 /* IdentifiableObject.swift */; };
 		710410722A73117600EAE3CD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710410712A73117600EAE3CD /* URL.swift */; };
 		710410742A73E80700EAE3CD /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710410732A73E80700EAE3CD /* NSManagedObjectContext.swift */; };
+		71049D872E93D86600BE6D11 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 71049D862E93D86600BE6D11 /* Localizable.xcstrings */; };
+		71049D882E93D86600BE6D11 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 71049D862E93D86600BE6D11 /* Localizable.xcstrings */; };
+		71049D892E93D86600BE6D11 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 71049D862E93D86600BE6D11 /* Localizable.xcstrings */; };
+		71049D8A2E93D86600BE6D11 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 71049D862E93D86600BE6D11 /* Localizable.xcstrings */; };
+		71049D8D2E93DAD400BE6D11 /* EnvironmentOverrides in Frameworks */ = {isa = PBXBuildFile; productRef = 71049D8C2E93DAD400BE6D11 /* EnvironmentOverrides */; };
+		71049D8F2E93DAE400BE6D11 /* EnvironmentOverrides in Frameworks */ = {isa = PBXBuildFile; productRef = 71049D8E2E93DAE400BE6D11 /* EnvironmentOverrides */; };
 		71052D96299051CA000008B6 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71052D95299051CA000008B6 /* CaseIterable.swift */; };
 		71052D982991126D000008B6 /* IngredientEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71052D972991126D000008B6 /* IngredientEntity.swift */; };
 		71052D9C29940718000008B6 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71052D9B29940718000008B6 /* IngredientsView.swift */; };
@@ -713,6 +719,7 @@
 		710391A32B4D77C600475574 /* SwiftDataIdentifiableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataIdentifiableObject.swift; sourceTree = "<group>"; };
 		710410712A73117600EAE3CD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		710410732A73E80700EAE3CD /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
+		71049D862E93D86600BE6D11 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		71052D95299051CA000008B6 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
 		71052D972991126D000008B6 /* IngredientEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEntity.swift; sourceTree = "<group>"; };
 		71052D9B29940718000008B6 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
@@ -1009,6 +1016,7 @@
 		7102F23C2B2F6C7A00F6D87F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				71049D8F2E93DAE400BE6D11 /* EnvironmentOverrides in Frameworks */,
 				715CD6D12E5CE4B80010180C /* RealmSwift in Frameworks */,
 				713833812E16EAB700DCBDD7 /* Logger in Frameworks */,
 				7102F23E2B2F6C7A00F6D87F /* Kingfisher in Frameworks */,
@@ -1017,6 +1025,7 @@
 		71E2A5762970336A0012E5C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				71049D8D2E93DAD400BE6D11 /* EnvironmentOverrides in Frameworks */,
 				715CD6CC2E5CE49A0010180C /* RealmSwift in Frameworks */,
 				713833952E16FF6E00DCBDD7 /* Logger in Frameworks */,
 				7111EC8E297C94B000ABC48C /* Kingfisher in Frameworks */,
@@ -1156,6 +1165,7 @@
 				7111EC92298020FF00ABC48C /* Styles */,
 				71080E93298AD213009FCDDB /* utils */,
 				7111EC2A297C531C00ABC48C /* Assets.xcassets */,
+				71049D862E93D86600BE6D11 /* Localizable.xcstrings */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
@@ -2018,6 +2028,7 @@
 				7102F17E2B2F6C7A00F6D87F /* Kingfisher */,
 				713833802E16EAB700DCBDD7 /* Logger */,
 				715CD6D02E5CE4B80010180C /* RealmSwift */,
+				71049D8E2E93DAE400BE6D11 /* EnvironmentOverrides */,
 			);
 			productName = drink;
 			productReference = 7102F2512B2F6C7A00F6D87F /* mockedFoodie.app */;
@@ -2040,6 +2051,7 @@
 				7111EC8D297C94B000ABC48C /* Kingfisher */,
 				713833942E16FF6E00DCBDD7 /* Logger */,
 				715CD6CB2E5CE49A0010180C /* RealmSwift */,
+				71049D8C2E93DAD400BE6D11 /* EnvironmentOverrides */,
 			);
 			productName = drink;
 			productReference = 71E2A5792970336A0012E5C6 /* foodie.app */;
@@ -2130,6 +2142,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 71E2A5702970336A0012E5C6;
 			packageReferences = (
@@ -2139,6 +2152,7 @@
 				719D19DE2BA4CB39006AAA48 /* XCRemoteSwiftPackageReference "ViewInspector" */,
 				713833932E16FF6E00DCBDD7 /* XCLocalSwiftPackageReference "Packages/Logger" */,
 				715CD6C82E5CE49A0010180C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				71049D8B2E93DAD400BE6D11 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 71E2A57A2970336A0012E5C6 /* Products */;
@@ -2169,6 +2183,7 @@
 				7102F2462B2F6C7A00F6D87F /* meals.json in Resources */,
 				7102F2472B2F6C7A00F6D87F /* README.md in Resources */,
 				7102F2482B2F6C7A00F6D87F /* Preview Assets.xcassets in Resources */,
+				71049D872E93D86600BE6D11 /* Localizable.xcstrings in Resources */,
 				7102F2492B2F6C7A00F6D87F /* Assets.xcassets in Resources */,
 			);
 		};
@@ -2187,6 +2202,7 @@
 				7111EC7B297C64F800ABC48C /* meals.json in Resources */,
 				717FCCB92985642D0034870D /* README.md in Resources */,
 				7111EC73297C57DD00ABC48C /* Preview Assets.xcassets in Resources */,
+				71049D882E93D86600BE6D11 /* Localizable.xcstrings in Resources */,
 				7111EC56297C531C00ABC48C /* Assets.xcassets in Resources */,
 			);
 		};
@@ -2195,11 +2211,13 @@
 			files = (
 				719ECCBC2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */,
 				7111EC6E297C56FF00ABC48C /* Preview Assets.xcassets in Resources */,
+				71049D892E93D86600BE6D11 /* Localizable.xcstrings in Resources */,
 			);
 		};
 		71E2A5CC2971D4E70012E5C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				71049D8A2E93D86600BE6D11 /* Localizable.xcstrings in Resources */,
 				719ECCBB2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */,
 			);
 		};
@@ -2947,6 +2965,7 @@
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -3006,6 +3025,7 @@
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3280,6 +3300,14 @@
 				version = 7.10.1;
 			};
 		};
+		71049D8B2E93DAD400BE6D11 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/EnvironmentOverrides";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
 		7111EC8C297C94B000ABC48C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -3327,6 +3355,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7102F17F2B2F6C7A00F6D87F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		71049D8C2E93DAD400BE6D11 /* EnvironmentOverrides */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71049D8B2E93DAD400BE6D11 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */;
+			productName = EnvironmentOverrides;
+		};
+		71049D8E2E93DAE400BE6D11 /* EnvironmentOverrides */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71049D8B2E93DAD400BE6D11 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */;
+			productName = EnvironmentOverrides;
 		};
 		7111EC8D297C94B000ABC48C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

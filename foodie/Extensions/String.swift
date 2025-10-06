@@ -7,14 +7,6 @@
 //
 
 import Foundation
-
-extension String {
-    
-    var localized: String {
-        NSLocalizedString(self, comment: "")
-    }
-}
-
 extension String {
     
     func trunc(_ length: Int) -> String {
