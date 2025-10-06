@@ -6,7 +6,7 @@
 //  Copyright (C) 2024 Konrad Groschang - All Rights Reserved
 //
 
-import XCTest
+import Foundation
 @testable import foodie
 
 final actor RequestBuilderMock: RequestBuilder {
@@ -24,11 +24,13 @@ final actor RequestBuilderMock: RequestBuilder {
     func build<T>(for request: foodie.Request<T>) async throws -> URLRequest where T : Decodable, T : Encodable {
         defer { didBuild?() }
         buildCallCount += 1
-        return try stubBuildResponse!.get()
+        guard let stubBuildResponse = stubBuildResponse else {
+            throw MockError.unwrapStubError
+        }
+        return try stubBuildResponse.get()
     }
 
     public func setStubBuildResponse(_ response: Result<URLRequest, Error>?) {
         stubBuildResponse = response
     }
-
 }

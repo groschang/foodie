@@ -9,6 +9,7 @@
 import Testing
 import Foundation
 import SnapshotTesting
+import XCTest
 @testable import foodie
 
 @Suite struct APITest {
@@ -80,7 +81,9 @@ import SnapshotTesting
     }
 }
 
+
 private extension APITest {
+    
     private func validate(response: URLResponse) throws {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.noResponse

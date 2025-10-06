@@ -12,9 +12,9 @@ import Foundation
 
 @Suite struct APIClientTest {
 
-    var sut: HTTPClient!
-    var httpSession: HTTPSessionMock!
-    var requestBuilder: RequestBuilderMock!
+    private var sut: HTTPClient!
+    private var httpSession: HTTPSessionMock!
+    private var requestBuilder: RequestBuilderMock!
 
     init() async {
         let enviroment = APIEndpoint.test
@@ -149,7 +149,6 @@ import Foundation
         let dataCallCount = await self.httpSession.dataCallCount
         #expect(dataCallCount == 1)
     }
-
 }
 
 
@@ -159,9 +158,11 @@ struct TestObject: Decodable, Encodable, Equatable {
     let surname: String
 }
 
+
 extension TestObject {
     static let stub = TestObject(name: "Johnny", surname: "Appleseed")
 }
+
 
 extension APIEndpoint {
     static let testObjectJSON = """

@@ -18,7 +18,15 @@ public final actor APIClientMock: HTTPClient {
     public func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
         defer { didProcess?() }
         processCallCount += 1
-        return try stubProcessResponse?.get() as! T
+        guard let stubProcessResponse = stubProcessResponse else {
+            throw MockError.unwrapStubError
+
+        }
+        let result = try stubProcessResponse.get()
+        guard let typedResult = result as? T else {
+            throw MockError.castingError
+        }
+        return typedResult
     }
 
     public func setStubProcessResponse(_ response: Result<Any, Error>?) {

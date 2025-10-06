@@ -18,11 +18,13 @@ final actor HTTPSessionMock: HTTPSession {
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
         defer { didData?() }
         dataCallCount += 1
-        return try stubDataResponse!.get()
+        guard let stubDataResponse = stubDataResponse else {
+            throw MockError.unwrapStubError
+        }
+        return try stubDataResponse.get()
     }
 
     public func setStubDataResponse(_ response: Result<(Data, URLResponse), Error>?) {
         stubDataResponse = response
     }
-
 }
