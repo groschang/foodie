@@ -3,13 +3,13 @@
 <p align="center">A food catalogue iOS application built with SwiftUI.</p>
 
 <p align="center">
-<img style="width: 250pxpx" src="Assets/screen5.png">
-<img style="width: 250pxpx" src="Assets/screen.png">
+<img style="width: 250px" src="Assets/screen5.png">
+<img style="width: 250px" src="Assets/screen.png"> 
 </p>
 <p align="center">
-<img style="width: 250pxpx" src="Assets/screen1.png">
-<img style="width: 250pxpx" src="Assets/screen4.png">
-<img style="width: 250pxpx" src="Assets/screen2.png">
+<img style="width: 250px" src="Assets/screen1.png"> 
+<img style="width: 250px" src="Assets/screen4.png">
+<img style="width: 250px" src="Assets/screen2.png">
 </p>
 
 ## About The Project
@@ -122,34 +122,26 @@ Navigation is handled through a custom Router implementation that works with Swi
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## TODO Checklist
+## TODO Roadmap
 
 ### Features
-- [ ] Vibrations
-- [ ] iPad split screen
-- [ ] Search bar
+- [ ] implement haptic feedback
+- [ ] implement iPad split screen
+- [ ] implement search bar
 
 ### Improvements
-- [ ] Model enhancements
-- [ ] Async view states
 - [ ] Extract and clean text styles
-- [ ] Use EmbedInStackModifier
+- [ ] Font improvements
 - [ ] Localization
 - [ ] Check styles
-- [ ] Mocks + previews
 - [ ] Services concurrency locks instead of ViewModels
-- [ ] Extract mappers
-- [ ] Rename protocol segregation naming
-- [ ] Font improvements
 - [ ] Mocked container target improvements
 - [ ] DependencyContainerType & DI cleanup
 - [ ] CoreData stubs
  
 ### Ideas
 - [ ] DTO approach
-- [ ] Service as Actor
 - [ ] Dependency container library
-- [ ] IdentifiableObject
 - [ ] Create additional packages
 
 ### Fixes
@@ -157,7 +149,7 @@ Navigation is handled through a custom Router implementation that works with Swi
 - [ ] Iterate over TODOs
 - [ ] Remove routers / RouterProtocol
 - [ ] Factories: remove doubled services
-- [ ] Fix searchable
+- [ ] Implement searchable
 
 ### Completed
 - [x] Swift 6 migration
@@ -176,3 +168,10 @@ Navigation is handled through a custom Router implementation that works with Swi
 - [x] Realm
 - [x] Categories grid view
 - [x] Navigation bar improvements
+- [x] Model enhancements
+- [x] Async view states
+- [x] Service as Actor
+- [x] IdentifiableObject
+- [x] Mocks + previews
+- [x] Extract mappers
+- [x] Use EmbedInStackModifier
