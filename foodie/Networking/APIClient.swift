@@ -9,11 +9,11 @@
 import Foundation
 
 protocol HTTPClient: Sendable {
-    func process<T: Decodable>(_ request: Request<T>) async throws -> T
+    @concurrent func process<T: Decodable>(_ request: Request<T>) async throws -> T
 }
 
 
-actor APIClient: HTTPClient {
+final class APIClient: HTTPClient {
 
     private let requestBuilder: RequestBuilder
 
@@ -31,7 +31,7 @@ actor APIClient: HTTPClient {
         self.decoder = decoder
     }
     
-    func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
+    @concurrent func process<T: Decodable & Sendable>(_ request: Request<T>) async throws -> T {
         do {
 
             let urlRequest = try await requestBuilder.build(for: request)
@@ -41,6 +41,7 @@ actor APIClient: HTTPClient {
             NetworkLogger.log(request: urlRequest)
             NetworkLogger.log(response: response)
             NetworkLogger.log(data: data)
+            Logger.thread()
             return object
 
         } catch let error as APIError {

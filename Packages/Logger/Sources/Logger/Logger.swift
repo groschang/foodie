@@ -34,9 +34,19 @@ public struct Logger {
 #if DEBUG
             printLog(items, separator: separator, terminator: terminator, onLevel: level, file: file, function: function, line: line)
 #else
-
+            //pass
 #endif
         }
+    }
+
+    public static func thread(_ message: String = "") {
+#if DEBUG
+        let label = String(cString: __dispatch_queue_get_label(nil))
+        let tid = pthread_mach_thread_np(pthread_self())
+        print("[\(label)] [thread \(tid)] \(message)")
+#else
+            //pass
+#endif
     }
 
     static private func printLog(_ items: Any..., separator: String = " ", terminator: String = "\n", onLevel level: Level = .verbose, file: String, function: String, line: Int) {

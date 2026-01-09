@@ -10,15 +10,15 @@ import Foundation
 
 protocol MealsAsyncServiceType: Sendable {
 
-    func loadCategories() async -> Categories?
-    func fetchCategories() async throws -> Categories
+    @concurrent func loadCategories() async -> Categories?
+    @concurrent func fetchCategories() async throws -> Categories
 
-    func getMeals(for category: Category) async -> Meals?
-    func fetchMeals(for category: Category) async throws -> Meals
+    @concurrent func getMeals(for category: Category) async -> Meals?
+    @concurrent func fetchMeals(for category: Category) async throws -> Meals
 
-    func loadMeal(for mealId: String) async -> Meal?
-    func fetchMeal(for mealId: String) async throws -> Meal
-    func fetchRandomMeal() async throws -> Meal
+    @concurrent func loadMeal(for mealId: String) async -> Meal?
+    @concurrent func fetchMeal(for mealId: String) async throws -> Meal
+    @concurrent func fetchRandomMeal() async throws -> Meal
 }
 
 
@@ -68,7 +68,8 @@ actor MealsAsyncService: MealsAsyncServiceType {
     //MARK: - Meal
 
     func loadMeal(for mealId: String) async -> Meal? {
-        await persistanceClient.getMeal(for: mealId)
+        Logger.thread()
+        return await persistanceClient.getMeal(for: mealId)
     }
 
     func fetchMeal(for mealId: String) async throws -> Meal {
@@ -76,7 +77,7 @@ actor MealsAsyncService: MealsAsyncServiceType {
         let meal = try await backendClient.process(request)
 
         await persistanceClient.saveMeal(meal)
-
+        Logger.thread()
         return meal
     }
 
