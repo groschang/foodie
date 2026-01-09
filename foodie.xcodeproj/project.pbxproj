@@ -390,6 +390,10 @@
 		71888D1729812213000C2544 /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71888D1529812213000C2544 /* Foodie.xcdatamodeld */; };
 		71888D1D29812427000C2544 /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71888D1C29812427000C2544 /* CoreDataClient.swift */; };
 		71888D1F29812D73000C2544 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71888D1E29812D73000C2544 /* ScrollView.swift */; };
+		718A13FB2F11A01500E268E1 /* BackgroundRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A13FA2F11A01500E268E1 /* BackgroundRealm.swift */; };
+		718A13FC2F11A01500E268E1 /* BackgroundRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A13FA2F11A01500E268E1 /* BackgroundRealm.swift */; };
+		718A13FD2F11A01500E268E1 /* BackgroundRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A13FA2F11A01500E268E1 /* BackgroundRealm.swift */; };
+		718A13FE2F11A01500E268E1 /* BackgroundRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A13FA2F11A01500E268E1 /* BackgroundRealm.swift */; };
 		718B41652B50AE3600F597CD /* DependencyContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718B41642B50AE3600F597CD /* DependencyContainerType.swift */; };
 		718B41672B50AE3600F597CD /* DependencyContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718B41642B50AE3600F597CD /* DependencyContainerType.swift */; };
 		718B416A2B50AED600F597CD /* SwinjectDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718B41692B50AED600F597CD /* SwinjectDependencyContainer.swift */; };
@@ -423,10 +427,6 @@
 		719D38172B8426560012ED25 /* MealsPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D380D2B84263C0012ED25 /* MealsPosts.swift */; };
 		719D381B2B84381F0012ED25 /* GroundReflectionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D381A2B84381F0012ED25 /* GroundReflectionModifier.swift */; };
 		719D381D2B84381F0012ED25 /* GroundReflectionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D381A2B84381F0012ED25 /* GroundReflectionModifier.swift */; };
-		719ECCBA2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 719ECCB92E5CF33000D95CA5 /* Configuration.xcconfig */; };
-		719ECCBB2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 719ECCB92E5CF33000D95CA5 /* Configuration.xcconfig */; };
-		719ECCBC2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 719ECCB92E5CF33000D95CA5 /* Configuration.xcconfig */; };
-		719ECCBD2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 719ECCB92E5CF33000D95CA5 /* Configuration.xcconfig */; };
 		719F6A652B7EB2DE0000770A /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 719F6A642B7EB2DE0000770A /* Nimble */; };
 		71A917E92B33DBA1004B35C9 /* ColorDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A917E82B33DBA1004B35C9 /* ColorDebugView.swift */; };
 		71A917EB2B33DBC2004B35C9 /* ColorStyleDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A917EA2B33DBC2004B35C9 /* ColorStyleDebugView.swift */; };
@@ -863,6 +863,8 @@
 		71888D1629812213000C2544 /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
 		71888D1C29812427000C2544 /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
 		71888D1E29812D73000C2544 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		718A13F92F119FA200E268E1 /* Configuration.xcconfig.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.xcconfig.example; sourceTree = "<group>"; };
+		718A13FA2F11A01500E268E1 /* BackgroundRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRealm.swift; sourceTree = "<group>"; };
 		718B41642B50AE3600F597CD /* DependencyContainerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerType.swift; sourceTree = "<group>"; };
 		718B41692B50AED600F597CD /* SwinjectDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectDependencyContainer.swift; sourceTree = "<group>"; };
 		718B416F2B50B7E900F597CD /* URLComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponents.swift; sourceTree = "<group>"; };
@@ -1859,6 +1861,7 @@
 			isa = PBXGroup;
 			children = (
 				719ECCB92E5CF33000D95CA5 /* Configuration.xcconfig */,
+				718A13F92F119FA200E268E1 /* Configuration.xcconfig.example */,
 				71F607F82B8291C700807DD7 /* foodie.xctestplan */,
 				7111EC42297C531C00ABC48C /* Info.plist */,
 				71D04D3D2B77B6950019BA70 /* foodie-Info.plist */,
@@ -1927,6 +1930,7 @@
 		71DD5DF72B5E7C5D003079AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				718A13FA2F11A01500E268E1 /* BackgroundRealm.swift */,
 				71DD5DF82B5E7C79003079AC /* RealmLogger.swift */,
 			);
 			path = Extensions;
@@ -2121,7 +2125,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					71E2A5782970336A0012E5C6 = {
 						CreatedOnToolsVersion = 14.2;
@@ -2174,7 +2178,6 @@
 				7102F2402B2F6C7A00F6D87F /* mealCategory.json in Resources */,
 				7102F2412B2F6C7A00F6D87F /* meal2.json in Resources */,
 				7102F2422B2F6C7A00F6D87F /* mealDetail.json in Resources */,
-				719ECCBD2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */,
 				713851B52E1E92AD009F4AEE /* run_notification.sh in Resources */,
 				7102F2432B2F6C7A00F6D87F /* category.json in Resources */,
 				7102F2442B2F6C7A00F6D87F /* categories.json in Resources */,
@@ -2193,7 +2196,6 @@
 				7111EC7D297C653400ABC48C /* mealCategory.json in Resources */,
 				713FF2722A633BCF00F06C13 /* meal2.json in Resources */,
 				716CD1172981A34A00E4EA65 /* mealDetail.json in Resources */,
-				719ECCBA2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */,
 				713851B72E1E92AD009F4AEE /* run_notification.sh in Resources */,
 				7111EC79297C5D4D00ABC48C /* category.json in Resources */,
 				7111EC70297C57DD00ABC48C /* categories.json in Resources */,
@@ -2209,7 +2211,6 @@
 		71E2A5B52970A6F90012E5C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				719ECCBC2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */,
 				7111EC6E297C56FF00ABC48C /* Preview Assets.xcassets in Resources */,
 				71049D892E93D86600BE6D11 /* Localizable.xcstrings in Resources */,
 			);
@@ -2218,7 +2219,6 @@
 			isa = PBXResourcesBuildPhase;
 			files = (
 				71049D8A2E93D86600BE6D11 /* Localizable.xcstrings in Resources */,
-				719ECCBB2E5CF33000D95CA5 /* Configuration.xcconfig in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -2446,6 +2446,7 @@
 				7102F2232B2F6C7A00F6D87F /* MainActor.swift in Sources */,
 				718B41722B50B7E900F597CD /* URLComponents.swift in Sources */,
 				7102F2242B2F6C7A00F6D87F /* Category.swift in Sources */,
+				718A13FB2F11A01500E268E1 /* BackgroundRealm.swift in Sources */,
 				7102F2252B2F6C7A00F6D87F /* DIContainer.swift in Sources */,
 				71DD5DDA2B5DB52E003079AC /* CategoryRealm.swift in Sources */,
 				7102F2262B2F6C7A00F6D87F /* CaseIterable.swift in Sources */,
@@ -2678,6 +2679,7 @@
 				71AF3C322BB4CC45009FC1DA /* PushNotification.swift in Sources */,
 				71E7241B2BB0A6D500C5F10E /* NotificationHandler.swift in Sources */,
 				71D0AC202E7B1EC700616BFD /* ElipseBackButton+Style.swift in Sources */,
+				718A13FD2F11A01500E268E1 /* BackgroundRealm.swift in Sources */,
 				71D702402B33A049008900E0 /* SwiftUIDebugView.swift in Sources */,
 				7102D5082BBA6BC100E5BBDF /* NotificationService.swift in Sources */,
 				7111EC5A297C531C00ABC48C /* Categories.swift in Sources */,
@@ -2758,6 +2760,7 @@
 				71F116292A7275D5009A93B5 /* CoordinateSpace.swift in Sources */,
 				71684AC12A51749800392720 /* LoadingStateTest.swift in Sources */,
 				71757C5B2A72DE17008EFD92 /* CoreDataClientMock.swift in Sources */,
+				718A13FE2F11A01500E268E1 /* BackgroundRealm.swift in Sources */,
 				7162412D2B780A5D0003D4CC /* YouTubeView.swift in Sources */,
 				71F1162A2A7275DC009A93B5 /* ContainsElements.swift in Sources */,
 				7174AF072E93C1C9007611F2 /* MockError.swift in Sources */,
@@ -2785,6 +2788,7 @@
 				71F1162D2A7275DD009A93B5 /* ContainsItems.swift in Sources */,
 				71303FDD2B8BC0C7005082FB /* SnapshotHelper.swift in Sources */,
 				719D19EE2BA4E1C5006AAA48 /* MealViewTest.swift in Sources */,
+				718A13FC2F11A01500E268E1 /* BackgroundRealm.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
@@ -2911,6 +2915,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2978,6 +2983,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

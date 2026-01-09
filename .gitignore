@@ -26,7 +26,6 @@ playground.xcworkspace
 .build/
 Dependencies/
 iOSInjectionProject/
-
-
-.swiftlint.yml
 Config/Configuration.xcconfig
+!Configuration.xcconfig.example
+.swiftlint.yml
